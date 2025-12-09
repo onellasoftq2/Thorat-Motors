@@ -24,8 +24,9 @@ export default function ContactStrip() {
         <div className="bg-secondary">
             <div className="container mx-auto px-4 py-8">
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
-                    {contactDetails.map((detail) => (
-                        <div key={detail.line1} className="flex flex-col md:flex-row items-center gap-4">
+                    {contactDetails.map((detail, index) => (
+                        <div key={detail.line1} className="flex flex-col md:flex-row items-center gap-4 relative">
+                             {index > 0 && <div className="hidden md:block absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 h-16 w-px bg-border" />}
                             <div className="flex-shrink-0">
                                 {detail.icon}
                             </div>
