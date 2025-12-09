@@ -294,5 +294,5 @@ export const offices = [
     { city: 'Bhubaneswar', address: 'Plot No. N-6/536, IRC Village, Nayapalli, Jayadev Vihar, Bhubaneswar, Khurda - 751015, Odisha', phone: '9011943810', email: 'sales@thoratmotor.com' },
     { city: 'Chennai', address: 'Plot No 5/3, Thiruvallur Road, Nemam Post, Poonamallee Taluka, Chennai - 600124, Tamil Nadu', phone: '9011943810', email: 'sales@thoratmotor.com' },
     { city: 'Jamshedpur', address: 'Khata No -133, Plot No -201-4P NH-33, Chandil, Ramgarh, Seraikela Kharsawan, Jamshedpur - 831001, Jharkhand', phone: '9011943810', email: 'sales@thoratmotor.com' },
-    { city: 'Patna', address: 'Khata No-456, Khesra No-198, 199, Manupur, Saran, Chapra, Bihar - 841207', phone: '9011943810', email: 'sales@thoratmotor.com' },
+    { city: 'Patna', address: 'Khata No-456, Khesra No-198, 199, Manupur, Saran, Chapra, Bihar - 841207, India', phone: '9011943810', email: 'sales@thoratmotor.com' },
 ];
