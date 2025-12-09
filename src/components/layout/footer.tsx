@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { Truck, Github, Twitter, Linkedin } from 'lucide-react';
-import { navMenu, company, offices } from '@/lib/data';
+import { navMenu, company, offices, contactInfo } from '@/lib/data';
 
 function Logo() {
   return (
@@ -66,9 +66,9 @@ export default function Footer() {
           <div>
             <h3 className="text-sm font-semibold font-headline text-foreground">Contact</h3>
             <ul className="mt-4 space-y-2 text-sm text-muted-foreground">
-              <li>{offices[0].address.split(',')[0]}, {offices[0].address.split(',')[1]}</li>
-              <li>{offices[0].phone}</li>
-              <li>{offices[0].email}</li>
+              <li>{offices[0].address.split(',').slice(0,2).join(', ')}</li>
+              <li>{contactInfo.phone}</li>
+              <li>{contactInfo.emails[0]}</li>
             </ul>
           </div>
         </div>
@@ -88,3 +88,5 @@ export default function Footer() {
     </footer>
   );
 }
+
+    

@@ -287,12 +287,19 @@ export const company = {
     ],
 };
 
+export const contactInfo = {
+    phone: '9011943810',
+    emails: ['sales@thoratmotor.com', 'tkrishna@thoratmotor.com', 'thoratmotors@gmail.com'],
+};
+
 export const offices = [
-    { city: 'Pune', address: 'GAT NO 336/1 Chakan Shikrapur Road, Kadachiwadi- Chakan, Pune – 410501, Maharashtra', phone: '9011943810', email: 'sales@thoratmotor.com' },
-    { city: 'Surat', address: 'Green Aristo Plaza, 1st Floor, Shop No- 127, Vaishnovdevi Road, Surat-395009, Gujarat', phone: '9011943810', email: 'sales@thoratmotor.com' },
-    { city: 'Visakhapatnam', address: '98/A, D-Block, Near RTO Office, Autonagar, Oldgajuwaka, Visakhapatnam - 530026, Andhra Pradesh', phone: '9011943810', email: 'sales@thoratmotor.com' },
-    { city: 'Bhubaneswar', address: 'Plot No. N-6/536, IRC Village, Nayapalli, Jayadev Vihar, Bhubaneswar, Khurda - 751015, Odisha', phone: '9011943810', email: 'sales@thoratmotor.com' },
-    { city: 'Chennai', address: 'Plot No 5/3, Thiruvallur Road, Nemam Post, Poonamallee Taluka, Chennai - 600124, Tamil Nadu', phone: '9011943810', email: 'sales@thoratmotor.com' },
-    { city: 'Jamshedpur', address: 'Khata No -133, Plot No -201-4P NH-33, Chandil, Ramgarh, Seraikela Kharsawan, Jamshedpur - 831001, Jharkhand', phone: '9011943810', email: 'sales@thoratmotor.com' },
-    { city: 'Patna', address: 'Khata No-456, Khesra No-198, 199, Manupur, Saran, Chapra, Bihar - 841207, India', phone: '9011943810', email: 'sales@thoratmotor.com' },
+    { city: 'Pune (Head Office)', state: 'Maharashtra', address: 'GAT NO 336/1 Chakan Shikrapur Road, Kadachiwadi- Chakan, Pune – 410501', phone: '9011943810'},
+    { city: 'Surat', state: 'Gujarat', address: 'Green Aristo Plaza, 1st Floor, Shop No- 127, Vaishnovdevi Road, Surat-395009', phone: '9011943810'},
+    { city: 'Visakhapatnam', state: 'Andhra Pradesh', address: '98/A, D-Block, Near RTO Office, Autonagar, Oldgajuwaka, Visakhapatnam - 530026', phone: '9011943810'},
+    { city: 'Bhubaneswar', state: 'Odisha', address: 'Plot No. N-6/536, IRC Village, Nayapalli, Jayadev Vihar, Bhubaneswar, Khurda - 751015', phone: '9011943810'},
+    { city: 'Jamshedpur', state: 'Jharkhand', address: 'Khata No -133, Plot No -201-4P NH-33, Chandil, Ramgarh, Seraikela Kharsawan, Jamshedpur - 831001', phone: '9011943810'},
+    { city: 'Chennai', state: 'Tamil Nadu', address: 'Plot No 5/3, Thiruvallur Road, Nemam Post, Poonamallee Taluka, Chennai - 600124', phone: '9011943810'},
+    { city: 'Patna', state: 'Bihar', address: 'Khata No-456, Khesra No-198, 199, Manupur, Saran, Chapra - 841207', phone: '9011943810'},
 ];
+
+    
