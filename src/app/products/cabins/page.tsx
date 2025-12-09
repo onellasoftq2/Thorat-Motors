@@ -36,8 +36,8 @@ export default function CabinsPage() {
                     src={image.imageUrl}
                     alt={image.description}
                     width={400}
-                    height={250}
-                    className="w-full object-cover"
+                    height={300}
+                    className="w-full object-cover aspect-[4/3]"
                     data-ai-hint={image.imageHint}
                   />
                 )}
