@@ -44,10 +44,6 @@ export default function ContactPage() {
               </CardHeader>
               <CardContent className="space-y-3 text-muted-foreground">
                 <p>{office.address}</p>
-                <div className="flex items-center">
-                  <Phone className="h-4 w-4 mr-3" />
-                  <a href={`tel:${office.phone}`} className="hover:text-primary">{office.phone}</a>
-                </div>
               </CardContent>
             </Card>
           ))}
@@ -56,6 +52,10 @@ export default function ContactPage() {
         <div className="mt-16 text-center border-t pt-10">
            <h3 className="text-2xl font-bold font-headline mb-4">General Inquiries</h3>
             <div className="flex flex-col items-center space-y-4 sm:flex-row sm:justify-center sm:space-y-0 sm:space-x-8">
+              <div className="flex items-center">
+                <Phone className="h-5 w-5 mr-3 text-primary" />
+                <a href={`tel:${contactInfo.phone}`} className="text-lg text-muted-foreground hover:text-primary">{contactInfo.phone}</a>
+              </div>
               {contactInfo.emails.map(email => (
                 <div key={email} className="flex items-center">
                   <Mail className="h-5 w-5 mr-3 text-primary" />
@@ -69,5 +69,3 @@ export default function ContactPage() {
     </>
   );
 }
-
-    
