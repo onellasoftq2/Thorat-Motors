@@ -1,3 +1,118 @@
 {
-  "placeholderImages": []
+  "placeholderImages": [
+    {
+      "id": "hero-trailer",
+      "description": "A large, modern trailer on the road.",
+      "imageUrl": "https://images.unsplash.com/photo-1761133381018-aed5063d22fe?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHx0cmFpbGVyJTIwbG9naXN0aWNzfGVufDB8fHx8MTc2NTI3ODQ0M3ww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "trailer logistics"
+    },
+    {
+      "id": "cement-bulker",
+      "description": "Cement bulker trailer at a construction site.",
+      "imageUrl": "https://images.unsplash.com/photo-1679319052195-514f090bcfeb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxjZW1lbnQlMjB0cmFpbGVyfGVufDB8fHx8MTc2NTI3ODQ0M3ww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "cement trailer"
+    },
+    {
+      "id": "flatbed",
+      "description": "A long flatbed trailer ready for cargo.",
+      "imageUrl": "https://images.unsplash.com/photo-1665909042889-5a3767f450c0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxmbGF0YmVkJTIwdHJhaWxlcnxlbnwwfHx8fDE3NjUyNzM3NDN8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "flatbed trailer"
+    },
+    {
+      "id": "skeletal",
+      "description": "Skeletal trailer carrying a shipping container.",
+      "imageUrl": "https://images.unsplash.com/photo-1662510995126-02a90a019dcf?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxza2VsZXRhbCUyMHRyYWlsZXJ8ZW58MHx8fHwxNzY1Mjc4NDQzfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "skeletal trailer"
+    },
+    {
+      "id": "side-wall",
+      "description": "Side-wall trailer with its sides down.",
+      "imageUrl": "https://images.unsplash.com/photo-1609341066376-0c389aaa7998?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8c2lkZS13YWxsJTIwdHJhaWxlcnxlbnwwfHx8fDE3NjUyNzg0NDN8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "side-wall trailer"
+    },
+    {
+      "id": "custom",
+      "description": "A uniquely designed custom trailer for special cargo.",
+      "imageUrl": "https://images.unsplash.com/photo-1719765653892-cf8e63bd4f94?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxjdXN0b20lMjB0cmFpbGVyfGVufDB8fHx8MTc2NTI3ODQ0M3ww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "custom trailer"
+    },
+    {
+      "id": "office",
+      "description": "A modern portable office cabin in a field.",
+      "imageUrl": "https://images.unsplash.com/photo-1547586696-ea22b4d4235d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxvZmZpY2UlMjBjYWJpbnxlbnwwfHx8fDE3NjUyNzg0NDN8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "office cabin"
+    },
+    {
+      "id": "house",
+      "description": "A cozy and compact portable house cabin.",
+      "imageUrl": "https://images.unsplash.com/photo-1737439399408-4ca8ad2a897d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxwb3J0YWJsZSUyMGhvdXNlfGVufDB8fHx8MTc2NTI3ODQ0M3ww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "portable house"
+    },
+    {
+      "id": "security",
+      "description": "A security guard cabin at an entrance.",
+      "imageUrl": "https://images.unsplash.com/photo-1624352908259-ec0b31e421ee?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxzZWN1cml0eSUyMGNhYmlufGVufDB8fHx8MTc2NTI3ODQ0M3ww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "security cabin"
+    },
+    {
+      "id": "bunk-house",
+      "description": "Interior of a bunk house accommodation cabin.",
+      "imageUrl": "https://images.unsplash.com/photo-1721902023604-ca980e4c7979?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxidW5rJTIwaG91c2V8ZW58MHx8fHwxNzY1Mjc4NDQzfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "bunk house"
+    },
+    {
+      "id": "toilet",
+      "description": "A clean and modern portable toilet block.",
+      "imageUrl": "https://images.unsplash.com/photo-1765121690957-c7d090ceaa3d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxwb3J0YWJsZSUyMHRvaWxldHxlbnwwfHx8fDE3NjUyNzM3NDN8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "portable toilet"
+    },
+    {
+      "id": "acp",
+      "description": "Exterior of a sleek ACP cabin.",
+      "imageUrl": "https://images.unsplash.com/photo-1599996327991-5442b3f32013?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8QUNQJTIwY2FiaW58ZW58MHx8fHwxNzY1Mjc4NDQzfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "ACP cabin"
+    },
+    {
+      "id": "shop-hotel",
+      "description": "A portable cabin converted into a modern coffee shop.",
+      "imageUrl": "https://images.unsplash.com/photo-1726137569758-fb5f8d47ae4c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxwb3J0YWJsZSUyMHNob3B8ZW58MHx8fHwxNzY1Mjc4NDQzfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "portable shop"
+    },
+    {
+      "id": "container-conversion",
+      "description": "A shipping container converted into a living space.",
+      "imageUrl": "https://images.unsplash.com/photo-1617938568125-b55e59775632?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxjb250YWluZXIlMjBob21lfGVufDB8fHx8MTc2NTI3ODQ0M3ww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "container home"
+    },
+    {
+      "id": "double-storey",
+      "description": "A two-story G+1 portable cabin structure.",
+      "imageUrl": "https://images.unsplash.com/photo-1588279159326-32a78c368cb6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHx0d28tc3RvcnklMjBjYWJpbnxlbnwwfHx8fDE3NjUyNzg0NDN8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "two-story cabin"
+    },
+    {
+      "id": "about-us-image",
+      "description": "A wide shot of the manufacturing facility.",
+      "imageUrl": "https://images.unsplash.com/photo-1699221956427-b73f47de367e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8ZmFjdG9yeSUyMGludGVyaW9yfGVufDB8fHx8MTc2NTE5NTIxNnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "factory interior"
+    },
+    {
+      "id": "md-portrait",
+      "description": "Portrait of the Managing Director.",
+      "imageUrl": "https://images.unsplash.com/photo-1544168190-79c17527004f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8cHJvZmVzc2lvbmFsJTIwcG9ydHJhaXR8ZW58MHx8fHwxNzY1MjM1ODU5fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "professional portrait"
+    },
+    {
+      "id": "services-hero",
+      "description": "An engineer working on a trailer design on a computer.",
+      "imageUrl": "https://images.unsplash.com/photo-1744627049721-73c27008ad28?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxlbmdpbmVlcmluZyUyMGRlc2lnbnxlbnwwfHx8fDE3NjUyNzg0NDN8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "engineering design"
+    },
+    {
+      "id": "industries-hero",
+      "description": "Montage of different industries: port, construction site, mine.",
+      "imageUrl": "https://images.unsplash.com/photo-1744123146393-4b5438a5d98f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8aW5kdXN0cmlhbCUyMG1vbnRhZ2V8ZW58MHx8fHwxNzY1Mjc4NDQzfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "industrial montage"
+    }
+  ]
 }
