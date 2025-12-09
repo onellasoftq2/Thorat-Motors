@@ -1,3 +1,4 @@
+
 export type NavMenuItem = {
   name: string;
   href: string;
@@ -287,11 +288,11 @@ export const company = {
 };
 
 export const offices = [
-    { city: 'Pune', address: 'Head Office, MIDC, Chakan, Pune, Maharashtra', phone: '+91 98765 43210', email: 'pune.sales@thoratmotors.com' },
-    { city: 'Surat', address: 'Branch Office, Hazira, Surat, Gujarat', phone: '+91 98765 43211', email: 'surat.sales@thoratmotors.com' },
-    { city: 'Vizag', address: 'Branch Office, Gajuwaka, Visakhapatnam, AP', phone: '+91 98765 43212', email: 'vizag.sales@thoratmotors.com' },
-    { city: 'Bhubaneswar', address: 'Branch Office, Industrial Area, Bhubaneswar, Odisha', phone: '+91 98765 43213', email: 'bbsr.sales@thoratmotors.com' },
-    { city: 'Chennai', address: 'Branch Office, Sriperumbudur, Chennai, Tamil Nadu', phone: '+91 98765 43214', email: 'chennai.sales@thoratmotors.com' },
-    { city: 'Jamshedpur', address: 'Branch Office, Adityapur, Jamshedpur, Jharkhand', phone: '+91 98765 43215', email: 'jsr.sales@thoratmotors.com' },
-    { city: 'Patna', address: 'Branch Office, Patliputra, Patna, Bihar', phone: '+91 98765 43216', email: 'patna.sales@thoratmotors.com' },
+    { city: 'Pune', address: 'GAT NO 336/1 Chakan Shikrapur Road, Kadachiwadi- Chakan, Pune – 410501, Maharashtra', phone: '9011943810', email: 'sales@thoratmotor.com' },
+    { city: 'Surat', address: 'Green Aristo Plaza, 1st Floor, Shop No- 127, Vaishnovdevi Road, Surat-395009, Gujarat', phone: '9011943810', email: 'sales@thoratmotor.com' },
+    { city: 'Visakhapatnam', address: '98/A, D-Block, Near RTO Office, Autonagar, Oldgajuwaka, Visakhapatnam - 530026, Andhra Pradesh', phone: '9011943810', email: 'sales@thoratmotor.com' },
+    { city: 'Bhubaneswar', address: 'Plot No. N-6/536, IRC Village, Nayapalli, Jayadev Vihar, Bhubaneswar, Khurda - 751015, Odisha', phone: '9011943810', email: 'sales@thoratmotor.com' },
+    { city: 'Chennai', address: 'Plot No 5/3, Thiruvallur Road, Nemam Post, Poonamallee Taluka, Chennai - 600124, Tamil Nadu', phone: '9011943810', email: 'sales@thoratmotor.com' },
+    { city: 'Jamshedpur', address: 'Khata No -133, Plot No -201-4P NH-33, Chandil, Ramgarh, Seraikela Kharsawan, Jamshedpur - 831001, Jharkhand', phone: '9011943810', email: 'sales@thoratmotor.com' },
+    { city: 'Patna', address: 'Khata No-456, Khesra No-198, 199, Manupur, Saran, Chapra, Bihar - 841207', phone: '9011943810', email: 'sales@thoratmotor.com' },
 ];
