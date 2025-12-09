@@ -1,3 +1,5 @@
+
+'use client';
 import Image from 'next/image';
 import Link from 'next/link';
 import {
@@ -10,28 +12,33 @@ import {
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
-import { products, industries, services } from '@/lib/data';
-import { ArrowRight, CheckCircle, Truck, Building, Users } from 'lucide-react';
+import { products, industries } from '@/lib/data';
+import { ArrowRight, Truck, DraftingCompass, Wrench, MapPin } from 'lucide-react';
+import { offices } from '@/lib/data';
 
 const heroImage = PlaceHolderImages.find((img) => img.id === 'hero-trailer');
 const trailerProducts = products.trailers.slice(0, 3);
 const cabinProducts = products.cabins.slice(0, 3);
+const locations = offices.slice(0, 4);
 
-const features = [
+const coreDivisions = [
   {
     icon: <Truck className="h-10 w-10 text-primary" />,
-    title: 'Advanced Engineering',
-    description: 'Precision-engineered trailers and cabins built for performance and durability.',
+    title: 'Thorat Motors',
+    description: 'Pioneering trailer manufacturing with robust designs and unmatched quality for all industrial needs.',
+    href: '/products'
   },
   {
-    icon: <CheckCircle className="h-10 w-10 text-primary" />,
-    title: 'Unmatched Quality',
-    description: 'Using high-grade materials like Domex/Shelma steel for superior strength.',
+    icon: <DraftingCompass className="h-10 w-10 text-primary" />,
+    title: 'Designing & Homologation',
+    description: 'Expert services in vehicle design, simulation, and certification including CMVR, BIS, and PESO.',
+    href: '/services#designing'
   },
   {
-    icon: <Users className="h-10 w-10 text-primary" />,
-    title: 'Pan-India Presence',
-    description: 'Nationwide support and logistics from our multiple office locations.',
+    icon: <Wrench className="h-10 w-10 text-primary" />,
+    title: 'Transport & Logistics',
+    description: 'Reliable and efficient logistics solutions with a modern fleet serving diverse industries across India.',
+    href: '/services#logistics'
   },
 ];
 
@@ -52,7 +59,7 @@ export default function Home() {
               <Button asChild size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90">
                 <Link href="/products">Explore Products</Link>
               </Button>
-              <Button asChild size="lg" variant="outline" className="border-teal-500 text-teal-500 hover:bg-teal-50 hover:text-teal-600">
+              <Button asChild size="lg" variant="outline">
                 <Link href="/contact">Contact Sales</Link>
               </Button>
             </div>
@@ -73,18 +80,28 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Features Section */}
+      {/* Core Divisions Section */}
       <section className="bg-secondary py-16 lg:py-24">
         <div className="container mx-auto px-4">
+          <div className="mb-12 text-center">
+            <h2 className="text-3xl font-extrabold font-headline tracking-tight sm:text-4xl">Our Core Divisions</h2>
+            <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
+             Three pillars of excellence that drive the Thorat Group forward.
+            </p>
+            <div className="mt-2 h-1 w-20 mx-auto bg-primary"></div>
+          </div>
           <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
-            {features.map((feature) => (
-              <Card key={feature.title} className="text-center shadow-md">
+            {coreDivisions.map((division) => (
+              <Card key={division.title} className="text-center shadow-md">
                 <CardHeader className="items-center">
-                  {feature.icon}
-                  <CardTitle className="mt-4 text-xl">{feature.title}</CardTitle>
+                  {division.icon}
+                  <CardTitle className="mt-4 text-xl">{division.title}</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-muted-foreground">{feature.description}</p>
+                  <p className="text-muted-foreground">{division.description}</p>
+                  <Button asChild variant="link" className="px-0 mt-4 text-primary">
+                    <Link href={division.href}>Learn More <ArrowRight className="ml-2 h-4 w-4" /></Link>
+                  </Button>
                 </CardContent>
               </Card>
             ))}
@@ -200,6 +217,32 @@ export default function Home() {
                 {industry.name}
               </Badge>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Nationwide Presence Section */}
+      <section className="bg-secondary py-16 lg:py-24">
+        <div className="container mx-auto px-4 text-center">
+          <MapPin className="h-12 w-12 text-primary mx-auto mb-4" />
+          <h2 className="text-3xl font-extrabold font-headline tracking-tight sm:text-4xl">Nationwide Presence</h2>
+          <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
+            With a strategic network of service locations across India, we are always close to our customers, ensuring prompt service and support wherever you are.
+          </p>
+          <div className="mt-8 grid grid-cols-2 md:grid-cols-4 gap-8">
+            {locations.map(location => (
+              <div key={location.city} className="relative group">
+                <Image src={`https://picsum.photos/seed/${location.city}/400/300`} alt={location.city} width={400} height={300} className="rounded-lg object-cover w-full aspect-[4/3]"/>
+                <div className="absolute inset-0 bg-black/50 rounded-lg flex items-center justify-center">
+                  <span className="text-white font-bold text-xl">{location.city}</span>
+                </div>
+              </div>
+            ))}
+          </div>
+          <div className="mt-12">
+            <Button asChild size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90">
+              <Link href="/contact">View Our Network</Link>
+            </Button>
           </div>
         </div>
       </section>
