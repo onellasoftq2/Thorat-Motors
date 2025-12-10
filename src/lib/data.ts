@@ -39,17 +39,17 @@ export const navMenu: NavMenu[] = [
           { name: "Portable Office Cabin", href: "/products/cabins/office" },
           { name: "House Cabins", href: "/products/cabins/house" },
           { name: "Security Cabins", href: "/products/cabins/security" },
-          { name: "Bunk/Accommodation Cabins", href: "/products/cabins/bunk-house" },
+          { name: "Bunk/Accommodation Cabin", href: "/products/cabins/bunk-house" },
           { name: "Toilet Cabins", href: "/products/cabins/toilet" },
+          { name: "ACP Cabins", href: "/products/cabins/acp" },
         ],
       },
       {
-        title: "Cabin Variations",
+        title: "Containers",
         items: [
-          { name: "ACP Cabins", href: "/products/cabins/acp" },
           { name: "Shop & Hotel Cabins", href: "/products/cabins/shop-hotel" },
           { name: "Container Conversions", href: "/products/cabins/container-conversion" },
-          { name: "Double-Storey Cabins", href: "/products/cabins/double-storey" },
+          { name: "Double Storey (G+1) Cabins", href: "/products/cabins/double-storey" },
         ],
       },
     ],
@@ -58,14 +58,20 @@ export const navMenu: NavMenu[] = [
     title: "Services",
     href: "/services",
     megaMenu: [
-      {
-        title: "Our Expertise",
+       {
+        title: "Engineering",
         items: [
-          { name: "Designing & Homologation", href: "/services#designing" },
+          { name: "Design & Homologation", href: "/services#designing" },
+          { name: "CAD Engineering", href: "/services#custom-engineering" },
           { name: "Structural Fabrication", href: "/services#fabrication" },
-          { name: "Spare Parts Division", href: "/services#spare-parts" },
+        ],
+      },
+      {
+        title: "Support",
+        items: [
+          { name: "Spare Parts Supply", href: "/services#spare-parts" },
+          { name: "Repair & Refurbishment", href: "/services#fabrication" },
           { name: "Transport & Logistics", href: "/services#logistics" },
-          { name: "Custom Engineering", href: "/services#custom-engineering" },
         ],
       }
     ]
@@ -73,39 +79,10 @@ export const navMenu: NavMenu[] = [
   {
     title: "Industries",
     href: "/industries",
-    megaMenu: [
-      {
-        title: "Sectors We Serve",
-        items: [
-            { name: "Cement & Bulk Material", href: "/industries#cement" },
-            { name: "Mining, Steel & Metals", href: "/industries#mining" },
-            { name: "Ports & Terminals", href: "/industries#ports" },
-            { name: "Construction & Infrastructure", href: "/industries#construction" },
-            { name: "Agriculture", href: "/industries#agriculture" },
-            { name: "Retail & Commercial", href: "/industries#retail" },
-            { name: "Industrial Housing", href: "/industries#housing" },
-        ]
-      }
-    ]
   },
   {
     title: "Company",
     href: "/company",
-    megaMenu: [
-        {
-            title: "About Thorat Motors",
-            items: [
-                { name: "About Us", href: "/company#about" },
-                { name: "Manufacturing Excellence", href: "/company#manufacturing" },
-                { name: "Leadership", href: "/company#leadership" },
-                { name: "Vision & Mission", href: "/company#vision" },
-                { name: "Certifications", href: "/company#certifications" },
-                { name: "Downloads", href: "/company#downloads" },
-                { name: "Careers", href: "/company#careers" },
-                { name: "Gallery", href: "/company#gallery" },
-            ]
-        }
-    ]
   },
   {
     title: "Contact",
@@ -297,7 +274,7 @@ export const contactInfo = {
 };
 
 export const offices = [
-    { city: 'Pune (Head Office)', state: 'Maharashtra', address: 'GAT NO 336/1 Chakan Shikrapur Road, Kadachiwadi- Chakan, Pune – 410501'},
+    { city: 'Pune', state: 'Maharashtra', address: 'GAT NO 336/1 Chakan Shikrapur Road, Kadachiwadi- Chakan, Pune – 410501'},
     { city: 'Surat', state: 'Gujarat', address: 'Green Aristo Plaza, 1st Floor, Shop No- 127, Vaishnovdevi Road, Surat-395009'},
     { city: 'Visakhapatnam', state: 'Andhra Pradesh', address: '98/A, D-Block, Near RTO Office, Autonagar, Oldgajuwaka, Visakhapatnam - 530026'},
     { city: 'Bhubaneswar', state: 'Odisha', address: 'Plot No. N-6/536, IRC Village, Nayapalli, Jayadev Vihar, Bhubaneswar, Khurda - 751015'},
@@ -305,5 +282,8 @@ export const offices = [
     { city: 'Chennai', state: 'Tamil Nadu', address: 'Plot No 5/3, Thiruvallur Road, Nemam Post, Poonamallee Taluka, Chennai - 600124'},
     { city: 'Patna', state: 'Bihar', address: 'Khata No-456, Khesra No-198, 199, Manupur, Saran, Chapra - 841207'},
 ];
+
+    
+
 
     

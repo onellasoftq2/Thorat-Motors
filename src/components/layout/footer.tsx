@@ -1,3 +1,4 @@
+
 import Link from 'next/link';
 import { Truck, Github, Twitter, Linkedin } from 'lucide-react';
 import { navMenu, company, offices, contactInfo } from '@/lib/data';
@@ -22,7 +23,12 @@ const socialLinks = [
 export default function Footer() {
   const productLinks = navMenu.find(item => item.title === 'Products')?.megaMenu || [];
   const servicesLinks = navMenu.find(item => item.title === 'Services')?.megaMenu || [];
-  const companyLinks = navMenu.find(item => item.title === 'Company')?.megaMenu?.[0].items || [];
+  const companyLinks = [
+      { name: "About Us", href: "/company#about" },
+      { name: "Industries", href: "/industries" },
+      { name: "Careers", href: "/company#careers" },
+      { name: "Contact Us", href: "/contact" },
+  ]
 
   return (
     <footer className="bg-secondary">
@@ -38,8 +44,8 @@ export default function Footer() {
           <div>
             <h3 className="text-sm font-semibold font-headline text-foreground">Products</h3>
             <ul className="mt-4 space-y-2">
-              {productLinks.map(section => (
-                 <li key={section.title}><Link href={section.items[0].href.split('/')[2] === 'trailers' ? '/products/trailers' : '/products/cabins'} className="text-sm text-muted-foreground hover:text-foreground">{section.title}</Link></li>
+              {productLinks.flatMap(section => section.items).map(item => (
+                 <li key={item.name}><Link href={item.href} className="text-sm text-muted-foreground hover:text-foreground">{item.name}</Link></li>
               ))}
             </ul>
           </div>
@@ -47,7 +53,7 @@ export default function Footer() {
           <div>
             <h3 className="text-sm font-semibold font-headline text-foreground">Services</h3>
             <ul className="mt-4 space-y-2">
-              {servicesLinks[0]?.items.map(item => (
+              {servicesLinks.flatMap(section => section.items).map(item => (
                 <li key={item.name}><Link href={item.href} className="text-sm text-muted-foreground hover:text-foreground">{item.name}</Link></li>
               ))}
             </ul>
@@ -59,7 +65,6 @@ export default function Footer() {
               {companyLinks.map(item => (
                 <li key={item.name}><Link href={item.href} className="text-sm text-muted-foreground hover:text-foreground">{item.name}</Link></li>
               ))}
-              <li><Link href="/contact" className="text-sm text-muted-foreground hover:text-foreground">Contact Us</Link></li>
             </ul>
           </div>
 

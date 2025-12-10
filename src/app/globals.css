@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -10,14 +11,14 @@
     --card-foreground: 210 9% 19%;
     --popover: 0 0% 100%;
     --popover-foreground: 210 9% 19%;
-    --primary: 212 52% 24%;
+    --primary: 212 52% 24%; /* Steel Blue */
     --primary-foreground: 0 0% 98%;
-    --secondary: 213 65% 95%;
+    --secondary: 220 13% 97%; /* Light grey */
     --secondary-foreground: 212 52% 24%;
-    --muted: 213 65% 95%;
+    --muted: 220 13% 97%;
     --muted-foreground: 207 12% 40%;
-    --accent: 18 100% 60%;
-    --accent-foreground: 210 9% 19%;
+    --accent: 18 100% 60%; /* Neon Orange */
+    --accent-foreground: 0 0% 98%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
     --border: 204 10% 86%;
@@ -75,3 +76,61 @@
     @apply font-body;
   }
 }
+
+@layer components {
+  .stats-section {
+    @apply bg-secondary py-16;
+  }
+  .stats-grid {
+    @apply grid grid-cols-2 md:grid-cols-4 gap-8 text-center;
+  }
+  .stat-card h3 {
+    @apply text-3xl lg:text-4xl font-bold text-primary;
+  }
+  .stat-card p {
+    @apply text-muted-foreground mt-1;
+  }
+
+  .why-us-section, .manufacturing-section {
+      @apply py-16 lg:py-24;
+  }
+  .why-grid {
+      @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6;
+  }
+  .why-card {
+      @apply bg-card p-6 rounded-lg border border-border shadow-md;
+  }
+
+  .industries-section {
+      @apply py-16 lg:py-24 bg-secondary;
+  }
+  .industry-tags {
+      @apply flex flex-wrap justify-center gap-3;
+  }
+  .industry-tags .badge {
+      @apply text-sm px-4 py-2;
+  }
+  
+  .locations-section {
+      @apply py-16 lg:py-24;
+  }
+  .location-card {
+      @apply text-center p-4 h-full flex items-center justify-center transition-shadow hover:shadow-md;
+  }
+
+  .certifications-section {
+      @apply text-center py-16 lg:py-24 bg-secondary;
+  }
+  .certifications-section .badge {
+      @apply bg-primary/10 text-primary border-primary/20;
+  }
+
+  .cta-banner {
+      @apply bg-primary text-primary-foreground;
+  }
+   .cta-banner p {
+      @apply text-primary-foreground/90;
+   }
+}
+
+    

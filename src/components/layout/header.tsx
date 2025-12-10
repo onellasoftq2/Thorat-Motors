@@ -1,3 +1,4 @@
+
 "use client";
 
 import Link from "next/link";
@@ -77,11 +78,11 @@ export default function Header() {
                   </Button>
                 </PopoverTrigger>
                 <PopoverContent
-                  className="w-screen max-w-4xl p-0"
+                  className="w-screen max-w-3xl p-0"
                   align="start"
                   sideOffset={15}
                 >
-                  <div className="grid grid-cols-1 gap-x-8 gap-y-10 p-8 md:grid-cols-2 lg:grid-cols-4">
+                  <div className="grid grid-cols-1 gap-x-8 gap-y-10 p-8 md:grid-cols-3">
                     {item.megaMenu.map((section) => (
                       <div key={section.title} className="flex flex-col">
                         <h3 className="mb-4 text-sm font-medium font-headline text-foreground">
@@ -107,7 +108,7 @@ export default function Header() {
             ) : (
               <Button key={item.title} asChild variant="ghost">
                 <Link
-                  href={item.href}
+                  href={item.href || '#'}
                   className="text-sm font-medium text-muted-foreground"
                 >
                   {item.title}
@@ -175,7 +176,7 @@ export default function Header() {
                     ) : (
                       <Link
                         key={item.title}
-                        href={item.href}
+                        href={item.href || '#'}
                         onClick={() => setMobileMenuOpen(false)}
                         className="block border-b py-3 text-base font-medium"
                       >
@@ -197,3 +198,5 @@ export default function Header() {
     </header>
   );
 }
+
+    

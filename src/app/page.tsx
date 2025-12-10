@@ -17,30 +17,63 @@ import { ArrowRight, Truck, DraftingCompass, Wrench, MapPin } from 'lucide-react
 import { offices } from '@/lib/data';
 
 const heroImage = PlaceHolderImages.find((img) => img.id === 'hero-trailer');
-const trailerProducts = products.trailers.slice(0, 3);
-const cabinProducts = products.cabins.slice(0, 3);
-const locations = offices.slice(0, 4);
+const trailerProducts = products.trailers.slice(0, 4);
+const cabinProducts = products.cabins.slice(0, 6);
+const locations = offices;
 
-const coreDivisions = [
-  {
-    icon: <Truck className="h-10 w-10 text-primary" />,
-    title: 'Thorat Motors',
-    description: 'Pioneering trailer manufacturing with robust designs and unmatched quality for all industrial needs.',
-    href: '/products'
-  },
-  {
-    icon: <DraftingCompass className="h-10 w-10 text-primary" />,
-    title: 'Designing & Homologation',
-    description: 'Expert services in vehicle design, simulation, and certification including CMVR, BIS, and PESO.',
-    href: '/services#designing'
-  },
-  {
-    icon: <Wrench className="h-10 w-10 text-primary" />,
-    title: 'Transport & Logistics',
-    description: 'Reliable and efficient logistics solutions with a modern fleet serving diverse industries across India.',
-    href: '/services#logistics'
-  },
+const stats = [
+  { value: '10,000+', label: 'Trailers Delivered' },
+  { value: '15+ Years', label: 'Engineering Expertise' },
+  { value: '7 Locations', label: 'Pan-India Presence' },
+  { value: 'ISO Certified', label: 'Quality Manufacturing' },
 ];
+
+const whyChooseUs = [
+    {
+        title: 'High-Strength Engineering',
+        description: 'We use certified BSK46 and IS2062 steel for maximum durability and performance.',
+    },
+    {
+        title: 'ISO & CMVR Compliance',
+        description: 'All products follow industry-standard certifications ensuring safety, quality, and reliability.',
+    },
+    {
+        title: 'Advanced Fabrication',
+        description: 'State-of-the-art CNC, welding, and forming machines ensure precision manufacturing.',
+    },
+    {
+        title: 'Custom Engineering',
+        description: 'We design and build trailers tailored to your load, industry, and operational needs.',
+    },
+];
+
+const manufacturingCapabilities = [
+    {
+        title: 'High-Precision CNC Cutting',
+        description: 'Accuracy and consistency for all structural components.',
+    },
+    {
+        title: 'MIG & TIG Welding',
+        description: 'Strong welds ensuring long-life and safe operation under load.',
+    },
+    {
+        title: 'Shot Blasting',
+        description: 'Ensures perfect paint adhesion and corrosion resistance.',
+    },
+    {
+        title: 'Epoxy & PU Coating',
+        description: 'Two-coat system for long-term protection in harsh environments.',
+    },
+];
+
+const certifications = [
+    'IS 2825 Class-3',
+    'IS 1210',
+    'IS 2062',
+    'CMVR Standards',
+    'ISO Manufacturing',
+];
+
 
 export default function Home() {
   return (
@@ -60,7 +93,7 @@ export default function Home() {
                 <Link href="/products">Explore Products</Link>
               </Button>
               <Button asChild size="lg" variant="outline">
-                <Link href="/contact">Contact Sales</Link>
+                <Link href="/quote">Request Quote</Link>
               </Button>
             </div>
           </div>
@@ -70,9 +103,9 @@ export default function Home() {
                 src={heroImage.imageUrl}
                 alt={heroImage.description}
                 width={600}
-                height={400}
+                height={450}
                 priority
-                className="rounded-lg object-cover shadow-2xl"
+                className="rounded-lg object-cover shadow-2xl aspect-[4/3]"
                 data-ai-hint={heroImage.imageHint}
               />
             )}
@@ -80,28 +113,35 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Core Divisions Section */}
-      <section className="bg-secondary py-16 lg:py-24">
+      {/* Quick Stats Section */}
+      <section className="stats-section">
+        <div className="container mx-auto">
+            <div className="stats-grid">
+                {stats.map((stat) => (
+                    <div key={stat.label} className="stat-card">
+                        <h3 className="text-3xl lg:text-4xl font-bold text-primary">{stat.value}</h3>
+                        <p className="text-muted-foreground mt-1">{stat.label}</p>
+                    </div>
+                ))}
+            </div>
+        </div>
+      </section>
+
+      {/* Why Choose Us Section */}
+      <section className="why-us-section">
         <div className="container mx-auto px-4">
           <div className="mb-12 text-center">
-            <h2 className="text-3xl font-extrabold font-headline tracking-tight sm:text-4xl">Our Core Divisions</h2>
-            <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
-             Three pillars of excellence that drive the Thorat Group forward.
-            </p>
+            <h2 className="text-3xl font-extrabold font-headline tracking-tight sm:text-4xl">Why Choose Thorat Motors?</h2>
             <div className="mt-2 h-1 w-20 mx-auto bg-primary"></div>
           </div>
-          <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
-            {coreDivisions.map((division) => (
-              <Card key={division.title} className="text-center shadow-md">
-                <CardHeader className="items-center">
-                  {division.icon}
-                  <CardTitle className="mt-4 text-xl">{division.title}</CardTitle>
+          <div className="why-grid">
+            {whyChooseUs.map((item) => (
+              <Card key={item.title} className="why-card">
+                <CardHeader>
+                  <CardTitle className="text-xl">{item.title}</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-muted-foreground">{division.description}</p>
-                  <Button asChild variant="link" className="px-0 mt-4 text-primary">
-                    <Link href={division.href}>Learn More <ArrowRight className="ml-2 h-4 w-4" /></Link>
-                  </Button>
+                  <p className="text-muted-foreground">{item.description}</p>
                 </CardContent>
               </Card>
             ))}
@@ -109,13 +149,52 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Cabin Products Preview */}
+      {/* Trailer Products Preview */}
       <section className="bg-secondary py-16 lg:py-24">
+        <div className="container mx-auto px-4">
+          <div className="mb-12 text-center">
+            <h2 className="text-3xl font-extrabold font-headline tracking-tight sm:text-4xl">Our Trailer Range</h2>
+            <div className="mt-2 h-1 w-20 mx-auto bg-primary"></div>
+          </div>
+          <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
+            {trailerProducts.map((trailer) => {
+              const image = PlaceHolderImages.find((img) => img.id === trailer.id);
+              return (
+                 <Link key={trailer.id} href={`/products/trailers/${trailer.id}`} className="group">
+                    <Card className="overflow-hidden shadow-md transition-shadow duration-300 hover:shadow-xl h-full">
+                    {image && (
+                        <Image
+                        src={image.imageUrl}
+                        alt={image.description}
+                        width={400}
+                        height={300}
+                        className="w-full object-cover aspect-[4/3]"
+                        data-ai-hint={image.imageHint}
+                        />
+                    )}
+                    <CardHeader>
+                        <CardTitle className="font-headline text-lg group-hover:text-primary">{trailer.name}</CardTitle>
+                    </CardHeader>
+                    </Card>
+                </Link>
+              );
+            })}
+          </div>
+           <div className="mt-12 text-center">
+            <Button asChild size="lg" variant="outline">
+              <Link href="/products/trailers">View All Trailers</Link>
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* Cabin Products Preview */}
+      <section className="py-16 lg:py-24">
         <div className="container mx-auto px-4">
           <div className="mb-12 text-center">
             <h2 className="text-3xl font-extrabold font-headline tracking-tight sm:text-4xl">Versatile Portable Cabins</h2>
             <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
-              Customizable, high-quality cabins for offices, housing, security, and more.
+              Customizable, high-quality cabins for office, housing, security, and more.
             </p>
              <div className="mt-2 h-1 w-20 mx-auto bg-primary"></div>
           </div>
@@ -123,27 +202,23 @@ export default function Home() {
             {cabinProducts.map((cabin) => {
               const image = PlaceHolderImages.find((img) => img.id === cabin.id);
               return (
-                <Card key={cabin.id} className="overflow-hidden shadow-md transition-shadow duration-300 hover:shadow-xl">
-                  {image && (
-                    <Image
-                      src={image.imageUrl}
-                      alt={image.description}
-                      width={400}
-                      height={300}
-                      className="w-full object-cover aspect-[4/3]"
-                      data-ai-hint={image.imageHint}
-                    />
-                  )}
-                  <CardHeader>
-                    <CardTitle className="font-headline">{cabin.name}</CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-muted-foreground line-clamp-3">{cabin.description}</p>
-                     <Button asChild variant="link" className="px-0 mt-4 text-primary">
-                        <Link href={`/products/cabins/${cabin.id}`}>Learn More <ArrowRight className="ml-2 h-4 w-4" /></Link>
-                     </Button>
-                  </CardContent>
-                </Card>
+                 <Link key={cabin.id} href={`/products/cabins/${cabin.id}`} className="group">
+                    <Card className="overflow-hidden shadow-md transition-shadow duration-300 hover:shadow-xl h-full">
+                        {image && (
+                            <Image
+                            src={image.imageUrl}
+                            alt={image.description}
+                            width={400}
+                            height={300}
+                            className="w-full object-cover aspect-[4/3]"
+                            data-ai-hint={image.imageHint}
+                            />
+                        )}
+                        <CardHeader>
+                            <CardTitle className="font-headline text-lg group-hover:text-primary">{cabin.name}</CardTitle>
+                        </CardHeader>
+                    </Card>
+                </Link>
               );
             })}
           </div>
@@ -154,21 +229,40 @@ export default function Home() {
           </div>
         </div>
       </section>
+      
+      {/* Manufacturing Capabilities Section */}
+       <section className="manufacturing-section">
+        <div className="container mx-auto px-4">
+          <div className="mb-12 text-center">
+            <h2 className="text-3xl font-extrabold font-headline tracking-tight sm:text-4xl">Manufacturing Excellence</h2>
+            <div className="mt-2 h-1 w-20 mx-auto bg-primary"></div>
+          </div>
+          <div className="why-grid">
+            {manufacturingCapabilities.map((item) => (
+              <Card key={item.title} className="why-card">
+                <CardHeader>
+                  <CardTitle className="text-xl">{item.title}</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-muted-foreground">{item.description}</p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* Industries Section */}
-      <section className="py-16 lg:py-24">
+      <section className="industries-section">
         <div className="container mx-auto px-4">
           <div className="mb-12 text-center">
             <h2 className="text-3xl font-extrabold font-headline tracking-tight sm:text-4xl">Serving Diverse Industries</h2>
-            <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
-              We provide specialized solutions for a wide range of industrial needs.
-            </p>
             <div className="mt-2 h-1 w-20 mx-auto bg-primary"></div>
           </div>
-          <div className="flex flex-wrap justify-center gap-4">
+          <div className="industry-tags">
             {industries.map((industry) => (
-              <Badge key={industry.name} variant="secondary" className="px-4 py-2 text-sm">
-                {industry.name}
+              <Badge key={industry.name} asChild>
+                <Link href={`/industries#${industry.id}`}>{industry.name}</Link>
               </Badge>
             ))}
           </div>
@@ -176,33 +270,47 @@ export default function Home() {
       </section>
 
       {/* Nationwide Presence Section */}
-      <section className="bg-secondary py-16 lg:py-24">
+      <section className="locations-section">
         <div className="container mx-auto px-4 text-center">
-          <MapPin className="h-12 w-12 text-primary mx-auto mb-4" />
           <h2 className="text-3xl font-extrabold font-headline tracking-tight sm:text-4xl">Nationwide Presence</h2>
-          <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
-            With a strategic network of service locations across India, we are always close to our customers, ensuring prompt service and support wherever you are.
-          </p>
-          <div className="mt-8 grid grid-cols-2 md:grid-cols-4 gap-8">
+           <div className="mt-2 h-1 w-20 mx-auto bg-primary mb-12"></div>
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-4">
             {locations.map(location => (
-              <div key={location.city} className="relative group">
-                <Image src={`https://picsum.photos/seed/${location.city}/400/300`} alt={location.city} width={400} height={300} className="rounded-lg object-cover w-full aspect-[4/3]"/>
-                <div className="absolute inset-0 bg-black/50 rounded-lg flex items-center justify-center">
-                  <span className="text-white font-bold text-xl">{location.city}</span>
-                </div>
-              </div>
+              <Link href="/contact" key={location.city}>
+                <Card className="location-card">
+                    <CardContent className="p-0">
+                        <span className="font-semibold text-foreground">{location.city}</span>
+                    </CardContent>
+                </Card>
+              </Link>
             ))}
           </div>
           <div className="mt-12">
-            <Button asChild size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90">
+            <Button asChild size="lg" variant="outline">
               <Link href="/contact">View Our Network</Link>
             </Button>
           </div>
         </div>
       </section>
 
+      {/* Certifications Section */}
+      <section className="certifications-section">
+          <div className="container mx-auto px-4">
+              <h2 className="text-3xl font-extrabold font-headline tracking-tight sm:text-4xl">Certifications & Compliance</h2>
+              <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
+                  Our products adhere to strict quality and safety standards:
+              </p>
+              <div className="industry-tags mt-8">
+                  {certifications.map(cert => (
+                      <Badge key={cert}>{cert}</Badge>
+                  ))}
+              </div>
+          </div>
+      </section>
+
+
        {/* CTA Section */}
-       <section className="bg-primary text-primary-foreground">
+       <section className="cta-banner">
         <div className="container mx-auto px-4 py-16 text-center lg:py-24">
           <h2 className="text-3xl font-extrabold font-headline tracking-tight sm:text-4xl">
             Ready to Build Your Solution?
@@ -220,3 +328,5 @@ export default function Home() {
     </div>
   );
 }
+
+    
