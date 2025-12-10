@@ -126,8 +126,7 @@ export const products = {
             specs: [
                 { name: 'Size', value: '24FT to 45 ft or as per customer demand' },
                 { name: 'Trailer Weight (Unladen)', value: '6.5-10 Ton (depending on size)' },
-                { name: 'Chassis', value: 'Formed I Beam (10/10/18) ladder type construction, made with high strength steel-BSK46. IS2062 FORMED BEAM 500 SAW welded for maximum tensional stability & structural rigidity.' },
-                { name: 'Twist Locks', value: '12 nos of twist lock shall be provided to suit 1x40ft, 2x20ft, and 1x20ft container at middle' },
+                { name: 'Chasis', value: 'Formed I Beam (10/10/18) ladder type construction, made with high strength steel-BSK46. IS2062 FORMED BEAM 500 SAW welded for maximum tensional stability & structural rigidity. 12 nos of twist lock shall be provided to suit 1x40ft, 2x20ft, and 1x20ft container at middle.' },
                 { name: 'Platform', value: 'Super structure made with ISMC 200 member & heavy duty outer cross member supports. Platform is covered by 4mm MS sheet.' },
                 { name: 'Landing Leg', value: 'Two speed landing leg (HDTPL/YORK)' },
                 { name: 'Axles', value: '12T / 14T / 16T (YORK/TATA/FUWA/JOST)' },
@@ -136,7 +135,7 @@ export const products = {
                 { name: 'Brakes', value: 'Twin line air brake system coupled to tractor. T 24 brake chamber on all axles. Manually actuated parking brake. (WEBCO)' },
                 { name: 'Electrical', value: '24 V DC electrical system as per CMVR' },
                 { name: 'Painting', value: 'Two coats of Epoxy paint shall be provided with Primer' },
-                { name: 'Other Fitment', value: 'SUPD, RUPD, reflectors on both sides and rear as per CMVR' },
+                { name: 'Other Fitment', value: 'SUPD, RUPD, reflectors on both sides and rear as per CMVR.' },
                 { name: 'Wheel Rim', value: '10.00 x 20 – 16 PR – 12 Nos. / 7.50 x 20 – 12 Nos.' },
                 { name: 'Tyre', value: 'APPOLO / JK TYRE / VIKRANT / MRF / Others' },
                 { name: 'Application', value: 'Cement Bags / Loose Material / Marble / Coil / Coal / Clinker / Aggregates / Iron Ore / Salt / Others' },
@@ -156,23 +155,21 @@ export const products = {
             specs: [
                 { name: 'Size', value: '24, 40 ft or as per Customer Demand' },
                 { name: 'Trailer Weight (Unladen)', value: '8-10 Ton (depending on size)' },
-                { name: 'Load Capacity', value: 'Depending on size' },
-                { name: 'Chassis', value: 'Company fabricated. Formed I Beam - 10 / 10 / 18 – Ladder type construction, Made with high strength steel-BSK46 with inner cross members providing maximum torsional stability. IS2062 FORMED BEAM 500 SAW welded. The structure ensures maximum load bearing capacity with low Unladen weight.' },
-                { name: 'Twist Locks', value: '12 nos of twist lock shall be provided to suit 1-40 ft container, 2-20 ft containers and 1-20 ft container at middle.' },
-                { name: 'Landing Leg', value: 'Two speed landing leg shall be provided at the front end. (HDTPL/YORK)' },
+                { name: 'Chasis', value: 'Company fabricated. Formed I Beam - 10 / 10 / 18 – Ladder type construction, Made with high strength steel-BSK46 with inner cross members providing maximum torsional stability. IS2062 FORMED BEAM 500 SAW welded. 12 nos of twist lock shall be provided to suit 1- 40 feet container, 2 – 20 feet container and 1-20 feet container at middle.' },
+                { name: 'Landing Leg', value: 'Two speed landing leg (HDTPL/YORK)' },
                 { name: 'Axles', value: '12T / 14T / 16T (YORK/TATA/FUWA/JOST)' },
-                { name: 'King Pin', value: '2” king pin equivalent to IS: 6763 Part I provided (bolted / Welded). (YORK/JOST)' },
+                { name: 'King Pin', value: '2” king pin equivalent to IS: 6763 Part I (bolted / Welded). (YORK/JOST)' },
                 { name: 'Suspension', value: 'Heavy Duty Tridem / Tandem / Tandem + Lifting combo axle. (YORK/TATA)' },
-                { name: 'Brakes', value: 'Twin line air brake system with coupled to tractor brake system. T 24 brake chamber shall be provided on all axles. Parking brake shall be manually actuated. (WEBCO)' },
+                { name: 'Brakes', value: 'Twin line air brake system with coupled to tractor. T 24 brake chamber on all axles. Manually actuated parking brake. (WEBCO)' },
                 { name: 'Electrical', value: '24 V DC electrical system as per CMVR' },
-                { name: 'Wet Kit', value: 'Shall include Pump, Tank, Return line filter, Tipping valve and Hydraulic hoses. Operating pressure 170 BAR. Multi Stage Cylinder: Model: FE169-4-4820 stroke length' },
+                { name: 'Wet Kit', value: 'Includes Pump, Tank, Return line filter, Tipping valve and Hydraulic hoses. Operating pressure 170 BAR. Multi Stage Cylinder: Model: FE169-4-4820 stroke length' },
                 { name: 'Surface Preparation', value: 'Trailer surface shall be Shot blasted and cleaned.' },
                 { name: 'Painting', value: 'Two coats of Epoxy paint shall be provided with Primer' },
-                { name: 'Other Fitment', value: 'Fitments such SUPD, RUPD, reflectors on both sides and rear shall be provided as per CMVR.' },
+                { name: 'Other Fitment', value: 'SUPD, RUPD, reflectors on both sides and rear as per CMVR.' },
                 { name: 'Wheel Rim', value: '10.00 x 20 – 16 PR – 12 Nos. / 7.50 x 20 – 12 Nos.' },
                 { name: 'Tyre', value: 'APPOLO / JK TYRE / VIKRANT / MRF / Others' },
                 { name: 'Application', value: '20 to 40ft ship Container transportation' },
-                { name: 'On Demand Extras', value: 'Trailer ABS/EBS system – Wabco / Haldex / Knorr Bremse Make., Radial Tyres, Tubeless Tyres & Discs' }
+                { name: 'On Demand Extras', value: 'Trailer ABS/EBS system (Wabco / Haldex / Knorr Bremse), Radial Tyres, Tubeless Tyres & Discs' }
             ],
             features: [
                 'Optimized for port and terminal operations with a lightweight, high-strength steel frame.',
@@ -188,9 +185,8 @@ export const products = {
             specs: [
                 { name: 'Size', value: '30, 32, 34, 36, 40 ft or as per customer demand' },
                 { name: 'Trailer Weight (Unladen)', value: '8-10 Ton (depending on size)' },
-                { name: 'Chassis', value: 'Formed I Beam (10/10/18) ladder type construction, made with high strength steel-BSK46. 2 Nos Main longitudinal members are high strength lighter weight Parallel flange Beam. Cross members are Rolled or Folded of material IS-2062/ST-52.' },
+                { name: 'Chasis', value: 'Formed I Beam (10/10/18) ladder type construction, made with high strength steel-BSK46. 2 Nos Main longitudinal members are high strength lighter weight Parallel flange Beam. Cross members are Rolled or Folded of material IS-2062/ST-52. 12 nos of twist lock shall be provided to suit 1-40 ft container, 2-20 ft containers and 1-20 ft container at middle.' },
                 { name: 'Platform', value: 'Super structure made with ISMB 250 / ISMC 125 member & heavy duty outer cross member supports. Platform is covered by 4mm MS sheet.' },
-                { name: 'Twist Locks', value: '12 nos of twist lock shall be provided to suit 1-40 ft container, 2-20 ft containers and 1-20 ft container at middle.' },
                 { name: 'Landing Leg', value: 'Two speed landing leg (HDTPL/YORK)' },
                 { name: 'Axles', value: '12T / 14T / 16T (YORK/TATA/FUWA/JOST)' },
                 { name: 'King Pin', value: '2” king pin equivalent to IS: 6763 Part I (bolted / Welded). (YORK/JOST)' },
@@ -397,3 +393,5 @@ export const offices = [
     { city: 'Chennai', state: 'Tamil Nadu', address: 'Plot No 5/3, Thiruvallur Road, Nemam Post, Poonamallee Taluka, Chennai - 600124'},
     { city: 'Patna', state: 'Bihar', address: 'Khata No-456, Khesra No-198, 199, Manupur, Saran, Chapra - 841207'},
 ];
+
+    
