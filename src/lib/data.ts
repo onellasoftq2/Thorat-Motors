@@ -53,7 +53,7 @@ export const navMenu: NavMenu[] = [
       {
         title: "Containers & Conversions",
         items: [
-          { name: "Used Shipping Containers", href: "/products/cabins/container-conversion" },
+          { name: "Used Shipping Containers (20ft / 40ft)", href: "/products/cabins/container-conversion" },
           { name: "Office Conversions", href: "/products/cabins/container-conversion" },
           { name: "Retail/Shop Conversions", href: "/products/cabins/shop-hotel" },
           { name: "Storage Containers", href: "/products/cabins/container-conversion" },
@@ -88,7 +88,7 @@ export const products = {
             description: 'Engineered for the safe and efficient transport of bulk cement, fly ash, and other powdered materials. Our cement bulker trailers are built for reliability and durability.',
             specs: [
                 { name: 'Size', value: '30 to 56 CUM or as per customer demand' },
-                { name: 'Chassis', value: 'Ladder type construction with cross members, ensuring maximum load bearing capacity and torsional stability. (6mm Flange / 6mm Web / 10mm Flange)' },
+                { name: 'Chassis', value: 'Ladder type construction with cross members (6mm Flange / 6mm Web / 10mm Flange). Ensures maximum load bearing capacity, low unladen weight, and torsional stability.' },
                 { name: 'Tank Thickness', value: 'Shell – 4MM ST 52 / Dish End – 5MM ST 52' },
                 { name: 'Tank Certification', value: 'Indian Standard IS 2825 1959 Class-3 as applicable to AS 1210 Class 3 for unfired pressure vessels.' },
                 { name: 'Tank Discharge', value: 'Rear via Bottom' },
@@ -126,7 +126,6 @@ export const products = {
             specs: [
                 { name: 'Size', value: '24FT to 45 ft or as per customer demand' },
                 { name: 'Trailer Weight (Unladen)', value: '6.5-10 Ton (depending on size)' },
-                { name: 'Load Capacity', value: 'Depending on size' },
                 { name: 'Chassis', value: 'Formed I Beam (10/10/18) ladder type construction, made with high strength steel-BSK46. IS2062 FORMED BEAM 500 SAW welded for maximum tensional stability & structural rigidity.' },
                 { name: 'Twist Locks', value: '12 nos of twist lock shall be provided to suit 1x40ft, 2x20ft, and 1x20ft container at middle' },
                 { name: 'Platform', value: 'Super structure made with ISMC 200 member & heavy duty outer cross member supports. Platform is covered by 4mm MS sheet.' },
@@ -158,7 +157,7 @@ export const products = {
                 { name: 'Size', value: '24, 40 ft or as per Customer Demand' },
                 { name: 'Trailer Weight (Unladen)', value: '8-10 Ton (depending on size)' },
                 { name: 'Load Capacity', value: 'Depending on size' },
-                { name: 'Chassis', value: 'Formed I Beam - 10 / 10 / 18 – Ladder type construction, made with high strength steel-BSK46 with inner cross members providing maximum torsional stability. IS2062 FORMED BEAM 500 SAW welded.' },
+                { name: 'Chassis', value: 'Company fabricated. Formed I Beam - 10 / 10 / 18 – Ladder type construction, Made with high strength steel-BSK46 with inner cross members providing maximum torsional stability. IS2062 FORMED BEAM 500 SAW welded. The structure ensures maximum load bearing capacity with low Unladen weight.' },
                 { name: 'Twist Locks', value: '12 nos of twist lock shall be provided to suit 1-40 ft container, 2-20 ft containers and 1-20 ft container at middle.' },
                 { name: 'Landing Leg', value: 'Two speed landing leg shall be provided at the front end. (HDTPL/YORK)' },
                 { name: 'Axles', value: '12T / 14T / 16T (YORK/TATA/FUWA/JOST)' },
@@ -184,13 +183,12 @@ export const products = {
         },
         {
             id: 'side-wall',
-            name: 'Side-Wall Trailer (Domex, Shelma, Corrugated)',
+            name: 'Side-Wall Trailer',
             description: 'Also known as a drop-side trailer, this model offers flexibility for carrying general cargo, with removable or fixed side walls for easy loading and unloading.',
             specs: [
                 { name: 'Size', value: '30, 32, 34, 36, 40 ft or as per customer demand' },
                 { name: 'Trailer Weight (Unladen)', value: '8-10 Ton (depending on size)' },
-                { name: 'Load Capacity', value: 'Depending on size' },
-                { name: 'Chassis', value: 'Formed I Beam (10/10/18) ladder type construction, made with high strength steel-BSK46. IS2062 FORMED BEAM 500 SAW welded. 2 Nos Main longitudinal members are high strength lighter weight Parallel flange Beam. Cross members are Rolled or Folded of material IS-2062/ST-52.' },
+                { name: 'Chassis', value: 'Formed I Beam (10/10/18) ladder type construction, made with high strength steel-BSK46. 2 Nos Main longitudinal members are high strength lighter weight Parallel flange Beam. Cross members are Rolled or Folded of material IS-2062/ST-52.' },
                 { name: 'Platform', value: 'Super structure made with ISMB 250 / ISMC 125 member & heavy duty outer cross member supports. Platform is covered by 4mm MS sheet.' },
                 { name: 'Twist Locks', value: '12 nos of twist lock shall be provided to suit 1-40 ft container, 2-20 ft containers and 1-20 ft container at middle.' },
                 { name: 'Landing Leg', value: 'Two speed landing leg (HDTPL/YORK)' },
@@ -199,8 +197,6 @@ export const products = {
                 { name: 'Suspension', value: 'Heavy Duty Tridem / Tandem / Tandem + Lifting combo axle. (YORK/TATA)' },
                 { name: 'Brakes', value: 'Twin line air brake system coupled to tractor. T 24 brake chamber on all axles. Manually actuated parking brake. (WEBCO)' },
                 { name: 'Electrical', value: '24 V DC electrical system as per CMVR' },
-                { name: 'Wet Kit', value: 'Includes Pump, Tank, Return line filter, Tipping valve and Hydraulic hoses. Operating pressure 170 BAR. Multi Stage Cylinder : Model : FE169-4-4820 stroke length' },
-                { name: 'Surface Preparation', value: 'Trailer surface shall be Shot blasted and cleaned.' },
                 { name: 'Painting', value: 'Two coats of Epoxy paint shall be provided with Primer' },
                 { name: 'Other Fitment', value: 'SUPD, RUPD, reflectors on both sides and rear as per CMVR.' },
                 { name: 'Wheel Rim', value: '10.00 x 20 – 16 PR – 12 Nos. / 7.50 x 20 – 12 Nos.' },
@@ -234,56 +230,105 @@ export const products = {
         {
             id: 'office',
             name: 'Portable Office Cabin',
-            description: 'Create a comfortable and professional workspace anywhere. Our portable office cabins are fully insulated, customizable, and ready for immediate use.',
-            features: ['Insulated walls and roof', 'Electrical wiring with outlets and lighting', 'Optional air conditioning', 'Choice of flooring and interior finishes', 'Modular and expandable design'],
+            description: 'Creating a portable office that offers independence in terms of affordability, quality, reusability, and personalization. A cost-effective and flexible solution compared to permanent structures.',
+            features: [
+                'Readily available and can be installed quickly.',
+                'Can be easily shifted to another location when needed, providing flexibility.',
+                'Cost-effective in terms of initial setup and relocation.',
+                'Base Frame: 50mm x 50mm Bottom & 50mm x 50mm channel.',
+                'Walls: ACP, 8mm BBR Cement, or 8mm MR sheets.',
+                'Flooring: Cement sheet / Bison panel board with vinyl floor.',
+                'Electricals: Concealed wiring (Polycab/Havells) with light fittings, fan points, and exhaust fan.'
+            ],
         },
         {
             id: 'house',
-            name: 'House Cabins',
-            description: 'Affordable, durable, and comfortable housing solutions. Our portable house cabins can be designed with multiple rooms, kitchens, and bathrooms.',
-            features: ['Custom layouts (1BHK, 2BHK, etc.)', 'Plumbing and sanitary fittings', 'Kitchenette with counter and sink', 'Weather-proof and structurally sound', 'Quick installation'],
+            name: 'Portable House Cabin',
+            description: 'Designed to maximize functionality within limited space, ensuring every square foot is utilized efficiently for comfortable living.',
+            features: [
+                'Designed for various climatic conditions with insulation and ventilation options.',
+                'Corrugated sheet roofing with proper drainage to prevent water logging.',
+                'Equipped with hooks for easy transportation and relocation.',
+                'Safe and reliable concealed electrical installations.'
+            ],
         },
         {
             id: 'security',
-            name: 'Security Cabins',
-            description: 'Provide a safe and secure checkpoint for your security personnel. Designed for visibility and durability.',
-            features: ['360-degree view with large windows', 'Sturdy construction with locking doors', 'Writing desk and electrical points', 'Compact and easy to relocate'],
+            name: 'Portable Security Cabin',
+            description: 'Our offered range of portable security cabin is made up of rigid mild steel construction and manufactured as per good engineering practice.',
+            features: [
+                'Standard size is 4 x 4 x 8.8 feet.',
+                'Comes with 2 side windows with protection grill.',
+                'Flooring is made of bison panel board with vinyl on it.',
+                'Includes electrical work.'
+            ],
         },
         {
             id: 'bunk-house',
-            name: 'Bunk/Accommodation Cabins',
-            description: 'Ideal for construction sites, industrial projects, and remote locations. Our bunkhouses provide comfortable and secure accommodation for your workforce.',
-            features: ['Multi-person layouts with bunk beds', 'Lockers and storage space', 'Proper ventilation and insulation', 'Can be combined with toilet and mess cabins'],
+            name: 'Portable Accommodation Cabin',
+            description: 'Working on a remote place along with a big team is a challenge. Our Portable Accommodation Cabins are the solution for on-site housing needs.',
+            features: [
+                'Comes with bunk beds, wardrobe, toilet & bathroom, pantry etc.',
+                'Customizable as per client requirements.',
+                'Ideal for remote project sites.',
+                'Provides a comfortable and secure living space for the workforce.'
+            ],
         },
         {
             id: 'toilet',
-            name: 'Toilet Cabins',
-            description: 'Hygienic and durable portable toilet and shower blocks for events, sites, and public areas. Available in various configurations.',
-            features: ['Indian and Western style WCs', 'Washbasins, mirrors, and exhaust fans', 'Separate blocks for male and female', 'Easy to clean and maintain', 'Water storage and septic tank options'],
+            name: 'Portable Toilet Cabin',
+            description: 'In today\'s world of hygiene culture, our Portable Toilet unit is an important necessity. An ideal solution for leisure, hospitality, events, or emergency use.',
+            features: [
+                'Lightweight and robustly designed.',
+                'Easy to maintain and clean.',
+                'Suitable for permanent, temporary, or emergency situations.',
+                'Promotes hygiene and sanitation.'
+            ],
         },
          {
             id: 'acp',
-            name: 'ACP Cabins',
-            description: 'Modern and stylish cabins with an Aluminium Composite Panel (ACP) exterior. Ideal for premium site offices, sales galleries, and commercial spaces.',
-            features: ['Sleek and modern aesthetic', 'Wide range of colors and finishes', 'Excellent weather and corrosion resistance', 'Enhanced durability and low maintenance'],
+            name: 'ACP Covered Portable Cabin',
+            description: 'Modern and stylish cabins with an Aluminium Composite Panel (ACP) exterior, offering superior aesthetics and durability.',
+            features: [
+                'Lightweight, durable, and resistant to weathering and corrosion.',
+                'Available in a wide range of colors, finishes, and textures.',
+                'Fire-retardant core for enhanced safety.',
+                'Improves thermal insulation and energy efficiency.',
+                'Eco-friendly and recyclable material.'
+            ],
         },
         {
             id: 'shop-hotel',
-            name: 'Shop & Hotel Cabins',
-            description: 'Quickly set up your retail or hospitality business with our custom-built portable cabins. Perfect for pop-up shops, cafes, and small restaurants.',
-            features: ['Customizable storefronts with large windows', 'Kitchen and service area layouts', 'Plumbing and electrical for commercial equipment', 'Branding and signage options'],
+            name: 'Portable Shop & Hotel Cabin',
+            description: 'We are the leading manufacturer and supplier of portable shops. Manufactured with the latest expertise and finest quality raw materials.',
+            features: [
+                'Quality controlled fabrication process to meet international standards.',
+                'Cost-effective solution to keep clients delighted.',
+                'Customizable for retail or small hospitality businesses.',
+                'Quick setup for pop-up shops, cafes, or small restaurants.'
+            ],
         },
         {
             id: 'container-conversion',
-            name: 'Container Conversions',
-            description: 'We transform standard shipping containers into unique and functional spaces, including offices, homes, cafes, and workshops.',
-            features: ['Extremely durable and secure', 'Unique industrial aesthetic', 'Fully customizable interiors', 'Eco-friendly building solution'],
+            name: 'Used Shipping Cargo Container',
+            description: 'Cargo Containers are highly durable and are basically used for Storage Purpose. We also offer custom modifications for 20ft and 40ft containers.',
+            features: [
+                'Highly durable with an estimated life span of 10 to 15 years.',
+                'Ideal for secure storage solutions.',
+                'Available in 20ft and 40ft sizes.',
+                'Can be modified for various purposes like offices, homes, or shops.'
+            ],
         },
         {
             id: 'double-storey',
-            name: 'Double-Storey (G+1) Cabins',
+            name: 'Double Storey (G+1) Cabin',
             description: 'Maximize your space with our two-story portable cabins. Ideal for large site offices, accommodation blocks, or combined-use buildings.',
-            features: ['Space-efficient vertical design', 'Internal or external staircase', 'Structurally engineered for safety', 'Can be configured for various uses on each floor'],
+            features: [
+                'Space-efficient vertical design to make the most of limited area.',
+                'Includes internal or external staircase options.',
+                'Structurally engineered and reinforced for safety and stability.',
+                'Can be configured for various uses on each floor.'
+            ],
         },
     ]
 };
@@ -327,20 +372,20 @@ export const industries = [
 ];
 
 export const company = {
-    about: "Thorat Motors India has grown from a visionary enterprise into a leading manufacturer of high-performance trailers and innovative portable cabins. Our commitment to quality, engineering excellence, and customer satisfaction has established us as a trusted partner for major industries across the nation.",
+    about: "Thorat Cabins are India's leading portable cabin manufacturer. Our cabins are designed to provide the best quality, durability & customer satisfaction. We use the latest technology and top grade material to ensure that our cabins are of the highest possible quality. Our cabins are made with the utmost care & attention to detail ensuring that they are built to last.",
     mission: "To deliver superior, reliable, and innovative transportation and modular space solutions that drive efficiency and value for our customers.",
     vision: "To be India’s most trusted and technologically advanced manufacturer in the commercial vehicle and portable infrastructure sectors, pioneering solutions for a modernizing world.",
-    mdMessage: "Since our inception, our guiding principle has been simple: build the best. We don't just manufacture products; we engineer solutions that solve our clients' toughest challenges. Our success is built on the foundation of our skilled team, our passion for innovation, and our unwavering commitment to quality. We are proud of our journey and excited for the future as we continue to support India's industrial growth.",
+    mdMessage: "We at THORAT MOTORS thank you for your continued patronage to our products. Our growth has come from understanding the needs of our customers and accordingly developing ourselves to meet those needs and expectations. We have constantly challenged our capabilities and reached higher landmarks by improving our products and processes to meet rigorous specification of our Indian trailer OEM & After-market customers. We continue to invest in the art manufacturing facility ensuring a defect free product each time, every time, so that our customers are delighted by our excellence for a long and extended vehicle due to quality products. Our team is committed to ensure that your experience with THORAT MOTOR not only meets but exceeds expectations.",
     leadership: [
-        { name: 'Mr. A. Thorat', title: 'Managing Director' },
+        { name: 'Krishnat Thorat', title: 'Managing Director' },
         { name: 'Mr. B. Kulkarni', title: 'Head of Engineering' },
         { name: 'Mrs. S. Patil', title: 'Chief Financial Officer' },
     ],
 };
 
 export const contactInfo = {
-    phone: '9011943810',
-    emails: ['sales@thoratmotor.com', 'tkrishna@thoratmotor.com', 'thoratmotors@gmail.com'],
+    phone: '9011943810 / 8698777283',
+    emails: ['sales@thoratmotor.com', 'thoratmotors@gmail.com'],
 };
 
 export const offices = [
@@ -352,10 +397,3 @@ export const offices = [
     { city: 'Chennai', state: 'Tamil Nadu', address: 'Plot No 5/3, Thiruvallur Road, Nemam Post, Poonamallee Taluka, Chennai - 600124'},
     { city: 'Patna', state: 'Bihar', address: 'Khata No-456, Khesra No-198, 199, Manupur, Saran, Chapra - 841207'},
 ];
-
-    
-
-
-    
-
-
