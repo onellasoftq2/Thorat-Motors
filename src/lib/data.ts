@@ -1,4 +1,5 @@
 
+
 export type NavMenuItem = {
   name: string;
   href: string;
@@ -160,7 +161,7 @@ export const products = {
                 { name: 'Axles', value: '12T / 14T / 16T (YORK/TATA/FUWA/JOST)' },
                 { name: 'King Pin', value: '2” king pin equivalent to IS: 6763 Part I (bolted / Welded). (YORK/JOST)' },
                 { name: 'Suspension', value: 'Heavy Duty Tridem / Tandem / Tandem + Lifting combo axle. (YORK/TATA)' },
-                { name: 'Brakes', value: 'Twin line air brake system with coupled to tractor. T 24 brake chamber on all axles. Manually actuated parking brake. (WEBCO)' },
+                { name: 'Brakes', value: 'Twin line air brake system with coupled to tractor brake system. T 24 brake chamber on all axles. Manually actuated parking brake. (WEBCO)' },
                 { name: 'Electrical', value: '24 V DC electrical system as per CMVR' },
                 { name: 'Wet Kit', value: 'Includes Pump, Tank, Return line filter, Tipping valve and Hydraulic hoses. Operating pressure 170 BAR. Multi Stage Cylinder: Model: FE169-4-4820 stroke length' },
                 { name: 'Surface Preparation', value: 'Trailer surface shall be Shot blasted and cleaned.' },
@@ -368,10 +369,10 @@ export const industries = [
 ];
 
 export const company = {
-    about: "Thorat Cabins are India's leading portable cabin manufacturer. Our cabins are designed to provide the best quality, durability & customer satisfaction. We use the latest technology and top grade material to ensure that our cabins are of the highest possible quality. Our cabins are made with the utmost care & attention to detail ensuring that they are built to last.",
+    about: "Thorat Cabins are India's leading portable cabin manufacturer. Our cabins are designed to provide the best quality, durability & customer satisfaction. We use the latest technology and top grade material to ensure that our cabins are of the highest possible quality. Our cabins are made with the utmost care & attention to detail ensuring that they are built to last. We understand that you need a structure that's reliable and sturdy and we guarantee that you will get just that when you choose us. We ensure on-time delivery and strive to maintain customer satisfaction at all times. These cabins are cost free, high in quality, safe and cost efficient. Our cabins are designed precisely using approved raw material in accordance to the international standards, These cabins are coall and relatively low cost. Designs we offer are portable in order to meet the varied demands of our esteemed customers. Our cabins are reliable, easy to install, require less maintenance, compact designs, durable finishing standards, aesthetic look and easily installable, therefore, these site offices are highly demanded across the country.",
     mission: "To deliver superior, reliable, and innovative transportation and modular space solutions that drive efficiency and value for our customers.",
     vision: "To be India’s most trusted and technologically advanced manufacturer in the commercial vehicle and portable infrastructure sectors, pioneering solutions for a modernizing world.",
-    mdMessage: "We at THORAT MOTORS thank you for your continued patronage to our products. Our growth has come from understanding the needs of our customers and accordingly developing ourselves to meet those needs and expectations. We have constantly challenged our capabilities and reached higher landmarks by improving our products and processes to meet rigorous specification of our Indian trailer OEM & After-market customers. We continue to invest in the art manufacturing facility ensuring a defect free product each time, every time, so that our customers are delighted by our excellence for a long and extended vehicle due to quality products. Our team is committed to ensure that your experience with THORAT MOTOR not only meets but exceeds expectations.",
+    mdMessage: "We at THORAT MOTORS thank you for your continued patronage to our products. Our growth has come from understanding the needs of our customers and accordingly developing ourselves to meet those needs and expectations. We have constantly challenged our capabilities and reached higher landmarks by improving our products and processes to meet rigorous specification of our Indian trailer OEM & After-market customers. We have been recognized by ISO Quality & Manufacturing experts as one of the best companies implementing international best practices like Workplace Production Systems (Lean Manufacturing/Kaizen Gemba) and we intend to bring that strength to the Indian After-market in terms of product stability & Reliability, We continue to invest in the art manufacturing facility ensuring a defect free product each time, every time, so that our customers are delighted by our excellence for a long and extended vehicle due to quality products. We encourage our Channel Partners to reach out to the end customers and collect feedback so that we gather their expectations from our Company, your call is very important, THORAT MOTORS will do whatever it possible to fulfil your needs, after all your happiness is customer satisfaction. Our team is committed to ensure that your experience with THORAT MOTOR not only meets but exceeds expectations.",
     leadership: [
         { name: 'Krishnat Thorat', title: 'Managing Director' },
         { name: 'Mr. B. Kulkarni', title: 'Head of Engineering' },
@@ -385,7 +386,7 @@ export const contactInfo = {
 };
 
 export const offices = [
-    { city: 'Pune', state: 'Maharashtra', address: 'GAT NO 336/1 Chakan Shikrapur Road, Kadachiwadi- Chakan, Pune – 410501'},
+    { city: 'Pune', state: 'Maharashtra', address: 'GAT NO 336/1, Chakan-Shikrapur Road, Chakan, Pune, IN'},
     { city: 'Surat', state: 'Gujarat', address: 'Green Aristo Plaza, 1st Floor, Shop No- 127, Vaishnovdevi Road, Surat-395009'},
     { city: 'Visakhapatnam', state: 'Andhra Pradesh', address: '98/A, D-Block, Near RTO Office, Autonagar, Oldgajuwaka, Visakhapatnam - 530026'},
     { city: 'Bhubaneswar', state: 'Odisha', address: 'Plot No. N-6/536, IRC Village, Nayapalli, Jayadev Vihar, Bhubaneswar, Khurda - 751015'},

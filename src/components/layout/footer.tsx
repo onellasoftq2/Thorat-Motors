@@ -92,7 +92,7 @@ export default function Footer() {
           <div>
             <h3 className="text-sm font-semibold font-headline text-foreground">Contact</h3>
             <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
-              <li>{offices[0].address.split(',').slice(0,2).join(', ')}</li>
+              <li>{offices[0].address.split(',').slice(0, 3).join(', ')}</li>
               <li>{contactInfo.phone}</li>
               <li>{contactInfo.emails[0]}</li>
             </ul>
