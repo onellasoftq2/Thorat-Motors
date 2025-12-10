@@ -1,4 +1,5 @@
 
+import React from 'react';
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -23,7 +24,7 @@ const qualityStandards = [
     { icon: <ShieldCheck />, title: 'ISO Manufacturing', description: 'Adherence to international quality management standards in all processes.'},
     { icon: <Layers />, title: 'Structural Rigidity Testing', description: 'Rigorous testing to ensure every structure can withstand specified loads and stresses.'},
     { icon: <Settings />, title: 'Corrosion Resistance', description: 'Multi-layer coating systems to protect against rust and environmental wear.'},
-    { icon: <Workflow />, title: 'Long Lifespan Durability', description 'Engineered and built for a long service life with minimal maintenance.'},
+    { icon: <Workflow />, title: 'Long Lifespan Durability', description: 'Engineered and built for a long service life with minimal maintenance.'},
 ]
 
 export default function StructuralFabricationPage() {

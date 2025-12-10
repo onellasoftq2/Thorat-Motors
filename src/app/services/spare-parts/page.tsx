@@ -1,4 +1,5 @@
 
+import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card';
 import { CheckCircle, Cog, Disc, Truck, Wrench } from 'lucide-react';
