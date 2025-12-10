@@ -16,6 +16,8 @@ import { ArrowRight, Truck, Home as HomeIcon } from 'lucide-react';
 import { offices } from '@/lib/data';
 
 const heroImage = PlaceHolderImages.find((img) => img.id === 'hero-trailer');
+const trailerImage = PlaceHolderImages.find((img) => img.id === 'hero-trailer');
+const cabinImage = PlaceHolderImages.find((img) => img.id === 'office');
 const locations = offices;
 
 const stats = [
@@ -176,30 +178,54 @@ export default function Home() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {/* Trailers Card */}
-            <div className="product-card-v2">
-                <Truck className="w-12 h-12 text-primary mb-4" />
-                <h3 className="font-headline text-2xl font-bold mb-4">Trailers</h3>
-                <div className="mb-4">
-                    {trailersTags.map(tag => (
-                      <Link key={tag.name} href={tag.href} className="product-tag hover:bg-primary/20 transition-colors">{tag.name}</Link>
-                    ))}
+            <div className="product-card-v2 p-0 overflow-hidden">
+                {trailerImage && (
+                  <Image
+                    src={trailerImage.imageUrl}
+                    alt={trailerImage.description}
+                    width={600}
+                    height={400}
+                    className="aspect-video object-cover"
+                    data-ai-hint={trailerImage.imageHint}
+                  />
+                )}
+                <div className="p-6">
+                  <Truck className="w-12 h-12 text-primary mb-4" />
+                  <h3 className="font-headline text-2xl font-bold mb-4">Trailers</h3>
+                  <div className="mb-4">
+                      {trailersTags.map(tag => (
+                        <Link key={tag.name} href={tag.href} className="product-tag hover:bg-primary/20 transition-colors">{tag.name}</Link>
+                      ))}
+                  </div>
+                  <Link href="/products/trailers" className="text-accent font-semibold flex items-center hover:underline">
+                    View All Trailers <ArrowRight className="ml-2 h-4 w-4" />
+                  </Link>
                 </div>
-                <Link href="/products/trailers" className="text-accent font-semibold flex items-center hover:underline">
-                  View All Trailers <ArrowRight className="ml-2 h-4 w-4" />
-                </Link>
             </div>
             {/* Cabins Card */}
-            <div className="product-card-v2">
-                <HomeIcon className="w-12 h-12 text-primary mb-4" />
-                <h3 className="font-headline text-2xl font-bold mb-4">Portable Cabins</h3>
-                <div className="mb-4">
-                    {cabinsTags.map(tag => (
-                      <Link key={tag.name} href={tag.href} className="product-tag hover:bg-primary/20 transition-colors">{tag.name}</Link>
-                    ))}
+            <div className="product-card-v2 p-0 overflow-hidden">
+                {cabinImage && (
+                  <Image
+                    src={cabinImage.imageUrl}
+                    alt={cabinImage.description}
+                    width={600}
+                    height={400}
+                    className="aspect-video object-cover"
+                    data-ai-hint={cabinImage.imageHint}
+                  />
+                )}
+                <div className="p-6">
+                  <HomeIcon className="w-12 h-12 text-primary mb-4" />
+                  <h3 className="font-headline text-2xl font-bold mb-4">Portable Cabins</h3>
+                  <div className="mb-4">
+                      {cabinsTags.map(tag => (
+                        <Link key={tag.name} href={tag.href} className="product-tag hover:bg-primary/20 transition-colors">{tag.name}</Link>
+                      ))}
+                  </div>
+                  <Link href="/products/cabins" className="text-accent font-semibold flex items-center hover:underline">
+                      View All Cabins <ArrowRight className="ml-2 h-4 w-4" />
+                  </Link>
                 </div>
-                <Link href="/products/cabins" className="text-accent font-semibold flex items-center hover:underline">
-                    View All Cabins <ArrowRight className="ml-2 h-4 w-4" />
-                </Link>
             </div>
           </div>
         </div>
@@ -303,3 +329,5 @@ export default function Home() {
     </div>
   );
 }
+
+    
