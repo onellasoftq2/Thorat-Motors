@@ -149,87 +149,44 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Trailer Products Preview */}
+      {/* Our Products Section */}
       <section className="bg-secondary py-16 lg:py-24">
         <div className="container mx-auto px-4">
           <div className="mb-12 text-center">
-            <h2 className="text-3xl font-extrabold font-headline tracking-tight sm:text-4xl">Our Trailer Range</h2>
+            <h2 className="text-3xl font-extrabold font-headline tracking-tight sm:text-4xl">Our Products</h2>
             <div className="mt-2 h-1 w-20 mx-auto bg-primary"></div>
           </div>
-          <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
-            {trailerProducts.map((trailer) => {
-              const image = PlaceHolderImages.find((img) => img.id === trailer.id);
-              return (
-                 <Link key={trailer.id} href={`/products/trailers/${trailer.id}`} className="group">
-                    <Card className="overflow-hidden shadow-md transition-shadow duration-300 hover:shadow-xl h-full">
-                    {image && (
-                        <Image
-                        src={image.imageUrl}
-                        alt={image.description}
-                        width={400}
-                        height={300}
-                        className="w-full object-cover aspect-[4/3]"
-                        data-ai-hint={image.imageHint}
-                        />
-                    )}
-                    <CardHeader>
-                        <CardTitle className="font-headline text-lg group-hover:text-primary">{trailer.name}</CardTitle>
-                    </CardHeader>
-                    </Card>
-                </Link>
-              );
-            })}
-          </div>
-           <div className="mt-12 text-center">
-            <Button asChild size="lg" variant="outline">
-              <Link href="/products/trailers">View All Trailers</Link>
-            </Button>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <Card className="shadow-md">
+              <CardHeader>
+                <CardTitle className="font-headline text-2xl">Trailers</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-muted-foreground leading-relaxed">
+                  Cement Bulker · Flatbed · Skeletal (20ft/40ft) · Side-Wall (Domex/Shelma) · Custom-Built Heavy-Duty Trailers
+                </p>
+                <Button asChild variant="link" className="px-0 mt-4 text-primary">
+                  <Link href="/products/trailers">View All Trailers <ArrowRight className="ml-2 h-4 w-4" /></Link>
+                </Button>
+              </CardContent>
+            </Card>
+            <Card className="shadow-md">
+              <CardHeader>
+                <CardTitle className="font-headline text-2xl">Portable Cabins</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-muted-foreground leading-relaxed">
+                  Office Cabins · House Cabins · ACP Cabins · Security Cabins · Toilet Cabins · Bunk Cabins · Shop/Hotel Cabins · Container Conversions · G+1 Cabins · Used Shipping Containers (20ft / 40ft) – Storage, office conversions, kiosks, industrial usage.
+                </p>
+                 <Button asChild variant="link" className="px-0 mt-4 text-primary">
+                  <Link href="/products/cabins">View All Cabins <ArrowRight className="ml-2 h-4 w-4" /></Link>
+                </Button>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>
 
-      {/* Cabin Products Preview */}
-      <section className="py-16 lg:py-24">
-        <div className="container mx-auto px-4">
-          <div className="mb-12 text-center">
-            <h2 className="text-3xl font-extrabold font-headline tracking-tight sm:text-4xl">Versatile Portable Cabins</h2>
-            <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
-              Customizable, high-quality cabins for office, housing, security, and more.
-            </p>
-             <div className="mt-2 h-1 w-20 mx-auto bg-primary"></div>
-          </div>
-          <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
-            {cabinProducts.map((cabin) => {
-              const image = PlaceHolderImages.find((img) => img.id === cabin.id);
-              return (
-                 <Link key={cabin.id} href={`/products/cabins/${cabin.id}`} className="group">
-                    <Card className="overflow-hidden shadow-md transition-shadow duration-300 hover:shadow-xl h-full">
-                        {image && (
-                            <Image
-                            src={image.imageUrl}
-                            alt={image.description}
-                            width={400}
-                            height={300}
-                            className="w-full object-cover aspect-[4/3]"
-                            data-ai-hint={image.imageHint}
-                            />
-                        )}
-                        <CardHeader>
-                            <CardTitle className="font-headline text-lg group-hover:text-primary">{cabin.name}</CardTitle>
-                        </CardHeader>
-                    </Card>
-                </Link>
-              );
-            })}
-          </div>
-           <div className="mt-12 text-center">
-            <Button asChild size="lg" variant="outline">
-              <Link href="/products/cabins">View All Cabins</Link>
-            </Button>
-          </div>
-        </div>
-      </section>
-      
       {/* Manufacturing Capabilities Section */}
        <section className="manufacturing-section">
         <div className="container mx-auto px-4">
