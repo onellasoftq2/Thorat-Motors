@@ -56,7 +56,7 @@ export default function DesigningHomologationPage() {
             <h2 className="text-3xl font-bold font-headline text-center mb-12">Engineering Capabilities</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                 {capabilities.map(cap => (
-                    <Card key={cap.title}>
+                    <Card key={cap.title} className="shadow-md">
                         <CardHeader className="items-center text-center">
                              <div className="bg-primary/10 p-4 rounded-full">
                                 {React.cloneElement(cap.icon, { className: "h-8 w-8 text-primary" })}
@@ -77,7 +77,7 @@ export default function DesigningHomologationPage() {
              <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-8">
                 {whyItMatters.map(item => (
                     <div key={item.title} className="flex items-start">
-                         <Check className="h-8 w-8 text-green-500 mr-4 mt-1 flex-shrink-0" />
+                         <Check className="h-8 w-8 text-primary mr-4 mt-1 flex-shrink-0" />
                         <div>
                             <h3 className="text-xl font-bold font-headline">{item.title}</h3>
                             <p className="text-muted-foreground">{item.description}</p>

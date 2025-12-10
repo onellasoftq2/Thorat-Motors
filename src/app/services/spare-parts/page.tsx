@@ -2,7 +2,7 @@
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card';
-import { CheckCircle, Cog, Disc, Truck, Wrench } from 'lucide-react';
+import { Check, Cog, Disc, Truck, Wrench } from 'lucide-react';
 import Link from 'next/link';
 
 const partCategories = [
@@ -27,10 +27,10 @@ const serviceSupport = [
 export default function SparePartsPage() {
   return (
     <>
-      <div className="bg-primary text-primary-foreground">
+      <div className="bg-secondary">
         <div className="container mx-auto px-4 py-16 text-center">
           <h1 className="text-4xl font-extrabold tracking-tight lg:text-5xl">Spare Parts Division</h1>
-          <p className="mt-4 max-w-2xl mx-auto text-lg text-primary-foreground/80">
+          <p className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground">
             Genuine, reliable, and ready-to-dispatch spare parts for trailers and portable cabins.
           </p>
         </div>
@@ -57,7 +57,7 @@ export default function SparePartsPage() {
             <h2 className="text-3xl font-bold text-center font-headline mb-12">Why Choose Our Spare Parts?</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                 {benefits.map(benefit => (
-                    <Card key={benefit.title} className="text-center">
+                    <Card key={benefit.title} className="text-center shadow-md">
                         <CardHeader>
                             <CardTitle>{benefit.title}</CardTitle>
                         </CardHeader>
@@ -76,7 +76,7 @@ export default function SparePartsPage() {
             <div className="flex flex-wrap justify-center gap-x-8 gap-y-4">
               {serviceSupport.map((support) => (
                 <div key={support} className="flex items-center text-lg">
-                  <CheckCircle className="h-6 w-6 text-green-500 mr-2" />
+                  <Check className="h-6 w-6 text-primary mr-2" />
                   <span>{support}</span>
                 </div>
               ))}

@@ -3,7 +3,7 @@ import React from 'react';
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card';
-import { CheckCircle, Map, Zap, ShieldCheck } from 'lucide-react';
+import { Check, Map, Zap, ShieldCheck } from 'lucide-react';
 import Link from 'next/link';
 
 const capabilities = [
@@ -21,12 +21,10 @@ const whyChooseUs = [
 export default function TransportLogisticsPage() {
   return (
     <>
-      <div className="relative h-80">
-        <Image src="https://images.unsplash.com/photo-1591948403330-7e3b18593457?q=80&w=2070&auto=format&fit=crop" alt="Logistics" fill className="object-cover" data-ai-hint="trailer logistics" />
-        <div className="absolute inset-0 bg-black/50" />
-        <div className="relative container mx-auto px-4 h-full flex flex-col justify-center text-white">
+      <div className="bg-secondary">
+        <div className="container mx-auto px-4 py-16 text-center">
           <h1 className="text-4xl font-extrabold tracking-tight lg:text-5xl">Transport & Logistics</h1>
-          <p className="mt-4 max-w-2xl text-lg">Reliable logistics and end-to-end transportation support across India.</p>
+          <p className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground">Reliable logistics and end-to-end transportation support across India.</p>
         </div>
       </div>
 
@@ -49,9 +47,11 @@ export default function TransportLogisticsPage() {
           <h2 className="text-3xl font-bold font-headline text-center mb-12">Service Capabilities</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {capabilities.map((item) => (
-              <Card key={item.title} className="text-center">
+              <Card key={item.title} className="text-center shadow-md">
                 <CardHeader className="items-center">
-                    {React.cloneElement(item.icon, { className: "h-10 w-10 text-primary" })}
+                    <div className='bg-primary/10 p-4 rounded-full'>
+                        {React.cloneElement(item.icon, { className: "h-8 w-8 text-primary" })}
+                    </div>
                     <CardTitle className="mt-4">{item.title}</CardTitle>
                 </CardHeader>
                 <CardContent>

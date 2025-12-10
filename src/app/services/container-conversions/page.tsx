@@ -3,8 +3,9 @@ import React from 'react';
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { CheckCircle, Zap, Droplets, ShieldCheck, Wind, PaintRoller, ArrowRight } from 'lucide-react';
+import { Zap, ShieldCheck, Wind, PaintRoller, ArrowRight } from 'lucide-react';
 import Link from 'next/link';
+import { PlaceHolderImages } from '@/lib/placeholder-images';
 
 const conversionCapabilities = [
   { icon: <Zap />, title: 'Electrical & Plumbing', description: 'Full integration of concealed wiring, outlets, and plumbing systems.' },
@@ -29,24 +30,35 @@ const whyChooseUs = [
 ]
 
 export default function ContainerConversionsPage() {
+    const heroImage = PlaceHolderImages.find((img) => img.id === 'container-conversion');
   return (
     <>
-      <div className="relative bg-secondary h-80 flex items-center justify-center">
-        <Image src="https://images.unsplash.com/photo-1506974210756-8e1b895da71b?q=80&w=2070&auto=format&fit=crop" alt="Container conversion" fill className="object-cover" data-ai-hint="container home" />
-        <div className="absolute inset-0 bg-black/60" />
-        <div className="relative container mx-auto px-4 text-center text-white">
-          <h1 className="text-4xl font-extrabold tracking-tight lg:text-5xl">Container Conversions & Modifications</h1>
-          <p className="mt-4 max-w-2xl mx-auto text-lg">Transforming 20 ft and 40 ft containers into high-utility structures.</p>
+      <div className="bg-secondary">
+        <div className="container mx-auto px-4 py-16 text-center">
+            <h1 className="text-4xl font-extrabold tracking-tight lg:text-5xl">Container Conversions & Modifications</h1>
+            <p className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground">Transforming 20 ft and 40 ft containers into high-utility structures.</p>
         </div>
       </div>
 
       <div className="container mx-auto px-4 py-16">
         {/* About Section */}
-        <section className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl font-bold font-headline">Durable, Flexible, and Fast Solutions</h2>
-          <p className="mt-4 text-lg text-muted-foreground leading-relaxed">
-            Used shipping containers provide an incredibly strong and durable base for a variety of structures, with an estimated lifespan of 10-15 years. We specialize in modifying these 20 ft and 40 ft containers into functional and cost-effective spaces for storage, offices, shops, kiosks, and accommodation. Our service includes custom interior and exterior design options to bring your vision to life.
-          </p>
+        <section className="max-w-4xl mx-auto text-center grid md:grid-cols-2 gap-12 items-center">
+            <div className='text-left'>
+                <h2 className="text-3xl font-bold font-headline">Durable, Flexible, and Fast Solutions</h2>
+                <p className="mt-4 text-lg text-muted-foreground leading-relaxed">
+                    Used shipping containers provide an incredibly strong and durable base for a variety of structures, with an estimated lifespan of 10-15 years. We specialize in modifying these 20 ft and 40 ft containers into functional and cost-effective spaces for storage, offices, shops, kiosks, and accommodation. Our service includes custom interior and exterior design options to bring your vision to life.
+                </p>
+            </div>
+             {heroImage && (
+              <Image
+                src={heroImage.imageUrl}
+                alt={heroImage.description}
+                width={600}
+                height={400}
+                className="w-full rounded-lg object-cover shadow-md"
+                data-ai-hint={heroImage.imageHint}
+              />
+            )}
         </section>
 
         {/* Conversion Capabilities */}

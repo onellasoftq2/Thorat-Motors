@@ -3,7 +3,7 @@ import React from 'react';
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Check, ShieldCheck, Layers, Settings, Workflow } from 'lucide-react';
+import { Check, ShieldCheck, Layers, Settings, Workflow, ArrowRight } from 'lucide-react';
 import Link from 'next/link';
 
 const overviewItems = [
@@ -30,14 +30,12 @@ const qualityStandards = [
 export default function StructuralFabricationPage() {
   return (
     <>
-      <div className="relative h-96">
-        <Image src="https://images.unsplash.com/photo-1567954970774-a1d62aa35ee3?q=80&w=2070&auto=format&fit=crop" alt="Fabrication shop" fill className="object-cover" data-ai-hint="factory interior" />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent" />
-        <div className="relative container mx-auto px-4 h-full flex flex-col justify-end pb-16 text-white">
-          <h1 className="text-4xl font-extrabold tracking-tight lg:text-5xl">Structural Fabrication</h1>
-          <p className="mt-4 max-w-2xl text-lg">
-            High-precision fabrication powered by CNC cutting, welding, forming, and assembly technologies.
-          </p>
+      <div className="bg-secondary">
+        <div className="container mx-auto px-4 py-16 text-center">
+            <h1 className="text-4xl font-extrabold tracking-tight lg:text-5xl">Structural Fabrication</h1>
+            <p className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground">
+                High-precision fabrication powered by CNC cutting, welding, forming, and assembly technologies.
+            </p>
         </div>
       </div>
 
@@ -47,7 +45,7 @@ export default function StructuralFabricationPage() {
           <h2 className="text-3xl font-bold font-headline text-center mb-12">Our Advanced Manufacturing Capabilities</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {overviewItems.map((item) => (
-              <Card key={item.title}>
+              <Card key={item.title} className="shadow-md">
                 <CardHeader>
                   <CardTitle>{item.title}</CardTitle>
                 </CardHeader>
@@ -66,11 +64,11 @@ export default function StructuralFabricationPage() {
                 <div className="absolute left-1/2 top-0 bottom-0 w-px bg-border -translate-x-1/2 hidden md:block"></div>
                 {processSteps.map((step, index) => (
                     <div key={step.name} className="relative flex items-center md:justify-center md:even:flex-row-reverse mb-12 group">
-                        <div className="hidden md:block absolute left-1/2 top-1/2 w-4 h-4 bg-primary rounded-full -translate-x-1/2 -translate-y-1/2"></div>
+                        <div className="hidden md:block absolute left-1/2 top-1/2 w-4 h-4 bg-primary rounded-full -translate-x-1/2 -translate-y-1/2 ring-4 ring-background"></div>
                          <div className="md:w-[calc(50%-2rem)]">
                             <Card className="shadow-md transition-shadow group-hover:shadow-xl">
                                 <CardContent className="pt-6">
-                                     <p className="text-lg font-semibold"><span className="text-primary mr-3">0{index + 1}</span> {step.name}</p>
+                                     <p className="text-lg font-semibold flex items-center"><span className="text-primary mr-4 text-2xl font-bold">0{index + 1}</span> {step.name}</p>
                                 </CardContent>
                             </Card>
                         </div>

@@ -23,11 +23,10 @@ const useCases = [
 export default function CustomEngineeringPage() {
   return (
     <>
-      <div className="relative bg-primary text-primary-foreground h-80 flex items-center justify-center">
-         <Image src="https://images.unsplash.com/photo-1519638831568-d9897f54a296?q=80&w=2070&auto=format&fit=crop" alt="Blueprint" fill className="object-cover opacity-20" data-ai-hint="blueprint sketch" />
-        <div className="relative container mx-auto px-4 text-center">
-          <h1 className="text-4xl font-extrabold tracking-tight lg:text-5xl">Custom Engineering</h1>
-          <p className="mt-4 max-w-2xl mx-auto text-lg text-primary-foreground/90">Bespoke engineering solutions for specialized industrial applications.</p>
+      <div className="bg-secondary">
+        <div className="container mx-auto px-4 py-16 text-center">
+            <h1 className="text-4xl font-extrabold tracking-tight lg:text-5xl">Custom Engineering</h1>
+            <p className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground">Bespoke engineering solutions for specialized industrial applications.</p>
         </div>
       </div>
 
@@ -41,15 +40,15 @@ export default function CustomEngineeringPage() {
                 </p>
             </div>
             <div>
-                <Card>
+                <Card className='shadow-md'>
                     <CardHeader>
                         <CardTitle>Core Offerings</CardTitle>
                     </CardHeader>
                     <CardContent className="space-y-3">
-                        <p className="flex items-center"><Check className="text-green-500 mr-2"/> Custom Trailer Design</p>
-                        <p className="flex items-center"><Check className="text-green-500 mr-2"/> Custom Portable Cabin Solutions</p>
-                        <p className="flex items-center"><Check className="text-green-500 mr-2"/> Custom Structural Design</p>
-                        <p className="flex items-center"><Check className="text-green-500 mr-2"/> Special Application Engineering</p>
+                        <p className="flex items-start"><Check className="text-primary mr-2 mt-1 flex-shrink-0"/> Custom Trailer Design</p>
+                        <p className="flex items-start"><Check className="text-primary mr-2 mt-1 flex-shrink-0"/> Custom Portable Cabin Solutions</p>
+                        <p className="flex items-start"><Check className="text-primary mr-2 mt-1 flex-shrink-0"/> Custom Structural Design</p>
+                        <p className="flex items-start"><Check className="text-primary mr-2 mt-1 flex-shrink-0"/> Special Application Engineering</p>
                     </CardContent>
                 </Card>
             </div>
@@ -75,7 +74,7 @@ export default function CustomEngineeringPage() {
                 <h2 className="text-3xl font-bold font-headline mb-8">Example Use Cases</h2>
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                     {useCases.map(useCase => (
-                        <Card key={useCase} className="text-left">
+                        <Card key={useCase} className="text-left shadow-md">
                             <CardContent className="pt-6">
                                 <p className="font-medium">{useCase}</p>
                             </CardContent>
