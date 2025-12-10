@@ -48,23 +48,6 @@ export default function ContactPage() {
             </Card>
           ))}
         </div>
-
-        <div className="mt-16 text-center border-t pt-10">
-           <h3 className="text-2xl font-bold font-headline mb-4">General Inquiries</h3>
-            <div className="flex flex-col items-center space-y-4 sm:flex-row sm:justify-center sm:space-y-0 sm:space-x-8">
-              <div className="flex items-center">
-                <Phone className="h-5 w-5 mr-3 text-primary" />
-                <a href={`tel:${contactInfo.phone}`} className="text-lg text-muted-foreground hover:text-primary">{contactInfo.phone}</a>
-              </div>
-              {contactInfo.emails.map(email => (
-                <div key={email} className="flex items-center">
-                  <Mail className="h-5 w-5 mr-3 text-primary" />
-                  <a href={`mailto:${email}`} className="text-lg text-muted-foreground hover:text-primary">{email}</a>
-                </div>
-              ))}
-            </div>
-        </div>
-
       </div>
     </>
   );
