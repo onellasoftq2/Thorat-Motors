@@ -16,7 +16,7 @@ import { ArrowRight, Truck, Home as HomeIcon } from 'lucide-react';
 import { offices } from '@/lib/data';
 
 const heroImage = PlaceHolderImages.find((img) => img.id === 'hero-trailer');
-const trailerImage = PlaceHolderImages.find((img) => img.id === 'hero-trailer');
+const trailerImage = PlaceHolderImages.find((img) => img.id === 'flatbed');
 const cabinImage = PlaceHolderImages.find((img) => img.id === 'office');
 const locations = offices;
 
@@ -329,5 +329,3 @@ export default function Home() {
     </div>
   );
 }
-
-    

@@ -9,7 +9,7 @@ const productCategories = [
     name: 'Trailers',
     description: 'High-performance trailers for every industrial need.',
     href: '/products/trailers',
-    imageId: 'hero-trailer',
+    imageId: 'flatbed',
   },
   {
     name: 'Portable Cabins',
