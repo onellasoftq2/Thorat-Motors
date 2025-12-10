@@ -21,10 +21,11 @@ const socialLinks = [
 ];
 
 export default function Footer() {
-  const productLinks = navMenu.find(item => item.title === 'Products')?.megaMenu || [];
-  const servicesLinks = navMenu.find(item => item.title === 'Services')?.megaMenu || [];
+  const productLinks = navMenu.find(item => item.title === 'Products')?.megaMenu?.slice(0, 2) || [];
+  const servicesLinks = navMenu.find(item => item.title === 'Products')?.megaMenu?.slice(2, 4) || [];
+
   const companyLinks = [
-      { name: "About Us", href: "/company#about" },
+      { name: "About Us", href: "/company" },
       { name: "Industries", href: "/industries" },
       { name: "Careers", href: "/company#careers" },
       { name: "Contact Us", href: "/contact" },

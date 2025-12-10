@@ -78,11 +78,11 @@ export default function Header() {
                   </Button>
                 </PopoverTrigger>
                 <PopoverContent
-                  className="w-screen max-w-3xl p-0"
+                  className="w-screen max-w-4xl p-0"
                   align="start"
                   sideOffset={15}
                 >
-                  <div className="grid grid-cols-1 gap-x-8 gap-y-10 p-8 md:grid-cols-3">
+                  <div className="grid grid-cols-1 gap-x-8 gap-y-10 p-8 md:grid-cols-4">
                     {item.megaMenu.map((section) => (
                       <div key={section.title} className="flex flex-col">
                         <h3 className="mb-4 text-sm font-medium font-headline text-foreground">

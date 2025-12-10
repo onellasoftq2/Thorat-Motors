@@ -21,71 +21,64 @@ export const navMenu: NavMenu[] = [
     href: "/",
   },
   {
+    title: "About Us",
+    href: "/company",
+  },
+  {
     title: "Products",
     megaMenu: [
       {
-        title: "Trailers",
+        title: "Thorat Motors",
         items: [
-          { name: "Cement Bulker Trailer", href: "/products/trailers/cement-bulker" },
-          { name: "Flatbed Trailer", href: "/products/trailers/flatbed" },
+          { name: "Overview", href: "/products" },
           { name: "Skeletal Trailer", href: "/products/trailers/skeletal" },
-          { name: "Side-Wall Trailer", href: "/products/trailers/side-wall" },
-          { name: "Custom Trailers", href: "/products/trailers/custom" },
+          { name: "Side Wall Trailer", href: "/products/trailers/side-wall" },
+          { name: "Cement Bulker", href: "/products/trailers/cement-bulker" },
+          { name: "Platform Trailer", href: "/products/trailers/flatbed" },
+          { name: "Custom Trailer Solutions", href: "/products/trailers/custom" },
         ],
       },
       {
-        title: "Portable Cabins",
+        title: "Designing & Homologation",
         items: [
-          { name: "Portable Office Cabin", href: "/products/cabins/office" },
-          { name: "House Cabins", href: "/products/cabins/house" },
-          { name: "Security Cabins", href: "/products/cabins/security" },
-          { name: "Bunk/Accommodation Cabin", href: "/products/cabins/bunk-house" },
-          { name: "Toilet Cabins", href: "/products/cabins/toilet" },
-          { name: "ACP Cabins", href: "/products/cabins/acp" },
+          { name: "Overview", href: "/services#designing" },
+          { name: "CMVR Certification", href: "/services#designing" },
+          { name: "BIS Approval", href: "/services#designing" },
+          { name: "PESO Compliance", href: "/services#designing" },
+          { name: "Vehicle Engineering (CAD & Simulation)", href: "/services#custom-engineering", },
         ],
       },
       {
-        title: "Containers",
+        title: "Transport & Logistics",
         items: [
-          { name: "Shop & Hotel Cabins", href: "/products/cabins/shop-hotel" },
-          { name: "Container Conversions", href: "/products/cabins/container-conversion" },
-          { name: "Double Storey (G+1) Cabins", href: "/products/cabins/double-storey" },
+          { name: "Overview", href: "/services#logistics" },
+          { name: "Fleet Capabilities", href: "/services#logistics" },
+          { name: "Industries Served", href: "/industries" },
+          { name: "Request a Quote", href: "/quote" },
+        ],
+      },
+       {
+        title: "Service Station",
+        items: [
+          { name: "8 Locations (Overview)", href: "/contact" },
+          { name: "Pune", href: "/contact" },
+          { name: "Surat", href: "/contact" },
+          { name: "Vizag", href: "/contact" },
+          { name: "Bhubaneswar", href: "/contact" },
+          { name: "Jamshedpur", href: "/contact" },
+          { name: "Chennai", href: "/contact" },
+          { name: "Patna", href: "/contact" },
+          { name: "Spare Parts & Repairs", href: "/services#spare-parts" },
         ],
       },
     ],
   },
   {
-    title: "Services",
-    href: "/services",
-    megaMenu: [
-       {
-        title: "Engineering",
-        items: [
-          { name: "Design & Homologation", href: "/services#designing" },
-          { name: "CAD Engineering", href: "/services#custom-engineering" },
-          { name: "Structural Fabrication", href: "/services#fabrication" },
-        ],
-      },
-      {
-        title: "Support",
-        items: [
-          { name: "Spare Parts Supply", href: "/services#spare-parts" },
-          { name: "Repair & Refurbishment", href: "/services#fabrication" },
-          { name: "Transport & Logistics", href: "/services#logistics" },
-        ],
-      }
-    ]
+    title: "Downloads",
+    href: "/company#downloads",
   },
   {
-    title: "Industries",
-    href: "/industries",
-  },
-  {
-    title: "Company",
-    href: "/company",
-  },
-  {
-    title: "Contact",
+    title: "Contact Us",
     href: "/contact",
   },
 ];
