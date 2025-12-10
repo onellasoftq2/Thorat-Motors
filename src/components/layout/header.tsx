@@ -3,6 +3,7 @@
 
 import Link from "next/link";
 import { useState } from "react";
+import { usePathname } from "next/navigation";
 import {
   Menu,
   X,
@@ -58,6 +59,7 @@ function Logo() {
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const pathname = usePathname();
 
   // Group cabin and container items for mobile view
   const productsMenu = navMenu.find(item => item.title === 'Products');
@@ -74,13 +76,18 @@ export default function Header() {
 
         {/* Desktop Menu */}
         <nav className="hidden lg:flex lg:items-center lg:space-x-2">
-          {navMenu.map((item) =>
-            item.megaMenu ? (
+          {navMenu.map((item) => {
+            const isActive =
+              (item.href && pathname === item.href) ||
+              (item.href && pathname.startsWith(item.href) && item.href !== '/') ||
+              (item.megaMenu && pathname.startsWith('/products'));
+
+            return item.megaMenu ? (
               <HoverCard key={item.title} openDelay={50} closeDelay={100}>
                 <HoverCardTrigger asChild>
                   <Button
                     variant="ghost"
-                    className="flex items-center text-sm font-medium text-muted-foreground"
+                    className={cn("flex items-center text-sm font-medium", isActive ? 'text-primary' : 'text-muted-foreground')}
                   >
                     <Link href={item.href || '#'}>{item.title}</Link>
                     <ChevronDown className="ml-1 h-4 w-4" />
@@ -102,7 +109,7 @@ export default function Header() {
                             <li key={subItem.name}>
                               <Link
                                 href={subItem.href}
-                                className="block rounded-md p-2 text-sm text-muted-foreground transition-colors hover:bg-secondary hover:text-secondary-foreground"
+                                className={cn("block rounded-md p-2 text-sm transition-colors hover:bg-secondary hover:text-secondary-foreground", pathname === subItem.href ? 'text-primary font-medium' : 'text-muted-foreground' )}
                               >
                                 {subItem.name}
                               </Link>
@@ -118,13 +125,13 @@ export default function Header() {
               <Button key={item.title} asChild variant="ghost">
                 <Link
                   href={item.href || '#'}
-                  className="text-sm font-medium text-muted-foreground"
+                  className={cn("text-sm font-medium", isActive ? 'text-primary' : 'text-muted-foreground')}
                 >
                   {item.title}
                 </Link>
               </Button>
             )
-          )}
+          })}
         </nav>
 
         <div className="hidden items-center space-x-4 lg:flex">
@@ -155,13 +162,13 @@ export default function Header() {
                           key={item.title}
                           value={`item-${index}`}
                         >
-                          <AccordionTrigger className="py-3 text-base font-medium">
+                          <AccordionTrigger className={cn("py-3 text-base font-medium", pathname.startsWith('/products') ? 'text-primary' : '')}>
                             {item.title}
                           </AccordionTrigger>
                           <AccordionContent>
                              <Accordion type="multiple" className="w-full ml-4">
                                 <AccordionItem value="trailers">
-                                    <AccordionTrigger>Trailers</AccordionTrigger>
+                                    <AccordionTrigger className={pathname.startsWith('/products/trailers') ? 'text-primary' : ''}>Trailers</AccordionTrigger>
                                     <AccordionContent>
                                         <ul className="space-y-2 pl-4">
                                         {trailersItems.map((subItem) => (
@@ -169,7 +176,7 @@ export default function Header() {
                                             <Link
                                                 href={subItem.href}
                                                 onClick={() => setMobileMenuOpen(false)}
-                                                className="block py-2 text-sm text-muted-foreground"
+                                                className={cn("block py-2 text-sm", pathname === subItem.href ? 'text-primary font-bold' : 'text-muted-foreground')}
                                             >
                                                 {subItem.name}
                                             </Link>
@@ -179,7 +186,7 @@ export default function Header() {
                                     </AccordionContent>
                                 </AccordionItem>
                                 <AccordionItem value="cabins">
-                                    <AccordionTrigger>Portable Cabins & Containers</AccordionTrigger>
+                                    <AccordionTrigger className={pathname.startsWith('/products/cabins') ? 'text-primary' : ''}>Portable Cabins & Containers</AccordionTrigger>
                                     <AccordionContent>
                                         <ul className="space-y-2 pl-4">
                                         {allCabinsAndContainers.map((subItem) => (
@@ -187,7 +194,7 @@ export default function Header() {
                                             <Link
                                                 href={subItem.href}
                                                 onClick={() => setMobileMenuOpen(false)}
-                                                className="block py-2 text-sm text-muted-foreground"
+                                                className={cn("block py-2 text-sm", pathname === subItem.href ? 'text-primary font-bold' : 'text-muted-foreground')}
                                             >
                                                 {subItem.name}
                                             </Link>
@@ -204,7 +211,7 @@ export default function Header() {
                           key={item.title}
                           href={item.href || '#'}
                           onClick={() => setMobileMenuOpen(false)}
-                          className="block border-b py-3 text-base font-medium"
+                          className={cn("block border-b py-3 text-base font-medium", pathname === item.href ? 'text-primary' : '')}
                         >
                           {item.title}
                         </Link>
