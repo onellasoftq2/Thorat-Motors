@@ -17,10 +17,10 @@ import {
 
 import { Button } from "@/components/ui/button";
 import {
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
-} from "@/components/ui/popover";
+  HoverCard,
+  HoverCardContent,
+  HoverCardTrigger,
+} from "@/components/ui/hover-card";
 import {
   Sheet,
   SheetContent,
@@ -67,17 +67,17 @@ export default function Header() {
         <nav className="hidden lg:flex lg:items-center lg:space-x-2">
           {navMenu.map((item) =>
             item.megaMenu ? (
-              <Popover key={item.title}>
-                <PopoverTrigger asChild>
+              <HoverCard key={item.title} openDelay={50} closeDelay={100}>
+                <HoverCardTrigger asChild>
                   <Button
                     variant="ghost"
                     className="flex items-center text-sm font-medium text-muted-foreground"
                   >
-                    {item.title}
+                    <Link href={item.href || '#'}>{item.title}</Link>
                     <ChevronDown className="ml-1 h-4 w-4" />
                   </Button>
-                </PopoverTrigger>
-                <PopoverContent
+                </HoverCardTrigger>
+                <HoverCardContent
                   className="w-screen max-w-3xl p-0"
                   align="start"
                   sideOffset={15}
@@ -103,8 +103,8 @@ export default function Header() {
                       </div>
                     ))}
                   </div>
-                </PopoverContent>
-              </Popover>
+                </HoverCardContent>
+              </HoverCard>
             ) : (
               <Button key={item.title} asChild variant="ghost">
                 <Link
@@ -198,5 +198,3 @@ export default function Header() {
     </header>
   );
 }
-
-    
