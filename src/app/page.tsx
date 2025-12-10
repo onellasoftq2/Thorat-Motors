@@ -5,7 +5,6 @@ import Link from 'next/link';
 import {
   Card,
   CardContent,
-  CardDescription,
   CardHeader,
   CardTitle,
 } from '@/components/ui/card';
@@ -13,12 +12,10 @@ import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { products, industries } from '@/lib/data';
-import { ArrowRight, Truck, DraftingCompass, Wrench, MapPin } from 'lucide-react';
+import { ArrowRight, Truck, Home as HomeIcon } from 'lucide-react';
 import { offices } from '@/lib/data';
 
 const heroImage = PlaceHolderImages.find((img) => img.id === 'hero-trailer');
-const trailerProducts = products.trailers.slice(0, 4);
-const cabinProducts = products.cabins.slice(0, 6);
 const locations = offices;
 
 const stats = [
@@ -75,6 +72,28 @@ const certifications = [
 ];
 
 
+const trailersTags = [
+    'Cement Bulker',
+    'Flatbed',
+    'Skeletal (20ft/40ft)',
+    'Side-Wall (Domex/Shelma)',
+    'Custom Heavy-Duty Trailers',
+];
+
+const cabinsTags = [
+    'Office Cabins',
+    'House Cabins',
+    'ACP Cabins',
+    'Security Cabins',
+    'Toilet Cabins',
+    'Bunk Cabins',
+    'Shop/Hotel Cabins',
+    'Used Shipping Containers',
+    'Container Conversions',
+    'G+1 Cabins',
+];
+
+
 export default function Home() {
   return (
     <div className="flex flex-col">
@@ -119,8 +138,8 @@ export default function Home() {
             <div className="stats-grid">
                 {stats.map((stat) => (
                     <div key={stat.label} className="stat-card">
-                        <h3 className="text-3xl lg:text-4xl font-bold text-primary">{stat.value}</h3>
-                        <p className="text-muted-foreground mt-1">{stat.label}</p>
+                        <h3>{stat.value}</h3>
+                        <p>{stat.label}</p>
                     </div>
                 ))}
             </div>
@@ -149,7 +168,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Our Products Section */}
+      {/* Our Products Section V2 */}
       <section className="bg-secondary py-16 lg:py-24">
         <div className="container mx-auto px-4">
           <div className="mb-12 text-center">
@@ -157,32 +176,28 @@ export default function Home() {
             <div className="mt-2 h-1 w-20 mx-auto bg-primary"></div>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <Card className="shadow-md">
-              <CardHeader>
-                <CardTitle className="font-headline text-2xl">Trailers</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground leading-relaxed">
-                  Cement Bulker · Flatbed · Skeletal (20ft/40ft) · Side-Wall (Domex/Shelma) · Custom-Built Heavy-Duty Trailers
-                </p>
-                <Button asChild variant="link" className="px-0 mt-4 text-primary">
-                  <Link href="/products/trailers">View All Trailers <ArrowRight className="ml-2 h-4 w-4" /></Link>
-                </Button>
-              </CardContent>
-            </Card>
-            <Card className="shadow-md">
-              <CardHeader>
-                <CardTitle className="font-headline text-2xl">Portable Cabins</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground leading-relaxed">
-                  Office Cabins · House Cabins · ACP Cabins · Security Cabins · Toilet Cabins · Bunk Cabins · Shop/Hotel Cabins · Container Conversions · G+1 Cabins · Used Shipping Containers (20ft / 40ft) – Storage, office conversions, kiosks, industrial usage.
-                </p>
-                 <Button asChild variant="link" className="px-0 mt-4 text-primary">
-                  <Link href="/products/cabins">View All Cabins <ArrowRight className="ml-2 h-4 w-4" /></Link>
-                </Button>
-              </CardContent>
-            </Card>
+            {/* Trailers Card */}
+            <div className="product-card-v2">
+                <Truck className="w-12 h-12 text-primary mb-4" />
+                <h3 className="font-headline text-2xl font-bold mb-4">Trailers</h3>
+                <div className="mb-4">
+                    {trailersTags.map(tag => <span key={tag} className="product-tag">{tag}</span>)}
+                </div>
+                <Link href="/products/trailers" className="text-accent font-semibold flex items-center hover:underline">
+                  View All Trailers <ArrowRight className="ml-2 h-4 w-4" />
+                </Link>
+            </div>
+            {/* Cabins Card */}
+            <div className="product-card-v2">
+                <HomeIcon className="w-12 h-12 text-primary mb-4" />
+                <h3 className="font-headline text-2xl font-bold mb-4">Portable Cabins</h3>
+                <div className="mb-4">
+                    {cabinsTags.map(tag => <span key={tag} className="product-tag">{tag}</span>)}
+                </div>
+                <Link href="/products/cabins" className="text-accent font-semibold flex items-center hover:underline">
+                    View All Cabins <ArrowRight className="ml-2 h-4 w-4" />
+                </Link>
+            </div>
           </div>
         </div>
       </section>
