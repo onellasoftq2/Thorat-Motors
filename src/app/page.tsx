@@ -71,26 +71,25 @@ const certifications = [
     'ISO Manufacturing',
 ];
 
-
 const trailersTags = [
-    'Cement Bulker',
-    'Flatbed',
-    'Skeletal (20ft/40ft)',
-    'Side-Wall (Domex/Shelma)',
-    'Custom Heavy-Duty Trailers',
+    { name: 'Cement Bulker', href: '/products/trailers/cement-bulker' },
+    { name: 'Flatbed', href: '/products/trailers/flatbed' },
+    { name: 'Skeletal (20ft/40ft)', href: '/products/trailers/skeletal' },
+    { name: 'Side-Wall (Domex/Shelma)', href: '/products/trailers/side-wall' },
+    { name: 'Custom Heavy-Duty Trailers', href: '/products/trailers/custom' },
 ];
 
 const cabinsTags = [
-    'Office Cabins',
-    'House Cabins',
-    'ACP Cabins',
-    'Security Cabins',
-    'Toilet Cabins',
-    'Bunk Cabins',
-    'Shop/Hotel Cabins',
-    'Used Shipping Containers',
-    'Container Conversions',
-    'G+1 Cabins',
+    { name: 'Office Cabins', href: '/products/cabins/office' },
+    { name: 'House Cabins', href: '/products/cabins/house' },
+    { name: 'ACP Cabins', href: '/products/cabins/acp' },
+    { name: 'Security Cabins', href: '/products/cabins/security' },
+    { name: 'Toilet Cabins', href: '/products/cabins/toilet' },
+    { name: 'Bunk Cabins', href: '/products/cabins/bunk-house' },
+    { name: 'Shop/Hotel Cabins', href: '/products/cabins/shop-hotel' },
+    { name: 'Used Shipping Containers', href: '/products/cabins/container-conversion' },
+    { name: 'Container Conversions', href: '/products/cabins/container-conversion' },
+    { name: 'G+1 Cabins', href: '/products/cabins/double-storey' },
 ];
 
 
@@ -181,7 +180,9 @@ export default function Home() {
                 <Truck className="w-12 h-12 text-primary mb-4" />
                 <h3 className="font-headline text-2xl font-bold mb-4">Trailers</h3>
                 <div className="mb-4">
-                    {trailersTags.map(tag => <span key={tag} className="product-tag">{tag}</span>)}
+                    {trailersTags.map(tag => (
+                      <Link key={tag.name} href={tag.href} className="product-tag hover:bg-primary/20 transition-colors">{tag.name}</Link>
+                    ))}
                 </div>
                 <Link href="/products/trailers" className="text-accent font-semibold flex items-center hover:underline">
                   View All Trailers <ArrowRight className="ml-2 h-4 w-4" />
@@ -192,7 +193,9 @@ export default function Home() {
                 <HomeIcon className="w-12 h-12 text-primary mb-4" />
                 <h3 className="font-headline text-2xl font-bold mb-4">Portable Cabins</h3>
                 <div className="mb-4">
-                    {cabinsTags.map(tag => <span key={tag} className="product-tag">{tag}</span>)}
+                    {cabinsTags.map(tag => (
+                      <Link key={tag.name} href={tag.href} className="product-tag hover:bg-primary/20 transition-colors">{tag.name}</Link>
+                    ))}
                 </div>
                 <Link href="/products/cabins" className="text-accent font-semibold flex items-center hover:underline">
                     View All Cabins <ArrowRight className="ml-2 h-4 w-4" />
