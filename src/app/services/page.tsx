@@ -1,16 +1,27 @@
+
+import Link from 'next/link';
 import Image from 'next/image';
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  CardTitle,
+  CardDescription
+} from '@/components/ui/card';
+import { Button } from '@/components/ui/button';
+import { ArrowRight, Wrench, DraftingCompass, Truck, Cog, Box, Star } from 'lucide-react';
 import { services } from '@/lib/data';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Wrench, DraftingCompass, Truck, Cog } from 'lucide-react';
 
 const iconMap: { [key: string]: React.ReactNode } = {
-  designing: <DraftingCompass className="h-10 w-10 text-primary" />,
-  fabrication: <Wrench className="h-10 w-10 text-primary" />,
+  'designing-homologation': <DraftingCompass className="h-10 w-10 text-primary" />,
+  'structural-fabrication': <Wrench className="h-10 w-10 text-primary" />,
   'spare-parts': <Cog className="h-10 w-10 text-primary" />,
-  logistics: <Truck className="h-10 w-10 text-primary" />,
-  'custom-engineering': <DraftingCompass className="h-10 w-10 text-primary" />,
+  'transport-logistics': <Truck className="h-10 w-10 text-primary" />,
+  'custom-engineering': <Star className="h-10 w-10 text-primary" />,
+  'container-conversions': <Box className="h-10 w-10 text-primary" />,
 };
+
 
 export default function ServicesPage() {
   const heroImage = PlaceHolderImages.find((img) => img.id === 'services-hero');
@@ -39,17 +50,22 @@ export default function ServicesPage() {
       </div>
 
       <div className="container mx-auto px-4 py-16">
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+         <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
           {services.map((service) => (
-            <Card key={service.id} id={service.id} className="text-center shadow-md">
-              <CardHeader className="items-center">
-                {iconMap[service.id]}
-                <CardTitle className="mt-4 font-headline">{service.name}</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground">{service.description}</p>
-              </CardContent>
-            </Card>
+            <Link href={`/services/${service.id}`} key={service.id} className="group block">
+              <Card className="flex flex-col h-full overflow-hidden shadow-md transition-shadow duration-300 hover:shadow-xl hover:-translate-y-1">
+                 <CardHeader className="flex-row items-center space-x-4">
+                  {iconMap[service.id]}
+                  <CardTitle className="font-headline">{service.name}</CardTitle>
+                </CardHeader>
+                <CardContent className="flex-grow flex flex-col">
+                  <CardDescription className="flex-grow">{service.description}</CardDescription>
+                  <Button variant="link" className="px-0 mt-4 self-start text-primary">
+                    Learn More <ArrowRight className="ml-2 h-4 w-4" />
+                  </Button>
+                </CardContent>
+              </Card>
+            </Link>
           ))}
         </div>
       </div>

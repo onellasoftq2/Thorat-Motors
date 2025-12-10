@@ -1,5 +1,4 @@
 
-
 export type NavMenuItem = {
   name: string;
   href: string;
@@ -14,6 +13,7 @@ export type NavMenu = {
   title: string;
   href?: string;
   megaMenu?: NavMenuSection[];
+  items?: NavMenuItem[];
 };
 
 export const navMenu: NavMenu[] = [
@@ -27,6 +27,7 @@ export const navMenu: NavMenu[] = [
   },
   {
     title: "Products",
+    href: "/products",
     megaMenu: [
       {
         title: "Trailers",
@@ -66,14 +67,18 @@ export const navMenu: NavMenu[] = [
    {
     title: "Services",
     href: "/services",
+    items: [
+        { name: "Designing & Homologation", href: "/services/designing-homologation" },
+        { name: "Structural Fabrication", href: "/services/structural-fabrication" },
+        { name: "Spare Parts Division", href: "/services/spare-parts" },
+        { name: "Transport & Logistics", href: "/services/transport-logistics" },
+        { name: "Custom Engineering", href: "/services/custom-engineering" },
+        { name: "Container Conversions", href: "/services/container-conversions" },
+    ]
   },
   {
     title: "Industries",
     href: "/industries",
-  },
-  {
-    title: "Downloads",
-    href: "/company#downloads",
   },
   {
     title: "Contact Us",
@@ -124,16 +129,17 @@ export const products = {
             id: 'flatbed',
             name: 'Flatbed Trailer',
             description: 'Versatile and robust, our flatbed trailers are ideal for transporting a wide range of goods, including containers, construction materials, and heavy machinery.',
-            specs: [
-                { name: 'Size', value: '24FT to 45 ft or as per customer demand' },
-                { name: 'Trailer Weight (Unladen)', value: '6.5-10 Ton (depending on size)' },
-                { name: 'Chasis', value: 'Formed I Beam (10/10/18) ladder type construction, made with high strength steel-BSK46. IS2062 FORMED BEAM 500 SAW welded for maximum tensional stability & structural rigidity. 12 nos of twist lock shall be provided to suit 1x40ft, 2x20ft, and 1x20ft container at middle.' },
+             specs: [
+                { name: 'Size', value: '24FT to 45ft or as per customer demand' },
+                { name: 'Trailer Weight (Unladen)', value: '6.5–10 Ton (depending on size)' },
+                { name: 'Load Capacity', value: 'Depending on size' },
+                { name: 'Chassis', value: 'Formed I Beam (10/10/18) ladder type construction, made with high strength steel-BSK46. IS2062 FORMED BEAM 500 SAW welded for maximum tensional stability & structural rigidity. 12 nos of twist lock shall be provided to suit 1x40ft, 2x20ft, and 1x20ft container at middle.'},
                 { name: 'Platform', value: 'Super structure made with ISMC 200 member & heavy duty outer cross member supports. Platform is covered by 4mm MS sheet.' },
                 { name: 'Landing Leg', value: 'Two speed landing leg (HDTPL/YORK)' },
                 { name: 'Axles', value: '12T / 14T / 16T (YORK/TATA/FUWA/JOST)' },
                 { name: 'King Pin', value: '2” king pin equivalent to IS: 6763 Part I (bolted / Welded). (YORK/JOST)' },
                 { name: 'Suspension', value: 'Heavy Duty Tridem / Tandem / Tandem + Lifting combo axle. (YORK/TATA)' },
-                { name: 'Brakes', value: 'Twin line air brake system coupled to tractor. T 24 brake chamber on all axles. Manually actuated parking brake. (WEBCO)' },
+                { name: 'Brakes', value: 'Twin line air brake system with coupled to tractor brake system. T 24 brake chamber on all axles. Manually actuated parking brake. (WEBCO)' },
                 { name: 'Electrical', value: '24 V DC electrical system as per CMVR' },
                 { name: 'Painting', value: 'Two coats of Epoxy paint shall be provided with Primer' },
                 { name: 'Other Fitment', value: 'SUPD, RUPD, reflectors on both sides and rear as per CMVR.' },
@@ -153,17 +159,17 @@ export const products = {
             id: 'skeletal',
             name: 'Skeletal Trailer',
             description: 'Specifically designed for container transport, our skeletal trailers offer a lightweight yet strong structure for maximum payload efficiency.',
-            specs: [
+             specs: [
                 { name: 'Size', value: '24, 40 ft or as per Customer Demand' },
                 { name: 'Trailer Weight (Unladen)', value: '8-10 Ton (depending on size)' },
-                { name: 'Chasis', value: 'Company fabricated. Formed I Beam - 10 / 10 / 18 – Ladder type construction, Made with high strength steel-BSK46 with inner cross members providing maximum torsional stability. IS2062 FORMED BEAM 500 SAW welded. 12 nos of twist lock shall be provided to suit 1- 40 feet container, 2 – 20 feet container and 1-20 feet container at middle.' },
+                { name: 'Load Capacity', value: 'Depending on size' },
+                { name: 'Chassis', value: 'Formed I Beam - 10 / 10 / 18 – Ladder type construction, Made with high strength steel-BSK46 with inner cross members providing maximum torsional stability. IS2062 FORMED BEAM 500 SAW welded. 12 nos of twist lock shall be provided to suit 1- 40 feet container, 2 – 20 feet container and 1-20 feet container at middle.' },
                 { name: 'Landing Leg', value: 'Two speed landing leg (HDTPL/YORK)' },
                 { name: 'Axles', value: '12T / 14T / 16T (YORK/TATA/FUWA/JOST)' },
-                { name: 'King Pin', value: '2” king pin equivalent to IS: 6763 Part I (bolted / Welded). (YORK/JOST)' },
+                { name: 'King Pin', value: '2” king pin equivalent to IS : 6763 Part I provided (bolted / Welded). (YORK/JOST)' },
                 { name: 'Suspension', value: 'Heavy Duty Tridem / Tandem / Tandem + Lifting combo axle. (YORK/TATA)' },
                 { name: 'Brakes', value: 'Twin line air brake system with coupled to tractor brake system. T 24 brake chamber on all axles. Manually actuated parking brake. (WEBCO)' },
                 { name: 'Electrical', value: '24 V DC electrical system as per CMVR' },
-                { name: 'Wet Kit', value: 'Includes Pump, Tank, Return line filter, Tipping valve and Hydraulic hoses. Operating pressure 170 BAR. Multi Stage Cylinder: Model: FE169-4-4820 stroke length' },
                 { name: 'Surface Preparation', value: 'Trailer surface shall be Shot blasted and cleaned.' },
                 { name: 'Painting', value: 'Two coats of Epoxy paint shall be provided with Primer' },
                 { name: 'Other Fitment', value: 'SUPD, RUPD, reflectors on both sides and rear as per CMVR.' },
@@ -186,7 +192,8 @@ export const products = {
             specs: [
                 { name: 'Size', value: '30, 32, 34, 36, 40 ft or as per customer demand' },
                 { name: 'Trailer Weight (Unladen)', value: '8-10 Ton (depending on size)' },
-                { name: 'Chasis', value: 'Formed I Beam (10/10/18) ladder type construction, made with high strength steel-BSK46. 2 Nos Main longitudinal members are high strength lighter weight Parallel flange Beam. Cross members are Rolled or Folded of material IS-2062/ST-52. 12 nos of twist lock shall be provided to suit 1-40 ft container, 2-20 ft containers and 1-20 ft container at middle.' },
+                { name: 'Load Capacity', value: 'Depending on size' },
+                { name: 'Chassis', value: 'Formed I Beam (10/10/18) ladder type construction, made with high strength steel-BSK46. 2 Nos Main longitudinal members are high strength lighter weight Parallel flange Beam. Cross members are Rolled or Folded of material IS-2062/ST-52. 12 nos of twist lock shall be provided to suit 1-40 ft container, 2-20 ft containers and 1-20 ft container at middle.' },
                 { name: 'Platform', value: 'Super structure made with ISMB 250 / ISMC 125 member & heavy duty outer cross member supports. Platform is covered by 4mm MS sheet.' },
                 { name: 'Landing Leg', value: 'Two speed landing leg (HDTPL/YORK)' },
                 { name: 'Axles', value: '12T / 14T / 16T (YORK/TATA/FUWA/JOST)' },
@@ -332,29 +339,34 @@ export const products = {
 
 export const services = [
     {
-        id: 'designing',
+        id: 'designing-homologation',
         name: 'Designing & Homologation',
-        description: 'Our in-house design team uses the latest CAD/CAE software to create innovative and efficient designs. We also manage the entire homologation process, ensuring all our products are certified by ARAI and meet all regulatory standards.',
+        description: 'End-to-end engineering, compliance, and certification services for trailers and mobile structures.',
     },
     {
-        id: 'fabrication',
+        id: 'structural-fabrication',
         name: 'Structural Fabrication',
-        description: 'With state-of-the-art manufacturing facilities, we excel in high-quality structural fabrication. Our processes include advanced welding techniques, precision cutting, and robust assembly lines to ensure every product is built to last.',
+        description: 'High-precision fabrication powered by CNC cutting, welding, forming, and assembly technologies.',
     },
     {
         id: 'spare-parts',
         name: 'Spare Parts Division',
-        description: 'Our dedicated spare parts division ensures minimal downtime for your fleet. We stock a comprehensive range of genuine parts for trailers and cabins, from axles and suspensions to cabin fittings, available for quick dispatch across India.',
+        description: 'Genuine, reliable, ready-to-dispatch spare parts for trailers and portable cabins.',
     },
     {
-        id: 'logistics',
+        id: 'transport-logistics',
         name: 'Transport & Logistics',
-        description: 'We provide end-to-end transport and logistics solutions to ensure your products are delivered safely and on time, anywhere in the country. Our logistics team handles all aspects of transportation, from planning to final delivery.',
+        description: 'Reliable logistics and end-to-end transportation support across India.',
     },
     {
         id: 'custom-engineering',
         name: 'Custom Engineering',
-        description: 'We thrive on challenges. Our custom engineering services are for clients with unique requirements that standard products cannot meet. We work closely with you to develop bespoke solutions tailored to your specific application.',
+        description: 'Bespoke engineering solutions for specialized industrial applications.',
+    },
+    {
+        id: 'container-conversions',
+        name: 'Container Conversions',
+        description: 'Transforming 20 ft and 40 ft containers into high-utility structures.',
     },
 ];
 
@@ -394,5 +406,3 @@ export const offices = [
     { city: 'Chennai', state: 'Tamil Nadu', address: 'Plot No 5/3, Thiruvallur Road, Nemam Post, Poonamallee Taluka, Chennai - 600124'},
     { city: 'Patna', state: 'Bihar', address: 'Khata No-456, Khesra No-198, 199, Manupur, Saran, Chapra - 841207'},
 ];
-
-    

@@ -6,14 +6,8 @@ import { useState } from "react";
 import { usePathname } from "next/navigation";
 import {
   Menu,
-  X,
   ChevronDown,
-  Building,
   Truck,
-  Wrench,
-  Info,
-  Phone,
-  ArrowRight,
 } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
@@ -38,14 +32,6 @@ import { navMenu } from "@/lib/data";
 import { cn } from "@/lib/utils";
 import { ScrollArea } from "@/components/ui/scroll-area";
 
-const componentMap = {
-  products: Truck,
-  services: Wrench,
-  industries: Building,
-  company: Info,
-  contact: Phone,
-};
-
 function Logo() {
   return (
     <Link href="/" className="flex items-center space-x-2">
@@ -61,7 +47,6 @@ export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const pathname = usePathname();
 
-  // Group cabin and container items for mobile view
   const productsMenu = navMenu.find(item => item.title === 'Products');
   const trailersItems = productsMenu?.megaMenu?.find(section => section.title === 'Trailers')?.items || [];
   const cabinsItems = productsMenu?.megaMenu?.find(section => section.title === 'Portable Cabins')?.items || [];
@@ -80,9 +65,10 @@ export default function Header() {
             const isActive =
               (item.href && pathname === item.href) ||
               (item.href && pathname.startsWith(item.href) && item.href !== '/') ||
+              (item.items && item.items.some(subItem => pathname === subItem.href)) ||
               (item.megaMenu && pathname.startsWith('/products'));
 
-            return item.megaMenu ? (
+            return item.megaMenu ? ( // Products Mega Menu
               <HoverCard key={item.title} openDelay={50} closeDelay={100}>
                 <HoverCardTrigger asChild>
                   <Button
@@ -121,7 +107,37 @@ export default function Header() {
                   </div>
                 </HoverCardContent>
               </HoverCard>
-            ) : (
+            ) : item.items ? ( // Services Dropdown
+               <HoverCard key={item.title} openDelay={50} closeDelay={100}>
+                <HoverCardTrigger asChild>
+                  <Button
+                    variant={isActive ? "default" : "ghost"}
+                    className="flex items-center text-sm font-medium"
+                  >
+                    <Link href={item.href || '#'}>{item.title}</Link>
+                    <ChevronDown className="ml-1 h-4 w-4" />
+                  </Button>
+                </HoverCardTrigger>
+                <HoverCardContent
+                  className="w-64 p-2"
+                  align="start"
+                  sideOffset={10}
+                >
+                    <ul className="space-y-1">
+                      {item.items.map((subItem) => (
+                        <li key={subItem.name}>
+                          <Link
+                            href={subItem.href}
+                            className={cn("block rounded-md p-2 text-sm transition-colors hover:bg-secondary hover:text-secondary-foreground", pathname === subItem.href ? 'text-primary font-medium' : 'text-muted-foreground' )}
+                          >
+                            {subItem.name}
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                </HoverCardContent>
+              </HoverCard>
+            ) : ( // Simple Links
               <Button key={item.title} asChild variant={isActive ? "default" : "ghost"}>
                 <Link
                   href={item.href || '#'}
@@ -204,6 +220,30 @@ export default function Header() {
                                     </AccordionContent>
                                 </AccordionItem>
                              </Accordion>
+                          </AccordionContent>
+                        </AccordionItem>
+                      ) : item.items ? (
+                        <AccordionItem
+                          key={item.title}
+                          value={`item-${index}`}
+                        >
+                          <AccordionTrigger className={cn("py-3 text-base font-medium", pathname.startsWith(item.href || ' ') ? 'text-primary' : '')}>
+                            {item.title}
+                          </AccordionTrigger>
+                          <AccordionContent>
+                            <ul className="space-y-2 pl-8">
+                              {item.items.map((subItem) => (
+                                <li key={subItem.name}>
+                                  <Link
+                                    href={subItem.href}
+                                    onClick={() => setMobileMenuOpen(false)}
+                                    className={cn("block py-2 text-sm", pathname === subItem.href ? 'text-primary font-bold' : 'text-muted-foreground')}
+                                  >
+                                    {subItem.name}
+                                  </Link>
+                                </li>
+                              ))}
+                            </ul>
                           </AccordionContent>
                         </AccordionItem>
                       ) : (
