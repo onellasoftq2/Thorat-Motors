@@ -86,8 +86,8 @@ export default function Header() {
               <HoverCard key={item.title} openDelay={50} closeDelay={100}>
                 <HoverCardTrigger asChild>
                   <Button
-                    variant="ghost"
-                    className={cn("flex items-center text-sm font-medium", isActive ? 'text-primary' : 'text-muted-foreground')}
+                    variant={isActive ? "secondary" : "ghost"}
+                    className="flex items-center text-sm font-medium"
                   >
                     <Link href={item.href || '#'}>{item.title}</Link>
                     <ChevronDown className="ml-1 h-4 w-4" />
@@ -122,10 +122,10 @@ export default function Header() {
                 </HoverCardContent>
               </HoverCard>
             ) : (
-              <Button key={item.title} asChild variant="ghost">
+              <Button key={item.title} asChild variant={isActive ? "secondary" : "ghost"}>
                 <Link
                   href={item.href || '#'}
-                  className={cn("text-sm font-medium", isActive ? 'text-primary' : 'text-muted-foreground')}
+                  className={cn("text-sm font-medium")}
                 >
                   {item.title}
                 </Link>
