@@ -20,6 +20,8 @@ import {
   Sheet,
   SheetContent,
   SheetHeader,
+  SheetTitle,
+  SheetDescription,
   SheetTrigger,
 } from "@/components/ui/sheet";
 import {
@@ -64,7 +66,7 @@ export default function Header() {
           {navMenu.map((item) => {
             const isActive =
               (item.href && pathname === item.href) ||
-              (item.href && pathname.startsWith(item.href) && item.href !== '/') ||
+              (item.href && item.href !== '/' && pathname.startsWith(item.href)) ||
               (item.items && item.items.some(subItem => pathname === subItem.href)) ||
               (item.megaMenu && pathname.startsWith('/products'));
 
@@ -168,6 +170,10 @@ export default function Header() {
             <SheetContent side="left" className="w-[300px] sm:w-[340px] p-0">
               <SheetHeader className="p-6 pb-0">
                 <Logo />
+                <SheetTitle className="sr-only">Mobile Menu</SheetTitle>
+                <SheetDescription className="sr-only">
+                    Main navigation menu for mobile devices.
+                </SheetDescription>
               </SheetHeader>
               <ScrollArea className="h-[calc(100vh-4rem)]">
                 <nav className="mt-8 flex flex-col space-y-2 px-6">
@@ -272,3 +278,5 @@ export default function Header() {
     </header>
   );
 }
+
+    
