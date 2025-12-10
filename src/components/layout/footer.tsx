@@ -1,7 +1,8 @@
 
 import Link from 'next/link';
 import { Truck, Github, Twitter, Linkedin } from 'lucide-react';
-import { navMenu, company, offices, contactInfo } from '@/lib/data';
+import { offices, contactInfo } from '@/lib/data';
+import { ArrowRight } from 'lucide-react';
 
 function Logo() {
   return (
@@ -20,21 +21,37 @@ const socialLinks = [
   { icon: <Linkedin className="h-5 w-5" />, href: '#' },
 ];
 
-export default function Footer() {
-  const productLinks = navMenu.find(item => item.title === 'Products')?.megaMenu?.slice(0, 2) || [];
-  const servicesLinks = navMenu.find(item => item.title === 'Products')?.megaMenu?.slice(2, 4) || [];
-
-  const companyLinks = [
+const footerLinks = {
+  trailers: [
+    { name: 'Cement Bulker', href: '/products/trailers/cement-bulker' },
+    { name: 'Flatbed', href: '/products/trailers/flatbed' },
+    { name: 'Skeletal', href: '/products/trailers/skeletal' },
+    { name: 'Side-Wall', href: '/products/trailers/side-wall' },
+  ],
+  cabins: [
+    { name: 'Office Cabin', href: '/products/cabins/office' },
+    { name: 'ACP Cabin', href: '/products/cabins/acp' },
+    { name: 'Security Cabin', href: '/products/cabins/security' },
+    { name: 'Toilet Cabin', href: '/products/cabins/toilet' },
+  ],
+  services: [
+    { name: 'Container Conversions', href: '/products/cabins/container-conversion' },
+    { name: 'Custom Engineering', href: '/services#custom-engineering' },
+    { name: 'Spare Parts', href: '/services#spare-parts' },
+  ],
+  company: [
       { name: "About Us", href: "/company" },
       { name: "Industries", href: "/industries" },
       { name: "Careers", href: "/company#careers" },
       { name: "Contact Us", href: "/contact" },
   ]
+}
 
+export default function Footer() {
   return (
     <footer className="bg-secondary">
-      <div className="container mx-auto max-w-7xl px-4 py-16">
-        <div className="grid grid-cols-2 gap-8 md:grid-cols-4 lg:grid-cols-5">
+      <div className="container mx-auto max-w-7xl px-4 py-7">
+        <div className="grid grid-cols-2 gap-6 md:grid-cols-4 lg:grid-cols-5">
           <div className="col-span-2 md:col-span-4 lg:col-span-1">
             <Logo />
             <p className="mt-4 text-sm text-muted-foreground">
@@ -43,35 +60,38 @@ export default function Footer() {
           </div>
 
           <div>
-            <h3 className="text-sm font-semibold font-headline text-foreground">Products</h3>
-            <ul className="mt-4 space-y-2">
-              {productLinks.flatMap(section => section.items).map(item => (
+            <h3 className="text-sm font-semibold font-headline text-foreground">Trailers</h3>
+            <ul className="mt-3 space-y-2">
+              {footerLinks.trailers.map(item => (
                  <li key={item.name}><Link href={item.href} className="text-sm text-muted-foreground hover:text-foreground">{item.name}</Link></li>
               ))}
+               <li><Link href="/products/trailers" className="text-sm text-accent font-medium hover:text-accent/80 flex items-center">View All <ArrowRight className="ml-1 h-4 w-4" /></Link></li>
             </ul>
           </div>
           
           <div>
-            <h3 className="text-sm font-semibold font-headline text-foreground">Services</h3>
-            <ul className="mt-4 space-y-2">
-              {servicesLinks.flatMap(section => section.items).map(item => (
+            <h3 className="text-sm font-semibold font-headline text-foreground">Cabins</h3>
+            <ul className="mt-3 space-y-2">
+              {footerLinks.cabins.map(item => (
                 <li key={item.name}><Link href={item.href} className="text-sm text-muted-foreground hover:text-foreground">{item.name}</Link></li>
               ))}
+              <li><Link href="/products/cabins" className="text-sm text-accent font-medium hover:text-accent/80 flex items-center">View All <ArrowRight className="ml-1 h-4 w-4" /></Link></li>
             </ul>
           </div>
 
           <div>
             <h3 className="text-sm font-semibold font-headline text-foreground">Company</h3>
-            <ul className="mt-4 space-y-2">
-              {companyLinks.map(item => (
+            <ul className="mt-3 space-y-2">
+              {footerLinks.company.map(item => (
                 <li key={item.name}><Link href={item.href} className="text-sm text-muted-foreground hover:text-foreground">{item.name}</Link></li>
               ))}
+                <li key="services"><Link href="/services" className="text-sm text-muted-foreground hover:text-foreground">Services</Link></li>
             </ul>
           </div>
 
           <div>
             <h3 className="text-sm font-semibold font-headline text-foreground">Contact</h3>
-            <ul className="mt-4 space-y-2 text-sm text-muted-foreground">
+            <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
               <li>{offices[0].address.split(',').slice(0,2).join(', ')}</li>
               <li>{contactInfo.phone}</li>
               <li>{contactInfo.emails[0]}</li>
@@ -79,7 +99,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-16 border-t pt-8 flex flex-col items-center justify-between sm:flex-row">
+        <div className="mt-12 border-t pt-8 flex flex-col items-center justify-between sm:flex-row">
           <p className="text-sm text-muted-foreground">&copy; {new Date().getFullYear()} Thorat Motors India. All rights reserved.</p>
           <div className="mt-4 flex space-x-4 sm:mt-0">
             {socialLinks.map((link, index) => (
@@ -94,5 +114,3 @@ export default function Footer() {
     </footer>
   );
 }
-
-    
