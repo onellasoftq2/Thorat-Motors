@@ -17,6 +17,10 @@ export type NavMenu = {
 
 export const navMenu: NavMenu[] = [
   {
+    title: "Home",
+    href: "/",
+  },
+  {
     title: "Products",
     megaMenu: [
       {
