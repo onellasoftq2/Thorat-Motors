@@ -178,17 +178,7 @@ export default function Home() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {/* Trailers Card */}
-            <div className="product-card-v2 p-0 overflow-hidden">
-                {trailerImage && (
-                  <Image
-                    src={trailerImage.imageUrl}
-                    alt={trailerImage.description}
-                    width={600}
-                    height={400}
-                    className="aspect-video object-cover"
-                    data-ai-hint={trailerImage.imageHint}
-                  />
-                )}
+            <div className="product-card-v2">
                 <div className="p-6">
                   <Truck className="w-12 h-12 text-primary mb-4" />
                   <h3 className="font-headline text-2xl font-bold mb-4">Trailers</h3>
@@ -203,17 +193,7 @@ export default function Home() {
                 </div>
             </div>
             {/* Cabins Card */}
-            <div className="product-card-v2 p-0 overflow-hidden">
-                {cabinImage && (
-                  <Image
-                    src={cabinImage.imageUrl}
-                    alt={cabinImage.description}
-                    width={600}
-                    height={400}
-                    className="aspect-video object-cover"
-                    data-ai-hint={cabinImage.imageHint}
-                  />
-                )}
+            <div className="product-card-v2">
                 <div className="p-6">
                   <HomeIcon className="w-12 h-12 text-primary mb-4" />
                   <h3 className="font-headline text-2xl font-bold mb-4">Portable Cabins</h3>

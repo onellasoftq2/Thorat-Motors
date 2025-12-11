@@ -133,7 +133,7 @@
    }
    
   .product-card-v2 {
-      @apply bg-white border border-slate-200 rounded-xl p-6 transition-all duration-300;
+      @apply bg-white border border-slate-200 rounded-xl transition-all duration-300;
   }
   .product-card-v2:hover {
       @apply shadow-2xl -translate-y-1.5 border-primary;
@@ -144,4 +144,5 @@
 }
 
     
+
 
