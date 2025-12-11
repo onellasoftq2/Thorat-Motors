@@ -5,7 +5,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
-import { Download } from 'lucide-react';
+import { Download, Eye, Goal } from 'lucide-react';
 
 export default function CompanyPage() {
   const aboutImage = PlaceHolderImages.find((img) => img.id === 'about-us-image');
@@ -39,21 +39,35 @@ export default function CompanyPage() {
             </div>
             <div className="md:col-span-2 flex justify-center">
                 {mdImage && (
-                    <Image src={mdImage.imageUrl} alt={mdImage.description} width={300} height={300} className="rounded-full shadow-lg" data-ai-hint={mdImage.imageHint} />
+                    <Image src={mdImage.imageUrl} alt={mdImage.description} width={350} height={350} className="rounded-full shadow-lg aspect-square object-cover" data-ai-hint={mdImage.imageHint} />
                 )}
             </div>
         </section>
 
         {/* Vision & Mission */}
-        <section id="vision" className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-24 text-center">
-            <div>
-                <h2 className="text-3xl font-bold font-headline">Our Vision</h2>
-                <p className="mt-4 text-muted-foreground text-lg">{company.vision}</p>
-            </div>
-             <div>
-                <h2 className="text-3xl font-bold font-headline">Our Mission</h2>
-                <p className="mt-4 text-muted-foreground text-lg">{company.mission}</p>
-            </div>
+        <section id="vision" className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-24">
+            <Card className="text-center shadow-md">
+                <CardHeader className="items-center">
+                    <div className="bg-primary/10 p-4 rounded-full">
+                        <Eye className="h-10 w-10 text-primary" />
+                    </div>
+                    <CardTitle className="mt-4 text-3xl font-bold font-headline">Our Vision</CardTitle>
+                </CardHeader>
+                <CardContent>
+                    <p className="text-muted-foreground text-lg">{company.vision}</p>
+                </CardContent>
+            </Card>
+             <Card className="text-center shadow-md">
+                <CardHeader className="items-center">
+                     <div className="bg-primary/10 p-4 rounded-full">
+                        <Goal className="h-10 w-10 text-primary" />
+                    </div>
+                    <CardTitle className="mt-4 text-3xl font-bold font-headline">Our Mission</CardTitle>
+                </CardHeader>
+                <CardContent>
+                    <p className="text-muted-foreground text-lg">{company.mission}</p>
+                </CardContent>
+            </Card>
         </section>
 
         {/* Manufacturing Excellence */}
