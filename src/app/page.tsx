@@ -15,6 +15,7 @@ import { products, industries } from '@/lib/data';
 import { ArrowRight, Truck, Home as HomeIcon } from 'lucide-react';
 import { offices } from '@/lib/data';
 import IndustryCard from '@/components/ui/industry-card';
+import { Timeline } from '@/components/ui/timeline';
 
 const heroImage = PlaceHolderImages.find((img) => img.id === 'hero-trailer');
 const trailerImage = PlaceHolderImages.find((img) => img.id === 'flatbed');
@@ -50,19 +51,35 @@ const whyChooseUs = [
 const manufacturingCapabilities = [
     {
         title: 'High-Precision CNC Cutting',
-        description: 'Accuracy and consistency for all structural components.',
+        content: (
+            <div className="p-6 bg-secondary rounded-lg border">
+                <p className="text-muted-foreground text-sm">Accuracy and consistency for all structural components, ensuring perfect fit and finish.</p>
+            </div>
+        )
     },
     {
         title: 'MIG & TIG Welding',
-        description: 'Strong welds ensuring long-life and safe operation under load.',
+        content: (
+             <div className="p-6 bg-secondary rounded-lg border">
+                <p className="text-muted-foreground text-sm">Strong, clean welds that ensure long-life and safe operation under the most demanding loads.</p>
+            </div>
+        )
     },
     {
         title: 'Shot Blasting',
-        description: 'Ensures perfect paint adhesion and corrosion resistance.',
+        content: (
+             <div className="p-6 bg-secondary rounded-lg border">
+                <p className="text-muted-foreground text-sm">A superior surface preparation process that ensures perfect paint adhesion and excellent corrosion resistance.</p>
+            </div>
+        )
     },
     {
         title: 'Epoxy & PU Coating',
-        description: 'Two-coat system for long-term protection in harsh environments.',
+        content: (
+             <div className="p-6 bg-secondary rounded-lg border">
+                <p className="text-muted-foreground text-sm">A robust two-coat system for long-term protection against harsh weather and tough operating environments.</p>
+            </div>
+        )
     },
 ];
 
@@ -90,8 +107,8 @@ const cabinsTags = [
     { name: 'Toilet Cabins', href: '/products/cabins/toilet' },
     { name: 'Bunk Cabins', href: '/products/cabins/bunk-house' },
     { name: 'Shop/Hotel Cabins', href: '/products/cabins/shop-hotel' },
-    { name: 'Used Shipping Containers', href: '/products/cabins/container-conversion' },
-    { name: 'Container Conversions', href: '/products/cabins/container-conversion' },
+    { name: 'Used Shipping Containers', href: '/services/container-conversions' },
+    { name: 'Container Conversions', href: '/services/container-conversions' },
     { name: 'G+1 Cabins', href: '/products/cabins/double-storey' },
 ];
 
@@ -213,25 +230,12 @@ export default function Home() {
       </section>
 
       {/* Manufacturing Capabilities Section */}
-       <section className="manufacturing-section">
-        <div className="container mx-auto px-4">
-          <div className="mb-12 text-center">
-            <h2 className="text-3xl font-extrabold font-headline tracking-tight sm:text-4xl">Manufacturing Excellence</h2>
-            <div className="mt-2 h-1 w-20 mx-auto bg-accent"></div>
-          </div>
-          <div className="why-grid">
-            {manufacturingCapabilities.map((item) => (
-              <Card key={item.title} className="why-card">
-                <CardHeader>
-                  <CardTitle className="text-xl">{item.title}</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground">{item.description}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
+       <section className="manufacturing-section bg-background">
+          <Timeline 
+            data={manufacturingCapabilities} 
+            title="Manufacturing Excellence"
+            description="Our state-of-the-art facility is equipped with advanced machinery to ensure precision, durability, and a flawless finish in every product we deliver."
+          />
       </section>
 
       {/* Industries Section */}
