@@ -55,11 +55,11 @@ export const navMenu: NavMenu[] = [
       {
         title: "Containers & Conversions",
         items: [
-          { name: "Used Shipping Containers (20ft / 40ft)", href: "/products/cabins/container-conversion" },
-          { name: "Office Conversions", href: "/products/cabins/container-conversion" },
-          { name: "Retail/Shop Conversions", href: "/products/cabins/shop-hotel" },
-          { name: "Storage Containers", href: "/products/cabins/container-conversion" },
-          { name: "Custom Container Modifications", href: "/products/cabins/container-conversion" },
+          { name: "Used Shipping Containers (20ft / 40ft)", href: "/services/container-conversions" },
+          { name: "Office Conversions", href: "/services/container-conversions" },
+          { name: "Retail/Shop Conversions", href: "/services/container-conversions" },
+          { name: "Storage Containers", href: "/services/container-conversions" },
+          { name: "Custom Container Modifications", href: "/services/container-conversions" },
         ],
       },
     ],
@@ -398,7 +398,7 @@ export const contactInfo = {
 };
 
 export const offices = [
-    { city: 'Pune', state: 'Maharashtra', address: 'GAT NO 336/1, Chakan-Shikrapur Road, Chakan, Pune, IN'},
+    { city: 'Pune', state: 'Maharashtra', address: 'GAT NO 336/1, Chakan-Shikrapur Road, Chakan'},
     { city: 'Surat', state: 'Gujarat', address: 'Green Aristo Plaza, 1st Floor, Shop No- 127, Vaishnovdevi Road, Surat-395009'},
     { city: 'Visakhapatnam', state: 'Andhra Pradesh', address: '98/A, D-Block, Near RTO Office, Autonagar, Oldgajuwaka, Visakhapatnam - 530026'},
     { city: 'Bhubaneswar', state: 'Odisha', address: 'Plot No. N-6/536, IRC Village, Nayapalli, Jayadev Vihar, Bhubaneswar, Khurda - 751015'},

@@ -1,8 +1,7 @@
 
 import Link from 'next/link';
-import { Truck, Github, Twitter, Linkedin } from 'lucide-react';
+import { Truck, Github, Twitter, Linkedin, MapPin, Phone, Mail, ArrowRight } from 'lucide-react';
 import { offices, contactInfo } from '@/lib/data';
-import { ArrowRight } from 'lucide-react';
 
 function Logo() {
   return (
@@ -50,8 +49,8 @@ const footerLinks = {
 export default function Footer() {
   return (
     <footer className="bg-secondary">
-      <div className="container mx-auto max-w-7xl px-4 py-7">
-        <div className="grid grid-cols-2 gap-6 md:grid-cols-4 lg:grid-cols-5">
+      <div className="container mx-auto max-w-7xl px-4 py-16">
+        <div className="grid grid-cols-2 gap-8 md:grid-cols-4 lg:grid-cols-5">
           <div className="col-span-2 md:col-span-4 lg:col-span-1">
             <Logo />
             <p className="mt-4 text-sm text-muted-foreground">
@@ -91,10 +90,19 @@ export default function Footer() {
 
           <div>
             <h3 className="text-sm font-semibold font-headline text-foreground">Contact</h3>
-            <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
-              <li>{offices[0].address.split(',').slice(0, 3).join(', ')}</li>
-              <li>{contactInfo.phone}</li>
-              <li>{contactInfo.emails[0]}</li>
+            <ul className="mt-3 space-y-3 text-sm text-muted-foreground">
+              <li className="flex items-start gap-2">
+                <MapPin className="h-4 w-4 mt-0.5 flex-shrink-0" />
+                <span>{offices[0].address}, {offices[0].city}, {offices[0].state}, IN</span>
+              </li>
+              <li className="flex items-center gap-2">
+                <Phone className="h-4 w-4 flex-shrink-0" />
+                <span>{contactInfo.phone}</span>
+              </li>
+              <li className="flex items-center gap-2">
+                <Mail className="h-4 w-4 flex-shrink-0" />
+                <span>{contactInfo.emails[0]}</span>
+              </li>
             </ul>
           </div>
         </div>
