@@ -1,3 +1,4 @@
+
 import Image from 'next/image';
 import { company } from '@/lib/data';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
@@ -28,9 +29,10 @@ export default function CompanyPage() {
         {/* About & MD's Message */}
         <section className="grid grid-cols-1 md:grid-cols-5 gap-12 items-center">
             <div className="md:col-span-3">
-                <h2 className="text-3xl font-bold font-headline mb-4">Our Story</h2>
+                <h2 className="text-3xl font-bold font-headline mb-2">Our Story</h2>
+                 <div className="w-24 h-1.5 bg-accent mb-4"></div>
                 <p className="text-muted-foreground text-lg leading-relaxed">{company.about}</p>
-                <Card className="mt-8 bg-secondary border-l-4 border-primary">
+                <Card className="mt-8 bg-secondary border-l-4 border-accent">
                     <CardContent className="pt-6">
                         <blockquote className="text-lg font-medium">"{company.mdMessage}"</blockquote>
                         <p className="text-right mt-4 font-semibold">- {company.leadership[0].name}, Managing Director</p>
@@ -49,7 +51,7 @@ export default function CompanyPage() {
             <Card className="text-center shadow-md">
                 <CardHeader className="items-center">
                     <div className="bg-primary/10 p-4 rounded-full">
-                        <Eye className="h-10 w-10 text-primary" />
+                        <Eye className="h-10 w-10 text-accent" />
                     </div>
                     <CardTitle className="mt-4 text-3xl font-bold font-headline">Our Vision</CardTitle>
                 </CardHeader>
@@ -60,7 +62,7 @@ export default function CompanyPage() {
              <Card className="text-center shadow-md">
                 <CardHeader className="items-center">
                      <div className="bg-primary/10 p-4 rounded-full">
-                        <Goal className="h-10 w-10 text-primary" />
+                        <Goal className="h-10 w-10 text-accent" />
                     </div>
                     <CardTitle className="mt-4 text-3xl font-bold font-headline">Our Mission</CardTitle>
                 </CardHeader>
@@ -72,14 +74,16 @@ export default function CompanyPage() {
 
         {/* Manufacturing Excellence */}
         <section id="manufacturing" className="mt-24">
-            <h2 className="text-3xl font-bold font-headline text-center mb-8">Manufacturing Excellence</h2>
+            <h2 className="text-3xl font-bold font-headline text-center mb-2">Manufacturing Excellence</h2>
+             <div className="w-24 h-1.5 bg-accent mx-auto mb-8"></div>
             {aboutImage && <Image src={aboutImage.imageUrl} alt={aboutImage.description} width={1200} height={600} className="w-full rounded-lg shadow-md" data-ai-hint={aboutImage.imageHint}/>}
             <p className="mt-8 text-muted-foreground text-lg leading-relaxed max-w-4xl mx-auto text-center">Our state-of-the-art facilities are equipped with advanced machinery and operated by a skilled workforce. We follow stringent quality control protocols at every stage of production, from raw material sourcing to final product inspection, ensuring every unit that leaves our factory meets the highest standards of quality and safety.</p>
         </section>
 
         {/* Leadership */}
         <section id="leadership" className="mt-24">
-            <h2 className="text-3xl font-bold font-headline text-center mb-8">Leadership Team</h2>
+            <h2 className="text-3xl font-bold font-headline text-center mb-2">Leadership Team</h2>
+            <div className="w-24 h-1.5 bg-accent mx-auto mb-8"></div>
             <div className="flex flex-wrap justify-center gap-8">
                 {company.leadership.map(leader => (
                     <div key={leader.name} className="flex flex-col items-center">
@@ -108,12 +112,12 @@ export default function CompanyPage() {
                 <div id="careers">
                     <h3 className="text-xl font-bold font-headline mb-4">Careers</h3>
                     <p className="text-muted-foreground">Join our team of innovators. We are always looking for passionate talent.</p>
-                    <Button variant="link" asChild className="px-0"><Link href="#">View Openings</Link></Button>
+                    <Button variant="link" asChild className="px-0 text-accent font-semibold"><Link href="#">View Openings</Link></Button>
                 </div>
                  <div id="gallery">
                     <h3 className="text-xl font-bold font-headline mb-4">Gallery</h3>
                     <p className="text-muted-foreground">Explore our products and facilities in action.</p>
-                     <Button variant="link" asChild className="px-0"><Link href="#">View Gallery</Link></Button>
+                     <Button variant="link" asChild className="px-0 text-accent font-semibold"><Link href="#">View Gallery</Link></Button>
                 </div>
             </div>
         </section>

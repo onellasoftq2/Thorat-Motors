@@ -25,7 +25,7 @@ export default function DesigningHomologationPage() {
     <>
       <div className="bg-secondary">
         <div className="container mx-auto px-4 py-16 text-center">
-          <h1 className="text-4xl font-extrabold tracking-tight lg:text-5xl">Designing & Homologation</h1>
+          <h1 className="text-4xl font-extrabold tracking-tight lg:text-5xl font-headline">Designing & Homologation</h1>
           <p className="mt-4 max-w-3xl mx-auto text-lg text-muted-foreground">
             End-to-end engineering, compliance, and certification services for trailers and mobile structures.
           </p>
@@ -36,14 +36,15 @@ export default function DesigningHomologationPage() {
         {/* About Section */}
         <section className="grid md:grid-cols-5 gap-12 items-center">
             <div className="md:col-span-3">
-                <h2 className="text-3xl font-bold font-headline">From Concept to Compliance</h2>
+                <h2 className="text-3xl font-bold font-headline mb-2">From Concept to Compliance</h2>
+                <div className="w-24 h-1.5 bg-accent mb-4"></div>
                 <p className="mt-4 text-lg text-muted-foreground leading-relaxed">
                     Our in-house design team leverages the latest CAD/CAE software to create innovative, efficient, and robust designs for trailers and portable cabins. But a great design is only the beginning. We provide comprehensive homologation support to ensure your product meets all regulatory requirements.
                 </p>
                  <ul className="mt-6 space-y-4">
-                    <li className="flex items-start"><Check className="h-6 w-6 text-primary mr-3 mt-1 flex-shrink-0" /><span>CMVR, BIS, and ARAI certification support.</span></li>
-                    <li className="flex items-start"><Check className="h-6 w-6 text-primary mr-3 mt-1 flex-shrink-0" /><span>PESO compliance for pressure vessels and bulkers.</span></li>
-                    <li className="flex items-start"><Check className="h-6 w-6 text-primary mr-3 mt-1 flex-shrink-0" /><span>Structural analysis and design optimization for performance and safety.</span></li>
+                    <li className="flex items-start"><Check className="h-6 w-6 text-accent mr-3 mt-1 flex-shrink-0" /><span>CMVR, BIS, and ARAI certification support.</span></li>
+                    <li className="flex items-start"><Check className="h-6 w-6 text-accent mr-3 mt-1 flex-shrink-0" /><span>PESO compliance for pressure vessels and bulkers.</span></li>
+                    <li className="flex items-start"><Check className="h-6 w-6 text-accent mr-3 mt-1 flex-shrink-0" /><span>Structural analysis and design optimization for performance and safety.</span></li>
                 </ul>
             </div>
             <div className="md:col-span-2">
@@ -53,13 +54,14 @@ export default function DesigningHomologationPage() {
 
         {/* Capabilities Section */}
         <section className="mt-24">
-            <h2 className="text-3xl font-bold font-headline text-center mb-12">Engineering Capabilities</h2>
+            <h2 className="text-3xl font-bold font-headline text-center mb-2">Engineering Capabilities</h2>
+            <div className="w-24 h-1.5 bg-accent mx-auto mb-12"></div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                 {capabilities.map(cap => (
                     <Card key={cap.title} className="shadow-md">
                         <CardHeader className="items-center text-center">
                              <div className="bg-primary/10 p-4 rounded-full">
-                                {React.cloneElement(cap.icon, { className: "h-8 w-8 text-primary" })}
+                                {React.cloneElement(cap.icon, { className: "h-8 w-8 text-accent" })}
                             </div>
                             <CardTitle className="mt-4">{cap.title}</CardTitle>
                         </CardHeader>
@@ -73,11 +75,12 @@ export default function DesigningHomologationPage() {
 
         {/* Why It Matters Section */}
         <section className="mt-24">
-            <h2 className="text-3xl font-bold font-headline text-center mb-12">Why Strong Homologation Matters</h2>
+            <h2 className="text-3xl font-bold font-headline text-center mb-2">Why Strong Homologation Matters</h2>
+            <div className="w-24 h-1.5 bg-accent mx-auto mb-12"></div>
              <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-8">
                 {whyItMatters.map(item => (
                     <div key={item.title} className="flex items-start">
-                         <Check className="h-8 w-8 text-primary mr-4 mt-1 flex-shrink-0" />
+                         <Check className="h-8 w-8 text-accent mr-4 mt-1 flex-shrink-0" />
                         <div>
                             <h3 className="text-xl font-bold font-headline">{item.title}</h3>
                             <p className="text-muted-foreground">{item.description}</p>

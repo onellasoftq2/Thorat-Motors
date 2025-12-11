@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useState } from 'react';
@@ -270,7 +271,7 @@ export default function QuoteForm() {
                 </Button>
 
                 {currentStep < steps.length - 1 ? (
-                <Button onClick={next}>Next</Button>
+                <Button onClick={next} className="bg-accent text-accent-foreground hover:bg-accent/90">Next</Button>
                 ) : (
                 <Button type="submit" onClick={onSubmit} className="bg-accent text-accent-foreground hover:bg-accent/90">
                 Submit Request

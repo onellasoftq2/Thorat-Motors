@@ -2,7 +2,7 @@
 import React from 'react';
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Card, CardContent, CardHeader, CardTitle } from '@/componentsui/card';
 import { Check, ShieldCheck, Layers, Settings, Workflow, ArrowRight } from 'lucide-react';
 import Link from 'next/link';
 
@@ -32,7 +32,7 @@ export default function StructuralFabricationPage() {
     <>
       <div className="bg-secondary">
         <div className="container mx-auto px-4 py-16 text-center">
-            <h1 className="text-4xl font-extrabold tracking-tight lg:text-5xl">Structural Fabrication</h1>
+            <h1 className="text-4xl font-extrabold tracking-tight lg:text-5xl font-headline">Structural Fabrication</h1>
             <p className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground">
                 High-precision fabrication powered by CNC cutting, welding, forming, and assembly technologies.
             </p>
@@ -42,7 +42,8 @@ export default function StructuralFabricationPage() {
       <div className="container mx-auto px-4 py-16">
         {/* Overview Section */}
         <section>
-          <h2 className="text-3xl font-bold font-headline text-center mb-12">Our Advanced Manufacturing Capabilities</h2>
+          <h2 className="text-3xl font-bold font-headline text-center mb-2">Our Advanced Manufacturing Capabilities</h2>
+          <div className="w-24 h-1.5 bg-accent mx-auto mb-12"></div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {overviewItems.map((item) => (
               <Card key={item.title} className="shadow-md">
@@ -59,16 +60,17 @@ export default function StructuralFabricationPage() {
 
         {/* Process Section */}
         <section className="mt-24">
-            <h2 className="text-3xl font-bold font-headline text-center mb-12">Our Fabrication Process</h2>
+            <h2 className="text-3xl font-bold font-headline text-center mb-2">Our Fabrication Process</h2>
+            <div className="w-24 h-1.5 bg-accent mx-auto mb-12"></div>
             <div className="relative max-w-4xl mx-auto">
                 <div className="absolute left-1/2 top-0 bottom-0 w-px bg-border -translate-x-1/2 hidden md:block"></div>
                 {processSteps.map((step, index) => (
                     <div key={step.name} className="relative flex items-center md:justify-center md:even:flex-row-reverse mb-12 group">
-                        <div className="hidden md:block absolute left-1/2 top-1/2 w-4 h-4 bg-primary rounded-full -translate-x-1/2 -translate-y-1/2 ring-4 ring-background"></div>
+                        <div className="hidden md:block absolute left-1/2 top-1/2 w-4 h-4 bg-accent rounded-full -translate-x-1/2 -translate-y-1/2 ring-4 ring-background"></div>
                          <div className="md:w-[calc(50%-2rem)]">
                             <Card className="shadow-md transition-shadow group-hover:shadow-xl">
                                 <CardContent className="pt-6">
-                                     <p className="text-lg font-semibold flex items-center"><span className="text-primary mr-4 text-2xl font-bold">0{index + 1}</span> {step.name}</p>
+                                     <p className="text-lg font-semibold flex items-center"><span className="text-accent mr-4 text-2xl font-bold">0{index + 1}</span> {step.name}</p>
                                 </CardContent>
                             </Card>
                         </div>
@@ -80,11 +82,12 @@ export default function StructuralFabricationPage() {
         {/* Quality Standards Section */}
         <section className="mt-24 bg-secondary py-16 rounded-lg">
           <div className="container mx-auto px-4">
-            <h2 className="text-3xl font-bold font-headline text-center mb-12">Commitment to Quality</h2>
+            <h2 className="text-3xl font-bold font-headline text-center mb-2">Commitment to Quality</h2>
+            <div className="w-24 h-1.5 bg-accent mx-auto mb-12"></div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
               {qualityStandards.map((item) => (
                 <div key={item.title} className="text-center">
-                   {React.cloneElement(item.icon, { className: "h-10 w-10 text-primary mx-auto mb-4" })}
+                   {React.cloneElement(item.icon, { className: "h-10 w-10 text-accent mx-auto mb-4" })}
                   <h3 className="text-xl font-bold">{item.title}</h3>
                   <p className="text-muted-foreground mt-2">{item.description}</p>
                 </div>

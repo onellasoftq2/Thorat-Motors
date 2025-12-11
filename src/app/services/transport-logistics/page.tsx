@@ -23,7 +23,7 @@ export default function TransportLogisticsPage() {
     <>
       <div className="bg-secondary">
         <div className="container mx-auto px-4 py-16 text-center">
-          <h1 className="text-4xl font-extrabold tracking-tight lg:text-5xl">Transport & Logistics</h1>
+          <h1 className="text-4xl font-extrabold tracking-tight lg:text-5xl font-headline">Transport & Logistics</h1>
           <p className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground">Reliable logistics and end-to-end transportation support across India.</p>
         </div>
       </div>
@@ -32,7 +32,8 @@ export default function TransportLogisticsPage() {
         {/* Overview Section */}
         <section className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div>
-                <h2 className="text-3xl font-bold font-headline">Moving Your Business Forward</h2>
+                <h2 className="text-3xl font-bold font-headline mb-2">Moving Your Business Forward</h2>
+                 <div className="w-24 h-1.5 bg-accent mb-4"></div>
                 <p className="mt-4 text-lg text-muted-foreground leading-relaxed">
                     We provide end-to-end transport and logistics solutions to ensure your products are delivered safely and on time. With 7 service locations, we offer Pan-India delivery support. Our expertise in material movement covers cement, clinker, coal, steel, and aggregates, with a fleet compatible with all major trailer types.
                 </p>
@@ -44,13 +45,14 @@ export default function TransportLogisticsPage() {
 
         {/* Capabilities Section */}
         <section className="mt-24">
-          <h2 className="text-3xl font-bold font-headline text-center mb-12">Service Capabilities</h2>
+          <h2 className="text-3xl font-bold font-headline text-center mb-2">Service Capabilities</h2>
+          <div className="w-24 h-1.5 bg-accent mx-auto mb-12"></div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {capabilities.map((item) => (
               <Card key={item.title} className="text-center shadow-md">
                 <CardHeader className="items-center">
                     <div className='bg-primary/10 p-4 rounded-full'>
-                        {React.cloneElement(item.icon, { className: "h-8 w-8 text-primary" })}
+                        {React.cloneElement(item.icon, { className: "h-8 w-8 text-accent" })}
                     </div>
                     <CardTitle className="mt-4">{item.title}</CardTitle>
                 </CardHeader>
@@ -64,7 +66,8 @@ export default function TransportLogisticsPage() {
 
         {/* Why Choose Us Section */}
         <section className="mt-24">
-            <h2 className="text-3xl font-bold font-headline text-center mb-12">Why Choose Our Logistics Support?</h2>
+            <h2 className="text-3xl font-bold font-headline text-center mb-2">Why Choose Our Logistics Support?</h2>
+            <div className="w-24 h-1.5 bg-accent mx-auto mb-12"></div>
             <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
                 {whyChooseUs.map(item => (
                     <div key={item.title}>

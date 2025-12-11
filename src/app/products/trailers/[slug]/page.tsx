@@ -1,3 +1,4 @@
+
 import { notFound } from 'next/navigation';
 import Image from 'next/image';
 import { products } from '@/lib/data';
@@ -68,7 +69,7 @@ export default function TrailerDetailPage({ params }: { params: { slug: string }
             )}
           </div>
           <div>
-            <h2 className="text-2xl font-bold font-headline border-b-2 border-primary pb-2">Key Features</h2>
+            <h2 className="text-2xl font-bold font-headline border-b-2 border-accent pb-2">Key Features</h2>
             <ul className="mt-6 space-y-4">
               {trailer.features.map((feature, index) => (
                 <li key={index} className="flex items-start">
@@ -81,7 +82,8 @@ export default function TrailerDetailPage({ params }: { params: { slug: string }
         </div>
 
         <div className="mt-16">
-          <h2 className="text-2xl font-bold text-center font-headline">Technical Specifications</h2>
+          <h2 className="text-2xl font-bold text-center font-headline mb-2">Technical Specifications</h2>
+          <div className="w-24 h-1.5 bg-accent mx-auto mb-8"></div>
           <div className="mt-6 max-w-2xl mx-auto border rounded-lg overflow-hidden">
             <Table>
               <TableBody>

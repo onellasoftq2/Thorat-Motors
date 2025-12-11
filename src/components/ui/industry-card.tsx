@@ -11,22 +11,22 @@ type Industry = {
 };
 
 const iconMap: { [key: string]: React.ReactNode } = {
-  cement: <Building className="h-10 w-10 text-primary" />,
-  mining: <Gem className="h-10 w-10 text-primary" />,
-  ports: <Anchor className="h-10 w-10 text-primary" />,
-  construction: <Wrench className="h-10 w-10 text-primary" />,
-  agriculture: <Leaf className="h-10 w-10 text-primary" />,
-  retail: <ShoppingCart className="h-10 w-10 text-primary" />,
-  housing: <Home className="h-10 w-10 text-primary" />,
+  cement: <Building className="h-10 w-10 text-accent" />,
+  mining: <Gem className="h-10 w-10 text-accent" />,
+  ports: <Anchor className="h-10 w-10 text-accent" />,
+  construction: <Wrench className="h-10 w-10 text-accent" />,
+  agriculture: <Leaf className="h-10 w-10 text-accent" />,
+  retail: <ShoppingCart className="h-10 w-10 text-accent" />,
+  housing: <Home className="h-10 w-10 text-accent" />,
 };
 
 
 const IndustryCard = ({ industry }: { industry: Industry }) => {
     return (
         <Link href={`/industries#${industry.id}`} className="group block">
-            <Card className="relative h-full overflow-hidden transition-all duration-300 ease-in-out hover:shadow-xl hover:-translate-y-1.5">
+            <Card className="relative h-full overflow-hidden transition-all duration-300 ease-in-out hover:shadow-xl hover:-translate-y-1.5 hover:border-accent">
                 <CardContent className="flex flex-col items-center justify-center p-6 text-center h-full">
-                    <div className="mb-4 transition-transform duration-300 group-hover:scale-110">
+                    <div className="mb-4 transition-transform duration-300 group-hover:scale-110 bg-primary/10 p-4 rounded-full">
                         {iconMap[industry.id]}
                     </div>
                     <h3 className="font-semibold text-lg font-headline text-foreground">{industry.name}</h3>

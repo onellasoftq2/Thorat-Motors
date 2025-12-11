@@ -1,3 +1,4 @@
+
 import { notFound } from 'next/navigation';
 import Image from 'next/image';
 import { products } from '@/lib/data';
@@ -63,7 +64,7 @@ export default function CabinDetailPage({ params }: { params: { slug: string } }
             )}
           </div>
           <div>
-            <h2 className="text-2xl font-bold font-headline border-b-2 border-primary pb-2">Key Features</h2>
+            <h2 className="text-2xl font-bold font-headline border-b-2 border-accent pb-2">Key Features</h2>
             <ul className="mt-6 space-y-4">
               {cabin.features.map((feature, index) => (
                 <li key={index} className="flex items-start">

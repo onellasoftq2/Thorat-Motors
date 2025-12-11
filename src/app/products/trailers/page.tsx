@@ -1,3 +1,4 @@
+
 import Link from 'next/link';
 import Image from 'next/image';
 import {
@@ -30,7 +31,7 @@ export default function TrailersPage() {
           {products.trailers.map((trailer) => {
             const image = PlaceHolderImages.find((img) => img.id === trailer.id);
             return (
-              <Card key={trailer.id} className="flex flex-col overflow-hidden shadow-md transition-shadow duration-300 hover:shadow-xl">
+              <Card key={trailer.id} className="flex flex-col overflow-hidden shadow-md transition-shadow duration-300 hover:shadow-xl hover:border-accent">
                 {image && (
                   <Image
                     src={image.imageUrl}
@@ -46,7 +47,7 @@ export default function TrailersPage() {
                 </CardHeader>
                 <CardContent className="flex flex-1 flex-col">
                   <p className="text-muted-foreground flex-1">{trailer.description}</p>
-                  <Button asChild variant="link" className="px-0 mt-4 self-start text-primary">
+                  <Button asChild variant="link" className="px-0 mt-4 self-start text-accent font-semibold">
                     <Link href={`/products/trailers/${trailer.id}`}>View Details <ArrowRight className="ml-2 h-4 w-4" /></Link>
                   </Button>
                 </CardContent>

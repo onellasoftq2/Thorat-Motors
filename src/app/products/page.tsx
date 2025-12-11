@@ -1,3 +1,4 @@
+
 import Link from 'next/link';
 import Image from 'next/image';
 import { Card, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
@@ -39,7 +40,7 @@ export default function ProductsPage() {
             const image = PlaceHolderImages.find((img) => img.id === category.imageId);
             return (
               <Link href={category.href} key={category.name} className="group block">
-                <Card className="overflow-hidden h-full transition-all duration-300 group-hover:shadow-md group-hover:-translate-y-1">
+                <Card className="overflow-hidden h-full transition-all duration-300 group-hover:shadow-xl group-hover:border-accent group-hover:-translate-y-1">
                   {image && (
                     <Image
                       src={image.imageUrl}
@@ -53,7 +54,7 @@ export default function ProductsPage() {
                   <CardHeader>
                     <CardTitle className="flex items-center justify-between font-headline">
                       {category.name}
-                      <ArrowRight className="h-5 w-5 text-primary opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+                      <ArrowRight className="h-5 w-5 text-accent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
                     </CardTitle>
                     <CardDescription>{category.description}</CardDescription>
                   </CardHeader>

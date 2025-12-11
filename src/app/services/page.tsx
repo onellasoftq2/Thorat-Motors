@@ -28,22 +28,12 @@ export default function ServicesPage() {
 
   return (
     <>
-      <div className="relative bg-secondary h-80">
-        {heroImage && (
-          <Image
-            src={heroImage.imageUrl}
-            alt={heroImage.description}
-            fill
-            className="object-cover"
-            data-ai-hint={heroImage.imageHint}
-          />
-        )}
-        <div className="absolute inset-0 bg-black/50" />
-        <div className="relative container mx-auto px-4 h-full flex flex-col justify-center items-center text-center text-white">
+      <div className="bg-secondary">
+        <div className="container mx-auto px-4 py-16 text-center">
           <h1 className="text-4xl font-extrabold tracking-tight lg:text-5xl font-headline">
             Our Services
           </h1>
-          <p className="mt-4 max-w-2xl mx-auto text-lg">
+          <p className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground">
             End-to-end solutions from concept and design to fabrication and delivery.
           </p>
         </div>
@@ -53,14 +43,16 @@ export default function ServicesPage() {
          <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
           {services.map((service) => (
             <Link href={`/services/${service.id}`} key={service.id} className="group block">
-              <Card className="flex flex-col h-full overflow-hidden shadow-md transition-shadow duration-300 hover:shadow-xl hover:-translate-y-1">
+              <Card className="flex flex-col h-full overflow-hidden shadow-md transition-shadow duration-300 hover:shadow-xl hover:border-accent hover:-translate-y-1">
                  <CardHeader className="flex-row items-center space-x-4">
-                  {iconMap[service.id]}
+                  <div className="bg-primary/10 p-3 rounded-full text-accent group-hover:bg-accent group-hover:text-accent-foreground transition-colors duration-300">
+                    {iconMap[service.id]}
+                  </div>
                   <CardTitle className="font-headline">{service.name}</CardTitle>
                 </CardHeader>
                 <CardContent className="flex-grow flex flex-col">
                   <CardDescription className="flex-grow">{service.description}</CardDescription>
-                  <Button variant="link" className="px-0 mt-4 self-start text-primary">
+                  <Button variant="link" className="px-0 mt-4 self-start text-accent font-semibold">
                     Learn More <ArrowRight className="ml-2 h-4 w-4" />
                   </Button>
                 </CardContent>

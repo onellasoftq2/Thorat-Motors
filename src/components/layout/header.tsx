@@ -97,7 +97,7 @@ export default function Header() {
                             <li key={subItem.name}>
                               <Link
                                 href={subItem.href}
-                                className={cn("block rounded-md p-2 text-sm transition-colors hover:bg-secondary hover:text-secondary-foreground", pathname === subItem.href ? 'text-primary font-medium' : 'text-muted-foreground' )}
+                                className={cn("block rounded-md p-2 text-sm transition-colors hover:bg-secondary hover:text-accent", pathname === subItem.href ? 'text-primary font-medium' : 'text-muted-foreground' )}
                               >
                                 {subItem.name}
                               </Link>
@@ -130,7 +130,7 @@ export default function Header() {
                         <li key={subItem.name}>
                           <Link
                             href={subItem.href}
-                            className={cn("block rounded-md p-2 text-sm transition-colors hover:bg-secondary hover:text-secondary-foreground", pathname === subItem.href ? 'text-primary font-medium' : 'text-muted-foreground' )}
+                            className={cn("block rounded-md p-2 text-sm transition-colors hover:bg-secondary hover:text-accent", pathname === subItem.href ? 'text-primary font-medium' : 'text-muted-foreground' )}
                           >
                             {subItem.name}
                           </Link>

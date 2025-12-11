@@ -35,7 +35,7 @@ export default function ContainerConversionsPage() {
     <>
       <div className="bg-secondary">
         <div className="container mx-auto px-4 py-16 text-center">
-            <h1 className="text-4xl font-extrabold tracking-tight lg:text-5xl">Container Conversions & Modifications</h1>
+            <h1 className="text-4xl font-extrabold tracking-tight lg:text-5xl font-headline">Container Conversions & Modifications</h1>
             <p className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground">Transforming 20 ft and 40 ft containers into high-utility structures.</p>
         </div>
       </div>
@@ -44,7 +44,8 @@ export default function ContainerConversionsPage() {
         {/* About Section */}
         <section className="max-w-4xl mx-auto text-center grid md:grid-cols-2 gap-12 items-center">
             <div className='text-left'>
-                <h2 className="text-3xl font-bold font-headline">Durable, Flexible, and Fast Solutions</h2>
+                <h2 className="text-3xl font-bold font-headline mb-2">Durable, Flexible, and Fast Solutions</h2>
+                 <div className="w-24 h-1.5 bg-accent mb-4"></div>
                 <p className="mt-4 text-lg text-muted-foreground leading-relaxed">
                     Used shipping containers provide an incredibly strong and durable base for a variety of structures, with an estimated lifespan of 10-15 years. We specialize in modifying these 20 ft and 40 ft containers into functional and cost-effective spaces for storage, offices, shops, kiosks, and accommodation. Our service includes custom interior and exterior design options to bring your vision to life.
                 </p>
@@ -63,13 +64,14 @@ export default function ContainerConversionsPage() {
 
         {/* Conversion Capabilities */}
         <section className="mt-24">
-          <h2 className="text-3xl font-bold font-headline text-center mb-12">Conversion Capabilities</h2>
+          <h2 className="text-3xl font-bold font-headline text-center mb-2">Conversion Capabilities</h2>
+          <div className="w-24 h-1.5 bg-accent mx-auto mb-12"></div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {conversionCapabilities.map((item) => (
               <Card key={item.title} className="text-center">
                 <CardHeader className="items-center">
                   <div className="bg-primary/10 p-4 rounded-full">
-                    {React.cloneElement(item.icon, { className: "h-8 w-8 text-primary" })}
+                    {React.cloneElement(item.icon, { className: "h-8 w-8 text-accent" })}
                   </div>
                   <CardTitle className="mt-4">{item.title}</CardTitle>
                 </CardHeader>
@@ -83,7 +85,8 @@ export default function ContainerConversionsPage() {
 
          {/* Popular Conversions */}
         <section className="mt-24">
-            <h2 className="text-3xl font-bold font-headline text-center mb-12">Popular Conversion Types</h2>
+            <h2 className="text-3xl font-bold font-headline text-center mb-2">Popular Conversion Types</h2>
+            <div className="w-24 h-1.5 bg-accent mx-auto mb-12"></div>
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 text-center">
                 {popularConversions.map(item => (
                     <Card key={item.title} className="p-6 flex items-center justify-center">
@@ -97,7 +100,8 @@ export default function ContainerConversionsPage() {
         {/* Why Choose Us */}
         <section className="mt-24 bg-secondary py-16 rounded-lg">
           <div className="container mx-auto px-4">
-            <h2 className="text-3xl font-bold font-headline text-center mb-12">Why Choose Thorat Motors?</h2>
+            <h2 className="text-3xl font-bold font-headline text-center mb-2">Why Choose Thorat Motors?</h2>
+            <div className="w-24 h-1.5 bg-accent mx-auto mb-12"></div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
               {whyChooseUs.map((item) => (
                 <div key={item.title}>

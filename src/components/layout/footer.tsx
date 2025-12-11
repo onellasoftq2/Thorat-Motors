@@ -62,7 +62,7 @@ export default function Footer() {
             <h3 className="text-sm font-semibold font-headline text-foreground">Trailers</h3>
             <ul className="mt-3 space-y-2">
               {footerLinks.trailers.map(item => (
-                 <li key={item.name}><Link href={item.href} className="text-sm text-muted-foreground hover:text-foreground">{item.name}</Link></li>
+                 <li key={item.name}><Link href={item.href} className="text-sm text-muted-foreground hover:text-accent">{item.name}</Link></li>
               ))}
                <li><Link href="/products/trailers" className="text-sm text-accent font-medium hover:text-accent/80 flex items-center">View All <ArrowRight className="ml-1 h-4 w-4" /></Link></li>
             </ul>
@@ -72,7 +72,7 @@ export default function Footer() {
             <h3 className="text-sm font-semibold font-headline text-foreground">Cabins</h3>
             <ul className="mt-3 space-y-2">
               {footerLinks.cabins.map(item => (
-                <li key={item.name}><Link href={item.href} className="text-sm text-muted-foreground hover:text-foreground">{item.name}</Link></li>
+                <li key={item.name}><Link href={item.href} className="text-sm text-muted-foreground hover:text-accent">{item.name}</Link></li>
               ))}
               <li><Link href="/products/cabins" className="text-sm text-accent font-medium hover:text-accent/80 flex items-center">View All <ArrowRight className="ml-1 h-4 w-4" /></Link></li>
             </ul>
@@ -82,9 +82,9 @@ export default function Footer() {
             <h3 className="text-sm font-semibold font-headline text-foreground">Company</h3>
             <ul className="mt-3 space-y-2">
               {footerLinks.company.map(item => (
-                <li key={item.name}><Link href={item.href} className="text-sm text-muted-foreground hover:text-foreground">{item.name}</Link></li>
+                <li key={item.name}><Link href={item.href} className="text-sm text-muted-foreground hover:text-accent">{item.name}</Link></li>
               ))}
-                <li key="services"><Link href="/services" className="text-sm text-muted-foreground hover:text-foreground">Services</Link></li>
+                <li key="services"><Link href="/services" className="text-sm text-muted-foreground hover:text-accent">Services</Link></li>
             </ul>
           </div>
 
@@ -92,15 +92,15 @@ export default function Footer() {
             <h3 className="text-sm font-semibold font-headline text-foreground">Contact</h3>
             <ul className="mt-3 space-y-3 text-sm text-muted-foreground">
               <li className="flex items-start gap-2">
-                <MapPin className="h-4 w-4 mt-0.5 flex-shrink-0" />
+                <MapPin className="h-4 w-4 mt-0.5 flex-shrink-0 text-accent" />
                 <span>{offices[0].address}, {offices[0].city}, {offices[0].state}, IN</span>
               </li>
               <li className="flex items-center gap-2">
-                <Phone className="h-4 w-4 flex-shrink-0" />
+                <Phone className="h-4 w-4 flex-shrink-0 text-accent" />
                 <span>{contactInfo.phone}</span>
               </li>
               <li className="flex items-center gap-2">
-                <Mail className="h-4 w-4 flex-shrink-0" />
+                <Mail className="h-4 w-4 flex-shrink-0 text-accent" />
                 <span>{contactInfo.emails[0]}</span>
               </li>
             </ul>
@@ -111,7 +111,7 @@ export default function Footer() {
           <p className="text-sm text-muted-foreground">&copy; {new Date().getFullYear()} Thorat Motors India. All rights reserved.</p>
           <div className="mt-4 flex space-x-4 sm:mt-0">
             {socialLinks.map((link, index) => (
-              <Link key={index} href={link.href} className="text-muted-foreground hover:text-foreground">
+              <Link key={index} href={link.href} className="text-muted-foreground hover:text-accent">
                 {link.icon}
                 <span className="sr-only">Social media link</span>
               </Link>

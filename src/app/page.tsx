@@ -153,7 +153,7 @@ export default function Home() {
         <div className="container mx-auto px-4">
           <div className="mb-12 text-center">
             <h2 className="text-3xl font-extrabold font-headline tracking-tight sm:text-4xl">Why Choose Thorat Motors?</h2>
-            <div className="mt-2 h-1 w-20 mx-auto bg-primary"></div>
+            <div className="mt-2 h-1 w-20 mx-auto bg-accent"></div>
           </div>
           <div className="why-grid">
             {whyChooseUs.map((item) => (
@@ -175,7 +175,7 @@ export default function Home() {
         <div className="container mx-auto px-4">
           <div className="mb-12 text-center">
             <h2 className="text-3xl font-extrabold font-headline tracking-tight sm:text-4xl">Our Products</h2>
-            <div className="mt-2 h-1 w-20 mx-auto bg-primary"></div>
+            <div className="mt-2 h-1 w-20 mx-auto bg-accent"></div>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {/* Trailers Card */}
@@ -217,7 +217,7 @@ export default function Home() {
         <div className="container mx-auto px-4">
           <div className="mb-12 text-center">
             <h2 className="text-3xl font-extrabold font-headline tracking-tight sm:text-4xl">Manufacturing Excellence</h2>
-            <div className="mt-2 h-1 w-20 mx-auto bg-primary"></div>
+            <div className="mt-2 h-1 w-20 mx-auto bg-accent"></div>
           </div>
           <div className="why-grid">
             {manufacturingCapabilities.map((item) => (
@@ -239,7 +239,7 @@ export default function Home() {
         <div className="container mx-auto px-4">
           <div className="mb-12 text-center">
             <h2 className="text-3xl font-extrabold font-headline tracking-tight sm:text-4xl">Serving Diverse Industries</h2>
-            <div className="mt-2 h-1 w-20 mx-auto bg-primary"></div>
+            <div className="mt-2 h-1 w-20 mx-auto bg-accent"></div>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
             {industries.map((industry) => (
@@ -253,7 +253,7 @@ export default function Home() {
       <section className="locations-section">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl font-extrabold font-headline tracking-tight sm:text-4xl">Nationwide Presence</h2>
-           <div className="mt-2 h-1 w-20 mx-auto bg-primary mb-12"></div>
+           <div className="mt-2 h-1 w-20 mx-auto bg-accent mb-12"></div>
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-4">
             {locations.map(location => (
               <Link href="/contact" key={location.city}>
@@ -282,7 +282,7 @@ export default function Home() {
               </p>
               <div className="industry-tags mt-8">
                   {certifications.map(cert => (
-                      <Badge key={cert}>{cert}</Badge>
+                      <Badge key={cert} variant="secondary">{cert}</Badge>
                   ))}
               </div>
           </div>

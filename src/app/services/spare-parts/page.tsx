@@ -29,7 +29,7 @@ export default function SparePartsPage() {
     <>
       <div className="bg-secondary">
         <div className="container mx-auto px-4 py-16 text-center">
-          <h1 className="text-4xl font-extrabold tracking-tight lg:text-5xl">Spare Parts Division</h1>
+          <h1 className="text-4xl font-extrabold tracking-tight lg:text-5xl font-headline">Spare Parts Division</h1>
           <p className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground">
             Genuine, reliable, and ready-to-dispatch spare parts for trailers and portable cabins.
           </p>
@@ -39,12 +39,15 @@ export default function SparePartsPage() {
       <div className="container mx-auto px-4 py-16">
         {/* Parts Categories */}
         <section>
-          <h2 className="text-3xl font-bold text-center font-headline mb-12">Our Parts Inventory</h2>
+          <h2 className="text-3xl font-bold text-center font-headline mb-2">Our Parts Inventory</h2>
+          <div className="w-24 h-1.5 bg-accent mx-auto mb-12"></div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {partCategories.map((category) => (
               <Card key={category.name} className="shadow-md">
                 <CardHeader className="flex-row items-center gap-4">
-                  {React.cloneElement(category.icon, {className: "w-8 h-8 text-primary"})}
+                  <div className="bg-primary/10 text-accent p-3 rounded-full">
+                    {React.cloneElement(category.icon, {className: "w-6 h-6"})}
+                  </div>
                   <CardTitle>{category.name}</CardTitle>
                 </CardHeader>
               </Card>
@@ -54,7 +57,8 @@ export default function SparePartsPage() {
 
         {/* Why Choose Us */}
         <section className="mt-24">
-            <h2 className="text-3xl font-bold text-center font-headline mb-12">Why Choose Our Spare Parts?</h2>
+            <h2 className="text-3xl font-bold text-center font-headline mb-2">Why Choose Our Spare Parts?</h2>
+            <div className="w-24 h-1.5 bg-accent mx-auto mb-12"></div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                 {benefits.map(benefit => (
                     <Card key={benefit.title} className="text-center shadow-md">
@@ -72,11 +76,12 @@ export default function SparePartsPage() {
         {/* Service Support */}
         <section className="mt-24 bg-secondary py-16 rounded-lg">
           <div className="container mx-auto px-4 text-center">
-            <h2 className="text-3xl font-bold font-headline mb-12">Comprehensive Service Support</h2>
+            <h2 className="text-3xl font-bold font-headline mb-2">Comprehensive Service Support</h2>
+            <div className="w-24 h-1.5 bg-accent mx-auto mb-12"></div>
             <div className="flex flex-wrap justify-center gap-x-8 gap-y-4">
               {serviceSupport.map((support) => (
                 <div key={support} className="flex items-center text-lg">
-                  <Check className="h-6 w-6 text-primary mr-2" />
+                  <Check className="h-6 w-6 text-accent mr-2" />
                   <span>{support}</span>
                 </div>
               ))}

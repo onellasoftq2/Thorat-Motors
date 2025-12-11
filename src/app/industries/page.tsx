@@ -1,3 +1,4 @@
+
 import Image from 'next/image';
 import { industries } from '@/lib/data';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
@@ -5,13 +6,13 @@ import { Card, CardHeader, CardTitle } from '@/components/ui/card';
 import { Building, Gem, Anchor, Wrench, Leaf, ShoppingCart, Home } from 'lucide-react';
 
 const iconMap: { [key: string]: React.ReactNode } = {
-  cement: <Building className="h-10 w-10 text-primary" />,
-  mining: <Gem className="h-10 w-10 text-primary" />,
-  ports: <Anchor className="h-10 w-10 text-primary" />,
-  construction: <Wrench className="h-10 w-10 text-primary" />,
-  agriculture: <Leaf className="h-10 w-10 text-primary" />,
-  retail: <ShoppingCart className="h-10 w-10 text-primary" />,
-  housing: <Home className="h-10 w-10 text-primary" />,
+  cement: <Building className="h-10 w-10 text-accent" />,
+  mining: <Gem className="h-10 w-10 text-accent" />,
+  ports: <Anchor className="h-10 w-10 text-accent" />,
+  construction: <Wrench className="h-10 w-10 text-accent" />,
+  agriculture: <Leaf className="h-10 w-10 text-accent" />,
+  retail: <ShoppingCart className="h-10 w-10 text-accent" />,
+  housing: <Home className="h-10 w-10 text-accent" />,
 };
 
 export default function IndustriesPage() {
@@ -43,9 +44,11 @@ export default function IndustriesPage() {
       <div className="container mx-auto px-4 py-16">
         <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           {industries.map((industry) => (
-            <Card key={industry.id} id={industry.id} className="flex items-center p-6 shadow-md">
-              {iconMap[industry.id]}
-              <CardHeader>
+            <Card key={industry.id} id={industry.id} className="flex items-center p-6 shadow-md transition-shadow hover:shadow-xl hover:border-accent">
+              <div className="bg-primary/10 p-3 rounded-full mr-4">
+                {iconMap[industry.id]}
+              </div>
+              <CardHeader className='p-0'>
                 <CardTitle className="font-headline text-lg">{industry.name}</CardTitle>
               </CardHeader>
             </Card>

@@ -1,3 +1,4 @@
+
 import { offices, contactInfo } from '@/lib/data';
 import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -29,13 +30,14 @@ export default function ContactPage() {
           </Button>
         </div>
 
-        <h2 className="text-3xl font-bold font-headline text-center mb-8">Our Offices</h2>
+        <h2 className="text-3xl font-bold font-headline text-center mb-2">Our Offices</h2>
+        <div className="w-24 h-1.5 bg-accent mx-auto mb-8"></div>
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
           {offices.map((office) => (
             <Card key={office.city} className="shadow-md">
               <CardHeader>
                 <CardTitle className="flex items-start font-headline">
-                  <MapPin className="h-6 w-6 mr-3 text-primary flex-shrink-0 mt-1" />
+                  <MapPin className="h-6 w-6 mr-3 text-accent flex-shrink-0 mt-1" />
                   <div>
                     {office.city}
                     <p className="text-sm font-normal text-muted-foreground">{office.state}</p>
