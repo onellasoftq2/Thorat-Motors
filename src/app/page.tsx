@@ -14,6 +14,7 @@ import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { products, industries } from '@/lib/data';
 import { ArrowRight, Truck, Home as HomeIcon } from 'lucide-react';
 import { offices } from '@/lib/data';
+import IndustryCard from '@/components/ui/industry-card';
 
 const heroImage = PlaceHolderImages.find((img) => img.id === 'hero-trailer');
 const trailerImage = PlaceHolderImages.find((img) => img.id === 'flatbed');
@@ -240,11 +241,9 @@ export default function Home() {
             <h2 className="text-3xl font-extrabold font-headline tracking-tight sm:text-4xl">Serving Diverse Industries</h2>
             <div className="mt-2 h-1 w-20 mx-auto bg-primary"></div>
           </div>
-          <div className="industry-tags">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
             {industries.map((industry) => (
-              <Badge key={industry.name} asChild>
-                <Link href={`/industries#${industry.id}`}>{industry.name}</Link>
-              </Badge>
+              <IndustryCard key={industry.id} industry={industry} />
             ))}
           </div>
         </div>
