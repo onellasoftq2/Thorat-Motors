@@ -56,7 +56,7 @@ export const Timeline = ({ data, title, description }: { data: TimelineEntry[], 
           >
             <div className="sticky flex flex-col md:flex-row z-10 items-center top-40 self-start max-w-xs lg:max-w-sm md:w-full">
               <div className="h-10 absolute left-3 md:left-3 w-10 rounded-full bg-background flex items-center justify-center">
-                <div className="h-4 w-4 rounded-full bg-secondary border border-border p-2" />
+                <div className="h-4 w-4 rounded-full bg-primary p-2" />
               </div>
               <h3 className="hidden md:block text-xl md:pl-20 md:text-3xl font-bold text-muted-foreground/80 ">
                 {item.title}
@@ -75,7 +75,7 @@ export const Timeline = ({ data, title, description }: { data: TimelineEntry[], 
           style={{
             height: height + "px",
           }}
-          className="absolute md:left-8 left-8 top-0 overflow-hidden w-[2px] bg-[linear-gradient(to_bottom,var(--tw-gradient-stops))] from-transparent from-[0%] via-border to-transparent to-[99%]  [mask-image:linear-gradient(to_bottom,transparent_0%,black_10%,black_90%,transparent_100%)] "
+          className="absolute md:left-8 left-8 top-0 w-[2px] bg-[linear-gradient(to_bottom,var(--tw-gradient-stops))] from-transparent from-[0%] via-border to-transparent to-[99%]  [mask-image:linear-gradient(to_bottom,transparent_0%,black_10%,black_90%,transparent_100%)] "
         >
           <motion.div
             style={{
