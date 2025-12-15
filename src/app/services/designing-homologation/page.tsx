@@ -1,4 +1,5 @@
 
+'use client';
 import React from 'react';
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
@@ -25,7 +26,9 @@ export default function DesigningHomologationPage() {
     <>
       <div className="bg-secondary">
         <div className="container mx-auto px-4 py-16 text-center">
-          <h1 className="text-4xl font-extrabold tracking-tight lg:text-5xl font-headline">Designing & Homologation</h1>
+          <h1 className="text-4xl font-extrabold tracking-tight lg:text-5xl font-headline">
+            Designing & Homologation
+          </h1>
           <p className="mt-4 max-w-3xl mx-auto text-lg text-muted-foreground">
             End-to-end engineering, compliance, and certification services for trailers and mobile structures.
           </p>
@@ -48,7 +51,7 @@ export default function DesigningHomologationPage() {
                 </ul>
             </div>
             <div className="md:col-span-2">
-                <Image src="https://images.unsplash.com/photo-1555949963-ff980e67233d?q=80&w=2070&auto=format&fit=crop" alt="Engineering Design" width={500} height={400} className="rounded-lg shadow-md" data-ai-hint="engineering design" />
+                <Image src="https://images.unsplash.com/photo-1555949963-ff980e67233d?q=80&w=2070&auto=format&fit=crop&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Engineering Design" width={500} height={400} className="rounded-lg shadow-md" data-ai-hint="engineering design" />
             </div>
         </section>
 

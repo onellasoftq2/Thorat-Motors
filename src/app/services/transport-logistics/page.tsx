@@ -1,4 +1,5 @@
 
+'use client';
 import React from 'react';
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
@@ -23,7 +24,9 @@ export default function TransportLogisticsPage() {
     <>
       <div className="bg-secondary">
         <div className="container mx-auto px-4 py-16 text-center">
-          <h1 className="text-4xl font-extrabold tracking-tight lg:text-5xl font-headline">Transport & Logistics</h1>
+          <h1 className="text-4xl font-extrabold tracking-tight lg:text-5xl font-headline">
+            Transport & Logistics
+          </h1>
           <p className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground">Reliable logistics and end-to-end transportation support across India.</p>
         </div>
       </div>
@@ -39,7 +42,7 @@ export default function TransportLogisticsPage() {
                 </p>
             </div>
             <div className="flex justify-center">
-                <Image src="https://images.unsplash.com/photo-1577985051167-3d7f3394c8b2?q=80&w=1974&auto=format&fit=crop" alt="Trucks on road" width={500} height={400} className="rounded-lg shadow-md" data-ai-hint="truck highway" />
+                <Image src="https://images.unsplash.com/photo-1577985051167-3d7f3394c8b2?q=80&w=1974&auto=format&fit=crop&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Trucks on road" width={500} height={400} className="rounded-lg shadow-md" data-ai-hint="truck highway" />
             </div>
         </section>
 
