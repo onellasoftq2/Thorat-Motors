@@ -6,13 +6,14 @@ import { motion } from 'framer-motion';
 import {
   Card,
   CardContent,
+  CardDescription,
   CardHeader,
   CardTitle,
 } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
-import { products, industries, offices } from '@/lib/data';
-import { ArrowRight, Truck, Home as HomeIcon } from 'lucide-react';
+import { products, industries, offices, services } from '@/lib/data';
+import { ArrowRight, Truck, Home as HomeIcon, Wrench, DraftingCompass, Cog, Box, Star } from 'lucide-react';
 import IndustryCard from '@/components/ui/industry-card';
 import { Timeline } from '@/components/ui/timeline';
 import { AnimatedHeadline } from '@/components/animated-headline';
@@ -91,6 +92,15 @@ const certifications = [
     'PESO Compliance',
     'ARAI Homologation'
 ];
+
+const serviceIconMap: { [key: string]: React.ReactNode } = {
+  'designing-homologation': <DraftingCompass className="h-10 w-10 text-primary" />,
+  'structural-fabrication': <Wrench className="h-10 w-10 text-primary" />,
+  'spare-parts': <Cog className="h-10 w-10 text-primary" />,
+  'transport-logistics': <Truck className="h-10 w-10 text-primary" />,
+  'custom-engineering': <Star className="h-10 w-10 text-primary" />,
+  'container-conversions': <Box className="h-10 w-10 text-primary" />,
+};
 
 const trailersTags = [
     { name: 'Cement Bulker', href: '/products/trailers/cement-bulker' },
@@ -264,8 +274,38 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Our Services Section */}
+      <section className="bg-background py-16 lg:py-24">
+        <div className="container mx-auto px-4">
+          <div className="mb-12 text-center">
+            <h2 className="text-3xl font-extrabold font-headline tracking-tight sm:text-4xl">Our Services</h2>
+            <div className="mt-2 h-1.5 w-24 mx-auto bg-accent"></div>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {services.map((service) => (
+              <Link href={`/services/${service.id}`} key={service.id} className="group block">
+                <Card className="flex flex-col h-full overflow-hidden shadow-md transition-shadow duration-300 hover:shadow-xl hover:border-accent hover:-translate-y-1">
+                  <CardHeader className="flex-row items-center space-x-4">
+                    <div className="bg-primary/10 p-3 rounded-full text-accent group-hover:bg-accent group-hover:text-accent-foreground transition-colors duration-300">
+                      {serviceIconMap[service.id]}
+                    </div>
+                    <CardTitle className="font-headline text-lg">{service.name}</CardTitle>
+                  </CardHeader>
+                  <CardContent className="flex-grow flex flex-col">
+                    <CardDescription className="flex-grow">{service.description}</CardDescription>
+                     <div className="mt-4 self-start text-accent font-semibold flex items-center">
+                      Learn More <ArrowRight className="ml-2 h-4 w-4" />
+                    </div>
+                  </CardContent>
+                </Card>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Manufacturing Capabilities Section */}
-       <section className="manufacturing-section bg-background">
+       <section className="manufacturing-section bg-secondary">
           <Timeline 
             data={manufacturingCapabilities} 
             title="Manufacturing Excellence"
@@ -361,3 +401,4 @@ export default function Home() {
     </div>
   );
 }
+
