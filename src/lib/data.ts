@@ -412,3 +412,76 @@ export const offices = [
     { city: 'Chennai', state: 'Tamil Nadu', address: 'Plot No 5/3, Thiruvallur Road, Nemam Post, Poonamallee Taluka, Chennai - 600124', descriptor: 'Logistics Support', coords: { x: 47, y: 78 } },
     { city: 'Patna', state: 'Bihar', address: 'Khata No-456, Khesra No-198, 199, Manupur, Saran, Chapra - 841207', descriptor: 'Regional Office', coords: { x: 63, y: 30 } },
 ];
+
+export const industrySolutions = [
+  {
+    id: 'cement',
+    name: 'Cement & Bulk Material',
+    description: 'Specialized trailers and logistics for the efficient and safe transport of bulk materials like cement, fly ash, and clinker.',
+    solutions: [
+      'Cement Bulker Trailers',
+      'Flatbed & Side-Wall Trailers',
+      'Transport & Logistics Support',
+    ],
+  },
+  {
+    id: 'mining',
+    name: 'Mining, Steel & Metals',
+    description: 'Robust, heavy-duty trailers engineered to withstand the demanding conditions of mining and metal transport.',
+    solutions: [
+      'Heavy-Duty Trailers',
+      'Skeletal & Flatbed Trailers',
+      'Custom Engineering',
+    ],
+  },
+  {
+    id: 'ports',
+    name: 'Ports & Terminals',
+    description: 'Efficient and reliable container handling solutions, including skeletal trailers and logistics support for terminal operations.',
+    solutions: [
+      'Skeletal Trailers (20ft/40ft)',
+      'Container Handling Solutions',
+      'Logistics Support',
+    ],
+  },
+  {
+    id: 'construction',
+    name: 'Construction & Infrastructure',
+    description: 'Versatile trailers and portable site cabins to support large-scale construction and infrastructure projects.',
+    solutions: [
+      'Flatbed Trailers',
+      'Side-Wall Trailers',
+      'Portable Site Cabins',
+    ],
+  },
+  {
+    id: 'agriculture',
+    name: 'Agriculture',
+    description: 'Durable transport solutions for bulk agricultural produce and secure on-site storage containers.',
+    solutions: [
+      'Bulk Transport Trailers',
+      'Storage Containers',
+      'Seasonal Logistics Support',
+    ],
+  },
+  {
+    id: 'retail',
+    name: 'Retail & Commercial',
+    description: 'Customizable container conversions for pop-up shops, kiosks, and mobile commercial spaces.',
+    solutions: [
+      'Container Conversions',
+      'Shop & Hotel Cabins',
+      'Custom Fabrication',
+    ],
+  },
+  {
+    id: 'housing',
+    name: 'Industrial Housing',
+    description: 'High-quality portable cabins and modular buildings for on-site workforce accommodation and administrative offices.',
+    solutions: [
+      'Portable Cabins',
+      'Accommodation & Bunk Cabins',
+      'G+1 Cabin Structures',
+    ],
+  },
+];
