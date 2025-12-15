@@ -146,7 +146,7 @@ export default function Home() {
   const [selectedIndustry, setSelectedIndustry] = useState(industrySolutions[0]);
 
   return (
-    <div className='overflow-x-clip'>
+    <div>
       {/* Hero Section */}
       <section className="bg-background">
         <div className="container mx-auto grid grid-cols-1 items-center gap-12 px-4 py-16 md:grid-cols-2 lg:py-24 md:px-6 lg:px-8">
