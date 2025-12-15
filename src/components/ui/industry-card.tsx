@@ -3,7 +3,6 @@
 import Link from 'next/link';
 import { Card, CardContent } from '@/components/ui/card';
 import { Building, Gem, Anchor, Wrench, Leaf, ShoppingCart, Home, ArrowRight } from 'lucide-react';
-import { cn } from '@/lib/utils';
 
 type Industry = {
     id: string;
@@ -26,7 +25,8 @@ const IndustryCard = ({ industry }: { industry: Industry }) => {
         <Link href={`/industries#${industry.id}`} className="group block">
             <Card className="relative h-full overflow-hidden transition-all duration-300 ease-in-out hover:shadow-xl hover:-translate-y-1.5 hover:border-accent">
                 <CardContent className="flex flex-col items-center justify-center p-6 text-center h-full">
-                    <div className="mb-4 transition-transform duration-300 group-hover:scale-110 bg-primary/10 p-4 rounded-full">
+                    <div className="mb-4 transition-transform duration-300 group-hover:scale-110 bg-primary/10 p-4 rounded-full relative">
+                        <div className="absolute inset-0 rounded-full bg-accent opacity-0 group-hover:opacity-20 transition-opacity duration-300 animate-pulse"></div>
                         {iconMap[industry.id]}
                     </div>
                     <h3 className="font-semibold text-lg font-headline text-foreground">{industry.name}</h3>

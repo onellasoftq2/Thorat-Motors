@@ -2,6 +2,7 @@
 'use client';
 import Image from 'next/image';
 import Link from 'next/link';
+import { motion } from 'framer-motion';
 import {
   Card,
   CardContent,
@@ -9,24 +10,22 @@ import {
   CardTitle,
 } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Badge } from '@/components/ui/badge';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
-import { products, industries } from '@/lib/data';
+import { products, industries, offices } from '@/lib/data';
 import { ArrowRight, Truck, Home as HomeIcon } from 'lucide-react';
-import { offices } from '@/lib/data';
 import IndustryCard from '@/components/ui/industry-card';
 import { Timeline } from '@/components/ui/timeline';
+import { AnimatedHeadline } from '@/components/animated-headline';
+import { AnimatedNumber } from '@/components/animated-number';
+import { Marquee } from '@/components/ui/marquee';
 
 const heroImage = PlaceHolderImages.find((img) => img.id === 'hero-trailer');
-const trailerImage = PlaceHolderImages.find((img) => img.id === 'flatbed');
-const cabinImage = PlaceHolderImages.find((img) => img.id === 'office');
-const locations = offices;
 
 const stats = [
-  { value: '10,000+', label: 'Trailers Delivered' },
-  { value: '15+ Years', label: 'Engineering Expertise' },
-  { value: '7 Locations', label: 'Pan-India Presence' },
-  { value: 'ISO Certified', label: 'Quality Manufacturing' },
+  { value: 10000, label: 'Trailers Delivered', isPlus: true },
+  { value: 15, label: 'Engineering Expertise', isPlus: true, unit: ' Years' },
+  { value: 7, label: 'Pan-India Presence', isPlus: false, unit: ' Locations' },
+  { value: 0, label: 'ISO Certified', isPlus: false, unit: 'ISO Certified' },
 ];
 
 const whyChooseUs = [
@@ -89,6 +88,8 @@ const certifications = [
     'IS 2062',
     'CMVR Standards',
     'ISO Manufacturing',
+    'PESO Compliance',
+    'ARAI Homologation'
 ];
 
 const trailersTags = [
@@ -112,6 +113,20 @@ const cabinsTags = [
     { name: 'G+1 Cabins', href: '/products/cabins/double-storey' },
 ];
 
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.1,
+    },
+  },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 6 },
+  visible: { opacity: 1, y: 0 },
+};
 
 export default function Home() {
   return (
@@ -120,22 +135,35 @@ export default function Home() {
       <section className="bg-background">
         <div className="container mx-auto grid grid-cols-1 items-center gap-12 px-4 py-16 md:grid-cols-2 lg:py-24">
           <div className="space-y-6 text-center md:text-left">
-            <h1 className="font-headline text-4xl font-extrabold tracking-tight text-foreground lg:text-5xl xl:text-6xl">
+            <AnimatedHeadline className="font-headline text-4xl font-extrabold tracking-tight text-foreground lg:text-5xl xl:text-6xl">
               High-Performance Trailers & Modular Cabin Solutions.
-            </h1>
-            <p className="text-lg text-muted-foreground md:text-xl">
+            </AnimatedHeadline>
+            <motion.p 
+              initial={{ opacity: 0, y: 8 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
+              className="text-lg text-muted-foreground md:text-xl">
               Engineering excellence for logistics, construction, cement, ports, steel, and industrial sectors across India.
-            </p>
-            <div className="flex flex-col justify-center space-y-4 sm:flex-row sm:space-x-4 sm:space-y-0 md:justify-start">
-              <Button asChild size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90">
+            </motion.p>
+            <motion.div 
+              initial={{ opacity: 0, y: 8 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.3, ease: "easeOut" }}
+              className="flex flex-col justify-center space-y-4 sm:flex-row sm:space-x-4 sm:space-y-0 md:justify-start">
+              <Button asChild size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90 transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5">
                 <Link href="/products">Explore Products</Link>
               </Button>
-              <Button asChild size="lg" variant="outline">
+              <Button asChild size="lg" variant="outline" className="transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5">
                 <Link href="/quote">Request Quote</Link>
               </Button>
-            </div>
+            </motion.div>
           </div>
-          <div className="flex justify-center">
+          <motion.div 
+             initial={{ opacity: 0, scale: 0.95 }}
+             animate={{ opacity: 1, scale: 1 }}
+             transition={{ duration: 0.8, ease: "easeOut" }}
+            className="flex justify-center relative">
+              <div className="absolute inset-0 bg-yellow-400/10 rounded-full blur-3xl -z-10"></div>
             {heroImage && (
               <Image
                 src={heroImage.imageUrl}
@@ -147,7 +175,7 @@ export default function Home() {
                 data-ai-hint={heroImage.imageHint}
               />
             )}
-          </div>
+          </motion.div>
         </div>
       </section>
 
@@ -157,7 +185,11 @@ export default function Home() {
             <div className="stats-grid">
                 {stats.map((stat) => (
                     <div key={stat.label} className="stat-card">
-                        <h3>{stat.value}</h3>
+                        <h3>
+                          {stat.value > 0 && <AnimatedNumber value={stat.value} />}
+                          {stat.isPlus && stat.value > 0 ? '+' : ''}
+                          {stat.value === 0 ? stat.unit : ''}
+                        </h3>
                         <p>{stat.label}</p>
                     </div>
                 ))}
@@ -170,18 +202,21 @@ export default function Home() {
         <div className="container mx-auto px-4">
           <div className="mb-12 text-center">
             <h2 className="text-3xl font-extrabold font-headline tracking-tight sm:text-4xl">Why Choose Thorat Motors?</h2>
-            <div className="mt-2 h-1 w-20 mx-auto bg-accent"></div>
+            <div className="mt-2 h-1.5 w-24 mx-auto bg-accent"></div>
           </div>
           <div className="why-grid">
             {whyChooseUs.map((item) => (
-              <Card key={item.title} className="why-card">
-                <CardHeader>
-                  <CardTitle className="text-xl">{item.title}</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground">{item.description}</p>
-                </CardContent>
-              </Card>
+              <div key={item.title} className="group relative">
+                <Card className="why-card h-full transition-all duration-300 ease-in-out group-hover:shadow-xl group-hover:-translate-y-1 group-hover:border-accent">
+                   <div className="absolute top-0 left-0 h-full w-1 bg-accent scale-y-0 origin-bottom group-hover:scale-y-100 transition-transform duration-300 ease-in-out"></div>
+                  <CardHeader>
+                    <CardTitle className="text-xl">{item.title}</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-muted-foreground">{item.description}</p>
+                  </CardContent>
+                </Card>
+              </div>
             ))}
           </div>
         </div>
@@ -192,7 +227,7 @@ export default function Home() {
         <div className="container mx-auto px-4">
           <div className="mb-12 text-center">
             <h2 className="text-3xl font-extrabold font-headline tracking-tight sm:text-4xl">Our Products</h2>
-            <div className="mt-2 h-1 w-20 mx-auto bg-accent"></div>
+            <div className="mt-2 h-1.5 w-24 mx-auto bg-accent"></div>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {/* Trailers Card */}
@@ -202,7 +237,7 @@ export default function Home() {
                   <h3 className="font-headline text-2xl font-bold mb-4">Trailers</h3>
                   <div className="mb-4">
                       {trailersTags.map(tag => (
-                        <Link key={tag.name} href={tag.href} className="product-tag hover:bg-primary/20 transition-colors">{tag.name}</Link>
+                        <Link key={tag.name} href={tag.href} className="product-tag hover:bg-primary/20 transition-colors hover:shadow-md hover:border-accent/50 border border-transparent">{tag.name}</Link>
                       ))}
                   </div>
                   <Link href="/products/trailers" className="text-accent font-semibold flex items-center hover:underline">
@@ -217,7 +252,7 @@ export default function Home() {
                   <h3 className="font-headline text-2xl font-bold mb-4">Portable Cabins</h3>
                   <div className="mb-4">
                       {cabinsTags.map(tag => (
-                        <Link key={tag.name} href={tag.href} className="product-tag hover:bg-primary/20 transition-colors">{tag.name}</Link>
+                        <Link key={tag.name} href={tag.href} className="product-tag hover:bg-primary/20 transition-colors hover:shadow-md hover:border-accent/50 border border-transparent">{tag.name}</Link>
                       ))}
                   </div>
                   <Link href="/products/cabins" className="text-accent font-semibold flex items-center hover:underline">
@@ -243,7 +278,7 @@ export default function Home() {
         <div className="container mx-auto px-4">
           <div className="mb-12 text-center">
             <h2 className="text-3xl font-extrabold font-headline tracking-tight sm:text-4xl">Serving Diverse Industries</h2>
-            <div className="mt-2 h-1 w-20 mx-auto bg-accent"></div>
+            <div className="mt-2 h-1.5 w-24 mx-auto bg-accent"></div>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
             {industries.map((industry) => (
@@ -255,18 +290,26 @@ export default function Home() {
 
       {/* Nationwide Presence Section */}
       <section className="locations-section">
-        <div className="container mx-auto px-4 text-center">
+        <motion.div 
+          className="container mx-auto px-4 text-center"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.3 }}
+          variants={containerVariants}
+        >
           <h2 className="text-3xl font-extrabold font-headline tracking-tight sm:text-4xl">Nationwide Presence</h2>
-           <div className="mt-2 h-1 w-20 mx-auto bg-accent mb-12"></div>
+           <div className="mt-2 h-1.5 w-24 mx-auto bg-accent mb-12"></div>
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-4">
-            {locations.map(location => (
-              <Link href="/contact" key={location.city}>
-                <Card className="location-card">
-                    <CardContent className="p-0">
-                        <span className="font-semibold text-foreground">{location.city}</span>
-                    </CardContent>
-                </Card>
-              </Link>
+            {offices.map(location => (
+              <motion.div key={location.city} variants={itemVariants}>
+                <Link href="/contact">
+                  <Card className="location-card">
+                      <CardContent className="p-0">
+                          <span className="font-semibold text-foreground">{location.city}</span>
+                      </CardContent>
+                  </Card>
+                </Link>
+              </motion.div>
             ))}
           </div>
           <div className="mt-12">
@@ -274,7 +317,7 @@ export default function Home() {
               <Link href="/contact">View Our Network</Link>
             </Button>
           </div>
-        </div>
+        </motion.div>
       </section>
 
       {/* Certifications Section */}
@@ -284,10 +327,16 @@ export default function Home() {
               <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
                   Our products adhere to strict quality and safety standards:
               </p>
-              <div className="industry-tags mt-8">
+              <div className="relative mt-8">
+                <Marquee pauseOnHover>
                   {certifications.map(cert => (
-                      <Badge key={cert} variant="secondary">{cert}</Badge>
+                      <div key={cert} className="mx-4">
+                         <div className="border bg-secondary text-secondary-foreground rounded-full px-4 py-2 text-sm">{cert}</div>
+                      </div>
                   ))}
+                </Marquee>
+                <div className="pointer-events-none absolute inset-y-0 left-0 w-1/3 bg-gradient-to-r from-secondary to-transparent"></div>
+                <div className="pointer-events-none absolute inset-y-0 right-0 w-1/3 bg-gradient-to-l from-secondary to-transparent"></div>
               </div>
           </div>
       </section>
