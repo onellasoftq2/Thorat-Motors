@@ -364,7 +364,6 @@ export default function Home() {
                     <Card className="location-card p-4 transition-all duration-300 hover:bg-secondary hover:shadow-lg hover:-translate-y-1 hover:border-accent">
                       <CardContent className="p-0 text-left">
                         <p className="font-bold text-lg text-foreground">{location.city}</p>
-                        <p className="text-sm text-muted-foreground">{location.descriptor}</p>
                       </CardContent>
                     </Card>
                   </Link>
