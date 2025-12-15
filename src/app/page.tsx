@@ -115,7 +115,7 @@ const cabinsTags = [
 
 export default function Home() {
   return (
-    <div className="flex flex-col">
+    <div>
       {/* Hero Section */}
       <section className="bg-background">
         <div className="container mx-auto grid grid-cols-1 items-center gap-12 px-4 py-16 md:grid-cols-2 lg:py-24">
