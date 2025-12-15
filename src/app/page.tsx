@@ -19,6 +19,9 @@ import { Timeline } from '@/components/ui/timeline';
 import { AnimatedHeadline } from '@/components/animated-headline';
 import { AnimatedNumber } from '@/components/animated-number';
 import { Marquee } from '@/components/ui/marquee';
+import { useState } from 'react';
+import { cn } from '@/lib/utils';
+import { IndiaMap } from '@/components/ui/india-map';
 
 const heroImage = PlaceHolderImages.find((img) => img.id === 'hero-trailer');
 
@@ -139,6 +142,7 @@ const itemVariants = {
 };
 
 export default function Home() {
+  const [hoveredCity, setHoveredCity] = useState<string | null>(null);
   return (
     <div>
       {/* Hero Section */}
@@ -314,13 +318,13 @@ export default function Home() {
       </section>
 
       {/* Industries Section */}
-      <section className="industries-section">
+      <section className="industries-section bg-background">
         <div className="container mx-auto px-4">
           <div className="mb-12 text-center">
             <h2 className="text-3xl font-extrabold font-headline tracking-tight sm:text-4xl">Serving Diverse Industries</h2>
             <div className="mt-2 h-1.5 w-24 mx-auto bg-accent"></div>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
             {industries.map((industry) => (
               <IndustryCard key={industry.id} industry={industry} />
             ))}
@@ -329,30 +333,46 @@ export default function Home() {
       </section>
 
       {/* Nationwide Presence Section */}
-      <section className="locations-section">
-        <motion.div 
-          className="container mx-auto px-4 text-center"
+      <section className="locations-section py-16 lg:py-24">
+        <motion.div
+          className="container mx-auto px-4"
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, amount: 0.3 }}
+          viewport={{ once: true, amount: 0.2 }}
           variants={containerVariants}
         >
-          <h2 className="text-3xl font-extrabold font-headline tracking-tight sm:text-4xl">Nationwide Presence</h2>
-           <div className="mt-2 h-1.5 w-24 mx-auto bg-accent mb-12"></div>
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-4">
-            {offices.map(location => (
-              <motion.div key={location.city} variants={itemVariants}>
-                <Link href="/contact">
-                  <Card className="location-card">
-                      <CardContent className="p-0">
-                          <span className="font-semibold text-foreground">{location.city}</span>
-                      </CardContent>
-                  </Card>
-                </Link>
-              </motion.div>
-            ))}
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-extrabold font-headline tracking-tight sm:text-4xl">Nationwide Presence</h2>
+            <div className="mt-2 h-1.5 w-24 mx-auto bg-accent"></div>
           </div>
-          <div className="mt-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <motion.div variants={itemVariants} className="relative aspect-[4/3] md:aspect-auto h-full min-h-[300px]">
+              <IndiaMap hoveredCity={hoveredCity} />
+            </motion.div>
+            <motion.div
+              variants={containerVariants}
+              className="grid grid-cols-1 sm:grid-cols-2 gap-4"
+            >
+              {offices.map((location) => (
+                <motion.div
+                  key={location.city}
+                  variants={itemVariants}
+                  onMouseEnter={() => setHoveredCity(location.city)}
+                  onMouseLeave={() => setHoveredCity(null)}
+                >
+                  <Link href="/contact">
+                    <Card className="location-card p-4 transition-all duration-300 hover:bg-secondary hover:shadow-lg hover:-translate-y-1 hover:border-accent">
+                      <CardContent className="p-0 text-left">
+                        <p className="font-bold text-lg text-foreground">{location.city}</p>
+                        <p className="text-sm text-muted-foreground">{location.descriptor}</p>
+                      </CardContent>
+                    </Card>
+                  </Link>
+                </motion.div>
+              ))}
+            </motion.div>
+          </div>
+          <div className="mt-12 text-center">
             <Button asChild size="lg" variant="outline">
               <Link href="/contact">View Our Network</Link>
             </Button>
@@ -401,4 +421,3 @@ export default function Home() {
     </div>
   );
 }
-

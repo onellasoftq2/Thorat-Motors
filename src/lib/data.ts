@@ -370,14 +370,20 @@ export const services = [
     },
 ];
 
-export const industries = [
-    { name: 'Cement & Bulk Material', id: 'cement' },
-    { name: 'Mining, Steel & Metals', id: 'mining' },
-    { name: 'Ports & Terminals', id: 'ports' },
-    { name: 'Construction & Infrastructure', id: 'construction' },
-    { name: 'Agriculture', id: 'agriculture' },
-    { name: 'Retail & Commercial', id: 'retail' },
-    { name: 'Industrial Housing', id: 'housing' },
+export type Industry = {
+    id: string;
+    name: string;
+    description: string;
+};
+
+export const industries: Industry[] = [
+    { name: 'Cement & Bulk Material', id: 'cement', description: 'Bulker trailers and high-capacity transport solutions.' },
+    { name: 'Mining, Steel & Metals', id: 'mining', description: 'Heavy-duty trailers for raw material movement.' },
+    { name: 'Ports & Terminals', id: 'ports', description: 'Container handling and logistics support.' },
+    { name: 'Construction & Infrastructure', id: 'construction', description: 'Flatbed and side-wall trailers for project sites.' },
+    { name: 'Agriculture', id: 'agriculture', description: 'Transport solutions for bulk agricultural produce.' },
+    { name: 'Retail & Commercial', id: 'retail', description: 'Container conversions and mobile structures.' },
+    { name: 'Industrial Housing', id: 'housing', description: 'Portable cabins and workforce accommodation.' },
 ];
 
 export const company = {
@@ -398,11 +404,11 @@ export const contactInfo = {
 };
 
 export const offices = [
-    { city: 'Pune', state: 'Maharashtra', address: 'GAT NO 336/1, Chakan-Shikrapur Road, Chakan'},
-    { city: 'Surat', state: 'Gujarat', address: 'Green Aristo Plaza, 1st Floor, Shop No- 127, Vaishnovdevi Road, Surat-395009'},
-    { city: 'Visakhapatnam', state: 'Andhra Pradesh', address: '98/A, D-Block, Near RTO Office, Autonagar, Oldgajuwaka, Visakhapatnam - 530026'},
-    { city: 'Bhubaneswar', state: 'Odisha', address: 'Plot No. N-6/536, IRC Village, Nayapalli, Jayadev Vihar, Bhubaneswar, Khurda - 751015'},
-    { city: 'Jamshedpur', state: 'Jharkhand', address: 'Khata No -133, Plot No -201-4P NH-33, Chandil, Ramgarh, Seraikela Kharsawan, Jamshedpur - 831001'},
-    { city: 'Chennai', state: 'Tamil Nadu', address: 'Plot No 5/3, Thiruvallur Road, Nemam Post, Poonamallee Taluka, Chennai - 600124'},
-    { city: 'Patna', state: 'Bihar', address: 'Khata No-456, Khesra No-198, 199, Manupur, Saran, Chapra - 841207'},
+    { city: 'Pune', state: 'Maharashtra', address: 'GAT NO 336/1, Chakan-Shikrapur Road, Chakan', descriptor: 'Manufacturing Hub & HQ', coords: { x: 26, y: 56 } },
+    { city: 'Surat', state: 'Gujarat', address: 'Green Aristo Plaza, 1st Floor, Shop No- 127, Vaishnovdevi Road, Surat-395009', descriptor: 'Sales & Service Center', coords: { x: 19, y: 46 } },
+    { city: 'Visakhapatnam', state: 'Andhra Pradesh', address: '98/A, D-Block, Near RTO Office, Autonagar, Oldgajuwaka, Visakhapatnam - 530026', descriptor: 'Logistics Support', coords: { x: 58, y: 64 } },
+    { city: 'Bhubaneswar', state: 'Odisha', address: 'Plot No. N-6/536, IRC Village, Nayapalli, Jayadev Vihar, Bhubaneswar, Khurda - 751015', descriptor: 'Regional Office', coords: { x: 65, y: 51 } },
+    { city: 'Jamshedpur', state: 'Jharkhand', address: 'Khata No -133, Plot No -201-4P NH-33, Chandil, Ramgarh, Seraikela Kharsawan, Jamshedpur - 831001', descriptor: 'Service & Parts Hub', coords: { x: 66, y: 39 } },
+    { city: 'Chennai', state: 'Tamil Nadu', address: 'Plot No 5/3, Thiruvallur Road, Nemam Post, Poonamallee Taluka, Chennai - 600124', descriptor: 'Logistics Support', coords: { x: 47, y: 78 } },
+    { city: 'Patna', state: 'Bihar', address: 'Khata No-456, Khesra No-198, 199, Manupur, Saran, Chapra - 841207', descriptor: 'Regional Office', coords: { x: 63, y: 30 } },
 ];
