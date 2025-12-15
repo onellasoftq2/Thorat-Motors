@@ -28,7 +28,7 @@ export default function SparePartsPage() {
   return (
     <>
       <div className="bg-secondary">
-        <div className="container mx-auto px-4 py-16 text-center">
+        <div className="container mx-auto px-4 py-16 text-center md:px-6 lg:px-8">
           <h1 className="text-4xl font-extrabold tracking-tight lg:text-5xl font-headline">Spare Parts Division</h1>
           <p className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground">
             Genuine, reliable, and ready-to-dispatch spare parts for trailers and portable cabins.
@@ -36,7 +36,7 @@ export default function SparePartsPage() {
         </div>
       </div>
 
-      <div className="container mx-auto px-4 py-16">
+      <div className="container mx-auto px-4 py-16 md:px-6 lg:px-8">
         {/* Parts Categories */}
         <section>
           <h2 className="text-3xl font-bold text-center font-headline mb-2">Our Parts Inventory</h2>
@@ -75,7 +75,7 @@ export default function SparePartsPage() {
 
         {/* Service Support */}
         <section className="mt-24 bg-secondary py-16 rounded-lg">
-          <div className="container mx-auto px-4 text-center">
+          <div className="container mx-auto px-4 text-center md:px-6 lg:px-8">
             <h2 className="text-3xl font-bold font-headline mb-2">Comprehensive Service Support</h2>
             <div className="w-24 h-1.5 bg-accent mx-auto mb-12"></div>
             <div className="flex flex-wrap justify-center gap-x-8 gap-y-4">

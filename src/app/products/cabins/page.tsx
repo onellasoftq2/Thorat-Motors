@@ -16,7 +16,7 @@ export default function CabinsPage() {
   return (
     <>
       <div className="bg-secondary">
-        <div className="container mx-auto px-4 py-16 text-center">
+        <div className="container mx-auto px-4 py-16 text-center md:px-6 lg:px-8">
           <h1 className="text-4xl font-extrabold tracking-tight lg:text-5xl font-headline">
             Portable Cabins
           </h1>
@@ -26,7 +26,7 @@ export default function CabinsPage() {
         </div>
       </div>
 
-      <div className="container mx-auto px-4 py-16">
+      <div className="container mx-auto px-4 py-16 md:px-6 lg:px-8">
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
           {products.cabins.map((cabin) => {
             const image = PlaceHolderImages.find((img) => img.id === cabin.id);

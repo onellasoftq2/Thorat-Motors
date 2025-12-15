@@ -32,7 +32,7 @@ export default function IndustriesPage() {
           />
         )}
         <div className="absolute inset-0 bg-black/50" />
-        <div className="relative container mx-auto px-4 h-full flex flex-col justify-center items-center text-center text-white">
+        <div className="relative container mx-auto px-4 h-full flex flex-col justify-center items-center text-center text-white md:px-6 lg:px-8">
           <h1 className="text-4xl font-extrabold tracking-tight lg:text-5xl font-headline">
             Industries We Serve
           </h1>
@@ -42,7 +42,7 @@ export default function IndustriesPage() {
         </div>
       </div>
 
-      <div className="container mx-auto px-4 py-16">
+      <div className="container mx-auto px-4 py-16 md:px-6 lg:px-8">
         <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
           {industries.map((industry) => (
              <IndustryCard key={industry.id} industry={industry} />

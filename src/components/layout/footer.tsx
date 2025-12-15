@@ -49,7 +49,7 @@ const footerLinks = {
 export default function Footer() {
   return (
     <footer className="bg-secondary">
-      <div className="container mx-auto max-w-7xl px-4 py-16">
+      <div className="container mx-auto max-w-7xl px-4 py-16 md:px-6 lg:px-8">
         <div className="grid grid-cols-2 gap-8 md:grid-cols-4 lg:grid-cols-5">
           <div className="col-span-2 md:col-span-4 lg:col-span-1">
             <Logo />

@@ -15,7 +15,7 @@ export default function CompanyPage() {
   return (
     <>
       <div className="bg-secondary">
-        <div className="container mx-auto px-4 py-16 text-center">
+        <div className="container mx-auto px-4 py-16 text-center md:px-6 lg:px-8">
           <h1 id="about" className="text-4xl font-extrabold tracking-tight lg:text-5xl font-headline">
             About Thorat Motors India
           </h1>
@@ -25,7 +25,7 @@ export default function CompanyPage() {
         </div>
       </div>
       
-      <div className="container mx-auto px-4 py-16">
+      <div className="container mx-auto px-4 py-16 md:px-6 lg:px-8">
         {/* About & MD's Message */}
         <section className="grid grid-cols-1 md:grid-cols-5 gap-12 items-center">
             <div className="md:col-span-3">

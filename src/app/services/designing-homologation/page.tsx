@@ -25,7 +25,7 @@ export default function DesigningHomologationPage() {
   return (
     <>
       <div className="bg-secondary">
-        <div className="container mx-auto px-4 py-16 text-center">
+        <div className="container mx-auto px-4 py-16 text-center md:px-6 lg:px-8">
           <h1 className="text-4xl font-extrabold tracking-tight lg:text-5xl font-headline">
             Designing & Homologation
           </h1>
@@ -35,7 +35,7 @@ export default function DesigningHomologationPage() {
         </div>
       </div>
 
-      <div className="container mx-auto px-4 py-16">
+      <div className="container mx-auto px-4 py-16 md:px-6 lg:px-8">
         {/* About Section */}
         <section className="grid md:grid-cols-5 gap-12 items-center">
             <div className="md:col-span-3">
@@ -95,7 +95,7 @@ export default function DesigningHomologationPage() {
 
         {/* CTA Section */}
         <section className="mt-24 text-center bg-secondary py-16 rounded-lg">
-             <div className="container mx-auto px-4">
+             <div className="container mx-auto px-4 md:px-6 lg:px-8">
                 <h2 className="text-3xl font-bold font-headline">Navigate Compliance with Confidence</h2>
                 <p className="mt-4 max-w-xl mx-auto text-lg text-muted-foreground">Partner with us to ensure your products are fully certified and ready for the market.</p>
                 <Button asChild size="lg" className="mt-8 bg-accent text-accent-foreground hover:bg-accent/90">

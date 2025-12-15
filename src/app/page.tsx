@@ -146,10 +146,10 @@ export default function Home() {
   const [selectedIndustry, setSelectedIndustry] = useState(industrySolutions[0]);
 
   return (
-    <div>
+    <div className='overflow-x-clip'>
       {/* Hero Section */}
       <section className="bg-background">
-        <div className="container mx-auto grid grid-cols-1 items-center gap-12 px-4 py-16 md:grid-cols-2 lg:py-24">
+        <div className="container mx-auto grid grid-cols-1 items-center gap-12 px-4 py-16 md:grid-cols-2 lg:py-24 md:px-6 lg:px-8">
           <div className="space-y-6 text-center md:text-left">
             <AnimatedHeadline className="font-headline text-4xl font-extrabold tracking-tight text-foreground lg:text-5xl xl:text-6xl">
               High-Performance Trailers & Modular Cabin Solutions.
@@ -197,7 +197,7 @@ export default function Home() {
 
       {/* Quick Stats Section */}
       <section className="stats-section">
-        <div className="container mx-auto">
+        <div className="container mx-auto px-4 md:px-6 lg:px-8">
             <div className="stats-grid">
                 {stats.map((stat) => (
                     <div key={stat.label} className="stat-card">
@@ -215,7 +215,7 @@ export default function Home() {
 
       {/* Why Choose Us Section */}
       <section className="why-us-section">
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-4 md:px-6 lg:px-8">
           <div className="mb-12 text-center">
             <h2 className="text-3xl font-extrabold font-headline tracking-tight sm:text-4xl">Why Choose Thorat Motors?</h2>
             <div className="mt-2 h-1.5 w-24 mx-auto bg-accent"></div>
@@ -240,7 +240,7 @@ export default function Home() {
 
       {/* Our Products Section V2 */}
       <section className="bg-secondary py-16 lg:py-24">
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-4 md:px-6 lg:px-8">
           <div className="mb-12 text-center">
             <h2 className="text-3xl font-extrabold font-headline tracking-tight sm:text-4xl">Our Products</h2>
             <div className="mt-2 h-1.5 w-24 mx-auto bg-accent"></div>
@@ -282,7 +282,7 @@ export default function Home() {
 
       {/* Our Services Section */}
       <section className="bg-background py-16 lg:py-24">
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-4 md:px-6 lg:px-8">
           <div className="mb-12 text-center">
             <h2 className="text-3xl font-extrabold font-headline tracking-tight sm:text-4xl">Our Services</h2>
             <div className="mt-2 h-1.5 w-24 mx-auto bg-accent"></div>
@@ -321,7 +321,7 @@ export default function Home() {
 
       {/* Industry-Specific Solutions Section */}
       <section className="industries-section bg-background py-16 lg:py-24">
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-4 md:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-extrabold font-headline tracking-tight sm:text-4xl">Industry-Specific Solutions</h2>
             <p className="mt-4 max-w-3xl mx-auto text-lg text-muted-foreground">
@@ -390,7 +390,7 @@ export default function Home() {
       {/* Nationwide Presence Section */}
       <section className="locations-section py-16 lg:py-24">
         <motion.div
-          className="container mx-auto px-4"
+          className="container mx-auto px-4 md:px-6 lg:px-8"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.2 }}
@@ -436,7 +436,7 @@ export default function Home() {
 
       {/* Certifications Section */}
       <section className="certifications-section">
-          <div className="container mx-auto px-4">
+          <div className="container mx-auto px-4 md:px-6 lg:px-8">
               <h2 className="text-3xl font-extrabold font-headline tracking-tight sm:text-4xl">Certifications & Compliance</h2>
               <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
                   Our products adhere to strict quality and safety standards:
@@ -458,7 +458,7 @@ export default function Home() {
 
        {/* CTA Section */}
        <section className="cta-banner">
-        <div className="container mx-auto px-4 py-16 text-center lg:py-24">
+        <div className="container mx-auto px-4 py-16 text-center lg:py-24 md:px-6 lg:px-8">
           <h2 className="text-3xl font-extrabold font-headline tracking-tight sm:text-4xl">
             Ready to Build Your Solution?
           </h2>
@@ -475,4 +475,3 @@ export default function Home() {
     </div>
   );
 }
-

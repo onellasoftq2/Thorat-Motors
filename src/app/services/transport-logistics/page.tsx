@@ -23,7 +23,7 @@ export default function TransportLogisticsPage() {
   return (
     <>
       <div className="bg-secondary">
-        <div className="container mx-auto px-4 py-16 text-center">
+        <div className="container mx-auto px-4 py-16 text-center md:px-6 lg:px-8">
           <h1 className="text-4xl font-extrabold tracking-tight lg:text-5xl font-headline">
             Transport & Logistics
           </h1>
@@ -31,7 +31,7 @@ export default function TransportLogisticsPage() {
         </div>
       </div>
 
-      <div className="container mx-auto px-4 py-16">
+      <div className="container mx-auto px-4 py-16 md:px-6 lg:px-8">
         {/* Overview Section */}
         <section className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div>
@@ -84,7 +84,7 @@ export default function TransportLogisticsPage() {
 
         {/* CTA */}
         <section className="mt-24 text-center bg-secondary py-16 rounded-lg">
-          <div className="container mx-auto px-4">
+          <div className="container mx-auto px-4 md:px-6 lg:px-8">
             <h2 className="text-3xl font-bold font-headline">Optimize Your Supply Chain</h2>
             <p className="mt-4 max-w-xl mx-auto text-lg text-muted-foreground">Let us handle the logistics, so you can focus on your core business.</p>
             <Button asChild size="lg" className="mt-8 bg-accent text-accent-foreground hover:bg-accent/90">

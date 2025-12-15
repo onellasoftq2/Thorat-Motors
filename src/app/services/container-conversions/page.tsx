@@ -34,13 +34,13 @@ export default function ContainerConversionsPage() {
   return (
     <>
       <div className="bg-secondary">
-        <div className="container mx-auto px-4 py-16 text-center">
+        <div className="container mx-auto px-4 py-16 text-center md:px-6 lg:px-8">
             <h1 className="text-4xl font-extrabold tracking-tight lg:text-5xl font-headline">Container Conversions & Modifications</h1>
             <p className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground">Transforming 20 ft and 40 ft containers into high-utility structures.</p>
         </div>
       </div>
 
-      <div className="container mx-auto px-4 py-16">
+      <div className="container mx-auto px-4 py-16 md:px-6 lg:px-8">
         {/* About Section */}
         <section className="max-w-4xl mx-auto text-center grid md:grid-cols-2 gap-12 items-center">
             <div className='text-left'>
@@ -99,7 +99,7 @@ export default function ContainerConversionsPage() {
 
         {/* Why Choose Us */}
         <section className="mt-24 bg-secondary py-16 rounded-lg">
-          <div className="container mx-auto px-4">
+          <div className="container mx-auto px-4 md:px-6 lg:px-8">
             <h2 className="text-3xl font-bold font-headline text-center mb-2">Why Choose Thorat Motors?</h2>
             <div className="w-24 h-1.5 bg-accent mx-auto mb-12"></div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">

@@ -9,7 +9,7 @@ export default function ContactPage() {
   return (
     <>
       <div className="bg-secondary">
-        <div className="container mx-auto px-4 py-16 text-center">
+        <div className="container mx-auto px-4 py-16 text-center md:px-6 lg:px-8">
           <h1 className="text-4xl font-extrabold tracking-tight lg:text-5xl font-headline">
             Contact Us
           </h1>
@@ -19,7 +19,7 @@ export default function ContactPage() {
         </div>
       </div>
 
-      <div className="container mx-auto px-4 py-16">
+      <div className="container mx-auto px-4 py-16 md:px-6 lg:px-8">
         <div className="mb-16 text-center">
           <h2 className="text-3xl font-bold font-headline mb-4">Get a Quote</h2>
           <p className="max-w-xl mx-auto text-muted-foreground mb-6">
