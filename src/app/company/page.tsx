@@ -15,7 +15,7 @@ export default function CompanyPage() {
   return (
     <>
       <div className="bg-secondary">
-        <div className="container mx-auto px-4 py-16 text-center md:px-6 lg:px-8">
+        <div className="container mx-auto px-4 py-12 md:py-16 text-center md:px-6 lg:px-8">
           <h1 id="about" className="text-4xl font-extrabold tracking-tight lg:text-5xl font-headline">
             About Thorat Motors India
           </h1>
@@ -25,7 +25,7 @@ export default function CompanyPage() {
         </div>
       </div>
       
-      <div className="container mx-auto px-4 py-16 md:px-6 lg:px-8">
+      <div className="container mx-auto px-4 py-12 md:py-16 lg:py-24 md:px-6 lg:px-8">
         {/* Our Story */}
         <section className="max-w-4xl mx-auto">
             <h2 className="text-3xl font-bold font-headline text-center mb-2">Our Story</h2>
@@ -34,11 +34,11 @@ export default function CompanyPage() {
         </section>
 
         {/* MD's Message */}
-        <section className="mt-24">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-12 items-center max-w-5xl mx-auto">
+        <section className="mt-16 md:mt-24">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 items-center max-w-5xl mx-auto">
                  <div className="md:col-span-1 flex justify-center">
                     {mdImage && (
-                        <Image src={mdImage.imageUrl} alt={mdImage.description} width={350} height={350} className="rounded-full shadow-lg aspect-square object-cover" data-ai-hint={mdImage.imageHint} />
+                        <Image src={mdImage.imageUrl} alt={mdImage.description} width={350} height={350} className="rounded-full shadow-lg aspect-square object-cover w-64 h-64 md:w-full md:h-auto" data-ai-hint={mdImage.imageHint} />
                     )}
                 </div>
                 <div className="md:col-span-2">
@@ -53,7 +53,7 @@ export default function CompanyPage() {
         </section>
 
         {/* Vision & Mission */}
-        <section id="vision" className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-24">
+        <section id="vision" className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-16 md:mt-24">
             <div className="group relative rounded-lg border border-border bg-card p-8 text-center shadow-md transition-all duration-300 hover:border-transparent hover:shadow-xl hover:-translate-y-1">
               <div className="absolute inset-0 rounded-lg bg-gradient-to-br from-accent/10 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
               <div className="relative">
@@ -77,7 +77,7 @@ export default function CompanyPage() {
         </section>
 
         {/* Manufacturing Excellence */}
-        <section id="manufacturing" className="mt-24">
+        <section id="manufacturing" className="mt-16 md:mt-24">
             <h2 className="text-3xl font-bold font-headline text-center mb-2">Manufacturing Excellence</h2>
              <div className="w-24 h-1.5 bg-accent mx-auto mb-8"></div>
             {aboutImage && <Image src={aboutImage.imageUrl} alt={aboutImage.description} width={1200} height={600} className="w-full rounded-lg shadow-md" data-ai-hint={aboutImage.imageHint}/>}
@@ -85,7 +85,7 @@ export default function CompanyPage() {
         </section>
 
         {/* Leadership */}
-        <section id="leadership" className="mt-24">
+        <section id="leadership" className="mt-16 md:mt-24">
             <h2 className="text-3xl font-bold font-headline text-center mb-2">Leadership Team</h2>
             <div className="w-24 h-1.5 bg-accent mx-auto mb-8"></div>
             <div className="flex flex-wrap justify-center gap-8">
@@ -103,7 +103,7 @@ export default function CompanyPage() {
         </section>
 
         {/* Other Sections */}
-        <section className="mt-24">
+        <section className="mt-16 md:mt-24">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                 <div id="certifications">
                     <h3 className="text-xl font-bold font-headline mb-4">Certifications</h3>
@@ -129,3 +129,5 @@ export default function CompanyPage() {
     </>
   );
 }
+
+    

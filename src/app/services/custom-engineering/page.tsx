@@ -24,13 +24,13 @@ export default function CustomEngineeringPage() {
   return (
     <>
       <div className="bg-secondary">
-        <div className="container mx-auto px-4 py-16 text-center md:px-6 lg:px-8">
+        <div className="container mx-auto px-4 py-12 md:py-16 text-center md:px-6 lg:px-8">
             <h1 className="text-4xl font-extrabold tracking-tight lg:text-5xl font-headline">Custom Engineering</h1>
             <p className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground">Bespoke engineering solutions for specialized industrial applications.</p>
         </div>
       </div>
 
-      <div className="container mx-auto px-4 py-16 md:px-6 lg:px-8">
+      <div className="container mx-auto px-4 py-12 md:py-16 lg:py-24 md:px-6 lg:px-8">
         {/* Overview Section */}
         <section className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div>
@@ -56,7 +56,7 @@ export default function CustomEngineeringPage() {
         </section>
 
         {/* Technical Capabilities */}
-        <section className="mt-24">
+        <section className="mt-16 md:mt-24">
           <h2 className="text-3xl font-bold font-headline text-center mb-2">Technical Capabilities</h2>
           <div className="w-24 h-1.5 bg-accent mx-auto mb-12"></div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -71,7 +71,7 @@ export default function CustomEngineeringPage() {
         </section>
 
         {/* Use Cases Section */}
-        <section className="mt-24 bg-secondary py-16 rounded-lg">
+        <section className="mt-16 md:mt-24 bg-secondary py-12 md:py-16 rounded-lg">
             <div className="container mx-auto px-4 text-center md:px-6 lg:px-8">
                 <h2 className="text-3xl font-bold font-headline mb-2">Example Use Cases</h2>
                 <div className="w-24 h-1.5 bg-accent mx-auto mb-8"></div>
@@ -88,7 +88,7 @@ export default function CustomEngineeringPage() {
         </section>
 
         {/* CTA */}
-        <section className="mt-24 text-center">
+        <section className="mt-16 md:mt-24 text-center">
           <h2 className="text-3xl font-bold font-headline">Have a Unique Challenge?</h2>
           <p className="mt-4 max-w-xl mx-auto text-lg text-muted-foreground">Our engineers are ready to create a solution that works for you. Let's build it together.</p>
           <Button asChild size="lg" className="mt-8 bg-accent text-accent-foreground hover:bg-accent/90">
@@ -99,3 +99,5 @@ export default function CustomEngineeringPage() {
     </>
   );
 }
+
+    

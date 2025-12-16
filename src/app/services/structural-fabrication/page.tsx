@@ -31,7 +31,7 @@ export default function StructuralFabricationPage() {
   return (
     <>
       <div className="bg-secondary">
-        <div className="container mx-auto px-4 py-16 text-center md:px-6 lg:px-8">
+        <div className="container mx-auto px-4 py-12 md:py-16 text-center md:px-6 lg:px-8">
             <h1 className="text-4xl font-extrabold tracking-tight lg:text-5xl font-headline">Structural Fabrication</h1>
             <p className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground">
                 High-precision fabrication powered by CNC cutting, welding, forming, and assembly technologies.
@@ -39,7 +39,7 @@ export default function StructuralFabricationPage() {
         </div>
       </div>
 
-      <div className="container mx-auto px-4 py-16 md:px-6 lg:px-8">
+      <div className="container mx-auto px-4 py-12 md:py-16 lg:py-24 md:px-6 lg:px-8">
         {/* Overview Section */}
         <section>
           <h2 className="text-3xl font-bold font-headline text-center mb-2">Our Advanced Manufacturing Capabilities</h2>
@@ -59,7 +59,7 @@ export default function StructuralFabricationPage() {
         </section>
 
         {/* Process Section */}
-        <section className="mt-24">
+        <section className="mt-16 md:mt-24">
             <h2 className="text-3xl font-bold font-headline text-center mb-2">Our Fabrication Process</h2>
             <div className="w-24 h-1.5 bg-accent mx-auto mb-12"></div>
             <div className="relative max-w-4xl mx-auto">
@@ -80,7 +80,7 @@ export default function StructuralFabricationPage() {
         </section>
 
         {/* Quality Standards Section */}
-        <section className="mt-24 bg-secondary py-16 rounded-lg">
+        <section className="mt-16 md:mt-24 bg-secondary py-12 md:py-16 rounded-lg">
           <div className="container mx-auto px-4 md:px-6 lg:px-8">
             <h2 className="text-3xl font-bold font-headline text-center mb-2">Commitment to Quality</h2>
             <div className="w-24 h-1.5 bg-accent mx-auto mb-12"></div>
@@ -97,7 +97,7 @@ export default function StructuralFabricationPage() {
         </section>
 
         {/* CTA */}
-        <section className="mt-24 text-center">
+        <section className="mt-16 md:mt-24 text-center">
           <h2 className="text-3xl font-bold font-headline">Have a Fabrication Project?</h2>
           <p className="mt-4 max-w-xl mx-auto text-lg text-muted-foreground">From trailer chassis to custom container frames, our facility is ready for your project.</p>
           <Button asChild size="lg" className="mt-8 bg-accent text-accent-foreground hover:bg-accent/90">
@@ -108,3 +108,5 @@ export default function StructuralFabricationPage() {
     </>
   );
 }
+
+    

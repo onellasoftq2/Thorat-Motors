@@ -25,7 +25,7 @@ export default function DesigningHomologationPage() {
   return (
     <>
       <div className="bg-secondary">
-        <div className="container mx-auto px-4 py-16 text-center md:px-6 lg:px-8">
+        <div className="container mx-auto px-4 py-12 md:py-16 text-center md:px-6 lg:px-8">
           <h1 className="text-4xl font-extrabold tracking-tight lg:text-5xl font-headline">
             Designing & Homologation
           </h1>
@@ -35,7 +35,7 @@ export default function DesigningHomologationPage() {
         </div>
       </div>
 
-      <div className="container mx-auto px-4 py-16 md:px-6 lg:px-8">
+      <div className="container mx-auto px-4 py-12 md:py-16 lg:py-24 md:px-6 lg:px-8">
         {/* About Section */}
         <section className="grid md:grid-cols-5 gap-12 items-center">
             <div className="md:col-span-3">
@@ -56,7 +56,7 @@ export default function DesigningHomologationPage() {
         </section>
 
         {/* Capabilities Section */}
-        <section className="mt-24">
+        <section className="mt-16 md:mt-24">
             <h2 className="text-3xl font-bold font-headline text-center mb-2">Engineering Capabilities</h2>
             <div className="w-24 h-1.5 bg-accent mx-auto mb-12"></div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -77,7 +77,7 @@ export default function DesigningHomologationPage() {
         </section>
 
         {/* Why It Matters Section */}
-        <section className="mt-24">
+        <section className="mt-16 md:mt-24">
             <h2 className="text-3xl font-bold font-headline text-center mb-2">Why Strong Homologation Matters</h2>
             <div className="w-24 h-1.5 bg-accent mx-auto mb-12"></div>
              <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-8">
@@ -94,7 +94,7 @@ export default function DesigningHomologationPage() {
         </section>
 
         {/* CTA Section */}
-        <section className="mt-24 text-center bg-secondary py-16 rounded-lg">
+        <section className="mt-16 md:mt-24 text-center bg-secondary py-12 md:py-16 rounded-lg">
              <div className="container mx-auto px-4 md:px-6 lg:px-8">
                 <h2 className="text-3xl font-bold font-headline">Navigate Compliance with Confidence</h2>
                 <p className="mt-4 max-w-xl mx-auto text-lg text-muted-foreground">Partner with us to ensure your products are fully certified and ready for the market.</p>
@@ -107,3 +107,5 @@ export default function DesigningHomologationPage() {
     </>
   );
 }
+
+    

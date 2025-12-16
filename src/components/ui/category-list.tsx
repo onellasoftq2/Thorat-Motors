@@ -1,3 +1,4 @@
+
 "use client";
 import React, { useState } from 'react';
 import { cn } from '@/lib/utils';
@@ -31,7 +32,7 @@ export const CategoryList = ({
   const [hoveredItem, setHoveredItem] = useState<string | number | null>(null);
 
   return (
-    <div className={cn("w-full bg-background text-foreground py-16 lg:py-24", className)}>
+    <div className={cn("w-full bg-background text-foreground", className)}>
       <div className="container mx-auto px-4 md:px-6 lg:px-8">
         {/* Header Section */}
         <div className="text-center mb-12">
@@ -64,8 +65,8 @@ export const CategoryList = ({
                   "relative overflow-hidden border bg-card transition-all duration-300 ease-in-out cursor-pointer",
                   // Hover state styles
                   hoveredItem === category.id
-                    ? 'h-32 border-accent shadow-lg shadow-accent/10 bg-accent/5'
-                    : 'h-24 border-border hover:border-accent/50'
+                    ? 'h-28 md:h-32 border-accent shadow-lg shadow-accent/10 bg-accent/5'
+                    : 'h-24 md:h-24 border-border hover:border-accent/50'
                 )}
               >
                 {/* Corner brackets that appear on hover */}
@@ -88,7 +89,7 @@ export const CategoryList = ({
                     <h3
                       className={cn(
                         "font-bold transition-colors duration-300",
-                        category.featured ? 'text-2xl md:text-3xl' : 'text-xl md:text-2xl',
+                        category.featured ? 'text-xl md:text-3xl' : 'text-lg md:text-2xl',
                         hoveredItem === category.id ? 'text-primary' : 'text-foreground'
                       )}
                     >
@@ -121,3 +122,5 @@ export const CategoryList = ({
     </div>
   );
 };
+
+    

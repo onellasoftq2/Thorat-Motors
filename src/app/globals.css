@@ -79,7 +79,7 @@
 
 @layer components {
   .stats-section {
-    @apply bg-secondary py-16;
+    @apply bg-secondary py-12 md:py-16;
   }
   .stats-grid {
     @apply grid grid-cols-2 md:grid-cols-4 gap-8 text-center;
@@ -88,11 +88,11 @@
     @apply text-3xl lg:text-4xl font-bold text-primary;
   }
   .stat-card p {
-    @apply text-muted-foreground mt-1;
+    @apply text-muted-foreground mt-1 text-sm md:text-base;
   }
 
   .why-us-section, .manufacturing-section {
-      @apply py-16 lg:py-24;
+      @apply py-12 md:py-16 lg:py-24;
   }
   .why-grid {
       @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6;
@@ -102,7 +102,7 @@
   }
 
   .industries-section {
-      @apply py-16 lg:py-24 bg-secondary;
+      @apply py-12 md:py-16 lg:py-24 bg-secondary;
   }
   .industry-tags {
       @apply flex flex-wrap justify-center gap-3;
@@ -112,14 +112,14 @@
   }
   
   .locations-section {
-      @apply py-16 lg:py-24;
+      @apply py-12 md:py-16 lg:py-24;
   }
   .location-card {
       @apply text-center p-4 h-full flex items-center justify-center transition-shadow hover:shadow-md;
   }
 
   .certifications-section {
-      @apply text-center py-16 lg:py-24 bg-secondary;
+      @apply text-center py-12 md:py-16 lg:py-24 bg-secondary;
   }
   .certifications-section .badge {
       @apply bg-primary/10 text-primary border-primary/20;
@@ -144,6 +144,3 @@
 }
 
     
-
-
-

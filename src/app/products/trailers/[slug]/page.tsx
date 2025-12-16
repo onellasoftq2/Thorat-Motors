@@ -44,8 +44,8 @@ export default function TrailerDetailPage({ params }: { params: { slug: string }
   return (
     <div>
       <div className="bg-secondary">
-        <div className="container mx-auto px-4 py-16 md:px-6 lg:px-8">
-          <h1 className="text-4xl font-extrabold tracking-tight lg:text-5xl font-headline">
+        <div className="container mx-auto px-4 py-12 md:py-16 md:px-6 lg:px-8">
+          <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight lg:text-5xl font-headline">
             {trailer.name}
           </h1>
           <p className="mt-4 max-w-3xl text-lg text-muted-foreground">
@@ -54,7 +54,7 @@ export default function TrailerDetailPage({ params }: { params: { slug: string }
         </div>
       </div>
 
-      <div className="container mx-auto px-4 py-16 md:px-6 lg:px-8">
+      <div className="container mx-auto px-4 py-12 md:py-16 lg:py-24 md:px-6 lg:px-8">
         <div className="grid grid-cols-1 gap-12 md:grid-cols-2">
           <div>
             {image && (
@@ -107,3 +107,5 @@ export default function TrailerDetailPage({ params }: { params: { slug: string }
     </div>
   );
 }
+
+    

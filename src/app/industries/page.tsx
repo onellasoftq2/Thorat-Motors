@@ -21,7 +21,7 @@ export default function IndustriesPage() {
 
   return (
     <>
-      <div className="relative bg-secondary h-80">
+      <div className="relative bg-secondary h-72 md:h-80">
         {heroImage && (
           <Image
             src={heroImage.imageUrl}
@@ -42,7 +42,7 @@ export default function IndustriesPage() {
         </div>
       </div>
 
-      <div className="container mx-auto px-4 py-16 md:px-6 lg:px-8">
+      <div className="container mx-auto px-4 py-12 md:py-16 lg:py-24 md:px-6 lg:px-8">
         <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
           {industries.map((industry) => (
              <IndustryCard key={industry.id} industry={industry} />
@@ -52,3 +52,5 @@ export default function IndustriesPage() {
     </>
   );
 }
+
+    

@@ -28,7 +28,7 @@ export default function SparePartsPage() {
   return (
     <>
       <div className="bg-secondary">
-        <div className="container mx-auto px-4 py-16 text-center md:px-6 lg:px-8">
+        <div className="container mx-auto px-4 py-12 md:py-16 text-center md:px-6 lg:px-8">
           <h1 className="text-4xl font-extrabold tracking-tight lg:text-5xl font-headline">Spare Parts Division</h1>
           <p className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground">
             Genuine, reliable, and ready-to-dispatch spare parts for trailers and portable cabins.
@@ -36,7 +36,7 @@ export default function SparePartsPage() {
         </div>
       </div>
 
-      <div className="container mx-auto px-4 py-16 md:px-6 lg:px-8">
+      <div className="container mx-auto px-4 py-12 md:py-16 lg:py-24 md:px-6 lg:px-8">
         {/* Parts Categories */}
         <section>
           <h2 className="text-3xl font-bold text-center font-headline mb-2">Our Parts Inventory</h2>
@@ -56,7 +56,7 @@ export default function SparePartsPage() {
         </section>
 
         {/* Why Choose Us */}
-        <section className="mt-24">
+        <section className="mt-16 md:mt-24">
             <h2 className="text-3xl font-bold text-center font-headline mb-2">Why Choose Our Spare Parts?</h2>
             <div className="w-24 h-1.5 bg-accent mx-auto mb-12"></div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -74,7 +74,7 @@ export default function SparePartsPage() {
         </section>
 
         {/* Service Support */}
-        <section className="mt-24 bg-secondary py-16 rounded-lg">
+        <section className="mt-16 md:mt-24 bg-secondary py-12 md:py-16 rounded-lg">
           <div className="container mx-auto px-4 text-center md:px-6 lg:px-8">
             <h2 className="text-3xl font-bold font-headline mb-2">Comprehensive Service Support</h2>
             <div className="w-24 h-1.5 bg-accent mx-auto mb-12"></div>
@@ -90,7 +90,7 @@ export default function SparePartsPage() {
         </section>
 
         {/* CTA */}
-        <section className="mt-24 text-center">
+        <section className="mt-16 md:mt-24 text-center">
           <h2 className="text-3xl font-bold font-headline">Keep Your Fleet Running</h2>
           <p className="mt-4 max-w-xl mx-auto text-lg text-muted-foreground">
             Contact our parts division to get the right components for your trailers and cabins, delivered fast.
@@ -103,3 +103,5 @@ export default function SparePartsPage() {
     </>
   );
 }
+
+    

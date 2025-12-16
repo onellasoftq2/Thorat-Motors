@@ -40,7 +40,7 @@ const manufacturingCapabilities = [
     {
         title: 'High-Precision CNC Cutting',
         content: (
-            <div className="p-6 bg-background rounded-lg border shadow-md">
+            <div className="p-6 bg-secondary rounded-lg border shadow-md">
                 <p className="text-muted-foreground text-base">Accuracy and consistency for all structural components, ensuring perfect fit and finish.</p>
             </div>
         )
@@ -48,7 +48,7 @@ const manufacturingCapabilities = [
     {
         title: 'MIG & TIG Welding',
         content: (
-             <div className="p-6 bg-background rounded-lg border shadow-md">
+             <div className="p-6 bg-secondary rounded-lg border shadow-md">
                 <p className="text-muted-foreground text-base">Strong, clean welds that ensure long-life and safe operation under the most demanding loads.</p>
             </div>
         )
@@ -56,7 +56,7 @@ const manufacturingCapabilities = [
     {
         title: 'Shot Blasting',
         content: (
-             <div className="p-6 bg-background rounded-lg border shadow-md">
+             <div className="p-6 bg-secondary rounded-lg border shadow-md">
                 <p className="text-muted-foreground text-base">A superior surface preparation process that ensures perfect paint adhesion and excellent corrosion resistance.</p>
             </div>
         )
@@ -64,7 +64,7 @@ const manufacturingCapabilities = [
     {
         title: 'Epoxy & PU Coating',
         content: (
-             <div className="p-6 bg-background rounded-lg border shadow-md">
+             <div className="p-6 bg-secondary rounded-lg border shadow-md">
                 <p className="text-muted-foreground text-base">A robust two-coat system for long-term protection against harsh weather and tough operating environments.</p>
             </div>
         )
@@ -151,7 +151,7 @@ export default function Home() {
     <div className='overflow-x-hidden'>
       {/* Hero Section */}
       <section className="bg-background">
-        <div className="container mx-auto grid grid-cols-1 items-center gap-12 px-4 py-16 md:grid-cols-2 md:px-6 lg:px-8 lg:py-24">
+        <div className="container mx-auto grid grid-cols-1 items-center gap-12 px-4 py-12 md:py-16 lg:py-24 md:grid-cols-2 md:px-6 lg:px-8">
           <div className="space-y-6 text-center md:text-left">
             <AnimatedHeadline className="font-headline text-4xl font-extrabold tracking-tight text-foreground lg:text-5xl xl:text-6xl">
               High-Performance Trailers & Modular Cabin Solutions.
@@ -218,7 +218,7 @@ export default function Home() {
       <StickyFeatureSection />
 
       {/* Our Products Section V2 */}
-      <section className="bg-secondary py-16 lg:py-24">
+      <section className="bg-secondary py-12 md:py-16 lg:py-24">
         <div className="container mx-auto px-4 md:px-6 lg:px-8">
           <div className="mb-12 text-center">
             <h2 className="text-3xl font-extrabold font-headline tracking-tight sm:text-4xl">Our Products</h2>
@@ -275,7 +275,7 @@ export default function Home() {
       </section>
 
       {/* Our Services Section */}
-      <section className="bg-background py-16 lg:py-24">
+      <section className="bg-background py-12 md:py-16 lg:py-24">
         <div className="container mx-auto px-4 md:px-6 lg:px-8">
             <CategoryList
               title="Our Services"
@@ -294,7 +294,7 @@ export default function Home() {
       </section>
 
       {/* Industry-Specific Solutions Section */}
-      <section className="bg-background py-16 lg:py-24">
+      <section className="bg-background py-12 md:py-16 lg:py-24">
         <div className="container mx-auto px-4 md:px-6 lg:px-8">
             <div className="text-center mb-12">
                 <h2 className="text-3xl font-extrabold font-headline tracking-tight sm:text-4xl">Industry-Specific Solutions</h2>
@@ -371,7 +371,7 @@ export default function Home() {
                       <AccordionItem value={`item-${index}`} key={solution.id}>
                           <AccordionTrigger>{solution.name}</AccordionTrigger>
                           <AccordionContent>
-                               <Card className="shadow-lg">
+                               <Card className="shadow-lg border-0">
                                 <CardHeader>
                                     <CardDescription>{solution.description}</CardDescription>
                                 </CardHeader>
@@ -400,7 +400,7 @@ export default function Home() {
 
 
       {/* Nationwide Presence Section */}
-      <section className="locations-section py-16 lg:py-24">
+      <section className="locations-section py-12 md:py-16 lg:py-24">
         <motion.div
           className="container mx-auto px-4 md:px-6 lg:px-8"
           initial="hidden"
@@ -413,12 +413,12 @@ export default function Home() {
             <div className="mt-2 h-1.5 w-24 mx-auto bg-accent"></div>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-            <motion.div variants={itemVariants} className="relative aspect-[4/3] md:aspect-auto h-full min-h-[300px]">
+            <motion.div variants={itemVariants} className="relative aspect-[4/3] md:aspect-auto h-full min-h-[300px] md:min-h-[400px]">
               <IndiaMap hoveredCity={hoveredCity} />
             </motion.div>
             <motion.div
               variants={containerVariants}
-              className="grid grid-cols-1 sm:grid-cols-2 gap-4"
+              className="grid grid-cols-2 sm:grid-cols-2 gap-4"
             >
               {offices.map((location) => (
                 <motion.div
@@ -470,7 +470,7 @@ export default function Home() {
 
        {/* CTA Section */}
        <section className="cta-banner">
-        <div className="container mx-auto px-4 py-16 text-center lg:py-24 md:px-6 lg:px-8">
+        <div className="container mx-auto px-4 py-12 text-center md:py-16 lg:py-24 md:px-6 lg:px-8">
           <h2 className="text-3xl font-extrabold font-headline tracking-tight sm:text-4xl">
             Ready to Build Your Solution?
           </h2>
@@ -487,6 +487,8 @@ export default function Home() {
     </div>
   );
 }
+
+    
 
     
 

@@ -34,13 +34,13 @@ export default function ContainerConversionsPage() {
   return (
     <>
       <div className="bg-secondary">
-        <div className="container mx-auto px-4 py-16 text-center md:px-6 lg:px-8">
+        <div className="container mx-auto px-4 py-12 md:py-16 text-center md:px-6 lg:px-8">
             <h1 className="text-4xl font-extrabold tracking-tight lg:text-5xl font-headline">Container Conversions & Modifications</h1>
             <p className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground">Transforming 20 ft and 40 ft containers into high-utility structures.</p>
         </div>
       </div>
 
-      <div className="container mx-auto px-4 py-16 md:px-6 lg:px-8">
+      <div className="container mx-auto px-4 py-12 md:py-16 lg:py-24 md:px-6 lg:px-8">
         {/* About Section */}
         <section className="max-w-4xl mx-auto text-center grid md:grid-cols-2 gap-12 items-center">
             <div className='text-left'>
@@ -63,7 +63,7 @@ export default function ContainerConversionsPage() {
         </section>
 
         {/* Conversion Capabilities */}
-        <section className="mt-24">
+        <section className="mt-16 md:mt-24">
           <h2 className="text-3xl font-bold font-headline text-center mb-2">Conversion Capabilities</h2>
           <div className="w-24 h-1.5 bg-accent mx-auto mb-12"></div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -84,7 +84,7 @@ export default function ContainerConversionsPage() {
         </section>
 
          {/* Popular Conversions */}
-        <section className="mt-24">
+        <section className="mt-16 md:mt-24">
             <h2 className="text-3xl font-bold font-headline text-center mb-2">Popular Conversion Types</h2>
             <div className="w-24 h-1.5 bg-accent mx-auto mb-12"></div>
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 text-center">
@@ -98,7 +98,7 @@ export default function ContainerConversionsPage() {
 
 
         {/* Why Choose Us */}
-        <section className="mt-24 bg-secondary py-16 rounded-lg">
+        <section className="mt-16 md:mt-24 bg-secondary py-12 md:py-16 rounded-lg">
           <div className="container mx-auto px-4 md:px-6 lg:px-8">
             <h2 className="text-3xl font-bold font-headline text-center mb-2">Why Choose Thorat Motors?</h2>
             <div className="w-24 h-1.5 bg-accent mx-auto mb-12"></div>
@@ -114,7 +114,7 @@ export default function ContainerConversionsPage() {
         </section>
 
         {/* CTA */}
-        <section className="mt-24 text-center">
+        <section className="mt-16 md:mt-24 text-center">
           <h2 className="text-3xl font-bold font-headline">Ready to Start Your Container Project?</h2>
           <p className="mt-4 max-w-xl mx-auto text-lg text-muted-foreground">Let's discuss how we can transform a container into your next workspace, shop, or home.</p>
           <Button asChild size="lg" className="mt-8 bg-accent text-accent-foreground hover:bg-accent/90">
@@ -125,3 +125,5 @@ export default function ContainerConversionsPage() {
     </>
   );
 }
+
+    
