@@ -1,22 +1,28 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
-import { Card, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
-import { ArrowRight } from 'lucide-react';
+import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
+import { ArrowRight, Truck, Home as HomeIcon, Box } from 'lucide-react';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 
 const productCategories = [
   {
     name: 'Trailers',
-    description: 'High-performance trailers for every industrial need.',
+    description: 'High-performance trailers for every industrial need, from bulk transport to container logistics.',
     href: '/products/trailers',
-    imageId: 'flatbed',
+    icon: <Truck className="h-10 w-10 text-primary group-hover:text-accent-foreground transition-colors duration-300" />,
   },
   {
     name: 'Portable Cabins',
-    description: 'Versatile, modern modular solutions for work and living.',
+    description: 'Versatile, modern modular solutions for work and living, customized for any application.',
     href: '/products/cabins',
-    imageId: 'office',
+    icon: <HomeIcon className="h-10 w-10 text-primary group-hover:text-accent-foreground transition-colors duration-300" />,
+  },
+  {
+    name: 'Containers & Conversions',
+    description: 'Durable shipping containers repurposed for storage, offices, and unique commercial spaces.',
+    href: '/services/container-conversions',
+    icon: <Box className="h-10 w-10 text-primary group-hover:text-accent-foreground transition-colors duration-300" />,
   },
 ];
 
@@ -35,37 +41,30 @@ export default function ProductsPage() {
       </div>
 
       <div className="container mx-auto px-4 py-12 md:py-16 lg:py-24 md:px-6 lg:px-8">
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
-          {productCategories.map((category) => {
-            const image = PlaceHolderImages.find((img) => img.id === category.imageId);
-            return (
-              <Link href={category.href} key={category.name} className="group block">
-                <Card className="overflow-hidden h-full transition-all duration-300 group-hover:shadow-xl group-hover:border-accent group-hover:-translate-y-1">
-                  {image && (
-                    <Image
-                      src={image.imageUrl}
-                      alt={category.name}
-                      width={600}
-                      height={400}
-                      className="w-full object-cover aspect-video"
-                      data-ai-hint={image.imageHint}
-                    />
-                  )}
-                  <CardHeader>
-                    <CardTitle className="flex items-center justify-between font-headline">
-                      {category.name}
-                      <ArrowRight className="h-5 w-5 text-accent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+          {productCategories.map((category) => (
+            <Link href={category.href} key={category.name} className="group block h-full">
+              <Card className="flex flex-col h-full overflow-hidden shadow-md transition-all duration-300 ease-in-out hover:shadow-xl hover:border-accent hover:-translate-y-1.5 hover:bg-accent/5">
+                <CardHeader className="flex-row items-center space-x-4 pb-4">
+                    <div className="bg-primary/10 p-4 rounded-full group-hover:bg-accent transition-colors duration-300">
+                        {category.icon}
+                    </div>
+                    <CardTitle className="font-headline text-xl text-foreground group-hover:text-primary transition-colors">
+                        {category.name}
                     </CardTitle>
-                    <CardDescription>{category.description}</CardDescription>
-                  </CardHeader>
-                </Card>
-              </Link>
-            );
-          })}
+                </CardHeader>
+                <CardContent className="flex flex-col flex-grow">
+                  <CardDescription className="flex-grow">{category.description}</CardDescription>
+                  <div className="mt-6 text-accent font-semibold flex items-center">
+                    View Products
+                    <ArrowRight className="ml-2 h-4 w-4 transform transition-transform duration-300 group-hover:translate-x-1" />
+                  </div>
+                </CardContent>
+              </Card>
+            </Link>
+          ))}
         </div>
       </div>
     </>
   );
 }
-
-    
