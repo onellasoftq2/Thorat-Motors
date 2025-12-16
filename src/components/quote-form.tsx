@@ -7,7 +7,7 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import * as z from 'zod';
 import { motion, AnimatePresence } from 'framer-motion';
 
-import { products } from '@/lib/data';
+import { products, services as servicesData } from '@/lib/data';
 import { Button } from '@/components/ui/button';
 import {
   Form,
@@ -31,7 +31,7 @@ import { CheckCircle } from 'lucide-react';
 
 const step1Schema = z.object({
   productCategory: z.string().min(1, 'Please select a category'),
-  product: z.string().min(1, 'Please select a product'),
+  product: z.string().min(1, 'Please select a product or service'),
 });
 
 const step2Schema = z.object({
@@ -50,7 +50,7 @@ const formSchema = step1Schema.merge(step2Schema).merge(step3Schema);
 type FormData = z.infer<typeof formSchema>;
 
 const steps = [
-  { id: 'Step 1', name: 'Product Selection', fields: ['productCategory', 'product'] },
+  { id: 'Step 1', name: 'Product or Service Selection', fields: ['productCategory', 'product'] },
   { id: 'Step 2', name: 'Contact Information', fields: ['fullName', 'companyName', 'email', 'phone'] },
   { id: 'Step 3', name: 'Your Message', fields: ['message'] },
 ];
@@ -75,6 +75,16 @@ export default function QuoteForm() {
   });
 
   const productCategory = form.watch('productCategory');
+
+  const getProductList = () => {
+    if (productCategory === 'services') {
+      return servicesData;
+    }
+    if (productCategory && products[productCategory as keyof typeof products]) {
+      return products[productCategory as keyof typeof products];
+    }
+    return [];
+  };
 
   const processForm = async (data: FormData) => {
     console.log('Form data:', data);
@@ -141,7 +151,7 @@ export default function QuoteForm() {
                             name="productCategory"
                             render={({ field }) => (
                                 <FormItem>
-                                <FormLabel>Product Category</FormLabel>
+                                <FormLabel>Inquiry Type</FormLabel>
                                 <Select onValueChange={(value) => {
                                     field.onChange(value);
                                     form.resetField('product');
@@ -155,6 +165,7 @@ export default function QuoteForm() {
                                     <SelectItem value="trailers">Trailers</SelectItem>
                                     <SelectItem value="cabins">Portable Cabins</SelectItem>
                                     <SelectItem value="containerConversions">Containers & Conversions</SelectItem>
+                                    <SelectItem value="services">Services</SelectItem>
                                     </SelectContent>
                                 </Select>
                                 <FormMessage />
@@ -167,15 +178,15 @@ export default function QuoteForm() {
                                 name="product"
                                 render={({ field }) => (
                                 <FormItem>
-                                    <FormLabel>Product</FormLabel>
+                                    <FormLabel>{productCategory === 'services' ? 'Service' : 'Product'}</FormLabel>
                                     <Select onValueChange={field.onChange} defaultValue={field.value}>
                                     <FormControl>
                                         <SelectTrigger>
-                                        <SelectValue placeholder="Select a product" />
+                                        <SelectValue placeholder={`Select a ${productCategory === 'services' ? 'service' : 'product'}`} />
                                         </SelectTrigger>
                                     </FormControl>
                                     <SelectContent>
-                                        {(products[productCategory as keyof typeof products] || []).map(p => (
+                                        {getProductList().map(p => (
                                         <SelectItem key={p.id} value={p.name}>{p.name}</SelectItem>
                                         ))}
                                     </SelectContent>
