@@ -41,7 +41,7 @@ const manufacturingCapabilities = [
         title: 'High-Precision CNC Cutting',
         content: (
             <div className="p-6 bg-secondary rounded-lg border">
-                <p className="text-muted-foreground text-sm">Accuracy and consistency for all structural components, ensuring perfect fit and finish.</p>
+                <p className="text-muted-foreground text-base">Accuracy and consistency for all structural components, ensuring perfect fit and finish.</p>
             </div>
         )
     },
@@ -49,7 +49,7 @@ const manufacturingCapabilities = [
         title: 'MIG & TIG Welding',
         content: (
              <div className="p-6 bg-secondary rounded-lg border">
-                <p className="text-muted-foreground text-sm">Strong, clean welds that ensure long-life and safe operation under the most demanding loads.</p>
+                <p className="text-muted-foreground text-base">Strong, clean welds that ensure long-life and safe operation under the most demanding loads.</p>
             </div>
         )
     },
@@ -57,7 +57,7 @@ const manufacturingCapabilities = [
         title: 'Shot Blasting',
         content: (
              <div className="p-6 bg-secondary rounded-lg border">
-                <p className="text-muted-foreground text-sm">A superior surface preparation process that ensures perfect paint adhesion and excellent corrosion resistance.</p>
+                <p className="text-muted-foreground text-base">A superior surface preparation process that ensures perfect paint adhesion and excellent corrosion resistance.</p>
             </div>
         )
     },
@@ -65,7 +65,7 @@ const manufacturingCapabilities = [
         title: 'Epoxy & PU Coating',
         content: (
              <div className="p-6 bg-secondary rounded-lg border">
-                <p className="text-muted-foreground text-sm">A robust two-coat system for long-term protection against harsh weather and tough operating environments.</p>
+                <p className="text-muted-foreground text-base">A robust two-coat system for long-term protection against harsh weather and tough operating environments.</p>
             </div>
         )
     },
@@ -487,5 +487,7 @@ export default function Home() {
     </div>
   );
 }
+
+    
 
     
