@@ -62,7 +62,7 @@ export function StickyFeatureSection() {
     const containerRef = useRef<HTMLDivElement>(null);
     const { scrollYProgress } = useScroll({
       target: containerRef,
-      offset: ["start start", "end end"]
+      offset: ["start 25%", "end 75%"]
     });
   
     return (
