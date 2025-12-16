@@ -1,5 +1,4 @@
 
-
 export type NavMenuItem = {
   name: string;
   href: string;
@@ -59,8 +58,8 @@ export const navMenu: NavMenu[] = [
           { name: "Used Shipping Containers (20ft / 40ft)", href: "/products/container-conversions/used-container" },
           { name: "Office Conversions", href: "/products/container-conversions/office-conversion" },
           { name: "Retail/Shop Conversions", href: "/products/container-conversions/retail-conversion" },
-          { name: "Storage Containers", href: "/services/container-conversions" },
-          { name: "Custom Container Modifications", href: "/services/container-conversions" },
+          { name: "Storage Containers", href: "/products/container-conversions/storage-container" },
+          { name: "Custom Container Modifications", href: "/products/container-conversions/custom-modification" },
         ],
       },
     ],
@@ -381,7 +380,7 @@ export const products = {
         },
     ],
     containerConversions: [
-         {
+        {
             id: 'used-container',
             name: 'Used Shipping Cargo Container',
             description: 'Cargo Containers are highly durable and are basically used for Storage Purpose. We also offer custom modifications for 20ft and 40ft containers.',
@@ -433,7 +432,41 @@ export const products = {
                 { name: 'Features', value: 'Can be fitted with counters, shelving, commercial kitchen equipment, and customer seating.' },
                 { name: 'Security', value: 'Roll-down shutters, reinforced doors, and advanced locking systems.' },
             ],
-        }
+        },
+        {
+            id: 'storage-container',
+            name: 'Secure Storage Containers',
+            description: 'Durable and secure storage solutions using modified shipping containers. Ideal for tools, equipment, and inventory.',
+            features: [
+                'Wind and water-tight Corten steel construction.',
+                'Heavy-duty locking mechanisms for enhanced security.',
+                'Can be fitted with shelving, lighting, and ventilation.',
+                'Available in 20ft and 40ft sizes.'
+            ],
+            specs: [
+                { name: 'Material', value: 'Corten Steel' },
+                { name: 'Security', value: 'Lockbox and high-security options' },
+                { name: 'Customization', value: 'Shelving, partitions, ramps, and electrical packages' },
+                { name: 'Application', value: 'Industrial storage, construction site storage, document archiving' },
+            ],
+        },
+        {
+            id: 'custom-modification',
+            name: 'Custom Container Modifications',
+            description: 'We provide bespoke modifications to shipping containers for any application. Your vision, engineered by us.',
+            features: [
+                'Full design collaboration from concept to completion.',
+                'Integration of specialized equipment or machinery.',
+                'Unique structural modifications, including joining multiple containers.',
+                'Endless possibilities for workshops, labs, marketing units, and more.'
+            ],
+            specs: [
+                { name: 'Process', value: 'Consultation, 3D Modeling, Fabrication, Delivery' },
+                { name: 'Modifications', value: 'Custom doors, windows, skylights, insulation, HVAC, plumbing, electrical' },
+                { name: 'Structure', value: 'Reinforcement, roll-up doors, open-side options' },
+                { name: 'Finishes', value: 'Custom interior and exterior finishes to match branding' },
+            ],
+        },
     ]
 };
 

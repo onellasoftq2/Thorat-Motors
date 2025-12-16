@@ -101,11 +101,11 @@ const cabinsTags = [
 ];
 
 const containersTags = [
-    { name: 'Used Shipping Containers', href: '/services/container-conversions' },
-    { name: 'Container Conversions', href: '/services/container-conversions' },
-    { name: 'Office Conversions', href: '/services/container-conversions' },
-    { name: 'Retail/Shop Conversions', href: '/services/container-conversions' },
-    { name: 'Storage Containers', href: '/services/container-conversions' },
+    { name: 'Used Shipping Containers', href: '/products/container-conversions/used-container' },
+    { name: 'Container Conversions', href: '/products/container-conversions' },
+    { name: 'Office Conversions', href: '/products/container-conversions/office-conversion' },
+    { name: 'Retail/Shop Conversions', href: '/products/container-conversions/retail-conversion' },
+    { name: 'Storage Containers', href: '/products/container-conversions/storage-container' },
 ];
 
 const containerVariants = {
@@ -265,8 +265,8 @@ export default function Home() {
                         <Link key={tag.name} href={tag.href} className="product-tag hover:bg-primary/20 transition-colors hover:shadow-md hover:border-accent/50 border border-transparent">{tag.name}</Link>
                       ))}
                   </div>
-                  <Link href="/services/container-conversions" className="text-accent font-semibold flex items-center hover:underline">
-                      View Conversion Services <ArrowRight className="ml-2 h-4 w-4" />
+                  <Link href="/products/container-conversions" className="text-accent font-semibold flex items-center hover:underline">
+                      View All Products <ArrowRight className="ml-2 h-4 w-4" />
                   </Link>
                 </div>
             </div>
@@ -487,11 +487,3 @@ export default function Home() {
     </div>
   );
 }
-
-    
-
-    
-
-    
-
-    
