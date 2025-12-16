@@ -51,7 +51,7 @@ export const CategoryList = ({
         </div>
 
         {/* Categories List */}
-        <div className="space-y-3 max-w-4xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-1 gap-3 max-w-4xl mx-auto">
           {categories.map((category) => (
             <div
               key={category.id}
@@ -122,5 +122,3 @@ export const CategoryList = ({
     </div>
   );
 };
-
-    

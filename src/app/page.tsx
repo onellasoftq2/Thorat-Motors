@@ -204,9 +204,10 @@ export default function Home() {
                 {stats.map((stat) => (
                     <div key={stat.label} className="stat-card">
                         <h3>
-                          {stat.value > 0 && <AnimatedNumber value={stat.value} />}
+                          {stat.value > 0 ? <AnimatedNumber value={stat.value} /> : ''}
                           {stat.isPlus && stat.value > 0 ? '+' : ''}
                           {stat.value === 0 ? stat.unit : ''}
+                          {stat.unit && stat.value > 0 ? stat.unit : ''}
                         </h3>
                         <p>{stat.label}</p>
                     </div>
