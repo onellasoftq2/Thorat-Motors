@@ -79,7 +79,7 @@ export default function CustomEngineeringPage() {
                     {useCases.map(useCase => (
                         <Card key={useCase} className="text-left shadow-md">
                             <CardContent className="pt-6">
-                                <p className="font-medium">{useCase}</p>
+                                <p className="font-medium leading-relaxed">{useCase}</p>
                             </CardContent>
                         </Card>
                     ))}
@@ -99,5 +99,3 @@ export default function CustomEngineeringPage() {
     </>
   );
 }
-
-    

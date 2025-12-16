@@ -57,7 +57,7 @@ export default function TransportLogisticsPage() {
                     <div className='bg-primary/10 p-4 rounded-full'>
                         {React.cloneElement(item.icon, { className: "h-8 w-8 text-accent" })}
                     </div>
-                    <CardTitle className="mt-4">{item.title}</CardTitle>
+                    <CardTitle className="mt-4 text-xl">{item.title}</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <p className="text-muted-foreground">{item.description}</p>
@@ -96,5 +96,3 @@ export default function TransportLogisticsPage() {
     </>
   );
 }
-
-    

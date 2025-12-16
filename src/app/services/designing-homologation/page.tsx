@@ -66,7 +66,7 @@ export default function DesigningHomologationPage() {
                              <div className="bg-primary/10 p-4 rounded-full">
                                 {React.cloneElement(cap.icon, { className: "h-8 w-8 text-accent" })}
                             </div>
-                            <CardTitle className="mt-4">{cap.title}</CardTitle>
+                            <CardTitle className="mt-4 text-xl">{cap.title}</CardTitle>
                         </CardHeader>
                         <CardContent className="text-center">
                             <p className="text-muted-foreground">{cap.description}</p>
@@ -85,8 +85,8 @@ export default function DesigningHomologationPage() {
                     <div key={item.title} className="flex items-start">
                          <Check className="h-8 w-8 text-accent mr-4 mt-1 flex-shrink-0" />
                         <div>
-                            <h3 className="text-xl font-bold font-headline">{item.title}</h3>
-                            <p className="text-muted-foreground">{item.description}</p>
+                            <h3 className="text-xl font-bold font-headline mb-1">{item.title}</h3>
+                            <p className="text-muted-foreground leading-relaxed">{item.description}</p>
                         </div>
                     </div>
                 ))}
@@ -107,5 +107,3 @@ export default function DesigningHomologationPage() {
     </>
   );
 }
-
-    
