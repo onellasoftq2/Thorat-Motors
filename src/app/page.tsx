@@ -313,27 +313,26 @@ export default function Home() {
                 </p>
             </div>
 
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 items-start">
-                <div className="lg:col-span-1">
-                    <div className="flex flex-col space-y-2">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+                <div className="lg:col-span-1 sticky top-24">
+                    <ul className="flex flex-col space-y-2">
                         {industrySolutions.map((solution, index) => (
-                            <button
+                            <li
                                 key={solution.id}
-                                onClick={() => setSelectedIndustry(index)}
                                 className={cn(
                                     'w-full text-left p-4 rounded-lg transition-all duration-300 border-l-4',
                                     selectedIndustry === index
                                     ? 'bg-secondary shadow-md border-accent'
-                                    : 'bg-transparent border-transparent hover:bg-secondary/50'
+                                    : 'bg-transparent border-transparent'
                                 )}
                             >
                                 <p className="font-bold text-foreground text-lg">{solution.name}</p>
-                            </button>
+                            </li>
                         ))}
-                    </div>
+                    </ul>
                 </div>
 
-                <div className="lg:col-span-2 sticky top-24">
+                <div className="lg:col-span-1">
                     <AnimatePresence mode="wait">
                         <motion.div
                             key={selectedIndustry}
