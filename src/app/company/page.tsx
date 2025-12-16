@@ -26,50 +26,54 @@ export default function CompanyPage() {
       </div>
       
       <div className="container mx-auto px-4 py-16 md:px-6 lg:px-8">
-        {/* About & MD's Message */}
-        <section className="grid grid-cols-1 md:grid-cols-5 gap-12 items-center">
-            <div className="md:col-span-3">
-                <h2 className="text-3xl font-bold font-headline mb-2">Our Story</h2>
-                 <div className="w-24 h-1.5 bg-accent mb-4"></div>
-                <p className="text-muted-foreground text-lg leading-relaxed">{company.about}</p>
-                <Card className="mt-8 bg-secondary border-l-4 border-accent">
-                    <CardContent className="pt-6">
-                        <blockquote className="text-lg font-medium">"{company.mdMessage}"</blockquote>
-                        <p className="text-right mt-4 font-semibold">- {company.leadership[0].name}, Managing Director</p>
-                    </CardContent>
-                </Card>
-            </div>
-            <div className="md:col-span-2 flex justify-center">
-                {mdImage && (
-                    <Image src={mdImage.imageUrl} alt={mdImage.description} width={350} height={350} className="rounded-full shadow-lg aspect-square object-cover" data-ai-hint={mdImage.imageHint} />
-                )}
+        {/* Our Story */}
+        <section className="max-w-4xl mx-auto">
+            <h2 className="text-3xl font-bold font-headline text-center mb-2">Our Story</h2>
+            <div className="w-24 h-1.5 bg-accent mx-auto mb-8"></div>
+            <p className="text-muted-foreground text-lg leading-relaxed text-center">{company.about}</p>
+        </section>
+
+        {/* MD's Message */}
+        <section className="mt-24">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-12 items-center max-w-5xl mx-auto">
+                 <div className="md:col-span-1 flex justify-center">
+                    {mdImage && (
+                        <Image src={mdImage.imageUrl} alt={mdImage.description} width={350} height={350} className="rounded-full shadow-lg aspect-square object-cover" data-ai-hint={mdImage.imageHint} />
+                    )}
+                </div>
+                <div className="md:col-span-2">
+                    <Card className="bg-secondary border-l-4 border-accent">
+                        <CardContent className="pt-6">
+                            <blockquote className="text-lg font-medium leading-relaxed">"{company.mdMessage}"</blockquote>
+                            <p className="text-right mt-4 font-semibold text-primary">- {company.leadership[0].name}, Managing Director</p>
+                        </CardContent>
+                    </Card>
+                </div>
             </div>
         </section>
 
         {/* Vision & Mission */}
         <section id="vision" className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-24">
-            <Card className="text-center shadow-md">
-                <CardHeader className="items-center">
-                    <div className="bg-primary/10 p-4 rounded-full">
-                        <Eye className="h-10 w-10 text-accent" />
-                    </div>
-                    <CardTitle className="mt-4 text-3xl font-bold font-headline">Our Vision</CardTitle>
-                </CardHeader>
-                <CardContent>
-                    <p className="text-muted-foreground text-lg">{company.vision}</p>
-                </CardContent>
-            </Card>
-             <Card className="text-center shadow-md">
-                <CardHeader className="items-center">
-                     <div className="bg-primary/10 p-4 rounded-full">
-                        <Goal className="h-10 w-10 text-accent" />
-                    </div>
-                    <CardTitle className="mt-4 text-3xl font-bold font-headline">Our Mission</CardTitle>
-                </CardHeader>
-                <CardContent>
-                    <p className="text-muted-foreground text-lg">{company.mission}</p>
-                </CardContent>
-            </Card>
+            <div className="group relative rounded-lg border border-border bg-card p-8 text-center shadow-md transition-all duration-300 hover:border-transparent hover:shadow-xl hover:-translate-y-1">
+              <div className="absolute inset-0 rounded-lg bg-gradient-to-br from-accent/10 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
+              <div className="relative">
+                <div className="mx-auto mb-6 inline-flex h-20 w-20 items-center justify-center rounded-full bg-primary/10">
+                  <Eye className="h-10 w-10 text-accent" />
+                </div>
+                <h3 className="text-3xl font-bold font-headline">Our Vision</h3>
+                <p className="mt-4 text-muted-foreground text-lg">{company.vision}</p>
+              </div>
+            </div>
+             <div className="group relative rounded-lg border border-border bg-card p-8 text-center shadow-md transition-all duration-300 hover:border-transparent hover:shadow-xl hover:-translate-y-1">
+              <div className="absolute inset-0 rounded-lg bg-gradient-to-br from-accent/10 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
+              <div className="relative">
+                <div className="mx-auto mb-6 inline-flex h-20 w-20 items-center justify-center rounded-full bg-primary/10">
+                  <Goal className="h-10 w-10 text-accent" />
+                </div>
+                <h3 className="text-3xl font-bold font-headline">Our Mission</h3>
+                <p className="mt-4 text-muted-foreground text-lg">{company.mission}</p>
+              </div>
+            </div>
         </section>
 
         {/* Manufacturing Excellence */}
