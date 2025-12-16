@@ -2,7 +2,7 @@
 'use client';
 import Image from 'next/image';
 import Link from 'next/link';
-import { motion, AnimatePresence, useScroll, useMotionValueEvent } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import {
   Card,
   CardContent,
@@ -19,7 +19,7 @@ import { Timeline } from '@/components/ui/timeline';
 import { AnimatedHeadline } from '@/components/animated-headline';
 import { AnimatedNumber } from '@/components/animated-number';
 import { Marquee } from '@/components/ui/marquee';
-import { useState, useRef } from 'react';
+import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { cn } from '@/lib/utils';
 import { IndiaMap } from '@/components/ui/india-map';
@@ -138,16 +138,6 @@ export default function Home() {
   const router = useRouter();
 
   const [selectedIndustry, setSelectedIndustry] = useState(0);
-  const solutionsRef = useRef(null);
-  const { scrollYProgress } = useScroll({
-      target: solutionsRef,
-      offset: ["start end", "end start"]
-  });
-
-  useMotionValueEvent(scrollYProgress, "change", (latest) => {
-      const activeIndex = Math.floor(latest * industrySolutions.length);
-      setSelectedIndustry(Math.min(activeIndex, industrySolutions.length - 1));
-  });
 
   const serviceCategories: Category[] = services.map(service => ({
     id: service.id,
@@ -304,7 +294,7 @@ export default function Home() {
       </section>
 
       {/* Industry-Specific Solutions Section */}
-      <section ref={solutionsRef} className="bg-background py-16 lg:py-24">
+      <section className="bg-background py-16 lg:py-24">
         <div className="container mx-auto px-4 md:px-6 lg:px-8">
             <div className="text-center mb-12">
                 <h2 className="text-3xl font-extrabold font-headline tracking-tight sm:text-4xl">Industry-Specific Solutions</h2>
@@ -313,15 +303,16 @@ export default function Home() {
                 </p>
             </div>
             
-            {/* Desktop View: Scroll-driven */}
+            {/* Desktop View: Hover-driven */}
             <div className="hidden lg:grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
                 <div className="lg:col-span-1 sticky top-24">
                     <ul className="flex flex-col space-y-2">
                         {industrySolutions.map((solution, index) => (
                             <li
                                 key={solution.id}
+                                onMouseEnter={() => setSelectedIndustry(index)}
                                 className={cn(
-                                    'w-full text-left p-4 rounded-lg transition-all duration-300 border-l-4',
+                                    'w-full text-left p-4 rounded-lg transition-all duration-300 border-l-4 cursor-pointer',
                                     selectedIndustry === index
                                     ? 'bg-secondary shadow-md border-accent'
                                     : 'bg-transparent border-transparent'
