@@ -218,7 +218,7 @@ export default function Home() {
       <StickyFeatureSection />
 
       {/* Our Products Section V2 */}
-      <section className="bg-secondary pt-12 md:pt-16 lg:pt-24">
+      <section className="bg-secondary py-12 md:py-16 lg:py-24">
         <div className="container mx-auto px-4 md:px-6 lg:px-8">
           <div className="mb-12 text-center">
             <h2 className="text-3xl font-extrabold font-headline tracking-tight sm:text-4xl">Our Products</h2>
