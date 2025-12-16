@@ -99,11 +99,11 @@ export function StickyFeatureSection() {
   
     return (
       <motion.div
-        className="grid grid-cols-1 md:grid-cols-2 items-center gap-8 md:gap-12 p-8 md:p-12 rounded-3xl mb-8 sticky top-24 bg-card shadow-md"
+        className="grid grid-cols-1 md:grid-cols-2 items-center gap-8 md:gap-12 p-8 md:p-12 rounded-3xl mb-8 sticky bg-card shadow-md"
         style={{
             scale,
             opacity,
-            top: `${10 + index * 4}rem`
+            top: `10rem`
         }}
       >
         <div className="flex flex-col justify-center text-left">
