@@ -25,6 +25,7 @@ import { cn } from '@/lib/utils';
 import { IndiaMap } from '@/components/ui/india-map';
 import { CategoryList, type Category } from '@/components/ui/category-list';
 import { StickyFeatureSection } from '@/components/ui/sticky-scroll-cards-section';
+import { IndustryScroll } from '@/components/ui/industry-scroll';
 
 const heroImage = PlaceHolderImages.find((img) => img.id === 'hero-trailer');
 
@@ -134,8 +135,6 @@ const iconMap: { [key: string]: React.ReactNode } = {
 
 export default function Home() {
   const [hoveredCity, setHoveredCity] = useState<string | null>(null);
-  const [selectedIndustry, setSelectedIndustry] = useState(industrySolutions[0]);
-  const [activeService, setActiveService] = useState(services[0]);
   const router = useRouter();
 
   const serviceCategories: Category[] = services.map(service => ({
@@ -294,72 +293,10 @@ export default function Home() {
       </section>
 
       {/* Industry-Specific Solutions Section */}
-      <section className="industries-section bg-background py-16 lg:py-24">
-        <div className="container mx-auto px-4 md:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-extrabold font-headline tracking-tight sm:text-4xl">Industry-Specific Solutions</h2>
-            <p className="mt-4 max-w-3xl mx-auto text-lg text-muted-foreground">
-              Tailored trailers, cabins, and container solutions designed for real-world industrial applications.
-            </p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-8">
-            <div className="md:col-span-1 lg:col-span-1">
-              <div className="flex flex-col space-y-2">
-                {industrySolutions.map((industry) => (
-                  <button
-                    key={industry.id}
-                    onClick={() => setSelectedIndustry(industry)}
-                    className={cn(
-                      'w-full text-left p-4 rounded-lg transition-all duration-300 relative',
-                      selectedIndustry.id === industry.id
-                        ? 'bg-secondary'
-                        : 'hover:bg-secondary/50'
-                    )}
-                  >
-                    {selectedIndustry.id === industry.id && (
-                      <motion.div
-                        layoutId="activeIndustryHighlight"
-                        className="absolute left-0 top-0 h-full w-1 bg-accent rounded-r-full"
-                        transition={{ duration: 0.3, ease: 'easeInOut' }}
-                      />
-                    )}
-                    <span className={cn('font-medium', selectedIndustry.id === industry.id ? 'text-primary' : 'text-foreground')}>
-                      {industry.name}
-                    </span>
-                  </button>
-                ))}
-              </div>
-            </div>
-            <div className="md:col-span-2 lg:col-span-3">
-              <AnimatePresence mode="wait">
-                <motion.div
-                  key={selectedIndustry.id}
-                  initial={{ opacity: 0, y: 8 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -8 }}
-                  transition={{ duration: 0.3, ease: 'easeInOut' }}
-                  className="bg-secondary rounded-lg p-8 h-full"
-                >
-                  <h3 className="text-2xl font-bold font-headline mb-4 text-primary">{selectedIndustry.name}</h3>
-                  <p className="text-muted-foreground mb-6">{selectedIndustry.description}</p>
-                  <h4 className="font-semibold mb-3">Relevant Solutions:</h4>
-                  <ul className="space-y-2 mb-8">
-                    {selectedIndustry.solutions.map((solution, index) => (
-                      <li key={index} className="flex items-center">
-                        <Check className="h-4 w-4 mr-2 text-green-500" />
-                        <span>{solution}</span>
-                      </li>
-                    ))}
-                  </ul>
-                  <Button asChild variant="outline">
-                    <Link href={`/industries#${selectedIndustry.id}`}>View Solutions for This Industry</Link>
-                  </Button>
-                </motion.div>
-              </AnimatePresence>
-            </div>
-          </div>
-        </div>
+      <section className="bg-background py-16 lg:py-24">
+        <IndustryScroll items={industrySolutions} />
       </section>
+
 
       {/* Nationwide Presence Section */}
       <section className="locations-section py-16 lg:py-24">
