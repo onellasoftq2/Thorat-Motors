@@ -65,10 +65,10 @@ export default function StructuralFabricationPage() {
             <div className="relative max-w-4xl mx-auto">
                 <div className="absolute left-1/2 top-0 bottom-0 w-px bg-border -translate-x-1/2 hidden md:block"></div>
                 {processSteps.map((step, index) => (
-                    <div key={step.name} className="relative flex items-center md:justify-center md:even:flex-row-reverse mb-12 group">
+                    <div key={step.name} className="relative flex items-center md:justify-center md:even:flex-row-reverse mb-12">
                         <div className="hidden md:block absolute left-1/2 top-1/2 w-4 h-4 bg-accent rounded-full -translate-x-1/2 -translate-y-1/2 ring-4 ring-background"></div>
                          <div className="md:w-[calc(50%-2rem)]">
-                            <Card className="shadow-md transition-shadow group-hover:shadow-xl">
+                            <Card className="shadow-md transition-shadow hover:shadow-xl">
                                 <CardContent className="pt-6">
                                      <p className="text-lg font-semibold flex items-center"><span className="text-accent mr-4 text-2xl font-bold">0{index + 1}</span> {step.name}</p>
                                 </CardContent>
