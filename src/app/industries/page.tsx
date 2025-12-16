@@ -1,19 +1,21 @@
 
 import Image from 'next/image';
-import { industries } from '@/lib/data';
+import { industrySolutions } from '@/lib/data';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
-import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card';
-import { Building, Gem, Anchor, Wrench, Leaf, ShoppingCart, Home } from 'lucide-react';
-import IndustryCard from '@/components/ui/industry-card';
+import { Card, CardContent } from '@/components/ui/card';
+import { Button } from '@/components/ui/button';
+import Link from 'next/link';
+import { Building, Gem, Anchor, Wrench, Leaf, ShoppingCart, Home, Check, ArrowRight } from 'lucide-react';
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 
 const iconMap: { [key: string]: React.ReactNode } = {
-  cement: <Building className="h-10 w-10 text-accent" />,
-  mining: <Gem className="h-10 w-10 text-accent" />,
-  ports: <Anchor className="h-10 w-10 text-accent" />,
-  construction: <Wrench className="h-10 w-10 text-accent" />,
-  agriculture: <Leaf className="h-10 w-10 text-accent" />,
-  retail: <ShoppingCart className="h-10 w-10 text-accent" />,
-  housing: <Home className="h-10 w-10 text-accent" />,
+  Building: <Building className="h-8 w-8 text-accent" />,
+  Gem: <Gem className="h-8 w-8 text-accent" />,
+  Anchor: <Anchor className="h-8 w-8 text-accent" />,
+  Wrench: <Wrench className="h-8 w-8 text-accent" />,
+  Leaf: <Leaf className="h-8 w-8 text-accent" />,
+  ShoppingCart: <ShoppingCart className="h-8 w-8 text-accent" />,
+  Home: <Home className="h-8 w-8 text-accent" />,
 };
 
 export default function IndustriesPage() {
@@ -43,14 +45,49 @@ export default function IndustriesPage() {
       </div>
 
       <div className="container mx-auto px-4 py-12 md:py-16 lg:py-24 md:px-6 lg:px-8">
-        <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
-          {industries.map((industry) => (
-             <IndustryCard key={industry.id} industry={industry} />
+        <Accordion type="single" collapsible className="w-full max-w-4xl mx-auto" defaultValue="item-0">
+          {industrySolutions.map((industry, index) => (
+            <AccordionItem value={`item-${index}`} key={industry.id} id={industry.id}>
+              <AccordionTrigger className="text-lg font-bold hover:no-underline">
+                <div className="flex items-center gap-4">
+                  <div className="bg-primary/10 p-3 rounded-full">
+                    {iconMap[industry.icon]}
+                  </div>
+                  <span>{industry.name}</span>
+                </div>
+              </AccordionTrigger>
+              <AccordionContent>
+                <div className="grid grid-cols-1 md:grid-cols-5 gap-8 pt-4">
+                   <div className="md:col-span-2">
+                        <Image 
+                            src={industry.image}
+                            alt={industry.name}
+                            width={400}
+                            height={300}
+                            className="rounded-lg object-cover w-full aspect-[4/3] shadow-md"
+                        />
+                   </div>
+                   <div className="md:col-span-3">
+                        <p className="text-muted-foreground mb-6">{industry.description}</p>
+                        <h4 className="font-semibold mb-4 text-foreground">Relevant Solutions:</h4>
+                        <ul className="space-y-3">
+                            {industry.solutions.map((item, solIndex) => (
+                                <li key={solIndex} className="flex items-center">
+                                    <Check className="h-5 w-5 mr-3 text-green-500 flex-shrink-0" />
+                                    <span className="text-muted-foreground">{item}</span>
+                                </li>
+                            ))}
+                        </ul>
+                        <Button asChild variant="link" className="px-0 mt-6 text-accent font-semibold">
+                            <Link href="/quote">Request a Quote <ArrowRight className="ml-2 h-4 w-4" /></Link>
+                        </Button>
+                   </div>
+                </div>
+              </AccordionContent>
+            </AccordionItem>
           ))}
-        </div>
+        </Accordion>
       </div>
     </>
   );
 }
-
-    

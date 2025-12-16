@@ -424,6 +424,8 @@ export const industrySolutions = [
       'Flatbed & Side-Wall Trailers',
       'Transport & Logistics Support',
     ],
+    image: "https://images.unsplash.com/photo-1517921345997-384358899214?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    icon: "Building"
   },
   {
     id: 'mining',
@@ -434,6 +436,8 @@ export const industrySolutions = [
       'Skeletal & Flatbed Trailers',
       'Custom Engineering',
     ],
+    image: "https://images.unsplash.com/photo-1542382494-0997afd46399?q=80&w=2070&auto=format&fit=crop&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    icon: "Gem"
   },
   {
     id: 'ports',
@@ -444,6 +448,8 @@ export const industrySolutions = [
       'Container Handling Solutions',
       'Logistics Support',
     ],
+    image: "https://images.unsplash.com/photo-1605282221649-8f5367a1c86e?q=80&w=2070&auto=format&fit=crop&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    icon: "Anchor"
   },
   {
     id: 'construction',
@@ -454,6 +460,8 @@ export const industrySolutions = [
       'Side-Wall Trailers',
       'Portable Site Cabins',
     ],
+    image: "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?q=80&w=2070&auto=format&fit=crop&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    icon: "Wrench"
   },
   {
     id: 'agriculture',
@@ -464,6 +472,8 @@ export const industrySolutions = [
       'Storage Containers',
       'Seasonal Logistics Support',
     ],
+    image: "https://images.unsplash.com/photo-1627920769854-46385d564175?q=80&w=2070&auto=format&fit=crop&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    icon: "Leaf"
   },
   {
     id: 'retail',
@@ -474,6 +484,8 @@ export const industrySolutions = [
       'Shop & Hotel Cabins',
       'Custom Fabrication',
     ],
+    image: "https://images.unsplash.com/photo-1554118811-1e0d58224f24?q=80&w=2070&auto=format&fit=crop&ixlib-rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    icon: "ShoppingCart"
   },
   {
     id: 'housing',
@@ -484,6 +496,8 @@ export const industrySolutions = [
       'Accommodation & Bunk Cabins',
       'G+1 Cabin Structures',
     ],
+    image: "https://images.unsplash.com/photo-1568605117036-5fe5e7185743?q=80&w=1974&auto=format&fit=crop&ixlib-rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    icon: "Home"
   },
 ];
 
@@ -515,3 +529,4 @@ export const whyChooseUs: WhyChooseUsItem[] = [
         imageUrl: 'https://images.unsplash.com/photo-1556761175-5973dc0f32e7?q=80&w=1932&auto=format&fit=crop&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
     },
 ];
+
