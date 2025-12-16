@@ -74,7 +74,7 @@ export default function CompanyPage() {
                   )}
                 </div>
                 <div className="md:col-span-8 lg:col-span-9 p-8 md:p-12 flex flex-col justify-center">
-                  <blockquote className="text-lg font-medium leading-relaxed text-foreground">
+                  <blockquote className="text-base leading-relaxed text-foreground">
                     "{company.mdMessage}"
                   </blockquote>
                   <p className="text-right mt-6 font-semibold text-primary">
