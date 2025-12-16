@@ -13,7 +13,7 @@ import {
 import { Button } from '@/components/ui/button';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { products, industrySolutions, offices, services } from '@/lib/data';
-import { ArrowRight, Truck, Home as HomeIcon, Wrench, DraftingCompass, Cog, Box, Star, Check } from 'lucide-react';
+import { ArrowRight, Truck, Home as HomeIcon, Wrench, DraftingCompass, Cog, Box, Star, Check, Layers } from 'lucide-react';
 import IndustryCard from '@/components/ui/industry-card';
 import { Timeline } from '@/components/ui/timeline';
 import { AnimatedHeadline } from '@/components/animated-headline';
@@ -96,9 +96,15 @@ const cabinsTags = [
     { name: 'Toilet Cabins', href: '/products/cabins/toilet' },
     { name: 'Bunk Cabins', href: '/products/cabins/bunk-house' },
     { name: 'Shop/Hotel Cabins', href: '/products/cabins/shop-hotel' },
+    { name: 'G+1 Cabins', href: '/products/cabins/double-storey' },
+];
+
+const containersTags = [
     { name: 'Used Shipping Containers', href: '/services/container-conversions' },
     { name: 'Container Conversions', href: '/services/container-conversions' },
-    { name: 'G+1 Cabins', href: '/products/cabins/double-storey' },
+    { name: 'Office Conversions', href: '/services/container-conversions' },
+    { name: 'Retail/Shop Conversions', href: '/services/container-conversions' },
+    { name: 'Storage Containers', href: '/services/container-conversions' },
 ];
 
 const containerVariants = {
@@ -141,7 +147,7 @@ export default function Home() {
   }));
 
   return (
-    <div>
+    <div className='overflow-x-hidden'>
       {/* Hero Section */}
       <section className="bg-background">
         <div className="container mx-auto grid grid-cols-1 items-center gap-12 px-4 py-16 md:grid-cols-2 md:px-6 lg:px-8 lg:py-24">
@@ -217,7 +223,7 @@ export default function Home() {
             <h2 className="text-3xl font-extrabold font-headline tracking-tight sm:text-4xl">Our Products</h2>
             <div className="mt-2 h-1.5 w-24 mx-auto bg-accent"></div>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {/* Trailers Card */}
             <div className="product-card-v2">
                 <div className="p-6">
@@ -248,18 +254,34 @@ export default function Home() {
                   </Link>
                 </div>
             </div>
+            {/* Containers Card */}
+            <div className="product-card-v2">
+                <div className="p-6">
+                  <Box className="w-12 h-12 text-primary mb-4" />
+                  <h3 className="font-headline text-2xl font-bold mb-4">Containers & Conversions</h3>
+                  <div className="mb-4">
+                      {containersTags.map(tag => (
+                        <Link key={tag.name} href={tag.href} className="product-tag hover:bg-primary/20 transition-colors hover:shadow-md hover:border-accent/50 border border-transparent">{tag.name}</Link>
+                      ))}
+                  </div>
+                  <Link href="/services/container-conversions" className="text-accent font-semibold flex items-center hover:underline">
+                      View Conversion Services <ArrowRight className="ml-2 h-4 w-4" />
+                  </Link>
+                </div>
+            </div>
           </div>
         </div>
       </section>
 
       {/* Our Services Section */}
       <section className="bg-background py-16 lg:py-24">
-        <CategoryList
-          title="Our Services"
-          subtitle="End-to-end solutions from concept and design to fabrication and delivery."
-          categories={serviceCategories}
-          className="bg-background"
-        />
+        <div className="container mx-auto px-4 md:px-6 lg:px-8">
+            <CategoryList
+              title="Our Services"
+              subtitle="End-to-end solutions from concept and design to fabrication and delivery."
+              categories={serviceCategories}
+            />
+        </div>
       </section>
 
       {/* Manufacturing Capabilities Section */}
@@ -427,7 +449,5 @@ export default function Home() {
     </div>
   );
 }
-
-    
 
     
