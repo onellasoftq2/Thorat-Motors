@@ -2,7 +2,7 @@
 'use client';
 import Image from 'next/image';
 import Link from 'next/link';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence, useScroll, useMotionValueEvent } from 'framer-motion';
 import {
   Card,
   CardContent,
@@ -19,13 +19,12 @@ import { Timeline } from '@/components/ui/timeline';
 import { AnimatedHeadline } from '@/components/animated-headline';
 import { AnimatedNumber } from '@/components/animated-number';
 import { Marquee } from '@/components/ui/marquee';
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { useRouter } from 'next/navigation';
 import { cn } from '@/lib/utils';
 import { IndiaMap } from '@/components/ui/india-map';
 import { CategoryList, type Category } from '@/components/ui/category-list';
 import { StickyFeatureSection } from '@/components/ui/sticky-scroll-cards-section';
-import { IndustryScroll } from '@/components/ui/industry-scroll';
 
 const heroImage = PlaceHolderImages.find((img) => img.id === 'hero-trailer');
 
@@ -136,6 +135,18 @@ const iconMap: { [key: string]: React.ReactNode } = {
 export default function Home() {
   const [hoveredCity, setHoveredCity] = useState<string | null>(null);
   const router = useRouter();
+
+  const [selectedIndustry, setSelectedIndustry] = useState(0);
+  const solutionsRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+      target: solutionsRef,
+      offset: ["start end", "end start"]
+  });
+
+  useMotionValueEvent(scrollYProgress, "change", (latest) => {
+      const activeIndex = Math.floor(latest * industrySolutions.length);
+      setSelectedIndustry(Math.min(activeIndex, industrySolutions.length - 1));
+  });
 
   const serviceCategories: Category[] = services.map(service => ({
     id: service.id,
@@ -293,8 +304,75 @@ export default function Home() {
       </section>
 
       {/* Industry-Specific Solutions Section */}
-      <section className="bg-background py-16 lg:py-24">
-        <IndustryScroll items={industrySolutions} />
+      <section ref={solutionsRef} className="bg-background py-16 lg:py-24">
+        <div className="container mx-auto px-4 md:px-6 lg:px-8">
+            <div className="text-center mb-12">
+                <h2 className="text-3xl font-extrabold font-headline tracking-tight sm:text-4xl">Industry-Specific Solutions</h2>
+                <p className="mt-4 max-w-3xl mx-auto text-lg text-muted-foreground">
+                    Tailored trailers, cabins, and container solutions designed for real-world industrial applications.
+                </p>
+            </div>
+
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 items-start">
+                <div className="lg:col-span-1">
+                    <div className="flex flex-col space-y-2">
+                        {industrySolutions.map((solution, index) => (
+                            <button
+                                key={solution.id}
+                                onClick={() => setSelectedIndustry(index)}
+                                className={cn(
+                                    'w-full text-left p-4 rounded-lg transition-all duration-300 border-l-4',
+                                    selectedIndustry === index
+                                    ? 'bg-secondary shadow-md border-accent'
+                                    : 'bg-transparent border-transparent hover:bg-secondary/50'
+                                )}
+                            >
+                                <p className="font-bold text-foreground text-lg">{solution.name}</p>
+                            </button>
+                        ))}
+                    </div>
+                </div>
+
+                <div className="lg:col-span-2 sticky top-24">
+                    <AnimatePresence mode="wait">
+                        <motion.div
+                            key={selectedIndustry}
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            exit={{ opacity: 0, y: -20 }}
+                            transition={{ duration: 0.3 }}
+                        >
+                            <Card className="shadow-lg">
+                                <CardHeader>
+                                    <CardTitle className="font-headline text-2xl text-primary">{industrySolutions[selectedIndustry].name}</CardTitle>
+                                    <CardDescription>{industrySolutions[selectedIndustry].description}</CardDescription>
+                                </CardHeader>
+                                <CardContent>
+                                    <h4 className="font-semibold mb-4">Relevant Solutions:</h4>
+                                    <ul className="space-y-3">
+                                        {industrySolutions[selectedIndustry].solutions.map((item, index) => (
+                                            <motion.li 
+                                                key={index}
+                                                initial={{ opacity: 0, x: -10 }}
+                                                animate={{ opacity: 1, x: 0 }}
+                                                transition={{ duration: 0.3, delay: index * 0.1}}
+                                                className="flex items-center"
+                                            >
+                                                <Check className="h-5 w-5 mr-3 text-green-500 flex-shrink-0" />
+                                                <span>{item}</span>
+                                            </motion.li>
+                                        ))}
+                                    </ul>
+                                    <Button asChild variant="link" className="px-0 mt-6 text-accent font-semibold">
+                                        <Link href={`/industries#${industrySolutions[selectedIndustry].id}`}>Learn More <ArrowRight className="ml-2 h-4 w-4" /></Link>
+                                    </Button>
+                                </CardContent>
+                            </Card>
+                        </motion.div>
+                    </AnimatePresence>
+                </div>
+            </div>
+        </div>
       </section>
 
 
@@ -386,9 +464,3 @@ export default function Home() {
     </div>
   );
 }
-
-    
-
-    
-
-    
