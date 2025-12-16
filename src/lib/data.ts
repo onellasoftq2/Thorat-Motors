@@ -56,9 +56,9 @@ export const navMenu: NavMenu[] = [
       {
         title: "Containers & Conversions",
         items: [
-          { name: "Used Shipping Containers (20ft / 40ft)", href: "/services/container-conversions" },
-          { name: "Office Conversions", href: "/services/container-conversions" },
-          { name: "Retail/Shop Conversions", href: "/services/container-conversions" },
+          { name: "Used Shipping Containers (20ft / 40ft)", href: "/products/container-conversions/used-container" },
+          { name: "Office Conversions", href: "/products/container-conversions/office-conversion" },
+          { name: "Retail/Shop Conversions", href: "/products/container-conversions/retail-conversion" },
           { name: "Storage Containers", href: "/services/container-conversions" },
           { name: "Custom Container Modifications", href: "/services/container-conversions" },
         ],
@@ -240,10 +240,17 @@ export const products = {
                 'Readily available and can be installed quickly.',
                 'Can be easily shifted to another location when needed, providing flexibility.',
                 'Cost-effective in terms of initial setup and relocation.',
-                'Base Frame: 50mm x 50mm Bottom & 50mm x 50mm channel.',
-                'Walls: ACP, 8mm BBR Cement, or 8mm MR sheets.',
-                'Flooring: Cement sheet / Bison panel board with vinyl floor.',
-                'Electricals: Concealed wiring (Polycab/Havells) with light fittings, fan points, and exhaust fan.'
+                'Customizable layouts to suit your specific office needs.',
+            ],
+            specs: [
+                { name: 'Standard Size', value: '10x10, 20x10, 30x10, 40x10 ft (Custom sizes available)' },
+                { name: 'Base Frame', value: '50mm x 50mm Bottom & 50mm x 50mm channel' },
+                { name: 'Walls', value: 'Exterior: Profiled GI sheets. Interior: 8mm BBR Cement or 8mm MR sheets.' },
+                { name: 'Insulation', value: 'Glasswool/Rockwool insulation for thermal and acoustic comfort.' },
+                { name: 'Flooring', value: '18mm Bison panel board with durable vinyl floor covering.' },
+                { name: 'Electricals', value: 'Concealed wiring (Polycab/Havells) with LED light fittings, fan points, and AC points.' },
+                { name: 'Windows', value: 'Sliding aluminum windows with protective grills.' },
+                { name: 'Door', value: 'Insulated door with standard locking mechanism.' },
             ],
         },
         {
@@ -254,7 +261,15 @@ export const products = {
                 'Designed for various climatic conditions with insulation and ventilation options.',
                 'Corrugated sheet roofing with proper drainage to prevent water logging.',
                 'Equipped with hooks for easy transportation and relocation.',
-                'Safe and reliable concealed electrical installations.'
+                'Safe and reliable concealed electrical installations.',
+                'Includes options for kitchenettes and attached bathrooms.'
+            ],
+            specs: [
+                { name: 'Structure', value: 'Modular design with options for multiple rooms.' },
+                { name: 'Plumbing', value: 'Pre-installed plumbing lines for kitchen and bathroom.' },
+                { name: 'Roof', value: 'GI corrugated sheet with waterproofing.' },
+                { name: 'Ventilation', value: 'Exhaust fans in kitchen and bathroom areas.' },
+                { name: 'Customization', value: 'Interior layouts and finishes can be customized.' },
             ],
         },
         {
@@ -262,10 +277,17 @@ export const products = {
             name: 'Portable Security Cabin',
             description: 'Our offered range of portable security cabin is made up of rigid mild steel construction and manufactured as per good engineering practice.',
             features: [
-                'Standard size is 4 x 4 x 8.8 feet.',
-                'Comes with 2 side windows with protection grill.',
-                'Flooring is made of bison panel board with vinyl on it.',
-                'Includes electrical work.'
+                '360-degree view with multiple windows.',
+                'Compact and easy to install at entry/exit points.',
+                'Durable and weather-resistant construction.',
+                'Includes basic electrical fittings for light and communication devices.'
+            ],
+            specs: [
+                { name: 'Standard Size', value: '4 x 4 x 8.8 ft (other sizes on request).' },
+                { name: 'Construction', value: 'Rigid mild steel frame.' },
+                { name: 'Windows', value: 'Three-side sliding windows with protective grill.' },
+                { name: 'Flooring', value: 'Bison panel board with vinyl covering.' },
+                { name: 'Electricals', value: 'Includes one light point and one switch.' },
             ],
         },
         {
@@ -273,10 +295,17 @@ export const products = {
             name: 'Portable Accommodation Cabin',
             description: 'Working on a remote place along with a big team is a challenge. Our Portable Accommodation Cabins are the solution for on-site housing needs.',
             features: [
-                'Comes with bunk beds, wardrobe, toilet & bathroom, pantry etc.',
-                'Customizable as per client requirements.',
-                'Ideal for remote project sites.',
-                'Provides a comfortable and secure living space for the workforce.'
+                'Efficiently designed to house multiple people comfortably.',
+                'Can be configured with bunk beds, wardrobes, and personal storage.',
+                'Option to integrate toilet and bathroom facilities.',
+                'Ideal for remote project sites, construction camps, and industrial housing.'
+            ],
+            specs: [
+                { name: 'Capacity', value: 'Can be designed for 2 to 12 people.' },
+                { name: 'Beds', value: 'Double or triple-tier bunk beds.' },
+                { name: 'Amenities', value: 'Can include common areas, pantries, and attached washrooms.' },
+                { name: 'Structure', value: 'Durable steel frame with insulated panels.' },
+                { name: 'Ventilation', value: 'Proper ventilation with windows and exhaust fans.' },
             ],
         },
         {
@@ -284,10 +313,17 @@ export const products = {
             name: 'Portable Toilet Cabin',
             description: 'In today\'s world of hygiene culture, our Portable Toilet unit is an important necessity. An ideal solution for leisure, hospitality, events, or emergency use.',
             features: [
-                'Lightweight and robustly designed.',
-                'Easy to maintain and clean.',
-                'Suitable for permanent, temporary, or emergency situations.',
-                'Promotes hygiene and sanitation.'
+                'Lightweight and robustly designed for easy transport and setup.',
+                'Easy to maintain with hygienic surfaces and proper ventilation.',
+                'Available as single units or multi-stall blocks.',
+                'Suitable for construction sites, public events, and temporary facilities.'
+            ],
+            specs: [
+                { name: 'Types', value: 'Indian and Western style commodes available.' },
+                { name: 'Plumbing', value: 'Includes all necessary fittings, taps, and showers.' },
+                { name: 'Ventilation', value: 'Exhaust fan and louvers for air circulation.' },
+                { name: 'Flooring', value: 'Anti-skid, easy-to-clean flooring material.' },
+                { name: 'Water Tank', value: 'Option for overhead water tank for standalone use.' },
             ],
         },
          {
@@ -295,11 +331,17 @@ export const products = {
             name: 'ACP Covered Portable Cabin',
             description: 'Modern and stylish cabins with an Aluminium Composite Panel (ACP) exterior, offering superior aesthetics and durability.',
             features: [
-                'Lightweight, durable, and resistant to weathering and corrosion.',
-                'Available in a wide range of colors, finishes, and textures.',
-                'Fire-retardant core for enhanced safety.',
-                'Improves thermal insulation and energy efficiency.',
-                'Eco-friendly and recyclable material.'
+                'Premium look suitable for corporate offices and customer-facing areas.',
+                'ACP panels are lightweight, durable, and weather-resistant.',
+                'Available in a wide range of colors and finishes.',
+                'Excellent thermal and sound insulation properties.'
+            ],
+            specs: [
+                { name: 'Exterior', value: '4mm Aluminium Composite Panel (ACP) cladding.' },
+                { name: 'Interior', value: 'Premium wall panels and false ceiling options.' },
+                { name: 'Glazing', value: 'Large glass windows and doors for a modern look.' },
+                { name: 'Branding', value: 'Exterior surface is ideal for company branding and logos.' },
+                { name: 'Applications', value: 'Site offices, sales galleries, premium commercial spaces.' },
             ],
         },
         {
@@ -307,10 +349,16 @@ export const products = {
             name: 'Portable Shop & Hotel Cabin',
             description: 'We are the leading manufacturer and supplier of portable shops. Manufactured with the latest expertise and finest quality raw materials.',
             features: [
-                'Quality controlled fabrication process to meet international standards.',
-                'Cost-effective solution to keep clients delighted.',
-                'Customizable for retail or small hospitality businesses.',
-                'Quick setup for pop-up shops, cafes, or small restaurants.'
+                'Customizable storefront with options for glass facades, canopies, and counters.',
+                'Quick and easy to set up for new business ventures.',
+                'Cost-effective alternative to traditional brick-and-mortar shops.',
+                'Can be designed for various retail or food service applications.'
+            ],
+            specs: [
+                { name: 'Design', value: 'Custom layouts for kitchens, counters, seating, and storage.' },
+                { name: 'Utilities', value: 'Pre-installed plumbing and electrical lines for commercial equipment.' },
+                { name: 'Exterior', value: 'Attractive exterior finishes, including options for branding and signage.' },
+                { name: 'Security', value: 'Roll-down shutters and secure locking systems.' },
             ],
         },
         {
@@ -318,45 +366,72 @@ export const products = {
             name: 'Double Storey (G+1) Cabin',
             description: 'Maximize your space with our two-story portable cabins. Ideal for large site offices, accommodation blocks, or combined-use buildings.',
             features: [
-                'Space-efficient vertical design to make the most of limited area.',
-                'Includes internal or external staircase options.',
+                'Space-efficient vertical design to make the most of limited ground area.',
+                'Includes options for internal or external staircases.',
                 'Structurally engineered and reinforced for safety and stability.',
-                'Can be configured for various uses on each floor.'
+                'Can be configured for different uses on each floor (e.g., office below, accommodation above).'
+            ],
+            specs: [
+                { name: 'Structure', value: 'Reinforced steel frame to support two levels.' },
+                { name: 'Staircase', value: 'Internal or external MS staircase with safety railings.' },
+                { name: 'Layout', value: 'Fully customizable layouts for both floors.' },
+                { name: 'Foundation', value: 'Requires minimal foundation, can be installed on a level surface.' },
+                { name: 'Assembly', value: 'Designed for quick on-site assembly and disassembly.' },
             ],
         },
     ],
     containerConversions: [
          {
-            id: 'container-conversion',
+            id: 'used-container',
             name: 'Used Shipping Cargo Container',
             description: 'Cargo Containers are highly durable and are basically used for Storage Purpose. We also offer custom modifications for 20ft and 40ft containers.',
             features: [
-                'Highly durable with an estimated life span of 10 to 15 years.',
-                'Ideal for secure storage solutions.',
-                'Available in 20ft and 40ft sizes.',
-                'Can be modified for various purposes like offices, homes, or shops.'
+                'Extremely durable with an estimated life span of 10 to 15 years.',
+                'Ideal for secure, weather-proof storage solutions.',
+                'Available in standard 20ft and 40ft sizes.',
+                'Can serve as a robust base structure for various conversion projects.'
+            ],
+            specs: [
+                { name: 'Material', value: 'Corten Steel' },
+                { name: 'Standard Sizes', value: '20ft (L) x 8ft (W) x 8.5ft (H) or 40ft (L) x 8ft (W) x 8.5ft (H)' },
+                { name: 'Condition', value: 'Cargo-worthy, wind and water-tight.' },
+                { name: 'Flooring', value: 'Marine-grade plywood flooring.' },
+                { name: 'Doors', value: 'Double cargo doors with locking bars.' },
             ],
         },
         {
             id: 'office-conversion',
             name: 'Container Office Conversion',
-            description: 'Transform a standard shipping container into a fully functional, modern office space.',
+            description: 'Transform a standard shipping container into a fully functional, modern office space, perfect for construction sites or as a permanent workspace.',
             features: [
-                'Insulated walls and ceilings for comfort.',
-                'Integrated electrical and data wiring.',
-                'Custom window and door placements.',
-                'Durable and secure construction.'
+                'Insulated walls and ceilings for all-weather comfort.',
+                'Fully integrated electrical and data wiring.',
+                'Custom window and door placements for natural light and access.',
+                'Durable, secure, and easily transportable.'
+            ],
+            specs: [
+                { name: 'Insulation', value: 'Rockwool/Glasswool with MDF or gypsum board paneling.' },
+                { name: 'Electrical', value: 'Concealed wiring, sockets, light fixtures, and AC provision.' },
+                { name: 'Windows', value: 'Aluminum sliding windows with safety grills.' },
+                { name: 'Flooring', value: 'Original marine plywood with vinyl or laminate finish.' },
+                { name: 'Customization', value: 'Options for partitions, workstations, and attached toilets.' },
             ],
         },
         {
             id: 'retail-conversion',
             name: 'Container Retail Conversion',
-            description: 'Create a unique and eye-catching retail shop, cafe, or kiosk from a shipping container.',
+            description: 'Create a unique and eye-catching retail shop, cafe, or kiosk from a shipping container. Ideal for pop-up stores or permanent commercial spaces.',
             features: [
-                'Customizable storefront with large windows or serving hatches.',
-                'Branding and exterior cladding options.',
-                'Quick to deploy for pop-up shops or permanent locations.',
-                'Robust and secure for valuable inventory.'
+                'Customizable storefront with large glass windows, serving hatches, or bi-fold doors.',
+                'Exterior can be branded with custom paint, cladding, and signage.',
+                'Quick to deploy, minimizing time-to-market.',
+                'Extremely robust and secure for valuable inventory.'
+            ],
+            specs: [
+                { name: 'Layout', value: 'Open-plan or sectioned layouts for retail, food service, or showrooms.' },
+                { name: 'Exterior', value: 'Custom paint, wood/metal cladding, and branding options.' },
+                { name: 'Features', value: 'Can be fitted with counters, shelving, commercial kitchen equipment, and customer seating.' },
+                { name: 'Security', value: 'Roll-down shutters, reinforced doors, and advanced locking systems.' },
             ],
         }
     ]

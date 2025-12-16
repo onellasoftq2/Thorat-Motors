@@ -21,7 +21,7 @@ const productCategories = [
   {
     name: 'Containers & Conversions',
     description: 'Durable shipping containers repurposed for storage, offices, and unique commercial spaces.',
-    href: '/services/container-conversions',
+    href: '/products/container-conversions',
     icon: <Box className="h-10 w-10 text-primary group-hover:text-accent-foreground transition-colors duration-300" />,
   },
 ];

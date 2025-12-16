@@ -14,43 +14,43 @@ import {
 } from '@/components/ui/table';
 
 export async function generateStaticParams() {
-  return products.cabins.map((cabin) => ({
-    slug: cabin.id,
+  return products.containerConversions.map((product) => ({
+    slug: product.id,
   }));
 }
 
-export async function generateMetadata({ params }: { params: { slug:string } }) {
-  const cabin = products.cabins.find((p) => p.id === params.slug);
-  if (!cabin) {
+export async function generateMetadata({ params }: { params: { slug: string } }) {
+  const product = products.containerConversions.find((p) => p.id === params.slug);
+  if (!product) {
     return {
       title: 'Product Not Found',
     };
   }
   return {
-    title: `${cabin.name} | Thorat Motors`,
-    description: cabin.description,
+    title: `${product.name} | Thorat Motors`,
+    description: product.description,
   };
 }
 
 
-export default function CabinDetailPage({ params }: { params: { slug: string } }) {
-  const cabin = products.cabins.find((p) => p.id === params.slug);
+export default function ContainerConversionDetailPage({ params }: { params: { slug: string } }) {
+  const product = products.containerConversions.find((p) => p.id === params.slug);
 
-  if (!cabin) {
+  if (!product) {
     notFound();
   }
 
-  const image = PlaceHolderImages.find((img) => img.id === cabin.id);
+  const image = PlaceHolderImages.find((img) => img.id === product.id);
 
   return (
     <div>
       <div className="bg-secondary">
         <div className="container mx-auto px-4 py-12 md:py-16 md:px-6 lg:px-8">
           <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight lg:text-5xl font-headline">
-            {cabin.name}
+            {product.name}
           </h1>
           <p className="mt-4 max-w-3xl text-lg text-muted-foreground">
-            {cabin.description}
+            {product.description}
           </p>
         </div>
       </div>
@@ -61,7 +61,7 @@ export default function CabinDetailPage({ params }: { params: { slug: string } }
             {image && (
               <Image
                 src={image.imageUrl}
-                alt={image.description}
+                alt={image.description || product.name}
                 width={600}
                 height={400}
                 className="w-full rounded-lg object-cover shadow-md aspect-video"
@@ -72,7 +72,7 @@ export default function CabinDetailPage({ params }: { params: { slug: string } }
           <div>
             <h2 className="text-2xl font-bold font-headline border-b-2 border-accent pb-2">Key Features</h2>
             <ul className="mt-6 space-y-4">
-              {cabin.features.map((feature, index) => (
+              {product.features.map((feature, index) => (
                 <li key={index} className="flex items-start">
                   <Check className="h-6 w-6 text-green-500 mr-3 mt-1 flex-shrink-0" />
                   <span>{feature}</span>
@@ -82,14 +82,14 @@ export default function CabinDetailPage({ params }: { params: { slug: string } }
           </div>
         </div>
         
-        {cabin.specs && cabin.specs.length > 0 && (
+        {product.specs && product.specs.length > 0 && (
           <div className="mt-16">
             <h2 className="text-2xl font-bold text-center font-headline mb-2">Technical Specifications</h2>
             <div className="w-24 h-1.5 bg-accent mx-auto mb-8"></div>
             <div className="mt-6 max-w-2xl mx-auto border rounded-lg overflow-hidden">
               <Table>
                 <TableBody>
-                  {cabin.specs.map((spec) => (
+                  {product.specs.map((spec) => (
                     <TableRow key={spec.name}>
                       <TableCell className="font-medium">{spec.name}</TableCell>
                       <TableCell>{spec.value}</TableCell>
@@ -103,7 +103,7 @@ export default function CabinDetailPage({ params }: { params: { slug: string } }
 
         <div className="mt-16 text-center">
             <Button asChild size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90">
-                <Link href="/quote">Inquire About this Cabin</Link>
+                <Link href="/quote">Inquire About this Product</Link>
             </Button>
         </div>
       </div>
