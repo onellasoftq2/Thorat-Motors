@@ -59,17 +59,11 @@ const AnimatedHeader = () => {
 
 
 export function StickyFeatureSection() {
-    const containerRef = useRef<HTMLDivElement>(null);
-    const { scrollYProgress } = useScroll({
-      target: containerRef,
-      offset: ["start 25%", "end 75%"]
-    });
-  
     return (
       <div className="bg-secondary font-sans py-16 lg:py-24">
         <div className="px-[5%]">
           <div className="max-w-7xl mx-auto">
-            <section ref={containerRef} className="flex flex-col items-center">
+            <section className="flex flex-col items-center">
               <AnimatedHeader />
   
               <div className="w-full relative">
@@ -78,7 +72,6 @@ export function StickyFeatureSection() {
                     key={feature.title}
                     index={index}
                     feature={feature}
-                    scrollYProgress={scrollYProgress}
                   />
                 ))}
               </div>
@@ -89,16 +82,19 @@ export function StickyFeatureSection() {
     );
   }
   
-  const FeatureCard = ({ feature, index, scrollYProgress }: { feature: WhyChooseUsItem, index: number, scrollYProgress: any }) => {
-    const totalFeatures = whyChooseUs.length;
-    const start = index / totalFeatures;
-    const end = (index + 1) / totalFeatures;
-    
-    const scale = useTransform(scrollYProgress, [start, end], [1, 0.9]);
-    const opacity = useTransform(scrollYProgress, [start, end], [1, 0]);
-  
+  const FeatureCard = ({ feature, index }: { feature: WhyChooseUsItem, index: number }) => {
+    const ref = useRef<HTMLDivElement>(null);
+    const { scrollYProgress } = useScroll({
+      target: ref,
+      offset: ["start end", "end start"],
+    });
+
+    const scale = useTransform(scrollYProgress, [0, 0.5, 1], [0.9, 1, 0.9]);
+    const opacity = useTransform(scrollYProgress, [0, 0.4, 0.6, 1], [0, 1, 1, 0]);
+
     return (
       <motion.div
+        ref={ref}
         className="grid grid-cols-1 md:grid-cols-2 items-center gap-8 md:gap-12 p-8 md:p-12 rounded-3xl mb-8 sticky bg-card shadow-md"
         style={{
             scale,
