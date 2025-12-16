@@ -48,7 +48,7 @@ export default function SparePartsPage() {
                   <div className="bg-primary/10 text-accent p-3 rounded-full">
                     {React.cloneElement(category.icon, {className: "w-6 h-6"})}
                   </div>
-                  <CardTitle>{category.name}</CardTitle>
+                  <CardTitle className="text-lg">{category.name}</CardTitle>
                 </CardHeader>
               </Card>
             ))}
