@@ -30,6 +30,37 @@ export default function ContactPage() {
           </Button>
         </div>
 
+        <div className="mb-16">
+            <h2 className="text-3xl font-bold font-headline text-center mb-2">General Inquiries</h2>
+            <div className="w-24 h-1.5 bg-accent mx-auto mb-8"></div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <Card className="shadow-md">
+                    <CardHeader>
+                         <CardTitle className="flex items-center font-headline">
+                             <Mail className="h-6 w-6 mr-3 text-accent"/>
+                             Email Us
+                         </CardTitle>
+                    </CardHeader>
+                    <CardContent className="space-y-2">
+                        {contactInfo.emails.map(email => (
+                            <a key={email} href={`mailto:${email}`} className="block text-muted-foreground hover:text-accent">{email}</a>
+                        ))}
+                    </CardContent>
+                </Card>
+                 <Card className="shadow-md">
+                    <CardHeader>
+                         <CardTitle className="flex items-center font-headline">
+                             <Phone className="h-6 w-6 mr-3 text-accent"/>
+                             Call Us
+                         </CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                        <p className="text-muted-foreground">{contactInfo.phone}</p>
+                    </CardContent>
+                </Card>
+            </div>
+        </div>
+
         <h2 className="text-3xl font-bold font-headline text-center mb-2">Our Offices</h2>
         <div className="w-24 h-1.5 bg-accent mx-auto mb-8"></div>
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
