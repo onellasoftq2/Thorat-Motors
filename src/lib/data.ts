@@ -497,21 +497,21 @@ export const whyChooseUs: WhyChooseUsItem[] = [
     {
         title: 'High-Strength Engineering',
         description: 'We use certified BSK46 and IS2062 steel for maximum durability and performance.',
-        imageUrl: 'https://picsum.photos/seed/engineering/600/400'
+        imageUrl: 'https://images.unsplash.com/photo-1505238680356-667803448bb6?q=80&w=2070&auto=format&fit=crop&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
     },
     {
         title: 'ISO & CMVR Compliance',
         description: 'All products follow industry-standard certifications ensuring safety, quality, and reliability.',
-        imageUrl: 'https://picsum.photos/seed/compliance/600/400'
+        imageUrl: 'https://images.unsplash.com/photo-1581092446327-9b52bdc4f315?q=80&w=2070&auto=format&fit=crop&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
     },
     {
         title: 'Advanced Fabrication',
         description: 'State-of-the-art CNC, welding, and forming machines ensure precision manufacturing.',
-        imageUrl: 'https://picsum.photos/seed/fabrication/600/400'
+        imageUrl: 'https://images.unsplash.com/photo-1633449494745-6a467f40e0b3?q=80&w=1974&auto=format&fit=crop&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
     },
     {
         title: 'Custom Engineering',
         description: 'We design and build trailers tailored to your load, industry, and operational needs.',
-        imageUrl: 'https://picsum.photos/seed/custom/600/400'
+        imageUrl: 'https://images.unsplash.com/photo-1556761175-5973dc0f32e7?q=80&w=1932&auto=format&fit=crop&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
     },
 ];
