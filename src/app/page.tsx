@@ -13,15 +13,17 @@ import {
 import { Button } from '@/components/ui/button';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { products, industrySolutions, offices, services, industries } from '@/lib/data';
-import { ArrowRight, Truck, Home as HomeIcon, Wrench, DraftingCompass, Cog, Box, Star, Check } from 'lucide-react';
+import { ArrowRight, Truck, Home as HomeIcon, Wrench, DraftingCompass, Cog, Box, Star, Check, Layers } from 'lucide-react';
 import IndustryCard from '@/components/ui/industry-card';
 import { Timeline } from '@/components/ui/timeline';
 import { AnimatedHeadline } from '@/components/animated-headline';
 import { AnimatedNumber } from '@/components/animated-number';
 import { Marquee } from '@/components/ui/marquee';
 import { useState } from 'react';
+import { useRouter } from 'next/navigation';
 import { cn } from '@/lib/utils';
 import { IndiaMap } from '@/components/ui/india-map';
+import { CategoryList, type Category } from '@/components/ui/category-list';
 
 const heroImage = PlaceHolderImages.find((img) => img.id === 'hero-trailer');
 
@@ -96,15 +98,6 @@ const certifications = [
     'ARAI Homologation'
 ];
 
-const serviceIconMap: { [key: string]: React.ReactNode } = {
-  'designing-homologation': <DraftingCompass className="h-10 w-10 text-primary" />,
-  'structural-fabrication': <Wrench className="h-10 w-10 text-primary" />,
-  'spare-parts': <Cog className="h-10 w-10 text-primary" />,
-  'transport-logistics': <Truck className="h-10 w-10 text-primary" />,
-  'custom-engineering': <Star className="h-10 w-10 text-primary" />,
-  'container-conversions': <Box className="h-10 w-10 text-primary" />,
-};
-
 const trailersTags = [
     { name: 'Cement Bulker', href: '/products/trailers/cement-bulker' },
     { name: 'Flatbed', href: '/products/trailers/flatbed' },
@@ -144,12 +137,21 @@ const itemVariants = {
 export default function Home() {
   const [hoveredCity, setHoveredCity] = useState<string | null>(null);
   const [selectedIndustry, setSelectedIndustry] = useState(industrySolutions[0]);
+  const router = useRouter();
+
+  const serviceCategories: Category[] = services.map(service => ({
+    id: service.id,
+    title: service.name,
+    subtitle: service.description,
+    icon: <ArrowRight className="w-8 h-8" />,
+    onClick: () => router.push(`/services/${service.id}`),
+  }));
 
   return (
     <div>
       {/* Hero Section */}
       <section className="bg-background">
-        <div className="container mx-auto grid grid-cols-1 items-center gap-12 px-4 py-16 md:grid-cols-2 lg:py-24 md:px-6 lg:px-8">
+        <div className="container mx-auto grid grid-cols-1 items-center gap-12 px-4 py-16 md:grid-cols-2 md:px-6 lg:px-8 lg:py-24">
           <div className="space-y-6 text-center md:text-left">
             <AnimatedHeadline className="font-headline text-4xl font-extrabold tracking-tight text-foreground lg:text-5xl xl:text-6xl">
               High-Performance Trailers & Modular Cabin Solutions.
@@ -281,34 +283,13 @@ export default function Home() {
       </section>
 
       {/* Our Services Section */}
-      <section className="bg-background py-16 lg:py-24">
-        <div className="container mx-auto px-4 md:px-6 lg:px-8">
-          <div className="mb-12 text-center">
-            <h2 className="text-3xl font-extrabold font-headline tracking-tight sm:text-4xl">Our Services</h2>
-            <div className="mt-2 h-1.5 w-24 mx-auto bg-accent"></div>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {services.map((service) => (
-              <Link href={`/services/${service.id}`} key={service.id} className="group block">
-                <Card className="flex flex-col h-full overflow-hidden shadow-md transition-shadow duration-300 hover:shadow-xl hover:border-accent hover:-translate-y-1">
-                  <CardHeader className="flex-row items-center space-x-4">
-                    <div className="bg-primary/10 p-3 rounded-full text-accent group-hover:bg-accent group-hover:text-accent-foreground transition-colors duration-300">
-                      {serviceIconMap[service.id]}
-                    </div>
-                    <CardTitle className="font-headline text-lg">{service.name}</CardTitle>
-                  </CardHeader>
-                  <CardContent className="flex-grow flex flex-col">
-                    <CardDescription className="flex-grow">{service.description}</CardDescription>
-                     <div className="mt-4 self-start text-accent font-semibold flex items-center">
-                      Learn More <ArrowRight className="ml-2 h-4 w-4" />
-                    </div>
-                  </CardContent>
-                </Card>
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
+      <CategoryList
+        title="Our Services"
+        subtitle="End-to-end solutions from concept and design to fabrication and delivery."
+        categories={serviceCategories}
+        headerIcon={<Layers className="w-8 h-8" />}
+      />
+
 
       {/* Manufacturing Capabilities Section */}
        <section className="manufacturing-section bg-secondary">
