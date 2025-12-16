@@ -227,7 +227,7 @@ export default function Home() {
             {/* Trailers Card */}
             <div className="product-card-v2">
                 <div className="p-6">
-                  <Box className="w-12 h-12 text-primary mb-4" />
+                  <Truck className="w-12 h-12 text-primary mb-4" />
                   <h3 className="font-headline text-2xl font-bold mb-4">Trailers</h3>
                   <div className="mb-4">
                       {trailersTags.map(tag => (
@@ -449,6 +449,8 @@ export default function Home() {
     </div>
   );
 }
+
+    
 
     
 
