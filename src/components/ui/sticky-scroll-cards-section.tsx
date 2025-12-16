@@ -103,7 +103,7 @@ export function StickyFeatureSection() {
         style={{
             scale,
             opacity,
-            top: `10rem`
+            top: `8rem`
         }}
       >
         <div className="flex flex-col justify-center text-left">
