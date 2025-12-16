@@ -19,7 +19,7 @@ export default function CompanyPage() {
   return (
     <>
       {/* 1. About Hero Section */}
-      <section className="bg-secondary text-foreground py-16 md:py-24 lg:py-32">
+      <section className="bg-secondary text-foreground py-16 md:py-20 lg:py-24">
         <div className="container mx-auto px-4 md:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <AnimatedElement>
@@ -46,7 +46,7 @@ export default function CompanyPage() {
         </div>
       </section>
       
-      <div className="container mx-auto px-4 py-16 md:py-24 lg:py-32 md:px-6 lg:px-8">
+      <div className="container mx-auto px-4 py-12 md:py-16 lg:py-20 md:px-6 lg:px-8">
         {/* 2. Our Story Section */}
         <section className="max-w-3xl mx-auto text-center">
           <AnimatedElement>
@@ -57,7 +57,7 @@ export default function CompanyPage() {
         </section>
 
         {/* 3. Managing Director’s Message */}
-        <section className="mt-16 md:mt-24 lg:mt-32">
+        <section className="mt-12 md:mt-16 lg:mt-20">
           <AnimatedElement>
             <Card className="bg-secondary/50 border-border max-w-5xl mx-auto overflow-hidden">
               <div className="grid grid-cols-1 md:grid-cols-12">
@@ -73,8 +73,8 @@ export default function CompanyPage() {
                     />
                   )}
                 </div>
-                <div className="md:col-span-8 lg:col-span-9 p-8 md:p-12 flex flex-col justify-center">
-                  <blockquote className="text-base leading-relaxed text-foreground">
+                <div className="md:col-span-8 lg:col-span-9 p-6 md:p-10 flex flex-col justify-center">
+                  <blockquote className="text-sm md:text-base leading-relaxed text-foreground">
                     "{company.mdMessage}"
                   </blockquote>
                   <p className="text-right mt-6 font-semibold text-primary">
@@ -87,7 +87,7 @@ export default function CompanyPage() {
         </section>
 
         {/* 4. Vision & Mission */}
-        <section id="vision" className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-16 md:mt-24 lg:mt-32 max-w-5xl mx-auto">
+        <section id="vision" className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12 md:mt-16 lg:mt-20 max-w-5xl mx-auto">
           <AnimatedElement>
             <Card className="h-full p-8 text-center group">
               <div className="mx-auto mb-6 inline-flex h-20 w-20 items-center justify-center rounded-full bg-primary/10 transition-colors duration-300 group-hover:bg-accent">
@@ -109,7 +109,7 @@ export default function CompanyPage() {
         </section>
 
         {/* 5. Manufacturing Excellence */}
-        <section id="manufacturing" className="mt-16 md:mt-24 lg:mt-32 text-center">
+        <section id="manufacturing" className="mt-12 md:mt-16 lg:mt-20 text-center">
           <AnimatedElement>
             <h2 className="text-3xl font-bold font-headline">Manufacturing Excellence</h2>
             <div className="mt-3 mb-8 w-20 h-1.5 bg-accent mx-auto"></div>
@@ -122,7 +122,7 @@ export default function CompanyPage() {
         </section>
 
         {/* 6. Leadership Team */}
-        <section id="leadership" className="mt-16 md:mt-24 lg:mt-32">
+        <section id="leadership" className="mt-12 md:mt-16 lg:mt-20">
           <AnimatedElement>
             <h2 className="text-3xl font-bold font-headline text-center">Leadership Team</h2>
             <div className="mt-3 mb-12 w-20 h-1.5 bg-accent mx-auto"></div>
@@ -144,7 +144,7 @@ export default function CompanyPage() {
         </section>
 
         {/* 7. Utility Grid */}
-        <section className="mt-16 md:mt-24 lg:mt-32">
+        <section className="mt-12 md:mt-16 lg:mt-20">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 max-w-4xl mx-auto">
             <AnimatedElement>
               <Card className="p-6 h-full">
