@@ -12,7 +12,7 @@ import {
 } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
-import { products, industrySolutions, offices, services, industries } from '@/lib/data';
+import { products, industrySolutions, offices, services } from '@/lib/data';
 import { ArrowRight, Truck, Home as HomeIcon, Wrench, DraftingCompass, Cog, Box, Star, Check, Layers } from 'lucide-react';
 import IndustryCard from '@/components/ui/industry-card';
 import { Timeline } from '@/components/ui/timeline';
@@ -24,6 +24,7 @@ import { useRouter } from 'next/navigation';
 import { cn } from '@/lib/utils';
 import { IndiaMap } from '@/components/ui/india-map';
 import { CategoryList, type Category } from '@/components/ui/category-list';
+import { StickyFeatureSection } from '@/components/ui/sticky-scroll-cards-section';
 
 const heroImage = PlaceHolderImages.find((img) => img.id === 'hero-trailer');
 
@@ -32,25 +33,6 @@ const stats = [
   { value: 15, label: 'Engineering Expertise', isPlus: true, unit: ' Years' },
   { value: 7, label: 'Pan-India Presence', isPlus: false, unit: ' Locations' },
   { value: 0, label: 'ISO Certified', isPlus: false, unit: 'ISO Certified' },
-];
-
-const whyChooseUs = [
-    {
-        title: 'High-Strength Engineering',
-        description: 'We use certified BSK46 and IS2062 steel for maximum durability and performance.',
-    },
-    {
-        title: 'ISO & CMVR Compliance',
-        description: 'All products follow industry-standard certifications ensuring safety, quality, and reliability.',
-    },
-    {
-        title: 'Advanced Fabrication',
-        description: 'State-of-the-art CNC, welding, and forming machines ensure precision manufacturing.',
-    },
-    {
-        title: 'Custom Engineering',
-        description: 'We design and build trailers tailored to your load, industry, and operational needs.',
-    },
 ];
 
 const manufacturingCapabilities = [
@@ -134,9 +116,20 @@ const itemVariants = {
   visible: { opacity: 1, y: 0 },
 };
 
+const iconMap: { [key: string]: React.ReactNode } = {
+  'designing-homologation': <DraftingCompass className="h-12 w-12 text-primary" />,
+  'structural-fabrication': <Wrench className="h-12 w-12 text-primary" />,
+  'spare-parts': <Cog className="h-12 w-12 text-primary" />,
+  'transport-logistics': <Truck className="h-12 w-12 text-primary" />,
+  'custom-engineering': <Star className="h-12 w-12 text-primary" />,
+  'container-conversions': <Box className="h-12 w-12 text-primary" />,
+};
+
+
 export default function Home() {
   const [hoveredCity, setHoveredCity] = useState<string | null>(null);
   const [selectedIndustry, setSelectedIndustry] = useState(industrySolutions[0]);
+  const [activeService, setActiveService] = useState(services[0]);
   const router = useRouter();
 
   const serviceCategories: Category[] = services.map(service => ({
@@ -214,31 +207,8 @@ export default function Home() {
             </div>
         </div>
       </section>
-
-      {/* Why Choose Us Section */}
-      <section className="why-us-section">
-        <div className="container mx-auto px-4 md:px-6 lg:px-8">
-          <div className="mb-12 text-center">
-            <h2 className="text-3xl font-extrabold font-headline tracking-tight sm:text-4xl">Why Choose Thorat Motors?</h2>
-            <div className="mt-2 h-1.5 w-24 mx-auto bg-accent"></div>
-          </div>
-          <div className="why-grid">
-            {whyChooseUs.map((item) => (
-              <div key={item.title} className="group relative">
-                <Card className="why-card h-full transition-all duration-300 ease-in-out group-hover:shadow-xl group-hover:-translate-y-1 group-hover:border-accent">
-                   <div className="absolute top-0 left-0 h-full w-1 bg-accent scale-y-0 origin-bottom group-hover:scale-y-100 transition-transform duration-300 ease-in-out"></div>
-                  <CardHeader>
-                    <CardTitle className="text-xl">{item.title}</CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-muted-foreground">{item.description}</p>
-                  </CardContent>
-                </Card>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      
+      <StickyFeatureSection />
 
       {/* Our Products Section V2 */}
       <section className="bg-secondary py-16 lg:py-24">
@@ -283,13 +253,64 @@ export default function Home() {
       </section>
 
       {/* Our Services Section */}
-      <CategoryList
-        title="Our Services"
-        subtitle="End-to-end solutions from concept and design to fabrication and delivery."
-        categories={serviceCategories}
-        headerIcon={<Layers className="w-8 h-8" />}
-      />
-
+      <section className="bg-background py-16 lg:py-24">
+      <div className="container mx-auto px-4 md:px-6 lg:px-8">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl font-extrabold font-headline tracking-tight sm:text-4xl">Our Services</h2>
+          <p className="mt-4 max-w-3xl mx-auto text-lg text-muted-foreground">
+            End-to-end solutions from concept and design to fabrication and delivery.
+          </p>
+        </div>
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
+          <div className="lg:col-span-1 flex flex-col gap-2">
+            {services.map(service => (
+              <button
+                key={service.id}
+                onMouseOver={() => setActiveService(service)}
+                onClick={() => router.push(`/services/${service.id}`)}
+                className={cn(
+                  "p-6 rounded-lg text-left transition-all duration-300 border border-transparent",
+                  activeService.id === service.id
+                    ? 'bg-secondary border-accent'
+                    : 'hover:bg-secondary/50'
+                )}
+              >
+                <h3 className={cn(
+                  "text-lg font-semibold font-headline",
+                  activeService.id === service.id ? 'text-primary' : 'text-foreground'
+                )}>
+                  {service.name}
+                </h3>
+              </button>
+            ))}
+          </div>
+          <div className="lg:col-span-2 lg:sticky top-24">
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={activeService.id}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -20 }}
+                transition={{ duration: 0.3 }}
+                className="bg-secondary rounded-xl p-12 text-center flex flex-col items-center justify-center h-[400px]"
+              >
+                <motion.div
+                  initial={{ scale: 0.8 }}
+                  animate={{ scale: 1 }}
+                  transition={{ type: 'spring', stiffness: 260, damping: 20, delay: 0.1 }}
+                  className="bg-primary/10 p-6 rounded-full mb-6"
+                >
+                  {iconMap[activeService.id]}
+                </motion.div>
+                <h3 className="text-3xl font-bold font-headline text-primary">
+                  {activeService.name}
+                </h3>
+              </motion.div>
+            </AnimatePresence>
+          </div>
+        </div>
+      </div>
+    </section>
 
       {/* Manufacturing Capabilities Section */}
        <section className="manufacturing-section bg-secondary">

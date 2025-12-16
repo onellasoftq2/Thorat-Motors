@@ -1,4 +1,5 @@
 
+
 export type NavMenuItem = {
   name: string;
   href: string;
@@ -484,4 +485,33 @@ export const industrySolutions = [
       'G+1 Cabin Structures',
     ],
   },
+];
+
+export type WhyChooseUsItem = {
+    title: string;
+    description: string;
+    imageUrl: string;
+};
+
+export const whyChooseUs: WhyChooseUsItem[] = [
+    {
+        title: 'High-Strength Engineering',
+        description: 'We use certified BSK46 and IS2062 steel for maximum durability and performance.',
+        imageUrl: 'https://images.unsplash.com/photo-1519424187720-db6f0212a2f0?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+    },
+    {
+        title: 'ISO & CMVR Compliance',
+        description: 'All products follow industry-standard certifications ensuring safety, quality, and reliability.',
+        imageUrl: 'https://images.unsplash.com/photo-1581092916259-1f2214a16b3d?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+    },
+    {
+        title: 'Advanced Fabrication',
+        description: 'State-of-the-art CNC, welding, and forming machines ensure precision manufacturing.',
+        imageUrl: 'https://images.unsplash.com/photo-1621947081720-86970823b77a?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+    },
+    {
+        title: 'Custom Engineering',
+        description: 'We design and build trailers tailored to your load, industry, and operational needs.',
+        imageUrl: 'https://images.unsplash.com/photo-1556761175-5973dc0f32e7?q=80&w=2132&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+    },
 ];
