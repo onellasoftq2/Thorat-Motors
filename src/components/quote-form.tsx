@@ -142,7 +142,10 @@ export default function QuoteForm() {
                             render={({ field }) => (
                                 <FormItem>
                                 <FormLabel>Product Category</FormLabel>
-                                <Select onValueChange={field.onChange} defaultValue={field.value}>
+                                <Select onValueChange={(value) => {
+                                    field.onChange(value);
+                                    form.resetField('product');
+                                }} defaultValue={field.value}>
                                     <FormControl>
                                     <SelectTrigger>
                                         <SelectValue placeholder="Select a category" />
@@ -151,6 +154,7 @@ export default function QuoteForm() {
                                     <SelectContent>
                                     <SelectItem value="trailers">Trailers</SelectItem>
                                     <SelectItem value="cabins">Portable Cabins</SelectItem>
+                                    <SelectItem value="containerConversions">Containers & Conversions</SelectItem>
                                     </SelectContent>
                                 </Select>
                                 <FormMessage />

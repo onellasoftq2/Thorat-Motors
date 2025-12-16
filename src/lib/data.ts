@@ -314,6 +314,19 @@ export const products = {
             ],
         },
         {
+            id: 'double-storey',
+            name: 'Double Storey (G+1) Cabin',
+            description: 'Maximize your space with our two-story portable cabins. Ideal for large site offices, accommodation blocks, or combined-use buildings.',
+            features: [
+                'Space-efficient vertical design to make the most of limited area.',
+                'Includes internal or external staircase options.',
+                'Structurally engineered and reinforced for safety and stability.',
+                'Can be configured for various uses on each floor.'
+            ],
+        },
+    ],
+    containerConversions: [
+         {
             id: 'container-conversion',
             name: 'Used Shipping Cargo Container',
             description: 'Cargo Containers are highly durable and are basically used for Storage Purpose. We also offer custom modifications for 20ft and 40ft containers.',
@@ -325,16 +338,27 @@ export const products = {
             ],
         },
         {
-            id: 'double-storey',
-            name: 'Double Storey (G+1) Cabin',
-            description: 'Maximize your space with our two-story portable cabins. Ideal for large site offices, accommodation blocks, or combined-use buildings.',
+            id: 'office-conversion',
+            name: 'Container Office Conversion',
+            description: 'Transform a standard shipping container into a fully functional, modern office space.',
             features: [
-                'Space-efficient vertical design to make the most of limited area.',
-                'Includes internal or external staircase options.',
-                'Structurally engineered and reinforced for safety and stability.',
-                'Can be configured for various uses on each floor.'
+                'Insulated walls and ceilings for comfort.',
+                'Integrated electrical and data wiring.',
+                'Custom window and door placements.',
+                'Durable and secure construction.'
             ],
         },
+        {
+            id: 'retail-conversion',
+            name: 'Container Retail Conversion',
+            description: 'Create a unique and eye-catching retail shop, cafe, or kiosk from a shipping container.',
+            features: [
+                'Customizable storefront with large windows or serving hatches.',
+                'Branding and exterior cladding options.',
+                'Quick to deploy for pop-up shops or permanent locations.',
+                'Robust and secure for valuable inventory.'
+            ],
+        }
     ]
 };
 
@@ -424,7 +448,7 @@ export const industrySolutions = [
       'Flatbed & Side-Wall Trailers',
       'Transport & Logistics Support',
     ],
-    image: "https://images.unsplash.com/photo-1517921345997-384358899214?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    image: "https://images.unsplash.com/photo-1517921345997-384358899214?q=80&w=1974&auto=format&fit=crop&ixlib-rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     icon: "Building"
   },
   {
@@ -529,4 +553,3 @@ export const whyChooseUs: WhyChooseUsItem[] = [
         imageUrl: 'https://images.unsplash.com/photo-1556761175-5973dc0f32e7?q=80&w=1932&auto=format&fit=crop&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
     },
 ];
-
