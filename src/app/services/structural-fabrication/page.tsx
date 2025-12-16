@@ -48,7 +48,7 @@ export default function StructuralFabricationPage() {
             {overviewItems.map((item) => (
               <Card key={item.title} className="shadow-md">
                 <CardHeader>
-                  <CardTitle>{item.title}</CardTitle>
+                  <CardTitle className="text-xl">{item.title}</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <p className="text-muted-foreground">{item.description}</p>
@@ -108,5 +108,3 @@ export default function StructuralFabricationPage() {
     </>
   );
 }
-
-    
