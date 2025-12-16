@@ -53,7 +53,6 @@ export default function Header() {
   const trailersItems = productsMenu?.megaMenu?.find(section => section.title === 'Trailers')?.items || [];
   const cabinsItems = productsMenu?.megaMenu?.find(section => section.title === 'Portable Cabins')?.items || [];
   const conversionsItems = productsMenu?.megaMenu?.find(section => section.title === 'Containers & Conversions')?.items || [];
-  const allCabinsAndContainers = [...cabinsItems, ...conversionsItems];
 
 
   return (
@@ -208,10 +207,28 @@ export default function Header() {
                                     </AccordionContent>
                                 </AccordionItem>
                                 <AccordionItem value="cabins">
-                                    <AccordionTrigger className={pathname.startsWith('/products/cabins') ? 'text-primary' : ''}>Portable Cabins & Containers</AccordionTrigger>
+                                    <AccordionTrigger className={pathname.startsWith('/products/cabins') ? 'text-primary' : ''}>Portable Cabins</AccordionTrigger>
                                     <AccordionContent>
                                         <ul className="space-y-2 pl-4">
-                                        {allCabinsAndContainers.map((subItem) => (
+                                        {cabinsItems.map((subItem) => (
+                                            <li key={subItem.name}>
+                                            <Link
+                                                href={subItem.href}
+                                                onClick={() => setMobileMenuOpen(false)}
+                                                className={cn("block py-2 text-sm", pathname === subItem.href ? 'text-primary font-bold' : 'text-muted-foreground')}
+                                            >
+                                                {subItem.name}
+                                            </Link>
+                                            </li>
+                                        ))}
+                                        </ul>
+                                    </AccordionContent>
+                                </AccordionItem>
+                                 <AccordionItem value="conversions">
+                                    <AccordionTrigger className={pathname.startsWith('/services/container-conversions') ? 'text-primary' : ''}>Containers & Conversions</AccordionTrigger>
+                                    <AccordionContent>
+                                        <ul className="space-y-2 pl-4">
+                                        {conversionsItems.map((subItem) => (
                                             <li key={subItem.name}>
                                             <Link
                                                 href={subItem.href}
