@@ -13,7 +13,7 @@ import {
 import { Button } from '@/components/ui/button';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { products, industrySolutions, offices, services } from '@/lib/data';
-import { ArrowRight, Truck, Home as HomeIcon, Wrench, DraftingCompass, Cog, Box, Star, Check, Layers } from 'lucide-react';
+import { ArrowRight, Truck, Home as HomeIcon, Wrench, DraftingCompass, Cog, Box, Star, Check } from 'lucide-react';
 import IndustryCard from '@/components/ui/industry-card';
 import { Timeline } from '@/components/ui/timeline';
 import { AnimatedHeadline } from '@/components/animated-headline';
@@ -258,7 +258,6 @@ export default function Home() {
           title="Our Services"
           subtitle="End-to-end solutions from concept and design to fabrication and delivery."
           categories={serviceCategories}
-          headerIcon={<Layers className="w-8 h-8" />}
           className="bg-background"
         />
       </section>
@@ -428,5 +427,7 @@ export default function Home() {
     </div>
   );
 }
+
+    
 
     
