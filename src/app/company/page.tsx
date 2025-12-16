@@ -15,6 +15,7 @@ import { AnimatedElement } from '@/components/ui/animated-element';
 export default function CompanyPage() {
   const aboutImage = PlaceHolderImages.find((img) => img.id === 'about-us-image');
   const mdImage = PlaceHolderImages.find((img) => img.id === 'md-portrait');
+  const manufacturingImage = PlaceHolderImages.find(p => p.id === 'structural-fabrication');
 
   return (
     <>
@@ -57,7 +58,7 @@ export default function CompanyPage() {
         </section>
 
         {/* 3. Managing Director’s Message */}
-        <section className="mt-12 md:mt-16 lg:mt-20">
+        <section className="mt-12 md:mt-16">
           <AnimatedElement>
             <Card className="bg-secondary/50 border-border max-w-5xl mx-auto overflow-hidden">
               <div className="grid grid-cols-1 md:grid-cols-12">
@@ -87,7 +88,7 @@ export default function CompanyPage() {
         </section>
 
         {/* 4. Vision & Mission */}
-        <section id="vision" className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12 md:mt-16 lg:mt-20 max-w-5xl mx-auto">
+        <section id="vision" className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12 md:mt-16 max-w-5xl mx-auto">
           <AnimatedElement>
             <Card className="h-full p-8 text-center group">
               <div className="mx-auto mb-6 inline-flex h-20 w-20 items-center justify-center rounded-full bg-primary/10 transition-colors duration-300 group-hover:bg-accent">
@@ -109,20 +110,36 @@ export default function CompanyPage() {
         </section>
 
         {/* 5. Manufacturing Excellence */}
-        <section id="manufacturing" className="mt-12 md:mt-16 lg:mt-20 text-center">
-          <AnimatedElement>
-            <h2 className="text-3xl font-bold font-headline">Manufacturing Excellence</h2>
-            <div className="mt-3 mb-8 w-20 h-1.5 bg-accent mx-auto"></div>
-          </AnimatedElement>
-          <AnimatedElement delay={0.2}>
-            <p className="mt-4 text-lg text-muted-foreground leading-relaxed max-w-3xl mx-auto">
-              Our state-of-the-art facilities are equipped with advanced machinery and operated by a skilled workforce. We follow stringent quality control protocols at every stage of production, from raw material sourcing to final product inspection, ensuring every unit that leaves our factory meets the highest standards of quality and safety.
-            </p>
-          </AnimatedElement>
+        <section id="manufacturing" className="mt-12 md:mt-16">
+           <div className="text-center">
+             <AnimatedElement>
+                <h2 className="text-3xl font-bold font-headline">Manufacturing Excellence</h2>
+                <div className="mt-3 mb-8 w-20 h-1.5 bg-accent mx-auto"></div>
+              </AnimatedElement>
+           </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center max-w-5xl mx-auto">
+             <AnimatedElement delay={0.2}>
+              {manufacturingImage && (
+                  <Image
+                    src={manufacturingImage.imageUrl}
+                    alt={manufacturingImage.description}
+                    width={500}
+                    height={400}
+                    className="rounded-lg object-cover shadow-lg aspect-square"
+                    data-ai-hint={manufacturingImage.imageHint}
+                  />
+                )}
+            </AnimatedElement>
+             <AnimatedElement>
+                <p className="text-lg text-muted-foreground leading-relaxed">
+                  Our state-of-the-art facilities are equipped with advanced machinery and operated by a skilled workforce. We follow stringent quality control protocols at every stage of production, from raw material sourcing to final product inspection, ensuring every unit that leaves our factory meets the highest standards of quality and safety.
+                </p>
+              </AnimatedElement>
+          </div>
         </section>
 
         {/* 6. Leadership Team */}
-        <section id="leadership" className="mt-12 md:mt-16 lg:mt-20">
+        <section id="leadership" className="mt-12 md:mt-16">
           <AnimatedElement>
             <h2 className="text-3xl font-bold font-headline text-center">Leadership Team</h2>
             <div className="mt-3 mb-12 w-20 h-1.5 bg-accent mx-auto"></div>
@@ -144,7 +161,7 @@ export default function CompanyPage() {
         </section>
 
         {/* 7. Utility Grid */}
-        <section className="mt-12 md:mt-16 lg:mt-20">
+        <section className="mt-12 md:mt-16">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 max-w-4xl mx-auto">
             <AnimatedElement>
               <Card className="p-6 h-full">

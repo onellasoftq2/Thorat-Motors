@@ -3,7 +3,7 @@
     {
       "id": "hero-trailer",
       "description": "A large, modern trailer on the road.",
-      "imageUrl": "https://images.unsplash.com/photo-1591948403330-7e3b18593457?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageUrl": "https://images.unsplash.com/photo-1571832095813-a754b4237f8a?q=80&w=2070&auto=format&fit=crop&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "imageHint": "trailer logistics"
     },
     {
@@ -111,8 +111,14 @@
     {
       "id": "industries-hero",
       "description": "Industrial port with cranes at sunset.",
-      "imageUrl": "https://images.unsplash.com/photo-1763887487462-5f6e69dff38c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxpbmR1c3RyaWFsJTIwcG9ydHxlbnwwfHx8fDE3NjU4NjM0MTZ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1605282221649-8f5367a1c86e?q=80&w=2070&auto=format&fit=crop&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "imageHint": "industrial port"
+    },
+    {
+      "id": "structural-fabrication",
+      "description": "Welder working on a metal structure in a workshop.",
+      "imageUrl": "https://images.unsplash.com/photo-1533013440539-7a3311542f63?q=80&w=1974&auto=format&fit=crop&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageHint": "welder fabrication"
     }
   ]
 }
