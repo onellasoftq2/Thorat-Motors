@@ -25,6 +25,7 @@ import { cn } from '@/lib/utils';
 import { IndiaMap } from '@/components/ui/india-map';
 import { CategoryList, type Category } from '@/components/ui/category-list';
 import { StickyFeatureSection } from '@/components/ui/sticky-scroll-cards-section';
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 
 const heroImage = PlaceHolderImages.find((img) => img.id === 'hero-trailer');
 
@@ -288,7 +289,6 @@ export default function Home() {
         <div className="container mx-auto px-4 md:px-6 lg:px-8">
             <CategoryList
               title="Our Services"
-              subtitle="End-to-end solutions from concept and design to fabrication and delivery."
               categories={serviceCategories}
             />
         </div>
@@ -312,8 +312,9 @@ export default function Home() {
                     Tailored trailers, cabins, and container solutions designed for real-world industrial applications.
                 </p>
             </div>
-
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+            
+            {/* Desktop View: Scroll-driven */}
+            <div className="hidden lg:grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
                 <div className="lg:col-span-1 sticky top-24">
                     <ul className="flex flex-col space-y-2">
                         {industrySolutions.map((solution, index) => (
@@ -370,6 +371,38 @@ export default function Home() {
                         </motion.div>
                     </AnimatePresence>
                 </div>
+            </div>
+
+            {/* Mobile View: Accordion */}
+            <div className="lg:hidden">
+              <Accordion type="single" collapsible defaultValue="item-0">
+                  {industrySolutions.map((solution, index) => (
+                      <AccordionItem value={`item-${index}`} key={solution.id}>
+                          <AccordionTrigger>{solution.name}</AccordionTrigger>
+                          <AccordionContent>
+                               <Card className="shadow-lg">
+                                <CardHeader>
+                                    <CardDescription>{solution.description}</CardDescription>
+                                </CardHeader>
+                                <CardContent>
+                                    <h4 className="font-semibold mb-4">Relevant Solutions:</h4>
+                                    <ul className="space-y-3">
+                                        {solution.solutions.map((item, solIndex) => (
+                                            <li key={solIndex} className="flex items-center">
+                                                <Check className="h-5 w-5 mr-3 text-green-500 flex-shrink-0" />
+                                                <span>{item}</span>
+                                            </li>
+                                        ))}
+                                    </ul>
+                                    <Button asChild variant="link" className="px-0 mt-6 text-accent font-semibold">
+                                        <Link href={`/industries#${solution.id}`}>Learn More <ArrowRight className="ml-2 h-4 w-4" /></Link>
+                                    </Button>
+                                </CardContent>
+                            </Card>
+                          </AccordionContent>
+                      </AccordionItem>
+                  ))}
+              </Accordion>
             </div>
         </div>
       </section>
@@ -463,3 +496,5 @@ export default function Home() {
     </div>
   );
 }
+
+    
