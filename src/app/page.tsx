@@ -254,63 +254,14 @@ export default function Home() {
 
       {/* Our Services Section */}
       <section className="bg-background py-16 lg:py-24">
-      <div className="container mx-auto px-4 md:px-6 lg:px-8">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl font-extrabold font-headline tracking-tight sm:text-4xl">Our Services</h2>
-          <p className="mt-4 max-w-3xl mx-auto text-lg text-muted-foreground">
-            End-to-end solutions from concept and design to fabrication and delivery.
-          </p>
-        </div>
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
-          <div className="lg:col-span-1 flex flex-col gap-2">
-            {services.map(service => (
-              <button
-                key={service.id}
-                onMouseOver={() => setActiveService(service)}
-                onClick={() => router.push(`/services/${service.id}`)}
-                className={cn(
-                  "p-6 rounded-lg text-left transition-all duration-300 border border-transparent",
-                  activeService.id === service.id
-                    ? 'bg-secondary border-accent'
-                    : 'hover:bg-secondary/50'
-                )}
-              >
-                <h3 className={cn(
-                  "text-lg font-semibold font-headline",
-                  activeService.id === service.id ? 'text-primary' : 'text-foreground'
-                )}>
-                  {service.name}
-                </h3>
-              </button>
-            ))}
-          </div>
-          <div className="lg:col-span-2 lg:sticky top-24">
-            <AnimatePresence mode="wait">
-              <motion.div
-                key={activeService.id}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -20 }}
-                transition={{ duration: 0.3 }}
-                className="bg-secondary rounded-xl p-12 text-center flex flex-col items-center justify-center h-[400px]"
-              >
-                <motion.div
-                  initial={{ scale: 0.8 }}
-                  animate={{ scale: 1 }}
-                  transition={{ type: 'spring', stiffness: 260, damping: 20, delay: 0.1 }}
-                  className="bg-primary/10 p-6 rounded-full mb-6"
-                >
-                  {iconMap[activeService.id]}
-                </motion.div>
-                <h3 className="text-3xl font-bold font-headline text-primary">
-                  {activeService.name}
-                </h3>
-              </motion.div>
-            </AnimatePresence>
-          </div>
-        </div>
-      </div>
-    </section>
+        <CategoryList
+          title="Our Services"
+          subtitle="End-to-end solutions from concept and design to fabrication and delivery."
+          categories={serviceCategories}
+          headerIcon={<Layers className="w-8 h-8" />}
+          className="bg-background"
+        />
+      </section>
 
       {/* Manufacturing Capabilities Section */}
        <section className="manufacturing-section bg-secondary">
@@ -477,3 +428,5 @@ export default function Home() {
     </div>
   );
 }
+
+    
