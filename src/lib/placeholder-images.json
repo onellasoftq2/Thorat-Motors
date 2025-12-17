@@ -3,7 +3,7 @@
     {
       "id": "hero-trailer",
       "description": "A large, modern trailer on the road.",
-      "imageUrl": "https://images.unsplash.com/photo-1571832095813-a754b4237f8a?q=80&w=2070&auto=format&fit=crop&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageUrl": "https://images.unsplash.com/photo-1615876063865-d9124a758e55?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "imageHint": "trailer logistics"
     },
     {
@@ -79,6 +79,36 @@
       "imageHint": "container shop"
     },
     {
+      "id": "used-container",
+      "description": "A shipping container available for sale or conversion.",
+      "imageUrl": "https://images.unsplash.com/photo-1568252540092-992f9e4a3646?q=80&w=2070&auto=format&fit=crop&ixlib-rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageHint": "shipping container"
+    },
+    {
+      "id": "office-conversion",
+      "description": "Interior of an office made from a shipping container.",
+      "imageUrl": "https://images.unsplash.com/photo-1593941707882-6899c370a534?q=80&w=1974&auto=format&fit=crop&ixlib-rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageHint": "container office"
+    },
+    {
+      "id": "retail-conversion",
+      "description": "A pop-up shop built into a shipping container.",
+      "imageUrl": "https://images.unsplash.com/photo-1506795493774-c285a8a183b6?q=80&w=1974&auto=format&fit=crop&ixlib-rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageHint": "container store"
+    },
+    {
+      "id": "storage-container",
+      "description": "A stack of shipping containers used for storage.",
+      "imageUrl": "https://images.unsplash.com/photo-1568252540092-992f9e4a3646?q=80&w=2070&auto=format&fit=crop&ixlib-rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageHint": "storage containers"
+    },
+    {
+      "id": "custom-modification",
+      "description": "A shipping container being modified with welding.",
+      "imageUrl": "https://images.unsplash.com/photo-1620755995819-3a832c388656?q=80&w=1974&auto=format&fit=crop&ixlib-rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageHint": "welding fabrication"
+    },
+    {
       "id": "container-conversion",
       "description": "A shipping container converted into a living space.",
       "imageUrl": "https://images.unsplash.com/photo-1506974210756-8e1b895da71b?q=80&w=2070&auto=format&fit=crop&ixlib-rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
@@ -111,7 +141,7 @@
     {
       "id": "industries-hero",
       "description": "Industrial port with cranes at sunset.",
-      "imageUrl": "https://images.unsplash.com/photo-1605282221649-8f5367a1c86e?q=80&w=2070&auto=format&fit=crop&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageUrl": "https://images.unsplash.com/photo-1605282221649-8f5367a1c86e?q=80&w=2070&auto=format&fit=crop&ixlib-rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "imageHint": "industrial port"
     },
     {
