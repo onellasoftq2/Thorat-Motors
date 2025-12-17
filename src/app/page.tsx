@@ -33,7 +33,7 @@ const stats = [
   { value: 10000, label: 'Trailers Delivered', isPlus: true },
   { value: 15, label: 'Engineering Expertise', isPlus: true, unit: ' Years' },
   { value: 7, label: 'Pan-India Presence', isPlus: false, unit: ' Locations' },
-  { value: 0, label: 'ISO Certified', isPlus: false, unit: 'ISO Certified' },
+  { value: 9001, label: 'ISO Certified', isPlus: false, unit: 'ISO 9001' },
 ];
 
 const manufacturingCapabilities = [
@@ -206,8 +206,7 @@ export default function Home() {
                         <h3>
                           {stat.value > 0 ? <AnimatedNumber value={stat.value} /> : ''}
                           {stat.isPlus && stat.value > 0 ? '+' : ''}
-                          {stat.value === 0 ? stat.unit : ''}
-                          {stat.unit && stat.value > 0 ? stat.unit : ''}
+                          {stat.value !== 0 ? stat.unit : stat.label === 'ISO Certified' ? 'ISO 9001' : ''}
                         </h3>
                         <p>{stat.label}</p>
                     </div>
@@ -488,3 +487,5 @@ export default function Home() {
     </div>
   );
 }
+
+    
