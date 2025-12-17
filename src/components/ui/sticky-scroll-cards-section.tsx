@@ -25,44 +25,40 @@ export function StickyFeatureSection() {
   const targetRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: targetRef,
-    offset: ['start start', 'end start'],
+    offset: ['start start', 'end end'],
   });
 
-  const cards = whyChooseUs;
-
   return (
-    <div ref={targetRef} className="bg-secondary font-sans py-16 lg:py-24">
+    <section ref={targetRef} className="relative bg-secondary py-16 lg:py-24">
       <div className="container mx-auto px-4 md:px-6 lg:px-8">
         <AnimatedHeader />
-        <div style={{ height: `${(cards.length + 1) * 70}vh` }}>
-          {cards.map((card, i) => (
-            <FeatureCard key={card.title + i} card={card} i={i} />
+        <div className="relative" style={{ height: `${whyChooseUs.length * 100}vh` }}>
+          {whyChooseUs.map((card, i) => (
+            <FeatureCard key={card.title + i} card={card} i={i} scrollYProgress={scrollYProgress} />
           ))}
         </div>
       </div>
-    </div>
+    </section>
   );
 }
 
-const FeatureCard = ({ card, i }: { card: WhyChooseUsItem, i: number }) => {
-    const targetRef = useRef<HTMLDivElement>(null);
-    const { scrollYProgress } = useScroll({
-        target: targetRef,
-        offset: ["start end", "end start"]
-    })
+const FeatureCard = ({ card, i, scrollYProgress }: { card: WhyChooseUsItem, i: number, scrollYProgress: any }) => {
+    const cardCount = whyChooseUs.length;
+    const start = i / cardCount;
+    const end = (i + 1) / cardCount;
 
-    const scale = useTransform(scrollYProgress, [0, 0.4, 0.9, 1], [0.8, 1, 1, 0.8]);
-    const opacity = useTransform(scrollYProgress, [0, 0.3, 0.9, 1], [0, 1, 1, 0]);
+    const scale = useTransform(scrollYProgress, [start, end], [1, 0.8]);
+    const opacity = useTransform(scrollYProgress, [start, end], [1, 0]);
 
     return (
         <motion.div
-        ref={targetRef}
         style={{
+            position: 'sticky',
+            top: `${(i * 2) + 10}rem`,
             scale,
-            opacity,
-            top: `${(i * 4)}rem`, 
+            opacity
         }}
-        className="grid grid-cols-1 md:grid-cols-2 items-center gap-8 md:gap-12 p-8 md:p-12 rounded-3xl sticky bg-card shadow-md"
+        className="grid grid-cols-1 md:grid-cols-2 items-center gap-8 md:gap-12 p-8 md:p-12 rounded-3xl bg-card shadow-md"
         >
         <div className="flex flex-col justify-center text-left order-2 md:order-1">
             <h3 className="text-2xl md:text-3xl font-bold mb-4 text-foreground">{card.title}</h3>
