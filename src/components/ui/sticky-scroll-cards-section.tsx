@@ -1,58 +1,28 @@
 
 'use client';
 
-import React, { useRef, useState, useEffect } from 'react';
+import React, { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { whyChooseUs, type WhyChooseUsItem } from '@/lib/data';
 import Image from 'next/image';
+import { AnimatedElement } from './animated-element';
 
-const useScrollAnimation = () => {
-  const [inView, setInView] = useState(false);
-  const ref = useRef(null);
-
-  useEffect(() => {
-    const element = ref.current;
-    if (!element) return;
-
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        setInView(entry.isIntersecting);
-      },
-      {
-        root: null,
-        rootMargin: '0px',
-        threshold: 0.1,
-      }
-    );
-
-    observer.observe(element);
-
-    return () => observer.disconnect();
-  }, []);
-
-  return [ref, inView];
-};
 
 const AnimatedHeader = () => {
-  const [headerRef, headerInView] = useScrollAnimation();
-  const [pRef, pInView] = useScrollAnimation();
-
   return (
     <div className="text-center max-w-3xl mx-auto mb-16">
-      <h2
-        ref={headerRef}
-        className={`text-3xl font-extrabold font-headline tracking-tight sm:text-4xl transition-all duration-700 ease-out text-foreground ${headerInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-          }`}
-        style={{ transformStyle: 'preserve-3d' }}
-      >
-        Why Choose Thorat Motors?
-      </h2>
-      <div
-        ref={pRef}
-        className={`mt-2 h-1.5 w-24 mx-auto bg-accent transition-all duration-700 ease-out delay-200 ${pInView ? 'opacity-100 scale-x-100' : 'opacity-0 scale-x-0'
-          }`}
-        style={{ transformOrigin: 'center' }}
-      ></div>
+       <AnimatedElement>
+         <h2
+            className={`text-3xl font-extrabold font-headline tracking-tight sm:text-4xl text-foreground`}
+          >
+            Why Choose Thorat Motors?
+          </h2>
+      </AnimatedElement>
+       <AnimatedElement delay={0.1}>
+         <div
+            className={`mt-2 h-1.5 w-24 mx-auto bg-accent`}
+          ></div>
+      </AnimatedElement>
     </div>
   );
 };
