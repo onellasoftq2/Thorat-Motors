@@ -17,8 +17,8 @@ export default {
     },
     extend: {
       fontFamily: {
-        body: ['Roboto Flex', 'sans-serif'],
-        headline: ['Inter', 'sans-serif'],
+        body: ['var(--font-manrope)', 'sans-serif'],
+        headline: ['var(--font-manrope)', 'sans-serif'],
       },
       colors: {
         border: "hsl(var(--border))",

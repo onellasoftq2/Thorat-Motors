@@ -1,20 +1,15 @@
 
 import type { Metadata } from 'next';
 import './globals.css';
-import { Inter, Roboto_Flex } from 'next/font/google';
+import { Manrope } from 'next/font/google';
 import { cn } from '@/lib/utils';
 import Header from '@/components/layout/header';
 import Footer from '@/components/layout/footer';
 import { Toaster } from '@/components/ui/toaster';
 
-const fontHeadline = Inter({
+const font = Manrope({
   subsets: ['latin'],
-  variable: '--font-headline',
-});
-
-const fontBody = Roboto_Flex({
-  subsets: ['latin'],
-  variable: '--font-body',
+  variable: '--font-manrope',
 });
 
 export const metadata: Metadata = {
@@ -32,8 +27,7 @@ export default function RootLayout({
       <body
         className={cn(
           'min-h-screen bg-background font-body antialiased',
-          fontHeadline.variable,
-          fontBody.variable
+          font.variable
         )}
       >
         <div className="relative flex min-h-screen flex-col">
