@@ -7,7 +7,6 @@ import { usePathname } from "next/navigation";
 import {
   Menu,
   ChevronDown,
-  Truck,
 } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
@@ -36,11 +35,44 @@ import { ScrollArea } from "@/components/ui/scroll-area";
 
 function Logo() {
   return (
-    <Link href="/" className="flex items-center space-x-2">
-      <Truck className="h-8 w-8 text-primary" />
-      <span className="text-xl font-bold font-headline tracking-tight text-foreground">
-        Thorat Motors
-      </span>
+    <Link href="/" aria-label="Thorat Motors homepage">
+      <svg
+        width="210"
+        height="40"
+        viewBox="0 0 210 40"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        className="h-10 w-auto"
+      >
+          <rect width="40" height="40" rx="8" fill="hsl(var(--primary))" />
+          <path
+            d="M12 11H28V14H22V29H18V14H12V11Z"
+            fill="hsl(var(--accent))"
+          />
+          <text
+            x="52"
+            y="18"
+            fontFamily="Manrope, sans-serif"
+            fontSize="20"
+            fontWeight="800"
+            fill="hsl(var(--primary))"
+            dominantBaseline="middle"
+          >
+            THORAT
+          </text>
+          <text
+            x="52"
+            y="32"
+            fontFamily="Manrope, sans-serif"
+            fontSize="9"
+            fontWeight="500"
+            fill="hsl(var(--muted-foreground))"
+            letterSpacing="0.1em"
+            dominantBaseline="middle"
+          >
+            MOTORS
+          </text>
+      </svg>
     </Link>
   );
 }
