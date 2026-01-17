@@ -33,7 +33,7 @@ const stats = [
   { value: 10000, label: 'Trailers Delivered', isPlus: true },
   { value: 15, label: 'Engineering Expertise', isPlus: true, unit: ' Years' },
   { value: 7, label: 'Pan-India Presence', isPlus: false, unit: ' Locations' },
-  { value: 9001, label: 'ISO Certified', isPlus: false, unit: 'ISO 9001' },
+  { value: 0, label: 'ISO Certified', isPlus: false, unit: 'ISO 9001' },
 ];
 
 const manufacturingCapabilities = [
@@ -487,5 +487,7 @@ export default function Home() {
     </div>
   );
 }
+
+    
 
     
