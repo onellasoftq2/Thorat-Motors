@@ -380,41 +380,50 @@ export default function Header() {
                           )
                         })()}
                       </div>
-                      <div className="w-[200px] bg-primary/5 p-4 flex flex-col justify-center">
-                        <AnimatePresence mode="wait">
-                          <motion.div
-                            key={activeIndustry}
-                            initial={{ opacity: 0 }}
-                            animate={{ opacity: 1 }}
-                            exit={{ opacity: 0 }}
-                            transition={{ duration: 0.3 }}
-                            className="w-full"
-                          >
-                           {videoId ? (
-                                <div
-                                    className="w-full aspect-video relative group cursor-pointer"
-                                    onClick={() => { if (activeCategoryData?.videoUrl) { setVideoOpen(true); setIndustriesMenuOpen(true); } }}
-                                >
-                                    <Image
-                                        src={`https://img.youtube.com/vi/${videoId}/hqdefault.jpg`}
-                                        alt={activeCategoryData?.title || 'Video thumbnail'}
-                                        layout="fill"
-                                        objectFit="cover"
-                                        className="rounded-md"
-                                    />
-                                    <div className="absolute inset-0 bg-black/30 flex items-center justify-center rounded-md transition-colors group-hover:bg-black/50">
-                                        <PlayCircle className="h-16 w-16 text-white/80 transition-transform group-hover:scale-110" />
+                      <div className="w-[200px] bg-primary/5 p-4 flex flex-col justify-between">
+                        <div>
+                            <h4 className="text-sm font-semibold text-primary mb-2">Video</h4>
+                            <AnimatePresence mode="wait">
+                            <motion.div
+                                key={activeIndustry}
+                                initial={{ opacity: 0 }}
+                                animate={{ opacity: 1 }}
+                                exit={{ opacity: 0 }}
+                                transition={{ duration: 0.3 }}
+                                className="w-full"
+                            >
+                            {videoId ? (
+                                    <div
+                                        className="w-full aspect-video relative group cursor-pointer"
+                                        onClick={() => { if (activeCategoryData?.videoUrl) { setVideoOpen(true); setIndustriesMenuOpen(true); } }}
+                                    >
+                                        <Image
+                                            src={`https://img.youtube.com/vi/${videoId}/hqdefault.jpg`}
+                                            alt={activeCategoryData?.title || 'Video thumbnail'}
+                                            fill
+                                            style={{objectFit: 'cover'}}
+                                            className="rounded-md"
+                                        />
+                                        <div className="absolute inset-0 bg-black/30 flex items-center justify-center rounded-md transition-colors group-hover:bg-black/50">
+                                            <PlayCircle className="h-12 w-12 text-white/80 transition-transform group-hover:scale-110" />
+                                        </div>
                                     </div>
-                                </div>
-                            ) : (
-                                <div className="w-full aspect-video bg-secondary rounded-md flex items-center justify-center">
-                                <p className="text-muted-foreground">
-                                    {activeCategoryData?.isLink ? 'Details on page' : 'No video available'}
-                                </p>
-                                </div>
-                            )}
-                          </motion.div>
-                        </AnimatePresence>
+                                ) : (
+                                    <div className="w-full aspect-video bg-secondary rounded-md flex items-center justify-center">
+                                    <p className="text-muted-foreground text-sm text-center p-2">
+                                        {activeCategoryData?.isLink ? 'Details on page' : 'No video available'}
+                                    </p>
+                                    </div>
+                                )}
+                            </motion.div>
+                            </AnimatePresence>
+                        </div>
+                        <div className="mt-4 text-center">
+                            <h5 className="font-semibold text-sm text-foreground mb-1">Have a question?</h5>
+                            <Button asChild size="sm" className="mt-1 w-full bg-accent text-accent-foreground hover:bg-accent/90">
+                                <Link href="/quote">Enquiry Now</Link>
+                            </Button>
+                        </div>
                       </div>
                     </div>
                   )}
@@ -677,4 +686,3 @@ export default function Header() {
   );
 }
 
-    
