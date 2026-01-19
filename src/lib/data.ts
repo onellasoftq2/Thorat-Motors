@@ -19,12 +19,7 @@ export type InteractiveMegaMenuItem = {
   isLink?: boolean;
   href?: string;
   items: NavMenuItem[];
-}
-
-export type InteractiveFeaturedItem = {
-    title: string;
-    description: string;
-    href: string;
+  videoUrl?: string;
 }
 
 export type NavMenu = {
@@ -32,7 +27,6 @@ export type NavMenu = {
   href?: string;
   megaMenu?: NavMenuSection[];
   interactiveMegaMenu?: InteractiveMegaMenuItem[];
-  interactiveFeatured?: InteractiveFeaturedItem;
   items?: NavMenuItem[];
 };
 
@@ -104,11 +98,13 @@ export const navMenu: NavMenu[] = [
         title: "Design and Homologation",
         slug: "design-homologation",
         description: "Certification & compliance services.",
+        videoUrl: "https://www.youtube.com/watch?v=1UWK_CdDDZk",
         items: [
           {
             name: "Products",
             description: "Our range of certified products.",
             icon: 'Package',
+            href: "/industries/design-homologation/products",
             subItems: [
               { name: "EV (2-wheelers & 3-wheelers)", href: "/industries/design-homologation/products/ev", icon: "Car" },
               { name: "Trailers", href: "/industries/design-homologation/products/trailers", icon: "Truck" },
@@ -138,6 +134,7 @@ export const navMenu: NavMenu[] = [
         title: "Manufacturing",
         slug: "manufacturing",
         description: "High-precision fabrication and assembly.",
+        videoUrl: "https://www.youtube.com/watch?v=Zn6scKf7k_0",
         items: [
           {
             name: "Bulkers",
@@ -192,15 +189,10 @@ export const navMenu: NavMenu[] = [
         description: "Reliable logistics and transport support.",
         isLink: true,
         href: "/industries/transportation",
+        videoUrl: "https://www.youtube.com/watch?v=Zn6scKf7k_0",
         items: [],
       },
     ],
-    interactiveFeatured: {
-      title: "Your Partner in Industrial Growth",
-      description:
-        "From custom engineering to pan-India logistics, we provide solutions that power your progress.",
-      href: "/contact",
-    },
   },
   {
     title: "Contact Us",

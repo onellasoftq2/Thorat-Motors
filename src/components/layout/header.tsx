@@ -20,7 +20,12 @@ import {
   Fuel,
   ChevronLeft,
   Wrench,
+  Award,
+  Globe,
+  FlaskConical,
+  Route,
 } from "lucide-react";
+import { motion, AnimatePresence } from 'framer-motion';
 
 import { Button } from "@/components/ui/button";
 import {
@@ -108,6 +113,10 @@ const iconMap: { [key: string]: React.ReactNode } = {
     Container: <Container className="h-5 w-5 text-accent" />,
     Fuel: <Fuel className="h-5 w-5 text-accent" />,
     Wrench: <Wrench className="h-5 w-5 text-accent" />,
+    Award: <Award className="h-5 w-5 text-accent" />,
+    Globe: <Globe className="h-5 w-5 text-accent" />,
+    FlaskConical: <FlaskConical className="h-5 w-5 text-accent" />,
+    Route: <Route className="h-5 w-5 text-accent" />,
 };
 
 
@@ -125,6 +134,31 @@ export default function Header() {
   const trailersItems = productsMenu?.megaMenu?.find(section => section.title === 'Trailers')?.items || [];
   const cabinsItems = productsMenu?.megaMenu?.find(section => section.title === 'Portable Cabins')?.items || [];
   const conversionsItems = productsMenu?.megaMenu?.find(section => section.title === 'Containers & Conversions')?.items || [];
+
+  const industriesMenuData = navMenu.find(item => item.title === 'Industries');
+  const activeCategoryData = industriesMenuData?.interactiveMegaMenu?.find(c => c.slug === activeIndustry);
+
+  const getYouTubeEmbedUrl = (url: string | undefined): string => {
+      if (!url) return "";
+      try {
+          const videoUrl = new URL(url);
+          let videoId = '';
+          if (videoUrl.hostname === 'youtu.be') {
+              videoId = videoUrl.pathname.substring(1);
+          } else if (videoUrl.hostname.includes('youtube.com')) {
+              videoId = videoUrl.searchParams.get('v') || '';
+          }
+          
+          if (videoId) {
+              return `https://www.youtube.com/embed/${videoId}`;
+          }
+      } catch (e) {
+          console.error("Invalid YouTube URL", e);
+      }
+      return "";
+  };
+
+  const embedUrl = getYouTubeEmbedUrl(activeCategoryData?.videoUrl);
 
 
   return (
@@ -192,9 +226,9 @@ export default function Header() {
                   </Button>
                 </HoverCardTrigger>
                 <HoverCardContent
-                  className="fixed right-[-250px] top-3 p-0 lg:w-[900px]"
+                  className="fixed right-[-300px] top-3 p-0 lg:w-[1000px]"
                 >
-                  <div className="grid grid-cols-4">
+                  <div className="grid grid-cols-5">
                     <div className="col-span-1 bg-secondary/50 p-4">
                       <ul className="space-y-1">
                         {item.interactiveMegaMenu.map((category) => (
@@ -241,7 +275,7 @@ export default function Header() {
                               <ul className="space-y-1">
                                 {activeSubMenuItem.subItems.map(grandchild => (
                                   <li key={grandchild.name}>
-                                    <Link href={grandchild.href} className="group flex items-center justify-between p-2 rounded-md hover:bg-secondary">
+                                    <Link href={grandchild.href || '#'} className="group flex items-center justify-between p-2 rounded-md hover:bg-secondary">
                                       <div className="flex items-center gap-3">
                                         {grandchild.icon && iconMap[grandchild.icon as string] && (
                                           <div>{iconMap[grandchild.icon as string]}</div>
@@ -257,68 +291,71 @@ export default function Header() {
                           )
                         }
 
-                        if (activeCat.slug === 'design-homologation' || activeCat.slug === 'manufacturing') {
-                          return (
-                            <div>
-                              <h3 className="text-lg font-semibold mb-4 text-primary">{activeCat.title}</h3>
-                              <ul className="flex flex-col space-y-1">
-                                {activeCat.items.map(subItem => (
-                                    <li key={subItem.name}>
-                                        {!subItem.subItems ? (
-                                            <Link href={subItem.href} className="group flex items-center justify-between p-3 rounded-md transition-colors hover:bg-secondary">
-                                                <div className="flex items-center">
-                                                    {subItem.icon && iconMap[subItem.icon as string] && <div className="mr-4">{iconMap[subItem.icon as string]}</div>}
-                                                    <div>
-                                                        <p className="font-medium text-foreground group-hover:text-primary transition-colors">{subItem.name}</p>
-                                                        {subItem.description && <p className="text-sm text-muted-foreground">{subItem.description}</p>}
-                                                    </div>
-                                                </div>
-                                                <ChevronRight className="h-5 w-5 text-muted-foreground transition-transform group-hover:translate-x-1" />
-                                            </Link>
-                                        ) : (
-                                            <button onClick={() => setActiveSubMenu(subItem.name)} className="group flex w-full items-center justify-between p-3 rounded-md transition-colors hover:bg-secondary text-left">
-                                                <div className="flex items-center">
-                                                    {subItem.icon && iconMap[subItem.icon as string] && <div className="mr-4">{iconMap[subItem.icon as string]}</div>}
-                                                    <div>
-                                                        <p className="font-medium text-foreground group-hover:text-primary transition-colors">{subItem.name}</p>
-                                                        {subItem.description && <p className="text-sm text-muted-foreground">{subItem.description}</p>}
-                                                    </div>
-                                                </div>
-                                                <ChevronRight className="h-5 w-5 text-muted-foreground transition-transform group-hover:translate-x-1" />
-                                            </button>
-                                        )}
-                                    </li>
-                                ))}
-                              </ul>
-                            </div>
-                          )
-                        }
-
                         return (
                           <div>
                             <h3 className="text-lg font-semibold mb-4 text-primary">{activeCat.title}</h3>
-                            <ul className="grid grid-cols-2 gap-x-6 gap-y-3">
+                            <ul className="flex flex-col space-y-1">
                               {activeCat.items.map(subItem => (
-                                <li key={subItem.name}>
-                                  <Link href={subItem.href} className="block p-2 rounded-md hover:bg-secondary text-muted-foreground hover:text-primary">
-                                    {subItem.name}
-                                  </Link>
-                                </li>
+                                  <li key={subItem.name}>
+                                      {!subItem.subItems ? (
+                                          <Link href={subItem.href || '#'} className="group flex items-center justify-between p-3 rounded-md transition-colors hover:bg-secondary">
+                                              <div className="flex items-center">
+                                                  {subItem.icon && iconMap[subItem.icon as string] && <div className="mr-4">{iconMap[subItem.icon as string]}</div>}
+                                                  <div>
+                                                      <p className="font-medium text-foreground group-hover:text-primary transition-colors">{subItem.name}</p>
+                                                      {subItem.description && <p className="text-sm text-muted-foreground">{subItem.description}</p>}
+                                                  </div>
+                                              </div>
+                                              <ChevronRight className="h-5 w-5 text-muted-foreground transition-transform group-hover:translate-x-1" />
+                                          </Link>
+                                      ) : (
+                                          <button onClick={() => setActiveSubMenu(subItem.name)} className="group flex w-full items-center justify-between p-3 rounded-md transition-colors hover:bg-secondary text-left">
+                                              <div className="flex items-center">
+                                                  {subItem.icon && iconMap[subItem.icon as string] && <div className="mr-4">{iconMap[subItem.icon as string]}</div>}
+                                                  <div>
+                                                      <p className="font-medium text-foreground group-hover:text-primary transition-colors">{subItem.name}</p>
+                                                      {subItem.description && <p className="text-sm text-muted-foreground">{subItem.description}</p>}
+                                                  </div>
+                                              </div>
+                                              <ChevronRight className="h-5 w-5 text-muted-foreground transition-transform group-hover:translate-x-1" />
+                                          </button>
+                                      )}
+                                  </li>
                               ))}
                             </ul>
                           </div>
-                        );
+                        )
                       })()}
                     </div>
-                    {item.interactiveFeatured && (
-                       <div className="col-span-1 bg-primary/5 p-6 flex flex-col justify-center">
-                          <h3 className="font-bold text-lg mb-2 text-primary">{item.interactiveFeatured.title}</h3>
-                          <p className="text-sm text-muted-foreground mb-4">{item.interactiveFeatured.description}</p>
-                          <Button asChild variant="outline" size="sm">
-                            <Link href={item.interactiveFeatured.href}>Contact Us <ArrowRight className="ml-2 h-4 w-4" /></Link>
-                          </Button>
-                       </div>
-                    )}
+                    <div className="col-span-2 bg-primary/5 p-4 flex flex-col justify-center">
+                      <AnimatePresence mode="wait">
+                        <motion.div
+                          key={activeIndustry}
+                          initial={{ opacity: 0 }}
+                          animate={{ opacity: 1 }}
+                          exit={{ opacity: 0 }}
+                          transition={{ duration: 0.3 }}
+                          className="w-full aspect-video"
+                        >
+                          {embedUrl ? (
+                            <iframe
+                              width="100%"
+                              height="100%"
+                              src={`${embedUrl}?autoplay=1&mute=1&loop=1&playlist=${embedUrl.split('/').pop()}&controls=0&modestbranding=1&showinfo=0`}
+                              title="YouTube video player"
+                              frameBorder="0"
+                              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                              allowFullScreen
+                              className="rounded-md"
+                            ></iframe>
+                          ) : (
+                            <div className="w-full h-full bg-secondary rounded-md flex items-center justify-center">
+                              <p className="text-muted-foreground">Select a category</p>
+                            </div>
+                          )}
+                        </motion.div>
+                      </AnimatePresence>
+                    </div>
                   </div>
                 </HoverCardContent>
               </HoverCard>
@@ -495,7 +532,7 @@ export default function Header() {
                                                                     {subItem.subItems.map(grandchild => (
                                                                         <li key={grandchild.name}>
                                                                             <Link
-                                                                                href={grandchild.href}
+                                                                                href={grandchild.href || '#'}
                                                                                 onClick={() => setMobileMenuOpen(false)}
                                                                                 className={cn("block py-2 text-sm", pathname === grandchild.href ? 'text-primary font-bold' : 'text-muted-foreground')}
                                                                             >
@@ -509,7 +546,7 @@ export default function Header() {
                                                     </Accordion>
                                                 ) : (
                                                     <Link
-                                                    href={subItem.href}
+                                                    href={subItem.href || '#'}
                                                     onClick={() => setMobileMenuOpen(false)}
                                                     className={cn("block py-2 text-sm", pathname === subItem.href ? 'text-primary font-bold' : 'text-muted-foreground')}
                                                     >
