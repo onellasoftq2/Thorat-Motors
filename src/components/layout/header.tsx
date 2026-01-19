@@ -13,6 +13,11 @@ import {
   ShieldCheck,
   Package,
   Users,
+  Car,
+  Truck,
+  Bus,
+  Container,
+  Fuel,
 } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
@@ -35,6 +40,13 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
 import { navMenu } from "@/lib/data";
 import { cn } from "@/lib/utils";
 import { ScrollArea } from "@/components/ui/scroll-area";
@@ -88,6 +100,11 @@ const iconMap: { [key: string]: React.ReactNode } = {
     ShieldCheck: <ShieldCheck className="h-5 w-5 text-accent" />,
     Package: <Package className="h-5 w-5 text-accent" />,
     Users: <Users className="h-5 w-5 text-accent" />,
+    Car: <Car className="h-5 w-5 text-accent" />,
+    Truck: <Truck className="h-5 w-5 text-accent" />,
+    Bus: <Bus className="h-5 w-5 text-accent" />,
+    Container: <Container className="h-5 w-5 text-accent" />,
+    Fuel: <Fuel className="h-5 w-5 text-accent" />,
 };
 
 
@@ -129,7 +146,7 @@ export default function Header() {
                   </Button>
                 </HoverCardTrigger>
                 <HoverCardContent
-                  className="w-screen max-w-3xl p-0"
+                  className="w-[600px] p-0"
                   align="start"
                   sideOffset={15}
                 >
@@ -168,11 +185,11 @@ export default function Header() {
                   </Button>
                 </HoverCardTrigger>
                 <HoverCardContent
-                  className="w-screen max-w-5xl p-0"
-                  align="start"
+                  className="p-0"
+                  align="center"
                   sideOffset={15}
                 >
-                  <div className="grid grid-cols-4">
+                  <div className="grid grid-cols-4 min-w-[1000px]">
                     <div className="col-span-1 bg-secondary/50 p-4">
                       <ul className="space-y-1">
                         {item.interactiveMegaMenu.map((category) => (
@@ -225,31 +242,37 @@ export default function Header() {
                                                 <ChevronRight className="h-5 w-5 text-muted-foreground transition-transform group-hover:translate-x-1" />
                                             </Link>
                                         ) : (
-                                            <Accordion type="single" collapsible className="w-full">
-                                                <AccordionItem value={subItem.name} className="border-b-0">
-                                                    <AccordionTrigger className="group flex items-center p-3 rounded-md transition-colors hover:bg-secondary hover:no-underline">
+                                            <Dialog>
+                                                <DialogTrigger asChild>
+                                                    <button className="group flex w-full items-center justify-between p-3 rounded-md transition-colors hover:bg-secondary text-left">
                                                         <div className="flex items-center">
                                                             {subItem.icon && iconMap[subItem.icon as string] && <div className="mr-4">{iconMap[subItem.icon as string]}</div>}
                                                             <div>
-                                                                <p className="font-medium text-left text-foreground group-hover:text-primary transition-colors">{subItem.name}</p>
-                                                                {subItem.description && <p className="text-sm text-left text-muted-foreground">{subItem.description}</p>}
+                                                                <p className="font-medium text-foreground group-hover:text-primary transition-colors">{subItem.name}</p>
+                                                                {subItem.description && <p className="text-sm text-muted-foreground">{subItem.description}</p>}
                                                             </div>
                                                         </div>
-                                                    </AccordionTrigger>
-                                                    <AccordionContent>
-                                                        <ul className="pl-12 pt-2 space-y-1">
-                                                            {subItem.subItems.map(grandchild => (
-                                                                <li key={grandchild.name}>
-                                                                    <Link href={grandchild.href} className="flex items-center justify-between p-2 rounded-md hover:bg-secondary text-sm text-muted-foreground hover:text-primary">
-                                                                        {grandchild.name}
-                                                                        <ChevronRight className="h-4 w-4" />
-                                                                    </Link>
-                                                                </li>
-                                                            ))}
-                                                        </ul>
-                                                    </AccordionContent>
-                                                </AccordionItem>
-                                            </Accordion>
+                                                        <ChevronRight className="h-5 w-5 text-muted-foreground transition-transform group-hover:translate-x-1" />
+                                                    </button>
+                                                </DialogTrigger>
+                                                <DialogContent className="sm:max-w-[625px]">
+                                                    <DialogHeader>
+                                                        <DialogTitle>{subItem.name}</DialogTitle>
+                                                    </DialogHeader>
+                                                    <ul className="grid grid-cols-2 gap-x-6 gap-y-3 pt-4">
+                                                        {subItem.subItems.map(grandchild => (
+                                                            <li key={grandchild.name}>
+                                                                <Link
+                                                                    href={grandchild.href}
+                                                                    className="block p-2 rounded-md hover:bg-secondary text-muted-foreground hover:text-primary"
+                                                                >
+                                                                    {grandchild.name}
+                                                                </Link>
+                                                            </li>
+                                                        ))}
+                                                    </ul>
+                                                </DialogContent>
+                                            </Dialog>
                                         )}
                                     </li>
                                 ))}
@@ -450,13 +473,36 @@ export default function Header() {
                                           <ul className="space-y-2 pl-4">
                                             {category.items.map(subItem => (
                                               <li key={subItem.name}>
-                                                <Link
-                                                  href={subItem.href}
-                                                  onClick={() => setMobileMenuOpen(false)}
-                                                  className={cn("block py-2 text-sm", pathname === subItem.href ? 'text-primary font-bold' : 'text-muted-foreground')}
-                                                >
-                                                  {subItem.name}
-                                                </Link>
+                                                {subItem.subItems ? (
+                                                    <Accordion type="single" collapsible>
+                                                        <AccordionItem value={subItem.name} className="border-b-0">
+                                                            <AccordionTrigger className="text-sm py-2 hover:no-underline">{subItem.name}</AccordionTrigger>
+                                                            <AccordionContent>
+                                                                <ul className="pl-4">
+                                                                    {subItem.subItems.map(grandchild => (
+                                                                        <li key={grandchild.name}>
+                                                                            <Link
+                                                                                href={grandchild.href}
+                                                                                onClick={() => setMobileMenuOpen(false)}
+                                                                                className={cn("block py-2 text-sm", pathname === grandchild.href ? 'text-primary font-bold' : 'text-muted-foreground')}
+                                                                            >
+                                                                                {grandchild.name}
+                                                                            </Link>
+                                                                        </li>
+                                                                    ))}
+                                                                </ul>
+                                                            </AccordionContent>
+                                                        </AccordionItem>
+                                                    </Accordion>
+                                                ) : (
+                                                    <Link
+                                                    href={subItem.href}
+                                                    onClick={() => setMobileMenuOpen(false)}
+                                                    className={cn("block py-2 text-sm", pathname === subItem.href ? 'text-primary font-bold' : 'text-muted-foreground')}
+                                                    >
+                                                    {subItem.name}
+                                                    </Link>
+                                                )}
                                               </li>
                                             ))}
                                           </ul>
