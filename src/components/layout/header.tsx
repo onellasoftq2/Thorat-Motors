@@ -4,6 +4,7 @@
 import Link from "next/link";
 import React, { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
+import Image from 'next/image';
 import {
   Menu,
   ChevronDown,
@@ -24,6 +25,7 @@ import {
   Globe,
   FlaskConical,
   Route,
+  PlayCircle,
 } from "lucide-react";
 import { motion, AnimatePresence } from 'framer-motion';
 
@@ -124,10 +126,12 @@ export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeIndustry, setActiveIndustry] = useState(navMenu.find(item => item.interactiveMegaMenu)?.interactiveMegaMenu?.[0].slug || '');
   const [activeSubMenu, setActiveSubMenu] = useState<string | null>(null);
+  const [videoOpen, setVideoOpen] = useState(false);
   const pathname = usePathname();
 
   useEffect(() => {
     setActiveSubMenu(null);
+    setVideoOpen(false);
   }, [activeIndustry]);
 
   const productsMenu = navMenu.find(item => item.title === 'Products');
@@ -137,8 +141,8 @@ export default function Header() {
 
   const industriesMenuData = navMenu.find(item => item.title === 'Industries');
   const activeCategoryData = industriesMenuData?.interactiveMegaMenu?.find(c => c.slug === activeIndustry);
-
-  const getYouTubeEmbedUrl = (url: string | undefined): string => {
+  
+  const getYouTubeVideoId = (url: string | undefined): string => {
       if (!url) return "";
       try {
           const videoUrl = new URL(url);
@@ -148,16 +152,22 @@ export default function Header() {
           } else if (videoUrl.hostname.includes('youtube.com')) {
               videoId = videoUrl.searchParams.get('v') || '';
           }
-          
-          if (videoId) {
-              return `https://www.youtube.com/embed/${videoId}`;
-          }
+          return videoId;
       } catch (e) {
           console.error("Invalid YouTube URL", e);
       }
       return "";
   };
+  
+  const getYouTubeEmbedUrl = (url: string | undefined): string => {
+      const videoId = getYouTubeVideoId(url);
+      if (videoId) {
+          return `https://www.youtube.com/embed/${videoId}`;
+      }
+      return "";
+  };
 
+  const videoId = getYouTubeVideoId(activeCategoryData?.videoUrl);
   const embedUrl = getYouTubeEmbedUrl(activeCategoryData?.videoUrl);
 
 
@@ -228,135 +238,164 @@ export default function Header() {
                 <HoverCardContent
                   className="fixed right-[-300px] top-3 p-0 lg:w-[1000px]"
                 >
-                  <div className="grid grid-cols-5">
-                    <div className="col-span-1 bg-secondary/50 p-4">
-                      <ul className="space-y-1">
-                        {item.interactiveMegaMenu.map((category) => (
-                          <li key={category.slug}>
-                            {category.isLink ? (
-                              <Link
-                                href={category.href || '#'}
-                                className="block w-full rounded-md p-3 transition-colors hover:bg-background/50"
-                              >
-                                <p className="font-semibold">{category.title}</p>
-                                <p className="text-sm text-muted-foreground">{category.description}</p>
-                              </Link>
-                            ) : (
-                              <button
-                                onMouseEnter={() => setActiveIndustry(category.slug)}
-                                className={cn(
-                                  "w-full text-left p-3 rounded-md transition-colors",
-                                  activeIndustry === category.slug ? 'bg-background shadow' : 'hover:bg-background/50'
-                                )}
-                              >
-                                <p className="font-semibold">{category.title}</p>
-                                <p className="text-sm text-muted-foreground">{category.description}</p>
-                              </button>
-                            )}
-                          </li>
-                        ))}
-                      </ul>
+                  {videoOpen && embedUrl ? (
+                    <div className="flex flex-col">
+                        <div className="p-4 bg-secondary/50 flex items-center">
+                            <Button variant="ghost" onClick={() => setVideoOpen(false)} className="flex items-center text-sm">
+                                <ChevronLeft className="h-4 w-4 mr-1" />
+                                Back to {activeCategoryData?.title}
+                            </Button>
+                        </div>
+                        <div className="w-full aspect-video bg-black">
+                            <iframe
+                                width="100%"
+                                height="100%"
+                                src={`${embedUrl}?autoplay=1`}
+                                title="YouTube video player"
+                                frameBorder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowFullScreen
+                            ></iframe>
+                        </div>
                     </div>
-                    <div className="col-span-2 p-6">
-                      {(() => {
-                        const activeCat = item.interactiveMegaMenu.find(c => c.slug === activeIndustry);
-                        if (!activeCat || activeCat.isLink) return null;
-                        
-                        const activeSubMenuItem = activeSubMenu ? activeCat.items.find(i => i.name === activeSubMenu) : null;
+                  ) : (
+                    <div className="grid grid-cols-5">
+                      <div className="col-span-1 bg-secondary/50 p-4">
+                        <ul className="space-y-1">
+                          {item.interactiveMegaMenu.map((category) => (
+                            <li key={category.slug}>
+                              {category.isLink ? (
+                                <Link
+                                  href={category.href || '#'}
+                                  className="block w-full rounded-md p-3 transition-colors hover:bg-background/50"
+                                >
+                                  <p className="font-semibold">{category.title}</p>
+                                  <p className="text-sm text-muted-foreground">{category.description}</p>
+                                </Link>
+                              ) : (
+                                <button
+                                  onMouseEnter={() => setActiveIndustry(category.slug)}
+                                  className={cn(
+                                    "w-full text-left p-3 rounded-md transition-colors",
+                                    activeIndustry === category.slug ? 'bg-background shadow' : 'hover:bg-background/50'
+                                  )}
+                                >
+                                  <p className="font-semibold">{category.title}</p>
+                                  <p className="text-sm text-muted-foreground">{category.description}</p>
+                                </button>
+                              )}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                      <div className="col-span-2 p-6">
+                        {(() => {
+                          const activeCat = item.interactiveMegaMenu.find(c => c.slug === activeIndustry);
+                          if (!activeCat || activeCat.isLink) return null;
+                          
+                          const activeSubMenuItem = activeSubMenu ? activeCat.items.find(i => i.name === activeSubMenu) : null;
 
-                        if (activeSubMenuItem && activeSubMenuItem.subItems) {
+                          if (activeSubMenuItem && activeSubMenuItem.subItems) {
+                            return (
+                              <div>
+                                <button onClick={() => setActiveSubMenu(null)} className="flex items-center text-sm font-medium text-muted-foreground hover:text-foreground mb-4">
+                                  <ChevronLeft className="h-4 w-4 mr-1" />
+                                  Back to {activeCat.title}
+                                </button>
+                                <h3 className="text-lg font-semibold mb-4 text-primary">{activeSubMenuItem.name}</h3>
+                                <ul className="space-y-1">
+                                  {activeSubMenuItem.subItems.map(grandchild => (
+                                    <li key={grandchild.name}>
+                                      <Link href={grandchild.href || '#'} className="group flex items-center justify-between p-2 rounded-md hover:bg-secondary">
+                                        <div className="flex items-center gap-3">
+                                          {grandchild.icon && iconMap[grandchild.icon as string] && (
+                                            <div>{iconMap[grandchild.icon as string]}</div>
+                                          )}
+                                          <span className="font-medium text-muted-foreground group-hover:text-primary">{grandchild.name}</span>
+                                        </div>
+                                        <ChevronRight className="h-5 w-5 text-muted-foreground opacity-0 transition-opacity group-hover:opacity-100" />
+                                      </Link>
+                                    </li>
+                                  ))}
+                                </ul>
+                              </div>
+                            )
+                          }
+
                           return (
                             <div>
-                              <button onClick={() => setActiveSubMenu(null)} className="flex items-center text-sm font-medium text-muted-foreground hover:text-foreground mb-4">
-                                <ChevronLeft className="h-4 w-4 mr-1" />
-                                Back to {activeCat.title}
-                              </button>
-                              <h3 className="text-lg font-semibold mb-4 text-primary">{activeSubMenuItem.name}</h3>
-                              <ul className="space-y-1">
-                                {activeSubMenuItem.subItems.map(grandchild => (
-                                  <li key={grandchild.name}>
-                                    <Link href={grandchild.href || '#'} className="group flex items-center justify-between p-2 rounded-md hover:bg-secondary">
-                                      <div className="flex items-center gap-3">
-                                        {grandchild.icon && iconMap[grandchild.icon as string] && (
-                                          <div>{iconMap[grandchild.icon as string]}</div>
+                              <h3 className="text-lg font-semibold mb-4 text-primary">{activeCat.title}</h3>
+                              <ul className="flex flex-col space-y-1">
+                                {activeCat.items.map(subItem => (
+                                    <li key={subItem.name}>
+                                        {!subItem.subItems ? (
+                                            <Link href={subItem.href || '#'} className="group flex items-center justify-between p-3 rounded-md transition-colors hover:bg-secondary">
+                                                <div className="flex items-center">
+                                                    {subItem.icon && iconMap[subItem.icon as string] && <div className="mr-4">{iconMap[subItem.icon as string]}</div>}
+                                                    <div>
+                                                        <p className="font-medium text-foreground group-hover:text-primary transition-colors">{subItem.name}</p>
+                                                        {subItem.description && <p className="text-sm text-muted-foreground">{subItem.description}</p>}
+                                                    </div>
+                                                </div>
+                                                <ChevronRight className="h-5 w-5 text-muted-foreground transition-transform group-hover:translate-x-1" />
+                                            </Link>
+                                        ) : (
+                                            <button onClick={() => setActiveSubMenu(subItem.name)} className="group flex w-full items-center justify-between p-3 rounded-md transition-colors hover:bg-secondary text-left">
+                                                <div className="flex items-center">
+                                                    {subItem.icon && iconMap[subItem.icon as string] && <div className="mr-4">{iconMap[subItem.icon as string]}</div>}
+                                                    <div>
+                                                        <p className="font-medium text-foreground group-hover:text-primary transition-colors">{subItem.name}</p>
+                                                        {subItem.description && <p className="text-sm text-muted-foreground">{subItem.description}</p>}
+                                                    </div>
+                                                </div>
+                                                <ChevronRight className="h-5 w-5 text-muted-foreground transition-transform group-hover:translate-x-1" />
+                                            </button>
                                         )}
-                                        <span className="font-medium text-muted-foreground group-hover:text-primary">{grandchild.name}</span>
-                                      </div>
-                                      <ChevronRight className="h-5 w-5 text-muted-foreground opacity-0 transition-opacity group-hover:opacity-100" />
-                                    </Link>
-                                  </li>
+                                    </li>
                                 ))}
                               </ul>
                             </div>
                           )
-                        }
-
-                        return (
-                          <div>
-                            <h3 className="text-lg font-semibold mb-4 text-primary">{activeCat.title}</h3>
-                            <ul className="flex flex-col space-y-1">
-                              {activeCat.items.map(subItem => (
-                                  <li key={subItem.name}>
-                                      {!subItem.subItems ? (
-                                          <Link href={subItem.href || '#'} className="group flex items-center justify-between p-3 rounded-md transition-colors hover:bg-secondary">
-                                              <div className="flex items-center">
-                                                  {subItem.icon && iconMap[subItem.icon as string] && <div className="mr-4">{iconMap[subItem.icon as string]}</div>}
-                                                  <div>
-                                                      <p className="font-medium text-foreground group-hover:text-primary transition-colors">{subItem.name}</p>
-                                                      {subItem.description && <p className="text-sm text-muted-foreground">{subItem.description}</p>}
-                                                  </div>
-                                              </div>
-                                              <ChevronRight className="h-5 w-5 text-muted-foreground transition-transform group-hover:translate-x-1" />
-                                          </Link>
-                                      ) : (
-                                          <button onClick={() => setActiveSubMenu(subItem.name)} className="group flex w-full items-center justify-between p-3 rounded-md transition-colors hover:bg-secondary text-left">
-                                              <div className="flex items-center">
-                                                  {subItem.icon && iconMap[subItem.icon as string] && <div className="mr-4">{iconMap[subItem.icon as string]}</div>}
-                                                  <div>
-                                                      <p className="font-medium text-foreground group-hover:text-primary transition-colors">{subItem.name}</p>
-                                                      {subItem.description && <p className="text-sm text-muted-foreground">{subItem.description}</p>}
-                                                  </div>
-                                              </div>
-                                              <ChevronRight className="h-5 w-5 text-muted-foreground transition-transform group-hover:translate-x-1" />
-                                          </button>
-                                      )}
-                                  </li>
-                              ))}
-                            </ul>
-                          </div>
-                        )
-                      })()}
+                        })()}
+                      </div>
+                      <div className="col-span-2 bg-primary/5 p-4 flex flex-col justify-center">
+                        <AnimatePresence mode="wait">
+                          <motion.div
+                            key={activeIndustry}
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            exit={{ opacity: 0 }}
+                            transition={{ duration: 0.3 }}
+                            className="w-full"
+                          >
+                           {videoId ? (
+                                <div
+                                    className="w-full aspect-video relative group cursor-pointer"
+                                    onClick={() => { if (activeCategoryData?.videoUrl) setVideoOpen(true) }}
+                                >
+                                    <Image
+                                        src={`https://img.youtube.com/vi/${videoId}/hqdefault.jpg`}
+                                        alt={activeCategoryData?.title || 'Video thumbnail'}
+                                        layout="fill"
+                                        objectFit="cover"
+                                        className="rounded-md"
+                                    />
+                                    <div className="absolute inset-0 bg-black/30 flex items-center justify-center rounded-md transition-colors group-hover:bg-black/50">
+                                        <PlayCircle className="h-16 w-16 text-white/80 transition-transform group-hover:scale-110" />
+                                    </div>
+                                </div>
+                            ) : (
+                                <div className="w-full aspect-video bg-secondary rounded-md flex items-center justify-center">
+                                <p className="text-muted-foreground">
+                                    {activeCategoryData?.isLink ? 'Details on page' : 'No video available'}
+                                </p>
+                                </div>
+                            )}
+                          </motion.div>
+                        </AnimatePresence>
+                      </div>
                     </div>
-                    <div className="col-span-2 bg-primary/5 p-4 flex flex-col justify-center">
-                      <AnimatePresence mode="wait">
-                        <motion.div
-                          key={activeIndustry}
-                          initial={{ opacity: 0 }}
-                          animate={{ opacity: 1 }}
-                          exit={{ opacity: 0 }}
-                          transition={{ duration: 0.3 }}
-                          className="w-full aspect-video"
-                        >
-                          {embedUrl ? (
-                            <iframe
-                              width="100%"
-                              height="100%"
-                              src={`${embedUrl}?autoplay=1&mute=1&loop=1&playlist=${embedUrl.split('/').pop()}&controls=0&modestbranding=1&showinfo=0`}
-                              title="YouTube video player"
-                              frameBorder="0"
-                              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                              allowFullScreen
-                              className="rounded-md"
-                            ></iframe>
-                          ) : (
-                            <div className="w-full h-full bg-secondary rounded-md flex items-center justify-center">
-                              <p className="text-muted-foreground">Select a category</p>
-                            </div>
-                          )}
-                        </motion.div>
-                      </AnimatePresence>
-                    </div>
-                  </div>
+                  )}
                 </HoverCardContent>
               </HoverCard>
             ) : item.items ? ( // Services Dropdown
