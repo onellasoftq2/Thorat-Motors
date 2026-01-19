@@ -111,10 +111,10 @@ export const navMenu: NavMenu[] = [
             description: "Partnering with certified approval bodies.", 
             icon: 'ShieldCheck',
             subItems: [
-              { name: "ARAI", href: "/industries/design-homologation/approval-institute/arai" },
-              { name: "ICAT", href: "/industries/design-homologation/approval-institute/icat" },
-              { name: "VRDE", href: "/industries/design-homologation/approval-institute/vrde" },
-              { name: "CIRT", href: "/industries/design-homologation/approval-institute/cirt" },
+              { name: "ARAI", href: "/industries/design-homologation/approval-institute/arai", icon: "Award" },
+              { name: "ICAT", href: "/industries/design-homologation/approval-institute/icat", icon: "Globe" },
+              { name: "VRDE", href: "/industries/design-homologation/approval-institute/vrde", icon: "FlaskConical" },
+              { name: "CIRT", href: "/industries/design-homologation/approval-institute/cirt", icon: "Route" },
             ]
           },
           {
@@ -151,7 +151,18 @@ export const navMenu: NavMenu[] = [
                 { name: "Bulker Trailers", href: "/industries/manufacturing/bulkers/bulker-trailers" },
             ]
           },
-          { name: "Trailers", href: "/industries/manufacturing/trailers", description: "Flatbed, skeletal, and side-wall models.", icon: "Truck" },
+          { 
+            name: "Trailers", 
+            description: "Flatbed, skeletal, and side-wall models.", 
+            icon: "Truck",
+            subItems: [
+              { name: "Flatbed Trailers", href: "/industries/manufacturing/trailers/flatbed" },
+              { name: "Sidewall Trailers", href: "/industries/manufacturing/trailers/sidewall" },
+              { name: "Tip Trailers", href: "/industries/manufacturing/trailers/tip" },
+              { name: "Skeletal Trailers", href: "/industries/manufacturing/trailers/skeletal" },
+              { name: "Semi Lowbed Trailers", href: "/industries/manufacturing/trailers/semi-lowbed" },
+            ]
+          },
           { name: "Tankers", href: "/industries/manufacturing/tankers", description: "For liquid and gas transportation.", icon: "Fuel" },
           { name: "Load bodies", href: "/industries/manufacturing/load-bodies", description: "Custom-built for various truck chassis.", icon: "Wrench" },
         ],
@@ -753,5 +764,6 @@ export const whyChooseUs: WhyChooseUsItem[] = [
         imageUrl: 'https://images.unsplash.com/photo-1556761175-5973dc0f32e7?q=80&w=1932&auto=format&fit=crop&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
     },
 ];
+
 
 
