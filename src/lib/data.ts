@@ -1,7 +1,7 @@
 
 export type NavMenuItem = {
   name: string;
-  href: string;
+  href?: string;
   description?: string;
   icon?: string;
   subItems?: NavMenuItem[];
@@ -108,7 +108,6 @@ export const navMenu: NavMenu[] = [
           { name: "List of AIS", href: "/industries/design-homologation/ais-list", description: "Automotive Industry Standards compliance.", icon: 'ListChecks' },
           { 
             name: "Institute of approval", 
-            href: "/industries/design-homologation/approval-institute", 
             description: "Partnering with certified approval bodies.", 
             icon: 'ShieldCheck',
             subItems: [
@@ -120,7 +119,6 @@ export const navMenu: NavMenu[] = [
           },
           {
             name: "Products",
-            href: "/industries/design-homologation/products",
             description: "Our range of certified products.",
             icon: 'Package',
             subItems: [
@@ -744,3 +742,4 @@ export const whyChooseUs: WhyChooseUsItem[] = [
         imageUrl: 'https://images.unsplash.com/photo-1556761175-5973dc0f32e7?q=80&w=1932&auto=format&fit=crop&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
     },
 ];
+
