@@ -139,7 +139,18 @@ export const navMenu: NavMenu[] = [
         slug: "manufacturing",
         description: "High-precision fabrication and assembly.",
         items: [
-          { name: "Bulkers", href: "/industries/manufacturing/bulkers", description: "For bulk cement and fly ash transport.", icon: "Fuel" },
+          { 
+            name: "Bulkers", 
+            description: "For bulk cement and fly ash transport.", 
+            icon: "Fuel",
+            subItems: [
+                { name: "Cement Bulkers", href: "/industries/manufacturing/bulkers/cement-bulkers" },
+                { name: "Rigid Vehicle", href: "/industries/manufacturing/bulkers/rigid-vehicle" },
+                { name: "Tipping Bulkers", href: "/industries/manufacturing/bulkers/tipping-bulkers" },
+                { name: "Food Bulkers", href: "/industries/manufacturing/bulkers/food-bulkers" },
+                { name: "Bulker Trailers", href: "/industries/manufacturing/bulkers/bulker-trailers" },
+            ]
+          },
           { name: "Trailers", href: "/industries/manufacturing/trailers", description: "Flatbed, skeletal, and side-wall models.", icon: "Truck" },
           { name: "Tankers", href: "/industries/manufacturing/tankers", description: "For liquid and gas transportation.", icon: "Fuel" },
           { name: "Load bodies", href: "/industries/manufacturing/load-bodies", description: "Custom-built for various truck chassis.", icon: "Wrench" },
@@ -742,4 +753,5 @@ export const whyChooseUs: WhyChooseUsItem[] = [
         imageUrl: 'https://images.unsplash.com/photo-1556761175-5973dc0f32e7?q=80&w=1932&auto=format&fit=crop&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
     },
 ];
+
 
