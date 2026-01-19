@@ -8,6 +8,7 @@ import {
   Menu,
   ChevronDown,
   ArrowRight,
+  ChevronRight,
 } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
@@ -192,6 +193,28 @@ export default function Header() {
                       {(() => {
                         const activeCat = item.interactiveMegaMenu.find(c => c.slug === activeIndustry);
                         if (!activeCat || activeCat.isLink) return null;
+
+                        if (activeCat.slug === 'design-homologation') {
+                          return (
+                            <div>
+                              <h3 className="text-lg font-semibold mb-4 text-primary">{activeCat.title}</h3>
+                              <ul className="flex flex-col space-y-1">
+                                {activeCat.items.map(subItem => (
+                                  <li key={subItem.name}>
+                                    <Link href={subItem.href} className="group flex items-center justify-between p-3 rounded-md transition-colors hover:bg-secondary">
+                                      <div>
+                                        <p className="font-medium text-foreground group-hover:text-primary transition-colors">{subItem.name}</p>
+                                        {subItem.description && <p className="text-sm text-muted-foreground">{subItem.description}</p>}
+                                      </div>
+                                      <ChevronRight className="h-5 w-5 text-muted-foreground transition-transform group-hover:translate-x-1" />
+                                    </Link>
+                                  </li>
+                                ))}
+                              </ul>
+                            </div>
+                          )
+                        }
+
                         return (
                           <div>
                             <h3 className="text-lg font-semibold mb-4 text-primary">{activeCat.title}</h3>

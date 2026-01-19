@@ -2,6 +2,7 @@
 export type NavMenuItem = {
   name: string;
   href: string;
+  description?: string;
 };
 
 export type NavMenuSection = {
@@ -102,12 +103,12 @@ export const navMenu: NavMenu[] = [
         slug: "design-homologation",
         description: "Certification & compliance services.",
         items: [
-          { name: "List of AIS", href: "/industries/design-homologation/ais-list" },
-          { name: "Institute of approval", href: "/industries/design-homologation/approval-institute" },
-          { name: "Products", href: "/industries/design-homologation/products" },
-          { name: "Clients", href: "/industries/design-homologation/clients" },
-          { name: "Testimonial", href: "/industries/design-homologation/testimonials" },
-          { name: "Enquiry", href: "/industries/design-homologation/enquiry" },
+          { name: "List of AIS", href: "/industries/design-homologation/ais-list", description: "Automotive Industry Standards compliance." },
+          { name: "Institute of approval", href: "/industries/design-homologation/approval-institute", description: "Partnering with certified approval bodies." },
+          { name: "Products", href: "/industries/design-homologation/products", description: "Our range of certified products." },
+          { name: "Clients", href: "/industries/design-homologation/clients", description: "Our valued partners and clients." },
+          { name: "Testimonial", href: "/industries/design-homologation/testimonials", description: "What our clients say about us." },
+          { name: "Enquiry", href: "/industries/design-homologation/enquiry", description: "Get in touch for certification needs." },
         ],
       },
       {
