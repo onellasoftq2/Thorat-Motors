@@ -2,7 +2,7 @@
 "use client";
 
 import Link from "next/link";
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
 import {
   Menu,
@@ -237,11 +237,17 @@ export default function Header() {
                                 Back to Homologation
                               </button>
                               <h3 className="text-lg font-semibold mb-4 text-primary">{productsItem.name}</h3>
-                              <ul className="grid grid-cols-2 gap-x-6 gap-y-3">
+                              <ul className="space-y-1">
                                 {productsItem.subItems.map(grandchild => (
                                   <li key={grandchild.name}>
-                                    <Link href={grandchild.href} className="block p-2 rounded-md hover:bg-secondary text-muted-foreground hover:text-primary">
-                                      {grandchild.name}
+                                    <Link href={grandchild.href} className="group flex items-center justify-between p-2 rounded-md hover:bg-secondary">
+                                      <div className="flex items-center gap-3">
+                                        {grandchild.icon && iconMap[grandchild.icon as string] && (
+                                          <div>{iconMap[grandchild.icon as string]}</div>
+                                        )}
+                                        <span className="font-medium text-muted-foreground group-hover:text-primary">{grandchild.name}</span>
+                                      </div>
+                                      <ChevronRight className="h-5 w-5 text-muted-foreground opacity-0 transition-opacity group-hover:opacity-100" />
                                     </Link>
                                   </li>
                                 ))}
