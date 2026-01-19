@@ -146,9 +146,7 @@ export default function Header() {
                   </Button>
                 </HoverCardTrigger>
                 <HoverCardContent
-                  className="w-[600px] p-0"
-                  align="start"
-                  sideOffset={15}
+                  className="fixed left-1/2 top-16 -translate-x-1/2 w-[600px] p-0"
                 >
                   <div className="grid grid-cols-1 gap-x-8 gap-y-10 p-8 md:grid-cols-3">
                     {item.megaMenu.map((section) => (
