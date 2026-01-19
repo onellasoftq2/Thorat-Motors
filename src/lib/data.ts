@@ -28,7 +28,7 @@ export type InteractiveFeaturedItem = {
 }
 
 export type NavMenu = {
-  title: string;
+  title:string;
   href?: string;
   megaMenu?: NavMenuSection[];
   interactiveMegaMenu?: InteractiveMegaMenuItem[];
