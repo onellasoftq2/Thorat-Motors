@@ -256,15 +256,15 @@ export default function Header() {
                 </HoverCardTrigger>
                 <HoverCardContent
                   className={cn(
-                      "fixed top-16 p-0 lg:w-[1000px] right-1/2 translate-x-1/2",
-                      videoOpen && "w-full max-w-none right-0 translate-x-0 h-[calc(100vh-4rem)]"
+                      "fixed right-[-250px] top-3 lg:w-[900]",
+                      videoOpen && "fixed right-[-250px] top-3 lg:w-[900] h-[calc(100vh-120px)]"
                   )}
                 >
                   {videoOpen && embedUrl ? (
                     <div className="flex flex-col h-full">
-                        <div className="p-4 bg-secondary/50 flex items-center shrink-0">
-                            <Button variant="ghost" onClick={() => setVideoOpen(false)} className="flex items-center text-sm">
-                                <ChevronLeft className="h-4 w-4 mr-1" />
+                        <div className="pb-4 px-0 bg-secondary/50 flex items-center shrink-0">
+                            <Button variant="ghost" onClick={() => setVideoOpen(false)} className="px-1 flex items-center text-sm">
+                                <ChevronLeft className="h-4 w-4 mr-0" />
                                 Back to {activeCategoryData?.title}
                             </Button>
                         </div>
