@@ -1,3 +1,4 @@
+
 "use client";
 
 import Link from "next/link";
@@ -8,6 +9,10 @@ import {
   ChevronDown,
   ArrowRight,
   ChevronRight,
+  ListChecks,
+  ShieldCheck,
+  Package,
+  Users,
 } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
@@ -77,6 +82,14 @@ function Logo() {
     </Link>
   );
 }
+
+const iconMap: { [key: string]: React.ReactNode } = {
+    ListChecks: <ListChecks className="h-5 w-5 text-accent" />,
+    ShieldCheck: <ShieldCheck className="h-5 w-5 text-accent" />,
+    Package: <Package className="h-5 w-5 text-accent" />,
+    Users: <Users className="h-5 w-5 text-accent" />,
+};
+
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -156,7 +169,7 @@ export default function Header() {
                 </HoverCardTrigger>
                 <HoverCardContent
                   className="w-screen max-w-5xl p-0"
-                  align="center"
+                  align="start"
                   sideOffset={15}
                 >
                   <div className="grid grid-cols-4">
@@ -199,15 +212,46 @@ export default function Header() {
                               <h3 className="text-lg font-semibold mb-4 text-primary">{activeCat.title}</h3>
                               <ul className="flex flex-col space-y-1">
                                 {activeCat.items.map(subItem => (
-                                  <li key={subItem.name}>
-                                    <Link href={subItem.href} className="group flex items-center justify-between p-3 rounded-md transition-colors hover:bg-secondary">
-                                      <div>
-                                        <p className="font-medium text-foreground group-hover:text-primary transition-colors">{subItem.name}</p>
-                                        {subItem.description && <p className="text-sm text-muted-foreground">{subItem.description}</p>}
-                                      </div>
-                                      <ChevronRight className="h-5 w-5 text-muted-foreground transition-transform group-hover:translate-x-1" />
-                                    </Link>
-                                  </li>
+                                    <li key={subItem.name}>
+                                        {!subItem.subItems ? (
+                                            <Link href={subItem.href} className="group flex items-center justify-between p-3 rounded-md transition-colors hover:bg-secondary">
+                                                <div className="flex items-center">
+                                                    {subItem.icon && iconMap[subItem.icon as string] && <div className="mr-4">{iconMap[subItem.icon as string]}</div>}
+                                                    <div>
+                                                        <p className="font-medium text-foreground group-hover:text-primary transition-colors">{subItem.name}</p>
+                                                        {subItem.description && <p className="text-sm text-muted-foreground">{subItem.description}</p>}
+                                                    </div>
+                                                </div>
+                                                <ChevronRight className="h-5 w-5 text-muted-foreground transition-transform group-hover:translate-x-1" />
+                                            </Link>
+                                        ) : (
+                                            <Accordion type="single" collapsible className="w-full">
+                                                <AccordionItem value={subItem.name} className="border-b-0">
+                                                    <AccordionTrigger className="group flex items-center p-3 rounded-md transition-colors hover:bg-secondary hover:no-underline">
+                                                        <div className="flex items-center">
+                                                            {subItem.icon && iconMap[subItem.icon as string] && <div className="mr-4">{iconMap[subItem.icon as string]}</div>}
+                                                            <div>
+                                                                <p className="font-medium text-left text-foreground group-hover:text-primary transition-colors">{subItem.name}</p>
+                                                                {subItem.description && <p className="text-sm text-left text-muted-foreground">{subItem.description}</p>}
+                                                            </div>
+                                                        </div>
+                                                    </AccordionTrigger>
+                                                    <AccordionContent>
+                                                        <ul className="pl-12 pt-2 space-y-1">
+                                                            {subItem.subItems.map(grandchild => (
+                                                                <li key={grandchild.name}>
+                                                                    <Link href={grandchild.href} className="flex items-center justify-between p-2 rounded-md hover:bg-secondary text-sm text-muted-foreground hover:text-primary">
+                                                                        {grandchild.name}
+                                                                        <ChevronRight className="h-4 w-4" />
+                                                                    </Link>
+                                                                </li>
+                                                            ))}
+                                                        </ul>
+                                                    </AccordionContent>
+                                                </AccordionItem>
+                                            </Accordion>
+                                        )}
+                                    </li>
                                 ))}
                               </ul>
                             </div>

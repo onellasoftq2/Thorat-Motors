@@ -3,6 +3,8 @@ export type NavMenuItem = {
   name: string;
   href: string;
   description?: string;
+  icon?: string;
+  subItems?: NavMenuItem[];
 };
 
 export type NavMenuSection = {
@@ -103,10 +105,24 @@ export const navMenu: NavMenu[] = [
         slug: "design-homologation",
         description: "Certification & compliance services.",
         items: [
-          { name: "List of AIS", href: "/industries/design-homologation/ais-list", description: "Automotive Industry Standards compliance." },
-          { name: "Institute of approval", href: "/industries/design-homologation/approval-institute", description: "Partnering with certified approval bodies." },
-          { name: "Products", href: "/industries/design-homologation/products", description: "Our range of certified products." },
-          { name: "Clients", href: "/industries/design-homologation/clients", description: "Our valued partners and clients." },
+          { name: "List of AIS", href: "/industries/design-homologation/ais-list", description: "Automotive Industry Standards compliance.", icon: 'ListChecks' },
+          { name: "Institute of approval", href: "/industries/design-homologation/approval-institute", description: "Partnering with certified approval bodies.", icon: 'ShieldCheck' },
+          {
+            name: "Products",
+            href: "/industries/design-homologation/products",
+            description: "Our range of certified products.",
+            icon: 'Package',
+            subItems: [
+              { name: "EV Approval", href: "/industries/design-homologation/products/ev-approval" },
+              { name: "Trailers", href: "/industries/design-homologation/products/trailers" },
+              { name: "Bus", href: "/industries/design-homologation/products/bus" },
+              { name: "Bulkers", href: "/industries/design-homologation/products/bulkers" },
+              { name: "Reefer Container", href: "/industries/design-homologation/products/refer-container" },
+              { name: "Commercial Vehicle", href: "/industries/design-homologation/products/commercial-vehicle" },
+              { name: "All Products", href: "/industries/design-homologation/products/all" },
+            ]
+          },
+          { name: "Clients", href: "/industries/design-homologation/clients", description: "Our valued partners and clients.", icon: 'Users' },
         ],
       },
       {
@@ -684,7 +700,7 @@ export const industrySolutions = [
       'Accommodation & Bunk Cabins',
       'G+1 Cabin Structures',
     ],
-    image: "https://images.unsplash.com/photo-1568605117036-5fe5e7185743?q=80&w=1974&auto=format&fit=crop&ixlib-rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    image: "https://images.unsplash.com/photo-1568605117036-5fe5e7185743?q=80&w=1974&auto=format&fit=crop&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     icon: "Home"
   },
 ];
