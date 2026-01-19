@@ -127,12 +127,27 @@ export default function Header() {
   const [activeIndustry, setActiveIndustry] = useState(navMenu.find(item => item.interactiveMegaMenu)?.interactiveMegaMenu?.[0].slug || '');
   const [activeSubMenu, setActiveSubMenu] = useState<string | null>(null);
   const [videoOpen, setVideoOpen] = useState(false);
+  const [industriesMenuOpen, setIndustriesMenuOpen] = useState(false);
   const pathname = usePathname();
+
+  const handleIndustriesOpenChange = (open: boolean) => {
+    // If the video is open, don't allow the menu to close on hover-out.
+    if (videoOpen && !open) {
+      return;
+    }
+    setIndustriesMenuOpen(open);
+  };
 
   useEffect(() => {
     setActiveSubMenu(null);
     setVideoOpen(false);
   }, [activeIndustry]);
+
+  useEffect(() => {
+    if (!industriesMenuOpen) {
+        setVideoOpen(false);
+    }
+  }, [industriesMenuOpen]);
 
   const productsMenu = navMenu.find(item => item.title === 'Products');
   const trailersItems = productsMenu?.megaMenu?.find(section => section.title === 'Trailers')?.items || [];
@@ -225,7 +240,11 @@ export default function Header() {
                 </HoverCardContent>
               </HoverCard>
             ) : item.interactiveMegaMenu ? ( // Industries Interactive Mega Menu
-              <HoverCard key={item.title} openDelay={50} closeDelay={100}>
+              <HoverCard 
+                key={item.title}
+                open={industriesMenuOpen}
+                onOpenChange={handleIndustriesOpenChange}
+              >
                 <HoverCardTrigger asChild>
                   <Button
                     variant={isActive ? "default" : "ghost"}
@@ -236,17 +255,20 @@ export default function Header() {
                   </Button>
                 </HoverCardTrigger>
                 <HoverCardContent
-                  className="fixed right-[-300px] top-3 p-0 lg:w-[1000px]"
+                  className={cn(
+                      "fixed top-16 p-0 lg:w-[1000px] right-1/2 translate-x-1/2",
+                      videoOpen && "w-full max-w-none right-0 translate-x-0 h-[calc(100vh-4rem)]"
+                  )}
                 >
                   {videoOpen && embedUrl ? (
-                    <div className="flex flex-col">
-                        <div className="p-4 bg-secondary/50 flex items-center">
+                    <div className="flex flex-col h-full">
+                        <div className="p-4 bg-secondary/50 flex items-center shrink-0">
                             <Button variant="ghost" onClick={() => setVideoOpen(false)} className="flex items-center text-sm">
                                 <ChevronLeft className="h-4 w-4 mr-1" />
                                 Back to {activeCategoryData?.title}
                             </Button>
                         </div>
-                        <div className="w-full aspect-video bg-black">
+                        <div className="w-full grow bg-black">
                             <iframe
                                 width="100%"
                                 height="100%"
@@ -371,7 +393,7 @@ export default function Header() {
                            {videoId ? (
                                 <div
                                     className="w-full aspect-video relative group cursor-pointer"
-                                    onClick={() => { if (activeCategoryData?.videoUrl) setVideoOpen(true) }}
+                                    onClick={() => { if (activeCategoryData?.videoUrl) { setVideoOpen(true); setIndustriesMenuOpen(true); } }}
                                 >
                                     <Image
                                         src={`https://img.youtube.com/vi/${videoId}/hqdefault.jpg`}
@@ -654,3 +676,5 @@ export default function Header() {
     </header>
   );
 }
+
+    
