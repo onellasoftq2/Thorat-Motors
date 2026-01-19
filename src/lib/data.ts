@@ -105,18 +105,6 @@ export const navMenu: NavMenu[] = [
         slug: "design-homologation",
         description: "Certification & compliance services.",
         items: [
-          { name: "List of AIS", href: "/industries/design-homologation/ais-list", description: "Automotive Industry Standards compliance.", icon: 'ListChecks' },
-          {
-            name: "Institute of approval",
-            description: "Partnering with certified approval bodies.",
-            icon: 'ShieldCheck',
-            subItems: [
-              { name: "ARAI", href: "/industries/design-homologation/approval-institute/arai", icon: "Award" },
-              { name: "ICAT", href: "/industries/design-homologation/approval-institute/icat", icon: "Globe" },
-              { name: "VRDE", href: "/industries/design-homologation/approval-institute/vrde", icon: "FlaskConical" },
-              { name: "CIRT", href: "/industries/design-homologation/approval-institute/cirt", icon: "Route" },
-            ]
-          },
           {
             name: "Products",
             description: "Our range of certified products.",
@@ -129,6 +117,18 @@ export const navMenu: NavMenu[] = [
               { name: "Refer Container", href: "/industries/design-homologation/products/refer-container", icon: "Container" },
               { name: "Commercial Vehicle", href: "/industries/design-homologation/products/commercial-vehicle", icon: "Truck" },
               { name: "All Products", href: "/industries/design-homologation/products", icon: "Package" },
+            ]
+          },
+          { name: "List of AIS", href: "/industries/design-homologation/ais-list", description: "Automotive Industry Standards compliance.", icon: 'ListChecks' },
+          {
+            name: "Institute of approval",
+            description: "Partnering with certified approval bodies.",
+            icon: 'ShieldCheck',
+            subItems: [
+              { name: "ARAI", href: "/industries/design-homologation/approval-institute/arai", icon: "Award" },
+              { name: "ICAT", href: "/industries/design-homologation/approval-institute/icat", icon: "Globe" },
+              { name: "VRDE", href: "/industries/design-homologation/approval-institute/vrde", icon: "FlaskConical" },
+              { name: "CIRT", href: "/industries/design-homologation/approval-institute/cirt", icon: "Route" },
             ]
           },
           { name: "Clients", href: "/industries/design-homologation/clients", description: "Our valued partners and clients.", icon: 'Users' },
@@ -702,7 +702,7 @@ export const industrySolutions = [
       'Container Handling Solutions',
       'Logistics Support',
     ],
-    image: "https://images.unsplash.com/photo-1605282221649-8f5367a1c86e?q=80&w=2070&auto=format&fit=crop&ixlib-rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    image: "https://images.unsplash.com/photo-1605282221649-8f5367a1c86e?q=80&w=2070&auto=format&fit=crop&ixid-rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     icon: "Anchor"
   },
   {
