@@ -1,4 +1,3 @@
-
 "use client";
 
 import Link from "next/link";
@@ -157,7 +156,7 @@ export default function Header() {
                 </HoverCardTrigger>
                 <HoverCardContent
                   className="w-screen max-w-5xl p-0"
-                  align="start"
+                  align="center"
                   sideOffset={15}
                 >
                   <div className="grid grid-cols-4">
