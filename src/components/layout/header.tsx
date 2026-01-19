@@ -7,6 +7,7 @@ import { usePathname } from "next/navigation";
 import {
   Menu,
   ChevronDown,
+  ArrowRight,
 } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
@@ -79,6 +80,7 @@ function Logo() {
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [activeIndustry, setActiveIndustry] = useState(navMenu.find(item => item.interactiveMegaMenu)?.interactiveMegaMenu?.[0].slug || '');
   const pathname = usePathname();
 
   const productsMenu = navMenu.find(item => item.title === 'Products');
@@ -99,7 +101,8 @@ export default function Header() {
               (item.href && pathname === item.href) ||
               (item.href && item.href !== '/' && pathname.startsWith(item.href)) ||
               (item.items && item.items.some(subItem => pathname === subItem.href)) ||
-              (item.megaMenu && pathname.startsWith('/products'));
+              (item.megaMenu && pathname.startsWith('/products')) ||
+              (item.interactiveMegaMenu && pathname.startsWith('/industries'));
 
             return item.megaMenu ? ( // Products Mega Menu
               <HoverCard key={item.title} openDelay={50} closeDelay={100}>
@@ -137,6 +140,83 @@ export default function Header() {
                         </ul>
                       </div>
                     ))}
+                  </div>
+                </HoverCardContent>
+              </HoverCard>
+            ) : item.interactiveMegaMenu ? ( // Industries Interactive Mega Menu
+              <HoverCard key={item.title} openDelay={50} closeDelay={100}>
+                <HoverCardTrigger asChild>
+                  <Button
+                    variant={isActive ? "default" : "ghost"}
+                    className="flex items-center text-sm font-medium"
+                  >
+                    <Link href={item.href || '#'}>{item.title}</Link>
+                    <ChevronDown className="ml-1 h-4 w-4" />
+                  </Button>
+                </HoverCardTrigger>
+                <HoverCardContent
+                  className="w-screen max-w-5xl p-0"
+                  align="start"
+                  sideOffset={15}
+                >
+                  <div className="grid grid-cols-4">
+                    <div className="col-span-1 bg-secondary/50 p-4">
+                      <ul className="space-y-1">
+                        {item.interactiveMegaMenu.map((category) => (
+                          <li key={category.slug}>
+                            {category.isLink ? (
+                              <Link
+                                href={category.href || '#'}
+                                className="block w-full rounded-md p-3 transition-colors hover:bg-background/50"
+                              >
+                                <p className="font-semibold">{category.title}</p>
+                                <p className="text-sm text-muted-foreground">{category.description}</p>
+                              </Link>
+                            ) : (
+                              <button
+                                onMouseEnter={() => setActiveIndustry(category.slug)}
+                                className={cn(
+                                  "w-full text-left p-3 rounded-md transition-colors",
+                                  activeIndustry === category.slug ? 'bg-background shadow' : 'hover:bg-background/50'
+                                )}
+                              >
+                                <p className="font-semibold">{category.title}</p>
+                                <p className="text-sm text-muted-foreground">{category.description}</p>
+                              </button>
+                            )}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                    <div className="col-span-2 p-6">
+                      {(() => {
+                        const activeCat = item.interactiveMegaMenu.find(c => c.slug === activeIndustry);
+                        if (!activeCat || activeCat.isLink) return null;
+                        return (
+                          <div>
+                            <h3 className="text-lg font-semibold mb-4 text-primary">{activeCat.title}</h3>
+                            <ul className="grid grid-cols-2 gap-x-6 gap-y-3">
+                              {activeCat.items.map(subItem => (
+                                <li key={subItem.name}>
+                                  <Link href={subItem.href} className="block p-2 rounded-md hover:bg-secondary text-muted-foreground hover:text-primary">
+                                    {subItem.name}
+                                  </Link>
+                                </li>
+                              ))}
+                            </ul>
+                          </div>
+                        );
+                      })()}
+                    </div>
+                    {item.interactiveFeatured && (
+                       <div className="col-span-1 bg-primary/5 p-6 flex flex-col justify-center">
+                          <h3 className="font-bold text-lg mb-2 text-primary">{item.interactiveFeatured.title}</h3>
+                          <p className="text-sm text-muted-foreground mb-4">{item.interactiveFeatured.description}</p>
+                          <Button asChild variant="outline" size="sm">
+                            <Link href={item.interactiveFeatured.href}>Contact Us <ArrowRight className="ml-2 h-4 w-4" /></Link>
+                          </Button>
+                       </div>
+                    )}
                   </div>
                 </HoverCardContent>
               </HoverCard>
@@ -275,6 +355,52 @@ export default function Header() {
                                     </AccordionContent>
                                 </AccordionItem>
                              </Accordion>
+                          </AccordionContent>
+                        </AccordionItem>
+                      ) : item.interactiveMegaMenu ? (
+                        <AccordionItem key={item.title} value={`item-${index}`}>
+                          <AccordionTrigger className={cn("py-3 text-base font-medium", pathname.startsWith('/industries') ? 'text-primary' : '')}>
+                            {item.title}
+                          </AccordionTrigger>
+                          <AccordionContent>
+                            <div className="ml-4">
+                              {item.interactiveMegaMenu.map((category) => (
+                                <div key={category.slug}>
+                                  {category.isLink ? (
+                                    <Link
+                                      href={category.href || '#'}
+                                      onClick={() => setMobileMenuOpen(false)}
+                                      className={cn("block border-b py-3 text-sm font-medium", pathname === category.href ? 'text-primary' : '')}
+                                    >
+                                      {category.title}
+                                    </Link>
+                                  ) : (
+                                    <Accordion type="single" collapsible className="w-full">
+                                      <AccordionItem value={category.slug}>
+                                        <AccordionTrigger className={cn("text-sm py-2", pathname.startsWith(`/industries/${category.slug}`) ? 'text-primary' : '')}>
+                                          {category.title}
+                                        </AccordionTrigger>
+                                        <AccordionContent>
+                                          <ul className="space-y-2 pl-4">
+                                            {category.items.map(subItem => (
+                                              <li key={subItem.name}>
+                                                <Link
+                                                  href={subItem.href}
+                                                  onClick={() => setMobileMenuOpen(false)}
+                                                  className={cn("block py-2 text-sm", pathname === subItem.href ? 'text-primary font-bold' : 'text-muted-foreground')}
+                                                >
+                                                  {subItem.name}
+                                                </Link>
+                                              </li>
+                                            ))}
+                                          </ul>
+                                        </AccordionContent>
+                                      </AccordionItem>
+                                    </Accordion>
+                                  )}
+                                </div>
+                              ))}
+                            </div>
                           </AccordionContent>
                         </AccordionItem>
                       ) : item.items ? (

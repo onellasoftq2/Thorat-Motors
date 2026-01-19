@@ -9,10 +9,27 @@ export type NavMenuSection = {
   items: NavMenuItem[];
 };
 
+export type InteractiveMegaMenuItem = {
+  title: string;
+  slug: string;
+  description: string;
+  isLink?: boolean;
+  href?: string;
+  items: NavMenuItem[];
+}
+
+export type InteractiveFeaturedItem = {
+    title: string;
+    description: string;
+    href: string;
+}
+
 export type NavMenu = {
   title: string;
   href?: string;
   megaMenu?: NavMenuSection[];
+  interactiveMegaMenu?: InteractiveMegaMenuItem[];
+  interactiveFeatured?: InteractiveFeaturedItem;
   items?: NavMenuItem[];
 };
 
@@ -79,6 +96,46 @@ export const navMenu: NavMenu[] = [
   {
     title: "Industries",
     href: "/industries",
+    interactiveMegaMenu: [
+      {
+        title: "Design and Homologation",
+        slug: "design-homologation",
+        description: "Certification & compliance services.",
+        items: [
+          { name: "List of AIS", href: "/industries/design-homologation/ais-list" },
+          { name: "Institute of approval", href: "/industries/design-homologation/approval-institute" },
+          { name: "Products", href: "/industries/design-homologation/products" },
+          { name: "Clients", href: "/industries/design-homologation/clients" },
+          { name: "Testimonial", href: "/industries/design-homologation/testimonials" },
+          { name: "Enquiry", href: "/industries/design-homologation/enquiry" },
+        ],
+      },
+      {
+        title: "Manufacturing",
+        slug: "manufacturing",
+        description: "High-precision fabrication and assembly.",
+        items: [
+          { name: "Bulkers", href: "/industries/manufacturing/bulkers" },
+          { name: "Trailers", href: "/industries/manufacturing/trailers" },
+          { name: "Tankers", href: "/industries/manufacturing/tankers" },
+          { name: "Load bodies", href: "/industries/manufacturing/load-bodies" },
+        ],
+      },
+      {
+        title: "Transportation",
+        slug: "transportation",
+        description: "Reliable logistics and transport support.",
+        isLink: true,
+        href: "/industries/transportation",
+        items: [],
+      },
+    ],
+    interactiveFeatured: {
+      title: "Your Partner in Industrial Growth",
+      description:
+        "From custom engineering to pan-India logistics, we provide solutions that power your progress.",
+      href: "/contact",
+    },
   },
   {
     title: "Contact Us",
