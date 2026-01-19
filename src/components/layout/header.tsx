@@ -192,7 +192,7 @@ export default function Header() {
                   </Button>
                 </HoverCardTrigger>
                 <HoverCardContent
-                  className="fixed left-1/2 top-16 w-[min(1100px,92vw)] -translate-x-1/2 p-0"
+                  className="fixed right-[-250px] top-3 p-0 lg:w-[900px]"
                 >
                   <div className="grid grid-cols-4">
                     <div className="col-span-1 bg-secondary/50 p-4">
