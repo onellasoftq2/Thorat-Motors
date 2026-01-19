@@ -259,8 +259,8 @@ export default function Header() {
                         </div>
                     </div>
                   ) : (
-                    <div className="grid grid-cols-5">
-                      <div className="col-span-1 bg-secondary/50 p-4">
+                    <div className="flex gap-1">
+                      <div className="w-[275px] bg-secondary/50 p-4">
                         <ul className="space-y-1">
                           {item.interactiveMegaMenu.map((category) => (
                             <li key={category.slug}>
@@ -288,7 +288,7 @@ export default function Header() {
                           ))}
                         </ul>
                       </div>
-                      <div className="col-span-2 p-6">
+                      <div className="w-[500px] p-6">
                         {(() => {
                           const activeCat = item.interactiveMegaMenu.find(c => c.slug === activeIndustry);
                           if (!activeCat || activeCat.isLink) return null;
@@ -358,7 +358,7 @@ export default function Header() {
                           )
                         })()}
                       </div>
-                      <div className="col-span-2 bg-primary/5 p-4 flex flex-col justify-center">
+                      <div className="w-[125px] bg-primary/5 p-4 flex flex-col justify-center">
                         <AnimatePresence mode="wait">
                           <motion.div
                             key={activeIndustry}
