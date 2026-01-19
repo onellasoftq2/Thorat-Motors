@@ -174,7 +174,16 @@ export const navMenu: NavMenu[] = [
                 { name: "Gas Tank", href: "/industries/manufacturing/tankers/gas-tank" },
             ]
           },
-          { name: "Load bodies", href: "/industries/manufacturing/load-bodies", description: "Custom-built for various truck chassis.", icon: "Wrench" },
+          { 
+            name: "Load bodies", 
+            description: "Custom-built for various truck chassis.", 
+            icon: "Wrench",
+            subItems: [
+                { name: "TATA", href: "/industries/manufacturing/load-bodies/tata" },
+                { name: "Bharat Benz", href: "/industries/manufacturing/load-bodies/bharat-benz" },
+                { name: "Ashok Leyland", href: "/industries/manufacturing/load-bodies/ashok-leyland" },
+            ]
+          },
         ],
       },
       {
