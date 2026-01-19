@@ -106,9 +106,9 @@ export const navMenu: NavMenu[] = [
         description: "Certification & compliance services.",
         items: [
           { name: "List of AIS", href: "/industries/design-homologation/ais-list", description: "Automotive Industry Standards compliance.", icon: 'ListChecks' },
-          { 
-            name: "Institute of approval", 
-            description: "Partnering with certified approval bodies.", 
+          {
+            name: "Institute of approval",
+            description: "Partnering with certified approval bodies.",
             icon: 'ShieldCheck',
             subItems: [
               { name: "ARAI", href: "/industries/design-homologation/approval-institute/arai", icon: "Award" },
@@ -139,9 +139,9 @@ export const navMenu: NavMenu[] = [
         slug: "manufacturing",
         description: "High-precision fabrication and assembly.",
         items: [
-          { 
-            name: "Bulkers", 
-            description: "For bulk cement and fly ash transport.", 
+          {
+            name: "Bulkers",
+            description: "For bulk cement and fly ash transport.",
             icon: "Fuel",
             subItems: [
                 { name: "Cement Bulkers", href: "/industries/manufacturing/bulkers/cement-bulkers" },
@@ -151,9 +151,9 @@ export const navMenu: NavMenu[] = [
                 { name: "Bulker Trailers", href: "/industries/manufacturing/bulkers/bulker-trailers" },
             ]
           },
-          { 
+          {
             name: "Trailers",
-            description: "Flatbed, skeletal, and side-wall models.", 
+            description: "Flatbed, skeletal, and side-wall models.",
             icon: "Truck",
             subItems: [
               { name: "Flatbed Trailers", href: "/industries/manufacturing/trailers/flatbed" },
@@ -163,7 +163,17 @@ export const navMenu: NavMenu[] = [
               { name: "Semi Lowbed Trailers", href: "/industries/manufacturing/trailers/semi-lowbed" },
             ]
           },
-          { name: "Tankers", href: "/industries/manufacturing/tankers", description: "For liquid and gas transportation.", icon: "Fuel" },
+          {
+            name: "Tankers",
+            description: "For liquid and gas transportation.",
+            icon: "Fuel",
+            subItems: [
+                { name: "Cragganmore Tank", href: "/industries/manufacturing/tankers/cragganmore-tank" },
+                { name: "Milk Tank", href: "/industries/manufacturing/tankers/milk-tank" },
+                { name: "Petroleum Tank", href: "/industries/manufacturing/tankers/petroleum-tank" },
+                { name: "Gas Tank", href: "/industries/manufacturing/tankers/gas-tank" },
+            ]
+          },
           { name: "Load bodies", href: "/industries/manufacturing/load-bodies", description: "Custom-built for various truck chassis.", icon: "Wrench" },
         ],
       },
@@ -683,7 +693,7 @@ export const industrySolutions = [
       'Container Handling Solutions',
       'Logistics Support',
     ],
-    image: "https://images.unsplash.com/photo-1605282221649-8f5367a1c86e?q=80&w=2070&auto=format&fit=crop&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    image: "https://images.unsplash.com/photo-1605282221649-8f5367a1c86e?q=80&w=2070&auto=format&fit=crop&ixlib-rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     icon: "Anchor"
   },
   {
@@ -719,7 +729,7 @@ export const industrySolutions = [
       'Shop & Hotel Cabins',
       'Custom Fabrication',
     ],
-    image: "https://images.unsplash.com/photo-1554118811-1e0d58224f24?q=80&w=2070&auto=format&fit=crop&ixlib-rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    image: "https://images.unsplash.com/photo-1554118811-1e0d58224f24?q=80&w=2070&auto=format&fit=crop&ixid-rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     icon: "ShoppingCart"
   },
   {
@@ -764,6 +774,7 @@ export const whyChooseUs: WhyChooseUsItem[] = [
         imageUrl: 'https://images.unsplash.com/photo-1556761175-5973dc0f32e7?q=80&w=1932&auto=format&fit=crop&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
     },
 ];
+
 
 
 
