@@ -194,7 +194,7 @@ export default function Header() {
                         const activeCat = item.interactiveMegaMenu.find(c => c.slug === activeIndustry);
                         if (!activeCat || activeCat.isLink) return null;
 
-                        if (activeCat.slug === 'design-homologation') {
+                        if (activeCat.slug === 'design-homologation' || activeCat.slug === 'manufacturing') {
                           return (
                             <div>
                               <h3 className="text-lg font-semibold mb-4 text-primary">{activeCat.title}</h3>

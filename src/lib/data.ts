@@ -116,10 +116,10 @@ export const navMenu: NavMenu[] = [
         slug: "manufacturing",
         description: "High-precision fabrication and assembly.",
         items: [
-          { name: "Bulkers", href: "/industries/manufacturing/bulkers" },
-          { name: "Trailers", href: "/industries/manufacturing/trailers" },
-          { name: "Tankers", href: "/industries/manufacturing/tankers" },
-          { name: "Load bodies", href: "/industries/manufacturing/load-bodies" },
+          { name: "Bulkers", href: "/industries/manufacturing/bulkers", description: "For bulk cement and fly ash transport." },
+          { name: "Trailers", href: "/industries/manufacturing/trailers", description: "Flatbed, skeletal, and side-wall models." },
+          { name: "Tankers", href: "/industries/manufacturing/tankers", description: "For liquid and gas transportation." },
+          { name: "Load bodies", href: "/industries/manufacturing/load-bodies", description: "Custom-built for various truck chassis." },
         ],
       },
       {
