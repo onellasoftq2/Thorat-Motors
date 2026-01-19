@@ -2,7 +2,7 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
 import {
   Menu,
@@ -18,6 +18,7 @@ import {
   Bus,
   Container,
   Fuel,
+  ChevronLeft,
 } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
@@ -111,7 +112,12 @@ const iconMap: { [key: string]: React.ReactNode } = {
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeIndustry, setActiveIndustry] = useState(navMenu.find(item => item.interactiveMegaMenu)?.interactiveMegaMenu?.[0].slug || '');
+  const [activeSubMenu, setActiveSubMenu] = useState<string | null>(null);
   const pathname = usePathname();
+
+  useEffect(() => {
+    setActiveSubMenu(null);
+  }, [activeIndustry]);
 
   const productsMenu = navMenu.find(item => item.title === 'Products');
   const trailersItems = productsMenu?.megaMenu?.find(section => section.title === 'Trailers')?.items || [];
@@ -184,7 +190,8 @@ export default function Header() {
                   </Button>
                 </HoverCardTrigger>
                 <HoverCardContent
-                  className="fixed top-3 right-[-250px] lg:w-[900px] p-0"
+                  className="fixed left-1/2 top-16 w-screen max-w-[1100px] -translate-x-1/2 p-0"
+                  sideOffset={0}
                 >
                   <div className="grid grid-cols-4">
                     <div className="col-span-1 bg-secondary/50 p-4">
@@ -219,6 +226,29 @@ export default function Header() {
                       {(() => {
                         const activeCat = item.interactiveMegaMenu.find(c => c.slug === activeIndustry);
                         if (!activeCat || activeCat.isLink) return null;
+                        
+                        const productsItem = activeCat.items.find(i => i.name === 'Products');
+
+                        if (activeSubMenu === 'products' && productsItem && productsItem.subItems) {
+                          return (
+                            <div>
+                              <button onClick={() => setActiveSubMenu(null)} className="flex items-center text-sm font-medium text-muted-foreground hover:text-foreground mb-4">
+                                <ChevronLeft className="h-4 w-4 mr-1" />
+                                Back to Homologation
+                              </button>
+                              <h3 className="text-lg font-semibold mb-4 text-primary">{productsItem.name}</h3>
+                              <ul className="grid grid-cols-2 gap-x-6 gap-y-3">
+                                {productsItem.subItems.map(grandchild => (
+                                  <li key={grandchild.name}>
+                                    <Link href={grandchild.href} className="block p-2 rounded-md hover:bg-secondary text-muted-foreground hover:text-primary">
+                                      {grandchild.name}
+                                    </Link>
+                                  </li>
+                                ))}
+                              </ul>
+                            </div>
+                          )
+                        }
 
                         if (activeCat.slug === 'design-homologation' || activeCat.slug === 'manufacturing') {
                           return (
@@ -239,37 +269,16 @@ export default function Header() {
                                                 <ChevronRight className="h-5 w-5 text-muted-foreground transition-transform group-hover:translate-x-1" />
                                             </Link>
                                         ) : (
-                                            <Dialog>
-                                                <DialogTrigger asChild>
-                                                    <button className="group flex w-full items-center justify-between p-3 rounded-md transition-colors hover:bg-secondary text-left">
-                                                        <div className="flex items-center">
-                                                            {subItem.icon && iconMap[subItem.icon as string] && <div className="mr-4">{iconMap[subItem.icon as string]}</div>}
-                                                            <div>
-                                                                <p className="font-medium text-foreground group-hover:text-primary transition-colors">{subItem.name}</p>
-                                                                {subItem.description && <p className="text-sm text-muted-foreground">{subItem.description}</p>}
-                                                            </div>
-                                                        </div>
-                                                        <ChevronRight className="h-5 w-5 text-muted-foreground transition-transform group-hover:translate-x-1" />
-                                                    </button>
-                                                </DialogTrigger>
-                                                <DialogContent className="sm:max-w-[625px]">
-                                                    <DialogHeader>
-                                                        <DialogTitle>{subItem.name}</DialogTitle>
-                                                    </DialogHeader>
-                                                    <ul className="grid grid-cols-2 gap-x-6 gap-y-3 pt-4">
-                                                        {subItem.subItems.map(grandchild => (
-                                                            <li key={grandchild.name}>
-                                                                <Link
-                                                                    href={grandchild.href}
-                                                                    className="block p-2 rounded-md hover:bg-secondary text-muted-foreground hover:text-primary"
-                                                                >
-                                                                    {grandchild.name}
-                                                                </Link>
-                                                            </li>
-                                                        ))}
-                                                    </ul>
-                                                </DialogContent>
-                                            </Dialog>
+                                            <button onClick={() => setActiveSubMenu('products')} className="group flex w-full items-center justify-between p-3 rounded-md transition-colors hover:bg-secondary text-left">
+                                                <div className="flex items-center">
+                                                    {subItem.icon && iconMap[subItem.icon as string] && <div className="mr-4">{iconMap[subItem.icon as string]}</div>}
+                                                    <div>
+                                                        <p className="font-medium text-foreground group-hover:text-primary transition-colors">{subItem.name}</p>
+                                                        {subItem.description && <p className="text-sm text-muted-foreground">{subItem.description}</p>}
+                                                    </div>
+                                                </div>
+                                                <ChevronRight className="h-5 w-5 text-muted-foreground transition-transform group-hover:translate-x-1" />
+                                            </button>
                                         )}
                                     </li>
                                 ))}

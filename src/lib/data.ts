@@ -111,7 +111,16 @@ export const navMenu: NavMenu[] = [
             name: "Products",
             href: "/industries/design-homologation/products",
             description: "Our range of certified products.",
-            icon: 'Package'
+            icon: 'Package',
+            subItems: [
+              { name: "EV (2-wheelers & 3-wheelers)", href: "/industries/design-homologation/products/ev" },
+              { name: "Trailers", href: "/industries/design-homologation/products/trailers" },
+              { name: "Bus", href: "/industries/design-homologation/products/bus" },
+              { name: "Bulkers", href: "/industries/design-homologation/products/bulkers" },
+              { name: "Refer Container", href: "/industries/design-homologation/products/refer-container" },
+              { name: "Commercial Vehicle", href: "/industries/design-homologation/products/commercial-vehicle" },
+              { name: "All Products", href: "/industries/design-homologation/products" },
+            ]
           },
           { name: "Clients", href: "/industries/design-homologation/clients", description: "Our valued partners and clients.", icon: 'Users' },
         ],
