@@ -107,8 +107,6 @@ export const navMenu: NavMenu[] = [
           { name: "Institute of approval", href: "/industries/design-homologation/approval-institute", description: "Partnering with certified approval bodies." },
           { name: "Products", href: "/industries/design-homologation/products", description: "Our range of certified products." },
           { name: "Clients", href: "/industries/design-homologation/clients", description: "Our valued partners and clients." },
-          { name: "Testimonial", href: "/industries/design-homologation/testimonials", description: "What our clients say about us." },
-          { name: "Enquiry", href: "/industries/design-homologation/enquiry", description: "Get in touch for certification needs." },
         ],
       },
       {
