@@ -19,6 +19,7 @@ import {
   Container,
   Fuel,
   ChevronLeft,
+  Wrench,
 } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
@@ -106,6 +107,7 @@ const iconMap: { [key: string]: React.ReactNode } = {
     Bus: <Bus className="h-5 w-5 text-accent" />,
     Container: <Container className="h-5 w-5 text-accent" />,
     Fuel: <Fuel className="h-5 w-5 text-accent" />,
+    Wrench: <Wrench className="h-5 w-5 text-accent" />,
 };
 
 
