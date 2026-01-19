@@ -260,7 +260,7 @@ export default function Header() {
                     </div>
                   ) : (
                     <div className="flex gap-1">
-                      <div className="w-[275px] bg-secondary/50 p-4">
+                      <div className="w-[300px] bg-secondary/50 p-4">
                         <ul className="space-y-1">
                           {item.interactiveMegaMenu.map((category) => (
                             <li key={category.slug}>
@@ -358,7 +358,7 @@ export default function Header() {
                           )
                         })()}
                       </div>
-                      <div className="w-[125px] bg-primary/5 p-4 flex flex-col justify-center">
+                      <div className="w-[200px] bg-primary/5 p-4 flex flex-col justify-center">
                         <AnimatePresence mode="wait">
                           <motion.div
                             key={activeIndustry}
