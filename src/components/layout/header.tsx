@@ -190,8 +190,7 @@ export default function Header() {
                   </Button>
                 </HoverCardTrigger>
                 <HoverCardContent
-                  className="fixed left-1/2 top-16 w-screen max-w-[1100px] -translate-x-1/2 p-0"
-                  sideOffset={0}
+                  className="fixed left-1/2 top-16 w-[min(1100px,92vw)] -translate-x-1/2 p-0"
                 >
                   <div className="grid grid-cols-4">
                     <div className="col-span-1 bg-secondary/50 p-4">
@@ -227,18 +226,18 @@ export default function Header() {
                         const activeCat = item.interactiveMegaMenu.find(c => c.slug === activeIndustry);
                         if (!activeCat || activeCat.isLink) return null;
                         
-                        const productsItem = activeCat.items.find(i => i.name === 'Products');
+                        const activeSubMenuItem = activeSubMenu ? activeCat.items.find(i => i.name === activeSubMenu) : null;
 
-                        if (activeSubMenu === 'products' && productsItem && productsItem.subItems) {
+                        if (activeSubMenuItem && activeSubMenuItem.subItems) {
                           return (
                             <div>
                               <button onClick={() => setActiveSubMenu(null)} className="flex items-center text-sm font-medium text-muted-foreground hover:text-foreground mb-4">
                                 <ChevronLeft className="h-4 w-4 mr-1" />
-                                Back to Homologation
+                                Back to {activeCat.title}
                               </button>
-                              <h3 className="text-lg font-semibold mb-4 text-primary">{productsItem.name}</h3>
+                              <h3 className="text-lg font-semibold mb-4 text-primary">{activeSubMenuItem.name}</h3>
                               <ul className="space-y-1">
-                                {productsItem.subItems.map(grandchild => (
+                                {activeSubMenuItem.subItems.map(grandchild => (
                                   <li key={grandchild.name}>
                                     <Link href={grandchild.href} className="group flex items-center justify-between p-2 rounded-md hover:bg-secondary">
                                       <div className="flex items-center gap-3">
@@ -275,7 +274,7 @@ export default function Header() {
                                                 <ChevronRight className="h-5 w-5 text-muted-foreground transition-transform group-hover:translate-x-1" />
                                             </Link>
                                         ) : (
-                                            <button onClick={() => setActiveSubMenu('products')} className="group flex w-full items-center justify-between p-3 rounded-md transition-colors hover:bg-secondary text-left">
+                                            <button onClick={() => setActiveSubMenu(subItem.name)} className="group flex w-full items-center justify-between p-3 rounded-md transition-colors hover:bg-secondary text-left">
                                                 <div className="flex items-center">
                                                     {subItem.icon && iconMap[subItem.icon as string] && <div className="mr-4">{iconMap[subItem.icon as string]}</div>}
                                                     <div>
