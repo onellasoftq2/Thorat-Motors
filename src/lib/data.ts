@@ -119,15 +119,10 @@ export const navMenu: NavMenu[] = [
           },
           { name: "List of AIS", href: "/industries/design-homologation/ais-list", description: "Automotive Industry Standards compliance.", icon: 'ListChecks' },
           {
-            name: "Institute of approval",
+            name: "Institute of Approvals",
             description: "Partnering with certified approval bodies.",
             icon: 'ShieldCheck',
-            subItems: [
-              { name: "ARAI", href: "/industries/design-homologation/approval-institute/arai", icon: "Award" },
-              { name: "ICAT", href: "/industries/design-homologation/approval-institute/icat", icon: "Globe" },
-              { name: "VRDE", href: "/industries/design-homologation/approval-institute/vrde", icon: "FlaskConical" },
-              { name: "CIRT", href: "/industries/design-homologation/approval-institute/cirt", icon: "Route" },
-            ]
+            href: "/industries/design-homologation/institute-of-approvals",
           },
           { name: "Clients", href: "/industries/design-homologation/clients", description: "Our valued partners and clients.", icon: 'Users' },
         ],
