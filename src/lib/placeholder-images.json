@@ -170,7 +170,7 @@
     },
     {
       "id": "tipping-bulker-rear",
-      "description": "Close-up of the hydraulic tipping mechanism on a bulker.",
+      "description": "Rear view showing tipping mechanism on a bulker.",
       "imageUrl": "https://images.unsplash.com/photo-1631027124233-b54130386133?q=80&w=1974&auto=format&fit=crop&ixlib-rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "imageHint": "hydraulic system"
     },
@@ -225,13 +225,13 @@
     {
       "id": "flatbed-hero",
       "description": "A robust flatbed trailer parked in an industrial area.",
-      "imageUrl": "https://images.unsplash.com/photo-1621200424997-f81373511649?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageUrl": "https://images.unsplash.com/photo-1621200424997-f81373511649?q=80&w=2070&auto=format&fit=crop&ixlib-rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "imageHint": "flatbed trailer"
     },
     {
       "id": "flatbed-app-machinery",
       "description": "Heavy machinery being transported on a flatbed trailer.",
-      "imageUrl": "https://images.unsplash.com/photo-1558180430-153152a81830?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageUrl": "https://images.unsplash.com/photo-1558180430-153152a81830?q=80&w=2070&auto=format&fit=crop&ixlib-rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "imageHint": "heavy equipment"
     },
     {
@@ -255,13 +255,13 @@
     {
       "id": "flatbed-gallery-usage",
       "description": "A flatbed trailer maneuvering through a construction site.",
-      "imageUrl": "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageUrl": "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?q=80&w=2070&auto=format&fit=crop&ixlib-rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "imageHint": "construction site"
     },
     {
       "id": "flatbed-gallery-cargo",
       "description": "An oversized piece of industrial equipment safely secured on a flatbed.",
-      "imageUrl": "https://images.unsplash.com/photo-1623783749451-c2763f69542e?q=80&w=1962&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageUrl": "https://images.unsplash.com/photo-1623783749451-c2763f69542e?q=80&w=1962&auto=format&fit=crop&ixlib-rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "imageHint": "oversized cargo"
     },
     {
@@ -269,6 +269,54 @@
       "description": "Close-up view of the wooden deck and lashing points on a flatbed trailer.",
       "imageUrl": "https://images.unsplash.com/photo-1620290457699-23a9d977e5d1?q=80&w=1932&auto=format&fit=crop&ixlib-rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "imageHint": "trailer deck"
+    },
+    {
+      "id": "sidewall-hero",
+      "description": "A modern sidewall trailer on an open road.",
+      "imageUrl": "https://images.unsplash.com/photo-1609341066376-0c389aaa7998?q=80&w=1974&auto=format&fit=crop&ixlib-rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageHint": "side wall trailer"
+    },
+    {
+      "id": "sidewall-app-agri",
+      "description": "A sidewall trailer being loaded with sacks of grain at a farm.",
+      "imageUrl": "https://images.unsplash.com/photo-1599422533282-3f8d3630d7b3?q=80&w=2070&auto=format&fit=crop&ixlib-rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageHint": "farm transport"
+    },
+    {
+      "id": "sidewall-app-fmcg",
+      "description": "A sidewall trailer being loaded with packaged goods at a warehouse.",
+      "imageUrl": "https://images.unsplash.com/photo-1576674443793-3a3a4c5a7a7a?q=80&w=2070&auto=format&fit=crop&ixlib-rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageHint": "logistics warehouse"
+    },
+    {
+      "id": "sidewall-app-construction",
+      "description": "A sidewall trailer transporting cement bags and other materials at a construction site.",
+      "imageUrl": "https://images.unsplash.com/photo-1578580234723-45a7df9397a6?q=80&w=1974&auto=format&fit=crop&ixlib-rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageHint": "construction materials"
+    },
+    {
+      "id": "sidewall-app-logistics",
+      "description": "A fleet of sidewall trailers at a regional logistics hub.",
+      "imageUrl": "https://images.unsplash.com/photo-1614909520113-79a0b96101c3?q=80&w=1974&auto=format&fit=crop&ixlib-rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageHint": "regional logistics"
+    },
+    {
+      "id": "sidewall-gallery-1",
+      "description": "Full side view of a large sidewall trailer carrying cargo.",
+      "imageUrl": "https://images.unsplash.com/photo-1609341066376-0c389aaa7998?q=80&w=1974&auto=format&fit=crop&ixlib-rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageHint": "cargo trailer"
+    },
+    {
+      "id": "sidewall-gallery-2",
+      "description": "A sidewall trailer being used at an active construction site.",
+      "imageUrl": "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?q=80&w=2070&auto=format&fit=crop&ixlib-rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageHint": "construction site"
+    },
+    {
+      "id": "sidewall-gallery-3",
+      "description": "Close-up of the sidewall construction and fabrication details.",
+      "imageUrl": "https://images.unsplash.com/photo-1533013440539-7a3311542f63?q=80&w=1974&auto=format&fit=crop&ixlib-rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageHint": "welding fabrication"
     }
   ]
 }
