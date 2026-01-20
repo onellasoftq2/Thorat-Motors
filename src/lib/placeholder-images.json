@@ -639,7 +639,7 @@
     {
       "id": "bharatbenz-loadbody-hero",
       "description": "A powerful BharatBenz truck with a heavy-duty load body.",
-      "imageUrl": "https://images.unsplash.com/photo-1615876063865-d9124a758e55?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageUrl": "https://images.unsplash.com/photo-1615876063865-d9124a758e55?q=80&w=2070&auto=format&fit=crop&ixlib-rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "imageHint": "heavy duty truck"
     },
     {
@@ -701,6 +701,60 @@
       "description": "A fleet of BharatBenz trucks with custom load bodies at a logistics hub.",
       "imageUrl": "https://images.unsplash.com/photo-1614909520113-79a0b96101c3?q=80&w=1974&auto=format&fit=crop&ixlib-rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "imageHint": "truck fleet"
+    },
+    {
+      "id": "transportation-hero",
+      "description": "Truck driving on a highway at dusk, representing motion and logistics.",
+      "imageUrl": "https://images.unsplash.com/photo-1577985051167-3d7f3394c8b2?q=80&w=1974&auto=format&fit=crop&ixlib-rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageHint": "highway truck"
+    },
+    {
+      "id": "transportation-ecosystem",
+      "description": "An abstract graphic of a logistics network or map.",
+      "imageUrl": "https://images.unsplash.com/photo-1587160988631-2856f6f00138?q=80&w=2070&auto=format&fit=crop&ixlib-rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageHint": "logistics network"
+    },
+    {
+      "id": "transportation-mode-vehicle",
+      "description": "A brand new car being loaded onto a transport truck.",
+      "imageUrl": "https://images.unsplash.com/photo-1615876063865-d9124a758e55?q=80&w=2070&auto=format&fit=crop&ixlib-rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageHint": "car transport"
+    },
+    {
+      "id": "transportation-mode-equipment",
+      "description": "Heavy construction equipment being transported on a lowbed trailer.",
+      "imageUrl": "https://images.unsplash.com/photo-1558180430-153152a81830?q=80&w=2070&auto=format&fit=crop&ixlib-rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageHint": "equipment transport"
+    },
+    {
+      "id": "transportation-mode-specialized",
+      "description": "An oversized or specialized piece of industrial cargo secured for transport.",
+      "imageUrl": "https://images.unsplash.com/photo-1623783749451-c2763f69542e?q=80&w=1962&auto=format&fit=crop&ixlib-rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageHint": "specialized cargo"
+    },
+    {
+      "id": "transportation-mode-logistics",
+      "description": "A busy logistics hub with multiple trucks being loaded and unloaded.",
+      "imageUrl": "https://images.unsplash.com/photo-1614909520113-79a0b96101c3?q=80&w=1974&auto=format&fit=crop&ixlib-rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageHint": "logistics hub"
+    },
+    {
+      "id": "transportation-gallery-motion",
+      "description": "A truck on a highway with motion blur to convey speed.",
+      "imageUrl": "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?q=80&w=1969&auto=format&fit=crop&ixlib-rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageHint": "highway speed"
+    },
+    {
+      "id": "transportation-gallery-delivery",
+      "description": "A truck making a delivery to an industrial facility.",
+      "imageUrl": "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?q=80&w=2070&auto=format&fit=crop&ixlib-rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageHint": "on-site delivery"
+    },
+    {
+      "id": "transportation-gallery-route",
+      "description": "A truck navigating a scenic and challenging highway route.",
+      "imageUrl": "https://images.unsplash.com/photo-1494522851413-8900c9290a88?q=80&w=2070&auto=format&fit=crop&ixlib-rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageHint": "scenic route"
     }
   ]
 }

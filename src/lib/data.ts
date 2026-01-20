@@ -183,16 +183,11 @@ export const navMenu: NavMenu[] = [
           },
         ],
       },
-      {
-        title: "Transportation",
-        slug: "transportation",
-        description: "Reliable logistics and transport support.",
-        isLink: true,
-        href: "/industries/transportation",
-        videoUrl: "https://www.youtube.com/watch?v=Zn6scKf7k_0",
-        items: [],
-      },
     ],
+  },
+  {
+    title: "Transportation",
+    href: "/transportation",
   },
   {
     title: "Contact Us",
@@ -367,6 +362,24 @@ export const products = {
                 'Lower operational cost compared to larger tractor-trailers.',
                 'Customizable to fit various truck models and capacity requirements.',
                 'Equipped with a reliable PTO-driven discharge system.'
+            ],
+        },
+         {
+            id: 'semi-lowbed',
+            name: 'Semi Lowbed Trailer',
+            description: 'Engineered for the safe transport of heavy and over-dimensional equipment with an optimized low deck height for enhanced stability.',
+            specs: [
+                { name: 'Capacity', value: '30 to 100 Tons' },
+                { name: 'Deck Height', value: 'Customizable, typically 900mm to 1200mm' },
+                { name: 'Axles', value: 'Multi-axle configurations (2 to 8 axles) with mechanical or air suspension.' },
+                { name: 'Ramps', value: 'Hydraulic or manual ramps for safe loading/unloading of equipment.' },
+                { name: 'Chassis', value: 'High-tensile steel, FEA-validated for concentrated and dynamic loads.' },
+            ],
+            features: [
+                'Low center of gravity for exceptional stability with tall and heavy loads.',
+                'Customizable deck length and width for oversized cargo.',
+                'High-strength lashing points and anchoring systems for secure transport.',
+                'Heavy-duty construction for demanding environments like construction and mining.',
             ],
         },
     ],
@@ -720,7 +733,7 @@ export const industrySolutions = [
       'Container Handling Solutions',
       'Logistics Support',
     ],
-    image: "https://images.unsplash.com/photo-1605282221649-8f5367a1c86e?q=80&w=2070&auto=format&fit=crop&ixid-rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    image: "https://images.unsplash.com/photo-1605282221649-8f5367a1c86e?q=80&w=2070&auto=format&fit=crop&ixlib-rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     icon: "Anchor"
   },
   {
