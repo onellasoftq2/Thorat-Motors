@@ -635,6 +635,72 @@
       "description": "A fleet of TATA trucks with uniform load bodies ready for dispatch.",
       "imageUrl": "https://images.unsplash.com/photo-1614909520113-79a0b96101c3?q=80&w=1974&auto=format&fit=crop&ixlib-rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "imageHint": "truck fleet"
+    },
+    {
+      "id": "bharatbenz-loadbody-hero",
+      "description": "A powerful BharatBenz truck with a heavy-duty load body.",
+      "imageUrl": "https://images.unsplash.com/photo-1615876063865-d9124a758e55?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageHint": "heavy duty truck"
+    },
+    {
+      "id": "bharatbenz-hd-platform",
+      "description": "A BharatBenz heavy-duty truck platform, ready for a custom load body.",
+      "imageUrl": "https://images.unsplash.com/photo-1577985051167-3d7f3394c8b2?q=80&w=1974&auto=format&fit=crop&ixlib-rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageHint": "truck platform"
+    },
+    {
+      "id": "bharatbenz-md-platform",
+      "description": "A BharatBenz medium-duty truck platform, versatile for various load bodies.",
+      "imageUrl": "https://images.unsplash.com/photo-1625047509248-0370884c4720?q=80&w=2070&auto=format&fit=crop&ixlib-rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageHint": "medium truck"
+    },
+    {
+      "id": "bharatbenz-tipper-body",
+      "description": "A heavy-duty tipper body designed for a BharatBenz chassis.",
+      "imageUrl": "https://images.unsplash.com/photo-1529602263124-72be1183d25c?q=80&w=2070&auto=format&fit=crop&ixlib-rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageHint": "tipper truck"
+    },
+    {
+      "id": "bharatbenz-cargo-body",
+      "description": "A robust, high-capacity cargo body for long-haul transport on a BharatBenz truck.",
+      "imageUrl": "https://images.unsplash.com/photo-1609341066376-0c389aaa7998?q=80&w=1974&auto=format&fit=crop&ixlib-rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageHint": "cargo body"
+    },
+    {
+      "id": "bharatbenz-tanker-body",
+      "description": "A specialized tanker body mounted on a BharatBenz chassis.",
+      "imageUrl": "https://images.unsplash.com/photo-1613589613511-f1b88e691249?q=80&w=2070&auto=format&fit=crop&ixlib-rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageHint": "tanker truck"
+    },
+    {
+      "id": "bharatbenz-custom-body",
+      "description": "A custom-engineered load body for special applications on a BharatBenz truck.",
+      "imageUrl": "https://images.unsplash.com/photo-1623783749451-c2763f69542e?q=80&w=1962&auto=format&fit=crop&ixlib-rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageHint": "special truck"
+    },
+    {
+      "id": "bharatbenz-fabrication",
+      "description": "High-strength steel fabrication for a BharatBenz load body.",
+      "imageUrl": "https://images.unsplash.com/photo-1533013440539-7a3311542f63?q=80&w=1974&auto=format&fit=crop&ixlib-rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageHint": "steel fabrication"
+    },
+    {
+      "id": "bharatbenz-gallery-1",
+      "description": "A BharatBenz truck with a load body operating in a demanding industrial environment.",
+      "imageUrl": "https://images.unsplash.com/photo-1542382494-0997afd46399?q=80&w=2070&auto=format&fit=crop&ixlib-rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageHint": "industrial truck"
+    },
+    {
+      "id": "bharatbenz-gallery-2",
+      "description": "Close-up of the reinforced chassis and heavy-duty suspension of a BharatBenz load body.",
+      "imageUrl": "https://images.unsplash.com/photo-1631027124233-b54130386133?q=80&w=1974&auto=format&fit=crop&ixlib-rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageHint": "truck chassis"
+    },
+    {
+      "id": "bharatbenz-gallery-3",
+      "description": "A fleet of BharatBenz trucks with custom load bodies at a logistics hub.",
+      "imageUrl": "https://images.unsplash.com/photo-1614909520113-79a0b96101c3?q=80&w=1974&auto=format&fit=crop&ixlib-rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageHint": "truck fleet"
     }
   ]
 }
