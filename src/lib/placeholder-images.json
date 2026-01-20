@@ -69,7 +69,7 @@
     {
       "id": "acp",
       "description": "Exterior of a sleek ACP cabin.",
-      "imageUrl": "https://images.unsplash.com/photo-1511875762315-c773a48c95a0?q=80&w=2070&auto=format&fit=crop&ixlib-rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageUrl": "https://images.unsplash.com/photo-1511875762315-c773a88b5020?q=80&w=2070&auto=format&fit=crop&ixlib-rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "imageHint": "modern cabin"
     },
     {
@@ -155,6 +155,30 @@
       "description": "A rigid cement bulker truck on a road.",
       "imageUrl": "https://images.unsplash.com/photo-1628212494842-8c1710b4843b?q=80&w=1974&auto=format&fit=crop&ixlib-rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "imageHint": "rigid truck"
+    },
+    {
+      "id": "tipping-vehicle-hero",
+      "description": "A large tipping truck unloading gravel at a construction site.",
+      "imageUrl": "https://images.unsplash.com/photo-1529602263124-72be1183d25c?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageHint": "tipping truck"
+    },
+    {
+      "id": "tipping-vehicle-side",
+      "description": "Side profile of a robust tipping vehicle.",
+      "imageUrl": "https://images.unsplash.com/photo-1605692383110-3945a5d3f345?q=80&w=1932&auto=format&fit=crop&ixlib-rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageHint": "dump truck"
+    },
+    {
+      "id": "tipping-vehicle-rear",
+      "description": "Close-up of the hydraulic tipping mechanism on a truck.",
+      "imageUrl": "https://images.unsplash.com/photo-1631027124233-b54130386133?q=80&w=1974&auto=format&fit=crop&ixlib-rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageHint": "hydraulic system"
+    },
+    {
+      "id": "tipping-vehicle-factory",
+      "description": "A tipping truck being assembled in a modern factory.",
+      "imageUrl": "https://images.unsplash.com/photo-1557682250-33bd709cbe85?q=80&w=2070&auto=format&fit=crop&ixlib-rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageHint": "vehicle manufacturing"
     }
   ]
 }
