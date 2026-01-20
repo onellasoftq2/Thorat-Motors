@@ -557,6 +557,84 @@
       "description": "An engineer performing a safety inspection on a gas tanker.",
       "imageUrl": "https://images.unsplash.com/photo-1581092446327-9b52bdc4f315?q=80&w=2070&auto=format&fit=crop&ixlib-rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "imageHint": "industrial inspection"
+    },
+    {
+      "id": "tata-loadbody-hero",
+      "description": "A modern TATA truck with a custom-built load body on a highway.",
+      "imageUrl": "https://images.unsplash.com/photo-1625047509248-0370884c4720?q=80&w=2070&auto=format&fit=crop&ixlib-rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageHint": "custom truck"
+    },
+    {
+      "id": "tata-ace",
+      "description": "TATA Ace mini truck, ideal for small load bodies.",
+      "imageUrl": "https://images.unsplash.com/photo-1628212494842-8c1710b4843b?q=80&w=1974&auto=format&fit=crop&ixlib-rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageHint": "mini truck"
+    },
+    {
+      "id": "tata-intra",
+      "description": "TATA Intra compact truck, a versatile platform for custom bodies.",
+      "imageUrl": "https://images.unsplash.com/photo-1613589613511-f1b88e691249?q=80&w=2070&auto=format&fit=crop&ixlib-rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageHint": "compact truck"
+    },
+    {
+      "id": "tata-yodha",
+      "description": "TATA Yodha pickup truck, suitable for rugged load body applications.",
+      "imageUrl": "https://images.unsplash.com/photo-1625047509248-0370884c4720?q=80&w=2070&auto=format&fit=crop&ixlib-rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageHint": "pickup truck"
+    },
+    {
+      "id": "tata-lpt",
+      "description": "TATA LPT medium-duty truck, a common chassis for large load bodies.",
+      "imageUrl": "https://images.unsplash.com/photo-1577985051167-3d7f3394c8b2?q=80&w=1974&auto=format&fit=crop&ixlib-rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageHint": "medium truck"
+    },
+    {
+      "id": "tata-open-body",
+      "description": "An open, flatbed-style load body on a TATA truck.",
+      "imageUrl": "https://images.unsplash.com/photo-1609341066376-0c389aaa7998?q=80&w=1974&auto=format&fit=crop&ixlib-rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageHint": "open body"
+    },
+    {
+      "id": "tata-closed-body",
+      "description": "A secure, fully enclosed load body on a TATA truck for weather protection.",
+      "imageUrl": "https://images.unsplash.com/photo-1587160988631-2856f6f00138?q=80&w=2070&auto=format&fit=crop&ixlib-rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageHint": "closed body"
+    },
+    {
+      "id": "tata-container-body",
+      "description": "A rigid container-style load body for secure logistics.",
+      "imageUrl": "https://images.unsplash.com/photo-1614909520113-79a0b96101c3?q=80&w=1974&auto=format&fit=crop&ixlib-rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageHint": "container body"
+    },
+    {
+      "id": "tata-special-body",
+      "description": "A custom-designed special purpose body, like a water tanker, on a TATA chassis.",
+      "imageUrl": "https://images.unsplash.com/photo-1628212494842-8c1710b4843b?q=80&w=1974&auto=format&fit=crop&ixlib-rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageHint": "special body"
+    },
+    {
+      "id": "tata-fabrication",
+      "description": "High-quality welding and fabrication work on a truck chassis.",
+      "imageUrl": "https://images.unsplash.com/photo-1633449494745-6a467f40e0b3?q=80&w=1974&auto=format&fit=crop&ixlib-rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageHint": "welding fabrication"
+    },
+    {
+      "id": "tata-gallery-1",
+      "description": "A TATA truck with a custom load body in a dynamic city environment.",
+      "imageUrl": "https://images.unsplash.com/photo-1577985051167-3d7f3394c8b2?q=80&w=1974&auto=format&fit=crop&ixlib-rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageHint": "city truck"
+    },
+    {
+      "id": "tata-gallery-2",
+      "description": "Close-up of a perfectly integrated load body on a TATA chassis.",
+      "imageUrl": "https://images.unsplash.com/photo-1625047509248-0370884c4720?q=80&w=2070&auto=format&fit=crop&ixlib-rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageHint": "truck body"
+    },
+    {
+      "id": "tata-gallery-3",
+      "description": "A fleet of TATA trucks with uniform load bodies ready for dispatch.",
+      "imageUrl": "https://images.unsplash.com/photo-1614909520113-79a0b96101c3?q=80&w=1974&auto=format&fit=crop&ixlib-rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageHint": "truck fleet"
     }
   ]
 }
