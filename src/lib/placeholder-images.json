@@ -509,6 +509,30 @@
       "description": "A milk tanker collecting fresh milk from a dairy farm.",
       "imageUrl": "https://images.unsplash.com/photo-1627920769854-46385d564175?q=80&w=2070&auto=format&fit=crop&ixlib-rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "imageHint": "dairy farm"
+    },
+    {
+      "id": "petroleum-tank-hero",
+      "description": "A modern petroleum tanker truck on a highway.",
+      "imageUrl": "https://images.unsplash.com/photo-1613589613511-f1b88e691249?q=80&w=2070&auto=format&fit=crop&ixlib-rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageHint": "fuel tanker"
+    },
+    {
+      "id": "petroleum-tank-gallery-1",
+      "description": "Close-up of safety valves and pressure gauges on a petroleum tanker.",
+      "imageUrl": "https://images.unsplash.com/photo-1633449494745-6a467f40e0b3?q=80&w=1974&auto=format&fit=crop&ixlib-rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageHint": "safety valves"
+    },
+    {
+      "id": "petroleum-tank-gallery-2",
+      "description": "A petroleum tanker being inspected for safety compliance in a facility.",
+      "imageUrl": "https://images.unsplash.com/photo-1581092446327-9b52bdc4f315?q=80&w=2070&auto=format&fit=crop&ixlib-rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageHint": "industrial inspection"
+    },
+    {
+      "id": "petroleum-tank-gallery-3",
+      "description": "A petroleum tanker at a depot, highlighting its robust construction.",
+      "imageUrl": "https://images.unsplash.com/photo-1587160988631-2856f6f00138?q=80&w=2070&auto=format&fit=crop&ixlib-rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageHint": "fuel depot"
     }
   ]
 }
