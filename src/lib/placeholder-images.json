@@ -461,6 +461,30 @@
       "description": "Close-up view of the multi-axle configuration and heavy-duty deck of a semi lowbed trailer.",
       "imageUrl": "https://images.unsplash.com/photo-1631027124233-b54130386133?q=80&w=1974&auto=format&fit=crop&ixlib-rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "imageHint": "trailer axle"
+    },
+    {
+      "id": "cragganmore-hero",
+      "description": "A shiny, modern industrial liquid tanker truck on a clean background.",
+      "imageUrl": "https://images.unsplash.com/photo-1581094285114-b25c4a63c623?q=80&w=1974&auto=format&fit=crop&ixlib-rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageHint": "liquid tanker"
+    },
+    {
+      "id": "cragganmore-gallery-1",
+      "description": "Close-up of the polished stainless steel tank and its precision welds.",
+      "imageUrl": "https://images.unsplash.com/photo-1533013440539-7a3311542f63?q=80&w=1974&auto=format&fit=crop&ixlib-rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageHint": "steel welding"
+    },
+    {
+      "id": "cragganmore-gallery-2",
+      "description": "View of the tank's safety valves, pressure gauges, and secure outlet systems.",
+      "imageUrl": "https://images.unsplash.com/photo-1633449494745-6a467f40e0b3?q=80&w=1974&auto=format&fit=crop&ixlib-rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageHint": "pressure valves"
+    },
+    {
+      "id": "cragganmore-gallery-3",
+      "description": "A Cragganmore tank during the hydrostatic pressure testing phase in the factory.",
+      "imageUrl": "https://images.unsplash.com/photo-1581092446327-9b52bdc4f315?q=80&w=2070&auto=format&fit=crop&ixlib-rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageHint": "industrial testing"
     }
   ]
 }
