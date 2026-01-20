@@ -203,6 +203,24 @@
       "description": "A food bulker in a pristine manufacturing environment.",
       "imageUrl": "https://images.unsplash.com/photo-1567954970774-a1d62aa35ee3?q=80&w=2070&auto=format&fit=crop&ixlib-rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "imageHint": "clean factory"
+    },
+    {
+      "id": "bulker-trailer-hero",
+      "description": "A long bulker trailer driving on a highway at sunset.",
+      "imageUrl": "https://images.unsplash.com/photo-1577985051167-3d7f3394c8b2?q=80&w=1974&auto=format&fit=crop&ixlib-rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageHint": "trailer highway"
+    },
+    {
+      "id": "bulker-trailer-chassis",
+      "description": "Close-up of the axle and suspension system of a large trailer.",
+      "imageUrl": "https://images.unsplash.com/photo-1631027124233-b54130386133?q=80&w=1974&auto=format&fit=crop&ixlib-rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageHint": "truck suspension"
+    },
+    {
+      "id": "bulker-trailer-discharge",
+      "description": "A bulker trailer unloading its contents via a pneumatic hose.",
+      "imageUrl": "https://images.unsplash.com/photo-1628212494842-8c1710b4843b?q=80&w=1974&auto=format&fit=crop&ixlib-rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageHint": "pneumatic unloading"
     }
   ]
 }
