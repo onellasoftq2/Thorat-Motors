@@ -317,6 +317,54 @@
       "description": "Close-up of the sidewall construction and fabrication details.",
       "imageUrl": "https://images.unsplash.com/photo-1533013440539-7a3311542f63?q=80&w=1974&auto=format&fit=crop&ixlib-rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "imageHint": "welding fabrication"
+    },
+    {
+      "id": "tip-trailer-hero",
+      "description": "A large tip trailer unloading gravel at a construction site.",
+      "imageUrl": "https://images.unsplash.com/photo-1529602263124-72be1183d25c?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageHint": "tipping trailer"
+    },
+    {
+      "id": "tip-trailer-app-construction",
+      "description": "A tip trailer delivering materials to a busy construction site.",
+      "imageUrl": "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?q=80&w=2070&auto=format&fit=crop&ixlib-rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageHint": "construction site"
+    },
+    {
+      "id": "tip-trailer-app-mining",
+      "description": "A heavy-duty tip trailer operating in a mining quarry.",
+      "imageUrl": "https://images.unsplash.com/photo-1542382494-0997afd46399?q=80&w=2070&auto=format&fit=crop&ixlib-rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageHint": "mining quarry"
+    },
+    {
+      "id": "tip-trailer-app-roadwork",
+      "description": "A tip trailer being used for road construction and earthmoving.",
+      "imageUrl": "https://images.unsplash.com/photo-1589232074357-9d76b10762cf?q=80&w=2070&auto=format&fit=crop&ixlib-rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageHint": "road construction"
+    },
+    {
+      "id": "tip-trailer-app-infra",
+      "description": "A tip trailer at a large infrastructure project like a bridge or dam.",
+      "imageUrl": "https://images.unsplash.com/photo-1516937996160-51a88b7754a2?q=80&w=2070&auto=format&fit=crop&ixlib-rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageHint": "infrastructure project"
+    },
+    {
+      "id": "tip-trailer-gallery-1",
+      "description": "Side profile of a large tip trailer in action.",
+      "imageUrl": "https://images.unsplash.com/photo-1605692383110-3945a5d3f345?q=80&w=1932&auto=format&fit=crop&ixlib-rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageHint": "dump trailer"
+    },
+    {
+      "id": "tip-trailer-gallery-2",
+      "description": "Close-up of a powerful hydraulic tipping system.",
+      "imageUrl": "https://images.unsplash.com/photo-1631027124233-b54130386133?q=80&w=1974&auto=format&fit=crop&ixlib-rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageHint": "hydraulic system"
+    },
+    {
+      "id": "tip-trailer-gallery-3",
+      "description": "A tip trailer efficiently unloading a large pile of aggregates.",
+      "imageUrl": "https://images.unsplash.com/photo-1529602263124-72be1183d25c?q=80&w=2070&auto=format&fit=crop&ixlib-rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageHint": "unloading aggregates"
     }
   ]
 }
