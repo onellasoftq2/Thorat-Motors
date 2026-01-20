@@ -413,6 +413,54 @@
       "description": "A fleet of skeletal trailers at a busy container yard.",
       "imageUrl": "https://images.unsplash.com/photo-1614909520113-79a0b96101c3?q=80&w=1974&auto=format&fit=crop&ixlib-rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "imageHint": "container yard"
+    },
+    {
+      "id": "semi-lowbed-hero",
+      "description": "A long semi lowbed trailer designed for heavy equipment transport.",
+      "imageUrl": "https://images.unsplash.com/photo-1623783749451-c2763f69542e?q=80&w=1962&auto=format&fit=crop&ixlib-rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageHint": "lowbed trailer"
+    },
+    {
+      "id": "semi-lowbed-app-construction",
+      "description": "A semi lowbed trailer transporting a large excavator for a construction project.",
+      "imageUrl": "https://images.unsplash.com/photo-1558180430-153152a81830?q=80&w=2070&auto=format&fit=crop&ixlib-rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageHint": "excavator transport"
+    },
+    {
+      "id": "semi-lowbed-app-energy",
+      "description": "A semi lowbed trailer carrying a large wind turbine component.",
+      "imageUrl": "https://images.unsplash.com/photo-1629479951159-c2904c6a6a9b?q=80&w=2070&auto=format&fit=crop&ixlib-rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageHint": "wind turbine"
+    },
+    {
+      "id": "semi-lowbed-app-mining",
+      "description": "A heavy-duty semi lowbed trailer transporting a giant mining dump truck.",
+      "imageUrl": "https://images.unsplash.com/photo-1542382494-0997afd46399?q=80&w=2070&auto=format&fit=crop&ixlib-rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageHint": "mining truck"
+    },
+    {
+      "id": "semi-lowbed-app-cargo",
+      "description": "A semi lowbed trailer loaded with oversized industrial project cargo.",
+      "imageUrl": "https://images.unsplash.com/photo-1623783749451-c2763f69542e?q=80&w=1962&auto=format&fit=crop&ixlib-rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageHint": "project cargo"
+    },
+    {
+      "id": "semi-lowbed-gallery-1",
+      "description": "A semi lowbed trailer safely transporting a bulldozer along a highway.",
+      "imageUrl": "https://images.unsplash.com/photo-1558180430-153152a81830?q=80&w=2070&auto=format&fit=crop&ixlib-rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageHint": "bulldozer transport"
+    },
+    {
+      "id": "semi-lowbed-gallery-2",
+      "description": "Heavy equipment being carefully loaded onto a semi lowbed trailer using ramps.",
+      "imageUrl": "https://images.unsplash.com/photo-1600880292212-195b1a98516d?q=80&w=1974&auto=format&fit=crop&ixlib-rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageHint": "equipment loading"
+    },
+    {
+      "id": "semi-lowbed-gallery-3",
+      "description": "Close-up view of the multi-axle configuration and heavy-duty deck of a semi lowbed trailer.",
+      "imageUrl": "https://images.unsplash.com/photo-1631027124233-b54130386133?q=80&w=1974&auto=format&fit=crop&ixlib-rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageHint": "trailer axle"
     }
   ]
 }
