@@ -533,6 +533,30 @@
       "description": "A petroleum tanker at a depot, highlighting its robust construction.",
       "imageUrl": "https://images.unsplash.com/photo-1587160988631-2856f6f00138?q=80&w=2070&auto=format&fit=crop&ixlib-rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "imageHint": "fuel depot"
+    },
+    {
+      "id": "gas-tank-hero",
+      "description": "A modern gas tanker designed for high-pressure gas transport.",
+      "imageUrl": "https://images.unsplash.com/photo-1613589613511-f1b88e691249?q=80&w=2070&auto=format&fit=crop&ixlib-rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageHint": "gas tanker"
+    },
+    {
+      "id": "gas-tank-gallery-1",
+      "description": "Close-up of a high-pressure gas vessel, showing its reinforced construction.",
+      "imageUrl": "https://images.unsplash.com/photo-1581094285114-b25c4a63c623?q=80&w=1974&auto=format&fit=crop&ixlib-rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageHint": "pressure vessel"
+    },
+    {
+      "id": "gas-tank-gallery-2",
+      "description": "A view of the complex safety valves and piping on a gas tanker.",
+      "imageUrl": "https://images.unsplash.com/photo-1633449494745-6a467f40e0b3?q=80&w=1974&auto=format&fit=crop&ixlib-rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageHint": "safety valves"
+    },
+    {
+      "id": "gas-tank-gallery-3",
+      "description": "An engineer performing a safety inspection on a gas tanker.",
+      "imageUrl": "https://images.unsplash.com/photo-1581092446327-9b52bdc4f315?q=80&w=2070&auto=format&fit=crop&ixlib-rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageHint": "industrial inspection"
     }
   ]
 }
