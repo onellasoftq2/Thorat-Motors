@@ -50,6 +50,8 @@ export const navMenu: NavMenu[] = [
           { name: "Skeletal Trailer (20ft / 40ft)", href: "/products/trailers/skeletal" },
           { name: "Side-Wall Trailer", href: "/products/trailers/side-wall" },
           { name: "Platform / Flatbed Trailer", href: "/products/trailers/flatbed" },
+          { name: 'Semi Lowbed Trailer', href: '/industries/manufacturing/trailers/semi-lowbed' },
+          { name: 'Tip Trailers', href: '/industries/manufacturing/trailers/tip' },
           { name: "Custom-Built Heavy-Duty Trailers", href: "/products/trailers/custom" },
         ],
       },
@@ -183,11 +185,15 @@ export const navMenu: NavMenu[] = [
           },
         ],
       },
+      {
+        title: "Transportation",
+        slug: "transportation",
+        description: "Reliable, on-time delivery solutions.",
+        isLink: true,
+        href: "/transportation",
+        items: []
+      }
     ],
-  },
-  {
-    title: "Transportation",
-    href: "/transportation",
   },
   {
     title: "Contact Us",
@@ -709,7 +715,7 @@ export const industrySolutions = [
       'Flatbed & Side-Wall Trailers',
       'Transport & Logistics Support',
     ],
-    image: "https://images.unsplash.com/photo-1517921345997-384358899214?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    image: "https://images.unsplash.com/photo-1517921345997-384358899214?q=80&w=1974&auto=format&fit=crop&ixlib-rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     icon: "Building"
   },
   {
@@ -733,7 +739,7 @@ export const industrySolutions = [
       'Container Handling Solutions',
       'Logistics Support',
     ],
-    image: "https://images.unsplash.com/photo-1605282221649-8f5367a1c86e?q=80&w=2070&auto=format&fit=crop&ixlib-rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    image: "https://images.unsplash.com/photo-1605282221649-8f5367a1c86e?q=80&w=2070&auto=format&fit=crop&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     icon: "Anchor"
   },
   {
