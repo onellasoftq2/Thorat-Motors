@@ -9,7 +9,7 @@
     {
       "id": "cement-bulker",
       "description": "Cement bulker trailer at a construction site.",
-      "imageUrl": "https://images.unsplash.com/photo-1517921345997-384358899214?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageUrl": "https://images.unsplash.com/photo-1517921345997-384358899214?q=80&w=1974&auto=format&fit=crop&ixlib-rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "imageHint": "cement trailer"
     },
     {
@@ -221,6 +221,54 @@
       "description": "A bulker trailer unloading its contents via a pneumatic hose.",
       "imageUrl": "https://images.unsplash.com/photo-1628212494842-8c1710b4843b?q=80&w=1974&auto=format&fit=crop&ixlib-rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "imageHint": "pneumatic unloading"
+    },
+    {
+      "id": "flatbed-hero",
+      "description": "A robust flatbed trailer parked in an industrial area.",
+      "imageUrl": "https://images.unsplash.com/photo-1621200424997-f81373511649?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageHint": "flatbed trailer"
+    },
+    {
+      "id": "flatbed-app-machinery",
+      "description": "Heavy machinery being transported on a flatbed trailer.",
+      "imageUrl": "https://images.unsplash.com/photo-1558180430-153152a81830?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageHint": "heavy equipment"
+    },
+    {
+      "id": "flatbed-app-steel",
+      "description": "Steel beams loaded securely onto a flatbed trailer.",
+      "imageUrl": "https://images.unsplash.com/photo-1525389653599-440a23e115b9?q=80&w=1974&auto=format&fit=crop&ixlib-rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageHint": "steel transport"
+    },
+    {
+      "id": "flatbed-app-construction",
+      "description": "Construction materials like pipes and concrete blocks on a flatbed.",
+      "imageUrl": "https://images.unsplash.com/photo-1600880292212-195b1a98516d?q=80&w=1974&auto=format&fit=crop&ixlib-rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageHint": "construction materials"
+    },
+    {
+      "id": "flatbed-app-logistics",
+      "description": "A flatbed trailer at a port being loaded with industrial cargo.",
+      "imageUrl": "https://images.unsplash.com/photo-1587160988631-2856f6f00138?q=80&w=2070&auto=format&fit=crop&ixlib-rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageHint": "port logistics"
+    },
+    {
+      "id": "flatbed-gallery-usage",
+      "description": "A flatbed trailer maneuvering through a construction site.",
+      "imageUrl": "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageHint": "construction site"
+    },
+    {
+      "id": "flatbed-gallery-cargo",
+      "description": "An oversized piece of industrial equipment safely secured on a flatbed.",
+      "imageUrl": "https://images.unsplash.com/photo-1623783749451-c2763f69542e?q=80&w=1962&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageHint": "oversized cargo"
+    },
+    {
+      "id": "flatbed-gallery-deck",
+      "description": "Close-up view of the wooden deck and lashing points on a flatbed trailer.",
+      "imageUrl": "https://images.unsplash.com/photo-1620290457699-23a9d977e5d1?q=80&w=1932&auto=format&fit=crop&ixlib-rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageHint": "trailer deck"
     }
   ]
 }
