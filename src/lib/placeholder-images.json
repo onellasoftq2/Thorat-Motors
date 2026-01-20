@@ -321,7 +321,7 @@
     {
       "id": "tip-trailer-hero",
       "description": "A large tip trailer unloading gravel at a construction site.",
-      "imageUrl": "https://images.unsplash.com/photo-1529602263124-72be1183d25c?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageUrl": "https://images.unsplash.com/photo-1529602263124-72be1183d25c?q=80&w=2070&auto=format&fit=crop&ixlib-rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "imageHint": "tipping trailer"
     },
     {
@@ -365,6 +365,54 @@
       "description": "A tip trailer efficiently unloading a large pile of aggregates.",
       "imageUrl": "https://images.unsplash.com/photo-1529602263124-72be1183d25c?q=80&w=2070&auto=format&fit=crop&ixlib-rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "imageHint": "unloading aggregates"
+    },
+    {
+      "id": "skeletal-hero",
+      "description": "A modern skeletal trailer chassis designed for container transport.",
+      "imageUrl": "https://images.unsplash.com/photo-1620290457699-23a9d977e5d1?q=80&w=1932&auto=format&fit=crop&ixlib-rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageHint": "container chassis"
+    },
+    {
+      "id": "skeletal-app-port",
+      "description": "A skeletal trailer moving a container at a busy port terminal.",
+      "imageUrl": "https://images.unsplash.com/photo-1613589613511-f1b88e691249?q=80&w=2070&auto=format&fit=crop&ixlib-rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageHint": "port terminal"
+    },
+    {
+      "id": "skeletal-app-cfs",
+      "description": "Multiple skeletal trailers lined up at a container freight station.",
+      "imageUrl": "https://images.unsplash.com/photo-1587160988631-2856f6f00138?q=80&w=2070&auto=format&fit=crop&ixlib-rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageHint": "container freight"
+    },
+    {
+      "id": "skeletal-app-icd",
+      "description": "A skeletal trailer at an inland container depot, ready for transport.",
+      "imageUrl": "https://images.unsplash.com/photo-1578575437199-4364c6a9117f?q=80&w=2072&auto=format&fit=crop&ixlib-rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageHint": "inland depot"
+    },
+    {
+      "id": "skeletal-app-logistics",
+      "description": "A skeletal trailer on a highway, undertaking long-haul container logistics.",
+      "imageUrl": "https://images.unsplash.com/photo-1577985051167-3d7f3394c8b2?q=80&w=1974&auto=format&fit=crop&ixlib-rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageHint": "truck highway"
+    },
+    {
+      "id": "skeletal-gallery-1",
+      "description": "A skeletal trailer securely transporting a 40ft shipping container.",
+      "imageUrl": "https://images.unsplash.com/photo-1620290457699-23a9d977e5d1?q=80&w=1932&auto=format&fit=crop&ixlib-rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageHint": "container transport"
+    },
+    {
+      "id": "skeletal-gallery-2",
+      "description": "Close-up of a container twist-lock mechanism on a skeletal trailer.",
+      "imageUrl": "https://images.unsplash.com/photo-1568252540092-992f9e4a3646?q=80&w=2070&auto=format&fit=crop&ixlib-rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageHint": "twist lock"
+    },
+    {
+      "id": "skeletal-gallery-3",
+      "description": "A fleet of skeletal trailers at a busy container yard.",
+      "imageUrl": "https://images.unsplash.com/photo-1614909520113-79a0b96101c3?q=80&w=1974&auto=format&fit=crop&ixlib-rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageHint": "container yard"
     }
   ]
 }
