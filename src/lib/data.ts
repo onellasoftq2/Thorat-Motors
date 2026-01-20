@@ -343,6 +343,32 @@ export const products = {
             ],
             features: ['Collaborative design process', 'Use of specialized materials and components', 'Solutions for oversized or special cargo', 'Full compliance and homologation support'],
         },
+        {
+            id: 'rigid-vehicle',
+            name: 'Rigid Vehicle Bulker',
+            description: 'A compact and efficient rigid bulker designed for urban and regional transport of cement and other powdered materials, built on a single chassis for enhanced maneuverability.',
+            specs: [
+                { name: 'Chassis', value: 'Built on standard truck chassis like TATA, Ashok Leyland, Bharat Benz' },
+                { name: 'Capacity', value: '18 to 35 CBM' },
+                { name: 'Tank Thickness', value: 'Shell – 4MM ST 52 / Dish End – 5MM ST 52' },
+                { name: 'Tank Certification', value: 'Compliant with IS 2825 Class-3 for unfired pressure vessels' },
+                { name: 'Discharge System', value: 'Pneumatic discharge with high-efficiency blower' },
+                { name: 'Working Pressure', value: '1.8 kg/cm²' },
+                { name: 'Test Pressure', value: '2.5 kg/cm²' },
+                { name: 'Manholes', value: '2 Nos. of 450mm diameter' },
+                { name: 'PTO', value: 'Power take-off unit from vehicle gearbox to drive blower/compressor' },
+                { name: 'Painting', value: 'Shot blasted surface with two coats of epoxy paint' },
+                { name: 'Safety Fittings', value: 'Pressure relief valve, pressure gauge, and emergency shut-off' },
+                { name: 'Application', value: 'Ideal for last-mile delivery of cement, fly ash, and similar materials' },
+            ],
+            features: [
+                'Integrated design on a rigid truck chassis for superior agility.',
+                'Faster turnaround times in congested city environments.',
+                'Lower operational cost compared to larger tractor-trailers.',
+                'Customizable to fit various truck models and capacity requirements.',
+                'Equipped with a reliable PTO-driven discharge system.'
+            ],
+        },
     ],
     cabins: [
         {
