@@ -773,6 +773,18 @@
       "description": "An illustration of technical documents, blueprints, and a certification stamp.",
       "imageUrl": "https://images.unsplash.com/photo-1555949963-ff980e67233d?q=80&w=2070&auto=format&fit=crop&ixlib-rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "imageHint": "technical documents"
+    },
+    {
+      "id": "ais-drawing",
+      "description": "A technical engineering drawing or blueprint.",
+      "imageUrl": "https://images.unsplash.com/photo-1516259762381-22954d7d3ad2?q=80&w=2070&auto=format&fit=crop&ixlib-rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageHint": "technical drawing"
+    },
+    {
+      "id": "compliance-workflow",
+      "description": "An abstract illustration of a compliance or approval workflow.",
+      "imageUrl": "https://images.unsplash.com/photo-1554141328-977d61b36340?q=80&w=2070&auto=format&fit=crop&ixlib-rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageHint": "compliance workflow"
     }
   ]
 }
