@@ -855,7 +855,7 @@
     {
       "id": "city-bus",
       "description": "A city bus navigating a busy urban street.",
-      "imageUrl": "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?q=80&w=1969&auto=format&fit=crop&ixlib-rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageUrl": "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?q=80&w=1969&auto=format&fit=crop&ixlib-rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by-wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "imageHint": "city bus"
     },
     {
@@ -893,6 +893,30 @@
       "description": "A bus undergoing safety and compliance testing in a specialized facility.",
       "imageUrl": "https://images.unsplash.com/photo-1581092446327-9b52bdc4f315?q=80&w=2070&auto=format&fit=crop&ixlib-rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "imageHint": "automotive testing"
+    },
+    {
+      "id": "bulker-compliance-hero",
+      "description": "A technical blueprint of a bulker or tanker vehicle.",
+      "imageUrl": "https://images.unsplash.com/photo-1516259762381-22954d7d3ad2?q=80&w=2070&auto=format&fit=crop&ixlib-rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageHint": "vehicle blueprint"
+    },
+    {
+      "id": "fly-ash-bulker",
+      "description": "A bulker trailer designed for fly ash, often near a power plant.",
+      "imageUrl": "https://images.unsplash.com/photo-1517921345997-384358899214?q=80&w=1974&auto=format&fit=crop&ixlib-rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageHint": "power plant"
+    },
+    {
+      "id": "food-grade-bulker",
+      "description": "A stainless steel food-grade bulker, possibly transporting grains or flour.",
+      "imageUrl": "https://images.unsplash.com/photo-1628212494842-8c1710b4843b?q=80&w=1974&auto=format&fit=crop&ixlib-rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageHint": "food tanker"
+    },
+    {
+      "id": "bulker-testing-lab",
+      "description": "An industrial facility where vehicle components are tested.",
+      "imageUrl": "https://images.unsplash.com/photo-1581092446327-9b52bdc4f315?q=80&w=2070&auto=format&fit=crop&ixlib-rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageHint": "industrial lab"
     }
   ]
 }
