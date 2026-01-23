@@ -13,7 +13,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from '@/components/ui/accordion';
-import { Check, ArrowLeft, Car, Truck, Bus, Fuel, Wrench, ShieldQuestion, Search, ExternalLink } from 'lucide-react';
+import { Check, ArrowLeft, Car, Truck, Bus, Fuel, Wrench, ShieldQuestion, Search, ExternalLink, ArrowRight } from 'lucide-react';
 import { AnimatedElement } from '@/components/ui/animated-element';
 import { Badge } from '@/components/ui/badge';
 import { AnimatePresence, motion } from 'framer-motion';
@@ -261,6 +261,9 @@ const AisDatabase = () => {
   const [statusFilter, setStatusFilter] = useState('all');
   const [categoryFilter, setCategoryFilter] = useState('all');
   const [yearFilter, setYearFilter] = useState('all');
+  const [showAll, setShowAll] = useState(false);
+
+  const INITIAL_SHOW_COUNT = 15;
 
   const filteredStandards = useMemo(() => {
     return aisStandards.filter(std => {
@@ -274,6 +277,8 @@ const AisDatabase = () => {
       return matchesSearch && matchesStatus && matchesCategory && matchesYear;
     });
   }, [searchTerm, statusFilter, categoryFilter, yearFilter]);
+
+  const standardsToShow = showAll ? filteredStandards : filteredStandards.slice(0, INITIAL_SHOW_COUNT);
 
   return (
     <section className="mt-16 md:mt-24">
@@ -334,7 +339,7 @@ const AisDatabase = () => {
                 </TableRow>
             </TableHeader>
             <TableBody>
-                {filteredStandards.length > 0 ? filteredStandards.map((standard, index) => (
+                {standardsToShow.length > 0 ? standardsToShow.map((standard, index) => (
                 <motion.tr 
                     key={standard.code}
                     initial={{ opacity: 0, y: 10 }}
@@ -378,6 +383,13 @@ const AisDatabase = () => {
             </Table>
         </div>
       </Card>
+      {!showAll && filteredStandards.length > INITIAL_SHOW_COUNT && (
+        <div className="mt-6 text-center">
+          <Button onClick={() => setShowAll(true)} variant="outline">
+            View All {filteredStandards.length} Standards <ArrowRight className="ml-2 h-4 w-4" />
+          </Button>
+        </div>
+      )}
     </section>
   );
 };
@@ -531,5 +543,3 @@ export default function AisListPage() {
     </div>
   );
 }
-
-    
