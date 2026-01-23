@@ -1,8 +1,7 @@
 
 'use client';
 
-import React, 'use a client';
-import { useState, useMemo } from 'react';
+import React, { useState, useMemo } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
