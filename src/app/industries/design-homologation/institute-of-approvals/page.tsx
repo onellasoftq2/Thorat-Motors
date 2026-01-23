@@ -16,29 +16,29 @@ const institutes = [
     icon: <FileCheck className="h-10 w-10 text-accent" />,
     name: "ARAI – Automotive Research Association of India",
     location: "Pune",
-    role: "Primary role in vehicle testing, homologation, and emission certification.",
-    specialization: "Involved in CMVR, AIS, and emission compliance, working closely with MoRTH."
+    role: "As India's leading automotive R&D organization, ARAI provides comprehensive testing, validation, and certification services for all vehicle types and components.",
+    specialization: "Deeply involved in framing Indian automotive regulations (CMVR, AIS), ARAI handles type approval, conformity of production, emission testing, and works closely with MoRTH as a prime technical advisor."
   },
   {
     icon: <Cpu className="h-10 w-10 text-accent" />,
     name: "ICAT – International Centre for Automotive Technology",
     location: "Manesar, Haryana",
-    role: "Focus on homologation, noise, safety, EMC, and EV testing.",
-    specialization: "Recognized testing agency under CMVR with a strong focus on future mobility and electric vehicles."
+    role: "A world-class automotive testing center offering complete homologation and development services, from two-wheelers to heavy commercial vehicles.",
+    specialization: "ICAT is a key player in EV and future mobility testing, with advanced facilities for battery validation, powertrain testing, crash tests, and electromagnetic compatibility (EMC) compliance."
   },
   {
     icon: <Shield className="h-10 w-10 text-accent" />,
     name: "VRDE – Vehicle Research and Development Establishment",
     location: "Ahmednagar",
-    role: "DRDO laboratory focused on military and specialized vehicle testing.",
-    specialization: "Handles structural, performance, and endurance validation for defense and select civilian vehicles."
+    role: "A premier DRDO laboratory specializing in the research, design, and development of military vehicles and systems for the Indian Armed Forces.",
+    specialization: "VRDE handles the rigorous testing and validation of tracked and wheeled combat vehicles, focusing on mobility, armor, survivability, and performance in extreme conditions. It also assists in the certification of select civilian heavy vehicles."
   },
   {
     icon: <RouteIcon className="h-10 w-10 text-accent" />,
     name: "CIRT – Central Institute of Road Transport",
     location: "Pune",
-    role: "Focus on commercial vehicle testing, roadworthiness, and transport research.",
-    specialization: "Advisory role in transport policy, vehicle fitness, and driver training."
+    role: "A key institute under the Ministry of Road Transport and Highways, focused on improving the efficiency and safety of public and commercial road transport.",
+    specialization: "CIRT specializes in the testing and certification of commercial vehicles (especially buses), developing standards for bus bodies, conducting transport research, and providing training programs on transport management and road safety."
   }
 ];
 
