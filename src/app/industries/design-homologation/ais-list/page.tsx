@@ -1,7 +1,7 @@
 
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useMemo } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
@@ -13,11 +13,15 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from '@/components/ui/accordion';
-import { Check, ArrowLeft, Car, Truck, Bus, Fuel, Wrench, ShieldQuestion } from 'lucide-react';
+import { Check, ArrowLeft, Car, Truck, Bus, Fuel, Wrench, ShieldQuestion, Search, ExternalLink } from 'lucide-react';
 import { AnimatedElement } from '@/components/ui/animated-element';
 import { Badge } from '@/components/ui/badge';
 import { AnimatePresence, motion } from 'framer-motion';
 import { cn } from '@/lib/utils';
+import { aisStandards, allVehicleCategories, allStatuses, allYears } from '@/lib/ais-standards';
+import { Input } from '@/components/ui/input';
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
 
 
 // Data for the AIS list
@@ -252,6 +256,143 @@ const AisApplicabilityTool = () => {
   );
 };
 
+const AisDatabase = () => {
+  const [searchTerm, setSearchTerm] = useState('');
+  const [statusFilter, setStatusFilter] = useState('all');
+  const [categoryFilter, setCategoryFilter] = useState('all');
+  const [yearFilter, setYearFilter] = useState('all');
+
+  const filteredStandards = useMemo(() => {
+    return aisStandards.filter(std => {
+      const searchLower = searchTerm.toLowerCase();
+      const matchesSearch = searchTerm === '' || 
+                            std.code.toLowerCase().includes(searchLower) || 
+                            std.title.toLowerCase().includes(searchLower);
+      const matchesStatus = statusFilter === 'all' || std.status === statusFilter;
+      const matchesCategory = categoryFilter === 'all' || std.categories.includes(categoryFilter);
+      const matchesYear = yearFilter === 'all' || std.year.toString() === yearFilter;
+      return matchesSearch && matchesStatus && matchesCategory && matchesYear;
+    });
+  }, [searchTerm, statusFilter, categoryFilter, yearFilter]);
+
+  const pre2019Standards = filteredStandards.filter(s => s.sourceType === 'Consolidated PDF');
+  const post2019Standards = filteredStandards.filter(s => s.sourceType === 'AIS Portal Notification');
+  
+  const renderTable = (data: typeof aisStandards, title: string) => (
+    <div className="mt-8">
+      <h3 className="text-xl font-semibold mb-4">{title}</h3>
+      <div className="border rounded-lg overflow-hidden">
+        <Table>
+          <TableHeader>
+            <TableRow>
+              <TableHead className="w-[120px]">AIS Code</TableHead>
+              <TableHead>Title</TableHead>
+              <TableHead className="w-[100px]">Status</TableHead>
+              <TableHead className="w-[150px]">Categories</TableHead>
+              <TableHead className="w-[100px]">Year</TableHead>
+              <TableHead className="w-[100px] text-center">Source</TableHead>
+            </TableRow>
+          </TableHeader>
+          <TableBody>
+            {data.length > 0 ? data.map((standard, index) => (
+              <motion.tr 
+                key={standard.code}
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.3, delay: index * 0.05 }}
+                className="hover:bg-secondary/50"
+              >
+                <TableCell className="font-medium">{standard.code} {standard.revision && <span className="text-xs text-muted-foreground">({standard.revision})</span>}</TableCell>
+                <TableCell>{standard.title}</TableCell>
+                <TableCell>
+                  <Badge variant={standard.status === 'Final' ? 'default' : 'destructive'} className={cn(standard.status === 'Final' ? 'bg-green-100 text-green-800' : 'bg-amber-100 text-amber-800')}>
+                    {standard.status}
+                  </Badge>
+                </TableCell>
+                <TableCell>
+                    <div className="flex flex-wrap gap-1">
+                        {standard.categories.map(cat => <Badge key={cat} variant="secondary">{cat}</Badge>)}
+                    </div>
+                </TableCell>
+                <TableCell>{standard.year}</TableCell>
+                <TableCell className="text-center">
+                  {standard.link ? (
+                    <Button variant="ghost" size="sm" asChild>
+                      <a href={standard.link} target="_blank" rel="noopener noreferrer">
+                        <ExternalLink className="h-4 w-4" />
+                      </a>
+                    </Button>
+                  ) : (
+                    <span className="text-xs text-muted-foreground">N/A</span>
+                  )}
+                </TableCell>
+              </motion.tr>
+            )) : (
+              <TableRow>
+                <TableCell colSpan={6} className="text-center h-24 text-muted-foreground">
+                  No standards match your criteria.
+                </TableCell>
+              </TableRow>
+            )}
+          </TableBody>
+        </Table>
+      </div>
+    </div>
+  );
+
+  return (
+    <section className="mt-16 md:mt-24">
+      <AnimatedElement>
+        <div className="text-center mb-12">
+          <h2 className="text-3xl font-bold font-headline">Complete List of Automotive Industry Standards (AIS)</h2>
+          <div className="mt-3 w-20 h-1.5 bg-accent mx-auto"></div>
+          <p className="mt-4 text-sm max-w-3xl mx-auto text-muted-foreground">
+            Source: Ministry of Road Transport & Highways (MoRTH), Government of India. This list includes AIS published up to 23 May 2019 and subsequent notifications. AIS are subject to amendments, revisions, and supersession.
+          </p>
+        </div>
+      </AnimatedElement>
+
+      <Card className="p-6 shadow-md">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 mb-6">
+          <div className="relative sm:col-span-2 md:col-span-1">
+            <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+            <Input 
+              placeholder="Search by code or title..." 
+              value={searchTerm} 
+              onChange={e => setSearchTerm(e.target.value)}
+              className="pl-10"
+            />
+          </div>
+          <Select value={statusFilter} onValueChange={setStatusFilter}>
+            <SelectTrigger><SelectValue placeholder="Filter by Status" /></SelectTrigger>
+            <SelectContent>
+              <SelectItem value="all">All Statuses</SelectItem>
+              {allStatuses.map(status => <SelectItem key={status} value={status}>{status}</SelectItem>)}
+            </SelectContent>
+          </Select>
+          <Select value={categoryFilter} onValueChange={setCategoryFilter}>
+            <SelectTrigger><SelectValue placeholder="Filter by Category" /></SelectTrigger>
+            <SelectContent>
+              <SelectItem value="all">All Categories</SelectItem>
+              {allVehicleCategories.map(cat => <SelectItem key={cat} value={cat}>{cat}</SelectItem>)}
+            </SelectContent>
+          </Select>
+          <Select value={yearFilter} onValueChange={setYearFilter}>
+            <SelectTrigger><SelectValue placeholder="Filter by Year" /></SelectTrigger>
+            <SelectContent>
+              <SelectItem value="all">All Years</SelectItem>
+              {allYears.map(year => <SelectItem key={year} value={String(year)}>{year}</SelectItem>)}
+            </SelectContent>
+          </Select>
+        </div>
+        
+        {renderTable(pre2019Standards, 'AIS up to 23 May 2019 (Baseline)')}
+        {renderTable(post2019Standards, 'AIS notified after May 2019')}
+      </Card>
+    </section>
+  );
+};
+
 
 export default function AisListPage() {
     const drawingImage = PlaceHolderImages.find(p => p.id === 'ais-drawing');
@@ -365,6 +506,9 @@ export default function AisListPage() {
         
         {/* NEW INTERACTIVE SECTION */}
         <AisApplicabilityTool />
+
+        {/* NEW COMPLETE LIST SECTION */}
+        <AisDatabase />
 
         {/* 7. Visual Trust Section */}
         <section className="mt-16 md:mt-24">
