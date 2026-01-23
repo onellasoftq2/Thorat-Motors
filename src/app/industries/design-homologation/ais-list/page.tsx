@@ -275,71 +275,6 @@ const AisDatabase = () => {
     });
   }, [searchTerm, statusFilter, categoryFilter, yearFilter]);
 
-  const pre2019Standards = filteredStandards.filter(s => s.sourceType === 'Consolidated PDF');
-  const post2019Standards = filteredStandards.filter(s => s.sourceType === 'AIS Portal Notification');
-  
-  const renderTable = (data: typeof aisStandards, title: string) => (
-    <div className="mt-8">
-      <h3 className="text-xl font-semibold mb-4">{title}</h3>
-      <div className="border rounded-lg overflow-hidden">
-        <Table>
-          <TableHeader>
-            <TableRow>
-              <TableHead className="w-[120px]">AIS Code</TableHead>
-              <TableHead>Title</TableHead>
-              <TableHead className="w-[100px]">Status</TableHead>
-              <TableHead className="w-[150px]">Categories</TableHead>
-              <TableHead className="w-[100px]">Year</TableHead>
-              <TableHead className="w-[100px] text-center">Source</TableHead>
-            </TableRow>
-          </TableHeader>
-          <TableBody>
-            {data.length > 0 ? data.map((standard, index) => (
-              <motion.tr 
-                key={standard.code}
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.3, delay: index * 0.05 }}
-                className="hover:bg-secondary/50"
-              >
-                <TableCell className="font-medium">{standard.code} {standard.revision && <span className="text-xs text-muted-foreground">({standard.revision})</span>}</TableCell>
-                <TableCell>{standard.title}</TableCell>
-                <TableCell>
-                  <Badge variant={standard.status === 'Final' ? 'default' : 'destructive'} className={cn(standard.status === 'Final' ? 'bg-green-100 text-green-800' : 'bg-amber-100 text-amber-800')}>
-                    {standard.status}
-                  </Badge>
-                </TableCell>
-                <TableCell>
-                    <div className="flex flex-wrap gap-1">
-                        {standard.categories.map(cat => <Badge key={cat} variant="secondary">{cat}</Badge>)}
-                    </div>
-                </TableCell>
-                <TableCell>{standard.year}</TableCell>
-                <TableCell className="text-center">
-                  {standard.link ? (
-                    <Button variant="ghost" size="sm" asChild>
-                      <a href={standard.link} target="_blank" rel="noopener noreferrer">
-                        <ExternalLink className="h-4 w-4" />
-                      </a>
-                    </Button>
-                  ) : (
-                    <span className="text-xs text-muted-foreground">N/A</span>
-                  )}
-                </TableCell>
-              </motion.tr>
-            )) : (
-              <TableRow>
-                <TableCell colSpan={6} className="text-center h-24 text-muted-foreground">
-                  No standards match your criteria.
-                </TableCell>
-              </TableRow>
-            )}
-          </TableBody>
-        </Table>
-      </div>
-    </div>
-  );
-
   return (
     <section className="mt-16 md:mt-24">
       <AnimatedElement>
@@ -347,7 +282,7 @@ const AisDatabase = () => {
           <h2 className="text-3xl font-bold font-headline">Complete List of Automotive Industry Standards (AIS)</h2>
           <div className="mt-3 w-20 h-1.5 bg-accent mx-auto"></div>
           <p className="mt-4 text-sm max-w-3xl mx-auto text-muted-foreground">
-            Source: Ministry of Road Transport & Highways (MoRTH), Government of India. This list includes AIS published up to 23 May 2019 and subsequent notifications. AIS are subject to amendments, revisions, and supersession.
+            Source: Ministry of Road Transport & Highways (MoRTH), Government of India. This page presents a consolidated reference of all Automotive Industry Standards (AIS). AIS are subject to amendments, revisions, and supersession.
           </p>
         </div>
       </AnimatedElement>
@@ -386,8 +321,62 @@ const AisDatabase = () => {
           </Select>
         </div>
         
-        {renderTable(pre2019Standards, 'AIS up to 23 May 2019 (Baseline)')}
-        {renderTable(post2019Standards, 'AIS notified after May 2019')}
+        <div className="border rounded-lg overflow-hidden">
+            <Table>
+            <TableHeader>
+                <TableRow>
+                <TableHead className="w-[120px]">AIS Code</TableHead>
+                <TableHead>Title</TableHead>
+                <TableHead className="w-[100px]">Status</TableHead>
+                <TableHead className="w-[150px]">Categories</TableHead>
+                <TableHead className="w-[100px]">Year</TableHead>
+                <TableHead className="w-[100px] text-center">Source</TableHead>
+                </TableRow>
+            </TableHeader>
+            <TableBody>
+                {filteredStandards.length > 0 ? filteredStandards.map((standard, index) => (
+                <motion.tr 
+                    key={standard.code}
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.3, delay: index * 0.05 }}
+                    className="hover:bg-secondary/50"
+                >
+                    <TableCell className="font-medium">{standard.code} {standard.revision && <span className="text-xs text-muted-foreground">({standard.revision})</span>}</TableCell>
+                    <TableCell>{standard.title}</TableCell>
+                    <TableCell>
+                    <Badge variant={standard.status === 'Final' ? 'default' : 'destructive'} className={cn(standard.status === 'Final' ? 'bg-green-100 text-green-800' : 'bg-amber-100 text-amber-800')}>
+                        {standard.status}
+                    </Badge>
+                    </TableCell>
+                    <TableCell>
+                        <div className="flex flex-wrap gap-1">
+                            {standard.categories.map(cat => <Badge key={cat} variant="secondary">{cat}</Badge>)}
+                        </div>
+                    </TableCell>
+                    <TableCell>{standard.year}</TableCell>
+                    <TableCell className="text-center">
+                    {standard.link ? (
+                        <Button variant="ghost" size="sm" asChild>
+                        <a href={standard.link} target="_blank" rel="noopener noreferrer">
+                            <ExternalLink className="h-4 w-4" />
+                        </a>
+                        </Button>
+                    ) : (
+                        <span className="text-xs text-muted-foreground">N/A</span>
+                    )}
+                    </TableCell>
+                </motion.tr>
+                )) : (
+                <TableRow>
+                    <TableCell colSpan={6} className="text-center h-24 text-muted-foreground">
+                    No standards match your criteria.
+                    </TableCell>
+                </TableRow>
+                )}
+            </TableBody>
+            </Table>
+        </div>
       </Card>
     </section>
   );
@@ -542,3 +531,5 @@ export default function AisListPage() {
     </div>
   );
 }
+
+    
