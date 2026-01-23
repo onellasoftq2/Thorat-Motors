@@ -855,7 +855,7 @@
     {
       "id": "city-bus",
       "description": "A city bus navigating a busy urban street.",
-      "imageUrl": "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?q=80&w=1969&auto=format&fit=crop&ixlib-rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by-wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageUrl": "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?q=80&w=1969&auto=format&fit=crop&ixlib-rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "imageHint": "city bus"
     },
     {
@@ -917,6 +917,48 @@
       "description": "An industrial facility where vehicle components are tested.",
       "imageUrl": "https://images.unsplash.com/photo-1581092446327-9b52bdc4f315?q=80&w=2070&auto=format&fit=crop&ixlib-rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "imageHint": "industrial lab"
+    },
+    {
+      "id": "refer-hero",
+      "description": "An abstract, cool-toned image representing cold chain technology.",
+      "imageUrl": "https://images.unsplash.com/photo-1554141328-977d61b36340?q=80&w=2070&auto=format&fit=crop&ixlib-rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageHint": "cold technology"
+    },
+    {
+      "id": "refer-food",
+      "description": "A refrigerated container with fresh produce inside.",
+      "imageUrl": "https://images.unsplash.com/photo-1599422533282-3f8d3630d7b3?q=80&w=2070&auto=format&fit=crop&ixlib-rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageHint": "fresh produce"
+    },
+    {
+      "id": "refer-pharma",
+      "description": "A secure, temperature-controlled container for pharmaceutical logistics.",
+      "imageUrl": "https://images.unsplash.com/photo-1581092446327-9b52bdc4f315?q=80&w=2070&auto=format&fit=crop&ixlib-rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageHint": "pharma logistics"
+    },
+    {
+      "id": "refer-frozen",
+      "description": "A refrigerated container showing a frosty interior suitable for frozen goods.",
+      "imageUrl": "https://images.unsplash.com/photo-1621200424997-f81373511649?q=80&w=2070&auto=format&fit=crop&ixlib-rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageHint": "frozen goods"
+    },
+    {
+      "id": "refer-multi-temp",
+      "description": "A large refrigerated container with internal dividers for multiple temperature zones.",
+      "imageUrl": "https://images.unsplash.com/photo-1568252540092-992f9e4a3646?q=80&w=2070&auto=format&fit=crop&ixlib-rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageHint": "multi temperature"
+    },
+    {
+      "id": "refer-vehicle-mounted",
+      "description": "A smaller refer container mounted on a light commercial vehicle for city logistics.",
+      "imageUrl": "https://images.unsplash.com/photo-1628212494842-8c1710b4843b?q=80&w=1974&auto=format&fit=crop&ixlib-rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageHint": "refrigerated van"
+    },
+    {
+      "id": "refer-testing-lab",
+      "description": "A technician testing the refrigeration and insulation unit in a laboratory setting.",
+      "imageUrl": "https://images.unsplash.com/photo-1581092446327-9b52bdc4f315?q=80&w=2070&auto=format&fit=crop&ixlib-rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageHint": "technical testing"
     }
   ]
 }
