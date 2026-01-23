@@ -4,41 +4,131 @@
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { motion } from 'framer-motion';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Check, ArrowRight, FileCheck, Cpu, Shield, Route as RouteIcon, ChevronRight } from 'lucide-react';
+import { ArrowRight, Check, ChevronRight, Cpu, FileCheck, Route as RouteIcon, Shield } from 'lucide-react';
 import { AnimatedElement } from '@/components/ui/animated-element';
+import { Badge } from '@/components/ui/badge';
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 
 const institutes = [
   {
-    icon: <FileCheck className="h-10 w-10 text-accent" />,
+    icon: <FileCheck className="h-8 w-8 text-accent" />,
     name: "ARAI – Automotive Research Association of India",
-    location: "Pune",
-    role: "As India's leading automotive R&D organization, ARAI provides comprehensive testing, validation, and certification services for all vehicle types and components.",
-    specialization: "Deeply involved in framing Indian automotive regulations (CMVR, AIS), ARAI handles type approval, conformity of production, emission testing, and works closely with MoRTH as a prime technical advisor."
+    location: "Pune, Maharashtra",
+    association: "Ministry of Heavy Industries, Govt. of India",
+    mandates: ["Homologation", "CMVR / AIS", "Emission Norms (BS-VI)", "Safety Standards", "EV Testing"],
+    primaryRole: "India's premier automotive R&D, testing, and certification organization, handling comprehensive homologation for all vehicle types.",
+    details: [
+      { 
+        title: "Approval Scope",
+        content: "Type Approval, Conformity of Production (CoP), Export Homologation, Component Certification, and Safety/Emission Testing."
+      },
+      {
+        title: "Vehicle Categories",
+        content: "2/3/4-Wheelers, Commercial Vehicles, Tractors, EVs, Hybrids, Engines, and individual components."
+      },
+      {
+        title: "Key Regulations",
+        content: "Central Motor Vehicle Rules (CMVR), Automotive Industry Standards (AIS), Bureau of Indian Standards (BIS), and UNECE Regulations."
+      }
+    ],
+    guidance: [
+      "For whole-vehicle type approval for mass production in India.",
+      "When certifying new engine platforms for BS-VI and upcoming emission norms.",
+      "For validation of critical safety components like brakes, lighting, and seats.",
+      "To obtain Conformity of Production (CoP) clearance for ongoing manufacturing."
+    ]
   },
   {
-    icon: <Cpu className="h-10 w-10 text-accent" />,
+    icon: <Cpu className="h-8 w-8 text-accent" />,
     name: "ICAT – International Centre for Automotive Technology",
     location: "Manesar, Haryana",
-    role: "A world-class automotive testing center offering complete homologation and development services, from two-wheelers to heavy commercial vehicles.",
-    specialization: "ICAT is a key player in EV and future mobility testing, with advanced facilities for battery validation, powertrain testing, crash tests, and electromagnetic compatibility (EMC) compliance."
+    association: "Ministry of Heavy Industries, Govt. of India (NATRiP)",
+    mandates: ["Homologation", "EV & Battery Testing", "Safety & Crash Tests", "EMC Compliance", "CMVR"],
+    primaryRole: "A world-class automotive testing center offering complete homologation and development services, with a strong focus on future mobility.",
+    details: [
+      {
+        title: "Approval Scope",
+        content: "Full vehicle & component homologation, development testing, validation services, and technical advisory."
+      },
+      {
+        title: "Vehicle Categories",
+        content: "All vehicle types from two-wheelers to heavy commercial vehicles, with specialized facilities for EVs and future mobility solutions."
+      },
+      {
+        title: "Key Regulations",
+        content: "CMVR, AIS, National and International standards for safety, emissions, noise, and electromagnetic compatibility (EMC)."
+      }
+    ],
+    guidance: [
+      "For comprehensive EV and battery pack certification and validation.",
+      "When seeking homologation for new vehicle models and variants.",
+      "For conducting crash tests and other advanced safety validation.",
+      "To ensure electromagnetic compatibility (EMC/EMI) compliance."
+    ]
   },
   {
-    icon: <Shield className="h-10 w-10 text-accent" />,
+    icon: <Shield className="h-8 w-8 text-accent" />,
     name: "VRDE – Vehicle Research and Development Establishment",
-    location: "Ahmednagar",
-    role: "A premier DRDO laboratory specializing in the research, design, and development of military vehicles and systems for the Indian Armed Forces.",
-    specialization: "VRDE handles the rigorous testing and validation of tracked and wheeled combat vehicles, focusing on mobility, armor, survivability, and performance in extreme conditions. It also assists in the certification of select civilian heavy vehicles."
+    location: "Ahmednagar, Maharashtra",
+    association: "Defence Research and Development Organisation (DRDO)",
+    mandates: ["Defense Vehicles", "Performance Testing", "Structural Validation", "Off-road Mobility", "Survivability"],
+    primaryRole: "A premier DRDO laboratory specializing in the R&D, testing, and validation of military vehicles and systems for the Indian Armed Forces.",
+    details: [
+      {
+        title: "Approval Scope",
+        content: "Military vehicle and system development, rigorous testing, validation, and certification against defense-specific requirements."
+      },
+      {
+        title: "Vehicle Categories",
+        content: "Tracked & Wheeled Combat Vehicles, Specialist Military Vehicles, High-Mobility Trucks, and select civilian heavy vehicles."
+      },
+      {
+        title: "Key Regulations",
+        content: "Defense-specific standards, Joint Services Qualitative Requirements (JSQRs), and other national/international military standards."
+      }
+    ],
+    guidance: [
+      "For developing or supplying vehicles for military and defense tenders.",
+      "To validate vehicle performance in extreme environmental and combat conditions.",
+      "When conducting armor, blast, and survivability testing.",
+      "For certification of specialized heavy civilian vehicles requiring structural validation."
+    ]
   },
   {
-    icon: <RouteIcon className="h-10 w-10 text-accent" />,
+    icon: <RouteIcon className="h-8 w-8 text-accent" />,
     name: "CIRT – Central Institute of Road Transport",
-    location: "Pune",
-    role: "A key institute under the Ministry of Road Transport and Highways, focused on improving the efficiency and safety of public and commercial road transport.",
-    specialization: "CIRT specializes in the testing and certification of commercial vehicles (especially buses), developing standards for bus bodies, conducting transport research, and providing training programs on transport management and road safety."
+    location: "Pune, Maharashtra",
+    association: "Ministry of Road Transport and Highways (MoRTH)",
+    mandates: ["Commercial Vehicles", "Bus Body Code", "Road Safety", "Transport Research", "Vehicle Fitness"],
+    primaryRole: "A key institute under MoRTH focused on improving the efficiency, safety, and performance of public and commercial road transport.",
+    details: [
+      {
+        title: "Approval Scope",
+        content: "Testing and certification of commercial vehicles (especially buses), transport research, driver training, and advisory on transport policy."
+      },
+      {
+        title: "Vehicle Categories",
+        content: "Primarily focused on buses, trucks, and their key components like seating, lighting, and structural elements."
+      },
+      {
+        title: "Key Regulations",
+        content: "AIS-052 (Bus Body Code), CMVR provisions related to commercial vehicles, and other state/national transport regulations."
+      }
+    ],
+    guidance: [
+      "For certifying bus bodies according to the mandatory national Bus Body Code.",
+      "When conducting performance and safety tests on commercial vehicle components.",
+      "For projects involving transport management and road safety research.",
+      "To participate in driver and fleet manager training programs."
+    ]
   }
 ];
 
@@ -62,7 +152,6 @@ const whyItMatters = [
 ];
 
 export default function InstituteOfApprovalsPage() {
-  const heroImage = PlaceHolderImages.find(p => p.id === 'institute-hero');
   const labImage = PlaceHolderImages.find(p => p.id === 'testing-lab');
   const docsImage = PlaceHolderImages.find(p => p.id === 'certification-docs');
 
@@ -132,21 +221,54 @@ export default function InstituteOfApprovalsPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {institutes.map((institute, index) => (
               <AnimatedElement key={institute.name} delay={index * 0.1}>
-                <Card className="h-full shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
-                  <CardHeader className="flex flex-row items-start gap-4">
-                    <div className="bg-primary/10 p-4 rounded-full mt-1">
-                      {institute.icon}
-                    </div>
-                    <div>
-                      <CardTitle className="text-xl font-headline">{institute.name}</CardTitle>
-                      <p className="text-sm font-medium text-muted-foreground">{institute.location}</p>
+                <Card className="h-full shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col bg-card">
+                  <CardHeader>
+                    <div className="flex items-start gap-4">
+                      <div className="bg-primary/10 p-3 rounded-full mt-1">
+                        {institute.icon}
+                      </div>
+                      <div>
+                        <CardTitle className="text-xl font-headline">{institute.name}</CardTitle>
+                        <p className="text-sm font-medium text-muted-foreground">{institute.location}</p>
+                        <p className="text-xs text-muted-foreground/80 mt-1">{institute.association}</p>
+                      </div>
                     </div>
                   </CardHeader>
-                  <CardContent>
-                    <p className="font-semibold text-primary">Role:</p>
-                    <p className="text-muted-foreground mb-3">{institute.role}</p>
-                    <p className="font-semibold text-primary">Specialization:</p>
-                    <p className="text-muted-foreground">{institute.specialization}</p>
+                  <CardContent className="flex flex-col flex-grow">
+                    <div className="flex flex-wrap gap-1.5 mb-4">
+                      {institute.mandates.map(tag => (
+                        <Badge key={tag} variant="secondary" className="text-xs font-medium">{tag}</Badge>
+                      ))}
+                    </div>
+                    <p className="text-muted-foreground mb-6 text-sm">{institute.primaryRole}</p>
+                    
+                    <Accordion type="single" collapsible className="w-full mb-6 border-t border-b">
+                      <AccordionItem value="item-1" className="border-b-0">
+                        <AccordionTrigger className="text-sm font-semibold hover:no-underline py-3">View Details</AccordionTrigger>
+                        <AccordionContent>
+                          <ul className="space-y-3 pt-2 text-sm">
+                            {institute.details.map(detail => (
+                              <li key={detail.title}>
+                                <p className="font-semibold text-primary">{detail.title}:</p>
+                                <p className="text-muted-foreground">{detail.content}</p>
+                              </li>
+                            ))}
+                          </ul>
+                        </AccordionContent>
+                      </AccordionItem>
+                    </Accordion>
+                    
+                    <div className="mt-auto">
+                      <h4 className="font-semibold text-sm mb-2 text-foreground">When to approach this institute:</h4>
+                      <ul className="space-y-2">
+                        {institute.guidance.map(point => (
+                          <li key={point} className="flex items-start text-sm">
+                            <ArrowRight className="h-4 w-4 text-accent mr-2 mt-0.5 flex-shrink-0" />
+                            <span className="text-muted-foreground">{point}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
                   </CardContent>
                 </Card>
               </AnimatedElement>
@@ -158,8 +280,8 @@ export default function InstituteOfApprovalsPage() {
         <section className="mt-16 md:mt-24 bg-secondary py-16 md:py-20 rounded-lg">
           <div className="container mx-auto px-4 md:px-6 lg:px-8">
             <AnimatedElement className="text-center mb-12">
-              <h2 className="text-3xl font-bold font-headline">How We Work With Approval Bodies</h2>
-              <p className="mt-2 max-w-2xl mx-auto text-muted-foreground">A streamlined and collaborative approach to ensure your success.</p>
+              <h2 className="text-3xl font-bold font-headline">How We Streamline Your Approval Process</h2>
+              <p className="mt-2 max-w-2xl mx-auto text-muted-foreground">A structured and collaborative approach to ensure your success.</p>
             </AnimatedElement>
             <div className="max-w-2xl mx-auto space-y-4">
               {howWeWork.map((step, index) => (
@@ -227,4 +349,3 @@ export default function InstituteOfApprovalsPage() {
     </div>
   );
 }
-
