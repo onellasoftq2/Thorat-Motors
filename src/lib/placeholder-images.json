@@ -15,7 +15,7 @@
     {
       "id": "flatbed",
       "description": "A long flatbed trailer ready for cargo.",
-      "imageUrl": "https://images.unsplash.com/photo-1621200424997-f81373511649?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageUrl": "https://images.unsplash.com/photo-1621200424997-f81373511649?q=80&w=2070&auto=format&fit=crop&ixlib-rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "imageHint": "flatbed trailer"
     },
     {
@@ -959,6 +959,54 @@
       "description": "A technician testing the refrigeration and insulation unit in a laboratory setting.",
       "imageUrl": "https://images.unsplash.com/photo-1581092446327-9b52bdc4f315?q=80&w=2070&auto=format&fit=crop&ixlib-rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "imageHint": "technical testing"
+    },
+    {
+      "id": "cv-hero",
+      "description": "A fleet of various commercial vehicles on a highway.",
+      "imageUrl": "https://images.unsplash.com/photo-1614909520113-79a0b96101c3?q=80&w=1974&auto=format&fit=crop&ixlib-rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageHint": "commercial fleet"
+    },
+    {
+      "id": "cv-lcv",
+      "description": "A light commercial vehicle making a delivery in a city.",
+      "imageUrl": "https://images.unsplash.com/photo-1628212494842-8c1710b4843b?q=80&w=1974&auto=format&fit=crop&ixlib-rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageHint": "delivery truck"
+    },
+    {
+      "id": "cv-mcv",
+      "description": "A medium commercial vehicle used for regional logistics.",
+      "imageUrl": "https://images.unsplash.com/photo-1609341066376-0c389aaa7998?q=80&w=1974&auto=format&fit=crop&ixlib-rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageHint": "regional truck"
+    },
+    {
+      "id": "cv-hcv",
+      "description": "A heavy commercial vehicle or tractor-trailer on a long-haul route.",
+      "imageUrl": "https://images.unsplash.com/photo-1577985051167-3d7f3394c8b2?q=80&w=1974&auto=format&fit=crop&ixlib-rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageHint": "heavy truck"
+    },
+    {
+      "id": "cv-goods-carrier",
+      "description": "A standard goods carrier truck being loaded at a warehouse.",
+      "imageUrl": "https://images.unsplash.com/photo-1576674443793-3a3a4c5a7a7a?q=80&w=2070&auto=format&fit=crop&ixlib-rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageHint": "goods truck"
+    },
+    {
+      "id": "cv-passenger",
+      "description": "A passenger bus or large van used for commercial transport.",
+      "imageUrl": "https://images.unsplash.com/photo-1570125909232-eb263c187f14?q=80&w=2070&auto=format&fit=crop&ixlib-rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageHint": "passenger bus"
+    },
+    {
+      "id": "cv-spv",
+      "description": "A special purpose commercial vehicle, such as a cement mixer or tanker.",
+      "imageUrl": "https://images.unsplash.com/photo-1517921345997-384358899214?q=80&w=1974&auto=format&fit=crop&ixlib-rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageHint": "special vehicle"
+    },
+    {
+      "id": "cv-testing",
+      "description": "A commercial vehicle undergoing rigorous testing in a specialized facility.",
+      "imageUrl": "https://images.unsplash.com/photo-1581092446327-9b52bdc4f315?q=80&w=2070&auto=format&fit=crop&ixlib-rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageHint": "vehicle testing"
     }
   ]
 }
