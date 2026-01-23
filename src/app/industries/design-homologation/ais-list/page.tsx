@@ -1,7 +1,7 @@
 
 'use client';
 
-import React from 'react';
+import React, { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
@@ -13,9 +13,12 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from '@/components/ui/accordion';
-import { Check } from 'lucide-react';
+import { Check, ArrowLeft, Car, Truck, Bus, Fuel, Wrench, ShieldQuestion } from 'lucide-react';
 import { AnimatedElement } from '@/components/ui/animated-element';
 import { Badge } from '@/components/ui/badge';
+import { AnimatePresence, motion } from 'framer-motion';
+import { cn } from '@/lib/utils';
+
 
 // Data for the AIS list
 const aisGroups = [
@@ -81,6 +84,174 @@ const approachPoints = [
     { title: "Design-for-Certification Mindset", description: "Our engineering process is oriented towards meeting all necessary testing and certification criteria efficiently." },
     { title: "Agency Coordination", description: "We maintain strong working relationships with approval agencies to stay updated on regulatory changes and streamline submissions." },
 ];
+
+const AisApplicabilityTool = () => {
+  const [step, setStep] = useState(0);
+  const [vehicleCategory, setVehicleCategory] = useState<string | null>(null);
+
+  const vehicleCategories = [
+    { id: 'ev', name: 'EV (2/3-Wheelers)', icon: <Car /> },
+    { id: 'commercial', name: 'Commercial Vehicle', icon: <Truck /> },
+    { id: 'trailer', name: 'Trailer', icon: <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-truck"><path d="M5 18H3c-1.1 0-2-.9-2-2V8c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2v10c0 1.1-.9 2-2 2h-1" /><path d="M14 18h1c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2h-1" /><path d="M18 18h3c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2h-2l-3 4-3-4H3" /><circle cx="7" cy="18" r="2" /><circle cx="17" cy="18" r="2" /></svg> },
+    { id: 'bus', name: 'Bus', icon: <Bus /> },
+    { id: 'tanker', name: 'Tanker', icon: <Fuel /> },
+    { id: 'body_build', name: 'Special Purpose / Body Build', icon: <Wrench /> },
+  ];
+
+  const aisMapping: { [key: string]: { [key: string]: { code: string; name: string; description: string; tags: string[] }[] } } = {
+    ev: {
+      "Safety Standards": [{ code: "AIS-038", name: "Braking Systems", description: "Performance for braking systems.", tags: ["Safety Critical", "Mandatory"] }],
+      "Electrical & Electronic Systems": [{ code: "AIS-125", name: "Electric Power Train Vehicles", description: "Safety for electric power trains.", tags: ["EV", "Safety Critical"] }, { code: "AIS-004", name: "Electromagnetic Compatibility (EMC)", description: "Ensures no electronic interference.", tags: ["Application Specific"] }],
+    },
+    commercial: {
+      "Safety Standards": [{ code: "AIS-001", name: "Safety Belts", description: "Seatbelt requirements.", tags: ["Safety Critical", "Mandatory"] }, { code: "AIS-038", name: "Braking Systems", description: "Performance for braking systems.", tags: ["Safety Critical", "Mandatory"] }],
+      "Emission & Environmental Standards": [{ code: "AIS-137", name: "Emission Norms (BS-VI)", description: "Exhaust emission limits.", tags: ["Emission Related", "Mandatory"] }],
+      "Body & Structural Standards": [{ code: "AIS-063", name: "Truck Cabin Safety", description: "Cabin safety requirements.", tags: ["Safety Critical"] }],
+    },
+    trailer: {
+      "Braking, Steering & Control Systems": [{ code: "AIS-153", name: "ABS for Trailers", description: "Mandates ABS for certain trailers.", tags: ["Safety Critical"] }],
+      "Lighting, Signalling & Visibility": [{ code: "AIS-008", name: "Installation of Lighting", description: "Governs light installation and performance.", tags: ["Mandatory"] }],
+    },
+    bus: {
+      "Safety Standards": [{ code: "AIS-093", name: "Bus Body Code", description: "Requirements for bus body construction.", tags: ["Safety Critical"] }],
+      "Emission & Environmental Standards": [{ code: "AIS-137", name: "Emission Norms (BS-VI)", description: "Exhaust emission limits.", tags: ["Emission Related", "Mandatory"] }],
+      "Body & Structural Standards": [{ code: "AIS-052", name: "Bus Body Code (Original)", description: "Standards for bus body construction.", tags: ["Safety Critical"] }],
+    },
+    tanker: {
+      "Special Purpose / Application-Specific Standards": [{ code: "AIS-113", name: "Transport of Dangerous Goods", description: "Requirements for vehicles transporting hazardous goods.", tags: ["Application Specific", "Mandatory"] }],
+      "Braking, Steering & Control Systems": [{ code: "AIS-153", name: "ABS for Trailers", description: "Mandates ABS for tankers on trailer chassis.", tags: ["Safety Critical"] }],
+    },
+    body_build: {
+      "Special Purpose / Application-Specific Standards": [{ code: "AIS-124", name: "Sleeping Berths in Cabins", description: "Standards for sleeping berths.", tags: ["Application Specific"] }, { code: "AIS-113", name: "Transport of Dangerous Goods", description: "Safety for vehicles carrying hazardous goods.", tags: ["Application Specific"] }],
+    }
+  };
+
+  const handleSelectCategory = (categoryId: string) => {
+    setVehicleCategory(categoryId);
+    setStep(1);
+  };
+
+  const handleBack = () => {
+    setVehicleCategory(null);
+    setStep(0);
+  };
+
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: { staggerChildren: 0.1, delayChildren: 0.2 },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0, transition: { type: 'spring', stiffness: 100 } },
+  };
+
+  return (
+    <section className="mt-16 md:mt-24">
+      <div className="text-center mb-12">
+        <h2 className="text-3xl font-bold font-headline">Which AIS apply to my vehicle?</h2>
+        <p className="mt-2 max-w-2xl mx-auto text-muted-foreground">Identify applicable Automotive Industry Standards based on your vehicle category and configuration.</p>
+        <div className="mt-3 w-20 h-1.5 bg-accent mx-auto"></div>
+      </div>
+
+      <Card className="shadow-lg">
+        <CardContent className="p-6 md:p-8 min-h-[400px]">
+          <AnimatePresence mode="wait">
+            {step === 0 && (
+              <motion.div
+                key="step-0"
+                initial="hidden"
+                animate="visible"
+                exit={{ opacity: 0, x: -50 }}
+                variants={containerVariants}
+              >
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                  {vehicleCategories.map(cat => (
+                    <motion.div key={cat.id} variants={itemVariants}>
+                      <button
+                        onClick={() => handleSelectCategory(cat.id)}
+                        className="w-full h-full text-left p-6 border rounded-lg hover:bg-secondary hover:border-accent transition-all duration-300 group"
+                      >
+                        <div className="flex items-center gap-4">
+                          <div className="bg-primary/10 text-accent p-3 rounded-full transition-colors group-hover:bg-accent group-hover:text-accent-foreground">
+                            {cat.icon}
+                          </div>
+                          <h3 className="text-lg font-semibold text-foreground">{cat.name}</h3>
+                        </div>
+                      </button>
+                    </motion.div>
+                  ))}
+                </div>
+              </motion.div>
+            )}
+
+            {step === 1 && vehicleCategory && (
+              <motion.div
+                key="step-1"
+                initial={{ opacity: 0, x: 50 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: -50 }}
+                transition={{ duration: 0.3 }}
+              >
+                <div className="flex items-center mb-6">
+                  <Button variant="ghost" onClick={handleBack} className="mr-4">
+                    <ArrowLeft className="mr-2 h-4 w-4" /> Back
+                  </Button>
+                  <h3 className="text-xl font-bold">Applicable AIS for <span className="text-accent">{vehicleCategories.find(c => c.id === vehicleCategory)?.name}</span></h3>
+                </div>
+                
+                <motion.div
+                  variants={containerVariants}
+                  initial="hidden"
+                  animate="visible"
+                  className="space-y-6"
+                >
+                  {Object.entries(aisMapping[vehicleCategory] || {}).map(([groupTitle, items]) => (
+                    <motion.div key={groupTitle} variants={itemVariants}>
+                      <h4 className="text-lg font-semibold mb-4 border-b pb-2">{groupTitle}</h4>
+                      <div className="space-y-4">
+                        {items.map(item => (
+                          <div key={item.code} className="p-4 border-l-4 border-accent bg-secondary/50 rounded-r-md">
+                            <h5 className="font-bold text-primary">{item.code} — {item.name}</h5>
+                            <p className="text-muted-foreground mt-1 text-sm">{item.description}</p>
+                            <div className="mt-3 flex gap-2">
+                              {item.tags.map(tag => (
+                                <Badge key={tag} variant="secondary" className="text-xs">{tag}</Badge>
+                              ))}
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    </motion.div>
+                  ))}
+                </motion.div>
+                 
+                 <div className="mt-8">
+                     <p className="text-xs text-muted-foreground text-center">AIS applicability may vary based on detailed vehicle specifications and regulatory updates.</p>
+                    <div className="mt-8 text-center">
+                        <h4 className="text-lg font-bold font-headline max-w-2xl mx-auto">Need confirmation or support with AIS compliance?</h4>
+                         <div className="mt-4 flex flex-col sm:flex-row gap-4 justify-center">
+                            <Button size="sm" asChild>
+                                <Link href="/contact">Talk to Our Compliance Team</Link>
+                            </Button>
+                            <Button size="sm" variant="outline" asChild>
+                                <Link href="/quote?productCategory=services&product=Designing & Homologation">Request Homologation Support</Link>
+                            </Button>
+                        </div>
+                    </div>
+                </div>
+              </motion.div>
+            )}
+          </AnimatePresence>
+        </CardContent>
+      </Card>
+    </section>
+  );
+};
+
 
 export default function AisListPage() {
     const drawingImage = PlaceHolderImages.find(p => p.id === 'ais-drawing');
@@ -191,6 +362,9 @@ export default function AisListPage() {
             </div>
           </div>
         </section>
+        
+        {/* NEW INTERACTIVE SECTION */}
+        <AisApplicabilityTool />
 
         {/* 7. Visual Trust Section */}
         <section className="mt-16 md:mt-24">
@@ -224,5 +398,3 @@ export default function AisListPage() {
     </div>
   );
 }
-
-  
