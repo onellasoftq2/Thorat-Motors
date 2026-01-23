@@ -7,7 +7,7 @@ import Link from 'next/link';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { ArrowRight, Check, ChevronRight, Cpu, FileCheck, Route as RouteIcon, Shield } from 'lucide-react';
+import { ArrowRight, Check, ChevronRight, Cpu, FileCheck, Route as RouteIcon, Shield, CheckCircle } from 'lucide-react';
 import { AnimatedElement } from '@/components/ui/animated-element';
 import { Badge } from '@/components/ui/badge';
 import {
@@ -300,18 +300,28 @@ export default function InstituteOfApprovalsPage() {
           </div>
         </section>
 
-        {/* 6. Why This Matters to Our Clients */}
+        {/* 6. Why This Matters to Our Clients - The Value of Our Partnership */}
         <section className="mt-16 md:mt-24">
-            <AnimatedElement className="text-center mb-12">
-                <h2 className="text-3xl font-bold font-headline">The Value of Our Partnership</h2>
-            </AnimatedElement>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="text-center mb-16">
+                <AnimatedElement>
+                    <h2 className="text-3xl font-bold font-headline">The Value of Our Partnership</h2>
+                    <div className="mt-3 w-24 h-1.5 bg-accent mx-auto"></div>
+                </AnimatedElement>
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
                 {whyItMatters.map((item, index) => (
-                    <AnimatedElement key={item.title} delay={index * 0.1}>
-                        <div className="p-6">
-                            <h3 className="text-xl font-bold text-primary font-headline mb-2">{item.title}</h3>
-                            <p className="text-muted-foreground">{item.description}</p>
-                        </div>
+                    <AnimatedElement key={item.title} delay={index * 0.15}>
+                        <Card className="h-full text-center p-6 shadow-lg transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 border-b-4 border-transparent hover:border-accent">
+                            <CardHeader className="p-0 mb-6 items-center">
+                                <div className="bg-primary/10 p-4 rounded-full">
+                                    <CheckCircle className="h-8 w-8 text-accent" />
+                                </div>
+                            </CardHeader>
+                            <CardContent className="p-0">
+                                <h3 className="text-lg font-bold font-headline mb-2 text-primary">{item.title}</h3>
+                                <p className="text-muted-foreground text-sm">{item.description}</p>
+                            </CardContent>
+                        </Card>
                     </AnimatedElement>
                 ))}
             </div>
