@@ -12,7 +12,7 @@ import {
 } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
-import { products, industrySolutions, offices, services } from '@/lib/data';
+import { products, industrySolutions, offices, services, whyChooseUs } from '@/lib/data';
 import { ArrowRight, Truck, Home as HomeIcon, Wrench, DraftingCompass, Cog, Box, Star, Check, Layers } from 'lucide-react';
 import IndustryCard from '@/components/ui/industry-card';
 import { Timeline } from '@/components/ui/timeline';
@@ -24,7 +24,7 @@ import { useRouter } from 'next/navigation';
 import { cn } from '@/lib/utils';
 import { IndiaMap } from '@/components/ui/india-map';
 import { CategoryList, type Category } from '@/components/ui/category-list';
-import { StickyFeatureSection } from '@/components/ui/sticky-scroll-cards-section';
+import { AnimatedElement } from '@/components/ui/animated-element';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 
 const heroImage = PlaceHolderImages.find((img) => img.id === 'hero-trailer');
@@ -215,7 +215,38 @@ export default function Home() {
         </div>
       </section>
       
-      <StickyFeatureSection />
+      {/* Why Choose Us Section */}
+      <section className="bg-secondary py-12 md:py-16 lg:py-24">
+        <div className="container mx-auto px-4 md:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-extrabold font-headline tracking-tight sm:text-4xl text-foreground">
+              Why Choose Thorat Motors?
+            </h2>
+            <div className="mt-2 h-1.5 w-24 mx-auto bg-accent"></div>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {whyChooseUs.map((item, index) => (
+              <AnimatedElement key={item.title} delay={index * 0.1}>
+                <Card className="h-full overflow-hidden shadow-md transition-shadow hover:shadow-xl">
+                  <Image
+                    src={item.imageUrl}
+                    alt={item.title}
+                    width={600}
+                    height={400}
+                    className="w-full h-56 object-cover"
+                  />
+                  <CardHeader>
+                    <CardTitle>{item.title}</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-muted-foreground">{item.description}</p>
+                  </CardContent>
+                </Card>
+              </AnimatedElement>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* Our Products Section V2 */}
       <section className="bg-background py-12 md:py-16 lg:py-24">
@@ -487,7 +518,3 @@ export default function Home() {
     </div>
   );
 }
-
-    
-
-    
