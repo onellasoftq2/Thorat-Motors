@@ -1,4 +1,3 @@
-
 'use client';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -22,7 +21,7 @@ import { Marquee } from '@/components/ui/marquee';
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { cn } from '@/lib/utils';
-import { IndiaMap } from '@/components/ui/india-map';
+// import { IndiaMap } from '@/components/ui/india-map';
 import { CategoryList, type Category } from '@/components/ui/category-list';
 import { AnimatedElement } from '@/components/ui/animated-element';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
@@ -147,6 +146,8 @@ export default function Home() {
     onClick: () => router.push(`/services/${service.id}`),
   }));
 
+  const nationwideVideoPoster = PlaceHolderImages.find(p => p.id === 'transportation-ecosystem');
+
   return (
     <div className='overflow-x-hidden'>
       {/* Hero Section */}
@@ -219,10 +220,14 @@ export default function Home() {
       <section className="bg-secondary py-12 md:py-16 lg:py-24">
         <div className="container mx-auto px-4 md:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-extrabold font-headline tracking-tight sm:text-4xl text-foreground">
-              Why Choose Thorat Motors?
-            </h2>
-            <div className="mt-2 h-1.5 w-24 mx-auto bg-accent"></div>
+            <AnimatedElement>
+              <h2 className="text-3xl font-extrabold font-headline tracking-tight sm:text-4xl text-foreground">
+                Why Choose Thorat Motors?
+              </h2>
+            </AnimatedElement>
+            <AnimatedElement delay={0.1}>
+              <div className="mt-2 h-1.5 w-24 mx-auto bg-accent"></div>
+            </AnimatedElement>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {whyChooseUs.map((item, index) => (
@@ -432,31 +437,42 @@ export default function Home() {
 
       {/* Nationwide Presence Section */}
       <section className="locations-section py-12 md:py-16 lg:py-24">
-        <motion.div
+        <div
           className="container mx-auto px-4 md:px-6 lg:px-8"
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.2 }}
-          variants={containerVariants}
         >
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-extrabold font-headline tracking-tight sm:text-4xl">Nationwide Presence</h2>
-            <div className="mt-2 h-1.5 w-24 mx-auto bg-accent"></div>
+            <AnimatedElement>
+              <h2 className="text-3xl font-extrabold font-headline tracking-tight sm:text-4xl">Nationwide Presence</h2>
+            </AnimatedElement>
+            <AnimatedElement delay={0.1}>
+              <div className="mt-2 h-1.5 w-24 mx-auto bg-accent"></div>
+            </AnimatedElement>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-            <motion.div variants={itemVariants} className="relative aspect-[4/3] md:aspect-auto h-full min-h-[300px] md:min-h-[400px]">
-              <IndiaMap hoveredCity={hoveredCity} />
-            </motion.div>
-            <motion.div
-              variants={containerVariants}
+            <div className="relative aspect-video rounded-lg overflow-hidden shadow-lg bg-secondary">
+                <video 
+                    poster={nationwideVideoPoster?.imageUrl}
+                    className="w-full h-full object-cover"
+                    aria-label="Animation showing a truck moving across a map of India, representing nationwide logistics."
+                    autoPlay 
+                    loop 
+                    muted 
+                    playsInline
+                >
+                    <source 
+                        src="https://res.cloudinary.com/dz9qpa3g0/video/upload/v1769317479/hero-section_iphtf4.mp4" 
+                        type="video/mp4" 
+                    />
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <div
               className="grid grid-cols-2 sm:grid-cols-2 gap-4"
             >
-              {offices.map((location) => (
-                <motion.div
+              {offices.map((location, index) => (
+                <AnimatedElement
                   key={location.city}
-                  variants={itemVariants}
-                  onMouseEnter={() => setHoveredCity(location.city)}
-                  onMouseLeave={() => setHoveredCity(null)}
+                  delay={index * 0.1}
                 >
                   <Link href="/contact">
                     <Card className="location-card p-4 transition-all duration-300 hover:bg-secondary hover:shadow-lg hover:-translate-y-1 hover:border-accent">
@@ -465,16 +481,16 @@ export default function Home() {
                       </CardContent>
                     </Card>
                   </Link>
-                </motion.div>
+                </AnimatedElement>
               ))}
-            </motion.div>
+            </div>
           </div>
           <div className="mt-12 text-center">
             <Button asChild size="lg" variant="outline">
               <Link href="/contact">View Our Network</Link>
             </Button>
           </div>
-        </motion.div>
+        </div>
       </section>
 
       {/* Certifications Section */}
