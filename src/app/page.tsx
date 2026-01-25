@@ -16,10 +16,9 @@ import { products, industrySolutions, offices, services, whyChooseUs } from '@/l
 import { ArrowRight, Truck, Home as HomeIcon, Wrench, DraftingCompass, Cog, Box, Star, Check, Layers } from 'lucide-react';
 import IndustryCard from '@/components/ui/industry-card';
 import { Timeline } from '@/components/ui/timeline';
-import { AnimatedHeadline } from '@/components/animated-headline';
 import { AnimatedNumber } from '@/components/animated-number';
 import { Marquee } from '@/components/ui/marquee';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import { cn } from '@/lib/utils';
 // import { IndiaMap } from '@/components/ui/india-map';
@@ -130,12 +129,35 @@ const iconMap: { [key: string]: React.ReactNode } = {
   'container-conversions': <Box className="h-12 w-12 text-primary" />,
 };
 
+const heroTexts = [
+  {
+    heading: "Designing Vehicles That Are Ready for the Road — and the Law",
+    subheading: "From concept to certification, we deliver engineering-led design and end-to-end homologation that meets Indian and global regulatory standards."
+  },
+  {
+    heading: "Design with Confidence. Homologate with Certainty.",
+    subheading: "We ensure your vehicles are intelligently designed, rigorously tested, and fully compliant with AIS, CMVR, and international standards."
+  },
+  {
+    heading: "Where Innovative Design Meets Regulatory Excellence",
+    subheading: "Our design and homologation expertise helps manufacturers accelerate approvals without compromising safety, performance, or aesthetics."
+  }
+];
+
 
 export default function Home() {
   const [hoveredCity, setHoveredCity] = useState<string | null>(null);
   const router = useRouter();
 
   const [selectedIndustry, setSelectedIndustry] = useState(0);
+  const [currentHeroTextIndex, setCurrentHeroTextIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentHeroTextIndex((prevIndex) => (prevIndex + 1) % heroTexts.length);
+    }, 5000); // Change text every 5 seconds
+    return () => clearInterval(interval);
+  }, []);
 
   const serviceCategories: Category[] = services.map(service => ({
     id: service.id,
@@ -163,16 +185,23 @@ export default function Home() {
         </video>
         <div className="absolute inset-0 bg-black/50 z-10"></div>
         <div className="relative z-20 container mx-auto px-4 text-white">
-            <AnimatedHeadline className="font-headline text-4xl font-extrabold tracking-tight lg:text-5xl xl:text-6xl">
-                High-Performance Trailers & Modular Cabin Solutions.
-            </AnimatedHeadline>
-            <motion.p
-                initial={{ opacity: 0, y: 8 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
-                className="text-lg text-white/90 md:text-xl max-w-3xl mx-auto mt-6">
-                Engineering excellence for logistics, construction, cement, ports, steel, and industrial sectors across India.
-            </motion.p>
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={currentHeroTextIndex}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.8, ease: 'easeInOut' }}
+                className="h-48 flex flex-col justify-center"
+              >
+                <h1 className="font-headline text-4xl font-extrabold tracking-tight lg:text-5xl xl:text-6xl">
+                  {heroTexts[currentHeroTextIndex].heading}
+                </h1>
+                <p className="text-lg text-white/90 md:text-xl max-w-3xl mx-auto mt-6">
+                  {heroTexts[currentHeroTextIndex].subheading}
+                </p>
+              </motion.div>
+            </AnimatePresence>
             <motion.div
                 initial={{ opacity: 0, y: 8 }}
                 animate={{ opacity: 1, y: 0 }}
