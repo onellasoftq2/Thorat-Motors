@@ -1,9 +1,9 @@
+
 'use client';
 
 import { offices } from "@/lib/data";
 import { cn } from "@/lib/utils";
 import { motion } from 'framer-motion';
-import { Truck } from "lucide-react";
 import React from "react";
 
 export const IndiaMap = ({ 
@@ -67,7 +67,7 @@ export const IndiaMap = ({
 
       {animatedTruckPosition && (
         <motion.div
-            className="absolute flex items-center gap-2"
+            className="absolute"
             initial={false}
             animate={{ 
                 left: `${animatedTruckPosition.x}%`, 
@@ -78,8 +78,30 @@ export const IndiaMap = ({
               transform: 'translate(-50%, -50%)',
             }}
         >
-            <Truck className="w-8 h-8 text-accent" style={{filter: 'drop-shadow(0 1px 3px hsl(var(--accent) / 0.5))'}} />
-            <span className="text-xs font-bold text-primary whitespace-nowrap" style={{filter: 'drop-shadow(0 1px 2px hsl(var(--background)))'}}>Thorat Motors</span>
+            <motion.svg
+                width="96"
+                height="96"
+                viewBox="0 0 32 32"
+                xmlns="http://www.w3.org/2000/svg"
+                style={{ filter: 'drop-shadow(0 3px 5px hsla(var(--accent-foreground) / 0.3))' }}
+            >
+                <motion.g 
+                    animate={{ y: [0, -1, 0] }}
+                    transition={{ duration: 0.4, repeat: Infinity, ease: "easeInOut" }}
+                >
+                    {/* Main trailer body */}
+                    <path d="M3 21V10C3 9.44772 3.44772 9 4 9H21C21.5523 9 22 9.44772 22 10V21H3Z" fill="hsl(var(--accent))" stroke="hsl(var(--accent-foreground))" strokeWidth="0.5"/>
+                    {/* Truck cabin */}
+                    <path d="M21 21V11C21 10.4477 21.4477 10 22 10H26L29 14V21H21Z" fill="hsl(var(--accent))" stroke="hsl(var(--accent-foreground))" strokeWidth="0.5"/>
+                    {/* Wheels */}
+                    <circle cx="8" cy="23" r="3" fill="hsl(var(--accent-foreground))" stroke="hsl(var(--background))" strokeWidth="1"/>
+                    <circle cx="24" cy="23" r="3" fill="hsl(var(--accent-foreground))" stroke="hsl(var(--background))" strokeWidth="1"/>
+                    
+                    {/* Text */}
+                    <text x="12.5" y="14.5" textAnchor="middle" fontSize="3.5" fontWeight="bold" fill="hsl(var(--accent-foreground))">THORAT</text>
+                    <text x="12.5" y="18.5" textAnchor="middle" fontSize="2.5" fill="hsl(var(--accent-foreground))">MOTORS</text>
+                </motion.g>
+            </motion.svg>
         </motion.div>
       )}
     </div>
