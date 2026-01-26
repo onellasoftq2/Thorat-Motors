@@ -73,39 +73,44 @@ export default function AllProductsPage() {
     const productOptions = [...vehicleCategories, ...componentCategories].sort((a,b) => a.name.localeCompare(b.name));
 
     const filteredStandards = useMemo(() => {
-        if (!selectedProduct && !searchTerm) return [];
-        
-        let productKeywords: string[] = [];
-        const product = productOptions.find(p => p.name === selectedProduct);
-        if (product && 'keywords' in product) {
-            productKeywords = product.keywords;
-        } else if (product) {
-            // A simple mapping for vehicle types to keywords
-            const vehicleKeywordMap: {[key:string]: string[]} = {
-                "Electric Vehicles (2W/3W)": ['ev', 'electric', 'l1', 'l2', 'l5'],
-                "Commercial Vehicles": ['n1', 'n2', 'n3', 'commercial'],
-                "Buses": ['bus', 'm2', 'm3'],
-                "Trailers": ['trailer', 't'],
-                "Bulkers": ['bulker', 'tanker'],
-                "Refer Containers": ['refrigerated', 'container'],
-            };
-            productKeywords = vehicleKeywordMap[product.name] || [];
-        }
+        if (selectedProduct === '' && !searchTerm) return [];
+
+        const searchLower = searchTerm.toLowerCase();
 
         return aisStandards.filter(std => {
-            const matchesProduct = selectedProduct ? 
-                productKeywords.some(kw => 
-                    std.title.toLowerCase().includes(kw) || 
-                    std.code.toLowerCase().includes(kw) ||
-                    std.categories.some(cat => cat.toLowerCase().startsWith(kw))
-                ) : true;
-
-            const searchLower = searchTerm.toLowerCase();
             const matchesSearch = searchTerm ?
                 std.code.toLowerCase().includes(searchLower) ||
                 std.title.toLowerCase().includes(searchLower) : true;
+            
+            if (!matchesSearch) return false;
 
-            return matchesProduct && matchesSearch;
+            if (!selectedProduct || selectedProduct === 'all') {
+                return true; 
+            }
+
+            const product = productOptions.find(p => p.name === selectedProduct);
+            if (!product) return false;
+
+            let productKeywords: string[] = [];
+            if ('keywords' in product && product.keywords) {
+                productKeywords = product.keywords;
+            } else {
+                const vehicleKeywordMap: {[key:string]: string[]} = {
+                    "Electric Vehicles (2W/3W)": ['ev', 'electric', 'l1', 'l2', 'l5'],
+                    "Commercial Vehicles": ['n1', 'n2', 'n3', 'commercial'],
+                    "Buses": ['bus', 'm2', 'm3'],
+                    "Trailers": ['trailer', 't'],
+                    "Bulkers": ['bulker', 'tanker'],
+                    "Refer Containers": ['refrigerated', 'container'],
+                };
+                productKeywords = vehicleKeywordMap[product.name as keyof typeof vehicleKeywordMap] || [];
+            }
+            
+            return productKeywords.some(kw => 
+                std.title.toLowerCase().includes(kw) || 
+                std.code.toLowerCase().includes(kw) ||
+                std.categories.some(cat => cat.toLowerCase().startsWith(kw))
+            );
         });
 
     }, [selectedProduct, searchTerm, productOptions]);
@@ -214,7 +219,7 @@ export default function AllProductsPage() {
                     <Select value={selectedProduct} onValueChange={setSelectedProduct}>
                         <SelectTrigger><SelectValue placeholder="Select a product or system" /></SelectTrigger>
                         <SelectContent>
-                        <SelectItem value="">All Products</SelectItem>
+                        <SelectItem value="all">All Products</SelectItem>
                         {productOptions.map(p => <SelectItem key={p.name} value={p.name}>{p.name}</SelectItem>)}
                         </SelectContent>
                     </Select>
@@ -307,3 +312,5 @@ export default function AllProductsPage() {
     </div>
   );
 }
+
+    
