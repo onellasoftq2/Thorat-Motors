@@ -67,7 +67,7 @@ export const IndiaMap = ({
 
       {animatedTruckPosition && (
         <motion.div
-            className="absolute"
+            className="absolute flex items-center gap-2"
             initial={false}
             animate={{ 
                 left: `${animatedTruckPosition.x}%`, 
@@ -78,7 +78,8 @@ export const IndiaMap = ({
               transform: 'translate(-50%, -50%)',
             }}
         >
-            <Truck className="w-5 h-5 text-accent" style={{filter: 'drop-shadow(0 1px 3px hsl(var(--accent) / 0.5))'}} />
+            <Truck className="w-8 h-8 text-accent" style={{filter: 'drop-shadow(0 1px 3px hsl(var(--accent) / 0.5))'}} />
+            <span className="text-xs font-bold text-primary whitespace-nowrap" style={{filter: 'drop-shadow(0 1px 2px hsl(var(--background)))'}}>Thorat Motors</span>
         </motion.div>
       )}
     </div>
