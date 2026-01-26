@@ -106,7 +106,6 @@ export const navMenu: NavMenu[] = [
             name: "Products",
             description: "Our range of certified products.",
             icon: 'Package',
-            href: "/industries/design-homologation/products",
             subItems: [
               { name: "EV (2-wheelers & 3-wheelers)", href: "/industries/design-homologation/products/ev", icon: "Car" },
               { name: "Trailers", href: "/industries/design-homologation/products/trailers", icon: "Truck" },
@@ -114,7 +113,6 @@ export const navMenu: NavMenu[] = [
               { name: "Bulkers", href: "/industries/design-homologation/products/bulkers", icon: "Fuel" },
               { name: "Refer Container", href: "/industries/design-homologation/products/refer-container", icon: "Container" },
               { name: "Commercial Vehicle", href: "/industries/design-homologation/products/commercial-vehicle", icon: "Truck" },
-              { name: "All Products", href: "/industries/design-homologation/products", icon: "Package" },
             ]
           },
           { name: "List of AIS", href: "/industries/design-homologation/ais-list", description: "Automotive Industry Standards compliance.", icon: 'ListChecks' },
@@ -710,7 +708,7 @@ export const industrySolutions = [
       'Flatbed & Side-Wall Trailers',
       'Transport & Logistics Support',
     ],
-    image: "https://images.unsplash.com/photo-1517921345997-384358899214?q=80&w=1974&auto=format&fit=crop&ixlib-rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    image: "https://images.unsplash.com/photo-1517921345997-384358899214?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     icon: "Building"
   },
   {
@@ -770,7 +768,7 @@ export const industrySolutions = [
       'Shop & Hotel Cabins',
       'Custom Fabrication',
     ],
-    image: "https://images.unsplash.com/photo-1554118811-1e0d58224f24?q=80&w=2070&auto=format&fit=crop&ixid-rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    image: "https://images.unsplash.com/photo-1554118811-1e0d58224f24?q=80&w=2070&auto=format&fit=crop&ixid=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     icon: "ShoppingCart"
   },
   {
