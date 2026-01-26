@@ -1,3 +1,4 @@
+
 'use client';
 
 import React from 'react';
@@ -95,31 +96,45 @@ export const HomologationWorkflowSection = ({ productType, workflowSteps }: { pr
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.5 }}
             transition={{ duration: config.animationDuration, ease: 'easeOut' }}
-            className="text-center mb-12 px-4"
+            className="text-center mb-16 px-4"
         >
             <h2 className="text-3xl font-bold font-headline">Homologation Workflow</h2>
             <p className="mt-2 text-muted-foreground">{config.subtitle}</p>
             <div className={cn("mt-3 mb-4 w-20 h-1.5 mx-auto", config.accentBg)} />
         </motion.div>
-        <div className="max-w-4xl mx-auto px-4">
-            {workflowSteps.map((step, index) => (
+        
+        <div className="max-w-3xl mx-auto px-4">
+            <div className="relative">
+                {/* Vertical connector line */}
+                <div className="absolute left-8 top-0 h-full w-1 bg-border/20 -translate-x-1/2"></div>
+                
+                {workflowSteps.map((step, index) => (
                 <motion.div
                     key={step.title}
-                    initial={{ opacity: 0, x: -20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
+                    initial={{ opacity: 0, y: 40 }}
+                    whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, amount: 0.5 }}
-                    transition={{ delay: index * 0.1, duration: config.animationDuration, ease: 'easeOut' }}
-                    className="flex items-center mb-4"
+                    transition={{ delay: index * 0.15, duration: config.animationDuration, ease: 'easeOut' }}
+                    className="flex items-start mb-12 relative"
                 >
-                    <div className={cn("flex-shrink-0 h-12 w-12 rounded-full flex items-center justify-center font-bold text-lg border-2 bg-background", config.accentColor)}>
-                       {React.cloneElement(config.icons[index] as React.ReactElement, { className: cn("h-6 w-6", config.accentColor) })}
+                    <div className="flex-shrink-0 z-10">
+                    <div className={cn(
+                        "h-16 w-16 rounded-full flex items-center justify-center font-bold text-lg border-4 bg-background shadow-md",
+                        config.accentColor
+                    )}>
+                        {React.cloneElement(config.icons[index] as React.ReactElement, { className: "h-8 w-8" })}
                     </div>
-                    <div className="ml-4 p-4 bg-background/50 rounded-lg flex-grow shadow-sm">
-                        <p className="font-semibold">{step.title}</p>
+                    </div>
+                    <div className="ml-8 mt-1 flex-grow">
+                    <div className="p-6 bg-background/70 backdrop-blur-sm rounded-lg shadow-lg border">
+                        <p className="font-semibold text-lg">{step.title}</p>
+                    </div>
                     </div>
                 </motion.div>
-            ))}
+                ))}
+            </div>
         </div>
+
       </div>
     </section>
   );
