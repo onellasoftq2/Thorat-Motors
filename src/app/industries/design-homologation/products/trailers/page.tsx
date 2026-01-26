@@ -1,4 +1,3 @@
-
 'use client';
 
 import React, { useState, useMemo } from 'react';
@@ -20,6 +19,7 @@ import { AnimatedElement } from '@/components/ui/animated-element';
 import { aisStandards } from '@/lib/ais-standards';
 import { Input } from '@/components/ui/input';
 import { cn } from '@/lib/utils';
+import { HomologationWorkflowSection } from '@/components/ui/homologation-workflow';
 
 const trailerCategories = [
     { name: 'Flatbed Trailers', category: 'T2/T3/T4', application: 'General cargo, containers', imageId: 'flatbed' },
@@ -227,22 +227,7 @@ export default function TrailerHomologationPage() {
         </section>
 
         {/* 5. Trailer Homologation Workflow */}
-        <section className="mt-16 md:mt-24">
-            <AnimatedElement className="text-center mb-12">
-                <h2 className="text-3xl font-bold font-headline">Trailer Homologation Workflow</h2>
-                <div className="mt-3 mb-4 w-20 h-1.5 bg-accent mx-auto"></div>
-            </AnimatedElement>
-            <div className="max-w-4xl mx-auto">
-                {homologationWorkflow.map((step, index) => (
-                    <AnimatedElement key={step.title} delay={index * 0.1} className="flex items-center mb-4">
-                        <div className="flex-shrink-0 bg-primary text-primary-foreground h-10 w-10 rounded-full flex items-center justify-center font-bold text-lg">{index + 1}</div>
-                        <div className="ml-4 p-4 bg-secondary rounded-lg flex-grow">
-                            <p className="font-semibold">{step.title}</p>
-                        </div>
-                    </AnimatedElement>
-                ))}
-            </div>
-        </section>
+        <HomologationWorkflowSection productType="trailer" workflowSteps={homologationWorkflow} />
 
         {/* 6. Testing & Certification Support */}
         <section className="mt-16 md:mt-24 bg-secondary py-16 md:py-24">
