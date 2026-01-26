@@ -468,22 +468,22 @@ export default function Home() {
             </AnimatedElement>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-             <div className="relative aspect-video rounded-lg overflow-hidden shadow-lg bg-secondary">
-                <video 
-                    poster={nationwideVideoPoster?.imageUrl}
-                    className="w-full h-full object-cover"
-                    aria-label="Animation showing a truck moving across a map of India, representing nationwide logistics."
-                    autoPlay 
-                    loop 
-                    muted 
-                    playsInline
-                >
-                    <source 
-                        src="https://res.cloudinary.com/dz9qpa3g0/video/upload/v1769317479/hero-section_iphtf4.mp4" 
-                        type="video/mp4" 
-                    />
-                    Your browser does not support the video tag.
-                </video>
+            <div className="relative aspect-video rounded-lg overflow-hidden shadow-lg bg-secondary">
+              <video
+                poster={nationwideVideoPoster?.imageUrl}
+                className="w-full h-full object-cover"
+                aria-label="Animation showing a truck moving across a map of India, representing nationwide logistics."
+                autoPlay
+                loop
+                muted
+                playsInline
+              >
+                <source
+                  src="https://res.cloudinary.com/dz9qpa3g0/video/upload/v1769317479/hero-section_iphtf4.mp4"
+                  type="video/mp4"
+                />
+                Your browser does not support the video tag.
+              </video>
             </div>
             <div
               className="grid grid-cols-2 sm:grid-cols-2 gap-4"
@@ -553,3 +553,5 @@ export default function Home() {
     </div>
   );
 }
+
+    
