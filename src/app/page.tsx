@@ -480,7 +480,7 @@ export default function Home() {
              <div className="relative aspect-square rounded-lg overflow-hidden shadow-lg bg-secondary p-4 md:p-6">
               <IndiaMap 
                 hoveredCity={hoveredCity} 
-                animatedTruckPosition={offices[currentCityIndex].coords}
+                currentCityIndex={currentCityIndex}
               />
             </div>
             <div
@@ -555,5 +555,7 @@ export default function Home() {
     </div>
   );
 }
+
+    
 
     
