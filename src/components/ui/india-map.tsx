@@ -140,34 +140,39 @@ export const IndiaMap = ({
           transition={{ duration: 3, ease: 'linear' }}
         >
           <motion.g 
-            transform="translate(-1.8, -2.4) scale(0.15)"
+            transform="translate(-12, -8) scale(0.4)"
             animate={{
-                y: [0, -0.5, 0],
+                y: [0, -0.2, 0], // Subtle bounce
             }}
             transition={{
-                duration: 0.4,
+                duration: 0.5,
                 repeat: Infinity,
                 ease: "easeInOut",
             }}
-            style={{ filter: 'drop-shadow(0 3px 2px hsla(var(--accent-foreground) / 0.3))' }}
+            style={{ filter: 'drop-shadow(0 1px 1px hsla(var(--accent-foreground) / 0.3))' }}
           >
             {/* Trailer Body */}
-            <path d="M1 21V10C1 9.44772 1.44772 9 2 9H19C19.5523 9 20 9.44772 20 10V21H1Z" fill="hsl(var(--background))" stroke="hsl(var(--accent-foreground))" strokeWidth="1"/>
+            <path d="M0 18V4C0 3.44772 0.447715 3 1 3H28C28.5523 3 29 3.44772 29 4V18H0Z" fill="hsl(var(--background))" stroke="hsl(var(--accent-foreground))" strokeWidth="0.5"/>
+            
             {/* Trailer Swoosh */}
-            <path d="M2,18 C8,12 12,12 19,17 V 20 H 2 C Z" fill="hsl(var(--accent))" />
+            <path d="M1,16 C10,10 18,10 28,15 V 17 H 1 Z" fill="hsl(var(--accent))" />
+
             {/* Truck Cabin */}
-            <path d="M19 21V11C19 10.4477 19.4477 10 20 10H24L26 14V21H19Z" fill="hsl(var(--accent))" stroke="hsl(var(--accent-foreground))" strokeWidth="1"/>
+            <path d="M28 18V5C28 4.44772 28.4477 4 29 4H36L39 8V18H28Z" fill="hsl(var(--accent))" stroke="hsl(var(--accent-foreground))" strokeWidth="0.5"/>
+            
             {/* Wheels */}
-            <circle cx="6" cy="23" r="3" fill="hsl(var(--accent-foreground))" stroke="hsl(var(--background))" strokeWidth="0.5"/>
-            <circle cx="15" cy="23" r="3" fill="hsl(var(--accent-foreground))" stroke="hsl(var(--background))" strokeWidth="0.5"/>
-            <circle cx="22" cy="23" r="3" fill="hsl(var(--accent-foreground))" stroke="hsl(var(--background))" strokeWidth="0.5"/>
+            <circle cx="7" cy="20" r="2.5" fill="hsl(var(--foreground))" stroke="hsl(var(--background))" strokeWidth="0.5"/>
+            <circle cx="12" cy="20" r="2.5" fill="hsl(var(--foreground))" stroke="hsl(var(--background))" strokeWidth="0.5"/>
+            <circle cx="23" cy="20" r="2.5" fill="hsl(var(--foreground))" stroke="hsl(var(--background))" strokeWidth="0.5"/>
+            <circle cx="34" cy="20" r="2.5" fill="hsl(var(--foreground))" stroke="hsl(var(--background))" strokeWidth="0.5"/>
+            
             {/* Text */}
-            <text x="10" y="15.5" textAnchor="middle" fontSize="4" fontWeight="bold" fill="hsl(var(--accent-foreground))" transform="rotate(-90 10 15.5)">THORAT MOTORS</text>
+            <text x="14.5" y="9.5" textAnchor="middle" fontSize="2.5" fontWeight="bold" fill="hsl(var(--foreground))">
+              THORAT MOTORS
+            </text>
           </motion.g>
         </motion.g>
       </svg>
     </div>
   );
 };
-
-    
