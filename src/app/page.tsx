@@ -21,7 +21,7 @@ import { Marquee } from '@/components/ui/marquee';
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import { cn } from '@/lib/utils';
-// import { IndiaMap } from '@/components/ui/india-map';
+import { IndiaMap } from '@/components/ui/india-map';
 import { CategoryList, type Category } from '@/components/ui/category-list';
 import { AnimatedElement } from '@/components/ui/animated-element';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
@@ -151,12 +151,21 @@ export default function Home() {
 
   const [selectedIndustry, setSelectedIndustry] = useState(0);
   const [currentHeroTextIndex, setCurrentHeroTextIndex] = useState(0);
+  const [currentCityIndex, setCurrentCityIndex] = useState(0);
 
   useEffect(() => {
-    const interval = setInterval(() => {
+    const heroInterval = setInterval(() => {
       setCurrentHeroTextIndex((prevIndex) => (prevIndex + 1) % heroTexts.length);
     }, 5000); // Change text every 5 seconds
-    return () => clearInterval(interval);
+    
+    const mapInterval = setInterval(() => {
+      setCurrentCityIndex(prevIndex => (prevIndex + 1) % offices.length);
+    }, 3000);
+
+    return () => {
+        clearInterval(heroInterval);
+        clearInterval(mapInterval);
+    };
   }, []);
 
   const serviceCategories: Category[] = services.map(service => ({
@@ -468,22 +477,11 @@ export default function Home() {
             </AnimatedElement>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-            <div className="relative aspect-video rounded-lg overflow-hidden shadow-lg bg-secondary">
-              <video
-                poster={nationwideVideoPoster?.imageUrl}
-                className="w-full h-full object-cover"
-                aria-label="Animation showing a truck moving across a map of India, representing nationwide logistics."
-                autoPlay
-                loop
-                muted
-                playsInline
-              >
-                <source
-                  src="https://res.cloudinary.com/dz9qpa3g0/video/upload/v1769317479/hero-section_iphtf4.mp4"
-                  type="video/mp4"
-                />
-                Your browser does not support the video tag.
-              </video>
+             <div className="relative aspect-square rounded-lg overflow-hidden shadow-lg bg-secondary p-4 md:p-6">
+              <IndiaMap 
+                hoveredCity={hoveredCity} 
+                animatedTruckPosition={offices[currentCityIndex].coords}
+              />
             </div>
             <div
               className="grid grid-cols-2 sm:grid-cols-2 gap-4"
@@ -494,7 +492,11 @@ export default function Home() {
                   delay={index * 0.1}
                 >
                   <Link href="/contact">
-                    <Card className="location-card p-4 transition-all duration-300 hover:bg-secondary hover:shadow-lg hover:-translate-y-1 hover:border-accent">
+                    <Card 
+                      className="location-card p-4 transition-all duration-300 hover:bg-secondary hover:shadow-lg hover:-translate-y-1 hover:border-accent"
+                      onMouseEnter={() => setHoveredCity(location.city)}
+                      onMouseLeave={() => setHoveredCity(null)}
+                    >
                       <CardContent className="p-0 text-left">
                         <p className="font-bold text-lg text-foreground">{location.city}</p>
                       </CardContent>
