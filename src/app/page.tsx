@@ -166,14 +166,7 @@ const capabilities = [
     icon: <Truck className="w-12 h-12 text-primary mb-4" />,
     title: 'Transportation',
     description: 'Reliable, on-time delivery solutions.',
-    chips: [
-      { name: 'Finished Vehicle Transport', href: '/transportation' },
-      { name: 'Heavy Equipment Movement', href: '/transportation' },
-      { name: 'Specialized Cargo Handling', href: '/transportation' },
-      { name: 'Long-Haul Logistics', href: '/transportation' },
-      { name: 'Cold Chain Transport', href: '/transportation' },
-      { name: 'Project & ODC Transport', href: '/transportation' }
-    ],
+    href: '/transportation'
   }
 ];
 
@@ -337,26 +330,25 @@ export default function Home() {
             <div className="mt-2 h-1.5 w-24 mx-auto bg-accent"></div>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {capabilities.map((capability, index) => {
-              if (capability.title === 'Manufacturing') {
-                const VISIBLE_CHIPS = 5;
-                const totalChips = capability.chips.length;
-                return (
-                  <div key={index} className="product-card-v2 flex flex-col">
-                    <div className="p-6 flex flex-col flex-grow">
-                      {capability.icon}
-                      <h3 className="font-headline text-2xl font-bold">{capability.title}</h3>
-                      <p className="text-muted-foreground mt-1 mb-4">{capability.description}</p>
+            {capabilities.map((capability, index) => (
+              <div key={index} className="product-card-v2 flex flex-col">
+                <div className="p-6 flex flex-col flex-grow">
+                  {capability.icon}
+                  <h3 className="font-headline text-2xl font-bold">{capability.title}</h3>
+                  <p className="text-muted-foreground mt-1 mb-4">{capability.description}</p>
+                  
+                  {capability.title === 'Manufacturing' ? (
+                    <>
                       <div className="flex-grow">
                         <div className="flex flex-wrap items-start gap-2">
-                          {capability.chips.slice(0, VISIBLE_CHIPS).map(chip => (
+                          {capability.chips.slice(0, 5).map(chip => (
                             <div key={chip.name} className="product-tag">
                               {chip.name}
                             </div>
                           ))}
-                          {totalChips > VISIBLE_CHIPS && (
+                          {capability.chips.length > 5 && (
                             <div className="product-tag">
-                              +{totalChips - VISIBLE_CHIPS} more
+                              +{capability.chips.length - 5} more
                             </div>
                           )}
                         </div>
@@ -367,31 +359,33 @@ export default function Home() {
                           <ArrowRight className="ml-2 h-4 w-4 transform transition-transform duration-300 group-hover:translate-x-1" />
                         </Link>
                       </div>
-                    </div>
-                  </div>
-                );
-              }
-              return (
-                <div key={index} className="product-card-v2 flex flex-col">
-                  <div className="p-6 flex flex-col flex-grow">
-                    {capability.icon}
-                    <h3 className="font-headline text-2xl font-bold">{capability.title}</h3>
-                    <p className="text-muted-foreground mt-1 mb-4">{capability.description}</p>
+                    </>
+                  ) : capability.href ? (
+                    <>
+                      <div className="flex-grow" />
+                      <div className="mt-4">
+                        <Link href={capability.href} className="text-accent font-semibold flex items-center group text-sm">
+                          Explore {capability.title}
+                          <ArrowRight className="ml-2 h-4 w-4 transform transition-transform duration-300 group-hover:translate-x-1" />
+                        </Link>
+                      </div>
+                    </>
+                  ) : (
                     <div className="flex-grow">
-                        <div className="flex flex-wrap items-start gap-2">
-                        {capability.chips.map(chip => (
-                            'href' in chip && chip.href ? (
+                      <div className="flex flex-wrap items-start gap-2">
+                        {capability.chips && capability.chips.map(chip => (
+                          'href' in chip && chip.href ? (
                             <Link key={chip.name} href={chip.href} className="product-tag hover:bg-accent hover:text-accent-foreground transition-colors cursor-pointer">
-                                {chip.name}
+                              {chip.name}
                             </Link>
-                            ) : null
+                          ) : null
                         ))}
-                        </div>
+                      </div>
                     </div>
-                  </div>
+                  )}
                 </div>
-              );
-            })}
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -598,5 +592,6 @@ export default function Home() {
     
 
     
+
 
 
