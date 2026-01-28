@@ -48,13 +48,6 @@ const qualityStandards = [
 export default function FoodBulkerPage() {
     const heroImage = PlaceHolderImages.find(p => p.id === 'food-bulker-hero');
 
-    const galleryImagesData = [
-        PlaceHolderImages.find(img => img.id === 'food-bulker-hero'),
-        PlaceHolderImages.find(img => img.id === 'food-bulker-tank'),
-        PlaceHolderImages.find(img => img.id === 'food-bulker-unloading'),
-    ];
-
-
   return (
     <div className="bg-background text-foreground">
       {/* 1. Hero Section */}
@@ -187,28 +180,6 @@ export default function FoodBulkerPage() {
           </div>
         </section>
 
-        {/* 8. Visual Gallery */}
-        <section className="mt-12 md:mt-20">
-             <h2 className="text-3xl font-bold font-headline text-center">Visual Gallery</h2>
-            <div className="mt-3 mb-10 w-20 h-1.5 bg-accent mx-auto"></div>
-             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                {galleryImagesData.map((imageData, index) => {
-                    if (!imageData) return null;
-                    return (
-                        <Image
-                            key={index}
-                            src={imageData.imageUrl}
-                            alt={imageData.description}
-                            width={500}
-                            height={400}
-                            className="rounded-lg object-cover shadow-md aspect-video"
-                            data-ai-hint={imageData.imageHint}
-                        />
-                    );
-                })}
-            </div>
-        </section>
-
          {/* 9. Why Choose Us */}
         <section className="mt-12 md:mt-20">
              <h2 className="text-3xl font-bold font-headline text-center">Why Choose Our Food Bulkers?</h2>
@@ -245,5 +216,3 @@ export default function FoodBulkerPage() {
     </div>
   );
 }
-
-    

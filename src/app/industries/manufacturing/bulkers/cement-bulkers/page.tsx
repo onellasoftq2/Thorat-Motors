@@ -48,14 +48,6 @@ const qualityStandards = [
 export default function CementBulkerPage() {
     const heroImage = PlaceHolderImages.find(p => p.id === 'cement-bulker');
 
-    // For the gallery
-    const cementBulkerGallery1 = PlaceHolderImages.find(img => img.id === 'rigid-vehicle');
-    const cementBulkerGallery2 = PlaceHolderImages.find(img => img.id === 'tipping-bulker-rear');
-    const cementBulkerGallery3 = PlaceHolderImages.find(img => img.id === 'structural-fabrication');
-
-    const galleryImagesData = [cementBulkerGallery1, cementBulkerGallery2, cementBulkerGallery3];
-
-
   return (
     <div className="bg-background text-foreground">
       {/* 1. Hero Section */}
@@ -186,28 +178,6 @@ export default function CementBulkerPage() {
               </div>
             ))}
           </div>
-        </section>
-
-        {/* 8. Visual Gallery */}
-        <section className="mt-12 md:mt-20">
-             <h2 className="text-3xl font-bold font-headline text-center">Visual Gallery</h2>
-            <div className="mt-3 mb-10 w-20 h-1.5 bg-accent mx-auto"></div>
-             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                {galleryImagesData.map((imageData, index) => {
-                    if (!imageData) return null;
-                    return (
-                        <Image
-                            key={index}
-                            src={imageData.imageUrl}
-                            alt={imageData.description}
-                            width={500}
-                            height={400}
-                            className="rounded-lg object-cover shadow-md aspect-video"
-                            data-ai-hint={imageData.imageHint}
-                        />
-                    );
-                })}
-            </div>
         </section>
 
          {/* 9. Why Choose Us */}

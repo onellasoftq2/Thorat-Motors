@@ -36,13 +36,6 @@ const whyChooseUs = [
     { title: "Service & Support Readiness", description: "Our commitment extends beyond manufacturing. We offer comprehensive after-sales support and spare parts availability to keep your fleet operational and minimize downtime." },
 ];
 
-const galleryImages = [
-    { id: 'tipping-bulker-side', description: 'Side view of a tipping bulker' },
-    { id: 'tipping-bulker-rear', description: 'Rear view showing tipping mechanism' },
-    { id: 'tipping-bulker-factory', description: 'Tipping bulker in the manufacturing facility' },
-];
-
-
 export default function TippingBulkersPage() {
     const heroImage = PlaceHolderImages.find(p => p.id === 'tipping-bulker-hero');
 
@@ -160,29 +153,6 @@ export default function TippingBulkersPage() {
                     className="rounded-lg object-cover shadow-md aspect-video"
                     data-ai-hint="welding fabrication"
                 />
-            </div>
-        </section>
-
-        {/* 8. Visual Gallery */}
-        <section className="mt-12 md:mt-20">
-             <h2 className="text-3xl font-bold font-headline text-center">Visual Gallery</h2>
-            <div className="mt-3 mb-10 w-20 h-1.5 bg-accent mx-auto"></div>
-             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                {galleryImages.map(img => {
-                    const imageData = PlaceHolderImages.find(p => p.id === img.id);
-                    if (!imageData) return null;
-                    return (
-                        <Image
-                            key={imageData.id}
-                            src={imageData.imageUrl}
-                            alt={imageData.description}
-                            width={500}
-                            height={400}
-                            className="rounded-lg object-cover shadow-md aspect-video"
-                            data-ai-hint={imageData.imageHint}
-                        />
-                    );
-                })}
             </div>
         </section>
 
