@@ -20,6 +20,8 @@ import {
     Settings
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import { AnimatedElement } from '@/components/ui/animated-element';
+import { Card, CardContent } from '@/components/ui/card';
 
 export type ProductType = 'ev' | 'trailer' | 'bus' | 'bulker' | 'refer-container' | 'commercial-vehicle';
 export type WorkflowStep = { title: string };
@@ -88,53 +90,43 @@ export const HomologationWorkflowSection = ({ productType, workflowSteps }: { pr
   const config = configurations[productType];
 
   return (
-    <section className={cn("mt-16 md:mt-24 relative py-16 rounded-lg overflow-hidden", config.backgroundPattern)}>
+    <section className={cn("mt-16 md:mt-24 relative py-16 md:py-20 rounded-lg overflow-hidden", config.backgroundPattern)}>
       <div className="absolute inset-0 bg-secondary/90 backdrop-blur-sm z-0"></div>
-      <div className="relative z-10">
-        <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.5 }}
-            transition={{ duration: config.animationDuration, ease: 'easeOut' }}
-            className="text-center mb-16 px-4"
-        >
+      <div className="relative z-10 container mx-auto px-4 md:px-6 lg:px-8">
+        <AnimatedElement className="text-center mb-16">
             <h2 className="text-3xl font-bold font-headline">Homologation Workflow</h2>
             <p className="mt-2 text-muted-foreground">{config.subtitle}</p>
             <div className={cn("mt-3 mb-4 w-20 h-1.5 mx-auto", config.accentBg)} />
-        </motion.div>
+        </AnimatedElement>
         
-        <div className="max-w-3xl mx-auto px-4">
-            <div className="relative">
-                {/* Vertical connector line */}
-                <div className="absolute left-8 top-0 h-full w-1 bg-border/20 -translate-x-1/2"></div>
-                
-                {workflowSteps.map((step, index) => (
-                <motion.div
-                    key={step.title}
-                    initial={{ opacity: 0, y: 40 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true, amount: 0.5 }}
-                    transition={{ delay: index * 0.15, duration: config.animationDuration, ease: 'easeOut' }}
-                    className="flex items-start mb-12 relative"
-                >
-                    <div className="flex-shrink-0 z-10">
-                    <div className={cn(
-                        "h-16 w-16 rounded-full flex items-center justify-center font-bold text-lg border-4 bg-background shadow-md",
-                        config.accentColor
-                    )}>
-                        {React.cloneElement(config.icons[index] as React.ReactElement, { className: "h-8 w-8" })}
+        <div className="relative max-w-4xl mx-auto">
+            <div className="absolute left-1/2 top-0 bottom-0 w-px bg-border/50 -translate-x-1/2 hidden md:block"></div>
+            
+            {workflowSteps.map((step, index) => (
+                <AnimatedElement key={step.title} delay={index * 0.1} className="relative flex md:even:flex-row-reverse mb-12">
+                    <div className="hidden md:block absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10">
+                         <div className={cn(
+                            "h-16 w-16 rounded-full flex items-center justify-center border-4 bg-background shadow-lg",
+                            config.accentColor
+                        )}>
+                            {React.cloneElement(config.icons[index] as React.ReactElement, { className: "h-8 w-8" })}
+                        </div>
                     </div>
+                     <div className="w-full md:w-[calc(50%-2rem)]">
+                        <Card className="shadow-lg transition-shadow hover:shadow-xl bg-background/80 backdrop-blur-sm">
+                            <CardContent className="pt-6">
+                                 <div className="flex items-center">
+                                    <div className={cn("md:hidden mr-4 h-12 w-12 rounded-full flex items-center justify-center border-2 flex-shrink-0", config.accentColor)}>
+                                        {React.cloneElement(config.icons[index] as React.ReactElement, { className: "h-6 w-6" })}
+                                    </div>
+                                    <p className="text-lg font-semibold">{step.title}</p>
+                                </div>
+                            </CardContent>
+                        </Card>
                     </div>
-                    <div className="ml-8 mt-1 flex-grow">
-                    <div className="p-6 bg-background/70 backdrop-blur-sm rounded-lg shadow-lg border">
-                        <p className="font-semibold text-lg">{step.title}</p>
-                    </div>
-                    </div>
-                </motion.div>
-                ))}
-            </div>
+                </AnimatedElement>
+            ))}
         </div>
-
       </div>
     </section>
   );
