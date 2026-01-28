@@ -46,13 +46,6 @@ const operationalAdvantages = [ "Faster unloading cycles significantly improve o
 export default function TipTrailersPage() {
     const heroImage = PlaceHolderImages.find(p => p.id === 'tip-trailer-hero');
 
-    const galleryImagesData = [
-        PlaceHolderImages.find(img => img.id === 'tip-trailer-gallery-1'),
-        PlaceHolderImages.find(img => img.id === 'tip-trailer-gallery-2'),
-        PlaceHolderImages.find(img => img.id === 'tip-trailer-gallery-3'),
-    ];
-
-
   return (
     <div className="bg-background text-foreground">
       {/* 1. Hero Section */}
@@ -196,28 +189,6 @@ export default function TipTrailersPage() {
                         </CardContent>
                      </Card>
                 ))}
-            </div>
-        </section>
-
-        {/* 7. Visual Gallery */}
-        <section className="mt-12 md:mt-20">
-             <h2 className="text-3xl font-bold font-headline text-center">Visual Gallery</h2>
-            <div className="mt-3 mb-10 w-20 h-1.5 bg-accent mx-auto"></div>
-             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                {galleryImagesData.map((imageData, index) => {
-                    if (!imageData) return null;
-                    return (
-                        <Image
-                            key={index}
-                            src={imageData.imageUrl}
-                            alt={imageData.description}
-                            width={500}
-                            height={400}
-                            className="rounded-lg object-cover shadow-md aspect-video"
-                            data-ai-hint={imageData.imageHint}
-                        />
-                    );
-                })}
             </div>
         </section>
 
