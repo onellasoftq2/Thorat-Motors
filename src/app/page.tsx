@@ -120,6 +120,17 @@ const heroTexts = [
   }
 ];
 
+const designChips = [
+  { name: 'EV (2W & 3W)' },
+  { name: 'Trailers' },
+  { name: 'Bus' },
+  { name: 'Bulkers' },
+  { name: 'Reefer Containers' },
+  { name: 'Commercial Vehicles' },
+  { name: 'List of AIS' },
+  { name: 'Institute of Approvals' },
+];
+
 const manufacturingChips = [
     { name: 'Cement Bulkers' },
     { name: 'Rigid Vehicle' },
@@ -145,17 +156,8 @@ const capabilities = [
     icon: <DraftingCompass className="w-12 h-12 text-primary mb-4" />,
     title: 'Design & Homologation',
     description: 'Certification & compliance services.',
-    href: '/services/designing-homologation',
-    chips: [
-      { name: 'EV (2W & 3W)', href: '/industries/design-homologation/products/ev' },
-      { name: 'Trailers', href: '/industries/design-homologation/products/trailers' },
-      { name: 'Bus', href: '/industries/design-homologation/products/bus' },
-      { name: 'Bulkers', href: '/industries/design-homologation/products/bulkers' },
-      { name: 'Reefer Containers', href: '/industries/design-homologation/products/refer-container' },
-      { name: 'Commercial Vehicles', href: '/industries/design-homologation/products/commercial-vehicle' },
-      { name: 'List of AIS', href: '/industries/design-homologation/ais-list' },
-      { name: 'Institute of Approvals', href: '/industries/design-homologation/institute-of-approvals' }
-    ],
+    href: '/industries/design-homologation',
+    chips: designChips,
   },
   {
     icon: <Wrench className="w-12 h-12 text-primary mb-4" />,
@@ -586,3 +588,6 @@ export default function Home() {
 
 
 
+
+
+    
