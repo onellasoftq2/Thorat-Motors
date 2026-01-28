@@ -121,34 +121,34 @@ const heroTexts = [
 ];
 
 const designChips = [
-  { name: 'EV (2W & 3W)' },
-  { name: 'Trailers' },
-  { name: 'Bus' },
-  { name: 'Bulkers' },
-  { name: 'Reefer Containers' },
-  { name: 'Commercial Vehicles' },
-  { name: 'List of AIS' },
-  { name: 'Institute of Approvals' },
+  { name: 'EV (2W & 3W)', href: '/industries/design-homologation/products/ev' },
+  { name: 'Trailers', href: '/industries/design-homologation/products/trailers' },
+  { name: 'Bus', href: '/industries/design-homologation/products/bus' },
+  { name: 'Bulkers', href: '/industries/design-homologation/products/bulkers' },
+  { name: 'Reefer Containers', href: '/industries/design-homologation/products/refer-container' },
+  { name: 'Commercial Vehicles', href: '/industries/design-homologation/products/commercial-vehicle' },
+  { name: 'List of AIS', href: '/industries/design-homologation/ais-list' },
+  { name: 'Institute of Approvals', href: '/industries/design-homologation/institute-of-approvals' },
 ];
 
 const manufacturingChips = [
-    { name: 'Cement Bulkers' },
-    { name: 'Rigid Vehicle' },
-    { name: 'Tipping Bulkers' },
-    { name: 'Food Bulkers' },
-    { name: 'Bulker Trailers' },
-    { name: 'Flatbed Trailers' },
-    { name: 'Sidewall Trailers' },
-    { name: 'Tip Trailers' },
-    { name: 'Skeletal Trailers' },
-    { name: 'Semi Lowbed Trailers' },
-    { name: 'Cragganmore Tank' },
-    { name: 'Milk Tank' },
-    { name: 'Petroleum Tank' },
-    { name: 'Gas Tank' },
-    { name: 'TATA Load Bodies' },
-    { name: 'BharatBenz Load Bodies' },
-    { name: 'Ashok Leyland Load Bodies' },
+    { name: 'Cement Bulkers', href: '/industries/manufacturing/bulkers/cement-bulkers' },
+    { name: 'Rigid Vehicle', href: '/industries/manufacturing/bulkers/rigid-vehicle' },
+    { name: 'Tipping Bulkers', href: '/industries/manufacturing/bulkers/tipping-bulkers' },
+    { name: 'Food Bulkers', href: '/industries/manufacturing/bulkers/food-bulkers' },
+    { name: 'Bulker Trailers', href: '/industries/manufacturing/bulkers/bulker-trailers' },
+    { name: 'Flatbed Trailers', href: '/industries/manufacturing/trailers/flatbed' },
+    { name: 'Sidewall Trailers', href: '/industries/manufacturing/trailers/sidewall' },
+    { name: 'Tip Trailers', href: '/industries/manufacturing/trailers/tip' },
+    { name: 'Skeletal Trailers', href: '/industries/manufacturing/trailers/skeletal' },
+    { name: 'Semi Lowbed Trailers', href: '/industries/manufacturing/trailers/semi-lowbed' },
+    { name: 'Cragganmore Tank', href: '/industries/manufacturing/tankers/cragganmore-tank' },
+    { name: 'Milk Tank', href: '/industries/manufacturing/tankers/milk-tank' },
+    { name: 'Petroleum Tank', href: '/industries/manufacturing/tankers/petroleum-tank' },
+    { name: 'Gas Tank', href: '/industries/manufacturing/tankers/gas-tank' },
+    { name: 'TATA Load Bodies', href: '/industries/manufacturing/load-bodies/tata' },
+    { name: 'BharatBenz Load Bodies', href: '/industries/manufacturing/load-bodies/bharatbenz' },
+    { name: 'Ashok Leyland Load Bodies', href: '/industries/manufacturing/load-bodies/ashok-leyland' },
 ];
 
 const capabilities = [
@@ -341,30 +341,22 @@ export default function Home() {
                   <h3 className="font-headline text-2xl font-bold">{capability.title}</h3>
                   <p className="text-muted-foreground mt-1 mb-4">{capability.description}</p>
                   
-                  {capability.chips && capability.chips.length > 0 ? (
-                    <>
-                      <div className="flex-grow">
-                        <div className="flex flex-wrap items-start gap-2">
-                          {capability.chips.slice(0, 5).map(chip => (
-                            <div key={chip.name} className="product-tag">
+                  <div className="flex-grow">
+                    <div className="flex flex-wrap items-start gap-2">
+                      {capability.chips && capability.chips.slice(0, 5).map(chip => (
+                          <Link href={chip.href || '#'} key={chip.name} className="product-tag hover:bg-accent/20 transition-colors">
                               {chip.name}
-                            </div>
-                          ))}
-                          {capability.chips.length > 5 && (
-                            <div className="product-tag">
-                              +{capability.chips.length - 5} more
-                            </div>
-                          )}
+                          </Link>
+                      ))}
+                      {capability.chips && capability.chips.length > 5 && (
+                        <div className="product-tag">
+                          +{capability.chips.length - 5} more
                         </div>
-                      </div>
-                      <div className="mt-4">
-                        <Link href={capability.href || '#'} className="text-accent font-semibold flex items-center group text-sm">
-                          Explore {capability.title}
-                          <ArrowRight className="ml-2 h-4 w-4 transform transition-transform duration-300 group-hover:translate-x-1" />
-                        </Link>
-                      </div>
-                    </>
-                  ) : capability.href ? (
+                      )}
+                    </div>
+                  </div>
+                  
+                  {capability.href && (!capability.chips || capability.chips.length === 0) && (
                     <>
                       <div className="flex-grow" />
                       <div className="mt-4">
@@ -374,7 +366,15 @@ export default function Home() {
                         </Link>
                       </div>
                     </>
-                  ) : null}
+                  )}
+                  {capability.href && capability.chips && capability.chips.length > 0 && (
+                     <div className="mt-4">
+                        <Link href={capability.href} className="text-accent font-semibold flex items-center group text-sm">
+                          Explore {capability.title}
+                          <ArrowRight className="ml-2 h-4 w-4 transform transition-transform duration-300 group-hover:translate-x-1" />
+                        </Link>
+                      </div>
+                  )}
                 </div>
               </div>
             ))}
@@ -443,9 +443,6 @@ export default function Home() {
                                             </motion.li>
                                         ))}
                                     </ul>
-                                    <Button asChild variant="link" className="px-0 mt-6 text-accent font-semibold">
-                                        <Link href={`/industries#${industrySolutions[selectedIndustry].id}`}>Learn More <ArrowRight className="ml-2 h-4 w-4" /></Link>
-                                    </Button>
                                 </CardContent>
                             </Card>
                         </motion.div>
@@ -474,9 +471,6 @@ export default function Home() {
                                             </li>
                                         ))}
                                     </ul>
-                                    <Button asChild variant="link" className="px-0 mt-6 text-accent font-semibold">
-                                        <Link href={`/industries#${solution.id}`}>Learn More <ArrowRight className="ml-2 h-4 w-4" /></Link>
-                                    </Button>
                                 </CardContent>
                             </Card>
                           </AccordionContent>
