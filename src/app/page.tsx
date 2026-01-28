@@ -145,6 +145,7 @@ const capabilities = [
     icon: <DraftingCompass className="w-12 h-12 text-primary mb-4" />,
     title: 'Design & Homologation',
     description: 'Certification & compliance services.',
+    href: '/services/designing-homologation',
     chips: [
       { name: 'EV (2W & 3W)', href: '/industries/design-homologation/products/ev' },
       { name: 'Trailers', href: '/industries/design-homologation/products/trailers' },
@@ -160,6 +161,7 @@ const capabilities = [
     icon: <Wrench className="w-12 h-12 text-primary mb-4" />,
     title: 'Manufacturing',
     description: 'High-precision fabrication and assembly.',
+    href: '/industries/manufacturing',
     chips: manufacturingChips,
   },
   {
@@ -337,7 +339,7 @@ export default function Home() {
                   <h3 className="font-headline text-2xl font-bold">{capability.title}</h3>
                   <p className="text-muted-foreground mt-1 mb-4">{capability.description}</p>
                   
-                  {capability.title === 'Manufacturing' ? (
+                  {capability.chips && capability.chips.length > 0 ? (
                     <>
                       <div className="flex-grow">
                         <div className="flex flex-wrap items-start gap-2">
@@ -354,8 +356,8 @@ export default function Home() {
                         </div>
                       </div>
                       <div className="mt-4">
-                        <Link href="/industries/manufacturing" className="text-accent font-semibold flex items-center group text-sm">
-                          Explore Manufacturing
+                        <Link href={capability.href || '#'} className="text-accent font-semibold flex items-center group text-sm">
+                          Explore {capability.title}
                           <ArrowRight className="ml-2 h-4 w-4 transform transition-transform duration-300 group-hover:translate-x-1" />
                         </Link>
                       </div>
@@ -370,19 +372,7 @@ export default function Home() {
                         </Link>
                       </div>
                     </>
-                  ) : (
-                    <div className="flex-grow">
-                      <div className="flex flex-wrap items-start gap-2">
-                        {capability.chips && capability.chips.map(chip => (
-                          'href' in chip && chip.href ? (
-                            <Link key={chip.name} href={chip.href} className="product-tag hover:bg-accent hover:text-accent-foreground transition-colors cursor-pointer">
-                              {chip.name}
-                            </Link>
-                          ) : null
-                        ))}
-                      </div>
-                    </div>
-                  )}
+                  ) : null}
                 </div>
               </div>
             ))}
@@ -592,6 +582,7 @@ export default function Home() {
     
 
     
+
 
 
 
