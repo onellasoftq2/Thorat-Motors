@@ -4,7 +4,7 @@ import Link from 'next/link';
 import React from 'react';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { Button } from '@/components/ui/button';
-import { Card, CardContent } from '@/components/ui/card';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Check, ShieldCheck, ArrowRight, Anchor, Warehouse, Globe, Truck } from 'lucide-react';
 import {
   Breadcrumb,
@@ -14,6 +14,7 @@ import {
   BreadcrumbPage,
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
+import { AnimatedElement } from '@/components/ui/animated-element';
 
 // Data for the page
 const keySpecs = [
@@ -30,18 +31,23 @@ const applications = [
 ];
 
 const configurations = [
-    { name: 'Supported Container Sizes', description: 'Engineered to carry 1x20ft, 2x20ft, or 1x40ft ISO containers.' },
-    { name: 'Axle & Suspension Configurations', description: 'Tandem and tridem axle options with heavy-duty mechanical or air suspension.' },
-    { name: 'Twist-Lock Systems', description: 'Equipped with high-quality, certified twist-locks for secure container anchoring.' },
-    { name: 'Weight-Optimized Chassis', description: 'High-strength, lightweight steel chassis designed to maximize payload capacity.' },
-    { name: 'Custom Fleet Solutions', description: 'Tailored designs for specific fleet requirements, operational routes, and regulatory needs.' },
+    { name: 'Container Sizes', description: 'Carries 1x20ft, 2x20ft, or 1x40ft ISO containers.' },
+    { name: 'Axle & Suspension', description: 'Tandem/tridem axles with heavy-duty suspension.' },
+    { name: 'Twist-Locks', description: 'Certified twist-locks for secure container anchoring.' },
+    { name: 'Chassis Design', description: 'Lightweight chassis designed to maximize payload capacity.' },
+    { name: 'Custom Builds', description: 'Custom designs available for specific fleet and route needs.' },
 ];
 
-const engineeringHighlights = [ "High-tensile, lightweight chassis design for maximum payload and fuel efficiency.", "Precision-engineered, fail-safe twist-lock mechanisms for secure container handling.", "Optimized load distribution for superior on-road stability, both loaded and empty.", "Durable fabrication quality designed for the high-cycle demands of container logistics." ];
+const engineeringHighlights = [ "Lightweight chassis for max payload.", "Fail-safe twist-locks for secure handling.", "Optimized load distribution for stability.", "Durable fabrication for container logistics." ];
 
-const safetyCompliance = [ "Secure container locking systems to prevent shifting and ensure transport safety.", "FEA-validated designs for stability under all dynamic loading conditions.", "Full compliance with CMVR and all applicable trailer manufacturing standards.", "Advanced braking systems for reliable and safe performance in all operating environments." ];
+const safetyCompliance = [ "Secure locking systems prevent shifting.", "FEA-validated for dynamic load stability.", "CMVR and manufacturing standards compliant.", "Advanced braking for reliable performance." ];
 
-const operationalAdvantages = [ "Higher payload efficiency due to optimized lightweight design.", "Faster container turnaround times at ports, CFS, and ICDs.", "Significant reduction in dead weight compared to full-body flatbed trailers.", "Designed for low maintenance and long service life, maximizing fleet uptime." ];
+const operationalAdvantages = [
+    { title: "Payload Efficiency", description: "Higher payload efficiency due to optimized lightweight design." },
+    { title: "Faster Turnaround", description: "Faster container turnaround times at ports, CFS, and ICDs." },
+    { title: "Reduced Weight", description: "Significant reduction in dead weight compared to flatbed trailers." },
+    { title: "Low Maintenance", description: "Designed for low maintenance and long service life, maximizing uptime." }
+];
 
 export default function SkeletalTrailersPage() {
     const heroImage = PlaceHolderImages.find(p => p.id === 'skeletal-hero');
@@ -52,7 +58,7 @@ export default function SkeletalTrailersPage() {
       <section className="bg-secondary relative">
          <div className="container mx-auto px-4 md:px-6 lg:px-8 pt-16 md:pt-24">
             <div className="grid md:grid-cols-2 gap-12 items-center">
-                <div className="text-center md:text-left">
+                <AnimatedElement className="text-center md:text-left">
                     <Breadcrumb className="mb-4 justify-center md:justify-start">
                         <BreadcrumbList>
                             <BreadcrumbItem>
@@ -71,7 +77,7 @@ export default function SkeletalTrailersPage() {
 
                     <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight font-headline">Skeletal Trailers</h1>
                     <p className="mt-4 text-lg md:text-xl text-muted-foreground max-w-lg mx-auto md:mx-0">
-                        Engineered for efficient ISO container transport with superior payload efficiency and reliability.
+                        Efficient and reliable ISO container transport.
                     </p>
                     <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
                         <Button size="lg" asChild>
@@ -81,8 +87,8 @@ export default function SkeletalTrailersPage() {
                             <Link href="/quote?product=skeletal-trailer">Enquire Now</Link>
                         </Button>
                     </div>
-                </div>
-                <div>
+                </AnimatedElement>
+                <AnimatedElement delay={0.1}>
                     {heroImage && (
                         <Image
                             src={heroImage.imageUrl}
@@ -94,7 +100,7 @@ export default function SkeletalTrailersPage() {
                             priority
                         />
                     )}
-                </div>
+                </AnimatedElement>
             </div>
          </div>
          {/* Key Specs Strip */}
@@ -102,10 +108,10 @@ export default function SkeletalTrailersPage() {
             <div className="container mx-auto px-4 md:px-6 lg:px-8">
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center py-4">
                     {keySpecs.map(spec => (
-                        <div key={spec.label}>
+                        <AnimatedElement key={spec.label}>
                             <p className="text-sm text-muted-foreground font-semibold uppercase tracking-wider">{spec.label}</p>
                             <p className="text-lg font-bold text-primary">{spec.value}</p>
-                        </div>
+                        </AnimatedElement>
                     ))}
                 </div>
             </div>
@@ -118,15 +124,17 @@ export default function SkeletalTrailersPage() {
              <h2 className="text-3xl font-bold font-headline text-center">Primary Applications</h2>
             <div className="mt-3 mb-10 w-20 h-1.5 bg-accent mx-auto"></div>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                {applications.map(app => {
+                {applications.map((app, index) => {
                     const appImage = PlaceHolderImages.find(p => p.id === app.imageId);
                     return (
-                        <Card key={app.title} className="overflow-hidden group text-center">
-                            {appImage && <Image src={appImage.imageUrl} alt={app.title} width={400} height={250} className="w-full h-40 object-cover transition-transform duration-300 group-hover:scale-105" />}
-                            <CardContent className="p-6">
-                                <h3 className="font-semibold text-lg">{app.title}</h3>
-                            </CardContent>
-                        </Card>
+                        <AnimatedElement key={app.title} delay={index * 0.1}>
+                            <Card className="overflow-hidden group text-center">
+                                {appImage && <Image src={appImage.imageUrl} alt={app.title} width={400} height={250} className="w-full h-40 object-cover transition-transform duration-300 group-hover:scale-105" />}
+                                <CardContent className="p-6">
+                                    <h3 className="font-semibold text-lg">{app.title}</h3>
+                                </CardContent>
+                            </Card>
+                        </AnimatedElement>
                     )
                 })}
             </div>
@@ -136,24 +144,21 @@ export default function SkeletalTrailersPage() {
         <section id="configurations" className="mt-12 md:mt-20">
              <h2 className="text-3xl font-bold font-headline text-center">Configurations & Variants</h2>
             <div className="mt-3 mb-10 w-20 h-1.5 bg-accent mx-auto"></div>
-            <div className="max-w-4xl mx-auto space-y-8">
-                 {configurations.map(config => (
-                    <div key={config.name} className="flex items-start gap-4">
-                        <div className="flex-shrink-0 h-12 w-12 rounded-full bg-primary/10 flex items-center justify-center">
-                            <Check className="h-6 w-6 text-primary" />
-                        </div>
-                        <div>
+            <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+                {configurations.map((config, index) => (
+                    <AnimatedElement key={config.name} delay={index * 0.1}>
+                        <Card className="text-center h-full p-6">
                             <h3 className="font-bold text-xl text-primary">{config.name}</h3>
-                            <p className="mt-1 text-muted-foreground">{config.description}</p>
-                        </div>
-                    </div>
+                            <p className="mt-2 text-muted-foreground">{config.description}</p>
+                        </Card>
+                    </AnimatedElement>
                 ))}
             </div>
         </section>
 
          {/* 4. Engineering & 5. Safety Sections */}
         <section className="mt-12 md:mt-20 grid md:grid-cols-2 gap-12 items-start bg-secondary p-8 md:p-12 rounded-lg">
-            <div>
+            <AnimatedElement>
                  <h3 className="text-2xl font-bold font-headline mb-4">Engineering Highlights</h3>
                  <ul className="space-y-3">
                     {engineeringHighlights.map((item, index) => (
@@ -163,8 +168,8 @@ export default function SkeletalTrailersPage() {
                         </li>
                     ))}
                  </ul>
-            </div>
-            <div>
+            </AnimatedElement>
+            <AnimatedElement delay={0.1}>
                  <h3 className="text-2xl font-bold font-headline mb-4">Safety & Compliance</h3>
                   <ul className="space-y-3">
                     {safetyCompliance.map((item, index) => (
@@ -174,7 +179,7 @@ export default function SkeletalTrailersPage() {
                         </li>
                     ))}
                  </ul>
-            </div>
+            </AnimatedElement>
         </section>
         
         {/* 6. Operational Advantages */}
@@ -182,12 +187,17 @@ export default function SkeletalTrailersPage() {
             <h2 className="text-3xl font-bold font-headline text-center">Operational Advantages</h2>
             <div className="mt-3 mb-10 w-20 h-1.5 bg-accent mx-auto"></div>
             <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
-                {operationalAdvantages.map(item => (
-                     <Card key={item} className="shadow-sm">
-                        <CardContent className="pt-6">
-                            <p className="font-medium text-lg">{item}</p>
-                        </CardContent>
-                     </Card>
+                {operationalAdvantages.map((item, index) => (
+                    <AnimatedElement key={item.title} delay={index * 0.1}>
+                         <Card className="shadow-sm">
+                            <CardHeader>
+                                <CardTitle>{item.title}</CardTitle>
+                            </CardHeader>
+                            <CardContent>
+                                <p className="text-muted-foreground">{item.description}</p>
+                            </CardContent>
+                         </Card>
+                    </AnimatedElement>
                 ))}
             </div>
         </section>
@@ -195,13 +205,13 @@ export default function SkeletalTrailersPage() {
         {/* 8. Conversion Section */}
         <section className="mt-12 md:mt-20 bg-primary text-primary-foreground py-16 rounded-lg">
             <div className="container mx-auto text-center px-4">
-                 <h2 className="text-3xl font-extrabold max-w-3xl mx-auto">Looking for a skeletal trailer optimized for reliable and efficient container transport?</h2>
+                 <h2 className="text-3xl font-extrabold max-w-3xl mx-auto">Looking for a skeletal trailer for efficient container transport?</h2>
                  <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
                     <Button size="lg" variant="secondary" asChild className="bg-accent text-accent-foreground hover:bg-accent/90">
                         <Link href="/quote?product=skeletal-trailer">Enquire Now</Link>
                     </Button>
                     <Button size="lg" variant="outline" asChild className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary">
-                        <Link href="/contact">Talk to Our Manufacturing Team</Link>
+                        <Link href="/contact">Talk to Our Team</Link>
                     </Button>
                 </div>
             </div>
