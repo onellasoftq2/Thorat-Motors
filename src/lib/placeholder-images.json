@@ -9,31 +9,31 @@
     {
       "id": "cement-bulker",
       "description": "Cement bulker trailer at a construction site.",
-      "imageUrl": "https://images.unsplash.com/photo-1517921345997-384358899214?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageUrl": "/images/products/bulkers/Cement-Bulkers.png",
       "imageHint": "cement trailer"
     },
     {
       "id": "flatbed",
       "description": "A long flatbed trailer ready for cargo.",
-      "imageUrl": "https://images.unsplash.com/photo-1621200424997-f81373511649?q=80&w=2070&auto=format&fit=crop&ixlib-rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageUrl": "/images/products/trailer/Flatbed-Trailers.png",
       "imageHint": "flatbed trailer"
     },
     {
       "id": "skeletal",
       "description": "Skeletal trailer carrying a shipping container.",
-      "imageUrl": "https://images.unsplash.com/photo-1620290457699-23a9d977e5d1?q=80&w=1932&auto=format&fit=crop&ixlib-rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageUrl": "/images/products/trailer/Skeletal-Trailers.png",
       "imageHint": "container trailer"
     },
     {
       "id": "side-wall",
       "description": "Side-wall trailer with its sides down.",
-      "imageUrl": "https://images.unsplash.com/photo-1609341066376-0c389aaa7998?q=80&w=1974&auto=format&fit=crop&ixlib-rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageUrl": "/images/products/trailer/Sidewall-Trailers.png",
       "imageHint": "cargo trailer"
     },
     {
       "id": "custom",
       "description": "A uniquely designed custom trailer for special cargo.",
-      "imageUrl": "https://images.unsplash.com/photo-1558180430-153152a81830?q=80&w=2070&auto=format&fit=crop&ixlib-rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageUrl": "/images/products/trailer/Modular-Hydraulic-Trailers.png",
       "imageHint": "heavy duty"
     },
     {
@@ -123,7 +123,7 @@
     {
       "id": "about-us-image",
       "description": "A wide shot of the manufacturing facility.",
-      "imageUrl": "https://images.unsplash.com/photo-1567954970774-a1d62aa35ee3?q=80&w=2070&auto=format&fit=crop&ixlib-rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageUrl": "/images/about/about-us-image.png",
       "imageHint": "factory interior"
     },
     {
@@ -147,19 +147,19 @@
     {
       "id": "structural-fabrication",
       "description": "Welder working on a metal structure in a workshop.",
-      "imageUrl": "https://images.unsplash.com/photo-1533013440539-7a3311542f63?q=80&w=1974&auto=format&fit=crop&ixlib-rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageUrl": "/images/about/Manufacturing-Excellence.png",
       "imageHint": "welder fabrication"
     },
     {
       "id": "rigid-vehicle",
       "description": "A rigid cement bulker truck on a road.",
-      "imageUrl": "https://images.unsplash.com/photo-1628212494842-8c1710b4843b?q=80&w=1974&auto=format&fit=crop&ixlib-rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageUrl": "/images/products/bulkers/Rigid-Bulker-Vehicles.png",
       "imageHint": "rigid truck"
     },
     {
       "id": "tipping-bulker-hero",
       "description": "A large tipping bulker unloading gravel at a construction site.",
-      "imageUrl": "https://images.unsplash.com/photo-1529602263124-72be1183d25c?q=80&w=2070&auto=format&fit=crop&ixlib-rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageUrl": "/images/products/bulkers/Tipping-Bulkers.png",
       "imageHint": "tipping truck"
     },
     {
@@ -207,7 +207,7 @@
     {
       "id": "bulker-trailer-hero",
       "description": "A long bulker trailer driving on a highway at sunset.",
-      "imageUrl": "https://images.unsplash.com/photo-1577985051167-3d7f3394c8b2?q=80&w=1974&auto=format&fit=crop&ixlib-rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageUrl": "/images/products/bulkers/Bulker-Trailers.png",
       "imageHint": "trailer highway"
     },
     {
@@ -321,7 +321,7 @@
     {
       "id": "tip-trailer-hero",
       "description": "A large tip trailer unloading gravel at a construction site.",
-      "imageUrl": "https://images.unsplash.com/photo-1529602263124-72be1183d25c?q=80&w=2070&auto=format&fit=crop&ixlib-rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageUrl": "/images/products/trailer/Tip-Trailers.png",
       "imageHint": "tipping trailer"
     },
     {
@@ -417,7 +417,7 @@
     {
       "id": "semi-lowbed-hero",
       "description": "A long semi lowbed trailer designed for heavy equipment transport.",
-      "imageUrl": "https://images.unsplash.com/photo-1623783749451-c2763f69542e?q=80&w=1962&auto=format&fit=crop&ixlib-rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageUrl": "/images/products/trailer/Semi-Lowbed-Trailers.png",
       "imageHint": "lowbed trailer"
     },
     {
@@ -795,13 +795,13 @@
     {
       "id": "ev-two-wheeler",
       "description": "A sleek, modern electric scooter parked in a city.",
-      "imageUrl": "https://images.unsplash.com/photo-1629885375484-99e6a9a83aae?q=80&w=1964&auto=format&fit=crop&ixlib-rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageUrl": "/images/products/ev/Electric-Two-Wheelers.png",
       "imageHint": "electric scooter"
     },
     {
       "id": "ev-three-wheeler",
       "description": "A modern electric auto-rickshaw used for public transport.",
-      "imageUrl": "https://images.unsplash.com/photo-1631027124233-b54130386133?q=80&w=1974&auto=format&fit=crop&ixlib-rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageUrl": "/images/products/ev/Electric-Three-Wheelers.png",
       "imageHint": "electric rickshaw"
     },
     {
@@ -825,7 +825,7 @@
     {
       "id": "ev-testing-lab",
       "description": "An engineer working in a high-tech battery testing laboratory.",
-      "imageUrl": "https://images.unsplash.com/photo-1581092446327-9b52bdc4f315?q=80&w=2070&auto=format&fit=crop&ixlib-rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageUrl": "/images/products/ev/about-testing.png",
       "imageHint": "battery lab"
     },
     {
@@ -843,7 +843,7 @@
     {
       "id": "trailer-testing",
       "description": "An industrial testing environment for vehicle components.",
-      "imageUrl": "https://images.unsplash.com/photo-1581092446327-9b52bdc4f315?q=80&w=2070&auto=format&fit=crop&ixlib-rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageUrl": "/images/products/trailer/about-testing.png",
       "imageHint": "industrial testing"
     },
     {
@@ -855,31 +855,31 @@
     {
       "id": "city-bus",
       "description": "A city bus navigating a busy urban street.",
-      "imageUrl": "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?q=80&w=1969&auto=format&fit=crop&ixlib-rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageUrl": "/images/products/bus/City-urban.png",
       "imageHint": "city bus"
     },
     {
       "id": "coach-bus",
       "description": "A luxury intercity coach bus for tourism.",
-      "imageUrl": "https://images.unsplash.com/photo-1559214933-662a7c4f6976?q=80&w=1931&auto=format&fit=crop&ixlib-rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageUrl": "/images/products/bus/Sleeper-Coaches.png",
       "imageHint": "tourist bus"
     },
     {
       "id": "school-bus",
       "description": "A yellow school bus, symbolizing student safety.",
-      "imageUrl": "https://images.unsplash.com/photo-1506521781263-d8422e82f27a?q=80&w=2070&auto=format&fit=crop&ixlib-rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageUrl": "/images/products/bus/school-bus.png",
       "imageHint": "school bus"
     },
     {
       "id": "sleeper-coach",
       "description": "The interior of a sleeper coach with bunk beds for overnight travel.",
-      "imageUrl": "https://images.unsplash.com/photo-1606838384236-474327503f39?q=80&w=1974&auto=format&fit=crop&ixlib-rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageUrl": "/images/products/bus/Sleeper-Coaches.png",
       "imageHint": "sleeper bus"
     },
     {
       "id": "electric-bus",
       "description": "An electric bus connected to a charging station.",
-      "imageUrl": "https://images.unsplash.com/photo-1635070041078-e363dbe005cb?q=80&w=2070&auto=format&fit=crop&ixlib-rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageUrl": "/images/products/bus/electric.png",
       "imageHint": "electric bus"
     },
     {
@@ -891,7 +891,7 @@
     {
       "id": "bus-testing-lab",
       "description": "A bus undergoing safety and compliance testing in a specialized facility.",
-      "imageUrl": "https://images.unsplash.com/photo-1581092446327-9b52bdc4f315?q=80&w=2070&auto=format&fit=crop&ixlib-rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageUrl": "/images/products/bus/about-testing.png",
       "imageHint": "automotive testing"
     },
     {
@@ -903,19 +903,19 @@
     {
       "id": "fly-ash-bulker",
       "description": "A bulker trailer designed for fly ash, often near a power plant.",
-      "imageUrl": "https://images.unsplash.com/photo-1517921345997-384358899214?q=80&w=1974&auto=format&fit=crop&ixlib-rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageUrl": "/images/products/bulkers/Fly-Ash-Bulker.png",
       "imageHint": "power plant"
     },
     {
       "id": "food-grade-bulker",
       "description": "A stainless steel food-grade bulker, possibly transporting grains or flour.",
-      "imageUrl": "https://images.unsplash.com/photo-1628212494842-8c1710b4843b?q=80&w=1974&auto=format&fit=crop&ixlib-rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageUrl": "/images/products/bulkers/Food-Grade-bulker.png",
       "imageHint": "food tanker"
     },
     {
       "id": "bulker-testing-lab",
       "description": "An industrial facility where vehicle components are tested.",
-      "imageUrl": "https://images.unsplash.com/photo-1581092446327-9b52bdc4f315?q=80&w=2070&auto=format&fit=crop&ixlib-rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageUrl": "/images/products/bulkers/about-testing.png",
       "imageHint": "industrial lab"
     },
     {

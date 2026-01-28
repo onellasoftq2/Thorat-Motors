@@ -113,23 +113,23 @@ export default function BulkerHomologationPage() {
   return (
     <div className="bg-background text-foreground overflow-x-hidden">
       {/* 1. Hero Section */}
-      <section className="relative py-20 md:py-32 bg-secondary flex items-center">
-        {heroImage && <Image src={heroImage.imageUrl} alt="Bulker blueprint" fill className="object-cover opacity-10" data-ai-hint={heroImage.imageHint}/>}
+      <section className="relative py-12 bg-primary flex items-center">
+        {/* {heroImage && <Image src={heroImage.imageUrl} alt="Bulker blueprint" fill className="object-cover opacity-10" data-ai-hint={heroImage.imageHint}/>} */}
         <div className="container mx-auto px-4 md:px-6 lg:px-8 text-center z-10">
           <AnimatedElement>
-            <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight font-headline">
+            <h1 className="text-3xl font-extrabold tracking-tight text-white font-headline">
               Bulkers – Design, Safety Compliance & Homologation
             </h1>
           </AnimatedElement>
           <AnimatedElement delay={0.15}>
-            <p className="mt-6 max-w-3xl mx-auto text-lg text-muted-foreground">
+            <p className="mt-3 max-w-3xl mx-auto text-sm text-white text-muted-foreground">
               End-to-end regulatory support for bulk material transportation vehicles as per Indian automotive standards.
             </p>
           </AnimatedElement>
-          <AnimatedElement delay={0.3} className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
+          {/* <AnimatedElement delay={0.3} className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
             <Button size="lg" asChild><Link href="/contact">Consult Bulker Compliance</Link></Button>
             <Button size="lg" variant="outline" asChild><Link href="#ais-section">View Applicable AIS</Link></Button>
-          </AnimatedElement>
+          </AnimatedElement> */}
         </div>
       </section>
 
@@ -147,10 +147,10 @@ export default function BulkerHomologationPage() {
                 <AnimatedElement key={category.name} delay={index * 0.1}>
                   <Card className="overflow-hidden group hover:shadow-lg transition-shadow h-full flex flex-col">
                     {image && <Image src={image.imageUrl} alt={category.name} width={400} height={250} className="w-full h-48 object-cover group-hover:scale-105 transition-transform" data-ai-hint={image.imageId} />}
-                    <CardContent className="p-6 flex-grow flex flex-col">
+                    <CardContent className="p-3 flex-grow flex flex-col">
                       <h3 className="text-xl font-semibold">{category.name}</h3>
-                      <p className="text-muted-foreground text-sm mt-2 flex-grow">{category.application}</p>
-                      <Badge variant="secondary" className="mt-4 w-fit">{category.configuration}</Badge>
+                      <p className="text-muted-foreground text-sm mt-1 flex-grow">{category.application}</p>
+                      {/* <Badge variant="secondary" className="mt-4 w-fit">{category.configuration}</Badge> */}
                     </CardContent>
                   </Card>
                 </AnimatedElement>
@@ -243,7 +243,7 @@ export default function BulkerHomologationPage() {
                     <ul className="space-y-4">
                         {testingSupport.map((item, index) => (
                             <li key={index} className="flex items-start">
-                                <CheckCircle className="h-6 w-6 text-green-500 mr-3 mt-1 flex-shrink-0" />
+                                <CheckCircle className="h-5 w-5 text-green-500 mr-3 mt-1 flex-shrink-0" />
                                 <span>{item}</span>
                             </li>
                         ))}
@@ -280,7 +280,7 @@ export default function BulkerHomologationPage() {
                 <AnimatedElement delay={0.15}>
                     <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
                         <Button size="lg" variant="secondary" asChild className="bg-accent text-accent-foreground hover:bg-accent/90">
-                            <Link href="/contact">Talk to Our Bulker Compliance Experts</Link>
+                            <Link href="/contact">Talk to Our Experts</Link>
                         </Button>
                         <Button size="lg" variant="outline" className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary">
                              <Link href="/quote?product=Bulker Homologation">Request AIS Review</Link>

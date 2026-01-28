@@ -380,12 +380,12 @@ export default function Header() {
                           )
                         })()}
                       </div>
-                      <div className="w-[200px] bg-primary/5 p-4 flex flex-col justify-between">
+                      <div className="w-[250px] bg-primary/5 p-4 flex flex-col justify-between">
                         <div>
-                            <h4 className="text-sm font-semibold text-primary mb-2">Video</h4>
-                             <p className="text-xs text-muted-foreground mb-3">
-                                See our engineering and manufacturing excellence in action. Get a glimpse into our process and commitment to quality.
-                            </p>
+                            <h4 className="text-sm font-semibold text-primary mb-2">Video</h4><p className="text-xs text-muted-foreground mb-3">
+  Explore our engineering excellence and manufacturing commitment to quality
+</p>
+
                             <AnimatePresence mode="wait">
                             <motion.div
                                 key={activeIndustry}

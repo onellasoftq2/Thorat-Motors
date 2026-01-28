@@ -115,28 +115,28 @@ export default function EVHomologationPage() {
   return (
     <div className="bg-background text-foreground overflow-x-hidden">
       {/* 1. Hero Section */}
-      <section className="relative py-20 md:py-32 bg-secondary flex items-center">
+      <section className="relative py-12 bg-primary flex items-center">
         <div className="container mx-auto px-4 md:px-6 lg:px-8 text-center z-10">
           <AnimatedElement>
-            <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight font-headline">
+            <h1 className="text-3xl font-extrabold text-white tracking-tight font-headline">
               Electric Vehicles (2W & 3W)
-              <br />
-              <span className="text-primary">Design, Testing & Homologation</span>
+              {/* <br /> */}
+              {/* <span className="text-primary">Design, Testing & Homologation</span> */}
             </h1>
           </AnimatedElement>
           <AnimatedElement delay={0.15}>
-            <p className="mt-6 max-w-2xl mx-auto text-lg text-muted-foreground">
+            <p className="mt-3 max-w-2xl mx-auto text-sm text-white text-muted-foreground">
               End-to-end regulatory compliance services to navigate the complexities of electric mobility in India.
             </p>
           </AnimatedElement>
-          <AnimatedElement delay={0.3} className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
+          {/* <AnimatedElement delay={0.3} className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
             <Button size="lg" asChild><Link href="/contact">Consult EV Compliance</Link></Button>
             <Button size="lg" variant="outline" asChild><Link href="#ais-section">View Applicable AIS</Link></Button>
-          </AnimatedElement>
+          </AnimatedElement> */}
         </div>
       </section>
 
-      <div className="container mx-auto px-4 py-16 md:py-24 md:px-6 lg:px-8">
+      <div className="container mx-auto px-4 py-12 md:px-6 lg:px-8">
         {/* 2. EV Categories Covered */}
         <section>
           <AnimatedElement className="text-center mb-12">
@@ -282,7 +282,7 @@ export default function EVHomologationPage() {
                 <AnimatedElement delay={0.15}>
                     <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
                         <Button size="lg" variant="secondary" asChild className="bg-accent text-accent-foreground hover:bg-accent/90">
-                            <Link href="/contact">Talk to Our EV Compliance Experts</Link>
+                            <Link href="/contact">Talk to Our Experts</Link>
                         </Button>
                         <Button size="lg" variant="outline" className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary">
                              <Link href="/quote?product=EV Homologation">Request AIS Review</Link>

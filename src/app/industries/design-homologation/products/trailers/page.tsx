@@ -111,23 +111,23 @@ export default function TrailerHomologationPage() {
   return (
     <div className="bg-background text-foreground overflow-x-hidden">
       {/* 1. Hero Section */}
-      <section className="relative py-20 md:py-32 bg-secondary flex items-center">
-        {heroImage && <Image src={heroImage.imageUrl} alt="Trailer blueprint" fill className="object-cover opacity-10" />}
+      <section className="relative py-12 bg-primary flex items-center">
+        {/* {heroImage && <Image src={heroImage.imageUrl} alt="Trailer blueprint" fill className="object-cover opacity-10" />} */}
         <div className="container mx-auto px-4 md:px-6 lg:px-8 text-center z-10">
           <AnimatedElement>
-            <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight font-headline">
+            <h1 className="text-3xl text-white font-extrabold tracking-tight font-headline">
               Trailers – Design, Testing & Regulatory Homologation
             </h1>
           </AnimatedElement>
           <AnimatedElement delay={0.15}>
-            <p className="mt-6 max-w-3xl mx-auto text-lg text-muted-foreground">
+            <p className="mt-3 max-w-3xl mx-auto text-sm text-white text-muted-foreground">
               Comprehensive compliance support for all trailer and semi-trailer categories as per Indian automotive regulations.
             </p>
           </AnimatedElement>
-          <AnimatedElement delay={0.3} className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
+          {/* <AnimatedElement delay={0.3} className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
             <Button size="lg" asChild><Link href="/contact">Consult Trailer Compliance</Link></Button>
             <Button size="lg" variant="outline" asChild><Link href="#ais-section">View Applicable AIS</Link></Button>
-          </AnimatedElement>
+          </AnimatedElement> */}
         </div>
       </section>
 
@@ -147,8 +147,8 @@ export default function TrailerHomologationPage() {
                     {image && <Image src={image.imageUrl} alt={category.name} width={500} height={300} className="w-full h-48 object-cover group-hover:scale-105 transition-transform" data-ai-hint={image.imageId} />}
                     <CardContent className="p-6 flex-grow flex flex-col">
                       <h3 className="text-xl font-semibold">{category.name}</h3>
-                      <p className="text-muted-foreground text-sm mt-2 flex-grow">{category.application}</p>
-                      <Badge variant="secondary" className="mt-4 w-fit">{category.category}</Badge>
+                      <p className="text-muted-foreground text-sm mt-0 flex-grow">{category.application}</p>
+                      {/* <Badge variant="secondary" className="mt-4 w-fit">{category.category}</Badge> */}
                     </CardContent>
                   </Card>
                 </AnimatedElement>
@@ -231,18 +231,18 @@ export default function TrailerHomologationPage() {
         <HomologationWorkflowSection productType="trailer" workflowSteps={homologationWorkflow} />
 
         {/* 6. Testing & Certification Support */}
-        <section className="mt-16 md:mt-24 bg-secondary py-16 md:py-24">
+        <section className="mx-auto md:max-w-[1024px] mt-16 md:mt-24 bg-secondary py-16 md:py-24">
             <div className="container mx-auto px-4 md:px-6 lg:px-8 grid md:grid-cols-2 gap-12 items-center">
                  <AnimatedElement>
                     {testingLabImage && <Image src={testingLabImage.imageUrl} alt="Industrial testing facility" width={600} height={400} className="rounded-lg shadow-xl" data-ai-hint={testingLabImage.imageHint} />}
                  </AnimatedElement>
                  <AnimatedElement delay={0.15}>
                     <h2 className="text-3xl font-bold font-headline mb-6">Testing & Certification Support</h2>
-                    <ul className="space-y-4">
+                    <ul className="space-y-3">
                         {testingSupport.map((item, index) => (
                             <li key={index} className="flex items-start">
-                                <CheckCircle className="h-6 w-6 text-green-500 mr-3 mt-1 flex-shrink-0" />
-                                <span>{item}</span>
+                                <CheckCircle className="h-5 w-5 text-green-500 mr-3 mt-1 flex-shrink-0" />
+                                <span className='text-sm'>{item}</span>
                             </li>
                         ))}
                     </ul>

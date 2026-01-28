@@ -118,10 +118,10 @@ export default function AllProductsPage() {
   return (
     <div className="bg-background text-foreground overflow-x-hidden">
       {/* 1. Hero Section */}
-      <section className="relative py-20 md:py-32 bg-secondary flex items-center">
+      <section className="relative py-8 bg-secondary flex items-center">
         <div className="container mx-auto px-4 md:px-6 lg:px-8 text-center z-10">
           <AnimatedElement>
-            <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight font-headline">
+            <h1 className="text-3xl font-extrabold tracking-tight font-headline">
               All Products – Vehicles, Systems & Components
             </h1>
           </AnimatedElement>

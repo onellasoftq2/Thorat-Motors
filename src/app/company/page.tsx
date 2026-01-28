@@ -20,14 +20,14 @@ export default function CompanyPage() {
   return (
     <>
       {/* 1. About Hero Section */}
-      <section className="bg-secondary text-foreground py-16 md:py-20 lg:py-24">
-        <div className="container mx-auto px-4 md:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+      <section className="bg-secondary text-foreground py-8">
+        <div className="container lg:max-w-[1024px] x-auto px-4 md:px-6 lg:px-8">
+          <div className="flex md:flex-row flex-col gap-12 items-center">
             <AnimatedElement>
-              <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight font-headline">
-                About Thorat Motors India
+              <h1 className="sm:text-xl md:text-3xl font-extrabold tracking-tight font-headline text-center">
+                About Thorat Motors
               </h1>
-              <p className="mt-4 text-lg md:text-xl text-muted-foreground max-w-lg">
+              <p className="mt-2 text-md text-muted-foreground max-w-lg text-center">
                 A legacy of engineering excellence and a future focused on innovation.
               </p>
             </AnimatedElement>
@@ -47,13 +47,13 @@ export default function CompanyPage() {
         </div>
       </section>
       
-      <div className="container mx-auto px-4 py-12 md:py-16 lg:py-20 md:px-6 lg:px-8">
+      <div className="container mx-auto px-4 py-12 lg:py-12 md:px-6 lg:px-8">
         {/* 2. Our Story Section */}
         <section className="max-w-3xl mx-auto text-center">
           <AnimatedElement>
             <h2 className="text-3xl font-bold font-headline">Our Story</h2>
             <div className="mt-3 mb-6 w-20 h-1.5 bg-accent mx-auto"></div>
-            <p className="text-muted-foreground text-lg leading-relaxed">{company.about}</p>
+            <p className="text-muted-foreground text-md leading-relaxed">{company.about}</p>
           </AnimatedElement>
         </section>
 
@@ -61,28 +61,31 @@ export default function CompanyPage() {
         <section className="mt-12 md:mt-16">
           <AnimatedElement>
             <Card className="bg-secondary/50 border-border max-w-5xl mx-auto overflow-hidden">
-              <div className="grid grid-cols-1 md:grid-cols-12">
-                <div className="md:col-span-4 lg:col-span-3">
-                  {mdImage && (
-                    <Image
-                      src={mdImage.imageUrl}
-                      alt={mdImage.description}
-                      width={400}
-                      height={500}
-                      className="w-full h-full object-cover object-top"
-                      data-ai-hint={mdImage.imageHint}
-                    />
-                  )}
-                </div>
-                <div className="md:col-span-8 lg:col-span-9 p-6 md:p-10 flex flex-col justify-center">
-                  <blockquote className="text-sm md:text-base leading-relaxed text-foreground">
-                    "{company.mdMessage}"
-                  </blockquote>
-                  <p className="text-right mt-6 font-semibold text-primary">
-                    - {company.leadership[0].name}, Managing Director
-                  </p>
-                </div>
-              </div>
+              <div className="flex flex-col items-center">
+  {mdImage && (
+    <div className="about-md overflow-hidden rounded-full mt-3">
+      <Image
+        src={mdImage.imageUrl}
+        alt={mdImage.description}
+        width={300}
+        height={360}
+        className="w-full h-auto object-cover rounded-full"
+        data-ai-hint={mdImage.imageHint}
+      />
+    </div>
+  )}
+
+  <div className="w-full max-w-3xl p-6 md:p-8 text-center">
+    <blockquote className="text-sm md:text-base leading-relaxed text-foreground">
+      “{company.mdMessage}”
+    </blockquote>
+
+    <p className="mt-4 font-semibold text-primary">
+      — {company.leadership[0].name}, Managing Director
+    </p>
+  </div>
+</div>
+
             </Card>
           </AnimatedElement>
         </section>
@@ -110,7 +113,7 @@ export default function CompanyPage() {
         </section>
 
         {/* 5. Manufacturing Excellence */}
-        <section id="manufacturing" className="mt-12 md:mt-16">
+        {/* <section id="manufacturing" className="mt-12 md:mt-16">
            <div className="text-center">
              <AnimatedElement>
                 <h2 className="text-3xl font-bold font-headline">Manufacturing Excellence</h2>
@@ -136,7 +139,7 @@ export default function CompanyPage() {
                 </p>
               </AnimatedElement>
           </div>
-        </section>
+        </section> */}
 
         {/* 6. Leadership Team */}
         <section id="leadership" className="mt-12 md:mt-16">
@@ -175,7 +178,7 @@ export default function CompanyPage() {
                 <Button variant="outline"><Download className="mr-2 h-4 w-4" /> Company Brochure</Button>
               </Card>
             </AnimatedElement>
-            <AnimatedElement delay={0.2}>
+            {/* <AnimatedElement delay={0.2}>
               <Card className="p-6 h-full">
                 <h3 className="text-xl font-bold font-headline mb-3">Careers</h3>
                 <p className="text-muted-foreground mb-3">Join our team of innovators. We are always looking for passionate talent.</p>
@@ -192,7 +195,7 @@ export default function CompanyPage() {
                   <Link href="#">View Gallery <ArrowRight className="ml-1 h-4 w-4" /></Link>
                 </Button>
               </Card>
-            </AnimatedElement>
+            </AnimatedElement> */}
           </div>
         </section>
       </div>

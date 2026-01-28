@@ -116,23 +116,23 @@ export default function CommercialVehicleHomologationPage() {
   return (
     <div className="bg-background text-foreground overflow-x-hidden">
       {/* 1. Hero Section */}
-      <section className="relative py-20 md:py-32 bg-secondary flex items-center">
-        {heroImage && <Image src={heroImage.imageUrl} alt="Commercial vehicles on highway" fill className="object-cover opacity-10" data-ai-hint={heroImage.imageHint}/>}
+      <section className="relative py-12 bg-primary flex items-center">
+        {/* {heroImage && <Image src={heroImage.imageUrl} alt="Commercial vehicles on highway" fill className="object-cover opacity-10" data-ai-hint={heroImage.imageHint}/>} */}
         <div className="container mx-auto px-4 md:px-6 lg:px-8 text-center z-10">
           <AnimatedElement>
-            <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight font-headline">
+            <h1 className="text-3xl font-extrabold tracking-tight text-white font-headline">
               Commercial Vehicles – Design, Safety Compliance & Homologation
             </h1>
           </AnimatedElement>
           <AnimatedElement delay={0.15}>
-            <p className="mt-6 max-w-3xl mx-auto text-lg text-muted-foreground">
+            <p className="mt-3 max-w-3xl mx-auto text-sm text-white text-muted-foreground">
               End-to-end regulatory and homologation support for light, medium, and heavy commercial vehicles as per Indian automotive standards.
             </p>
           </AnimatedElement>
-          <AnimatedElement delay={0.3} className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
+          {/* <AnimatedElement delay={0.3} className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
             <Button size="lg" asChild><Link href="/contact">Consult CV Compliance</Link></Button>
             <Button size="lg" variant="outline" asChild><Link href="#ais-section">View Applicable AIS</Link></Button>
-          </AnimatedElement>
+          </AnimatedElement> */}
         </div>
       </section>
 

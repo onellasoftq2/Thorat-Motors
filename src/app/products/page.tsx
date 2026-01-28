@@ -31,7 +31,7 @@ export default function ProductsPage() {
     <>
       <div className="bg-secondary">
         <div className="container mx-auto px-4 py-12 md:py-16 text-center md:px-6 lg:px-8">
-          <h1 className="text-4xl font-extrabold tracking-tight lg:text-5xl font-headline">
+          <h1 className="sm:text-xl md:text-3xl font-extrabold tracking-tight font-headline">
             Our Products
           </h1>
           <p className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground">

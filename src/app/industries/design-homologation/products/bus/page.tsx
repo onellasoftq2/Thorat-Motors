@@ -110,23 +110,23 @@ export default function BusHomologationPage() {
   return (
     <div className="bg-background text-foreground overflow-x-hidden">
       {/* 1. Hero Section */}
-      <section className="relative py-20 md:py-32 bg-secondary flex items-center">
-        {heroImage && <Image src={heroImage.imageUrl} alt="Bus on a highway" fill className="object-cover opacity-10" data-ai-hint={heroImage.imageHint} />}
+      <section className="relative py-12 bg-primary flex items-center">
+        {/* {heroImage && <Image src={heroImage.imageUrl} alt="Bus on a highway" fill className="object-cover opacity-10" data-ai-hint={heroImage.imageHint} />} */}
         <div className="container mx-auto px-4 md:px-6 lg:px-8 text-center z-10">
           <AnimatedElement>
-            <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight font-headline">
+            <h1 className="text-3xl font-extrabold tracking-tight text-white font-headline">
               Bus – Design, Safety Compliance & Homologation
             </h1>
           </AnimatedElement>
           <AnimatedElement delay={0.15}>
-            <p className="mt-6 max-w-3xl mx-auto text-lg text-muted-foreground">
+            <p className="mt-3 max-w-3xl mx-auto text-sm text-white text-muted-foreground">
               End-to-end regulatory support for passenger buses as per Indian automotive safety and body code standards.
             </p>
           </AnimatedElement>
-          <AnimatedElement delay={0.3} className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
+          {/* <AnimatedElement delay={0.3} className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
             <Button size="lg" asChild><Link href="/contact">Consult Bus Compliance</Link></Button>
             <Button size="lg" variant="outline" asChild><Link href="#ais-section">View Applicable AIS</Link></Button>
-          </AnimatedElement>
+          </AnimatedElement> */}
         </div>
       </section>
 
@@ -137,17 +137,17 @@ export default function BusHomologationPage() {
             <h2 className="text-3xl font-bold font-headline">Bus Categories Covered</h2>
             <div className="mt-3 mb-4 w-20 h-1.5 bg-accent mx-auto"></div>
           </AnimatedElement>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {busCategories.map((category, index) => {
               const image = PlaceHolderImages.find(p => p.id === category.imageId);
               return (
                 <AnimatedElement key={category.name} delay={index * 0.1}>
                   <Card className="overflow-hidden group hover:shadow-lg transition-shadow h-full flex flex-col">
                     {image && <Image src={image.imageUrl} alt={category.name} width={400} height={250} className="w-full h-48 object-cover group-hover:scale-105 transition-transform" data-ai-hint={image.imageId} />}
-                    <CardContent className="p-6 flex-grow flex flex-col">
+                    <CardContent className="p-4 flex-grow flex flex-col">
                       <h3 className="text-xl font-semibold">{category.name}</h3>
-                      <p className="text-muted-foreground text-sm mt-2 flex-grow">{category.application}</p>
-                      <Badge variant="secondary" className="mt-4 w-fit">{category.category}</Badge>
+                      <p className="text-muted-foreground text-sm mt-1 text-sm flex-grow">{category.application}</p>
+                      {/* <Badge variant="secondary" className="mt-4 w-fit">{category.category}</Badge> */}
                     </CardContent>
                   </Card>
                 </AnimatedElement>
@@ -230,7 +230,7 @@ export default function BusHomologationPage() {
         <HomologationWorkflowSection productType="bus" workflowSteps={homologationWorkflow} />
 
         {/* 6. Testing & Certification Support */}
-        <section className="mt-16 md:mt-24 bg-secondary py-16 md:py-24">
+        <section className="mx-auto md:max-w-[1024px] mt-16 md:mt-24 bg-secondary py-16 md:py-24">
             <div className="container mx-auto px-4 md:px-6 lg:px-8 grid md:grid-cols-2 gap-12 items-center">
                  <AnimatedElement>
                     {testingLabImage && <Image src={testingLabImage.imageUrl} alt="Bus testing facility" width={600} height={400} className="rounded-lg shadow-xl" data-ai-hint={testingLabImage.imageHint} />}
@@ -240,7 +240,7 @@ export default function BusHomologationPage() {
                     <ul className="space-y-4">
                         {testingSupport.map((item, index) => (
                             <li key={index} className="flex items-start">
-                                <CheckCircle className="h-6 w-6 text-green-500 mr-3 mt-1 flex-shrink-0" />
+                                <CheckCircle className="h-5 w-5 text-green-500 mr-3 mt-1 flex-shrink-0" />
                                 <span>{item}</span>
                             </li>
                         ))}
@@ -277,7 +277,7 @@ export default function BusHomologationPage() {
                 <AnimatedElement delay={0.15}>
                     <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
                         <Button size="lg" variant="secondary" asChild className="bg-accent text-accent-foreground hover:bg-accent/90">
-                            <Link href="/contact">Talk to Our Bus Compliance Experts</Link>
+                            <Link href="/contact">Talk to Our Experts</Link>
                         </Button>
                         <Button size="lg" variant="outline" className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary">
                              <Link href="/quote?product=Bus Homologation">Request AIS Review</Link>

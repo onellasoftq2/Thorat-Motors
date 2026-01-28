@@ -39,59 +39,59 @@ export const navMenu: NavMenu[] = [
     title: "About Us",
     href: "/company",
   },
-  {
-    title: "Products",
-    href: "/products",
-    megaMenu: [
-      {
-        title: "Trailers",
-        items: [
-          { name: "Cement Bulker Trailer", href: "/products/trailers/cement-bulker" },
-          { name: "Skeletal Trailer (20ft / 40ft)", href: "/products/trailers/skeletal" },
-          { name: "Side-Wall Trailer", href: "/products/trailers/side-wall" },
-          { name: "Platform / Flatbed Trailer", href: "/products/trailers/flatbed" },
-          { name: 'Semi Lowbed Trailer', href: '/industries/manufacturing/trailers/semi-lowbed' },
-          { name: 'Tip Trailers', href: '/industries/manufacturing/trailers/tip' },
-          { name: "Custom-Built Heavy-Duty Trailers", href: "/products/trailers/custom" },
-        ],
-      },
-      {
-        title: "Portable Cabins",
-        items: [
-          { name: "Office Cabins", href: "/products/cabins/office" },
-          { name: "House Cabins", href: "/products/cabins/house" },
-          { name: "ACP Premium Cabins", href: "/products/cabins/acp" },
-          { name: "Security Cabins", href: "/products/cabins/security" },
-          { name: "Toilet Cabins", href: "/products/cabins/toilet" },
-          { name: "Accommodation/Bunk Cabins", href: "/products/cabins/bunk-house" },
-          { name: "Shop & Hotel Cabins", href: "/products/cabins/shop-hotel" },
-          { name: "Double Storey (G+1) Cabins", href: "/products/cabins/double-storey" },
-        ],
-      },
-      {
-        title: "Containers & Conversions",
-        items: [
-          { name: "Used Shipping Containers (20ft / 40ft)", href: "/products/container-conversions/used-container" },
-          { name: "Office Conversions", href: "/products/container-conversions/office-conversion" },
-          { name: "Retail/Shop Conversions", href: "/products/container-conversions/retail-conversion" },
-          { name: "Storage Containers", href: "/products/container-conversions/storage-container" },
-          { name: "Custom Container Modifications", href: "/products/container-conversions/custom-modification" },
-        ],
-      },
-    ],
-  },
-   {
-    title: "Services",
-    href: "/services",
-    items: [
-        { name: "Designing & Homologation", href: "/services/designing-homologation" },
-        { name: "Structural Fabrication", href: "/services/structural-fabrication" },
-        { name: "Spare Parts Division", href: "/services/spare-parts" },
-        { name: "Transport & Logistics", href: "/services/transport-logistics" },
-        { name: "Custom Engineering", href: "/services/custom-engineering" },
-        { name: "Container Conversions", href: "/services/container-conversions" },
-    ]
-  },
+//   {
+//     title: "Products",
+//     href: "/products",
+//     megaMenu: [
+//       {
+//         title: "Trailers",
+//         items: [
+//           { name: "Cement Bulker Trailer", href: "/products/trailers/cement-bulker" },
+//           { name: "Skeletal Trailer (20ft / 40ft)", href: "/products/trailers/skeletal" },
+//           { name: "Side-Wall Trailer", href: "/products/trailers/side-wall" },
+//           { name: "Platform / Flatbed Trailer", href: "/products/trailers/flatbed" },
+//           { name: 'Semi Lowbed Trailer', href: '/industries/manufacturing/trailers/semi-lowbed' },
+//           { name: 'Tip Trailers', href: '/industries/manufacturing/trailers/tip' },
+//           { name: "Custom-Built Heavy-Duty Trailers", href: "/products/trailers/custom" },
+//         ],
+//       },
+//       {
+//         title: "Portable Cabins",
+//         items: [
+//           { name: "Office Cabins", href: "/products/cabins/office" },
+//           { name: "House Cabins", href: "/products/cabins/house" },
+//           { name: "ACP Premium Cabins", href: "/products/cabins/acp" },
+//           { name: "Security Cabins", href: "/products/cabins/security" },
+//           { name: "Toilet Cabins", href: "/products/cabins/toilet" },
+//           { name: "Accommodation/Bunk Cabins", href: "/products/cabins/bunk-house" },
+//           { name: "Shop & Hotel Cabins", href: "/products/cabins/shop-hotel" },
+//           { name: "Double Storey (G+1) Cabins", href: "/products/cabins/double-storey" },
+//         ],
+//       },
+//       {
+//         title: "Containers & Conversions",
+//         items: [
+//           { name: "Used Shipping Containers (20ft / 40ft)", href: "/products/container-conversions/used-container" },
+//           { name: "Office Conversions", href: "/products/container-conversions/office-conversion" },
+//           { name: "Retail/Shop Conversions", href: "/products/container-conversions/retail-conversion" },
+//           { name: "Storage Containers", href: "/products/container-conversions/storage-container" },
+//           { name: "Custom Container Modifications", href: "/products/container-conversions/custom-modification" },
+//         ],
+//       },
+//     ],
+//   },
+//    {
+//     title: "Services",
+//     href: "/services",
+//     items: [
+//         { name: "Designing & Homologation", href: "/services/designing-homologation" },
+//         { name: "Structural Fabrication", href: "/services/structural-fabrication" },
+//         { name: "Spare Parts Division", href: "/services/spare-parts" },
+//         { name: "Transport & Logistics", href: "/services/transport-logistics" },
+//         { name: "Custom Engineering", href: "/services/custom-engineering" },
+//         { name: "Container Conversions", href: "/services/container-conversions" },
+//     ]
+//   },
   {
     title: "Industries",
     href: "/industries",
@@ -672,10 +672,10 @@ export const industries: Industry[] = [
 ];
 
 export const company = {
-    about: "Thorat Cabins are India's leading portable cabin manufacturer. Our cabins are designed to provide the best quality, durability & customer satisfaction. We use the latest technology and top grade material to ensure that our cabins are of the highest possible quality. Our cabins are made with the utmost care & attention to detail ensuring that they are built to last. We understand that you need a structure that's reliable and sturdy and we guarantee that you will get just that when you choose us. We ensure on-time delivery and strive to maintain customer satisfaction at all times. These cabins are cost free, high in quality, safe and cost efficient. Our cabins are designed precisely using approved raw material in accordance to the international standards, These cabins are coall and relatively low cost. Designs we offer are portable in order to meet the varied demands of our esteemed customers. Our cabins are reliable, easy to install, require less maintenance, compact designs, durable finishing standards, aesthetic look and easily installable, therefore, these site offices are highly demanded across the country.",
+    about: "Thorat Cabins is India’s leading portable cabin manufacturer, delivering durable, high-quality, and cost-efficient solutions. Built with certified materials and modern technology, our cabins meet international standards, install easily, require minimal maintenance, and offer aesthetic designs, on-time delivery, and reliable performance for diverse industrial and site-office needs, nationwide customer satisfaction guaranteed.",
     mission: "To deliver superior, reliable, and innovative transportation and modular space solutions that drive efficiency and value for our customers.",
     vision: "To be India’s most trusted and technologically advanced manufacturer in the commercial vehicle and portable infrastructure sectors, pioneering solutions for a modernizing world.",
-    mdMessage: "We at THORAT MOTORS thank you for your continued patronage to our products. Our growth has come from understanding the needs of our customers and accordingly developing ourselves to meet those needs and expectations. We have constantly challenged our capabilities and reached higher landmarks by improving our products and processes to meet rigorous specification of our Indian trailer OEM & After-market customers. We have been recognized by ISO Quality & Manufacturing experts as one of the best companies implementing international best practices like Workplace Production Systems (Lean Manufacturing/Kaizen Gemba) and we intend to bring that strength to the Indian After-market in terms of product stability & Reliability, We continue to invest in the art manufacturing facility ensuring a defect free product each time, every time, so that our customers are delighted by our excellence for a long and extended vehicle due to quality products. We encourage our Channel Partners to reach out to the end customers and collect feedback so that we gather their expectations from our Company, your call is very important, THORAT MOTORS will do whatever it possible to fulfil your needs, after all your happiness is customer satisfaction. Our team is committed to ensure that your experience with THORAT MOTOR not only meets but exceeds expectations.",
+    mdMessage: "At THORAT MOTORS, our growth is driven by understanding customer needs and delivering reliable, high-quality products. Through ISO-recognized practices, lean manufacturing, and continuous investment in advanced facilities, we ensure defect-free manufacturing, product stability, and long-term reliability—exceeding expectations and fostering lasting customer satisfaction through continuous feedback and partnership.",
     leadership: [
         { name: 'Krishnat Thorat', title: 'Managing Director' },
         { name: 'Mr. B. Kulkarni', title: 'Head of Engineering' },
@@ -793,25 +793,26 @@ export type WhyChooseUsItem = {
 
 export const whyChooseUs: WhyChooseUsItem[] = [
     {
-        title: 'High-Strength Engineering',
-        description: 'We use certified BSK46 and IS2062 steel for maximum durability and performance.',
-        imageUrl: 'https://images.unsplash.com/photo-1505238680356-667803448bb6?q=80&w=2070&auto=format&fit=crop&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
-    },
-    {
-        title: 'ISO & CMVR Compliance',
-        description: 'All products follow industry-standard certifications ensuring safety, quality, and reliability.',
-        imageUrl: 'https://images.unsplash.com/photo-1581092446327-9b52bdc4f315?q=80&w=2070&auto=format&fit=crop&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
-    },
-    {
-        title: 'Advanced Fabrication',
-        description: 'State-of-the-art CNC, welding, and forming machines ensure precision manufacturing.',
-        imageUrl: 'https://images.unsplash.com/photo-1633449494745-6a467f40e0b3?q=80&w=1974&auto=format&fit=crop&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
-    },
-    {
-        title: 'Custom Engineering',
-        description: 'We design and build trailers tailored to your load, industry, and operational needs.',
-        imageUrl: 'https://images.unsplash.com/photo-1556761175-5973dc0f32e7?q=80&w=1932&auto=format&fit=crop&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
-    },
+  title: 'High-Strength Engineering',
+  description: 'Certified BSK46 and IS2062 steel for durability',
+  imageUrl: '/images/home/High-Strength-Engineering.jpeg'
+},
+{
+  title: 'ISO & CMVR Compliance',
+  description: 'Industry-standard certifications ensuring safety quality and reliability',
+  imageUrl: '/images/home/ISO.jpeg'
+},
+{
+  title: 'Advanced Fabrication',
+  description: 'State-of-the-art CNC welding and forming ensure precision',
+  imageUrl: '/images/home/Advanced-Fabrication.jpeg'
+},
+{
+  title: 'Custom Engineering',
+  description: 'Custom-designed trailers tailored to load industry needs',
+  imageUrl: '/images/home/Custom-Engineering.jpeg'
+}
+
 ];
 
 

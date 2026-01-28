@@ -131,18 +131,23 @@ const iconMap: { [key: string]: React.ReactNode } = {
 
 const heroTexts = [
   {
-    heading: "Designing Vehicles That Are Ready for the Road — and the Law",
-    subheading: "From concept to certification, we deliver engineering-led design and end-to-end homologation that meets Indian and global regulatory standards."
+    category: "Design & Homologation",
+    heading: "Design. Test. Approve.",
+    subheading: "End-to-end vehicle design and regulatory homologation."
   },
   {
-    heading: "Design with Confidence. Homologate with Certainty.",
-    subheading: "We ensure your vehicles are intelligently designed, rigorously tested, and fully compliant with AIS, CMVR, and international standards."
+    category: "Manufacturing",
+    heading: "Design With Confidence",
+    subheading: "AIS and CMVR compliant engineering solutions."
   },
   {
-    heading: "Where Innovative Design Meets Regulatory Excellence",
-    subheading: "Our design and homologation expertise helps manufacturers accelerate approvals without compromising safety, performance, or aesthetics."
+    category: "Transportation",
+    heading: "Built For Compliance",
+    subheading: "Safe, tested, and road-ready vehicle designs."
   }
 ];
+
+
 
 
 export default function Home() {
@@ -181,18 +186,18 @@ export default function Home() {
   return (
     <div className='overflow-x-hidden'>
       {/* Hero Section */}
-      <section className="relative h-[70vh] md:h-[80vh] flex items-center justify-center text-center overflow-hidden">
+      <section className="relative h-[70vh] md:h-[80vh] flex items-bottom justify-center text-center overflow-hidden">
         <video
             autoPlay
             loop
             muted
             playsInline
-            className="absolute z-0 w-auto min-w-full min-h-full max-w-none object-cover"
+            className="absolute z-0 w-auto w-full min-h-full max-w-none object-cover"
         >
-            <source src="https://res.cloudinary.com/dz9qpa3g0/video/upload/v1769317479/hero-section_iphtf4.mp4" type="video/mp4" />
+            <source src="/images/home/hero-video.mp4" type="video/mp4" />
             Your browser does not support the video tag.
         </video>
-        <div className="absolute inset-0 bg-black/50 z-10"></div>
+        <div className="absolute inset-0 bg-black/30 z-10"></div>
         <div className="relative z-20 container mx-auto px-4 text-white">
             <AnimatePresence mode="wait">
               <motion.div
@@ -201,28 +206,43 @@ export default function Home() {
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
                 transition={{ duration: 0.8, ease: 'easeInOut' }}
-                className="h-48 flex flex-col justify-center"
+                className="h-[150px] flex flex-col justify-center"
               >
-                <h1 className="font-headline text-4xl font-extrabold tracking-tight lg:text-5xl xl:text-6xl">
+                <h1 className="font-headline text-4xl font-extrabold tracking-tight lg:text-2xl xl:text-4xl">
                   {heroTexts[currentHeroTextIndex].heading}
                 </h1>
-                <p className="text-lg text-white/90 md:text-xl max-w-3xl mx-auto mt-6">
+                <p className="text-sm text-white/90 md:text-lg max-w-3xl mx-auto mt-2">
                   {heroTexts[currentHeroTextIndex].subheading}
                 </p>
               </motion.div>
-            </AnimatePresence>
-            <motion.div
-                initial={{ opacity: 0, y: 8 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.3, ease: "easeOut" }}
-                className="flex flex-col justify-center space-y-4 sm:flex-row sm:space-x-4 sm:space-y-0 mt-8">
-                <Button asChild size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90 transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5">
-                    <Link href="/products">Explore Products</Link>
-                </Button>
-                <Button asChild size="lg" variant="outline" className="bg-transparent border-white text-white hover:bg-white hover:text-primary transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5">
-                    <Link href="/quote">Request Quote</Link>
-                </Button>
-            </motion.div>
+            </AnimatePresence><motion.div
+  initial={{ opacity: 0, y: 8 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.6, delay: 0.3, ease: "easeOut" }}
+  className="flex  items-center justify-center gap-3"
+>
+  <div className="w-[150px]">
+    <Button
+      asChild
+      size="lg"
+      className="w-full bg-accent text-accent-foreground hover:bg-accent/90 transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5"
+    >
+      <Link href="/products">Explore Products</Link>
+    </Button>
+  </div>
+
+  <div className="w-[150px]">
+    <Button
+      asChild
+      size="lg"
+      variant="outline"
+      className="w-full bg-transparent border-white text-white hover:bg-white hover:text-primary transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5"
+    >
+      <Link href="/quote">Request Quote</Link>
+    </Button>
+  </div>
+</motion.div>
+
         </div>
       </section>
 
@@ -249,7 +269,7 @@ export default function Home() {
         <div className="container mx-auto px-4 md:px-6 lg:px-8">
           <div className="text-center mb-12">
             <AnimatedElement>
-              <h2 className="text-3xl font-extrabold font-headline tracking-tight sm:text-4xl text-foreground">
+              <h2 className="sm:text-xl md:text-3xl font-extrabold font-headline tracking-tight text-foreground">
                 Why Choose Thorat Motors?
               </h2>
             </AnimatedElement>
@@ -339,27 +359,27 @@ export default function Home() {
       </section>
 
       {/* Our Services Section */}
-      <section className="bg-background py-12 md:py-16 lg:py-24">
+      {/* <section className="bg-background py-12 md:py-16 lg:py-24">
         <div className="container mx-auto px-4 md:px-6 lg:px-8">
             <CategoryList
               title="Our Services"
               categories={serviceCategories}
             />
         </div>
-      </section>
+      </section> */}
 
       {/* Manufacturing Capabilities Section */}
-       <section className="manufacturing-section bg-secondary">
+       {/* <section className="manufacturing-section bg-secondary">
           <Timeline 
             data={manufacturingCapabilities} 
             title="Manufacturing Excellence"
             description="Our state-of-the-art facility is equipped with advanced machinery to ensure precision, durability, and a flawless finish in every product we deliver."
           />
-      </section>
+      </section> */}
 
       {/* Industry-Specific Solutions Section */}
       <section className="bg-background py-12 md:py-16 lg:py-24">
-        <div className="container mx-auto px-4 md:px-6 lg:px-8">
+        <div className="container lg:max-w-[1024px] mx-auto px-4 md:px-6 lg:px-8">
             <div className="text-center mb-12">
                 <h2 className="text-3xl font-extrabold font-headline tracking-tight sm:text-4xl">Industry-Specific Solutions</h2>
                 <p className="mt-4 max-w-3xl mx-auto text-lg text-muted-foreground">
@@ -368,8 +388,8 @@ export default function Home() {
             </div>
             
             {/* Desktop View: Hover-driven */}
-            <div className="hidden lg:grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-                <div className="lg:col-span-1 sticky top-24">
+            <div className="flex gap-12 items-start">
+                <div className="flex sticky top-24">
                     <ul className="flex flex-col space-y-2">
                         {industrySolutions.map((solution, index) => (
                             <li
@@ -382,13 +402,13 @@ export default function Home() {
                                     : 'bg-transparent border-transparent'
                                 )}
                             >
-                                <p className="font-bold text-foreground text-lg">{solution.name}</p>
+                                <p className="font-semibold text-foreground text-md">{solution.name}</p>
                             </li>
                         ))}
                     </ul>
                 </div>
 
-                <div className="lg:col-span-1">
+                <div className="flex">
                     <AnimatePresence mode="wait">
                         <motion.div
                             key={selectedIndustry}
@@ -464,7 +484,7 @@ export default function Home() {
 
 
       {/* Nationwide Presence Section */}
-      <section className="locations-section py-12 md:py-16 lg:py-24">
+      {/* <section className="locations-section py-12 md:py-16 lg:py-24">
         <div
           className="container mx-auto px-4 md:px-6 lg:px-8"
         >
@@ -512,7 +532,7 @@ export default function Home() {
             </Button>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Certifications Section */}
       <section className="certifications-section">
