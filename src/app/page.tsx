@@ -126,30 +126,41 @@ const capabilities = [
     title: 'Design & Homologation',
     description: 'Certification & compliance services.',
     chips: [
-      'EV (2W & 3W)', 'Trailers', 'Bus', 'Bulkers', 'Reefer Containers', 'Commercial Vehicles', 'List of AIS', 'Institute of Approvals'
+      { name: 'EV (2W & 3W)', href: '/industries/design-homologation/products/ev' },
+      { name: 'Trailers', href: '/industries/design-homologation/products/trailers' },
+      { name: 'Bus', href: '/industries/design-homologation/products/bus' },
+      { name: 'Bulkers', href: '/industries/design-homologation/products/bulkers' },
+      { name: 'Reefer Containers', href: '/industries/design-homologation/products/refer-container' },
+      { name: 'Commercial Vehicles', href: '/industries/design-homologation/products/commercial-vehicle' },
+      { name: 'List of AIS', href: '/industries/design-homologation/ais-list' },
+      { name: 'Institute of Approvals', href: '/industries/design-homologation/institute-of-approvals' }
     ],
-    cta: 'Explore Design & Homologation',
-    href: '/industries/design-homologation'
   },
   {
     icon: <Wrench className="w-12 h-12 text-primary mb-4" />,
     title: 'Manufacturing',
     description: 'High-precision fabrication and assembly.',
     chips: [
-      'Trailer Manufacturing', 'Bulker Manufacturing', 'Bus Manufacturing', 'Portable Cabins', 'Containers & Conversions', 'Custom Fabrication'
+      { name: 'Trailer Manufacturing', href: '/industries/design-homologation/products/trailers' },
+      { name: 'Bulker Manufacturing', href: '/industries/manufacturing/bulkers/cement-bulkers' },
+      { name: 'Bus Manufacturing', href: '/industries/design-homologation/products/bus' },
+      { name: 'Portable Cabins', href: '/products/cabins' },
+      { name: 'Containers & Conversions', href: '/products/container-conversions' },
+      { name: 'Custom Fabrication', href: '/services/structural-fabrication' }
     ],
-    cta: 'Explore Manufacturing',
-    href: '/industries/manufacturing'
   },
   {
     icon: <Truck className="w-12 h-12 text-primary mb-4" />,
     title: 'Transportation',
     description: 'Reliable, on-time delivery solutions.',
     chips: [
-      'Finished Vehicle Transport', 'Heavy Equipment Movement', 'Specialized Cargo Handling', 'Long-Haul Logistics', 'Cold Chain Transport', 'Project & ODC Transport'
+      { name: 'Finished Vehicle Transport', href: '/transportation' },
+      { name: 'Heavy Equipment Movement', href: '/transportation' },
+      { name: 'Specialized Cargo Handling', href: '/transportation' },
+      { name: 'Long-Haul Logistics', href: '/transportation' },
+      { name: 'Cold Chain Transport', href: '/transportation' },
+      { name: 'Project & ODC Transport', href: '/transportation' }
     ],
-    cta: 'Explore Transportation',
-    href: '/transportation'
   }
 ];
 
@@ -314,27 +325,18 @@ export default function Home() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {capabilities.map((capability, index) => {
-              const visibleChips = capability.chips.slice(0, 6);
-              const hiddenChipsCount = capability.chips.length - 6;
-
               return (
                 <div key={index} className="product-card-v2 flex flex-col">
                   <div className="p-6 flex flex-col flex-grow">
                     {capability.icon}
                     <h3 className="font-headline text-2xl font-bold">{capability.title}</h3>
                     <p className="text-muted-foreground mt-1 mb-4">{capability.description}</p>
-                    <div className="mb-4 flex flex-wrap items-center gap-2">
-                      {visibleChips.map(chip => (
-                        <div key={chip} className="product-tag">{chip}</div>
+                    <div className="flex flex-wrap items-start gap-2">
+                      {capability.chips.map(chip => (
+                        <Link key={chip.name} href={chip.href} className="product-tag hover:bg-accent hover:text-accent-foreground transition-colors cursor-pointer">
+                          {chip.name}
+                        </Link>
                       ))}
-                      {hiddenChipsCount > 0 && (
-                        <div className="product-tag bg-primary/10 text-primary font-bold">+{hiddenChipsCount} more</div>
-                      )}
-                    </div>
-                    <div className="mt-auto pt-4">
-                      <Link href={capability.href} className="text-accent font-semibold flex items-center hover:underline">
-                        {capability.cta} <ArrowRight className="ml-2 h-4 w-4" />
-                      </Link>
                     </div>
                   </div>
                 </div>
@@ -546,3 +548,4 @@ export default function Home() {
     
 
     
+
