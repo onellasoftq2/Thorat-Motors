@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { Button } from '@/components/ui/button';
 import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card';
-import { Check, HardHat, LandPlot, Mountain, Truck } from 'lucide-react';
+import { Check, HardHat, LandPlot, Mountain, Truck, CheckCircle } from 'lucide-react';
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -30,10 +30,10 @@ const configurations = [
 ];
 
 const whyChooseUs = [
-    { title: "Built for Durability", description: "Engineered with high-strength steel to withstand tough environments." },
-    { title: "Engineering Expertise", description: "Precision engineering focused on balance, integrity, and safety." },
-    { title: "Custom-Built Solutions", description: "We build custom tipping bulkers to meet your specific needs." },
-    { title: "Service & Support", description: "Comprehensive support and parts to minimize downtime." },
+    { title: "Durable High-Strength Steel Construction" },
+    { title: "Precision Engineering for Safety & Balance" },
+    { title: "Custom-Built to Your Specifications" },
+    { title: "Comprehensive Service & Parts Support" },
 ];
 
 export default function TippingBulkersPage() {
@@ -111,7 +111,6 @@ export default function TippingBulkersPage() {
                             {useCase.icon}
                         </div>
                         <h3 className="font-semibold text-lg">{useCase.title}</h3>
-                        <p className="text-sm text-muted-foreground mt-2">{useCase.description}</p>
                     </Card>
                 ))}
             </div>
@@ -160,17 +159,15 @@ export default function TippingBulkersPage() {
         <section className="mt-12 md:mt-20">
              <h2 className="text-3xl font-bold font-headline text-center">Why Choose Our Tipping Bulkers?</h2>
             <div className="mt-3 mb-10 w-20 h-1.5 bg-accent mx-auto"></div>
-            <div className="max-w-4xl mx-auto space-y-8">
-                {whyChooseUs.map((item, index) => (
-                    <Card key={index} className="shadow-md">
-                        <CardHeader>
-                            <CardTitle className="text-xl text-primary">{item.title}</CardTitle>
-                        </CardHeader>
-                         <CardContent>
-                            <p className="text-muted-foreground">{item.description}</p>
-                        </CardContent>
-                    </Card>
-                ))}
+            <div className="max-w-4xl mx-auto bg-secondary p-8 md:p-12 rounded-lg shadow-inner">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6">
+                    {whyChooseUs.map((item, index) => (
+                        <div key={index} className="flex items-center">
+                            <CheckCircle className="h-6 w-6 text-accent mr-3 flex-shrink-0" />
+                            <p className="font-semibold text-lg">{item.title}</p>
+                        </div>
+                    ))}
+                </div>
             </div>
         </section>
 

@@ -24,17 +24,17 @@ const useCases = [
 ];
 
 const configurations = [
-    { name: 'Capacity Ranges', value: '25 to 50-ton capacity for various scales.' },
+    { name: 'Capacity Ranges', value: '25 to 50-ton capacity.' },
     { name: 'Tank Construction', value: 'High-strength steel (ST52) pressure vessel.' },
     { name: 'Pneumatic Discharge', value: 'High-performance compressors for rapid unloading.' },
     { name: 'Custom Configurations', value: 'Custom axle, capacity, and discharge options.' },
 ];
 
 const whyChooseUs = [
-    { title: "Dust-Free & Contamination-Safe", description: "Sealed pneumatic system keeps cement pure and prevents contamination." },
-    { title: "Engineering Expertise", description: "Specialized in pressure vessel and pneumatic system design for optimal performance." },
-    { title: "Operational Efficiency", description: "Rapid loading and unloading reduces turnaround times and maximizes output." },
-    { title: "Built for the Long Haul", description: "Robust construction for long service life and lower total cost of ownership." },
+    { title: "Dust-Free & Contamination-Safe" },
+    { title: "Specialized Pressure Vessel Engineering" },
+    { title: "Efficient Loading & Unloading" },
+    { title: "Robust Construction for Long Service Life" },
 ];
 
 const qualityStandards = [
@@ -120,7 +120,6 @@ export default function CementBulkerPage() {
                             {useCase.icon}
                         </div>
                         <h3 className="font-semibold text-lg">{useCase.title}</h3>
-                        <p className="text-sm text-muted-foreground mt-2">{useCase.description}</p>
                     </Card>
                 ))}
             </div>
@@ -174,7 +173,6 @@ export default function CementBulkerPage() {
               <div key={item.title} className="text-center">
                 {React.cloneElement(item.icon, { className: "h-10 w-10 text-accent mx-auto mb-4" })}
                 <h3 className="text-xl font-bold">{item.title}</h3>
-                <p className="text-muted-foreground mt-2">{item.description}</p>
               </div>
             ))}
           </div>
@@ -184,18 +182,15 @@ export default function CementBulkerPage() {
         <section className="mt-12 md:mt-20">
              <h2 className="text-3xl font-bold font-headline text-center">Why Choose Our Cement Bulkers?</h2>
             <div className="mt-3 mb-10 w-20 h-1.5 bg-accent mx-auto"></div>
-            <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-10">
-                {whyChooseUs.map((item, index) => (
-                    <div key={index} className="flex items-start">
-                        <div className="flex-shrink-0 bg-primary/10 text-accent p-3 rounded-full">
-                            <CheckCircle className="h-8 w-8" />
+            <div className="max-w-4xl mx-auto bg-secondary p-8 md:p-12 rounded-lg shadow-inner">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6">
+                    {whyChooseUs.map((item, index) => (
+                        <div key={index} className="flex items-center">
+                            <CheckCircle className="h-6 w-6 text-accent mr-3 flex-shrink-0" />
+                            <p className="font-semibold text-lg">{item.title}</p>
                         </div>
-                        <div className="ml-4">
-                            <h3 className="text-xl font-bold text-primary">{item.title}</h3>
-                            <p className="mt-1 text-muted-foreground">{item.description}</p>
-                        </div>
-                    </div>
-                ))}
+                    ))}
+                </div>
             </div>
         </section>
 

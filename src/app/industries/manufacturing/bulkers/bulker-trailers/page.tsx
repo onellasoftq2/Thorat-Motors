@@ -5,7 +5,7 @@ import React from 'react';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { Button } from '@/components/ui/button';
 import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card';
-import { Check, ShieldCheck, Layers, Settings, Workflow, Route, Building, Leaf, Factory } from 'lucide-react';
+import { Check, ShieldCheck, Layers, Settings, Workflow, Route, Building, Leaf, Factory, CheckCircle } from 'lucide-react';
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -28,14 +28,13 @@ const configurations = [
     { name: 'Axle Configurations', value: 'Tandem and tridem axles for stability.' },
     { name: 'Tank Construction', value: 'High-strength or food-grade steel options.' },
     { name: 'Discharge Systems', value: 'Advanced pneumatic or gravity discharge systems.' },
-    { name: 'Custom Solutions', value: 'Bespoke designs for your fleet.' },
 ];
 
 const whyChooseUs = [
-    { title: "High-Capacity & Efficient Transport", description: "Optimized for max payload and efficient unloading to reduce turnaround." },
-    { title: "Engineering Expertise", description: "Deep experience building trailers with superior stability and safety." },
-    { title: "Custom Solutions for Your Cargo", description: "Engineered solutions ensure cargo integrity and compliance." },
-    { title: "Long-Term Durability", description: "High-quality materials for long service life and lower TCO." },
+    { title: "High-Capacity & Efficient Transport" },
+    { title: "Superior Stability & Safety Engineering" },
+    { title: "Custom Solutions for Cargo Integrity" },
+    { title: "Durable Construction for Lower TCO" },
 ];
 
 const qualityStandards = [
@@ -121,7 +120,6 @@ export default function BulkerTrailersPage() {
                             {useCase.icon}
                         </div>
                         <h3 className="font-semibold text-lg">{useCase.title}</h3>
-                        <p className="text-sm text-muted-foreground mt-2">{useCase.description}</p>
                     </Card>
                 ))}
             </div>
@@ -175,7 +173,6 @@ export default function BulkerTrailersPage() {
               <div key={item.title} className="text-center">
                 {React.cloneElement(item.icon, { className: "h-10 w-10 text-accent mx-auto mb-4" })}
                 <h3 className="text-xl font-bold">{item.title}</h3>
-                <p className="text-muted-foreground mt-2">{item.description}</p>
               </div>
             ))}
           </div>
@@ -185,17 +182,15 @@ export default function BulkerTrailersPage() {
         <section className="mt-12 md:mt-20">
              <h2 className="text-3xl font-bold font-headline text-center">Why Choose Our Bulker Trailers?</h2>
             <div className="mt-3 mb-10 w-20 h-1.5 bg-accent mx-auto"></div>
-            <div className="max-w-4xl mx-auto space-y-8">
-                {whyChooseUs.map((item, index) => (
-                    <Card key={index} className="shadow-md">
-                        <CardHeader>
-                            <CardTitle className="text-xl text-primary">{item.title}</CardTitle>
-                        </CardHeader>
-                         <CardContent>
-                            <p className="text-muted-foreground">{item.description}</p>
-                        </CardContent>
-                    </Card>
-                ))}
+            <div className="max-w-4xl mx-auto bg-secondary p-8 md:p-12 rounded-lg shadow-inner">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6">
+                    {whyChooseUs.map((item, index) => (
+                        <div key={index} className="flex items-center">
+                            <CheckCircle className="h-6 w-6 text-accent mr-3 flex-shrink-0" />
+                            <p className="font-semibold text-lg">{item.title}</p>
+                        </div>
+                    ))}
+                </div>
             </div>
         </section>
 
