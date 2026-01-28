@@ -120,6 +120,26 @@ const heroTexts = [
   }
 ];
 
+const manufacturingChips = [
+    { name: 'Cement Bulkers' },
+    { name: 'Rigid Vehicle' },
+    { name: 'Tipping Bulkers' },
+    { name: 'Food Bulkers' },
+    { name: 'Bulker Trailers' },
+    { name: 'Flatbed Trailers' },
+    { name: 'Sidewall Trailers' },
+    { name: 'Tip Trailers' },
+    { name: 'Skeletal Trailers' },
+    { name: 'Semi Lowbed Trailers' },
+    { name: 'Cragganmore Tank' },
+    { name: 'Milk Tank' },
+    { name: 'Petroleum Tank' },
+    { name: 'Gas Tank' },
+    { name: 'TATA Load Bodies' },
+    { name: 'BharatBenz Load Bodies' },
+    { name: 'Ashok Leyland Load Bodies' },
+];
+
 const capabilities = [
   {
     icon: <DraftingCompass className="w-12 h-12 text-primary mb-4" />,
@@ -140,14 +160,7 @@ const capabilities = [
     icon: <Wrench className="w-12 h-12 text-primary mb-4" />,
     title: 'Manufacturing',
     description: 'High-precision fabrication and assembly.',
-    chips: [
-      { name: 'Trailer Manufacturing', href: '/industries/design-homologation/products/trailers' },
-      { name: 'Bulker Manufacturing', href: '/industries/manufacturing/bulkers/cement-bulkers' },
-      { name: 'Bus Manufacturing', href: '/industries/design-homologation/products/bus' },
-      { name: 'Portable Cabins', href: '/products/cabins' },
-      { name: 'Containers & Conversions', href: '/products/container-conversions' },
-      { name: 'Custom Fabrication', href: '/services/structural-fabrication' }
-    ],
+    chips: manufacturingChips,
   },
   {
     icon: <Truck className="w-12 h-12 text-primary mb-4" />,
@@ -325,18 +338,55 @@ export default function Home() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {capabilities.map((capability, index) => {
+              if (capability.title === 'Manufacturing') {
+                const VISIBLE_CHIPS = 5;
+                const totalChips = capability.chips.length;
+                return (
+                  <div key={index} className="product-card-v2 flex flex-col">
+                    <div className="p-6 flex flex-col flex-grow">
+                      {capability.icon}
+                      <h3 className="font-headline text-2xl font-bold">{capability.title}</h3>
+                      <p className="text-muted-foreground mt-1 mb-4">{capability.description}</p>
+                      <div className="flex-grow">
+                        <div className="flex flex-wrap items-start gap-2">
+                          {capability.chips.slice(0, VISIBLE_CHIPS).map(chip => (
+                            <div key={chip.name} className="product-tag">
+                              {chip.name}
+                            </div>
+                          ))}
+                          {totalChips > VISIBLE_CHIPS && (
+                            <div className="product-tag">
+                              +{totalChips - VISIBLE_CHIPS} more
+                            </div>
+                          )}
+                        </div>
+                      </div>
+                      <div className="mt-4">
+                        <Link href="/industries/manufacturing" className="text-accent font-semibold flex items-center group text-sm">
+                          Explore Manufacturing
+                          <ArrowRight className="ml-2 h-4 w-4 transform transition-transform duration-300 group-hover:translate-x-1" />
+                        </Link>
+                      </div>
+                    </div>
+                  </div>
+                );
+              }
               return (
                 <div key={index} className="product-card-v2 flex flex-col">
                   <div className="p-6 flex flex-col flex-grow">
                     {capability.icon}
                     <h3 className="font-headline text-2xl font-bold">{capability.title}</h3>
                     <p className="text-muted-foreground mt-1 mb-4">{capability.description}</p>
-                    <div className="flex flex-wrap items-start gap-2">
-                      {capability.chips.map(chip => (
-                        <Link key={chip.name} href={chip.href} className="product-tag hover:bg-accent hover:text-accent-foreground transition-colors cursor-pointer">
-                          {chip.name}
-                        </Link>
-                      ))}
+                    <div className="flex-grow">
+                        <div className="flex flex-wrap items-start gap-2">
+                        {capability.chips.map(chip => (
+                            'href' in chip && chip.href ? (
+                            <Link key={chip.name} href={chip.href} className="product-tag hover:bg-accent hover:text-accent-foreground transition-colors cursor-pointer">
+                                {chip.name}
+                            </Link>
+                            ) : null
+                        ))}
+                        </div>
                     </div>
                   </div>
                 </div>
@@ -548,4 +598,5 @@ export default function Home() {
     
 
     
+
 
