@@ -5,7 +5,7 @@ import React from 'react';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { Button } from '@/components/ui/button';
 import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card';
-import { Check, HardHat, Factory, Building, Route, ShieldCheck, Layers, Settings, Workflow } from 'lucide-react';
+import { Check, HardHat, Factory, Building, Route, ShieldCheck, Layers, Settings, Workflow, CheckCircle } from 'lucide-react';
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -214,14 +214,17 @@ export default function CementBulkerPage() {
         <section className="mt-12 md:mt-20">
              <h2 className="text-3xl font-bold font-headline text-center">Why Choose Our Cement Bulkers?</h2>
             <div className="mt-3 mb-10 w-20 h-1.5 bg-accent mx-auto"></div>
-            <div className="max-w-4xl mx-auto space-y-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
                 {whyChooseUs.map((item, index) => (
-                    <Card key={index} className="shadow-md">
-                        <CardHeader>
-                            <CardTitle className="text-xl text-primary">{item.title}</CardTitle>
+                    <Card key={item.title} className="h-full text-center p-6 shadow-lg transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 border-b-4 border-transparent hover:border-accent">
+                        <CardHeader className="p-0 mb-6 items-center">
+                            <div className="bg-primary/10 p-4 rounded-full">
+                                <CheckCircle className="h-8 w-8 text-accent" />
+                            </div>
                         </CardHeader>
-                         <CardContent>
-                            <p className="text-muted-foreground">{item.description}</p>
+                        <CardContent className="p-0">
+                            <h3 className="text-lg font-bold font-headline mb-2 text-primary">{item.title}</h3>
+                            <p className="text-muted-foreground text-sm">{item.description}</p>
                         </CardContent>
                     </Card>
                 ))}
