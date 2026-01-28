@@ -16,24 +16,24 @@ import {
 
 
 const useCases = [
-    { icon: <HardHat className="h-8 w-8 text-accent" />, title: "Construction & Infrastructure", description: "Efficiently move sand, gravel, and construction debris on-site." },
-    { icon: <Mountain className="h-8 w-8 text-accent" />, title: "Mining & Quarry Operations", description: "Handle heavy-duty transport of ores, coal, and aggregates." },
-    { icon: <LandPlot className="h-8 w-8 text-accent" />, title: "Road Development & Earthmoving", description: "Ideal for large-scale earthmoving and road construction projects." },
-    { icon: <Truck className="h-8 w-8 text-accent" />, title: "Industrial Material Handling", description: "Transport bulk raw materials and industrial waste with ease." },
+    { icon: <HardHat className="h-8 w-8 text-accent" />, title: "Construction", description: "Move sand, gravel, and debris on-site." },
+    { icon: <Mountain className="h-8 w-8 text-accent" />, title: "Mining & Quarry", description: "Transport ores, coal, and aggregates." },
+    { icon: <LandPlot className="h-8 w-8 text-accent" />, title: "Earthmoving", description: "For large-scale earthmoving and road construction." },
+    { icon: <Truck className="h-8 w-8 text-accent" />, title: "Industrial Handling", description: "Transport bulk raw materials and waste." },
 ];
 
 const configurations = [
-    { name: 'Load Capacity Options', value: 'Ranging from 10 to 30 tons, tailored to your operational scale.' },
-    { name: 'Body Types & Materials', value: 'High-tensile steel bodies for durability, with options for custom shapes and reinforcements.' },
-    { name: 'Hydraulic Tipping Mechanisms', value: 'Advanced, reliable hydraulics for fast, stable, and safe tipping operations.' },
-    { name: 'Customization', value: 'Bespoke solutions including body dimensions, tailgate designs, and additional safety features.' },
+    { name: 'Load Capacity', value: '10 to 30-ton capacity.' },
+    { name: 'Body Types', value: 'High-tensile steel bodies with custom options.' },
+    { name: 'Hydraulics', value: 'Reliable hydraulics for fast, safe tipping.' },
+    { name: 'Customization', value: 'Custom body dimensions and tailgate designs.' },
 ];
 
 const whyChooseUs = [
-    { title: "Built for Durability", description: "Our tipping bulkers are engineered with high-strength steel and robust construction to withstand the toughest industrial environments, ensuring a long and reliable service life." },
-    { title: "Engineering Expertise", description: "With years of experience in heavy vehicle manufacturing, we bring precision engineering to every tipping bulker, focusing on load balance, structural integrity, and operational safety." },
-    { title: "Custom-Built Solutions", description: "We understand that every operation is unique. We work with you to build tipping bulkers that meet your specific needs for capacity, material, and functionality." },
-    { title: "Service & Support Readiness", description: "Our commitment extends beyond manufacturing. We offer comprehensive after-sales support and spare parts availability to keep your fleet operational and minimize downtime." },
+    { title: "Built for Durability", description: "Engineered with high-strength steel to withstand tough environments." },
+    { title: "Engineering Expertise", description: "Precision engineering focused on balance, integrity, and safety." },
+    { title: "Custom-Built Solutions", description: "We build custom tipping bulkers to meet your specific needs." },
+    { title: "Service & Support", description: "Comprehensive support and parts to minimize downtime." },
 ];
 
 export default function TippingBulkersPage() {
@@ -63,7 +63,7 @@ export default function TippingBulkersPage() {
 
                 <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight font-headline">Tipping Bulkers</h1>
                 <p className="mt-4 text-lg md:text-xl text-muted-foreground max-w-lg mx-auto md:mx-0">
-                    Engineered for durability, safety, and precision to handle your toughest bulk material transport needs.
+                    Durable, safe, and precise for tough bulk material transport.
                 </p>
                 <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
                     <Button size="lg" asChild>
@@ -96,7 +96,7 @@ export default function TippingBulkersPage() {
              <h2 className="text-3xl font-bold font-headline">Efficient Unloading for Bulk Materials</h2>
             <div className="mt-3 mb-6 w-20 h-1.5 bg-accent mx-auto"></div>
             <p className="text-muted-foreground text-lg leading-relaxed">
-                Our tipping bulkers are purpose-built for the rapid and efficient unloading of bulk materials. Whether it's sand, aggregates, industrial materials, or construction debris, our designs ensure a smooth, safe, and controlled tipping process, maximizing your operational throughput.
+                Purpose-built for rapid and efficient unloading of bulk materials like sand and aggregates. Our designs ensure a smooth, controlled tipping process.
             </p>
         </section>
 
@@ -137,11 +137,11 @@ export default function TippingBulkersPage() {
                  <h2 className="text-3xl font-bold font-headline">Engineering & Manufacturing Strength</h2>
                 <div className="mt-3 mb-6 w-20 h-1.5 bg-accent"></div>
                  <p className="text-muted-foreground text-lg leading-relaxed mb-4">
-                    Every tipping bulker we build is a testament to our commitment to quality. We use precision fabrication techniques and high-strength materials to ensure superior structural integrity. Our engineering focus on optimal load balance and tipping geometry guarantees safe and stable operation, even under heavy loads.
+                    We use precision fabrication and high-strength materials for superior integrity. Our focus on load balance and tipping geometry ensures safe operation.
                 </p>
                 <div className="space-y-3">
-                    <p className="flex items-center"><Check className="text-green-500 mr-2" /> Rigorous quality checks at every stage of production.</p>
-                     <p className="flex items-center"><Check className="text-green-500 mr-2" /> Adherence to strict automotive and manufacturing standards.</p>
+                    <p className="flex items-center"><Check className="text-green-500 mr-2" /> Rigorous quality checks.</p>
+                     <p className="flex items-center"><Check className="text-green-500 mr-2" /> Adherence to manufacturing standards.</p>
                 </div>
             </div>
              <div className='order-1 md:order-2'>
@@ -177,13 +177,13 @@ export default function TippingBulkersPage() {
         {/* 10. Conversion Section */}
         <section className="mt-12 md:mt-20 bg-primary text-primary-foreground py-16 rounded-lg">
             <div className="container mx-auto text-center">
-                 <h2 className="text-3xl font-extrabold">Looking for a tipping bulker built for your operational demands?</h2>
+                 <h2 className="text-3xl font-extrabold">Looking for a tipping bulker for your demands?</h2>
                  <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
                     <Button size="lg" variant="secondary" asChild className="bg-accent text-accent-foreground hover:bg-accent/90">
                         <Link href="/quote">Enquire Now</Link>
                     </Button>
                     <Button size="lg" variant="outline" asChild className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary">
-                        <Link href="/contact">Talk to Our Manufacturing Team</Link>
+                        <Link href="/contact">Talk to Our Team</Link>
                     </Button>
                 </div>
             </div>

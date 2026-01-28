@@ -17,31 +17,31 @@ import {
 
 // Data for the page
 const useCases = [
-    { icon: <Truck className="h-8 w-8 text-accent" />, title: "Industrial & Commercial Logistics", description: "Reliable transport for finished goods, raw materials, and components." },
-    { icon: <HardHat className="h-8 w-8 text-accent" />, title: "Construction & Infrastructure", description: "Moving materials, equipment, and supplies directly to the job site." },
-    { icon: <Route className="h-8 w-8 text-accent" />, title: "Intra-City & Regional Movement", description: "Optimized for efficient transport in urban and regional distribution networks." },
-    { icon: <Settings className="h-8 w-8 text-accent" />, title: "Specialized Applications", description: "Custom-built bodies for specific cargo like perishables, electronics, or machinery." },
+    { icon: <Truck className="h-8 w-8 text-accent" />, title: "Industrial Logistics", description: "Transport finished goods and raw materials." },
+    { icon: <HardHat className="h-8 w-8 text-accent" />, title: "Construction", description: "Move materials and equipment to job sites." },
+    { icon: <Route className="h-8 w-8 text-accent" />, title: "Regional Movement", description: "Efficient urban and regional distribution." },
+    { icon: <Settings className="h-8 w-8 text-accent" />, title: "Specialized Apps", description: "Custom bodies for specialized cargo." },
 ];
 
 const configurations = [
-    { name: 'Load Capacity Options', value: 'Wide range of tonnage capacities to suit various operational scales.' },
-    { name: 'Body Types & Structures', value: 'Offered in flatbed, box, curtain-sider, and custom structural configurations.' },
-    { name: 'Materials & Build', value: 'High-strength steel (IS2062, BSK46) for chassis and body components.' },
-    { name: 'Customization', value: 'Tailored solutions for body dimensions, flooring, and specialized fittings.' },
+    { name: 'Load Capacity', value: 'Wide range of tonnage capacities.' },
+    { name: 'Body Types', value: 'Flatbed, box, curtain-sider, and custom configs.' },
+    { name: 'Materials & Build', value: 'High-strength steel (IS2062, BSK46).' },
+    { name: 'Customization', value: 'Custom dimensions, flooring, and fittings.' },
 ];
 
 const qualityStandards = [
-    { icon: <ShieldCheck />, title: 'Automotive Standards', description: 'Built in compliance with CMVR and other applicable automotive regulations.' },
-    { icon: <Layers />, title: 'Structural Testing', description: 'FEA-validated designs to ensure stability and performance under all load conditions.' },
-    { icon: <TestTube />, title: 'Material Validation', description: 'All materials undergo quality checks to ensure they meet our high-strength standards.' },
-    { icon: <Workflow />, title: 'Quality Inspection', description: 'Rigorous inspection at every stage, from fabrication to final assembly and finishing.' },
+    { icon: <ShieldCheck />, title: 'Automotive Standards', description: 'CMVR compliant construction.' },
+    { icon: <Layers />, title: 'Structural Testing', description: 'FEA-validated for stability and performance.' },
+    { icon: <TestTube />, title: 'Material Validation', description: 'Material quality checks to meet standards.' },
+    { icon: <Workflow />, title: 'Quality Inspection', description: 'Rigorous inspection at every stage.' },
 ];
 
 const whyChooseUs = [
-    { title: "Robust Construction & Long Life", description: "Engineered with high-tensile steel and superior fabrication techniques to deliver a long, reliable service life and a lower total cost of ownership." },
-    { title: "Engineering Precision & Reliability", description: "Our focus on precision chassis integration and optimal load balance results in vehicles that are stable, safe, and dependable in any operating condition." },
-    { title: "Application-Specific Customization", description: "We work closely with clients to design and build rigid vehicles that are perfectly matched to their specific cargo, route, and operational needs." },
-    { title: "Dependable Service & Support", description: "Backed by a nationwide network, we provide responsive after-sales support and spare parts availability to keep your fleet moving." },
+    { title: "Robust Construction & Long Life", description: "High-tensile steel and superior fabrication for long life and low TCO." },
+    { title: "Engineering Precision", description: "Precision integration and load balance for stable, safe vehicles." },
+    { title: "Application-Specific Customization", description: "Custom-designed vehicles matched to your cargo and operational needs." },
+    { title: "Dependable Service & Support", description: "Nationwide network for responsive support and parts availability." },
 ];
 
 export default function RigidVehiclesPage() {
@@ -71,7 +71,7 @@ export default function RigidVehiclesPage() {
 
                 <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight font-headline">Rigid Vehicles</h1>
                 <p className="mt-4 text-lg md:text-xl text-muted-foreground max-w-lg mx-auto md:mx-0">
-                    Engineered for exceptional strength, stability, and operational reliability in industrial transport.
+                    Strength, stability, and reliability for industrial transport.
                 </p>
                 <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
                     <Button size="lg" asChild>
@@ -104,7 +104,7 @@ export default function RigidVehiclesPage() {
             <h2 className="text-3xl font-bold font-headline">The Benchmark for Integrated Transport</h2>
             <div className="mt-3 mb-6 w-20 h-1.5 bg-accent mx-auto"></div>
             <p className="text-muted-foreground text-lg leading-relaxed">
-                Rigid vehicles, where the body is built directly onto a fixed chassis, offer superior load stability and handling. This integrated design makes them ideal for short to medium-haul industrial and commercial operations, ensuring your cargo is transported with maximum control and safety.
+                Rigid vehicles, with a body built onto a fixed chassis, offer superior stability and handling. Ideal for short to medium-haul operations with maximum control.
             </p>
         </section>
 
@@ -145,11 +145,11 @@ export default function RigidVehiclesPage() {
                 <h2 className="text-3xl font-bold font-headline">Engineering & Manufacturing Excellence</h2>
                 <div className="mt-3 mb-6 w-20 h-1.5 bg-accent"></div>
                 <p className="text-muted-foreground text-lg leading-relaxed mb-4">
-                    Our manufacturing process focuses on precision chassis integration and superior fabrication quality. We ensure optimal load balance and structural durability in every vehicle, with rigorous in-house inspections guaranteeing a high-quality finish and reliable performance.
+                    Our process focuses on precision chassis integration and superior fabrication. We ensure optimal load balance and durability with rigorous inspections.
                 </p>
                 <div className="space-y-3">
-                    <p className="flex items-center"><Check className="text-green-500 mr-2" /> Precision chassis integration for enhanced stability.</p>
-                    <p className="flex items-center"><Check className="text-green-500 mr-2" /> High-quality fabrication and finishing for long-term durability.</p>
+                    <p className="flex items-center"><Check className="text-green-500 mr-2" /> Precision chassis integration.</p>
+                    <p className="flex items-center"><Check className="text-green-500 mr-2" /> High-quality fabrication and finishing.</p>
                 </div>
             </div>
             <div className='order-1 md:order-2'>
@@ -200,13 +200,13 @@ export default function RigidVehiclesPage() {
         {/* 10. Conversion Section */}
         <section className="mt-12 md:mt-20 bg-primary text-primary-foreground py-16 rounded-lg">
             <div className="container mx-auto text-center">
-                <h2 className="text-3xl font-extrabold">Looking for a rigid vehicle engineered for dependable industrial transport?</h2>
+                <h2 className="text-3xl font-extrabold">Looking for a dependable rigid vehicle?</h2>
                 <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
                     <Button size="lg" variant="secondary" asChild className="bg-accent text-accent-foreground hover:bg-accent/90">
                         <Link href="/quote?product=rigid-vehicle">Enquire Now</Link>
                     </Button>
                     <Button size="lg" variant="outline" asChild className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary">
-                        <Link href="/contact">Talk to Our Manufacturing Team</Link>
+                        <Link href="/contact">Talk to Our Team</Link>
                     </Button>
                 </div>
             </div>

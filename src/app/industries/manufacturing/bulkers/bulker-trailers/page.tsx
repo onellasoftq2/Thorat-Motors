@@ -17,32 +17,32 @@ import {
 
 // Data for the page
 const useCases = [
-    { icon: <Route className="h-8 w-8 text-accent" />, title: "Long-Haul Bulk Logistics", description: "Efficient long-distance transport of bulk goods for major fleet operators." },
-    { icon: <Building className="h-8 w-8 text-accent" />, title: "Cement & Fly Ash", description: "High-capacity, contamination-free transport for the cement industry." },
-    { icon: <Leaf className="h-8 w-8 text-accent" />, title: "Food-Grade Bulk Transport", description: "Hygienic configurations for transporting grains, flour, and other food products." },
-    { icon: <Factory className="h-8 w-8 text-accent" />, title: "Industrial Supply Chains", description: "Reliable movement of raw materials like powders and minerals for industrial use." },
+    { icon: <Route className="h-8 w-8 text-accent" />, title: "Long-Haul Logistics", description: "Long-distance transport for fleet operators." },
+    { icon: <Building className="h-8 w-8 text-accent" />, title: "Cement & Fly Ash", description: "Contamination-free transport for cement." },
+    { icon: <Leaf className="h-8 w-8 text-accent" />, title: "Food-Grade Transport", description: "Hygienic transport for food products." },
+    { icon: <Factory className="h-8 w-8 text-accent" />, title: "Industrial Supply Chains", description: "Move raw materials for industrial use." },
 ];
 
 const configurations = [
-    { name: 'Capacity & Volume Ranges', value: 'From 40 to 70 CBM, designed for high-volume, long-haul efficiency.' },
-    { name: 'Trailer Axle Configurations', value: 'Tandem and tridem axle configurations for optimal load distribution and stability.' },
-    { name: 'Tank & Body Construction', value: 'High-strength steel (ST52) or food-grade stainless steel (SS304/SS316) options.' },
-    { name: 'Discharge Systems', value: 'Advanced pneumatic systems for rapid, controlled unloading or gravity-based systems for specific materials.' },
-    { name: 'Custom Fleet Solutions', value: 'Bespoke designs tailored to your fleet’s specific operational and material requirements.' },
+    { name: 'Capacity & Volume', value: '40 to 70 CBM for high-volume transport.' },
+    { name: 'Axle Configurations', value: 'Tandem and tridem axles for stability.' },
+    { name: 'Tank Construction', value: 'High-strength or food-grade steel options.' },
+    { name: 'Discharge Systems', value: 'Advanced pneumatic or gravity discharge systems.' },
+    { name: 'Custom Solutions', value: 'Bespoke designs for your fleet.' },
 ];
 
 const whyChooseUs = [
-    { title: "High-Capacity & Efficient Transport", description: "Our bulker trailers are optimized for maximum payload and efficient unloading, reducing turnaround times and increasing your operational profitability." },
-    { title: "Engineering Expertise in Trailers", description: "We leverage our deep experience in trailer manufacturing to build bulker trailers that offer superior stability, safety, and performance on the road." },
-    { title: "Custom Solutions for Your Cargo", description: "We engineer solutions for different bulk materials, from cement to food grains, ensuring the integrity of your cargo and compliance with all standards." },
-    { title: "Long-Term Durability & Reliability", description: "Built with high-quality materials and robust construction, our bulker trailers are designed for a long service life, ensuring a lower total cost of ownership for your fleet." },
+    { title: "High-Capacity & Efficient Transport", description: "Optimized for max payload and efficient unloading to reduce turnaround." },
+    { title: "Engineering Expertise", description: "Deep experience building trailers with superior stability and safety." },
+    { title: "Custom Solutions for Your Cargo", description: "Engineered solutions ensure cargo integrity and compliance." },
+    { title: "Long-Term Durability", description: "High-quality materials for long service life and lower TCO." },
 ];
 
 const qualityStandards = [
-    { icon: <ShieldCheck />, title: 'Automotive Certified', description: 'Trailers are built to comply with all CMVR and other applicable automotive standards for safety on the road.'},
-    { icon: <Layers />, title: 'Structural Load Testing', description: 'FEA-validated designs and physical load tests ensure stability and durability under maximum payload.'},
-    { icon: <Settings />, title: 'Discharge System Validation', description: 'Pneumatic and mechanical systems are rigorously tested for performance, reliability, and safety.'},
-    { icon: <Workflow />, title: 'Fabrication Quality', description: 'Certified welders and multi-stage inspections guarantee a flawless and durable final product.'},
+    { icon: <ShieldCheck />, title: 'Automotive Certified', description: 'CMVR compliant for on-road safety.'},
+    { icon: <Layers />, title: 'Structural Load Testing', description: 'FEA-validated for stability and durability.'},
+    { icon: <Settings />, title: 'System Validation', description: 'Systems tested for performance and safety.'},
+    { icon: <Workflow />, title: 'Fabrication Quality', description: 'Inspections guarantee a durable product.'},
 ];
 
 
@@ -73,7 +73,7 @@ export default function BulkerTrailersPage() {
 
                 <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight font-headline">Bulker Trailers</h1>
                 <p className="mt-4 text-lg md:text-xl text-muted-foreground max-w-lg mx-auto md:mx-0">
-                    Engineered for high-volume, stable, and efficient bulk material transport over long distances.
+                    High-volume, stable, and efficient long-distance transport.
                 </p>
                 <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
                     <Button size="lg" asChild>
@@ -106,7 +106,7 @@ export default function BulkerTrailersPage() {
              <h2 className="text-3xl font-bold font-headline">The Backbone of Long-Haul Bulk Transport</h2>
             <div className="mt-3 mb-6 w-20 h-1.5 bg-accent mx-auto"></div>
             <p className="text-muted-foreground text-lg leading-relaxed">
-                Bulker trailers are high-capacity semi-trailers designed for the efficient transport of dry bulk materials like cement, food grains, and industrial powders over long distances. Their design prioritizes stability, payload optimization, and reliable unloading systems to support modern supply chains.
+                High-capacity semi-trailers for efficient long-distance transport of dry bulk materials. Our design prioritizes stability and payload optimization.
             </p>
         </section>
 
@@ -147,11 +147,11 @@ export default function BulkerTrailersPage() {
                  <h2 className="text-3xl font-bold font-headline">Engineering for Stability & Efficiency</h2>
                 <div className="mt-3 mb-6 w-20 h-1.5 bg-accent"></div>
                  <p className="text-muted-foreground text-lg leading-relaxed mb-4">
-                    Our bulker trailers are designed with a focus on structural stability and weight optimization to maximize payload. We use precision fabrication and assembly techniques to ensure every trailer meets high standards for durability, especially for demanding long-haul operations.
+                    Designed for stability and weight optimization to maximize payload. We use precision fabrication for high durability in long-haul operations.
                 </p>
                 <div className="space-y-3">
-                    <p className="flex items-center"><Check className="text-green-500 mr-2" /> Optimized chassis design for superior on-road stability.</p>
-                     <p className="flex items-center"><Check className="text-green-500 mr-2" /> High-quality welding and finishing for long-term corrosion resistance.</p>
+                    <p className="flex items-center"><Check className="text-green-500 mr-2" /> Optimized chassis for stability.</p>
+                     <p className="flex items-center"><Check className="text-green-500 mr-2" /> Quality welding for corrosion resistance.</p>
                 </div>
             </div>
              <div className='order-1 md:order-2'>
@@ -202,13 +202,13 @@ export default function BulkerTrailersPage() {
         {/* 10. Conversion Section */}
         <section className="mt-12 md:mt-20 bg-primary text-primary-foreground py-16 rounded-lg">
             <div className="container mx-auto text-center">
-                 <h2 className="text-3xl font-extrabold">Looking for a bulker trailer built for high-volume and long-haul operations?</h2>
+                 <h2 className="text-3xl font-extrabold">Looking for a high-volume, long-haul bulker trailer?</h2>
                  <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
                     <Button size="lg" variant="secondary" asChild className="bg-accent text-accent-foreground hover:bg-accent/90">
                         <Link href="/quote?product=bulker-trailer">Enquire Now</Link>
                     </Button>
                     <Button size="lg" variant="outline" asChild className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary">
-                        <Link href="/contact">Talk to Our Manufacturing Team</Link>
+                        <Link href="/contact">Talk to Our Team</Link>
                     </Button>
                 </div>
             </div>

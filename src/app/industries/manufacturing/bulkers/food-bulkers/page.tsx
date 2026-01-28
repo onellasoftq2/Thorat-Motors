@@ -17,31 +17,31 @@ import {
 
 // Data for the page
 const useCases = [
-    { icon: <Factory className="h-8 w-8 text-accent" />, title: "Food Processing & Milling", description: "Hygienic transport of flour, sugar, and ingredients to plants." },
-    { icon: <Leaf className="h-8 w-8 text-accent" />, title: "Grain & Agro-Industrial", description: "Safe and efficient movement of grains like wheat and corn." },
-    { icon: <Package className="h-8 w-8 text-accent" />, title: "Dairy & Food Ingredients", description: "Contamination-free delivery of milk powders and other sensitive ingredients." },
-    { icon: <Truck className="h-8 w-8 text-accent" />, title: "Bulk Food Distribution", description: "Reliable logistics for bulk food items from source to distribution centers." },
+    { icon: <Factory className="h-8 w-8 text-accent" />, title: "Food Processing", description: "Transport flour and sugar to plants." },
+    { icon: <Leaf className="h-8 w-8 text-accent" />, title: "Grain & Agro-Industrial", description: "Move grains like wheat and corn." },
+    { icon: <Package className="h-8 w-8 text-accent" />, title: "Dairy & Ingredients", description: "Deliver milk powders and sensitive ingredients." },
+    { icon: <Truck className="h-8 w-8 text-accent" />, title: "Bulk Distribution", description: "Bulk food logistics and distribution." },
 ];
 
 const configurations = [
-    { name: 'Capacity Ranges', value: 'From 25 to 40 CBM, designed for various operational needs.' },
-    { name: 'Tank Construction', value: 'Food-grade stainless steel (SS304/SS316) for maximum hygiene.' },
-    { name: 'Internal Surfaces', value: 'Smooth, polished internal surfaces with seamless welds to prevent residue and contamination.' },
-    { name: 'Custom Configurations', value: 'Tailored solutions for discharge systems, capacity, and specific food safety requirements.' },
+    { name: 'Capacity Ranges', value: '25 to 40 CBM capacity.' },
+    { name: 'Tank Construction', value: 'Food-grade stainless steel (SS304/SS316).' },
+    { name: 'Internal Surfaces', value: 'Polished internal surfaces to prevent residue.' },
+    { name: 'Custom Configurations', value: 'Custom discharge systems and capacity.' },
 ];
 
 const whyChooseUs = [
-    { title: "Hygienic & Food-Safe Construction", description: "Our bulkers are built with food-grade stainless steel and seamless internal finishing to ensure your product remains pure and uncontaminated." },
-    { title: "Expertise in Bulk Food Transport", description: "We have proven experience in engineering transport solutions that meet the stringent requirements of the food and beverage industry." },
-    { title: "Custom Solutions for Your Product", description: "We design bulkers tailored to the specific characteristics of your food material, ensuring efficient loading, transport, and discharge." },
-    { title: "Reliable Support & Service", description: "Our commitment to quality extends to after-sales support, ensuring your fleet remains operational and compliant with all standards." },
+    { title: "Hygienic Construction", description: "Food-grade stainless steel construction ensures product purity." },
+    { title: "Industry Expertise", description: "Proven experience in engineering for the food industry." },
+    { title: "Custom Solutions", description: "Custom designs for efficient loading and transport." },
+    { title: "Reliable Support", description: "Quality after-sales support to keep your fleet operational." },
 ];
 
 const qualityStandards = [
-    { icon: <ShieldCheck />, title: 'Food-Grade Compliance', description: 'Tanks are built using certified food-grade materials and welding practices.'},
-    { icon: <Layers />, title: 'Seamless Construction', description: 'Smooth, crevice-free internal surfaces prevent material trapping and allow for easy cleaning.'},
-    { icon: <TestTube />, title: 'Contamination Control', description: 'Every bulker is tested to ensure a completely sealed, airtight system for product integrity.'},
-    { icon: <Workflow />, title: 'Hygiene Validation', description: 'Designed for easy and effective cleaning processes to meet strict hygiene standards.'},
+    { icon: <ShieldCheck />, title: 'Food-Grade Compliance', description: 'Certified food-grade materials and welding.'},
+    { icon: <Layers />, title: 'Seamless Construction', description: 'Crevice-free surfaces for easy cleaning.'},
+    { icon: <TestTube />, title: 'Contamination Control', description: 'Tested for a sealed, airtight system.'},
+    { icon: <Workflow />, title: 'Hygiene Validation', description: 'Designed for easy cleaning to meet hygiene standards.'},
 ];
 
 
@@ -72,7 +72,7 @@ export default function FoodBulkerPage() {
 
                 <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight font-headline">Food Bulkers</h1>
                 <p className="mt-4 text-lg md:text-xl text-muted-foreground max-w-lg mx-auto md:mx-0">
-                    Engineered for hygienic, contamination-free, and efficient transport of bulk food materials.
+                    Hygienic and efficient transport for bulk food materials.
                 </p>
                 <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
                     <Button size="lg" asChild>
@@ -105,7 +105,7 @@ export default function FoodBulkerPage() {
              <h2 className="text-3xl font-bold font-headline">The Standard for Hygienic Bulk Food Transport</h2>
             <div className="mt-3 mb-6 w-20 h-1.5 bg-accent mx-auto"></div>
             <p className="text-muted-foreground text-lg leading-relaxed">
-                Food bulkers are specialized tankers designed for the safe and hygienic transportation of bulk food products like grains, flour, sugar, and other powders. Our designs ensure product integrity from loading to discharge, preventing contamination and simplifying cleaning.
+                Specialized tankers for hygienic transport of bulk foods like grains and flour. Our designs ensure product integrity and prevent contamination.
             </p>
         </section>
 
@@ -146,11 +146,11 @@ export default function FoodBulkerPage() {
                  <h2 className="text-3xl font-bold font-headline">Engineering for Purity and Performance</h2>
                 <div className="mt-3 mb-6 w-20 h-1.5 bg-accent"></div>
                  <p className="text-muted-foreground text-lg leading-relaxed mb-4">
-                    Our food bulkers are built with a focus on hygiene and precision. We use food-grade fabrication practices, including seamless welding and smooth surface finishing, to create a tank interior that is easy to clean and free from contamination risks.
+                    Built for hygiene and precision with food-grade fabrication, seamless welding, and smooth surfaces for easy cleaning and no contamination risk.
                 </p>
                 <div className="space-y-3">
-                    <p className="flex items-center"><Check className="text-green-500 mr-2" /> Crevice-free design for superior hygiene.</p>
-                     <p className="flex items-center"><Check className="text-green-500 mr-2" /> Optimized discharge systems for complete material unloading.</p>
+                    <p className="flex items-center"><Check className="text-green-500 mr-2" /> Crevice-free design.</p>
+                     <p className="flex items-center"><Check className="text-green-500 mr-2" /> Optimized complete-unloading systems.</p>
                 </div>
             </div>
              <div className='order-1 md:order-2'>
@@ -201,13 +201,13 @@ export default function FoodBulkerPage() {
         {/* 10. Conversion Section */}
         <section className="mt-12 md:mt-20 bg-primary text-primary-foreground py-16 rounded-lg">
             <div className="container mx-auto text-center">
-                 <h2 className="text-3xl font-extrabold">Looking for a food bulker designed for safe and hygienic bulk transport?</h2>
+                 <h2 className="text-3xl font-extrabold">Looking for a safe and hygienic food bulker?</h2>
                  <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
                     <Button size="lg" variant="secondary" asChild className="bg-accent text-accent-foreground hover:bg-accent/90">
                         <Link href="/quote?product=food-bulker">Enquire Now</Link>
                     </Button>
                     <Button size="lg" variant="outline" className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary">
-                        <Link href="/contact">Talk to Our Manufacturing Team</Link>
+                        <Link href="/contact">Talk to Our Team</Link>
                     </Button>
                 </div>
             </div>

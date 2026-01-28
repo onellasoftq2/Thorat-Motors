@@ -17,31 +17,31 @@ import {
 
 // Data for the page
 const useCases = [
-    { icon: <Factory className="h-8 w-8 text-accent" />, title: "Cement Manufacturing Plants", description: "Seamless transfer from silos to bulkers for distribution." },
-    { icon: <Building className="h-8 w-8 text-accent" />, title: "Ready-Mix Concrete (RMC)", description: "Timely and uncontaminated cement delivery to RMC facilities." },
-    { icon: <HardHat className="h-8 w-8 text-accent" />, title: "Infrastructure & Construction", description: "Direct supply of cement to large-scale project sites." },
-    { icon: <Route className="h-8 w-8 text-accent" />, title: "Bulk Cement Logistics", description: "Efficient long-haul and regional transport for distributors." },
+    { icon: <Factory className="h-8 w-8 text-accent" />, title: "Cement Plants", description: "Transfer from silos for distribution." },
+    { icon: <Building className="h-8 w-8 text-accent" />, title: "Ready-Mix Concrete (RMC)", description: "Deliver to RMC facilities." },
+    { icon: <HardHat className="h-8 w-8 text-accent" />, title: "Infrastructure Sites", description: "Supply to large project sites." },
+    { icon: <Route className="h-8 w-8 text-accent" />, title: "Bulk Logistics", description: "Long-haul and regional transport." },
 ];
 
 const configurations = [
-    { name: 'Capacity Ranges', value: 'From 25 to 50 tons, designed for various operational scales.' },
-    { name: 'Tank Construction', value: 'High-strength steel (ST52) pressure vessel for durability and safety.' },
-    { name: 'Pneumatic Discharge Systems', value: 'High-performance compressors for rapid, controlled, and dust-free unloading.' },
-    { name: 'Custom Configurations', value: 'Tailored solutions for axle configuration, capacity, and specific discharge requirements.' },
+    { name: 'Capacity Ranges', value: '25 to 50-ton capacity for various scales.' },
+    { name: 'Tank Construction', value: 'High-strength steel (ST52) pressure vessel.' },
+    { name: 'Pneumatic Discharge', value: 'High-performance compressors for rapid unloading.' },
+    { name: 'Custom Configurations', value: 'Custom axle, capacity, and discharge options.' },
 ];
 
 const whyChooseUs = [
-    { title: "Dust-Free & Contamination-Safe", description: "Our fully sealed pneumatic system ensures your cement remains pure from loading to discharge, preventing moisture and contamination." },
-    { title: "Engineering Expertise", description: "We specialize in pressure vessel design and pneumatic systems, ensuring optimal performance, safety, and reliability for bulk cement handling." },
-    { title: "Operational Efficiency", description: "Designed for rapid loading and unloading, our cement bulkers reduce turnaround times at plants and sites, maximizing your logistical output." },
-    { title: "Built for the Long Haul", description: "With robust construction and high-quality components, our bulkers are engineered for a long service life with minimal maintenance, ensuring a lower total cost of ownership." },
+    { title: "Dust-Free & Contamination-Safe", description: "Sealed pneumatic system keeps cement pure and prevents contamination." },
+    { title: "Engineering Expertise", description: "Specialized in pressure vessel and pneumatic system design for optimal performance." },
+    { title: "Operational Efficiency", description: "Rapid loading and unloading reduces turnaround times and maximizes output." },
+    { title: "Built for the Long Haul", description: "Robust construction for long service life and lower total cost of ownership." },
 ];
 
 const qualityStandards = [
-    { icon: <ShieldCheck />, title: 'Pressure Vessel Certified', description: 'Tanks are built and tested according to PESO and other pressure vessel standards for maximum safety.'},
-    { icon: <Layers />, title: 'Structural Integrity', description: 'FEA-validated designs ensure stability and durability under full load and on diverse terrains.'},
-    { icon: <Settings />, title: 'Leak-Proof Testing', description: 'Every bulker undergoes rigorous pressure and leak tests to guarantee a completely sealed system.'},
-    { icon: <Workflow />, title: 'Welding & Fabrication Quality', description: 'Certified welders and advanced fabrication techniques ensure flawless and durable construction.'},
+    { icon: <ShieldCheck />, title: 'PESO Certified', description: 'PESO compliant pressure vessel construction.'},
+    { icon: <Layers />, title: 'Structural Integrity', description: 'FEA-validated for stability and durability.'},
+    { icon: <Settings />, title: 'Leak-Proof Testing', description: 'Rigorous pressure and leak testing.'},
+    { icon: <Workflow />, title: 'Fabrication Quality', description: 'Advanced fabrication for durability.'},
 ];
 
 
@@ -72,7 +72,7 @@ export default function CementBulkerPage() {
 
                 <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight font-headline">Cement Bulkers</h1>
                 <p className="mt-4 text-lg md:text-xl text-muted-foreground max-w-lg mx-auto md:mx-0">
-                    Engineered for safe, dust-free, and efficient transport of bulk cement and powdered materials.
+                    Safe, dust-free, and efficient transport for bulk cement.
                 </p>
                 <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
                     <Button size="lg" asChild>
@@ -105,7 +105,7 @@ export default function CementBulkerPage() {
              <h2 className="text-3xl font-bold font-headline">The Standard for Modern Cement Transport</h2>
             <div className="mt-3 mb-6 w-20 h-1.5 bg-accent mx-auto"></div>
             <p className="text-muted-foreground text-lg leading-relaxed">
-                Cement bulkers are specialized tankers designed for transporting cement and other dry powders via a closed pneumatic system. This method prevents product contamination, avoids dust pollution, and allows for controlled, efficient unloading directly into storage silos.
+                Specialized tankers for transporting dry powders like cement. Our closed pneumatic system prevents contamination and dust, enabling efficient unloading into silos.
             </p>
         </section>
 
@@ -146,11 +146,11 @@ export default function CementBulkerPage() {
                  <h2 className="text-3xl font-bold font-headline">Engineering & Manufacturing Excellence</h2>
                 <div className="mt-3 mb-6 w-20 h-1.5 bg-accent"></div>
                  <p className="text-muted-foreground text-lg leading-relaxed mb-4">
-                    Our cement bulkers are built in-house with a focus on structural integrity and performance. We use high-strength steel for a lightweight yet robust tank, precision welding for leak-proof seams, and reliable pneumatic systems for consistent discharge performance.
+                    Built in-house for structural integrity and performance, we use high-strength steel for a robust tank, precision welding for leak-proof seams, and reliable pneumatic systems.
                 </p>
                 <div className="space-y-3">
-                    <p className="flex items-center"><Check className="text-green-500 mr-2" /> Optimized tank design for better weight distribution and stability.</p>
-                     <p className="flex items-center"><Check className="text-green-500 mr-2" /> High-quality compressors and discharge equipment for reliability.</p>
+                    <p className="flex items-center"><Check className="text-green-500 mr-2" /> Optimized design for stability.</p>
+                     <p className="flex items-center"><Check className="text-green-500 mr-2" /> Reliable compressors and discharge equipment.</p>
                 </div>
             </div>
              <div className='order-1 md:order-2'>
@@ -202,13 +202,13 @@ export default function CementBulkerPage() {
         {/* 10. Conversion Section */}
         <section className="mt-12 md:mt-20 bg-primary text-primary-foreground py-16 rounded-lg">
             <div className="container mx-auto text-center">
-                 <h2 className="text-3xl font-extrabold">Looking for a cement bulker designed for efficient and safe bulk transport?</h2>
+                 <h2 className="text-3xl font-extrabold">Looking for an efficient and safe cement bulker?</h2>
                  <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
                     <Button size="lg" variant="secondary" asChild className="bg-accent text-accent-foreground hover:bg-accent/90">
                         <Link href="/quote?product=cement-bulker">Enquire Now</Link>
                     </Button>
                     <Button size="lg" variant="outline" asChild className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary">
-                        <Link href="/contact">Talk to Our Manufacturing Team</Link>
+                        <Link href="/contact">Talk to Our Team</Link>
                     </Button>
                 </div>
             </div>
