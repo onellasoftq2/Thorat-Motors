@@ -7,7 +7,7 @@ import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { AnimatedElement } from '@/components/ui/animated-element';
-import { AnimatedNumber } from '@/components/ui/animated-number';
+import { AnimatedNumber } from '@/components/animated-number';
 import { 
     Truck, 
     Wrench, 
