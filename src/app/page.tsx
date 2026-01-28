@@ -78,33 +78,6 @@ const certifications = [
     'ARAI Homologation'
 ];
 
-const trailersTags = [
-    { name: 'Cement Bulker', href: '/products/trailers/cement-bulker' },
-    { name: 'Flatbed', href: '/products/trailers/flatbed' },
-    { name: 'Skeletal (20ft/40ft)', href: '/products/trailers/skeletal' },
-    { name: 'Side-Wall (Domex/Shelma)', href: '/products/trailers/side-wall' },
-    { name: 'Custom Heavy-Duty Trailers', href: '/products/trailers/custom' },
-];
-
-const cabinsTags = [
-    { name: 'Office Cabins', href: '/products/cabins/office' },
-    { name: 'House Cabins', href: '/products/cabins/house' },
-    { name: 'ACP Cabins', href: '/products/cabins/acp' },
-    { name: 'Security Cabins', href: '/products/cabins/security' },
-    { name: 'Toilet Cabins', href: '/products/cabins/toilet' },
-    { name: 'Bunk Cabins', href: '/products/cabins/bunk-house' },
-    { name: 'Shop/Hotel Cabins', href: '/products/cabins/shop-hotel' },
-    { name: 'G+1 Cabins', href: '/products/cabins/double-storey' },
-];
-
-const containersTags = [
-    { name: 'Used Shipping Containers', href: '/products/container-conversions/used-container' },
-    { name: 'Container Conversions', href: '/products/container-conversions' },
-    { name: 'Office Conversions', href: '/products/container-conversions/office-conversion' },
-    { name: 'Retail/Shop Conversions', href: '/products/container-conversions/retail-conversion' },
-    { name: 'Storage Containers', href: '/products/container-conversions/storage-container' },
-];
-
 const containerVariants = {
   hidden: { opacity: 0 },
   visible: {
@@ -147,7 +120,38 @@ const heroTexts = [
   }
 ];
 
-
+const capabilities = [
+  {
+    icon: <DraftingCompass className="w-12 h-12 text-primary mb-4" />,
+    title: 'Design & Homologation',
+    description: 'Certification & compliance services.',
+    chips: [
+      'EV (2W & 3W)', 'Trailers', 'Bus', 'Bulkers', 'Reefer Containers', 'Commercial Vehicles', 'List of AIS', 'Institute of Approvals'
+    ],
+    cta: 'Explore Design & Homologation',
+    href: '/industries/design-homologation'
+  },
+  {
+    icon: <Wrench className="w-12 h-12 text-primary mb-4" />,
+    title: 'Manufacturing',
+    description: 'High-precision fabrication and assembly.',
+    chips: [
+      'Trailer Manufacturing', 'Bulker Manufacturing', 'Bus Manufacturing', 'Portable Cabins', 'Containers & Conversions', 'Custom Fabrication'
+    ],
+    cta: 'Explore Manufacturing',
+    href: '/industries/manufacturing'
+  },
+  {
+    icon: <Truck className="w-12 h-12 text-primary mb-4" />,
+    title: 'Transportation',
+    description: 'Reliable, on-time delivery solutions.',
+    chips: [
+      'Finished Vehicle Transport', 'Heavy Equipment Movement', 'Specialized Cargo Handling', 'Long-Haul Logistics', 'Cold Chain Transport', 'Project & ODC Transport'
+    ],
+    cta: 'Explore Transportation',
+    href: '/transportation'
+  }
+];
 
 
 export default function Home() {
@@ -301,81 +305,44 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Our Products Section V2 */}
-      <section className="bg-background py-12 md:py-16 lg:py-24" id="our-products">
+      {/* Our Capabilities Section */}
+      <section className="bg-background py-12 md:py-16 lg:py-24" id="our-capabilities">
         <div className="container mx-auto px-4 md:px-6 lg:px-8">
           <div className="mb-12 text-center">
-            <h2 className="text-3xl font-extrabold font-headline tracking-tight sm:text-4xl">Our Products</h2>
+            <h2 className="text-3xl font-extrabold font-headline tracking-tight sm:text-4xl">Our Capabilities</h2>
             <div className="mt-2 h-1.5 w-24 mx-auto bg-accent"></div>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {/* Trailers Card */}
-            <div className="product-card-v2">
-                <div className="p-6">
-                  <Truck className="w-12 h-12 text-primary mb-4" />
-                  <h3 className="font-headline text-2xl font-bold mb-4">Trailers</h3>
-                  <div className="mb-4">
-                      {trailersTags.map(tag => (
-                        <Link key={tag.name} href={tag.href} className="product-tag hover:bg-primary/20 transition-colors hover:shadow-md hover:border-accent/50 border border-transparent">{tag.name}</Link>
+            {capabilities.map((capability, index) => {
+              const visibleChips = capability.chips.slice(0, 6);
+              const hiddenChipsCount = capability.chips.length - 6;
+
+              return (
+                <div key={index} className="product-card-v2 flex flex-col">
+                  <div className="p-6 flex flex-col flex-grow">
+                    {capability.icon}
+                    <h3 className="font-headline text-2xl font-bold">{capability.title}</h3>
+                    <p className="text-muted-foreground mt-1 mb-4">{capability.description}</p>
+                    <div className="mb-4 flex flex-wrap items-center gap-2">
+                      {visibleChips.map(chip => (
+                        <div key={chip} className="product-tag">{chip}</div>
                       ))}
+                      {hiddenChipsCount > 0 && (
+                        <div className="product-tag bg-primary/10 text-primary font-bold">+{hiddenChipsCount} more</div>
+                      )}
+                    </div>
+                    <div className="mt-auto pt-4">
+                      <Link href={capability.href} className="text-accent font-semibold flex items-center hover:underline">
+                        {capability.cta} <ArrowRight className="ml-2 h-4 w-4" />
+                      </Link>
+                    </div>
                   </div>
-                  <Link href="/products/trailers" className="text-accent font-semibold flex items-center hover:underline">
-                    View All Trailers <ArrowRight className="ml-2 h-4 w-4" />
-                  </Link>
                 </div>
-            </div>
-            {/* Cabins Card */}
-            <div className="product-card-v2">
-                <div className="p-6">
-                  <HomeIcon className="w-12 h-12 text-primary mb-4" />
-                  <h3 className="font-headline text-2xl font-bold mb-4">Portable Cabins</h3>
-                  <div className="mb-4">
-                      {cabinsTags.map(tag => (
-                        <Link key={tag.name} href={tag.href} className="product-tag hover:bg-primary/20 transition-colors hover:shadow-md hover:border-accent/50 border border-transparent">{tag.name}</Link>
-                      ))}
-                  </div>
-                  <Link href="/products/cabins" className="text-accent font-semibold flex items-center hover:underline">
-                      View All Cabins <ArrowRight className="ml-2 h-4 w-4" />
-                  </Link>
-                </div>
-            </div>
-            {/* Containers Card */}
-            <div className="product-card-v2">
-                <div className="p-6">
-                  <Box className="w-12 h-12 text-primary mb-4" />
-                  <h3 className="font-headline text-2xl font-bold mb-4">Containers & Conversions</h3>
-                  <div className="mb-4">
-                      {containersTags.map(tag => (
-                        <Link key={tag.name} href={tag.href} className="product-tag hover:bg-primary/20 transition-colors hover:shadow-md hover:border-accent/50 border border-transparent">{tag.name}</Link>
-                      ))}
-                  </div>
-                  <Link href="/products/container-conversions" className="text-accent font-semibold flex items-center hover:underline">
-                      View All Products <ArrowRight className="ml-2 h-4 w-4" />
-                  </Link>
-                </div>
-            </div>
+              );
+            })}
           </div>
         </div>
       </section>
-
-      {/* Our Services Section */}
-      {/* <section className="bg-background py-12 md:py-16 lg:py-24">
-        <div className="container mx-auto px-4 md:px-6 lg:px-8">
-            <CategoryList
-              title="Our Services"
-              categories={serviceCategories}
-            />
-        </div>
-      </section> */}
-
-      {/* Manufacturing Capabilities Section */}
-       {/* <section className="manufacturing-section bg-secondary">
-          <Timeline 
-            data={manufacturingCapabilities} 
-            title="Manufacturing Excellence"
-            description="Our state-of-the-art facility is equipped with advanced machinery to ensure precision, durability, and a flawless finish in every product we deliver."
-          />
-      </section> */}
 
       {/* Industry-Specific Solutions Section */}
       <section className="bg-background py-12 md:py-16 lg:py-24">
