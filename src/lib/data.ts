@@ -39,59 +39,6 @@ export const navMenu: NavMenu[] = [
     title: "About Us",
     href: "/company",
   },
-//   {
-//     title: "Products",
-//     href: "/products",
-//     megaMenu: [
-//       {
-//         title: "Trailers",
-//         items: [
-//           { name: "Cement Bulker Trailer", href: "/products/trailers/cement-bulker" },
-//           { name: "Skeletal Trailer (20ft / 40ft)", href: "/products/trailers/skeletal" },
-//           { name: "Side-Wall Trailer", href: "/products/trailers/side-wall" },
-//           { name: "Platform / Flatbed Trailer", href: "/products/trailers/flatbed" },
-//           { name: 'Semi Lowbed Trailer', href: '/industries/manufacturing/trailers/semi-lowbed' },
-//           { name: 'Tip Trailers', href: '/industries/manufacturing/trailers/tip' },
-//           { name: "Custom-Built Heavy-Duty Trailers", href: "/products/trailers/custom" },
-//         ],
-//       },
-//       {
-//         title: "Portable Cabins",
-//         items: [
-//           { name: "Office Cabins", href: "/products/cabins/office" },
-//           { name: "House Cabins", href: "/products/cabins/house" },
-//           { name: "ACP Premium Cabins", href: "/products/cabins/acp" },
-//           { name: "Security Cabins", href: "/products/cabins/security" },
-//           { name: "Toilet Cabins", href: "/products/cabins/toilet" },
-//           { name: "Accommodation/Bunk Cabins", href: "/products/cabins/bunk-house" },
-//           { name: "Shop & Hotel Cabins", href: "/products/cabins/shop-hotel" },
-//           { name: "Double Storey (G+1) Cabins", href: "/products/cabins/double-storey" },
-//         ],
-//       },
-//       {
-//         title: "Containers & Conversions",
-//         items: [
-//           { name: "Used Shipping Containers (20ft / 40ft)", href: "/products/container-conversions/used-container" },
-//           { name: "Office Conversions", href: "/products/container-conversions/office-conversion" },
-//           { name: "Retail/Shop Conversions", href: "/products/container-conversions/retail-conversion" },
-//           { name: "Storage Containers", href: "/products/container-conversions/storage-container" },
-//           { name: "Custom Container Modifications", href: "/products/container-conversions/custom-modification" },
-//         ],
-//       },
-//     ],
-//   },
-//    {
-//     title: "Services",
-//     href: "/services",
-//     items: [
-//         { name: "Designing & Homologation", href: "/services/designing-homologation" },
-//         { name: "Structural Fabrication", href: "/services/structural-fabrication" },
-//         { name: "Spare Parts Division", href: "/services/spare-parts" },
-//         { name: "Transport & Logistics", href: "/services/transport-logistics" },
-//         { name: "Custom Engineering", href: "/services/custom-engineering" },
-//         { name: "Container Conversions", href: "/services/container-conversions" },
-//     ]
-//   },
   {
     title: "Products",
     interactiveMegaMenu: [
@@ -683,7 +630,7 @@ export const company = {
 };
 
 export const contactInfo = {
-    phone: '9011943810 / 8698777283',
+    phone: '9011943810',
     emails: ['sales@thoratmotor.com', 'thoratmotors@gmail.com'],
 };
 
@@ -779,7 +726,7 @@ export const industrySolutions = [
       'Accommodation & Bunk Cabins',
       'G+1 Cabin Structures',
     ],
-    image: "https://images.unsplash.com/photo-1568605117036-5fe5e7185743?q=80&w=1974&auto=format&fit=crop&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    image: "https://images.unsplash.com/photo-1568605117036-5fe5e7185743?q=80&w=1974&auto=format&fit=crop&ixlib-rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     icon: "Home"
   },
 ];
