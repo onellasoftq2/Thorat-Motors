@@ -501,7 +501,9 @@ export default function Header() {
               <ScrollArea className="h-[calc(100vh-4rem)]">
                 <nav className="mt-8 flex flex-col space-y-2 px-6">
                   <Accordion type="multiple" className="w-full">
-                    {navMenu.map((item, index) =>
+                    {navMenu
+                      .filter(item => item.megaMenu || item.interactiveMegaMenu || item.items)
+                      .map((item, index) =>
                       item.megaMenu ? (
                         <AccordionItem
                           key={item.title}
@@ -662,7 +664,12 @@ export default function Header() {
                             </ul>
                           </AccordionContent>
                         </AccordionItem>
-                      ) : (
+                      ) : null
+                    )}
+                  </Accordion>
+                   {navMenu
+                    .filter(item => !item.megaMenu && !item.interactiveMegaMenu && !item.items)
+                    .map(item => (
                         <Link
                           key={item.title}
                           href={item.href || '#'}
@@ -671,9 +678,8 @@ export default function Header() {
                         >
                           {item.title}
                         </Link>
-                      )
-                    )}
-                  </Accordion>
+                    ))
+                  }
                   <div className="pt-8">
                     <QuoteModalTrigger onClick={() => setMobileMenuOpen(false)} className="w-full bg-accent text-accent-foreground hover:bg-accent/90">
                       Request Quote
