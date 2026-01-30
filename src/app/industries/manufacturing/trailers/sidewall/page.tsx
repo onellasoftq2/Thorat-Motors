@@ -58,13 +58,8 @@ export default function SidewallTrailersPage() {
             <section className="bg-secondary relative mx-auto lg:w-[1024px] md:w-full">
          <div className="container mx-auto px-4 md:px-6 lg:px-8 pt-16 md:pt-24">
             <div className="grid md:grid-cols-2 gap-12 items-center">
-<<<<<<< HEAD
-                <AnimatedElement className="text-center md:text-left">
-                    <Breadcrumb className="mb-4 justify-center md:justify-start">
-=======
                 <div className="text-center md:text-left">
                     {/* <Breadcrumb className="mb-4 justify-center md:justify-start">
->>>>>>> 55a0cc53d5ca70c719a89a6839e4c987c25c7b85
                         <BreadcrumbList>
                             <BreadcrumbItem>
                                 <BreadcrumbLink asChild><Link href="/industries/manufacturing">Manufacturing</Link></BreadcrumbLink>
@@ -80,15 +75,9 @@ export default function SidewallTrailersPage() {
                         </BreadcrumbList>
                     </Breadcrumb> */}
 
-<<<<<<< HEAD
-                    <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight font-headline">Secure Sidewall Trailers</h1>
-                    <p className="mt-4 text-lg md:text-xl text-muted-foreground max-w-lg mx-auto md:mx-0">
-                        Versatile transport for packaged or loose cargo.
-=======
                     <h1 className="text-3xl font-extrabold tracking-tight font-headline">Sidewall Trailers</h1>
                     <p className="mt-2 text-sm  text-muted-foreground max-w-lg mx-auto md:mx-0">
                         Engineered for secure, versatile, and protected transport of packaged and loose cargo.
->>>>>>> 55a0cc53d5ca70c719a89a6839e4c987c25c7b85
                     </p>
                     <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
                         <Button size="lg" asChild>
@@ -207,8 +196,6 @@ export default function SidewallTrailersPage() {
             </div>
         </section>
 
-<<<<<<< HEAD
-=======
         {/* 7. Visual Gallery */}
         {/* <section className="mt-12 md:mt-20">
              <h2 className="text-3xl font-bold font-headline text-center">Visual Gallery</h2>
@@ -231,30 +218,16 @@ export default function SidewallTrailersPage() {
             </div>
         </section> */}
 
->>>>>>> 55a0cc53d5ca70c719a89a6839e4c987c25c7b85
         {/* 8. Conversion Section */}
         <section className="mt-12 md:mt-20 bg-primary text-primary-foreground py-16 rounded-lg">
             <div className="container mx-auto text-center px-4">
                  <h2 className="text-3xl font-extrabold max-w-3xl mx-auto">Looking for a sidewall trailer for secure and reliable cargo transport?</h2>
                  <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
                     <Button size="lg" variant="secondary" asChild className="bg-accent text-accent-foreground hover:bg-accent/90">
-<<<<<<< HEAD
-                       <a href="tel:9011943810" className="flex items-center">
-                            <Phone className="mr-2 h-5 w-5" />
-                            Talk to our Experts
-                        </a>
-                    </Button>
-                    <Button size="lg" variant="outline" asChild className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary">
-                        <a href="https://wa.me/919096757924" target="_blank" rel="noopener noreferrer" className="flex items-center">
-                            <MessageSquare className="mr-2 h-5 w-5" />
-                            Chat with Us
-                        </a>
-=======
                         <Link href="/contact">Talk to Our Experts</Link>
                     </Button>
                     <Button size="lg" variant="outline" asChild className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary">
                         <Link href="/contact">Request Quote</Link>
->>>>>>> 55a0cc53d5ca70c719a89a6839e4c987c25c7b85
                     </Button>
                 </div>
             </div>

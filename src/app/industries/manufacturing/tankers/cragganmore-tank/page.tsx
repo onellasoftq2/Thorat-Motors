@@ -202,23 +202,10 @@ export default function CragganmoreTankPage() {
                  <h2 className="text-3xl font-extrabold max-w-3xl mx-auto">Looking for a tanker solution designed around safety and reliability?</h2>
                  <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
                     <Button size="lg" variant="secondary" asChild className="bg-accent text-accent-foreground hover:bg-accent/90">
-<<<<<<< HEAD
-                       <a href="tel:9011943810" className="flex items-center">
-                            <Phone className="mr-2 h-5 w-5" />
-                            Talk to our Experts
-                        </a>
-                    </Button>
-                    <Button size="lg" variant="outline" asChild className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary">
-                        <a href="https://wa.me/919096757924" target="_blank" rel="noopener noreferrer" className="flex items-center">
-                            <MessageSquare className="mr-2 h-5 w-5" />
-                            Chat with Us
-                        </a>
-=======
                         <Link href="/contact">Talk to Our Experts</Link>
                     </Button>
                     <Button size="lg" variant="outline" asChild className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary">
                         <Link href="/contact">Request Quote</Link>
->>>>>>> 55a0cc53d5ca70c719a89a6839e4c987c25c7b85
                     </Button>
                 </div>
             </div>

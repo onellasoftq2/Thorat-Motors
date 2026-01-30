@@ -265,7 +265,6 @@ export default function ReferContainerPage() {
                 </AnimatedElement>
                 <AnimatedElement delay={0.15}>
                     <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
-<<<<<<< HEAD
                         <Button size="lg" variant="secondary" asChild className="bg-accent text-accent-foreground hover:bg-accent/90">
                            <a href="tel:9011943810" className="flex items-center">
                                 <Phone className="mr-2 h-5 w-5" />
@@ -278,14 +277,6 @@ export default function ReferContainerPage() {
                                 Chat with Us
                             </a>
                         </Button>
-=======
-                            <Button size="lg" variant="secondary" asChild className="bg-accent text-accent-foreground hover:bg-accent/90">
-                                <Link href="/contact">Talk to Our Experts</Link>
-                            </Button>
-                            <Button size="lg" variant="outline" asChild className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary">
-                                <Link href="/contact">Request Quote</Link>
-                            </Button>
->>>>>>> 55a0cc53d5ca70c719a89a6839e4c987c25c7b85
                     </div>
                 </AnimatedElement>
             </div>

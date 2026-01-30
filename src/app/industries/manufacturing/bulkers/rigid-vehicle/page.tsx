@@ -69,15 +69,9 @@ export default function RigidVehiclesPage() {
                     </BreadcrumbList>
                 </Breadcrumb> */}
 
-<<<<<<< HEAD
-                <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight font-headline">Reliable Rigid Vehicles</h1>
-                <p className="mt-4 text-lg md:text-xl text-muted-foreground max-w-lg mx-auto md:mx-0">
-                    Strength and stability for industrial transport.
-=======
                 <h1 className="text-3xl font-extrabold tracking-tight font-headline">Rigid Vehicles</h1>
                 <p className="mt-2 text-sm md:text-xl text-muted-foreground max-w-lg mx-auto md:mx-0">
                     Engineered for exceptional strength, stability, and operational reliability in industrial transport.
->>>>>>> 55a0cc53d5ca70c719a89a6839e4c987c25c7b85
                 </p>
                 <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
                     <Button size="lg" asChild>
@@ -180,8 +174,6 @@ export default function RigidVehiclesPage() {
           </div>
         </section>
 
-<<<<<<< HEAD
-=======
         {/* 8. Visual Gallery */}
         {/* <section className="mt-12 md:mt-20">
             <h2 className="text-3xl font-bold font-headline text-center">Visual Gallery</h2>
@@ -204,7 +196,6 @@ export default function RigidVehiclesPage() {
             </div>
         </section> */}
 
->>>>>>> 55a0cc53d5ca70c719a89a6839e4c987c25c7b85
         {/* 9. Why Choose Us */}
         <section className="mt-12 md:mt-20">
             <h2 className="text-3xl font-bold font-headline text-center">Why Choose Our Rigid Vehicles?</h2>
@@ -226,27 +217,12 @@ export default function RigidVehiclesPage() {
             <div className="container mx-auto text-center">
                 <h2 className="text-3xl font-extrabold">Looking for a dependable rigid vehicle?</h2>
                 <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
-<<<<<<< HEAD
-                    <Button size="lg" variant="secondary" asChild className="bg-accent text-accent-foreground hover:bg-accent/90">
-                       <a href="tel:9011943810" className="flex items-center">
-                            <Phone className="mr-2 h-5 w-5" />
-                            Talk to our Experts
-                        </a>
-                    </Button>
-                    <Button size="lg" variant="outline" asChild className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary">
-                        <a href="https://wa.me/919096757924" target="_blank" rel="noopener noreferrer" className="flex items-center">
-                            <MessageSquare className="mr-2 h-5 w-5" />
-                            Chat with Us
-                        </a>
-                    </Button>
-=======
                             <Button size="lg" variant="secondary" asChild className="bg-accent text-accent-foreground hover:bg-accent/90">
                                 <Link href="/contact">Talk to Our Experts</Link>
                             </Button>
                             <Button size="lg" variant="outline" asChild className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary">
                                 <Link href="/contact">Request Quote</Link>
                             </Button>
->>>>>>> 55a0cc53d5ca70c719a89a6839e4c987c25c7b85
                 </div>
             </div>
         </section>
