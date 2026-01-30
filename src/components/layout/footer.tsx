@@ -54,26 +54,21 @@ const socialLinks = [
 ];
 
 const footerLinks = {
-  trailers: [
-    { name: 'Cement Bulker', href: '/industries/manufacturing/bulkers/cement-bulkers' },
-    { name: 'Flatbed', href: '/industries/manufacturing/trailers/flatbed' },
-    { name: 'Skeletal', href: '/industries/manufacturing/trailers/skeletal' },
-    { name: 'Side-Wall', href: '/industries/manufacturing/trailers/sidewall' },
+  manufacturing: [
+    { name: 'Bulkers', href: '/industries/manufacturing/bulkers/cement-bulkers' },
+    { name: 'Trailers', href: '/industries/manufacturing/trailers/flatbed' },
+    { name: 'Tankers', href: '/industries/manufacturing/tankers/cragganmore-tank' },
+    { name: 'Load Bodies', href: '/industries/manufacturing/load-bodies/tata' },
   ],
-  cabins: [
-    { name: 'Office Cabin', href: '/products/cabins/office' },
-    { name: 'ACP Cabin', href: '/products/cabins/acp' },
-    { name: 'Security Cabin', href: '/products/cabins/security' },
-    { name: 'Toilet Cabin', href: '/products/cabins/toilet' },
-  ],
-  services: [
-    { name: 'Container Conversions', href: '/services/container-conversions' },
-    { name: 'Custom Engineering', href: '/services/custom-engineering' },
-    { name: 'Spare Parts', href: '/services/spare-parts' },
+  homologation: [
+    { name: 'EV Compliance', href: '/industries/design-homologation/products/ev' },
+    { name: 'Trailer Compliance', href: '/industries/design-homologation/products/trailers' },
+    { name: 'AIS Standards', href: '/industries/design-homologation/ais-list' },
+    { name: 'Approval Bodies', href: '/industries/design-homologation/institute-of-approvals' },
   ],
   company: [
       { name: "About Us", href: "/company" },
-      { name: "Industries", href: "/industries" },
+      { name: "Clients", href: "/industries/design-homologation/clients" },
       { name: "Careers", href: "/company#careers" },
       { name: "Contact Us", href: "/contact" },
   ]
@@ -92,9 +87,9 @@ export default function Footer() {
           </div>
 
           <div>
-            <h3 className="text-sm font-semibold font-headline text-foreground">Trailers</h3>
+            <h3 className="text-sm font-semibold font-headline text-foreground">Manufacturing</h3>
             <ul className="mt-3 space-y-2">
-              {footerLinks.trailers.map(item => (
+              {footerLinks.manufacturing.map(item => (
                  <li key={item.name}><Link href={item.href} className="text-sm text-muted-foreground hover:text-accent">{item.name}</Link></li>
               ))}
                <li><Link href="/industries/manufacturing" className="text-sm text-accent font-medium hover:text-accent/80 flex items-center">View All <ArrowRight className="ml-1 h-4 w-4" /></Link></li>
@@ -102,12 +97,12 @@ export default function Footer() {
           </div>
           
           <div>
-            <h3 className="text-sm font-semibold font-headline text-foreground">Cabins</h3>
+            <h3 className="text-sm font-semibold font-headline text-foreground">Design & Homologation</h3>
             <ul className="mt-3 space-y-2">
-              {footerLinks.cabins.map(item => (
+              {footerLinks.homologation.map(item => (
                 <li key={item.name}><Link href={item.href} className="text-sm text-muted-foreground hover:text-accent">{item.name}</Link></li>
               ))}
-              <li><Link href="/products/cabins" className="text-sm text-accent font-medium hover:text-accent/80 flex items-center">View All <ArrowRight className="ml-1 h-4 w-4" /></Link></li>
+              <li><Link href="/industries/design-homologation" className="text-sm text-accent font-medium hover:text-accent/80 flex items-center">View All <ArrowRight className="ml-1 h-4 w-4" /></Link></li>
             </ul>
           </div>
 
