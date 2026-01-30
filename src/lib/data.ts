@@ -688,13 +688,13 @@ export const contactInfo = {
 };
 
 export const offices = [
-    { city: 'Pune', state: 'Maharashtra', address: 'GAT NO 336/1, Chakan-Shikrapur Road, Chakan', descriptor: 'Manufacturing Hub & HQ', coords: { x: 26, y: 56 } },
-    { city: 'Surat', state: 'Gujarat', address: 'Green Aristo Plaza, 1st Floor, Shop No- 127, Vaishnovdevi Road, Surat-395009', descriptor: 'Sales & Service Center', coords: { x: 19, y: 46 } },
-    { city: 'Visakhapatnam', state: 'Andhra Pradesh', address: '98/A, D-Block, Near RTO Office, Autonagar, Oldgajuwaka, Visakhapatnam - 530026', descriptor: 'Logistics Support', coords: { x: 58, y: 64 } },
-    { city: 'Bhubaneswar', state: 'Odisha', address: 'Plot No. N-6/536, IRC Village, Nayapalli, Jayadev Vihar, Bhubaneswar, Khurda - 751015', descriptor: 'Regional Office', coords: { x: 65, y: 51 } },
-    { city: 'Jamshedpur', state: 'Jharkhand', address: 'Khata No -133, Plot No -201-4P NH-33, Chandil, Ramgarh, Seraikela Kharsawan, Jamshedpur - 831001', descriptor: 'Service & Parts Hub', coords: { x: 66, y: 39 } },
-    { city: 'Chennai', state: 'Tamil Nadu', address: 'Plot No 5/3, Thiruvallur Road, Nemam Post, Poonamallee Taluka, Chennai - 600124', descriptor: 'Logistics Support', coords: { x: 47, y: 78 } },
-    { city: 'Patna', state: 'Bihar', address: 'Khata No-456, Khesra No-199, 199, Manupur, Saran, Chapra - 841207', descriptor: 'Regional Office', coords: { x: 63, y: 30 } },
+    { city: 'Pune', state: 'Maharashtra', address: 'A Wing, Shop No-205 Shopper Orbir, Near Shopper Orbir, Alandi Road, Vishrantwadi, Pune-411015, Maharashtra', descriptor: 'Manufacturing Hub & HQ', coords: { x: 26, y: 56 } },
+    { city: 'Surat', state: 'Gujarat', address: 'Green Aristo Plaza, 1st Floor, Shop No- 127, Vaishnovdevi Road, Surat-395009, Gujarat', descriptor: 'Sales & Service Center', coords: { x: 19, y: 46 } },
+    { city: 'Visakhapatnam', state: 'Andhra Pradesh', address: '98/A, D-Block, Near RTO Office, Autonagar, Oldgajuwaka, Visakhapatnam - 530026, Andhra Pradesh', descriptor: 'Logistics Support', coords: { x: 58, y: 64 } },
+    { city: 'Bhubaneswar', state: 'Odisha', address: 'Plot No. N-6/536, IRC Village, Nayapalli, Jayadev Vihar, Bhubaneswar, Khurda - 751015, Odisha', descriptor: 'Regional Office', coords: { x: 65, y: 51 } },
+    { city: 'Jamshedpur', state: 'Jharkhand', address: 'Khata No -133, Plot No -201-4P NH-33, Chandil, Ramgarh, Seraikela Kharsawan, Jamshedpur - 831001, Jharkhand', descriptor: 'Service & Parts Hub', coords: { x: 66, y: 39 } },
+    { city: 'Chennai', state: 'Tamil Nadu', address: 'Plot No 5/3, Thiruvallur Road, Nemam Post, Poonamallee Taluka, Chennai - 600124, Tamil Nadu', descriptor: 'Logistics Support', coords: { x: 47, y: 78 } },
+    { city: 'Patna', state: 'Bihar', address: 'Khata No-456, Khesra No-199, 199, Manupur, Saran, Chapra - 841207, Bihar', descriptor: 'Regional Office', coords: { x: 63, y: 30 } },
 ];
 
 export const industrySolutions = [
@@ -731,7 +731,7 @@ export const industrySolutions = [
       'Container Handling Solutions',
       'Logistics Support',
     ],
-    image: "https://images.unsplash.com/photo-1605282221649-8f5367a1c86e?q=80&w=2070&auto=format&fit=crop&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    image: "https://images.unsplash.com/photo-1605282221649-8f5367a1c86e?q=80&w=2070&auto=format&fit=crop&ixlib-rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     icon: "Anchor"
   },
   {
@@ -743,7 +743,7 @@ export const industrySolutions = [
       'Side-Wall Trailers',
       'Portable Site Cabins',
     ],
-    image: "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?q=80&w=2070&auto=format&fit=crop&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    image: "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?q=80&w=2070&auto=format&fit=crop&ixlib-rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     icon: "Wrench"
   },
   {
@@ -767,7 +767,7 @@ export const industrySolutions = [
       'Shop & Hotel Cabins',
       'Custom Fabrication',
     ],
-    image: "https://images.unsplash.com/photo-1554118811-1e0d58224f24?q=80&w=2070&auto=format&fit=crop&ixid=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    image: "https://images.unsplash.com/photo-1554118811-1e0d58224f24?q=80&w=2070&auto=format&fit=crop&ixlib-rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     icon: "ShoppingCart"
   },
   {

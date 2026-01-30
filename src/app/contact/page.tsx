@@ -72,7 +72,6 @@ export default function ContactPage() {
                   <MapPin className="h-6 w-6 mr-3 text-accent flex-shrink-0 mt-1" />
                   <div>
                     {office.city}
-                    <p className="text-sm font-normal text-muted-foreground">{office.state}</p>
                   </div>
                 </CardTitle>
               </CardHeader>
