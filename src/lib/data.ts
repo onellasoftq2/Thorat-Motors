@@ -93,7 +93,7 @@ export const navMenu: NavMenu[] = [
 //     ]
 //   },
   {
-    title: "Industries",
+    title: "Products",
     href: "/industries",
     interactiveMegaMenu: [
       {
@@ -756,7 +756,7 @@ export const industrySolutions = [
       'Storage Containers',
       'Seasonal Logistics Support',
     ],
-    image: "https://images.unsplash.com/photo-1627920769854-46385d564175?q=80&w=2070&auto=format&fit=crop&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    image: "https://images.unsplash.com/photo-1627920769854-46385d564175?q=80&w=2070&auto=format&fit=crop&ixlib-rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     icon: "Leaf"
   },
   {
