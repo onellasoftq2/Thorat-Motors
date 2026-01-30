@@ -55,10 +55,10 @@ const socialLinks = [
 
 const footerLinks = {
   trailers: [
-    { name: 'Cement Bulker', href: '/products/trailers/cement-bulker' },
-    { name: 'Flatbed', href: '/products/trailers/flatbed' },
-    { name: 'Skeletal', href: '/products/trailers/skeletal' },
-    { name: 'Side-Wall', href: '/products/trailers/side-wall' },
+    { name: 'Cement Bulker', href: '/industries/manufacturing/bulkers/cement-bulkers' },
+    { name: 'Flatbed', href: '/industries/manufacturing/trailers/flatbed' },
+    { name: 'Skeletal', href: '/industries/manufacturing/trailers/skeletal' },
+    { name: 'Side-Wall', href: '/industries/manufacturing/trailers/sidewall' },
   ],
   cabins: [
     { name: 'Office Cabin', href: '/products/cabins/office' },
@@ -67,9 +67,9 @@ const footerLinks = {
     { name: 'Toilet Cabin', href: '/products/cabins/toilet' },
   ],
   services: [
-    { name: 'Container Conversions', href: '/products/cabins/container-conversion' },
-    { name: 'Custom Engineering', href: '/services#custom-engineering' },
-    { name: 'Spare Parts', href: '/services#spare-parts' },
+    { name: 'Container Conversions', href: '/services/container-conversions' },
+    { name: 'Custom Engineering', href: '/services/custom-engineering' },
+    { name: 'Spare Parts', href: '/services/spare-parts' },
   ],
   company: [
       { name: "About Us", href: "/company" },
@@ -97,7 +97,7 @@ export default function Footer() {
               {footerLinks.trailers.map(item => (
                  <li key={item.name}><Link href={item.href} className="text-sm text-muted-foreground hover:text-accent">{item.name}</Link></li>
               ))}
-               <li><Link href="/products/trailers" className="text-sm text-accent font-medium hover:text-accent/80 flex items-center">View All <ArrowRight className="ml-1 h-4 w-4" /></Link></li>
+               <li><Link href="/industries/manufacturing" className="text-sm text-accent font-medium hover:text-accent/80 flex items-center">View All <ArrowRight className="ml-1 h-4 w-4" /></Link></li>
             </ul>
           </div>
           
