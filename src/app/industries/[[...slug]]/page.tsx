@@ -1,6 +1,4 @@
 
-'use client';
-import { usePathname } from 'next/navigation';
 import Image from 'next/image';
 import Link from 'next/link';
 import { industrySolutions } from '@/lib/data';
@@ -21,7 +19,6 @@ export async function generateStaticParams() {
 }
 
 export default function IndustriesCatchAllPage({ params }: { params: { slug?: string[] } }) {
-  const pathname = usePathname();
 
   // If there's no slug, it's the main /industries page
   if (!params.slug || params.slug.length === 0) {
@@ -108,9 +105,9 @@ export default function IndustriesCatchAllPage({ params }: { params: { slug?: st
   }
 
   // Otherwise, it's a sub-page, so render the "under construction" message
-  const pathParts = pathname.split('/').filter(p => p);
-  const title = toTitleCase(pathParts[pathParts.length - 1] || 'Industry Page');
-  const breadcrumbs = pathParts.slice(1).map(p => toTitleCase(p));
+  const slug = params.slug || [];
+  const title = toTitleCase(slug[slug.length - 1] || 'Industry Page');
+  const breadcrumbs = slug.map(p => toTitleCase(p));
 
   return (
     <>
