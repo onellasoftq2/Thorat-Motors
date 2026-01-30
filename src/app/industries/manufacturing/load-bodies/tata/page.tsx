@@ -79,9 +79,9 @@ export default function TataLoadBodiesPage() {
                         <BreadcrumbItem><BreadcrumbPage>TATA Load Bodies</BreadcrumbPage></BreadcrumbItem>
                     </BreadcrumbList>
                 </Breadcrumb>
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight font-headline">TATA Load Bodies</h1>
+                <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight font-headline">TATA Truck Load Bodies</h1>
                 <p className="mt-4 text-lg md:text-xl text-muted-foreground max-w-lg mx-auto md:mx-0">
-                    Engineered for perfect compatibility, superior durability, and operational reliability on all TATA chassis.
+                    Engineered for perfect compatibility and superior durability.
                 </p>
                 <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
                     <QuoteModalTrigger size="lg">Request Design Consultation</QuoteModalTrigger>

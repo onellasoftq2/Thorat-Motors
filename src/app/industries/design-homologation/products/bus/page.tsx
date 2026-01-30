@@ -115,12 +115,12 @@ export default function BusHomologationPage() {
         <div className="container mx-auto px-4 md:px-6 lg:px-8 text-center z-10">
           <AnimatedElement>
             <h1 className="text-3xl font-extrabold tracking-tight text-white font-headline">
-              Bus – Design, Safety Compliance & Homologation
+              Bus Design & Homologation
             </h1>
           </AnimatedElement>
           <AnimatedElement delay={0.15}>
             <p className="mt-3 max-w-3xl mx-auto text-sm text-white text-muted-foreground">
-              End-to-end regulatory support for passenger buses as per Indian automotive safety and body code standards.
+              Regulatory support for buses per Indian safety standards.
             </p>
           </AnimatedElement>
           {/* <AnimatedElement delay={0.3} className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">

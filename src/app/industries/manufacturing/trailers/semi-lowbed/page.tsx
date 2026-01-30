@@ -75,9 +75,9 @@ export default function SemiLowbedTrailersPage() {
                         </BreadcrumbList>
                     </Breadcrumb>
 
-                    <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight font-headline">Semi Lowbed Trailers</h1>
+                    <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight font-headline">Stable Semi Lowbed Trailers</h1>
                     <p className="mt-4 text-lg md:text-xl text-muted-foreground max-w-lg mx-auto md:mx-0">
-                        Low deck height and high stability for heavy & oversized equipment.
+                        Low deck and high stability for oversized equipment.
                     </p>
                     <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
                         <Button size="lg" asChild>

@@ -117,12 +117,12 @@ export default function ReferContainerPage() {
         <div className="container mx-auto px-4 md:px-6 lg:px-8 text-center z-10">
           <AnimatedElement>
             <h1 className="text-3xl font-extrabold tracking-tight text-white font-headline">
-              Refer Containers – Cold Chain Compliance & Homologation
+              Refer Container Homologation
             </h1>
           </AnimatedElement>
           <AnimatedElement delay={0.15}>
             <p className="mt-3 max-w-3xl mx-auto text-sm text-white text-muted-foreground">
-              Regulatory and safety compliance for refrigerated containers used in food, pharmaceutical, and temperature-sensitive logistics.
+              Regulatory compliance for refrigerated containers in cold-chain logistics.
             </p>
           </AnimatedElement>
           {/* <AnimatedElement delay={0.3} className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">

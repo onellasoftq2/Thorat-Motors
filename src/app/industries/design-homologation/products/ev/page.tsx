@@ -119,14 +119,12 @@ export default function EVHomologationPage() {
         <div className="container mx-auto px-4 md:px-6 lg:px-8 text-center z-10">
           <AnimatedElement>
             <h1 className="text-3xl font-extrabold text-white tracking-tight font-headline">
-              Electric Vehicles (2W & 3W)
-              {/* <br /> */}
-              {/* <span className="text-primary">Design, Testing & Homologation</span> */}
+              EV Compliance & Homologation
             </h1>
           </AnimatedElement>
           <AnimatedElement delay={0.15}>
             <p className="mt-3 max-w-2xl mx-auto text-sm text-white text-muted-foreground">
-              End-to-end regulatory compliance services to navigate the complexities of electric mobility in India.
+              Regulatory compliance services for electric mobility in India.
             </p>
           </AnimatedElement>
           {/* <AnimatedElement delay={0.3} className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">

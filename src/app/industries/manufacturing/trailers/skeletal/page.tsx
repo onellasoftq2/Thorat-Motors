@@ -75,7 +75,7 @@ export default function SkeletalTrailersPage() {
                         </BreadcrumbList>
                     </Breadcrumb>
 
-                    <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight font-headline">Skeletal Trailers</h1>
+                    <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight font-headline">Reliable Skeletal Trailers</h1>
                     <p className="mt-4 text-lg md:text-xl text-muted-foreground max-w-lg mx-auto md:mx-0">
                         Efficient and reliable ISO container transport.
                     </p>

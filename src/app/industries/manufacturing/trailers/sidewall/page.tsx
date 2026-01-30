@@ -75,9 +75,9 @@ export default function SidewallTrailersPage() {
                         </BreadcrumbList>
                     </Breadcrumb>
 
-                    <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight font-headline">Sidewall Trailers</h1>
+                    <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight font-headline">Secure Sidewall Trailers</h1>
                     <p className="mt-4 text-lg md:text-xl text-muted-foreground max-w-lg mx-auto md:mx-0">
-                        Secure and versatile transport for packaged or loose cargo.
+                        Versatile transport for packaged or loose cargo.
                     </p>
                     <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
                         <Button size="lg" asChild>

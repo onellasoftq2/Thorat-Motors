@@ -71,9 +71,9 @@ export default function MilkTankPage() {
                     </BreadcrumbList>
                 </Breadcrumb>
 
-                <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight font-headline">Milk Tank</h1>
+                <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight font-headline">Hygienic Milk Tanks</h1>
                 <p className="mt-4 text-lg md:text-xl text-muted-foreground max-w-lg mx-auto md:mx-0">
-                    Engineered for hygienic, temperature-safe, and reliable transport of fresh milk.
+                    Hygienic, temperature-safe transport of fresh milk.
                 </p>
                  <div className="mt-6">
                     <span className="inline-block bg-primary/10 text-primary border border-primary/20 font-semibold rounded-full px-4 py-2 text-sm">Transport Medium: Food-Grade Liquid</span>

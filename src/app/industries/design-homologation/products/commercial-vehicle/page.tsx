@@ -121,12 +121,12 @@ export default function CommercialVehicleHomologationPage() {
         <div className="container mx-auto px-4 md:px-6 lg:px-8 text-center z-10">
           <AnimatedElement>
             <h1 className="text-3xl font-extrabold tracking-tight text-white font-headline">
-              Commercial Vehicles – Design, Safety Compliance & Homologation
+              Commercial Vehicle Homologation
             </h1>
           </AnimatedElement>
           <AnimatedElement delay={0.15}>
             <p className="mt-3 max-w-3xl mx-auto text-sm text-white text-muted-foreground">
-              End-to-end regulatory and homologation support for light, medium, and heavy commercial vehicles as per Indian automotive standards.
+              End-to-end regulatory support for all commercial vehicles.
             </p>
           </AnimatedElement>
           {/* <AnimatedElement delay={0.3} className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">

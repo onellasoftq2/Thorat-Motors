@@ -70,9 +70,9 @@ export default function BulkerTrailersPage() {
                     </BreadcrumbList>
                 </Breadcrumb>
 
-                <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight font-headline">Bulker Trailers</h1>
+                <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight font-headline">Efficient Bulker Trailers</h1>
                 <p className="mt-4 text-lg md:text-xl text-muted-foreground max-w-lg mx-auto md:mx-0">
-                    High-volume, stable, and efficient long-distance transport.
+                    High-volume, stable transport for long-distance hauling.
                 </p>
                 <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
                     <Button size="lg" asChild>
@@ -179,11 +179,11 @@ export default function BulkerTrailersPage() {
         <section className="mt-12 md:mt-20">
              <h2 className="text-3xl font-bold font-headline text-center">Why Choose Our Bulker Trailers?</h2>
             <div className="mt-3 mb-10 w-20 h-1.5 bg-accent mx-auto"></div>
-            <div className="max-w-4xl mx-auto bg-secondary p-8 md:p-12 rounded-lg shadow-inner">
+            <div className="max-w-4xl mx-auto bg-secondary/50 p-8 md:p-12 rounded-lg shadow-inner border border-border">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                     {whyChooseUs.map((item, index) => (
-                        <div key={index} className="flex items-center">
-                            {item.icon}
+                        <div key={index} className="flex items-center p-4 rounded-lg bg-background/50">
+                            {React.cloneElement(item.icon, { className: "h-8 w-8 text-accent" })}
                             <h3 className="font-semibold text-lg ml-4">{item.title}</h3>
                         </div>
                     ))}

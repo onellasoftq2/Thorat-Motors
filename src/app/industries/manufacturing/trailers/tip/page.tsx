@@ -75,9 +75,9 @@ export default function TipTrailersPage() {
                         </BreadcrumbList>
                     </Breadcrumb>
 
-                    <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight font-headline">Tip Trailers</h1>
+                    <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight font-headline">Efficient Tip Trailers</h1>
                     <p className="mt-4 text-lg md:text-xl text-muted-foreground max-w-lg mx-auto md:mx-0">
-                        Fast, controlled, and safe unloading of bulk materials.
+                        Fast and safe unloading of bulk materials.
                     </p>
                     <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
                         <Button size="lg" asChild>

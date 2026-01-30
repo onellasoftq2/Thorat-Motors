@@ -71,9 +71,9 @@ export default function PetroleumTankPage() {
                     </BreadcrumbList>
                 </Breadcrumb>
 
-                <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight font-headline">Petroleum Tank</h1>
+                <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight font-headline">Safe Petroleum Tanks</h1>
                 <p className="mt-4 text-lg md:text-xl text-muted-foreground max-w-lg mx-auto md:mx-0">
-                    Engineered for the safe, compliant, and reliable transport of flammable petroleum products.
+                    Compliant and reliable transport of flammable petroleum products.
                 </p>
                  <div className="mt-6">
                     <span className="inline-flex items-center bg-destructive/10 text-destructive border border-destructive/20 font-semibold rounded-full px-4 py-2 text-sm">

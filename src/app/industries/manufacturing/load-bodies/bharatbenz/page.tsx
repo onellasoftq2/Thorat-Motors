@@ -81,7 +81,7 @@ export default function BharatBenzLoadBodiesPage() {
                 </Breadcrumb>
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight font-headline">BharatBenz Load Bodies</h1>
                 <p className="mt-4 text-lg md:text-xl text-muted-foreground max-w-lg mx-auto md:mx-0">
-                    Engineered for heavy-duty performance, maximum strength, and long-haul reliability on all BharatBenz chassis.
+                    Engineered for heavy-duty performance, strength, and reliability.
                 </p>
                 <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
                     <QuoteModalTrigger size="lg">Request Design Consultation</QuoteModalTrigger>

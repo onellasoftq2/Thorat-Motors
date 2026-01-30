@@ -76,9 +76,9 @@ export default function CragganmoreTankPage() {
                     </BreadcrumbList>
                 </Breadcrumb>
 
-                <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight font-headline">Cragganmore Tank</h1>
+                <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight font-headline">Secure Cragganmore Tanks</h1>
                 <p className="mt-4 text-lg md:text-xl text-muted-foreground max-w-lg mx-auto md:mx-0">
-                    Engineered for the safe, controlled, and reliable containment of industrial liquids.
+                    Safe, controlled containment for industrial liquids.
                 </p>
                  <div className="mt-6">
                     <span className="inline-block bg-primary/10 text-primary border border-primary/20 font-semibold rounded-full px-4 py-2 text-sm">Transport Medium: Industrial Liquids & Chemicals</span>
