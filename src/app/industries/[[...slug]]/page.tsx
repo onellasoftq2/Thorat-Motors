@@ -16,6 +16,10 @@ function toTitleCase(str: string) {
   );
 }
 
+export async function generateStaticParams() {
+  return [];
+}
+
 export default function IndustriesCatchAllPage({ params }: { params: { slug?: string[] } }) {
   const pathname = usePathname();
 
