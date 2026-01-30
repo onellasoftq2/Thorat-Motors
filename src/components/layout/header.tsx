@@ -124,38 +124,37 @@ const iconMap: { [key: string]: React.ReactNode } = {
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [activeIndustry, setActiveIndustry] = useState(navMenu.find(item => item.interactiveMegaMenu)?.interactiveMegaMenu?.[0].slug || '');
+  const [activeProductCategory, setActiveProductCategory] = useState(navMenu.find(item => item.interactiveMegaMenu)?.interactiveMegaMenu?.[0].slug || '');
   const [activeSubMenu, setActiveSubMenu] = useState<string | null>(null);
   const [videoOpen, setVideoOpen] = useState(false);
-  const [industriesMenuOpen, setIndustriesMenuOpen] = useState(false);
+  const [productsMenuOpen, setProductsMenuOpen] = useState(false);
   const pathname = usePathname();
 
-  const handleIndustriesOpenChange = (open: boolean) => {
+  const handleProductsOpenChange = (open: boolean) => {
     // If the video is open, don't allow the menu to close on hover-out.
     if (videoOpen && !open) {
       return;
     }
-    setIndustriesMenuOpen(open);
+    setProductsMenuOpen(open);
   };
 
   useEffect(() => {
     setActiveSubMenu(null);
     setVideoOpen(false);
-  }, [activeIndustry]);
+  }, [activeProductCategory]);
 
   useEffect(() => {
-    if (!industriesMenuOpen) {
+    if (!productsMenuOpen) {
         setVideoOpen(false);
     }
-  }, [industriesMenuOpen]);
+  }, [productsMenuOpen]);
 
   const productsMenu = navMenu.find(item => item.title === 'Products');
   const trailersItems = productsMenu?.megaMenu?.find(section => section.title === 'Trailers')?.items || [];
   const cabinsItems = productsMenu?.megaMenu?.find(section => section.title === 'Portable Cabins')?.items || [];
   const conversionsItems = productsMenu?.megaMenu?.find(section => section.title === 'Containers & Conversions')?.items || [];
 
-  const industriesMenuData = navMenu.find(item => item.title === 'Industries');
-  const activeCategoryData = industriesMenuData?.interactiveMegaMenu?.find(c => c.slug === activeIndustry);
+  const activeCategoryData = productsMenu?.interactiveMegaMenu?.find(c => c.slug === activeProductCategory);
   
   const getYouTubeVideoId = (url: string | undefined): string => {
       if (!url) return "";
@@ -239,11 +238,11 @@ export default function Header() {
                   </div>
                 </HoverCardContent>
               </HoverCard>
-            ) : item.interactiveMegaMenu ? ( // Industries Interactive Mega Menu
+            ) : item.interactiveMegaMenu ? ( // Products Interactive Mega Menu
               <HoverCard 
                 key={item.title}
-                open={industriesMenuOpen}
-                onOpenChange={handleIndustriesOpenChange}
+                open={productsMenuOpen}
+                onOpenChange={handleProductsOpenChange}
               >
                 <HoverCardTrigger asChild>
                   <Button
@@ -296,10 +295,10 @@ export default function Header() {
                                 </Link>
                               ) : (
                                 <button
-                                  onMouseEnter={() => setActiveIndustry(category.slug)}
+                                  onMouseEnter={() => setActiveProductCategory(category.slug)}
                                   className={cn(
                                     "w-full text-left p-3 rounded-md transition-colors",
-                                    activeIndustry === category.slug ? 'bg-background shadow' : 'hover:bg-background/50'
+                                    activeProductCategory === category.slug ? 'bg-background shadow' : 'hover:bg-background/50'
                                   )}
                                 >
                                   <p className="font-semibold">{category.title}</p>
@@ -312,7 +311,7 @@ export default function Header() {
                       </div>
                       <div className="w-[500px] p-6">
                         {(() => {
-                          const activeCat = item.interactiveMegaMenu.find(c => c.slug === activeIndustry);
+                          const activeCat = item.interactiveMegaMenu.find(c => c.slug === activeProductCategory);
                           if (!activeCat || activeCat.isLink) return null;
                           
                           const activeSubMenuItem = activeSubMenu ? activeCat.items.find(i => i.name === activeSubMenu) : null;
@@ -388,7 +387,7 @@ export default function Header() {
 
                             <AnimatePresence mode="wait">
                             <motion.div
-                                key={activeIndustry}
+                                key={activeProductCategory}
                                 initial={{ opacity: 0 }}
                                 animate={{ opacity: 1 }}
                                 exit={{ opacity: 0 }}
@@ -398,7 +397,7 @@ export default function Header() {
                             {videoId ? (
                                     <div
                                         className="w-full aspect-video relative group cursor-pointer"
-                                        onClick={() => { if (activeCategoryData?.videoUrl) { setVideoOpen(true); setIndustriesMenuOpen(true); } }}
+                                        onClick={() => { if (activeCategoryData?.videoUrl) { setVideoOpen(true); setProductsMenuOpen(true); } }}
                                     >
                                         <Image
                                             src={`https://img.youtube.com/vi/${videoId}/hqdefault.jpg`}
