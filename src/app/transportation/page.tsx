@@ -21,6 +21,7 @@ import {
   Zap,
 } from 'lucide-react';
 import { AnimatedElement } from '@/components/ui/animated-element';
+import { QuoteModalTrigger } from '@/components/ui/quote-modal-trigger';
 
 const stats = [
   { value: 500, label: 'Vehicles Deployed', isPlus: true },
@@ -151,9 +152,9 @@ export default function TransportationPage() {
             <Button size="lg" asChild>
               <Link href="#services">Explore Services</Link>
             </Button>
-            <Button size="lg" variant="outline" className="bg-transparent border-white text-white hover:bg-white hover:text-primary">
-              <Link href="/contact">Talk to Our Team</Link>
-            </Button>
+            <QuoteModalTrigger size="lg" variant="outline" className="bg-transparent border-white text-white hover:bg-white hover:text-primary">
+              Talk to Our Team
+            </QuoteModalTrigger>
           </motion.div>
         </div>
       </section>
@@ -331,12 +332,12 @@ export default function TransportationPage() {
           </AnimatedElement>
           <AnimatedElement delay={0.2}>
             <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
-                <Button size="lg" asChild>
-                    <Link href="/quote?productCategory=services&product=Transport & Logistics">Enquire Now</Link>
-                </Button>
-                <Button size="lg" variant="outline" asChild>
-                    <Link href="/contact">Connect with Our Logistics Team</Link>
-                </Button>
+                <QuoteModalTrigger size="lg">
+                    Enquire Now
+                </QuoteModalTrigger>
+                <QuoteModalTrigger size="lg" variant="outline">
+                    Connect with Our Logistics Team
+                </QuoteModalTrigger>
             </div>
           </AnimatedElement>
         </div>

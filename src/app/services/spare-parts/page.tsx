@@ -4,6 +4,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card';
 import { Check, Cog, Disc, Truck, Wrench } from 'lucide-react';
 import Link from 'next/link';
+import { QuoteModalTrigger } from '@/components/ui/quote-modal-trigger';
 
 const partCategories = [
   { name: 'Axles (TATA, YORK, FUWA, JOST)', icon: <Disc/> },
@@ -95,9 +96,9 @@ export default function SparePartsPage() {
           <p className="mt-4 max-w-xl mx-auto text-lg text-muted-foreground">
             Contact our parts division to get the right components for your trailers and cabins, delivered fast.
           </p>
-          <Button asChild size="lg" className="mt-8 bg-accent text-accent-foreground hover:bg-accent/90">
-            <Link href="/quote?productCategory=spare-parts">Order Spare Parts</Link>
-          </Button>
+          <QuoteModalTrigger size="lg" className="mt-8 bg-accent text-accent-foreground hover:bg-accent/90">
+            Order Spare Parts
+          </QuoteModalTrigger>
         </section>
       </div>
     </>

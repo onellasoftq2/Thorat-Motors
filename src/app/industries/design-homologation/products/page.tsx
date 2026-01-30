@@ -39,6 +39,7 @@ import { aisStandards } from '@/lib/ais-standards';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { cn } from '@/lib/utils';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
+import { QuoteModalTrigger } from '@/components/ui/quote-modal-trigger';
 
 
 const vehicleCategories = [
@@ -132,7 +133,7 @@ export default function AllProductsPage() {
           </AnimatedElement>
           <AnimatedElement delay={0.3} className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
             <Button size="lg" asChild><Link href="#ais-applicability">Find Applicable AIS</Link></Button>
-            <Button size="lg" variant="outline" asChild><Link href="/contact">Consult Compliance Experts</Link></Button>
+            <QuoteModalTrigger size="lg" variant="outline">Consult Compliance Experts</QuoteModalTrigger>
           </AnimatedElement>
         </div>
       </section>
@@ -298,12 +299,12 @@ export default function AllProductsPage() {
                 </AnimatedElement>
                 <AnimatedElement delay={0.15}>
                     <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
-                        <Button size="lg" variant="secondary" asChild className="bg-accent text-accent-foreground hover:bg-accent/90">
-                            <Link href="/contact">Talk to Our Compliance Experts</Link>
-                        </Button>
-                        <Button size="lg" variant="outline" className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary">
-                             <Link href="/quote?productCategory=services&product=Designing & Homologation">Request AIS Review</Link>
-                        </Button>
+                        <QuoteModalTrigger size="lg" variant="secondary" className="bg-accent text-accent-foreground hover:bg-accent/90">
+                            Talk to Our Compliance Experts
+                        </QuoteModalTrigger>
+                        <QuoteModalTrigger size="lg" variant="outline" className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary">
+                             Request AIS Review
+                        </QuoteModalTrigger>
                     </div>
                 </AnimatedElement>
             </div>

@@ -25,6 +25,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
+import { QuoteModalTrigger } from '@/components/ui/quote-modal-trigger';
 
 const oemPlatforms = [
   { name: "Heavy-Duty Haulage", imageId: "bharatbenz-hd-platform" },
@@ -83,7 +84,7 @@ export default function BharatBenzLoadBodiesPage() {
                     Engineered for heavy-duty performance, maximum strength, and long-haul reliability on all BharatBenz chassis.
                 </p>
                 <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
-                    <Button size="lg" asChild><Link href="/quote?product=bharatbenz-load-body">Request Design Consultation</Link></Button>
+                    <QuoteModalTrigger size="lg">Request Design Consultation</QuoteModalTrigger>
                 </div>
             </AnimatedElement>
             <AnimatedElement delay={0.2}>
@@ -237,12 +238,12 @@ export default function BharatBenzLoadBodiesPage() {
             </AnimatedElement>
             <AnimatedElement delay={0.15}>
                 <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
-                    <Button size="lg" variant="secondary" asChild className="bg-accent text-accent-foreground hover:bg-accent/90">
-                        <Link href="/quote?product=bharatbenz-load-body">Enquire Now</Link>
-                    </Button>
-                    <Button size="lg" variant="outline" asChild className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary">
-                        <Link href="/contact">Talk to Our Engineering Team</Link>
-                    </Button>
+                    <QuoteModalTrigger size="lg" variant="secondary" className="bg-accent text-accent-foreground hover:bg-accent/90">
+                        Enquire Now
+                    </QuoteModalTrigger>
+                    <QuoteModalTrigger size="lg" variant="outline" className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary">
+                        Talk to Our Engineering Team
+                    </QuoteModalTrigger>
                 </div>
             </AnimatedElement>
           </div>

@@ -22,6 +22,7 @@ import { aisStandards, allVehicleCategories, allStatuses, allYears } from '@/lib
 import { Input } from '@/components/ui/input';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
+import { QuoteModalTrigger } from '@/components/ui/quote-modal-trigger';
 
 
 // Data for the AIS list
@@ -238,12 +239,12 @@ const AisApplicabilityTool = () => {
                     <div className="mt-8 text-center">
                         <h4 className="text-lg font-bold font-headline max-w-2xl mx-auto">Need confirmation or support with AIS compliance?</h4>
                          <div className="mt-4 flex flex-col sm:flex-row gap-4 justify-center">
-                            <Button size="sm" asChild>
-                                <Link href="/contact">Talk to Our Compliance Team</Link>
-                            </Button>
-                            <Button size="sm" variant="outline" asChild>
-                                <Link href="/quote?productCategory=services&product=Designing & Homologation">Request Homologation Support</Link>
-                            </Button>
+                            <QuoteModalTrigger size="sm">
+                                Talk to Our Compliance Team
+                            </QuoteModalTrigger>
+                            <QuoteModalTrigger size="sm" variant="outline">
+                                Request Homologation Support
+                            </QuoteModalTrigger>
                         </div>
                     </div>
                 </div>
@@ -530,12 +531,12 @@ export default function AisListPage() {
           </AnimatedElement>
           <AnimatedElement delay={0.15}>
             <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
-                <Button size="lg" asChild>
-                    <Link href="/contact">Talk to Our Compliance Team</Link>
-                </Button>
-                <Button size="lg" variant="outline" asChild>
-                    <Link href="/quote?productCategory=services&product=Designing & Homologation">Enquire Now</Link>
-                </Button>
+                <QuoteModalTrigger size="lg">
+                    Talk to Our Compliance Team
+                </QuoteModalTrigger>
+                <QuoteModalTrigger size="lg" variant="outline">
+                    Enquire Now
+                </QuoteModalTrigger>
             </div>
           </AnimatedElement>
         </section>

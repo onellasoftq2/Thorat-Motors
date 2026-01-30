@@ -6,6 +6,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card';
 import { Check, Map, Zap, ShieldCheck } from 'lucide-react';
 import Link from 'next/link';
+import { QuoteModalTrigger } from '@/components/ui/quote-modal-trigger';
 
 const capabilities = [
   { icon: <Map />, title: 'Route Planning', description: 'Optimized routing to ensure timely and cost-effective delivery.' },
@@ -87,9 +88,9 @@ export default function TransportLogisticsPage() {
           <div className="container mx-auto px-4 md:px-6 lg:px-8">
             <h2 className="text-3xl font-bold font-headline">Optimize Your Supply Chain</h2>
             <p className="mt-4 max-w-xl mx-auto text-lg text-muted-foreground">Let us handle the logistics, so you can focus on your core business.</p>
-            <Button asChild size="lg" className="mt-8 bg-accent text-accent-foreground hover:bg-accent/90">
-                <Link href="/quote">Request Transport Support</Link>
-            </Button>
+            <QuoteModalTrigger size="lg" className="mt-8 bg-accent text-accent-foreground hover:bg-accent/90">
+                Request Transport Support
+            </QuoteModalTrigger>
           </div>
         </section>
       </div>

@@ -5,6 +5,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Check, Settings, TestTube, Construction } from 'lucide-react';
 import Link from 'next/link';
+import { QuoteModalTrigger } from '@/components/ui/quote-modal-trigger';
 
 const capabilities = [
   { icon: <Settings />, title: 'High-Strength Steel', description: 'Expertise in BSK46, ST52, and IS2062 steel for optimal strength-to-weight ratio.' },
@@ -91,9 +92,9 @@ export default function CustomEngineeringPage() {
         <section className="mt-16 md:mt-24 text-center">
           <h2 className="text-3xl font-bold font-headline">Have a Unique Challenge?</h2>
           <p className="mt-4 max-w-xl mx-auto text-lg text-muted-foreground">Our engineers are ready to create a solution that works for you. Let's build it together.</p>
-          <Button asChild size="lg" className="mt-8 bg-accent text-accent-foreground hover:bg-accent/90">
-            <Link href="/quote">Request a Custom Design</Link>
-          </Button>
+          <QuoteModalTrigger size="lg" className="mt-8 bg-accent text-accent-foreground hover:bg-accent/90">
+            Request a Custom Design
+          </QuoteModalTrigger>
         </section>
       </div>
     </>

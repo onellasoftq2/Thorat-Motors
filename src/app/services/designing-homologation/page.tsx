@@ -6,6 +6,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card';
 import { Check, Cpu, FileCheck, Scale, DraftingCompass } from 'lucide-react';
 import Link from 'next/link';
+import { QuoteModalTrigger } from '@/components/ui/quote-modal-trigger';
 
 const capabilities = [
   { icon: <FileCheck />, title: 'CMVR Process Handling', description: 'Navigating the Central Motor Vehicles Rules for a smooth certification journey.' },
@@ -98,9 +99,9 @@ export default function DesigningHomologationPage() {
              <div className="container mx-auto px-4 md:px-6 lg:px-8">
                 <h2 className="text-3xl font-bold font-headline">Navigate Compliance with Confidence</h2>
                 <p className="mt-4 max-w-xl mx-auto text-lg text-muted-foreground">Partner with us to ensure your products are fully certified and ready for the market.</p>
-                <Button asChild size="lg" className="mt-8 bg-accent text-accent-foreground hover:bg-accent/90">
-                    <Link href="/quote">Request Homologation Support</Link>
-                </Button>
+                <QuoteModalTrigger size="lg" className="mt-8 bg-accent text-accent-foreground hover:bg-accent/90">
+                    Request Homologation Support
+                </QuoteModalTrigger>
             </div>
         </section>
       </div>

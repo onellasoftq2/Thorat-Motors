@@ -6,6 +6,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Zap, ShieldCheck, Wind, PaintRoller, ArrowRight } from 'lucide-react';
 import Link from 'next/link';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
+import { QuoteModalTrigger } from '@/components/ui/quote-modal-trigger';
 
 const conversionCapabilities = [
   { icon: <Zap />, title: 'Electrical & Plumbing', description: 'Full integration of concealed wiring, outlets, and plumbing systems.' },
@@ -117,9 +118,9 @@ export default function ContainerConversionsPage() {
         <section className="mt-16 md:mt-24 text-center">
           <h2 className="text-3xl font-bold font-headline">Ready to Start Your Container Project?</h2>
           <p className="mt-4 max-w-xl mx-auto text-lg text-muted-foreground">Let's discuss how we can transform a container into your next workspace, shop, or home.</p>
-          <Button asChild size="lg" className="mt-8 bg-accent text-accent-foreground hover:bg-accent/90">
-            <Link href="/quote">Start Your Container Project <ArrowRight className="ml-2 h-5 w-5" /></Link>
-          </Button>
+          <QuoteModalTrigger size="lg" className="mt-8 bg-accent text-accent-foreground hover:bg-accent/90">
+            Start Your Container Project <ArrowRight className="ml-2 h-5 w-5" />
+          </QuoteModalTrigger>
         </section>
       </div>
     </>

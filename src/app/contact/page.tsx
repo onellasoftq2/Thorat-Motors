@@ -4,6 +4,7 @@ import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { Mail, Phone, MapPin } from 'lucide-react';
+import { QuoteModalTrigger } from '@/components/ui/quote-modal-trigger';
 
 export default function ContactPage() {
   return (
@@ -25,9 +26,9 @@ export default function ContactPage() {
           <p className="max-w-xl mx-auto text-muted-foreground mb-6">
             Have a specific requirement? Our engineering team is ready to assist you with a custom quote.
           </p>
-          <Button asChild size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90">
-            <Link href="/quote">Request a Quote</Link>
-          </Button>
+          <QuoteModalTrigger size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90">
+            Request a Quote
+          </QuoteModalTrigger>
         </div>
 
         <div className="mb-16">

@@ -12,6 +12,7 @@ import {
   TableCell,
   TableRow,
 } from '@/components/ui/table';
+import { QuoteModalTrigger } from '@/components/ui/quote-modal-trigger';
 
 export async function generateStaticParams() {
   return products.trailers.map((trailer) => ({
@@ -99,9 +100,9 @@ export default function TrailerDetailPage({ params }: { params: { slug: string }
         </div>
 
         <div className="mt-16 text-center">
-            <Button asChild size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90">
-                <Link href="/quote">Request a Quote for this Product</Link>
-            </Button>
+            <QuoteModalTrigger size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90">
+                Request a Quote for this Product
+            </QuoteModalTrigger>
         </div>
       </div>
     </div>

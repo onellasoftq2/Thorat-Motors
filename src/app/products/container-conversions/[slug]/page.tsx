@@ -12,6 +12,7 @@ import {
   TableCell,
   TableRow,
 } from '@/components/ui/table';
+import { QuoteModalTrigger } from '@/components/ui/quote-modal-trigger';
 
 export async function generateStaticParams() {
   return products.containerConversions.map((product) => ({
@@ -102,9 +103,9 @@ export default function ContainerConversionDetailPage({ params }: { params: { sl
         )}
 
         <div className="mt-16 text-center">
-            <Button asChild size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90">
-                <Link href="/quote">Inquire About this Product</Link>
-            </Button>
+            <QuoteModalTrigger size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90">
+                Inquire About this Product
+            </QuoteModalTrigger>
         </div>
       </div>
     </div>

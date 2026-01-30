@@ -5,6 +5,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Check, ShieldCheck, Layers, Settings, Workflow, ArrowRight } from 'lucide-react';
 import Link from 'next/link';
+import { QuoteModalTrigger } from '@/components/ui/quote-modal-trigger';
 
 const overviewItems = [
     { title: 'CNC Cutting & Bending Machines', description: 'For high-precision shaping of steel components.' },
@@ -100,9 +101,9 @@ export default function StructuralFabricationPage() {
         <section className="mt-16 md:mt-24 text-center">
           <h2 className="text-3xl font-bold font-headline">Have a Fabrication Project?</h2>
           <p className="mt-4 max-w-xl mx-auto text-lg text-muted-foreground">From trailer chassis to custom container frames, our facility is ready for your project.</p>
-          <Button asChild size="lg" className="mt-8 bg-accent text-accent-foreground hover:bg-accent/90">
-            <Link href="/quote">Request Fabrication Support</Link>
-          </Button>
+          <QuoteModalTrigger size="lg" className="mt-8 bg-accent text-accent-foreground hover:bg-accent/90">
+            Request Fabrication Support
+          </QuoteModalTrigger>
         </section>
       </div>
     </>

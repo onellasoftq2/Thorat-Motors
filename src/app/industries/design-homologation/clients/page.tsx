@@ -15,6 +15,7 @@ import {
     Building2
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import { QuoteModalTrigger } from '@/components/ui/quote-modal-trigger';
 
 // --- Data for the page ---
 
@@ -175,9 +176,9 @@ export default function ClientsPage() {
                 </AnimatedElement>
                 <AnimatedElement delay={0.15}>
                     <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
-                        <Button size="lg" asChild className="bg-accent text-accent-foreground hover:bg-accent/90">
-                            <Link href="/quote">Enquire Now</Link>
-                        </Button>
+                        <QuoteModalTrigger size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90">
+                            Enquire Now
+                        </QuoteModalTrigger>
                     </div>
                 </AnimatedElement>
             </div>

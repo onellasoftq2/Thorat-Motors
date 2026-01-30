@@ -16,6 +16,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { QuoteModalTrigger } from '@/components/ui/quote-modal-trigger';
 
 const institutes = [
   {
@@ -346,12 +347,12 @@ export default function InstituteOfApprovalsPage() {
           </AnimatedElement>
           <AnimatedElement delay={0.15}>
             <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
-                <Button size="lg" asChild>
-                    <Link href="/contact">Talk to Our Compliance Team</Link>
-                </Button>
-                <Button size="lg" variant="outline" asChild>
-                    <Link href="/quote?productCategory=services&product=Designing & Homologation">Enquire Now</Link>
-                </Button>
+                <QuoteModalTrigger size="lg">
+                    Talk to Our Compliance Team
+                </QuoteModalTrigger>
+                <QuoteModalTrigger size="lg" variant="outline">
+                    Enquire Now
+                </QuoteModalTrigger>
             </div>
           </AnimatedElement>
         </section>

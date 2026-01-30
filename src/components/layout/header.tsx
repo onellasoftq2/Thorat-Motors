@@ -59,6 +59,7 @@ import {
 import { navMenu } from "@/lib/data";
 import { cn } from "@/lib/utils";
 import { ScrollArea } from "@/components/ui/scroll-area";
+import { QuoteModalTrigger } from "../ui/quote-modal-trigger";
 
 function Logo() {
   return (
@@ -198,7 +199,7 @@ export default function Header() {
               (item.href && item.href !== '/' && pathname.startsWith(item.href)) ||
               (item.items && item.items.some(subItem => pathname === subItem.href)) ||
               (item.megaMenu && pathname.startsWith('/products')) ||
-              (item.interactiveMegaMenu && pathname.startsWith('/industries'));
+              (item.interactiveMegaMenu && pathname.startsWith('/products'));
 
             return item.megaMenu ? ( // Products Mega Menu
               <HoverCard key={item.title} openDelay={50} closeDelay={100}>
@@ -422,9 +423,9 @@ export default function Header() {
                         </div>
                         <div className="mt-4 text-center">
                             <h5 className="font-semibold text-sm text-foreground mb-1">Have a question?</h5>
-                            <Button asChild size="sm" className="mt-1 w-full bg-accent text-accent-foreground hover:bg-accent/90">
-                                <Link href="/quote">Enquiry Now</Link>
-                            </Button>
+                            <QuoteModalTrigger size="sm" className="mt-1 w-full bg-accent text-accent-foreground hover:bg-accent/90">
+                                Enquiry Now
+                            </QuoteModalTrigger>
                         </div>
                       </div>
                     </div>
@@ -475,9 +476,9 @@ export default function Header() {
         </nav>
 
         <div className="hidden items-center space-x-4 lg:flex">
-          <Button asChild className="bg-accent text-accent-foreground hover:bg-accent/90">
-            <Link href="/quote">Request Quote</Link>
-          </Button>
+          <QuoteModalTrigger className="bg-accent text-accent-foreground hover:bg-accent/90">
+            Request Quote
+          </QuoteModalTrigger>
         </div>
 
         {/* Mobile Menu */}
@@ -570,7 +571,7 @@ export default function Header() {
                         </AccordionItem>
                       ) : item.interactiveMegaMenu ? (
                         <AccordionItem key={item.title} value={`item-${index}`}>
-                          <AccordionTrigger className={cn("py-3 text-base font-medium", pathname.startsWith('/industries') ? 'text-primary' : '')}>
+                          <AccordionTrigger className={cn("py-3 text-base font-medium", pathname.startsWith('/products') ? 'text-primary' : '')}>
                             {item.title}
                           </AccordionTrigger>
                           <AccordionContent>
@@ -588,7 +589,7 @@ export default function Header() {
                                   ) : (
                                     <Accordion type="single" collapsible className="w-full">
                                       <AccordionItem value={category.slug}>
-                                        <AccordionTrigger className={cn("text-sm py-2", pathname.startsWith(`/industries/${category.slug}`) ? 'text-primary' : '')}>
+                                        <AccordionTrigger className={cn("text-sm py-2", pathname.startsWith(`/products/${category.slug}`) ? 'text-primary' : '')}>
                                           {category.title}
                                         </AccordionTrigger>
                                         <AccordionContent>
@@ -674,9 +675,9 @@ export default function Header() {
                     )}
                   </Accordion>
                   <div className="pt-8">
-                    <Button onClick={() => setMobileMenuOpen(false)} asChild className="w-full bg-accent text-accent-foreground hover:bg-accent/90">
-                      <Link href="/quote">Request Quote</Link>
-                    </Button>
+                    <QuoteModalTrigger onClick={() => setMobileMenuOpen(false)} className="w-full bg-accent text-accent-foreground hover:bg-accent/90">
+                      Request Quote
+                    </QuoteModalTrigger>
                   </div>
                 </nav>
               </ScrollArea>

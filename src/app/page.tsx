@@ -25,6 +25,7 @@ import { IndiaMap } from '@/components/ui/india-map';
 import { CategoryList, type Category } from '@/components/ui/category-list';
 import { AnimatedElement } from '@/components/ui/animated-element';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
+import { QuoteModalTrigger } from '@/components/ui/quote-modal-trigger';
 
 const stats = [
   { value: 10000, label: 'Trailers Delivered', isPlus: true },
@@ -257,14 +258,13 @@ export default function Home() {
   </div>
 
   <div className="w-[150px]">
-    <Button
-      asChild
+    <QuoteModalTrigger
       size="lg"
       variant="outline"
       className="w-full bg-transparent border-white text-white hover:bg-white hover:text-primary transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5"
     >
-      <Link href="/quote">Request Quote</Link>
-    </Button>
+      Request Quote
+    </QuoteModalTrigger>
   </div>
 </motion.div>
 
@@ -565,9 +565,9 @@ export default function Home() {
             Let our experts help you design and engineer the perfect trailer or cabin for your business needs.
           </p>
           <div className="mt-8">
-            <Button asChild size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90">
-              <Link href="/quote">Request a Quote</Link>
-            </Button>
+            <QuoteModalTrigger size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90">
+              Request a Quote
+            </QuoteModalTrigger>
           </div>
         </div>
       </section>
@@ -585,3 +585,4 @@ export default function Home() {
 
 
     
+
