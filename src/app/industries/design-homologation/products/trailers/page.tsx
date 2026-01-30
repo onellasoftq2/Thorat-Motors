@@ -20,7 +20,6 @@ import { AnimatedElement } from '@/components/ui/animated-element';
 import { aisStandards } from '@/lib/ais-standards';
 import { Input } from '@/components/ui/input';
 import { cn } from '@/lib/utils';
-import { HomologationWorkflowSection } from '@/components/ui/homologation-workflow';
 
 const trailerCategories = [
     { name: 'Flatbed Trailers', category: 'T2/T3/T4', application: 'General cargo, containers', imageId: 'flatbed' },
@@ -38,14 +37,6 @@ const complianceScope = [
     { title: 'Coupling & Kingpin', icon: <GitBranch /> },
     { title: 'Lighting & Signalling', icon: <Truck /> },
     { title: 'Protective Devices (RUPD/SUPD)', icon: <ShieldCheck /> },
-];
-
-const homologationWorkflow = [
-  { title: 'Trailer Type & Axle Configuration Assessment' },
-  { title: 'Applicable AIS & CMVR Identification' },
-  { title: 'Design, Structural & FEA Evaluation' },
-  { title: 'Testing & Inspection Coordination (ICAT/ARAI)' },
-  { title: 'Comprehensive Documentation & Approval Support' },
 ];
 
 const testingSupport = [
@@ -226,9 +217,6 @@ export default function TrailerHomologationPage() {
             </CardContent>
           </Card>
         </section>
-
-        {/* 5. Trailer Homologation Workflow */}
-        <HomologationWorkflowSection productType="trailer" workflowSteps={homologationWorkflow} />
 
         {/* 6. Testing & Certification Support */}
         <section className="mx-auto md:max-w-[1024px] mt-16 md:mt-24 bg-secondary py-16 md:py-24">

@@ -20,7 +20,6 @@ import { AnimatedElement } from '@/components/ui/animated-element';
 import { aisStandards } from '@/lib/ais-standards';
 import { Input } from '@/components/ui/input';
 import { cn } from '@/lib/utils';
-import { HomologationWorkflowSection } from '@/components/ui/homologation-workflow';
 
 const busCategories = [
     { name: 'City / Urban Buses', category: 'M3', application: 'Public transport, high-frequency routes.', imageId: 'city-bus' },
@@ -37,14 +36,6 @@ const safetyScope = [
     { title: 'Fire Safety', icon: <Flame /> },
     { title: 'Driver Visibility', icon: <DraftingCompass /> },
     { title: 'Passenger Protection', icon: <Shield /> },
-];
-
-const homologationWorkflow = [
-  { title: 'Bus Type & Seating Capacity Finalization' },
-  { title: 'Applicable AIS & Bus Body Code Identification' },
-  { title: 'Structural Design & Superstructure Evaluation' },
-  { title: 'Testing & Inspection Coordination (ARAI/ICAT)' },
-  { title: 'Comprehensive Documentation & Approval Support' },
 ];
 
 const testingSupport = [
@@ -225,9 +216,6 @@ export default function BusHomologationPage() {
             </CardContent>
           </Card>
         </section>
-
-        {/* 5. Bus Body Code & Structural Compliance */}
-        <HomologationWorkflowSection productType="bus" workflowSteps={homologationWorkflow} />
 
         {/* 6. Testing & Certification Support */}
         <section className="mx-auto md:max-w-[1024px] mt-16 md:mt-24 bg-secondary py-16 md:py-24">

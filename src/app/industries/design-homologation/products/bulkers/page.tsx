@@ -20,7 +20,6 @@ import { AnimatedElement } from '@/components/ui/animated-element';
 import { aisStandards } from '@/lib/ais-standards';
 import { Input } from '@/components/ui/input';
 import { cn } from '@/lib/utils';
-import { HomologationWorkflowSection } from '@/components/ui/homologation-workflow';
 
 const bulkerTypes = [
     { name: 'Cement Bulkers', application: 'Bulk cement & fly ash.', configuration: 'Rigid / Trailer', imageId: 'cement-bulker' },
@@ -40,14 +39,6 @@ const complianceScope = [
     { title: 'Material & Food-Grade Safety', icon: <CheckCircle /> },
 ];
 
-const homologationWorkflow = [
-  { title: 'Bulker Type & Vehicle Configuration Assessment' },
-  { title: 'Applicable AIS & CMVR Identification' },
-  { title: 'Structural Design & FEA Evaluation' },
-  { title: 'Testing & Inspection Coordination (ARAI/ICAT)' },
-  { title: 'Comprehensive Documentation & Approval Support' },
-];
-
 const testingSupport = [
     'Structural integrity and load assessment',
     'Stability and rollover evaluation (laden/unladen)',
@@ -57,8 +48,8 @@ const testingSupport = [
 ];
 
 const whyChooseUs = [
-    'Expertise in bulk transport vehicle regulations.',
-    'Faster approvals for complex vehicle configurations.',
+    'Expertise in bulk transport regulations.',
+    'Faster approvals for complex configurations.',
     'Reduced redesign cycles via compliance engineering.',
     'End-to-end support from design to certification.',
 ];
@@ -228,9 +219,6 @@ export default function BulkerHomologationPage() {
             </CardContent>
           </Card>
         </section>
-
-        {/* 5. Bulker Homologation Workflow */}
-        <HomologationWorkflowSection productType="bulker" workflowSteps={homologationWorkflow} />
 
         {/* 6. Testing & Certification Support */}
         <section className="mt-16 md:mt-24 bg-secondary py-16 md:py-24">

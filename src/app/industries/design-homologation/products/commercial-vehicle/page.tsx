@@ -20,7 +20,6 @@ import { AnimatedElement } from '@/components/ui/animated-element';
 import { aisStandards } from '@/lib/ais-standards';
 import { Input } from '@/components/ui/input';
 import { cn } from '@/lib/utils';
-import { HomologationWorkflowSection } from '@/components/ui/homologation-workflow';
 
 const cvCategories = [
     { name: 'Light Commercial Vehicles (LCV)', category: 'N1', application: 'Urban delivery, small businesses.', imageId: 'cv-lcv' },
@@ -38,14 +37,6 @@ const complianceScope = [
     { title: 'Body Mounting & Load Balance', icon: <Truck /> },
     { title: 'Lighting & Signalling', icon: <TrafficCone /> },
     { title: 'Driver Ergonomics & Visibility', icon: <UserCheck /> },
-];
-
-const homologationWorkflow = [
-  { title: 'Vehicle Category & Application Assessment' },
-  { title: 'Applicable AIS & CMVR Identification' },
-  { title: 'Design & System-Level Evaluation (FEA)' },
-  { title: 'Testing & Inspection Coordination (ARAI/ICAT)' },
-  { title: 'Comprehensive Documentation & Approval Support' },
 ];
 
 const testingSupport = [
@@ -231,9 +222,6 @@ export default function CommercialVehicleHomologationPage() {
             </CardContent>
           </Card>
         </section>
-
-        {/* 5. CV Homologation Workflow */}
-        <HomologationWorkflowSection productType="commercial-vehicle" workflowSteps={homologationWorkflow} />
 
         {/* 6. Testing & Certification Support */}
         <section className="mt-16 md:mt-24 bg-secondary py-16 md:py-24">

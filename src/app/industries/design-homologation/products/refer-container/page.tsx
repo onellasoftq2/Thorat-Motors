@@ -20,7 +20,6 @@ import { AnimatedElement } from '@/components/ui/animated-element';
 import { aisStandards } from '@/lib/ais-standards';
 import { Input } from '@/components/ui/input';
 import { cn } from '@/lib/utils';
-import { HomologationWorkflowSection } from '@/components/ui/homologation-workflow';
 
 const referTypes = [
     { name: 'Food Grade Refer', application: 'Fresh produce, dairy, meats.', configuration: 'Rigid / Trailer', imageId: 'refer-food' },
@@ -37,14 +36,6 @@ const complianceScope = [
     { title: 'Temperature Monitoring', icon: <BrainCircuit /> },
     { title: 'Structural Mounting', icon: <Truck /> },
     { title: 'Hygiene & Contamination', icon: <TestTube /> },
-];
-
-const homologationWorkflow = [
-  { title: 'Container Type & Cold-Chain Requirement Assessment' },
-  { title: 'Applicable AIS & CMVR Identification' },
-  { title: 'Design, Insulation & Structural Evaluation' },
-  { title: 'Electrical & Refrigeration System Compliance Check' },
-  { title: 'Comprehensive Documentation & Approval Support' },
 ];
 
 const testingSupport = [
@@ -227,9 +218,6 @@ export default function ReferContainerPage() {
             </CardContent>
           </Card>
         </section>
-
-        {/* 5. Refer Container Homologation Workflow */}
-        <HomologationWorkflowSection productType="refer-container" workflowSteps={homologationWorkflow} />
 
         {/* 6. Testing & Certification Support */}
         <section className="mt-16 md:mt-24 bg-secondary py-16 md:py-24">

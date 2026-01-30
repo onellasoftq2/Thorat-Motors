@@ -20,7 +20,6 @@ import { AnimatedElement } from '@/components/ui/animated-element';
 import { aisStandards } from '@/lib/ais-standards';
 import { Input } from '@/components/ui/input';
 import { cn } from '@/lib/utils';
-import { HomologationWorkflowSection } from '@/components/ui/homologation-workflow';
 
 
 const evCategories = [
@@ -45,14 +44,6 @@ const complianceScope = [
     { title: 'Charging Interface', icon: <Usb /> },
     { title: 'Functional Safety', icon: <ShieldCheck /> },
     { title: 'EMC & Cybersecurity', icon: <FileCheck /> },
-];
-
-const homologationWorkflow = [
-  { title: 'Vehicle Classification & Scope Finalization' },
-  { title: 'Applicable AIS Identification' },
-  { title: 'Prototype Evaluation & Testing' },
-  { title: 'Documentation & Compliance Review' },
-  { title: 'Certification & Approval Support' },
 ];
 
 const testingSupport = [
@@ -229,9 +220,6 @@ export default function EVHomologationPage() {
             </CardContent>
           </Card>
         </section>
-
-        {/* 5. EV Homologation Workflow */}
-        <HomologationWorkflowSection productType="ev" workflowSteps={homologationWorkflow} />
 
         {/* 6. Testing & Certification Support */}
         <section className="mt-16 md:mt-24 bg-secondary py-16 md:py-24">
