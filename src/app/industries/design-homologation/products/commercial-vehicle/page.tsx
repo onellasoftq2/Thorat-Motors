@@ -274,7 +274,6 @@ export default function CommercialVehicleHomologationPage() {
                                 <Phone className="mr-2 h-5 w-5" />
                                 Talk to our Experts
                             </a>
-                            <Link href="/contact">Talk to Our Experts</Link>
                         </Button>
                         <Button size="lg" variant="outline" asChild className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary">
                             <a href="https://wa.me/919096757924" target="_blank" rel="noopener noreferrer" className="flex items-center">
