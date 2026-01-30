@@ -72,7 +72,7 @@ export default function CementBulkerPage() {
 
                 <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight font-headline">Engineered Cement Bulkers</h1>
                 <p className="mt-4 text-lg md:text-xl text-muted-foreground max-w-lg mx-auto md:mx-0">
-                    Safe, dust-free transport for bulk cement and materials.
+                    Safe, dust-free transport for bulk materials.
                 </p>
                 <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
                     <Button size="lg" asChild>
@@ -102,7 +102,7 @@ export default function CementBulkerPage() {
              <h2 className="text-3xl font-bold font-headline">Modern Cement Transport</h2>
             <div className="mt-3 mb-6 w-20 h-1.5 bg-accent mx-auto"></div>
             <p className="text-muted-foreground text-lg leading-relaxed">
-                Specialized tankers for transporting dry powders. Our closed pneumatic system prevents contamination and enables efficient unloading.
+                Specialized tankers for transporting dry powders.
             </p>
         </section>
 
@@ -142,7 +142,7 @@ export default function CementBulkerPage() {
                  <h2 className="text-3xl font-bold font-headline">Engineering Excellence</h2>
                 <div className="mt-3 mb-6 w-20 h-1.5 bg-accent"></div>
                  <p className="text-muted-foreground text-lg leading-relaxed mb-4">
-                    Built in-house for structural integrity and performance, we use high-strength steel, precision welding, and reliable pneumatic systems.
+                    Built for structural integrity and performance.
                 </p>
                 <div className="space-y-3">
                     <p className="flex items-center"><Check className="text-green-500 mr-2" /> Optimized for stability.</p>

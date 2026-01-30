@@ -72,7 +72,7 @@ export default function FoodBulkerPage() {
 
                 <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight font-headline">Hygienic Food Bulkers</h1>
                 <p className="mt-4 text-lg md:text-xl text-muted-foreground max-w-lg mx-auto md:mx-0">
-                    Hygienic and efficient transport for bulk food materials.
+                    Hygienic and efficient transport for bulk food.
                 </p>
                 <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
                     <Button size="lg" asChild>
@@ -102,7 +102,7 @@ export default function FoodBulkerPage() {
              <h2 className="text-3xl font-bold font-headline">Hygienic Bulk Food Transport</h2>
             <div className="mt-3 mb-6 w-20 h-1.5 bg-accent mx-auto"></div>
             <p className="text-muted-foreground text-lg leading-relaxed">
-                Specialized tankers for hygienic transport of bulk foods. Our designs ensure product integrity and prevent contamination.
+                Specialized tankers for hygienic transport.
             </p>
         </section>
 
@@ -142,7 +142,7 @@ export default function FoodBulkerPage() {
                  <h2 className="text-3xl font-bold font-headline">Engineering for Purity</h2>
                 <div className="mt-3 mb-6 w-20 h-1.5 bg-accent"></div>
                  <p className="text-muted-foreground text-lg leading-relaxed mb-4">
-                    Built for hygiene with food-grade fabrication, seamless welding, and smooth surfaces for easy cleaning and no contamination risk.
+                    Built for hygiene with food-grade fabrication.
                 </p>
                 <div className="space-y-3">
                     <p className="flex items-center"><Check className="text-green-500 mr-2" /> Crevice-free design.</p>

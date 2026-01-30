@@ -71,7 +71,7 @@ export default function RigidVehiclesPage() {
 
                 <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight font-headline">Reliable Rigid Vehicles</h1>
                 <p className="mt-4 text-lg md:text-xl text-muted-foreground max-w-lg mx-auto md:mx-0">
-                    Strength, stability, and reliability for industrial transport.
+                    Strength and stability for industrial transport.
                 </p>
                 <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
                     <Button size="lg" asChild>
@@ -101,7 +101,7 @@ export default function RigidVehiclesPage() {
             <h2 className="text-3xl font-bold font-headline">Integrated Transport</h2>
             <div className="mt-3 mb-6 w-20 h-1.5 bg-accent mx-auto"></div>
             <p className="text-muted-foreground text-lg leading-relaxed">
-                Rigid vehicles, with a body on a fixed chassis, offer superior stability and handling. Ideal for short to medium-haul operations.
+                Vehicles with a body on a fixed chassis.
             </p>
         </section>
 
@@ -141,7 +141,7 @@ export default function RigidVehiclesPage() {
                 <h2 className="text-3xl font-bold font-headline">Engineering Excellence</h2>
                 <div className="mt-3 mb-6 w-20 h-1.5 bg-accent"></div>
                 <p className="text-muted-foreground text-lg leading-relaxed mb-4">
-                    Our process focuses on precision chassis integration and superior fabrication for optimal load balance and durability.
+                    Precision chassis integration for durability.
                 </p>
                 <div className="space-y-3">
                     <p className="flex items-center"><Check className="text-green-500 mr-2" /> Precision chassis integration.</p>

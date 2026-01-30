@@ -1,3 +1,4 @@
+
 'use client';
 
 import React, { useState, useMemo } from 'react';
@@ -63,10 +64,10 @@ const testingSupport = [
 ];
 
 const whyChooseUs = [
-    'Faster approval cycles for quicker market entry.',
-    'Reduced compliance risk through proactive issue identification.',
-    'EV-specific regulatory expertise and deep industry knowledge.',
-    'Proven experience across both 2W and 3W EV segments in India.'
+    'Faster approval cycles for quick market entry.',
+    'Reduced compliance risk with proactive support.',
+    'Deep EV regulatory and industry expertise.',
+    'Proven experience in 2W & 3W EVs.',
 ];
 
 export default function EVHomologationPage() {
@@ -124,7 +125,7 @@ export default function EVHomologationPage() {
           </AnimatedElement>
           <AnimatedElement delay={0.15}>
             <p className="mt-3 max-w-2xl mx-auto text-sm text-white text-muted-foreground">
-              Regulatory compliance services for electric mobility in India.
+              Regulatory compliance for electric mobility in India.
             </p>
           </AnimatedElement>
           {/* <AnimatedElement delay={0.3} className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
@@ -258,16 +259,15 @@ export default function EVHomologationPage() {
                 <h2 className="text-3xl font-bold font-headline">Why Choose Us For EV Compliance</h2>
                 <div className="mt-3 mb-4 w-20 h-1.5 bg-accent mx-auto"></div>
             </AnimatedElement>
-            <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-                {whyChooseUs.map((item, index) => (
-                    <AnimatedElement key={item} delay={index * 0.1}>
-                        <Card>
-                            <CardContent className="p-6">
-                                 <p className="font-semibold">{item}</p>
-                            </CardContent>
-                        </Card>
-                    </AnimatedElement>
-                ))}
+            <div className="max-w-4xl mx-auto bg-secondary/50 p-8 md:p-12 rounded-lg shadow-inner border border-border">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    {whyChooseUs.map((item, index) => (
+                        <div key={index} className="flex items-center p-4 rounded-lg bg-background/50">
+                            <CheckCircle className="h-8 w-8 text-accent" />
+                            <h3 className="font-semibold text-lg ml-4">{item}</h3>
+                        </div>
+                    ))}
+                </div>
             </div>
         </section>
 

@@ -8,7 +8,7 @@ import { motion } from 'framer-motion';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { Button } from '@/components/ui/button';
 import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card';
-import { Check, ArrowRight, Settings, Scaling, ShieldCheck, Truck } from 'lucide-react';
+import { Check, ArrowRight, Settings, Scaling, ShieldCheck, Truck, CheckCircle } from 'lucide-react';
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -48,10 +48,10 @@ const engineeringFeatures = [
 ];
 
 const whyChooseUs = [
-  "Chassis-specific design for perfect integration and stability.",
-  "High-tensile steel construction for superior strength and durability.",
-  "Optimized for heavy loads and demanding long-haul routes.",
-  "Advanced fabrication and coating for exceptional longevity."
+  "Chassis-specific design for perfect integration.",
+  "High-tensile steel for strength & durability.",
+  "Optimized for heavy loads and long hauls.",
+  "Advanced fabrication for exceptional longevity."
 ];
 
 export default function BharatBenzLoadBodiesPage() {
@@ -191,20 +191,15 @@ export default function BharatBenzLoadBodiesPage() {
                 </AnimatedElement>
                 <AnimatedElement>
                     <h2 className="text-3xl font-bold font-headline mb-6">Unmatched Performance & Durability</h2>
-                    <ul className="space-y-4">
+                    <div className="mt-3 mb-10 w-20 h-1.5 bg-accent"></div>
+                    <div className="space-y-6">
                         {whyChooseUs.map((item, index) => (
-                            <motion.li 
-                                key={index} 
-                                initial={{ opacity: 0, x: -20 }}
-                                whileInView={{ opacity: 1, x: 0 }}
-                                viewport={{ once: true, amount: 0.5 }}
-                                transition={{ delay: index * 0.15, duration: 0.5 }}
-                                className="flex items-start text-lg">
-                                <Check className="text-green-500 mr-3 mt-1 h-6 w-6 flex-shrink-0" />
-                                <span>{item}</span>
-                            </motion.li>
+                            <div key={index} className="flex items-center p-4 rounded-lg bg-background/50">
+                                <CheckCircle className="h-8 w-8 text-accent" />
+                                <h3 className="font-semibold text-lg ml-4">{item}</h3>
+                            </div>
                         ))}
-                    </ul>
+                    </div>
                 </AnimatedElement>
             </div>
         </section>

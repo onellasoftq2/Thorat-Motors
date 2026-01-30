@@ -72,7 +72,7 @@ export default function BulkerTrailersPage() {
 
                 <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight font-headline">Efficient Bulker Trailers</h1>
                 <p className="mt-4 text-lg md:text-xl text-muted-foreground max-w-lg mx-auto md:mx-0">
-                    High-volume, stable transport for long-distance hauling.
+                    High-volume transport for long-distance hauling.
                 </p>
                 <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
                     <Button size="lg" asChild>
@@ -102,7 +102,7 @@ export default function BulkerTrailersPage() {
              <h2 className="text-3xl font-bold font-headline">Long-Haul Bulk Transport</h2>
             <div className="mt-3 mb-6 w-20 h-1.5 bg-accent mx-auto"></div>
             <p className="text-muted-foreground text-lg leading-relaxed">
-                High-capacity semi-trailers for efficient long-distance transport. Our design prioritizes stability and payload optimization.
+                High-capacity semi-trailers for efficient transport.
             </p>
         </section>
 
@@ -142,7 +142,7 @@ export default function BulkerTrailersPage() {
                  <h2 className="text-3xl font-bold font-headline">Engineering for Efficiency</h2>
                 <div className="mt-3 mb-6 w-20 h-1.5 bg-accent"></div>
                  <p className="text-muted-foreground text-lg leading-relaxed mb-4">
-                    Designed for stability and weight optimization. We use precision fabrication for durability in long-haul operations.
+                    Designed for stability and weight optimization.
                 </p>
                 <div className="space-y-3">
                     <p className="flex items-center"><Check className="text-green-500 mr-2" /> Optimized chassis.</p>

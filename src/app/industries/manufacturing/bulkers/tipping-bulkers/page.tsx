@@ -63,7 +63,7 @@ export default function TippingBulkersPage() {
 
                 <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight font-headline">Durable Tipping Bulkers</h1>
                 <p className="mt-4 text-lg md:text-xl text-muted-foreground max-w-lg mx-auto md:mx-0">
-                    Safe and precise for tough bulk material transport.
+                    Safe and precise for tough bulk transport.
                 </p>
                 <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
                     <Button size="lg" asChild>
@@ -93,7 +93,7 @@ export default function TippingBulkersPage() {
              <h2 className="text-3xl font-bold font-headline">Efficient Unloading</h2>
             <div className="mt-3 mb-6 w-20 h-1.5 bg-accent mx-auto"></div>
             <p className="text-muted-foreground text-lg leading-relaxed">
-                Purpose-built for rapid unloading of bulk materials like sand and aggregates. Our designs ensure a smooth, controlled tipping process.
+                Purpose-built for rapid unloading of bulk materials.
             </p>
         </section>
 
@@ -133,7 +133,7 @@ export default function TippingBulkersPage() {
                  <h2 className="text-3xl font-bold font-headline">Engineering Strength</h2>
                 <div className="mt-3 mb-6 w-20 h-1.5 bg-accent"></div>
                  <p className="text-muted-foreground text-lg leading-relaxed mb-4">
-                    We use precision fabrication and high-strength materials. Our focus on load balance and tipping geometry ensures safe operation.
+                    Precision fabrication and high-strength materials.
                 </p>
                 <div className="space-y-3">
                     <p className="flex items-center"><Check className="text-green-500 mr-2" /> Rigorous quality checks.</p>
