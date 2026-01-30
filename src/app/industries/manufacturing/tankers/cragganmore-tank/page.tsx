@@ -57,10 +57,10 @@ export default function CragganmoreTankPage() {
   return (
     <div className="bg-background text-foreground">
       {/* 1. Hero Section */}
-      <section className="bg-secondary relative">
+            <section className="bg-secondary relative mx-auto lg:w-[1024px] md:w-full">
          <div className="container mx-auto px-4 md:px-6 lg:px-8 py-16 md:py-24 grid md:grid-cols-2 gap-12 items-center">
             <div className="text-center md:text-left">
-                <Breadcrumb className="mb-4 justify-center md:justify-start">
+                {/* <Breadcrumb className="mb-4 justify-center md:justify-start">
                     <BreadcrumbList>
                         <BreadcrumbItem>
                             <BreadcrumbLink asChild><Link href="/industries/manufacturing">Manufacturing</Link></BreadcrumbLink>
@@ -74,7 +74,7 @@ export default function CragganmoreTankPage() {
                             <BreadcrumbPage>Cragganmore Tank</BreadcrumbPage>
                         </BreadcrumbItem>
                     </BreadcrumbList>
-                </Breadcrumb>
+                </Breadcrumb> */}
 
                 <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight font-headline">Cragganmore Tank</h1>
                 <p className="mt-4 text-lg md:text-xl text-muted-foreground max-w-lg mx-auto md:mx-0">
@@ -227,10 +227,10 @@ export default function CragganmoreTankPage() {
                  <h2 className="text-3xl font-extrabold max-w-3xl mx-auto">Looking for a tanker solution designed around safety and reliability?</h2>
                  <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
                     <Button size="lg" variant="secondary" asChild className="bg-accent text-accent-foreground hover:bg-accent/90">
-                        <Link href="/quote?product=cragganmore-tank">Enquire Now</Link>
+                        <Link href="/contact">Talk to Our Experts</Link>
                     </Button>
                     <Button size="lg" variant="outline" asChild className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary">
-                        <Link href="/contact">Talk to Our Engineering Team</Link>
+                        <Link href="/contact">Request Quote</Link>
                     </Button>
                 </div>
             </div>

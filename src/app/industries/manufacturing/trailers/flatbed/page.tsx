@@ -56,11 +56,11 @@ export default function FlatbedTrailersPage() {
   return (
     <div className="bg-background text-foreground">
       {/* 1. Hero Section */}
-      <section className="bg-secondary relative">
+            <section className="bg-secondary relative mx-auto lg:w-[1024px] md:w-full">
          <div className="container mx-auto px-4 md:px-6 lg:px-8 pt-16 md:pt-24">
             <div className="grid md:grid-cols-2 gap-12 items-center">
                 <div className="text-center md:text-left">
-                    <Breadcrumb className="mb-4 justify-center md:justify-start">
+                    {/* <Breadcrumb className="mb-4 justify-center md:justify-start">
                         <BreadcrumbList>
                             <BreadcrumbItem>
                                 <BreadcrumbLink asChild><Link href="/industries/manufacturing">Manufacturing</Link></BreadcrumbLink>
@@ -74,10 +74,10 @@ export default function FlatbedTrailersPage() {
                                 <BreadcrumbPage>Flatbed Trailers</BreadcrumbPage>
                             </BreadcrumbItem>
                         </BreadcrumbList>
-                    </Breadcrumb>
+                    </Breadcrumb> */}
 
-                    <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight font-headline">Flatbed Trailers</h1>
-                    <p className="mt-4 text-lg md:text-xl text-muted-foreground max-w-lg mx-auto md:mx-0">
+                    <h1 className="text-3xl font-extrabold tracking-tight font-headline">Flatbed Trailers</h1>
+                    <p className="mt-2 text-sm md:text-xl text-muted-foreground max-w-lg mx-auto md:mx-0">
                         Engineered for maximum load flexibility and heavy-duty performance in the most demanding conditions.
                     </p>
                     <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
@@ -121,7 +121,7 @@ export default function FlatbedTrailersPage() {
 
       <div className="container mx-auto px-4 md:px-6 lg:px-8 py-12 md:py-16 lg:py-20">
         {/* 2. Primary Applications */}
-        <section>
+        {/* <section>
              <h2 className="text-3xl font-bold font-headline text-center">Primary Applications</h2>
             <div className="mt-3 mb-10 w-20 h-1.5 bg-accent mx-auto"></div>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -137,7 +137,7 @@ export default function FlatbedTrailersPage() {
                     )
                 })}
             </div>
-        </section>
+        </section> */}
 
         {/* 3. Trailer Configurations & Variants */}
         <section id="configurations" className="mt-12 md:mt-20">
@@ -200,7 +200,7 @@ export default function FlatbedTrailersPage() {
         </section>
 
         {/* 7. Visual Gallery */}
-        <section className="mt-12 md:mt-20">
+        {/* <section className="mt-12 md:mt-20">
              <h2 className="text-3xl font-bold font-headline text-center">Visual Gallery</h2>
             <div className="mt-3 mb-10 w-20 h-1.5 bg-accent mx-auto"></div>
              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -219,7 +219,7 @@ export default function FlatbedTrailersPage() {
                     );
                 })}
             </div>
-        </section>
+        </section> */}
 
         {/* 8. Conversion Section */}
         <section className="mt-12 md:mt-20 bg-primary text-primary-foreground py-16 rounded-lg">
@@ -227,10 +227,10 @@ export default function FlatbedTrailersPage() {
                  <h2 className="text-3xl font-extrabold max-w-3xl mx-auto">Looking for a flatbed trailer built for versatile and heavy-duty operations?</h2>
                  <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
                     <Button size="lg" variant="secondary" asChild className="bg-accent text-accent-foreground hover:bg-accent/90">
-                        <Link href="/quote?product=flatbed-trailer">Enquire Now</Link>
+                        <Link href="/contact">Talk to Our Experts</Link>
                     </Button>
                     <Button size="lg" variant="outline" asChild className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary">
-                        <Link href="/contact">Talk to Our Manufacturing Team</Link>
+                        <Link href="/contact">Request Quote</Link>
                     </Button>
                 </div>
             </div>

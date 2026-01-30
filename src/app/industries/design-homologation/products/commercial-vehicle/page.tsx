@@ -150,10 +150,10 @@ export default function CommercialVehicleHomologationPage() {
                 <AnimatedElement key={category.name} delay={index * 0.1}>
                   <Card className="overflow-hidden group hover:shadow-lg transition-shadow h-full flex flex-col">
                     {image && <Image src={image.imageUrl} alt={category.name} width={400} height={250} className="w-full h-48 object-cover group-hover:scale-105 transition-transform" data-ai-hint={image.imageId} />}
-                    <CardContent className="p-6 flex-grow flex flex-col">
+                    <CardContent className="p-3 flex-grow flex flex-col">
                       <h3 className="text-xl font-semibold">{category.name}</h3>
-                      <p className="text-muted-foreground text-sm mt-2 flex-grow">{category.application}</p>
-                      <Badge variant="secondary" className="mt-4 w-fit">{category.category}</Badge>
+                      <p className="text-muted-foreground text-sm mt-0 flex-grow">{category.application}</p>
+                      {/* <Badge variant="secondary" className="mt-4 w-fit">{category.category}</Badge> */}
                     </CardContent>
                   </Card>
                 </AnimatedElement>
@@ -283,7 +283,7 @@ export default function CommercialVehicleHomologationPage() {
                 <AnimatedElement delay={0.15}>
                     <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
                         <Button size="lg" variant="secondary" asChild className="bg-accent text-accent-foreground hover:bg-accent/90">
-                            <Link href="/contact">Talk to Our CV Compliance Experts</Link>
+                            <Link href="/contact">Talk to Our Experts</Link>
                         </Button>
                         <Button size="lg" variant="outline" className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary">
                              <Link href="/quote?product=Commercial Vehicle Homologation">Request AIS Review</Link>
