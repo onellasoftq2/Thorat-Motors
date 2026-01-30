@@ -198,8 +198,8 @@ export default function Header() {
               (item.href && pathname === item.href) ||
               (item.href && item.href !== '/' && pathname.startsWith(item.href)) ||
               (item.items && item.items.some(subItem => pathname === subItem.href)) ||
-              (item.megaMenu && pathname.startsWith('/products')) ||
-              (item.interactiveMegaMenu && pathname.startsWith('/products'));
+              (item.megaMenu && pathname.startsWith('/industries')) ||
+              (item.interactiveMegaMenu && pathname.startsWith('/industries'));
 
             return item.megaMenu ? ( // Products Mega Menu
               <HoverCard key={item.title} openDelay={50} closeDelay={100}>
@@ -250,7 +250,7 @@ export default function Header() {
                     variant={isActive ? "default" : "ghost"}
                     className="flex items-center text-sm font-medium"
                   >
-                    <Link href={item.href || '#'}>{item.title}</Link>
+                    {item.title}
                     <ChevronDown className="ml-1 h-4 w-4" />
                   </Button>
                 </HoverCardTrigger>
@@ -507,7 +507,7 @@ export default function Header() {
                           key={item.title}
                           value={`item-${index}`}
                         >
-                          <AccordionTrigger className={cn("py-3 text-base font-medium", pathname.startsWith('/products') ? 'text-primary' : '')}>
+                          <AccordionTrigger className={cn("py-3 text-base font-medium", pathname.startsWith('/industries') ? 'text-primary' : '')}>
                             {item.title}
                           </AccordionTrigger>
                           <AccordionContent>
@@ -571,7 +571,7 @@ export default function Header() {
                         </AccordionItem>
                       ) : item.interactiveMegaMenu ? (
                         <AccordionItem key={item.title} value={`item-${index}`}>
-                          <AccordionTrigger className={cn("py-3 text-base font-medium", pathname.startsWith('/products') ? 'text-primary' : '')}>
+                          <AccordionTrigger className={cn("py-3 text-base font-medium", pathname.startsWith('/industries') ? 'text-primary' : '')}>
                             {item.title}
                           </AccordionTrigger>
                           <AccordionContent>

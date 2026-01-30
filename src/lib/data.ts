@@ -94,7 +94,6 @@ export const navMenu: NavMenu[] = [
 //   },
   {
     title: "Products",
-    href: "/industries",
     interactiveMegaMenu: [
       {
         title: "Design and Homologation",
