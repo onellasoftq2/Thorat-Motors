@@ -2,19 +2,17 @@
 'use client';
 
 import Image from 'next/image';
-import { motion } from 'framer-motion';
 import { company } from '@/lib/data';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { Card, CardContent } from '@/components/ui/card';
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
+import { Avatar, AvatarFallback } from '@/components/ui/avatar';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
-import { Download, Eye, Goal, ArrowRight } from 'lucide-react';
+import { Download, Eye, Goal, ArrowRight, User } from 'lucide-react';
 import { AnimatedElement } from '@/components/ui/animated-element';
 
 export default function CompanyPage() {
   const aboutImage = PlaceHolderImages.find((img) => img.id === 'about-us-image');
-  const mdImage = PlaceHolderImages.find((img) => img.id === 'md-portrait');
   const manufacturingImage = PlaceHolderImages.find(p => p.id === 'structural-fabrication');
 
   return (
@@ -61,30 +59,23 @@ export default function CompanyPage() {
         <section className="mt-12 md:mt-16">
           <AnimatedElement>
             <Card className="bg-secondary/50 border-border max-w-5xl mx-auto overflow-hidden">
-              <div className="flex flex-col items-center">
-  {mdImage && (
-    <div className="about-md overflow-hidden rounded-full mt-3">
-      <Image
-        src={mdImage.imageUrl}
-        alt={mdImage.description}
-        width={300}
-        height={360}
-        className="w-full h-auto object-cover rounded-full"
-        data-ai-hint={mdImage.imageHint}
-      />
-    </div>
-  )}
+              <div className="flex flex-col items-center pt-8">
+                <Avatar className="w-40 h-40">
+                    <AvatarFallback className="bg-primary/10">
+                        <User className="h-20 w-20 text-primary" />
+                    </AvatarFallback>
+                </Avatar>
 
-  <div className="w-full max-w-3xl p-6 md:p-8 text-center">
-    <blockquote className="text-sm md:text-base leading-relaxed text-foreground">
-      “{company.mdMessage}”
-    </blockquote>
+                <div className="w-full max-w-3xl p-6 md:p-8 text-center">
+                    <blockquote className="text-sm md:text-base leading-relaxed text-foreground">
+                    “{company.mdMessage}”
+                    </blockquote>
 
-    <p className="mt-4 font-semibold text-primary">
-      — {company.leadership[0].name}, Managing Director
-    </p>
-  </div>
-</div>
+                    <p className="mt-4 font-semibold text-primary">
+                    — {company.leadership[0].name}, Managing Director
+                    </p>
+                </div>
+              </div>
 
             </Card>
           </AnimatedElement>
@@ -151,9 +142,10 @@ export default function CompanyPage() {
             {company.leadership.map((leader, index) => (
               <AnimatedElement key={leader.name} delay={index * 0.1}>
                 <Card className="p-6 text-center h-full">
-                  <Avatar className="w-24 h-24 mb-4 mx-auto">
-                    <AvatarImage src={`https://picsum.photos/seed/${leader.name.replace(' ', '')}/200/200`} />
-                    <AvatarFallback>{leader.name.split(' ').map(n => n[0]).join('')}</AvatarFallback>
+                  <Avatar className="w-24 h-24 mb-4 mx-auto bg-secondary">
+                    <AvatarFallback className="bg-transparent">
+                      <User className="h-12 w-12 text-muted-foreground" />
+                    </AvatarFallback>
                   </Avatar>
                   <h3 className="font-semibold text-lg">{leader.name}</h3>
                   <p className="text-sm text-muted-foreground">{leader.title}</p>
