@@ -5,7 +5,7 @@ import React from 'react';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Check, ShieldCheck, ArrowRight, Construction, Mountain, HardHat, GitBranchPlus } from 'lucide-react';
+import { Check, ShieldCheck, ArrowRight, Construction, Mountain, HardHat, GitBranchPlus, Phone, MessageSquare } from 'lucide-react';
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -24,10 +24,10 @@ const keySpecs = [
 ];
 
 const applications = [
-    { icon: <Construction className="h-8 w-8 text-accent" />, title: "Construction Site Material Handling", imageId: "tip-trailer-app-construction" },
-    { icon: <Mountain className="h-8 w-8 text-accent" />, title: "Mining & Quarry Operations", imageId: "tip-trailer-app-mining" },
-    { icon: <HardHat className="h-8 w-8 text-accent" />, title: "Road Development & Earthmoving", imageId: "tip-trailer-app-roadwork" },
-    { icon: <GitBranchPlus className="h-8 w-8 text-accent" />, title: "Infrastructure & Civil Projects", imageId: "tip-trailer-app-infra" },
+    { icon: <Construction className="h-8 w-8 text-accent" />, title: "Construction Site Material Handling" },
+    { icon: <Mountain className="h-8 w-8 text-accent" />, title: "Mining & Quarry Operations" },
+    { icon: <HardHat className="h-8 w-8 text-accent" />, title: "Road Development & Earthmoving" },
+    { icon: <GitBranchPlus className="h-8 w-8 text-accent" />, title: "Infrastructure & Civil Projects" },
 ];
 
 const configurations = [
@@ -83,9 +83,6 @@ export default function TipTrailersPage() {
                         <Button size="lg" asChild>
                             <Link href="#configurations">Request Specifications</Link>
                         </Button>
-                        <Button size="lg" variant="outline" asChild>
-                            <Link href="/quote?product=tip-trailer">Enquire Now</Link>
-                        </Button>
                     </div>
                 </AnimatedElement>
                 <AnimatedElement delay={0.1}>
@@ -124,19 +121,16 @@ export default function TipTrailersPage() {
              <h2 className="text-3xl font-bold font-headline text-center">Primary Applications</h2>
             <div className="mt-3 mb-10 w-20 h-1.5 bg-accent mx-auto"></div>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                {applications.map((app, index) => {
-                    const appImage = PlaceHolderImages.find(p => p.id === app.imageId);
-                    return (
-                        <AnimatedElement key={app.title} delay={index * 0.1}>
-                            <Card className="overflow-hidden group text-center">
-                                {appImage && <Image src={appImage.imageUrl} alt={app.title} width={400} height={250} className="w-full h-40 object-cover transition-transform duration-300 group-hover:scale-105" />}
-                                <CardContent className="p-6">
-                                    <h3 className="font-semibold text-lg">{app.title}</h3>
-                                </CardContent>
-                            </Card>
-                        </AnimatedElement>
-                    )
-                })}
+                {applications.map((app, index) => (
+                    <AnimatedElement key={app.title} delay={index * 0.1}>
+                        <Card className="text-center p-6 border-t-4 border-transparent hover:border-accent shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+                            <div className="mx-auto mb-4 inline-flex h-16 w-16 items-center justify-center rounded-full bg-primary/10">
+                                {app.icon}
+                            </div>
+                            <h3 className="font-semibold text-lg">{app.title}</h3>
+                        </Card>
+                    </AnimatedElement>
+                ))}
             </div>
         </section>
 
@@ -208,10 +202,16 @@ export default function TipTrailersPage() {
                  <h2 className="text-3xl font-extrabold max-w-3xl mx-auto">Looking for a tip trailer for efficient bulk unloading?</h2>
                  <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
                     <Button size="lg" variant="secondary" asChild className="bg-accent text-accent-foreground hover:bg-accent/90">
-                        <Link href="/quote?product=tip-trailer">Enquire Now</Link>
+                       <a href="tel:9011943810" className="flex items-center">
+                            <Phone className="mr-2 h-5 w-5" />
+                            Talk to our Experts
+                        </a>
                     </Button>
                     <Button size="lg" variant="outline" asChild className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary">
-                        <Link href="/contact">Talk to Our Team</Link>
+                        <a href="https://wa.me/919096757924" target="_blank" rel="noopener noreferrer" className="flex items-center">
+                            <MessageSquare className="mr-2 h-5 w-5" />
+                            Chat with Us
+                        </a>
                     </Button>
                 </div>
             </div>

@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { Button } from '@/components/ui/button';
 import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card';
-import { Check, HardHat, LandPlot, Mountain, Truck, CheckCircle } from 'lucide-react';
+import { Check, HardHat, LandPlot, Mountain, Truck, CheckCircle, Phone, MessageSquare } from 'lucide-react';
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -16,24 +16,24 @@ import {
 
 
 const useCases = [
-    { icon: <HardHat className="h-8 w-8 text-accent" />, title: "Construction", description: "Move sand, gravel, and debris on-site." },
+    { icon: <HardHat className="h-8 w-8 text-accent" />, title: "Construction", description: "Move sand, gravel, and debris." },
     { icon: <Mountain className="h-8 w-8 text-accent" />, title: "Mining & Quarry", description: "Transport ores, coal, and aggregates." },
-    { icon: <LandPlot className="h-8 w-8 text-accent" />, title: "Earthmoving", description: "For large-scale earthmoving and road construction." },
-    { icon: <Truck className="h-8 w-8 text-accent" />, title: "Industrial Handling", description: "Transport bulk raw materials and waste." },
+    { icon: <LandPlot className="h-8 w-8 text-accent" />, title: "Earthmoving", description: "For large-scale earthmoving." },
+    { icon: <Truck className="h-8 w-8 text-accent" />, title: "Industrial Handling", description: "Transport bulk raw materials." },
 ];
 
 const configurations = [
-    { name: 'Load Capacity', value: '10 to 30-ton capacity.' },
-    { name: 'Body Types', value: 'High-tensile steel bodies with custom options.' },
-    { name: 'Hydraulics', value: 'Reliable hydraulics for fast, safe tipping.' },
-    { name: 'Customization', value: 'Custom body dimensions and tailgate designs.' },
+    { name: 'Load Capacity', value: '10 to 30-ton.' },
+    { name: 'Body Types', value: 'High-tensile steel bodies.' },
+    { name: 'Hydraulics', value: 'Reliable hydraulics for fast tipping.' },
+    { name: 'Customization', value: 'Custom body dimensions and tailgates.' },
 ];
 
 const whyChooseUs = [
-    { title: "Durable High-Strength Steel Construction" },
-    { title: "Precision Engineering for Safety & Balance" },
-    { title: "Custom-Built to Your Specifications" },
-    { title: "Comprehensive Service & Parts Support" },
+    { icon: <CheckCircle className="h-8 w-8 text-accent"/>, title: "Durable High-Strength Steel Construction" },
+    { icon: <CheckCircle className="h-8 w-8 text-accent"/>, title: "Precision Engineering for Safety & Balance" },
+    { icon: <CheckCircle className="h-8 w-8 text-accent"/>, title: "Custom-Built to Your Specifications" },
+    { icon: <CheckCircle className="h-8 w-8 text-accent"/>, title: "Comprehensive Service & Parts Support" },
 ];
 
 export default function TippingBulkersPage() {
@@ -69,9 +69,6 @@ export default function TippingBulkersPage() {
                     <Button size="lg" asChild>
                         <Link href="#configurations">Request Specifications</Link>
                     </Button>
-                    <Button size="lg" variant="outline" asChild>
-                        <Link href="/quote">Enquire Now</Link>
-                    </Button>
                 </div>
             </div>
             <div>
@@ -93,10 +90,10 @@ export default function TippingBulkersPage() {
       <div className="container mx-auto px-4 md:px-6 lg:px-8 py-12 md:py-16 lg:py-20">
         {/* 3. Introduction Section */}
         <section className="max-w-3xl mx-auto text-center">
-             <h2 className="text-3xl font-bold font-headline">Efficient Unloading for Bulk Materials</h2>
+             <h2 className="text-3xl font-bold font-headline">Efficient Unloading</h2>
             <div className="mt-3 mb-6 w-20 h-1.5 bg-accent mx-auto"></div>
             <p className="text-muted-foreground text-lg leading-relaxed">
-                Purpose-built for rapid and efficient unloading of bulk materials like sand and aggregates. Our designs ensure a smooth, controlled tipping process.
+                Purpose-built for rapid unloading of bulk materials like sand and aggregates. Our designs ensure a smooth, controlled tipping process.
             </p>
         </section>
 
@@ -118,7 +115,7 @@ export default function TippingBulkersPage() {
 
         {/* 5. Product Configurations */}
         <section id="configurations" className="mt-12 md:mt-20">
-             <h2 className="text-3xl font-bold font-headline text-center">Product Configurations</h2>
+             <h2 className="text-3xl font-bold font-headline text-center">Configurations</h2>
             <div className="mt-3 mb-10 w-20 h-1.5 bg-accent mx-auto"></div>
             <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
                 {configurations.map(config => (
@@ -133,14 +130,14 @@ export default function TippingBulkersPage() {
          {/* 6. Engineering & Manufacturing Strength */}
         <section className="mt-12 md:mt-20 grid md:grid-cols-2 gap-12 items-center bg-secondary p-8 md:p-12 rounded-lg">
             <div className='order-2 md:order-1'>
-                 <h2 className="text-3xl font-bold font-headline">Engineering & Manufacturing Strength</h2>
+                 <h2 className="text-3xl font-bold font-headline">Engineering Strength</h2>
                 <div className="mt-3 mb-6 w-20 h-1.5 bg-accent"></div>
                  <p className="text-muted-foreground text-lg leading-relaxed mb-4">
-                    We use precision fabrication and high-strength materials for superior integrity. Our focus on load balance and tipping geometry ensures safe operation.
+                    We use precision fabrication and high-strength materials. Our focus on load balance and tipping geometry ensures safe operation.
                 </p>
                 <div className="space-y-3">
                     <p className="flex items-center"><Check className="text-green-500 mr-2" /> Rigorous quality checks.</p>
-                     <p className="flex items-center"><Check className="text-green-500 mr-2" /> Adherence to manufacturing standards.</p>
+                     <p className="flex items-center"><Check className="text-green-500 mr-2" /> Adherence to standards.</p>
                 </div>
             </div>
              <div className='order-1 md:order-2'>
@@ -160,11 +157,11 @@ export default function TippingBulkersPage() {
              <h2 className="text-3xl font-bold font-headline text-center">Why Choose Our Tipping Bulkers?</h2>
             <div className="mt-3 mb-10 w-20 h-1.5 bg-accent mx-auto"></div>
             <div className="max-w-4xl mx-auto bg-secondary p-8 md:p-12 rounded-lg shadow-inner">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                     {whyChooseUs.map((item, index) => (
                         <div key={index} className="flex items-center">
-                            <CheckCircle className="h-6 w-6 text-accent mr-3 flex-shrink-0" />
-                            <p className="font-semibold text-lg">{item.title}</p>
+                           {item.icon}
+                           <h3 className="font-semibold text-lg ml-4">{item.title}</h3>
                         </div>
                     ))}
                 </div>
@@ -177,10 +174,16 @@ export default function TippingBulkersPage() {
                  <h2 className="text-3xl font-extrabold">Looking for a tipping bulker for your demands?</h2>
                  <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
                     <Button size="lg" variant="secondary" asChild className="bg-accent text-accent-foreground hover:bg-accent/90">
-                        <Link href="/quote">Enquire Now</Link>
+                       <a href="tel:9011943810" className="flex items-center">
+                            <Phone className="mr-2 h-5 w-5" />
+                            Talk to our Experts
+                        </a>
                     </Button>
                     <Button size="lg" variant="outline" asChild className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary">
-                        <Link href="/contact">Talk to Our Team</Link>
+                        <a href="https://wa.me/919096757924" target="_blank" rel="noopener noreferrer" className="flex items-center">
+                            <MessageSquare className="mr-2 h-5 w-5" />
+                            Chat with Us
+                        </a>
                     </Button>
                 </div>
             </div>

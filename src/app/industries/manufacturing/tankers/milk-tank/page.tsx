@@ -5,7 +5,7 @@ import React from 'react';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Check, ShieldCheck, Layers, Settings, Workflow, Droplet, Factory, Milk, Thermometer, Sparkles, TestTube } from 'lucide-react';
+import { Check, ShieldCheck, Layers, Settings, Workflow, Droplet, Factory, Milk, Thermometer, Sparkles, TestTube, Phone, MessageSquare } from 'lucide-react';
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -48,11 +48,6 @@ const complianceStandards = [
 
 export default function MilkTankPage() {
     const heroImage = PlaceHolderImages.find(p => p.id === 'milk-tank-hero');
-    const galleryImages = [
-        PlaceHolderImages.find(p => p.id === 'milk-tank-gallery-1'),
-        PlaceHolderImages.find(p => p.id === 'milk-tank-gallery-2'),
-        PlaceHolderImages.find(p => p.id === 'milk-tank-gallery-3'),
-    ];
 
   return (
     <div className="bg-background text-foreground">
@@ -86,9 +81,6 @@ export default function MilkTankPage() {
                 <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
                     <Button size="lg" asChild>
                         <Link href="#configurations">Request Technical Details</Link>
-                    </Button>
-                    <Button size="lg" variant="outline" asChild>
-                        <Link href="/quote?product=milk-tank">Enquire Now</Link>
                     </Button>
                 </div>
             </div>
@@ -199,38 +191,22 @@ export default function MilkTankPage() {
             </div>
         </section>
         
-        {/* 8. Visual Gallery */}
-        <section className="mt-12 md:mt-20">
-             <h2 className="text-3xl font-bold font-headline text-center">Visual Gallery</h2>
-            <div className="mt-3 mb-10 w-20 h-1.5 bg-accent mx-auto"></div>
-             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                {galleryImages.map((imageData, index) => {
-                    if (!imageData) return null;
-                    return (
-                        <Image
-                            key={index}
-                            src={imageData.imageUrl}
-                            alt={imageData.description}
-                            width={500}
-                            height={400}
-                            className="rounded-lg object-cover shadow-md aspect-video"
-                            data-ai-hint={imageData.imageHint}
-                        />
-                    );
-                })}
-            </div>
-        </section>
-        
         {/* 9. Conversion Section */}
         <section className="mt-12 md:mt-20 bg-primary text-primary-foreground py-16 rounded-lg">
             <div className="container mx-auto text-center px-4">
                  <h2 className="text-3xl font-extrabold max-w-3xl mx-auto">Looking for a milk tanker designed for hygienic and reliable dairy transport?</h2>
                  <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
                     <Button size="lg" variant="secondary" asChild className="bg-accent text-accent-foreground hover:bg-accent/90">
-                        <Link href="/quote?product=milk-tank">Enquire Now</Link>
+                       <a href="tel:9011943810" className="flex items-center">
+                            <Phone className="mr-2 h-5 w-5" />
+                            Talk to our Experts
+                        </a>
                     </Button>
                     <Button size="lg" variant="outline" asChild className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary">
-                        <Link href="/contact">Talk to Our Engineering Team</Link>
+                        <a href="https://wa.me/919096757924" target="_blank" rel="noopener noreferrer" className="flex items-center">
+                            <MessageSquare className="mr-2 h-5 w-5" />
+                            Chat with Us
+                        </a>
                     </Button>
                 </div>
             </div>

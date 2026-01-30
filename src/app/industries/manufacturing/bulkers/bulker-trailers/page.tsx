@@ -5,7 +5,7 @@ import React from 'react';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { Button } from '@/components/ui/button';
 import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card';
-import { Check, ShieldCheck, Layers, Settings, Workflow, Route, Building, Leaf, Factory, CheckCircle } from 'lucide-react';
+import { Check, ShieldCheck, Layers, Settings, Workflow, Route, Building, Leaf, Factory, CheckCircle, Phone, MessageSquare } from 'lucide-react';
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -17,24 +17,24 @@ import {
 
 // Data for the page
 const useCases = [
-    { icon: <Route className="h-8 w-8 text-accent" />, title: "Long-Haul Logistics", description: "Long-distance transport for fleet operators." },
-    { icon: <Building className="h-8 w-8 text-accent" />, title: "Cement & Fly Ash", description: "Contamination-free transport for cement." },
-    { icon: <Leaf className="h-8 w-8 text-accent" />, title: "Food-Grade Transport", description: "Hygienic transport for food products." },
-    { icon: <Factory className="h-8 w-8 text-accent" />, title: "Industrial Supply Chains", description: "Move raw materials for industrial use." },
+    { icon: <Route className="h-8 w-8 text-accent" />, title: "Long-Haul Logistics", description: "Long-distance transport." },
+    { icon: <Building className="h-8 w-8 text-accent" />, title: "Cement & Fly Ash", description: "Contamination-free transport." },
+    { icon: <Leaf className="h-8 w-8 text-accent" />, title: "Food-Grade Transport", description: "Hygienic transport." },
+    { icon: <Factory className="h-8 w-8 text-accent" />, title: "Industrial Supply", description: "Move raw materials." },
 ];
 
 const configurations = [
-    { name: 'Capacity & Volume', value: '40 to 70 CBM for high-volume transport.' },
-    { name: 'Axle Configurations', value: 'Tandem and tridem axles for stability.' },
-    { name: 'Tank Construction', value: 'High-strength or food-grade steel options.' },
-    { name: 'Discharge Systems', value: 'Advanced pneumatic or gravity discharge systems.' },
+    { name: 'Capacity', value: '40 to 70 CBM.' },
+    { name: 'Axles', value: 'Tandem and tridem axles.' },
+    { name: 'Tank Construction', value: 'High-strength or food-grade steel.' },
+    { name: 'Discharge', value: 'Advanced pneumatic or gravity systems.' },
 ];
 
 const whyChooseUs = [
-    { title: "High-Capacity & Efficient Transport" },
-    { title: "Superior Stability & Safety Engineering" },
-    { title: "Custom Solutions for Cargo Integrity" },
-    { title: "Durable Construction for Lower TCO" },
+    { icon: <CheckCircle className="h-8 w-8 text-accent"/>, title: "High-Capacity & Efficient Transport" },
+    { icon: <CheckCircle className="h-8 w-8 text-accent"/>, title: "Superior Stability & Safety Engineering" },
+    { icon: <CheckCircle className="h-8 w-8 text-accent"/>, title: "Custom Solutions for Cargo Integrity" },
+    { icon: <CheckCircle className="h-8 w-8 text-accent"/>, title: "Durable Construction for Lower TCO" },
 ];
 
 const qualityStandards = [
@@ -78,9 +78,6 @@ export default function BulkerTrailersPage() {
                     <Button size="lg" asChild>
                         <Link href="#configurations">Request Specifications</Link>
                     </Button>
-                    <Button size="lg" variant="outline" asChild>
-                        <Link href="/quote?product=bulker-trailer">Enquire Now</Link>
-                    </Button>
                 </div>
             </div>
             <div>
@@ -102,10 +99,10 @@ export default function BulkerTrailersPage() {
       <div className="container mx-auto px-4 md:px-6 lg:px-8 py-12 md:py-16 lg:py-20">
         {/* 3. Introduction Section */}
         <section className="max-w-3xl mx-auto text-center">
-             <h2 className="text-3xl font-bold font-headline">The Backbone of Long-Haul Bulk Transport</h2>
+             <h2 className="text-3xl font-bold font-headline">Long-Haul Bulk Transport</h2>
             <div className="mt-3 mb-6 w-20 h-1.5 bg-accent mx-auto"></div>
             <p className="text-muted-foreground text-lg leading-relaxed">
-                High-capacity semi-trailers for efficient long-distance transport of dry bulk materials. Our design prioritizes stability and payload optimization.
+                High-capacity semi-trailers for efficient long-distance transport. Our design prioritizes stability and payload optimization.
             </p>
         </section>
 
@@ -127,7 +124,7 @@ export default function BulkerTrailersPage() {
 
         {/* 5. Product Configurations */}
         <section id="configurations" className="mt-12 md:mt-20">
-             <h2 className="text-3xl font-bold font-headline text-center">Product Configurations</h2>
+             <h2 className="text-3xl font-bold font-headline text-center">Configurations</h2>
             <div className="mt-3 mb-10 w-20 h-1.5 bg-accent mx-auto"></div>
             <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
                 {configurations.map(config => (
@@ -142,14 +139,14 @@ export default function BulkerTrailersPage() {
          {/* 6. Engineering & Manufacturing Excellence */}
         <section className="mt-12 md:mt-20 grid md:grid-cols-2 gap-12 items-center bg-secondary p-8 md:p-12 rounded-lg">
             <div className='order-2 md:order-1'>
-                 <h2 className="text-3xl font-bold font-headline">Engineering for Stability & Efficiency</h2>
+                 <h2 className="text-3xl font-bold font-headline">Engineering for Efficiency</h2>
                 <div className="mt-3 mb-6 w-20 h-1.5 bg-accent"></div>
                  <p className="text-muted-foreground text-lg leading-relaxed mb-4">
-                    Designed for stability and weight optimization to maximize payload. We use precision fabrication for high durability in long-haul operations.
+                    Designed for stability and weight optimization. We use precision fabrication for durability in long-haul operations.
                 </p>
                 <div className="space-y-3">
-                    <p className="flex items-center"><Check className="text-green-500 mr-2" /> Optimized chassis for stability.</p>
-                     <p className="flex items-center"><Check className="text-green-500 mr-2" /> Quality welding for corrosion resistance.</p>
+                    <p className="flex items-center"><Check className="text-green-500 mr-2" /> Optimized chassis.</p>
+                     <p className="flex items-center"><Check className="text-green-500 mr-2" /> Quality welding.</p>
                 </div>
             </div>
              <div className='order-1 md:order-2'>
@@ -166,7 +163,7 @@ export default function BulkerTrailersPage() {
 
         {/* 7. Compliance & Quality Assurance */}
         <section className="mt-12 md:mt-20">
-          <h2 className="text-3xl font-bold font-headline text-center mb-2">Compliance & Quality Assurance</h2>
+          <h2 className="text-3xl font-bold font-headline text-center mb-2">Quality Assurance</h2>
           <div className="w-24 h-1.5 bg-accent mx-auto mb-12"></div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {qualityStandards.map((item) => (
@@ -183,11 +180,11 @@ export default function BulkerTrailersPage() {
              <h2 className="text-3xl font-bold font-headline text-center">Why Choose Our Bulker Trailers?</h2>
             <div className="mt-3 mb-10 w-20 h-1.5 bg-accent mx-auto"></div>
             <div className="max-w-4xl mx-auto bg-secondary p-8 md:p-12 rounded-lg shadow-inner">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                     {whyChooseUs.map((item, index) => (
                         <div key={index} className="flex items-center">
-                            <CheckCircle className="h-6 w-6 text-accent mr-3 flex-shrink-0" />
-                            <p className="font-semibold text-lg">{item.title}</p>
+                            {item.icon}
+                            <h3 className="font-semibold text-lg ml-4">{item.title}</h3>
                         </div>
                     ))}
                 </div>
@@ -200,10 +197,16 @@ export default function BulkerTrailersPage() {
                  <h2 className="text-3xl font-extrabold">Looking for a high-volume, long-haul bulker trailer?</h2>
                  <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
                     <Button size="lg" variant="secondary" asChild className="bg-accent text-accent-foreground hover:bg-accent/90">
-                        <Link href="/quote?product=bulker-trailer">Enquire Now</Link>
+                       <a href="tel:9011943810" className="flex items-center">
+                            <Phone className="mr-2 h-5 w-5" />
+                            Talk to our Experts
+                        </a>
                     </Button>
                     <Button size="lg" variant="outline" asChild className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary">
-                        <Link href="/contact">Talk to Our Team</Link>
+                        <a href="https://wa.me/919096757924" target="_blank" rel="noopener noreferrer" className="flex items-center">
+                            <MessageSquare className="mr-2 h-5 w-5" />
+                            Chat with Us
+                        </a>
                     </Button>
                 </div>
             </div>

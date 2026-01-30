@@ -15,7 +15,7 @@ import {
   AccordionTrigger,
 } from '@/components/ui/accordion';
 import { Badge } from '@/components/ui/badge';
-import { Check, CheckCircle, Search, Layers, Settings, ShieldCheck, Route, Truck } from 'lucide-react';
+import { Check, CheckCircle, Search, Layers, Settings, ShieldCheck, Route, Truck, Phone, MessageSquare } from 'lucide-react';
 import { AnimatedElement } from '@/components/ui/animated-element';
 import { aisStandards } from '@/lib/ais-standards';
 import { Input } from '@/components/ui/input';
@@ -280,10 +280,16 @@ export default function BulkerHomologationPage() {
                 <AnimatedElement delay={0.15}>
                     <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
                         <Button size="lg" variant="secondary" asChild className="bg-accent text-accent-foreground hover:bg-accent/90">
-                            <Link href="/contact">Talk to Our Experts</Link>
+                           <a href="tel:9011943810" className="flex items-center">
+                                <Phone className="mr-2 h-5 w-5" />
+                                Talk to our Experts
+                            </a>
                         </Button>
-                        <Button size="lg" variant="outline" className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary">
-                             <Link href="/quote?product=Bulker Homologation">Request AIS Review</Link>
+                        <Button size="lg" variant="outline" asChild className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary">
+                            <a href="https://wa.me/919096757924" target="_blank" rel="noopener noreferrer" className="flex items-center">
+                                <MessageSquare className="mr-2 h-5 w-5" />
+                                Chat with Us
+                            </a>
                         </Button>
                     </div>
                 </AnimatedElement>

@@ -5,7 +5,7 @@ import React from 'react';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { Button } from '@/components/ui/button';
 import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card';
-import { Check, HardHat, Factory, Building, Route, ShieldCheck, Layers, Settings, Workflow, CheckCircle } from 'lucide-react';
+import { Check, HardHat, Factory, Building, Route, ShieldCheck, Layers, Settings, Workflow, CheckCircle, Phone, MessageSquare } from 'lucide-react';
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -24,17 +24,17 @@ const useCases = [
 ];
 
 const configurations = [
-    { name: 'Capacity Ranges', value: '25 to 50-ton capacity.' },
-    { name: 'Tank Construction', value: 'High-strength steel (ST52) pressure vessel.' },
-    { name: 'Pneumatic Discharge', value: 'High-performance compressors for rapid unloading.' },
-    { name: 'Custom Configurations', value: 'Custom axle, capacity, and discharge options.' },
+    { name: 'Capacity', value: '25 to 50-ton.' },
+    { name: 'Tank Construction', value: 'High-strength steel (ST52).' },
+    { name: 'Discharge', value: 'High-performance pneumatic.' },
+    { name: 'Customization', value: 'Custom axle and capacity options.' },
 ];
 
 const whyChooseUs = [
-    { title: "Dust-Free & Contamination-Safe" },
-    { title: "Specialized Pressure Vessel Engineering" },
-    { title: "Efficient Loading & Unloading" },
-    { title: "Robust Construction for Long Service Life" },
+    { icon: <CheckCircle className="h-8 w-8 text-accent"/>, title: "Dust-Free & Contamination-Safe" },
+    { icon: <CheckCircle className="h-8 w-8 text-accent"/>, title: "Specialized Pressure Vessel Engineering" },
+    { icon: <CheckCircle className="h-8 w-8 text-accent"/>, title: "Efficient Loading & Unloading" },
+    { icon: <CheckCircle className="h-8 w-8 text-accent"/>, title: "Robust Construction for Long Service Life" },
 ];
 
 const qualityStandards = [
@@ -78,9 +78,6 @@ export default function CementBulkerPage() {
                     <Button size="lg" asChild>
                         <Link href="#configurations">Request Specifications</Link>
                     </Button>
-                    <Button size="lg" variant="outline" asChild>
-                        <Link href="/quote?product=cement-bulker">Enquire Now</Link>
-                    </Button>
                 </div>
             </div>
             <div>
@@ -102,10 +99,10 @@ export default function CementBulkerPage() {
       <div className="container mx-auto px-4 md:px-6 lg:px-8 py-12 md:py-16 lg:py-20">
         {/* 3. Introduction Section */}
         <section className="max-w-3xl mx-auto text-center">
-             <h2 className="text-3xl font-bold font-headline">The Standard for Modern Cement Transport</h2>
+             <h2 className="text-3xl font-bold font-headline">Modern Cement Transport</h2>
             <div className="mt-3 mb-6 w-20 h-1.5 bg-accent mx-auto"></div>
             <p className="text-muted-foreground text-lg leading-relaxed">
-                Specialized tankers for transporting dry powders like cement. Our closed pneumatic system prevents contamination and dust, enabling efficient unloading into silos.
+                Specialized tankers for transporting dry powders. Our closed pneumatic system prevents contamination and enables efficient unloading.
             </p>
         </section>
 
@@ -127,7 +124,7 @@ export default function CementBulkerPage() {
 
         {/* 5. Product Configurations */}
         <section id="configurations" className="mt-12 md:mt-20">
-             <h2 className="text-3xl font-bold font-headline text-center">Product Configurations</h2>
+             <h2 className="text-3xl font-bold font-headline text-center">Configurations</h2>
             <div className="mt-3 mb-10 w-20 h-1.5 bg-accent mx-auto"></div>
             <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
                 {configurations.map(config => (
@@ -142,14 +139,14 @@ export default function CementBulkerPage() {
          {/* 6. Engineering & Manufacturing Excellence */}
         <section className="mt-12 md:mt-20 grid md:grid-cols-2 gap-12 items-center bg-secondary p-8 md:p-12 rounded-lg">
             <div className='order-2 md:order-1'>
-                 <h2 className="text-3xl font-bold font-headline">Engineering & Manufacturing Excellence</h2>
+                 <h2 className="text-3xl font-bold font-headline">Engineering Excellence</h2>
                 <div className="mt-3 mb-6 w-20 h-1.5 bg-accent"></div>
                  <p className="text-muted-foreground text-lg leading-relaxed mb-4">
-                    Built in-house for structural integrity and performance, we use high-strength steel for a robust tank, precision welding for leak-proof seams, and reliable pneumatic systems.
+                    Built in-house for structural integrity and performance, we use high-strength steel, precision welding, and reliable pneumatic systems.
                 </p>
                 <div className="space-y-3">
-                    <p className="flex items-center"><Check className="text-green-500 mr-2" /> Optimized design for stability.</p>
-                     <p className="flex items-center"><Check className="text-green-500 mr-2" /> Reliable compressors and discharge equipment.</p>
+                    <p className="flex items-center"><Check className="text-green-500 mr-2" /> Optimized for stability.</p>
+                     <p className="flex items-center"><Check className="text-green-500 mr-2" /> Reliable compressors.</p>
                 </div>
             </div>
              <div className='order-1 md:order-2'>
@@ -166,7 +163,7 @@ export default function CementBulkerPage() {
 
         {/* 7. Compliance & Quality Assurance */}
         <section className="mt-12 md:mt-20">
-          <h2 className="text-3xl font-bold font-headline text-center mb-2">Compliance & Quality Assurance</h2>
+          <h2 className="text-3xl font-bold font-headline text-center mb-2">Quality Assurance</h2>
           <div className="w-24 h-1.5 bg-accent mx-auto mb-12"></div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {qualityStandards.map((item) => (
@@ -183,11 +180,11 @@ export default function CementBulkerPage() {
              <h2 className="text-3xl font-bold font-headline text-center">Why Choose Our Cement Bulkers?</h2>
             <div className="mt-3 mb-10 w-20 h-1.5 bg-accent mx-auto"></div>
             <div className="max-w-4xl mx-auto bg-secondary p-8 md:p-12 rounded-lg shadow-inner">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                     {whyChooseUs.map((item, index) => (
                         <div key={index} className="flex items-center">
-                            <CheckCircle className="h-6 w-6 text-accent mr-3 flex-shrink-0" />
-                            <p className="font-semibold text-lg">{item.title}</p>
+                            {item.icon}
+                            <h3 className="font-semibold text-lg ml-4">{item.title}</h3>
                         </div>
                     ))}
                 </div>
@@ -200,10 +197,16 @@ export default function CementBulkerPage() {
                  <h2 className="text-3xl font-extrabold">Looking for an efficient and safe cement bulker?</h2>
                  <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
                     <Button size="lg" variant="secondary" asChild className="bg-accent text-accent-foreground hover:bg-accent/90">
-                        <Link href="/quote?product=cement-bulker">Enquire Now</Link>
+                       <a href="tel:9011943810" className="flex items-center">
+                            <Phone className="mr-2 h-5 w-5" />
+                            Talk to our Experts
+                        </a>
                     </Button>
                     <Button size="lg" variant="outline" asChild className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary">
-                        <Link href="/contact">Talk to Our Team</Link>
+                        <a href="https://wa.me/919096757924" target="_blank" rel="noopener noreferrer" className="flex items-center">
+                            <MessageSquare className="mr-2 h-5 w-5" />
+                            Chat with Us
+                        </a>
                     </Button>
                 </div>
             </div>

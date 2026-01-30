@@ -5,7 +5,7 @@ import React from 'react';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { Button } from '@/components/ui/button';
 import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card';
-import { Check, HardHat, Truck, Route, Settings, ShieldCheck, Layers, Workflow, TestTube, CheckCircle } from 'lucide-react';
+import { Check, HardHat, Truck, Route, Settings, ShieldCheck, Layers, Workflow, TestTube, CheckCircle, Phone, MessageSquare } from 'lucide-react';
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -17,17 +17,17 @@ import {
 
 // Data for the page
 const useCases = [
-    { icon: <Truck className="h-8 w-8 text-accent" />, title: "Industrial Logistics", description: "Transport finished goods and raw materials." },
-    { icon: <HardHat className="h-8 w-8 text-accent" />, title: "Construction", description: "Move materials and equipment to job sites." },
+    { icon: <Truck className="h-8 w-8 text-accent" />, title: "Industrial Logistics", description: "Transport goods and raw materials." },
+    { icon: <HardHat className="h-8 w-8 text-accent" />, title: "Construction", description: "Move materials and equipment." },
     { icon: <Route className="h-8 w-8 text-accent" />, title: "Regional Movement", description: "Efficient urban and regional distribution." },
     { icon: <Settings className="h-8 w-8 text-accent" />, title: "Specialized Apps", description: "Custom bodies for specialized cargo." },
 ];
 
 const configurations = [
-    { name: 'Load Capacity', value: 'Wide range of tonnage capacities.' },
-    { name: 'Body Types', value: 'Flatbed, box, curtain-sider, and custom configs.' },
-    { name: 'Materials & Build', value: 'High-strength steel (IS2062, BSK46).' },
-    { name: 'Customization', value: 'Custom dimensions, flooring, and fittings.' },
+    { name: 'Load Capacity', value: 'Wide range of tonnage.' },
+    { name: 'Body Types', value: 'Flatbed, box, and custom configs.' },
+    { name: 'Materials', value: 'High-strength steel (IS2062, BSK46).' },
+    { name: 'Customization', value: 'Custom dimensions and fittings.' },
 ];
 
 const qualityStandards = [
@@ -38,10 +38,10 @@ const qualityStandards = [
 ];
 
 const whyChooseUs = [
-    { title: "Robust Construction for Long Service Life" },
-    { title: "Precision Engineering for Safety & Stability" },
-    { title: "Application-Specific Customization" },
-    { title: "Dependable Nationwide Service & Support" },
+    { icon: <CheckCircle className="h-8 w-8 text-accent" />, title: "Robust Construction for Long Service Life" },
+    { icon: <CheckCircle className="h-8 w-8 text-accent" />, title: "Precision Engineering for Safety & Stability" },
+    { icon: <CheckCircle className="h-8 w-8 text-accent" />, title: "Application-Specific Customization" },
+    { icon: <CheckCircle className="h-8 w-8 text-accent" />, title: "Dependable Nationwide Service & Support" },
 ];
 
 export default function RigidVehiclesPage() {
@@ -77,9 +77,6 @@ export default function RigidVehiclesPage() {
                     <Button size="lg" asChild>
                         <Link href="#configurations">Request Specifications</Link>
                     </Button>
-                    <Button size="lg" variant="outline" asChild>
-                        <Link href="/quote?product=rigid-vehicle">Enquire Now</Link>
-                    </Button>
                 </div>
             </div>
             <div>
@@ -101,10 +98,10 @@ export default function RigidVehiclesPage() {
       <div className="container mx-auto px-4 md:px-6 lg:px-8 py-12 md:py-16 lg:py-20">
         {/* 3. Introduction Section */}
         <section className="max-w-3xl mx-auto text-center">
-            <h2 className="text-3xl font-bold font-headline">The Benchmark for Integrated Transport</h2>
+            <h2 className="text-3xl font-bold font-headline">Integrated Transport</h2>
             <div className="mt-3 mb-6 w-20 h-1.5 bg-accent mx-auto"></div>
             <p className="text-muted-foreground text-lg leading-relaxed">
-                Rigid vehicles, with a body built onto a fixed chassis, offer superior stability and handling. Ideal for short to medium-haul operations with maximum control.
+                Rigid vehicles, with a body on a fixed chassis, offer superior stability and handling. Ideal for short to medium-haul operations.
             </p>
         </section>
 
@@ -126,7 +123,7 @@ export default function RigidVehiclesPage() {
 
         {/* 5. Product Configurations */}
         <section id="configurations" className="mt-12 md:mt-20">
-            <h2 className="text-3xl font-bold font-headline text-center">Product Configurations</h2>
+            <h2 className="text-3xl font-bold font-headline text-center">Configurations</h2>
             <div className="mt-3 mb-10 w-20 h-1.5 bg-accent mx-auto"></div>
             <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
                 {configurations.map(config => (
@@ -141,14 +138,14 @@ export default function RigidVehiclesPage() {
         {/* 6. Engineering & Manufacturing Excellence */}
         <section className="mt-12 md:mt-20 grid md:grid-cols-2 gap-12 items-center bg-secondary p-8 md:p-12 rounded-lg">
             <div className='order-2 md:order-1'>
-                <h2 className="text-3xl font-bold font-headline">Engineering & Manufacturing Excellence</h2>
+                <h2 className="text-3xl font-bold font-headline">Engineering Excellence</h2>
                 <div className="mt-3 mb-6 w-20 h-1.5 bg-accent"></div>
                 <p className="text-muted-foreground text-lg leading-relaxed mb-4">
-                    Our process focuses on precision chassis integration and superior fabrication. We ensure optimal load balance and durability with rigorous inspections.
+                    Our process focuses on precision chassis integration and superior fabrication for optimal load balance and durability.
                 </p>
                 <div className="space-y-3">
                     <p className="flex items-center"><Check className="text-green-500 mr-2" /> Precision chassis integration.</p>
-                    <p className="flex items-center"><Check className="text-green-500 mr-2" /> High-quality fabrication and finishing.</p>
+                    <p className="flex items-center"><Check className="text-green-500 mr-2" /> High-quality fabrication.</p>
                 </div>
             </div>
             <div className='order-1 md:order-2'>
@@ -165,7 +162,7 @@ export default function RigidVehiclesPage() {
 
         {/* 7. Compliance & Quality Assurance */}
         <section className="mt-12 md:mt-20">
-          <h2 className="text-3xl font-bold font-headline text-center mb-2">Compliance & Quality Assurance</h2>
+          <h2 className="text-3xl font-bold font-headline text-center mb-2">Quality Assurance</h2>
           <div className="w-24 h-1.5 bg-accent mx-auto mb-12"></div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {qualityStandards.map((item) => (
@@ -182,11 +179,11 @@ export default function RigidVehiclesPage() {
             <h2 className="text-3xl font-bold font-headline text-center">Why Choose Our Rigid Vehicles?</h2>
             <div className="mt-3 mb-10 w-20 h-1.5 bg-accent mx-auto"></div>
             <div className="max-w-4xl mx-auto bg-secondary p-8 md:p-12 rounded-lg shadow-inner">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                     {whyChooseUs.map((item, index) => (
                         <div key={index} className="flex items-center">
-                            <CheckCircle className="h-6 w-6 text-accent mr-3 flex-shrink-0" />
-                            <p className="font-semibold text-lg">{item.title}</p>
+                            {item.icon}
+                            <h3 className="font-semibold text-lg ml-4">{item.title}</h3>
                         </div>
                     ))}
                 </div>
@@ -199,10 +196,16 @@ export default function RigidVehiclesPage() {
                 <h2 className="text-3xl font-extrabold">Looking for a dependable rigid vehicle?</h2>
                 <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
                     <Button size="lg" variant="secondary" asChild className="bg-accent text-accent-foreground hover:bg-accent/90">
-                        <Link href="/quote?product=rigid-vehicle">Enquire Now</Link>
+                       <a href="tel:9011943810" className="flex items-center">
+                            <Phone className="mr-2 h-5 w-5" />
+                            Talk to our Experts
+                        </a>
                     </Button>
                     <Button size="lg" variant="outline" asChild className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary">
-                        <Link href="/contact">Talk to Our Team</Link>
+                        <a href="https://wa.me/919096757924" target="_blank" rel="noopener noreferrer" className="flex items-center">
+                            <MessageSquare className="mr-2 h-5 w-5" />
+                            Chat with Us
+                        </a>
                     </Button>
                 </div>
             </div>
