@@ -3,7 +3,7 @@
 
 import React from 'react';
 import Link from 'next/link';
-import { motion } from "motion/react";
+import { motion } from "framer-motion";
 import { TestimonialsColumn } from "@/components/ui/testimonials-columns-1";
 
 import { Button } from '@/components/ui/button';
