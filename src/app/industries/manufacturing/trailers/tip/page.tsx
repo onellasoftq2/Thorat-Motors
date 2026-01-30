@@ -58,7 +58,7 @@ export default function TipTrailersPage() {
             <section className="bg-secondary relative mx-auto lg:w-[1024px] md:w-full">
          <div className="container mx-auto px-4 md:px-6 lg:px-8 pt-16 md:pt-24">
             <div className="grid md:grid-cols-2 gap-12 items-center">
-                <div className="text-center md:text-left">
+                <AnimatedElement className="text-center md:text-left">
                     {/* <Breadcrumb className="mb-4 justify-center md:justify-start">
                         <BreadcrumbList>
                             <BreadcrumbItem>

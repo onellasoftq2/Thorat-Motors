@@ -73,6 +73,7 @@ export default function BulkerTrailersPage() {
                 <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight font-headline">Efficient Bulker Trailers</h1>
                 <p className="mt-4 text-lg md:text-xl text-muted-foreground max-w-lg mx-auto md:mx-0">
                     High-volume transport for long-distance hauling.
+                </p>
                 <h1 className="text-3xl font-extrabold tracking-tight font-headline">Bulker Trailers</h1>
                 <p className="mt-2 text-sm md:text-xl text-muted-foreground max-w-lg mx-auto md:mx-0">
                     Engineered for high-volume, stable, and efficient bulk material transport over long distances.
