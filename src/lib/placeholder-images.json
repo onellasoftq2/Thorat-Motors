@@ -13,6 +13,12 @@
       "imageHint": "cement trailer"
     },
     {
+      "id": "cement-bulker-banner",
+      "description": "Cement bulker trailer at a construction site.",
+      "imageUrl": "/images/products/bulkers/Cement-Bulkers-banner.png",
+      "imageHint": "cement trailer"
+    },
+    {
       "id": "flatbed",
       "description": "A long flatbed trailer ready for cargo.",
       "imageUrl": "/images/products/trailer/Flatbed-Trailers.png",
@@ -157,6 +163,12 @@
       "imageHint": "rigid truck"
     },
     {
+      "id": "rigid-vehicle-hero",
+      "description": "A rigid cement bulker truck on a road.",
+      "imageUrl": "/images/products/bulkers/about-hero.png",
+      "imageHint": "rigid truck"
+    },
+    {
       "id": "tipping-bulker-hero",
       "description": "A large tipping bulker unloading gravel at a construction site.",
       "imageUrl": "/images/products/bulkers/Tipping-Bulkers.png",
@@ -183,7 +195,7 @@
     {
       "id": "food-bulker-hero",
       "description": "A clean, modern food-grade bulker truck.",
-      "imageUrl": "https://images.unsplash.com/photo-1628212494842-8c1710b4843b?q=80&w=1974&auto=format&fit=crop&ixlib-rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageUrl": "/images/products/bulkers/food-bulker.png",
       "imageHint": "food tanker"
     },
     {
@@ -225,7 +237,7 @@
     {
       "id": "flatbed-hero",
       "description": "A robust flatbed trailer parked in an industrial area.",
-      "imageUrl": "https://images.unsplash.com/photo-1621200424997-f81373511649?q=80&w=2070&auto=format&fit=crop&ixlib-rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageUrl": "/images/products/trailer/Flatbed-Trailers.png",
       "imageHint": "flatbed trailer"
     },
     {
@@ -273,7 +285,7 @@
     {
       "id": "sidewall-hero",
       "description": "A modern sidewall trailer on an open road.",
-      "imageUrl": "https://images.unsplash.com/photo-1609341066376-0c389aaa7998?q=80&w=1974&auto=format&fit=crop&ixlib-rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageUrl": "/images/products/trailer/Sidewall-Trailers.png",
       "imageHint": "side wall trailer"
     },
     {
@@ -369,7 +381,7 @@
     {
       "id": "skeletal-hero",
       "description": "A modern skeletal trailer chassis designed for container transport.",
-      "imageUrl": "https://images.unsplash.com/photo-1620290457699-23a9d977e5d1?q=80&w=1932&auto=format&fit=crop&ixlib-rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageUrl": "/images/products/trailer/Skeletal-Trailers.png",
       "imageHint": "container chassis"
     },
     {
@@ -465,7 +477,7 @@
     {
       "id": "cragganmore-hero",
       "description": "A shiny, modern industrial liquid tanker truck on a clean background.",
-      "imageUrl": "https://images.unsplash.com/photo-1581094285114-b25c4a63c623?q=80&w=1974&auto=format&fit=crop&ixlib-rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageUrl": "/images/products/trailer/Skeletal-Trailers.png",
       "imageHint": "liquid tanker"
     },
     {
@@ -927,37 +939,37 @@
     {
       "id": "refer-food",
       "description": "A refrigerated container with fresh produce inside.",
-      "imageUrl": "https://images.unsplash.com/photo-1599422533282-3f8d3630d7b3?q=80&w=2070&auto=format&fit=crop&ixlib-rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageUrl": "/images/products/refer/Food-Grade-Refer.png",
       "imageHint": "fresh produce"
     },
     {
       "id": "refer-pharma",
       "description": "A secure, temperature-controlled container for pharmaceutical logistics.",
-      "imageUrl": "https://images.unsplash.com/photo-1581092446327-9b52bdc4f315?q=80&w=2070&auto=format&fit=crop&ixlib-rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageUrl": "/images/products/refer/Pharmaceutical-Refer.png",
       "imageHint": "pharma logistics"
     },
     {
       "id": "refer-frozen",
       "description": "A refrigerated container showing a frosty interior suitable for frozen goods.",
-      "imageUrl": "https://images.unsplash.com/photo-1621200424997-f81373511649?q=80&w=2070&auto=format&fit=crop&ixlib-rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageUrl": "/images/products/refer/Frozen-Goods-Refer.png",
       "imageHint": "frozen goods"
     },
     {
       "id": "refer-multi-temp",
       "description": "A large refrigerated container with internal dividers for multiple temperature zones.",
-      "imageUrl": "https://images.unsplash.com/photo-1568252540092-992f9e4a3646?q=80&w=2070&auto=format&fit=crop&ixlib-rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageUrl": "/images/products/refer/Multi-Temperature.png",
       "imageHint": "multi temperature"
     },
     {
       "id": "refer-vehicle-mounted",
       "description": "A smaller refer container mounted on a light commercial vehicle for city logistics.",
-      "imageUrl": "https://images.unsplash.com/photo-1628212494842-8c1710b4843b?q=80&w=1974&auto=format&fit=crop&ixlib-rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageUrl": "/images/products/refer/Vehicle-Mounted.png",
       "imageHint": "refrigerated van"
     },
     {
       "id": "refer-testing-lab",
       "description": "A technician testing the refrigeration and insulation unit in a laboratory setting.",
-      "imageUrl": "https://images.unsplash.com/photo-1581092446327-9b52bdc4f315?q=80&w=2070&auto=format&fit=crop&ixlib-rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageUrl": "/images/products/refer/about-testing.png",
       "imageHint": "technical testing"
     },
     {
@@ -969,43 +981,43 @@
     {
       "id": "cv-lcv",
       "description": "A light commercial vehicle making a delivery in a city.",
-      "imageUrl": "https://images.unsplash.com/photo-1628212494842-8c1710b4843b?q=80&w=1974&auto=format&fit=crop&ixlib-rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageUrl": "/images/products/commercial/Light-Commercial-Vehicles.png",
       "imageHint": "delivery truck"
     },
     {
       "id": "cv-mcv",
       "description": "A medium commercial vehicle used for regional logistics.",
-      "imageUrl": "https://images.unsplash.com/photo-1609341066376-0c389aaa7998?q=80&w=1974&auto=format&fit=crop&ixlib-rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageUrl": "/images/products/commercial/Medium-Commercial-Vehicles-(MCV).png",
       "imageHint": "regional truck"
     },
     {
       "id": "cv-hcv",
       "description": "A heavy commercial vehicle or tractor-trailer on a long-haul route.",
-      "imageUrl": "https://images.unsplash.com/photo-1577985051167-3d7f3394c8b2?q=80&w=1974&auto=format&fit=crop&ixlib-rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageUrl": "/images/products/commercial/Heavy-Commercial-Vehicles-(HCV).png",
       "imageHint": "heavy truck"
     },
     {
       "id": "cv-goods-carrier",
       "description": "A standard goods carrier truck being loaded at a warehouse.",
-      "imageUrl": "https://images.unsplash.com/photo-1576674443793-3a3a4c5a7a7a?q=80&w=2070&auto=format&fit=crop&ixlib-rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageUrl": "/images/products/commercial/Goods-Carriers.png",
       "imageHint": "goods truck"
     },
     {
       "id": "cv-passenger",
       "description": "A passenger bus or large van used for commercial transport.",
-      "imageUrl": "https://images.unsplash.com/photo-1570125909232-eb263c187f14?q=80&w=2070&auto=format&fit=crop&ixlib-rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageUrl": "/images/products/commercial/Passenger-Commercial.png",
       "imageHint": "passenger bus"
     },
     {
       "id": "cv-spv",
       "description": "A special purpose commercial vehicle, such as a cement mixer or tanker.",
-      "imageUrl": "https://images.unsplash.com/photo-1517921345997-384358899214?q=80&w=1974&auto=format&fit=crop&ixlib-rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageUrl": "/images/products/commercial/Special-Purpose-Vehicles.png",
       "imageHint": "special vehicle"
     },
     {
       "id": "cv-testing",
       "description": "A commercial vehicle undergoing rigorous testing in a specialized facility.",
-      "imageUrl": "https://images.unsplash.com/photo-1581092446327-9b52bdc4f315?q=80&w=2070&auto=format&fit=crop&ixlib-rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageUrl": "/images/products/commercial/about-testing.png",
       "imageHint": "vehicle testing"
     }
   ]

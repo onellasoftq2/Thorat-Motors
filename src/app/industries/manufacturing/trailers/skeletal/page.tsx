@@ -55,11 +55,16 @@ export default function SkeletalTrailersPage() {
   return (
     <div className="bg-background text-foreground">
       {/* 1. Hero Section */}
-      <section className="bg-secondary relative">
+            <section className="bg-secondary relative mx-auto lg:w-[1024px] md:w-full">
          <div className="container mx-auto px-4 md:px-6 lg:px-8 pt-16 md:pt-24">
             <div className="grid md:grid-cols-2 gap-12 items-center">
+<<<<<<< HEAD
                 <AnimatedElement className="text-center md:text-left">
                     <Breadcrumb className="mb-4 justify-center md:justify-start">
+=======
+                <div className="text-center md:text-left">
+                    {/* <Breadcrumb className="mb-4 justify-center md:justify-start">
+>>>>>>> 55a0cc53d5ca70c719a89a6839e4c987c25c7b85
                         <BreadcrumbList>
                             <BreadcrumbItem>
                                 <BreadcrumbLink asChild><Link href="/industries/manufacturing">Manufacturing</Link></BreadcrumbLink>
@@ -73,11 +78,17 @@ export default function SkeletalTrailersPage() {
                                 <BreadcrumbPage>Skeletal Trailers</BreadcrumbPage>
                             </BreadcrumbItem>
                         </BreadcrumbList>
-                    </Breadcrumb>
+                    </Breadcrumb> */}
 
+<<<<<<< HEAD
                     <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight font-headline">Reliable Skeletal Trailers</h1>
                     <p className="mt-4 text-lg md:text-xl text-muted-foreground max-w-lg mx-auto md:mx-0">
                         Efficient and reliable ISO container transport.
+=======
+                    <h1 className="text-3xl font-extrabold tracking-tight font-headline">Skeletal Trailers</h1>
+                    <p className="mt-2 text-md text-muted-foreground max-w-lg mx-auto md:mx-0">
+                        Engineered for efficient ISO container transport with superior payload efficiency and reliability.
+>>>>>>> 55a0cc53d5ca70c719a89a6839e4c987c25c7b85
                     </p>
                     <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
                         <Button size="lg" asChild>
@@ -117,7 +128,7 @@ export default function SkeletalTrailersPage() {
 
       <div className="container mx-auto px-4 md:px-6 lg:px-8 py-12 md:py-16 lg:py-20">
         {/* 2. Primary Applications */}
-        <section>
+        {/* <section>
              <h2 className="text-3xl font-bold font-headline text-center">Primary Applications</h2>
             <div className="mt-3 mb-10 w-20 h-1.5 bg-accent mx-auto"></div>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -132,7 +143,7 @@ export default function SkeletalTrailersPage() {
                     </AnimatedElement>
                 ))}
             </div>
-        </section>
+        </section> */}
 
         {/* 3. Trailer Configurations & Variants */}
         <section id="configurations" className="mt-12 md:mt-20">
@@ -196,12 +207,38 @@ export default function SkeletalTrailersPage() {
             </div>
         </section>
 
+<<<<<<< HEAD
+=======
+        {/* 7. Visual Gallery */}
+        {/* <section className="mt-12 md:mt-20">
+             <h2 className="text-3xl font-bold font-headline text-center">Visual Gallery</h2>
+            <div className="mt-3 mb-10 w-20 h-1.5 bg-accent mx-auto"></div>
+             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                {galleryImagesData.map((imageData, index) => {
+                    if (!imageData) return null;
+                    return (
+                        <Image
+                            key={index}
+                            src={imageData.imageUrl}
+                            alt={imageData.description}
+                            width={500}
+                            height={400}
+                            className="rounded-lg object-cover shadow-md aspect-video"
+                            data-ai-hint={imageData.imageHint}
+                        />
+                    );
+                })}
+            </div>
+        </section> */}
+
+>>>>>>> 55a0cc53d5ca70c719a89a6839e4c987c25c7b85
         {/* 8. Conversion Section */}
         <section className="mt-12 md:mt-20 bg-primary text-primary-foreground py-16 rounded-lg">
             <div className="container mx-auto text-center px-4">
                  <h2 className="text-3xl font-extrabold max-w-3xl mx-auto">Looking for a skeletal trailer for efficient container transport?</h2>
                  <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
                     <Button size="lg" variant="secondary" asChild className="bg-accent text-accent-foreground hover:bg-accent/90">
+<<<<<<< HEAD
                        <a href="tel:9011943810" className="flex items-center">
                             <Phone className="mr-2 h-5 w-5" />
                             Talk to our Experts
@@ -212,6 +249,12 @@ export default function SkeletalTrailersPage() {
                             <MessageSquare className="mr-2 h-5 w-5" />
                             Chat with Us
                         </a>
+=======
+                        <Link href="/contact">Talk to Our Experts</Link>
+                    </Button>
+                    <Button size="lg" variant="outline" asChild className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary">
+                        <Link href="/contact">Request Quote</Link>
+>>>>>>> 55a0cc53d5ca70c719a89a6839e4c987c25c7b85
                     </Button>
                 </div>
             </div>

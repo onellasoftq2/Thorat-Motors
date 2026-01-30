@@ -130,17 +130,17 @@ export default function ReferContainerPage() {
             <h2 className="text-3xl font-bold font-headline">Refer Container Types Covered</h2>
             <div className="mt-3 mb-4 w-20 h-1.5 bg-accent mx-auto"></div>
           </AnimatedElement>
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-8 text-center max-w-6xl mx-auto">
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {referTypes.map((category, index) => {
               const image = PlaceHolderImages.find(p => p.id === category.imageId);
               return (
                 <AnimatedElement key={category.name} delay={index * 0.1}>
                   <Card className="overflow-hidden group hover:shadow-lg transition-shadow h-full flex flex-col">
                     {image && <Image src={image.imageUrl} alt={category.name} width={400} height={250} className="w-full h-48 object-cover group-hover:scale-105 transition-transform" data-ai-hint={image.imageId} />}
-                    <CardContent className="p-6 flex-grow flex flex-col">
+                    <CardContent className="p-3 flex-grow flex flex-col">
                       <h3 className="text-lg font-semibold">{category.name}</h3>
-                      <p className="text-muted-foreground text-sm mt-2 flex-grow">{category.application}</p>
-                      <Badge variant="secondary" className="mt-4 w-fit">{category.configuration}</Badge>
+                      <p className="text-muted-foreground text-sm mt-0 flex-grow">{category.application}</p>
+                      {/* <Badge variant="secondary" className="mt-4 w-fit">{category.configuration}</Badge> */}
                     </CardContent>
                   </Card>
                 </AnimatedElement>
@@ -265,6 +265,7 @@ export default function ReferContainerPage() {
                 </AnimatedElement>
                 <AnimatedElement delay={0.15}>
                     <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
+<<<<<<< HEAD
                         <Button size="lg" variant="secondary" asChild className="bg-accent text-accent-foreground hover:bg-accent/90">
                            <a href="tel:9011943810" className="flex items-center">
                                 <Phone className="mr-2 h-5 w-5" />
@@ -277,6 +278,14 @@ export default function ReferContainerPage() {
                                 Chat with Us
                             </a>
                         </Button>
+=======
+                            <Button size="lg" variant="secondary" asChild className="bg-accent text-accent-foreground hover:bg-accent/90">
+                                <Link href="/contact">Talk to Our Experts</Link>
+                            </Button>
+                            <Button size="lg" variant="outline" asChild className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary">
+                                <Link href="/contact">Request Quote</Link>
+                            </Button>
+>>>>>>> 55a0cc53d5ca70c719a89a6839e4c987c25c7b85
                     </div>
                 </AnimatedElement>
             </div>

@@ -51,10 +51,10 @@ export default function FoodBulkerPage() {
   return (
     <div className="bg-background text-foreground">
       {/* 1. Hero Section */}
-      <section className="bg-secondary relative">
+            <section className="bg-secondary relative mx-auto lg:w-[1024px] md:w-full">
          <div className="container mx-auto px-4 md:px-6 lg:px-8 py-16 md:py-24 grid md:grid-cols-2 gap-12 items-center">
             <div className="text-center md:text-left">
-                <Breadcrumb className="mb-4 justify-center md:justify-start">
+                {/* <Breadcrumb className="mb-4 justify-center md:justify-start">
                     <BreadcrumbList>
                         <BreadcrumbItem>
                         <BreadcrumbLink asChild><Link href="/industries/manufacturing">Manufacturing</Link></BreadcrumbLink>
@@ -68,11 +68,17 @@ export default function FoodBulkerPage() {
                         <BreadcrumbPage>Food Bulkers</BreadcrumbPage>
                         </BreadcrumbItem>
                     </BreadcrumbList>
-                </Breadcrumb>
+                </Breadcrumb> */}
 
+<<<<<<< HEAD
                 <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight font-headline">Hygienic Food Bulkers</h1>
                 <p className="mt-4 text-lg md:text-xl text-muted-foreground max-w-lg mx-auto md:mx-0">
                     Hygienic and efficient transport for bulk food.
+=======
+                <h1 className="text-3xl font-extrabold tracking-tight font-headline">Food Bulkers</h1>
+                <p className="mt-2 text-sm md:text-xl text-muted-foreground max-w-lg mx-auto md:mx-0">
+                    Engineered for hygienic, contamination-free, and efficient transport of bulk food materials.
+>>>>>>> 55a0cc53d5ca70c719a89a6839e4c987c25c7b85
                 </p>
                 <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
                     <Button size="lg" asChild>
@@ -151,7 +157,7 @@ export default function FoodBulkerPage() {
             </div>
              <div className='order-1 md:order-2'>
                 <Image
-                    src="https://images.unsplash.com/photo-1581094285114-b25c4a63c623?q=80&w=1974&auto=format&fit=crop&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                    src="/images/products/bulkers/Manufacturing-Excellence-food-bulker.png"
                     alt="Hygienic Manufacturing"
                     width={500}
                     height={400}
@@ -175,6 +181,31 @@ export default function FoodBulkerPage() {
           </div>
         </section>
 
+<<<<<<< HEAD
+=======
+        {/* 8. Visual Gallery */}
+        {/* <section className="mt-12 md:mt-20">
+             <h2 className="text-3xl font-bold font-headline text-center">Visual Gallery</h2>
+            <div className="mt-3 mb-10 w-20 h-1.5 bg-accent mx-auto"></div>
+             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                {galleryImagesData.map((imageData, index) => {
+                    if (!imageData) return null;
+                    return (
+                        <Image
+                            key={index}
+                            src={imageData.imageUrl}
+                            alt={imageData.description}
+                            width={500}
+                            height={400}
+                            className="rounded-lg object-cover shadow-md aspect-video"
+                            data-ai-hint={imageData.imageHint}
+                        />
+                    );
+                })}
+            </div>
+        </section> */}
+
+>>>>>>> 55a0cc53d5ca70c719a89a6839e4c987c25c7b85
          {/* 9. Why Choose Us */}
         <section className="mt-12 md:mt-20">
              <h2 className="text-3xl font-bold font-headline text-center">Why Choose Our Food Bulkers?</h2>
@@ -196,6 +227,7 @@ export default function FoodBulkerPage() {
             <div className="container mx-auto text-center">
                  <h2 className="text-3xl font-extrabold">Looking for a safe and hygienic food bulker?</h2>
                  <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
+<<<<<<< HEAD
                     <Button size="lg" variant="secondary" asChild className="bg-accent text-accent-foreground hover:bg-accent/90">
                        <a href="tel:9011943810" className="flex items-center">
                             <Phone className="mr-2 h-5 w-5" />
@@ -208,6 +240,14 @@ export default function FoodBulkerPage() {
                             Chat with Us
                         </a>
                     </Button>
+=======
+                            <Button size="lg" variant="secondary" asChild className="bg-accent text-accent-foreground hover:bg-accent/90">
+                                <Link href="/contact">Talk to Our Experts</Link>
+                            </Button>
+                            <Button size="lg" variant="outline" asChild className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary">
+                                <Link href="/contact">Request Quote</Link>
+                            </Button>
+>>>>>>> 55a0cc53d5ca70c719a89a6839e4c987c25c7b85
                 </div>
             </div>
         </section>
